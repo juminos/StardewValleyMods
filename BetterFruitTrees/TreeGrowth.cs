@@ -311,11 +311,12 @@ namespace BetterFruitTrees
                                     // Log the matching building ID
                                     monitor.Log($"Matching building ID found: {kvp.Key}", LogLevel.Trace);
 
-                                    // Create the large tree building at the same tile position
-                                    Building largeTree = new Building(kvp.Key, pair.Key);
+                                    // Create the large tree building 1 tile to the left of the current position
+                                    Vector2 newBuildingPosition = new Vector2(pair.Key.X - 1, pair.Key.Y);
+                                    Building largeTree = new Building(kvp.Key, newBuildingPosition);
 
                                     // Log the creation of the large tree building
-                                    monitor.Log($"Large tree building created at position {pair.Key}", LogLevel.Trace);
+                                    monitor.Log($"Large tree building created at position {newBuildingPosition}", LogLevel.Trace);
 
                                     // Remove the tree from terrain features
                                     location.terrainFeatures.Remove(pair.Key);
