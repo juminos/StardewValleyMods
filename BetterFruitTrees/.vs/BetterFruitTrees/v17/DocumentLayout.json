@@ -1,0 +1,104 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\BetterFruitTrees\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C553DBB9-B0EB-483A-82F4-CEACE31B3202}|BetterFruitTrees.csproj|c:\\users\\princ\\sv modding\\stardewvalleymods\\betterfruittrees\\betterfruittrees.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{C553DBB9-B0EB-483A-82F4-CEACE31B3202}|BetterFruitTrees.csproj|solutionrelative:betterfruittrees.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C553DBB9-B0EB-483A-82F4-CEACE31B3202}|BetterFruitTrees.csproj|C:\\Users\\princ\\SV modding\\StardewValleyMods\\BetterFruitTrees\\modconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C553DBB9-B0EB-483A-82F4-CEACE31B3202}|BetterFruitTrees.csproj|solutionrelative:modconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C553DBB9-B0EB-483A-82F4-CEACE31B3202}|BetterFruitTrees.csproj|C:\\Users\\princ\\SV modding\\StardewValleyMods\\BetterFruitTrees\\modentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C553DBB9-B0EB-483A-82F4-CEACE31B3202}|BetterFruitTrees.csproj|solutionrelative:modentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C553DBB9-B0EB-483A-82F4-CEACE31B3202}|BetterFruitTrees.csproj|C:\\Users\\princ\\SV modding\\StardewValleyMods\\BetterFruitTrees\\treereplacer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C553DBB9-B0EB-483A-82F4-CEACE31B3202}|BetterFruitTrees.csproj|solutionrelative:treereplacer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C553DBB9-B0EB-483A-82F4-CEACE31B3202}|BetterFruitTrees.csproj|C:\\Users\\princ\\SV modding\\StardewValleyMods\\BetterFruitTrees\\config.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{C553DBB9-B0EB-483A-82F4-CEACE31B3202}|BetterFruitTrees.csproj|solutionrelative:config.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BetterFruitTrees",
+              "DocumentMoniker": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\BetterFruitTrees\\BetterFruitTrees.csproj",
+              "RelativeDocumentMoniker": "BetterFruitTrees.csproj",
+              "ToolTip": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\BetterFruitTrees\\BetterFruitTrees.csproj",
+              "RelativeToolTip": "BetterFruitTrees.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-02-27T04:54:17.328Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ModEntry.cs",
+              "DocumentMoniker": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\BetterFruitTrees\\ModEntry.cs",
+              "RelativeDocumentMoniker": "ModEntry.cs",
+              "ToolTip": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\BetterFruitTrees\\ModEntry.cs",
+              "RelativeToolTip": "ModEntry.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAqwDAAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-17T18:22:48.202Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "config.json",
+              "DocumentMoniker": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\BetterFruitTrees\\config.json",
+              "RelativeDocumentMoniker": "config.json",
+              "ToolTip": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\BetterFruitTrees\\config.json",
+              "RelativeToolTip": "config.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-02-17T18:38:30.117Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ModConfig.cs",
+              "DocumentMoniker": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\BetterFruitTrees\\ModConfig.cs",
+              "RelativeDocumentMoniker": "ModConfig.cs",
+              "ToolTip": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\BetterFruitTrees\\ModConfig.cs",
+              "RelativeToolTip": "ModConfig.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAABEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-13T21:38:34.61Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TreeReplacer.cs",
+              "DocumentMoniker": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\BetterFruitTrees\\TreeReplacer.cs",
+              "RelativeDocumentMoniker": "TreeReplacer.cs",
+              "ToolTip": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\BetterFruitTrees\\TreeReplacer.cs",
+              "RelativeToolTip": "TreeReplacer.cs",
+              "ViewState": "AQIAAEEAAAAAAAAAAAAAAFkAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-12T20:03:55.426Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

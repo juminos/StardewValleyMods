@@ -1,0 +1,20 @@
+{
+  "Format": "1.29.0",
+  "Changes": [
+    {
+      "Action": "Load",
+      "Target": "Data/FruitTrees",
+      "FromFile": "\\[CP\\] MoreFruitTrees/content.json"
+    },
+    {
+      "Action": "Load",
+      "Target": "Data/FruitTrees",
+      "FromFile": "\\[CP\\] FruitTreesAnywhere/content.json"
+    },
+    {
+      "Action": "Load",
+      "Target": "Data/FruitTrees",
+      "FromFile": "\\[CP\\] FruitTreeSaplingMaker/content.json"
+    }
+  ]
+}
