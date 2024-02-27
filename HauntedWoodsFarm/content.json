@@ -1,0 +1,129 @@
+{
+	"Format": "2.0",
+
+	"ConfigSchema": {
+
+		"WaterfallColor": {
+			"AllowValues": "default, yri_default, yri_dblue, yri_green, yri_grey, yri_lblue, yri_pastel, yri_pink, yri_purple, yri_red, yri_rose",
+			"Default": "default",
+			"Section": "Water"
+			}
+		},
+
+	"Changes": [
+	
+	//Load map
+	{
+		"Action": "EditData",
+		"Target": "Data/AdditionalFarms",
+		"Entries": {
+			"Sevinae.HauntedWoodsFarm/HauntedWoodsFarm": {
+				"ID": "Sevinae.HauntedWoodsFarm/HauntedWoodsFarm",
+				"TooltipStringPath": "Strings/UI:Haunted_Woods_Farm",
+				"MapName": "Haunted_Woods_Farm",
+				"IconTexture": "Mods/Sevinae.HauntedWoodsFarm/Icon",
+				"WorldMapTexture": "Mods/Sevinae.HauntedWoodsFarm/WorldMap"
+			}
+		}
+	},
+	{
+		"Action": "EditData",
+		"Target": "Strings/UI",
+		"Entries": { "Haunted_Woods_Farm": "The villagers say the farm you've inherited is haunted..." }
+	},
+	{
+		"Action": "Load",
+		"Target": "Maps/Haunted_Woods_Farm",
+		"FromFile": "assets/HauntedWoods.tmx"
+	},
+	{
+		"Action": "Load",
+		"Target": "Mods/Sevinae.HauntedWoodsFarm/Icon",
+		"FromFile": "assets/Haunted_Woods_Icon.png"
+	},
+	{
+		"Action": "EditMap",
+		"Target": "Maps/Haunted_Woods_Farm",
+		"MapProperties": { "FarmHouseFurniture": "1466 1 4 0 1602 2 1 0 1616 4 1 0 1616 7 1 0 0 4 4 0 1134 5 4 0 1748 5 4 0 1792 8 4 0 1376 10 4 0 1377 1 10 0 1618 6 8 0" }
+	},
+
+	//Change Waterfall Colors
+	{    
+		"Action": "EditMap",
+		"Target": "Maps/Haunted_Woods_Farm",
+		"FromFile": "assets/Options/Waterfalls_Default.tbin",
+		"When": { "WaterfallColor": "default"},
+		"ToArea": { "X": 0, "Y": 0, "Width": 80, "Height": 70 }
+	},
+	{    
+		"Action": "EditMap",
+		"Target": "Maps/Haunted_Woods_Farm",
+		"FromFile": "assets/Options/Modular_Waterfalls/All_Seasons/yri/Default/Waterfalls_yri_Default.tbin",
+		"When": { "WaterfallColor": "yri_default"},
+		"ToArea": { "X": 0, "Y": 0, "Width": 80, "Height": 70 }
+	},
+	{    
+		"Action": "EditMap",
+		"Target": "Maps/Haunted_Woods_Farm",
+		"FromFile": "assets/Options/Modular_Waterfalls/All_Seasons/yri/DarkBlue/Waterfalls_yri_DBlue.tbin",
+		"When": { "WaterfallColor": "yri_dblue"},
+		"ToArea": { "X": 0, "Y": 0, "Width": 80, "Height": 70 }
+	},
+	{    
+		"Action": "EditMap",
+		"Target": "Maps/Haunted_Woods_Farm",
+		"FromFile": "assets/Options/Modular_Waterfalls/All_Seasons/yri/Green/Waterfalls_yri_Green.tbin",
+		"When": { "WaterfallColor": "yri_green"},
+		"ToArea": { "X": 0, "Y": 0, "Width": 80, "Height": 70 }
+	},
+	{    
+		"Action": "EditMap",
+		"Target": "Maps/Haunted_Woods_Farm",
+		"FromFile": "assets/Options/Modular_Waterfalls/All_Seasons/yri/Grey/Waterfalls_yri_Grey.tbin",
+		"When": { "WaterfallColor": "yri_grey"},
+		"ToArea": { "X": 0, "Y": 0, "Width": 80, "Height": 70 }
+	},
+	{    
+		"Action": "EditMap",
+		"Target": "Maps/Haunted_Woods_Farm",
+		"FromFile": "assets/Options/Modular_Waterfalls/All_Seasons/yri/LightBlue/Waterfalls_yri_LBlue.tbin",
+		"When": { "WaterfallColor": "yri_lblue"},
+		"ToArea": { "X": 0, "Y": 0, "Width": 80, "Height": 70 }
+	},
+	{    
+		"Action": "EditMap",
+		"Target": "Maps/Haunted_Woods_Farm",
+		"FromFile": "assets/Options/Modular_Waterfalls/All_Seasons/yri/Pastel/Waterfalls_yri_Pastel.tbin",
+		"When": { "WaterfallColor": "yri_pastel"},
+		"ToArea": { "X": 0, "Y": 0, "Width": 80, "Height": 70 }
+	},
+	{    
+		"Action": "EditMap",
+		"Target": "Maps/Haunted_Woods_Farm",
+		"FromFile": "assets/Options/Modular_Waterfalls/All_Seasons/yri/Pink/Waterfalls_yri_Pink.tbin",
+		"When": { "WaterfallColor": "yri_pink"},
+		"ToArea": { "X": 0, "Y": 0, "Width": 80, "Height": 70 }
+	},
+	{    
+		"Action": "EditMap",
+		"Target": "Maps/Haunted_Woods_Farm",
+		"FromFile": "assets/Options/Modular_Waterfalls/All_Seasons/yri/Purple/Waterfalls_yri_Purple.tbin",
+		"When": { "WaterfallColor": "yri_purple"},
+		"ToArea": { "X": 0, "Y": 0, "Width": 80, "Height": 70 }
+	},
+	{    
+		"Action": "EditMap",
+		"Target": "Maps/Haunted_Woods_Farm",
+		"FromFile": "assets/Options/Modular_Waterfalls/All_Seasons/yri/Red/Waterfalls_yri_Red.tbin",
+		"When": { "WaterfallColor": "yri_red"},
+		"ToArea": { "X": 0, "Y": 0, "Width": 80, "Height": 70 }
+	},
+	{    
+		"Action": "EditMap",
+		"Target": "Maps/Haunted_Woods_Farm",
+		"FromFile": "assets/Options/Modular_Waterfalls/All_Seasons/yri/Rose/Waterfalls_yri_rose.tbin",
+		"When": { "WaterfallColor": "yri_rose"},
+		"ToArea": { "X": 0, "Y": 0, "Width": 80, "Height": 70 }
+	}
+	]
+}

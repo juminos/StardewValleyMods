@@ -1,0 +1,1163 @@
+{
+  "Format": "2.0",
+  "Changes": [
+    {
+      "Action": "EditData",
+      "Target": "Data/FarmAnimals",
+      "TargetField": [
+        "Blue Chicken",
+        "Skins"
+      ],
+      "Entries": {
+        "juminos.MoreAnimalSkins_BlueChicken_1": {
+          "ID": "juminos.MoreAnimalSkins_BlueChicken_1",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BlueChicken_1",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBlueChicken_1"
+        },
+        "juminos.MoreAnimalSkins_BlueChicken_10": {
+          "ID": "juminos.MoreAnimalSkins_BlueChicken_10",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BlueChicken_10",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBlueChicken_10"
+        },
+        "juminos.MoreAnimalSkins_BlueChicken_11": {
+          "ID": "juminos.MoreAnimalSkins_BlueChicken_11",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BlueChicken_11",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBlueChicken_11"
+        },
+        "juminos.MoreAnimalSkins_BlueChicken_2": {
+          "ID": "juminos.MoreAnimalSkins_BlueChicken_2",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BlueChicken_2",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBlueChicken_2"
+        },
+        "juminos.MoreAnimalSkins_BlueChicken_3": {
+          "ID": "juminos.MoreAnimalSkins_BlueChicken_3",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BlueChicken_3",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBlueChicken_3"
+        },
+        "juminos.MoreAnimalSkins_BlueChicken_4": {
+          "ID": "juminos.MoreAnimalSkins_BlueChicken_4",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BlueChicken_4",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBlueChicken_4"
+        },
+        "juminos.MoreAnimalSkins_BlueChicken_5": {
+          "ID": "juminos.MoreAnimalSkins_BlueChicken_5",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BlueChicken_5",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBlueChicken_5"
+        },
+        "juminos.MoreAnimalSkins_BlueChicken_6": {
+          "ID": "juminos.MoreAnimalSkins_BlueChicken_6",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BlueChicken_6",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBlueChicken_6"
+        },
+        "juminos.MoreAnimalSkins_BlueChicken_7": {
+          "ID": "juminos.MoreAnimalSkins_BlueChicken_7",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BlueChicken_7",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBlueChicken_7"
+        },
+        "juminos.MoreAnimalSkins_BlueChicken_8": {
+          "ID": "juminos.MoreAnimalSkins_BlueChicken_8",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BlueChicken_8",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBlueChicken_8"
+        },
+        "juminos.MoreAnimalSkins_BlueChicken_9": {
+          "ID": "juminos.MoreAnimalSkins_BlueChicken_9",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BlueChicken_9",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBlueChicken_9"
+        }
+      }
+    },
+    {
+      "Action": "Load",
+      "Target": "Mods/juminos.MoreAnimalSkins/BlueChicken_1, Mods/juminos.MoreAnimalSkins/BabyBlueChicken_1, Mods/juminos.MoreAnimalSkins/BlueChicken_10, Mods/juminos.MoreAnimalSkins/BabyBlueChicken_10, Mods/juminos.MoreAnimalSkins/BlueChicken_11, Mods/juminos.MoreAnimalSkins/BabyBlueChicken_11, Mods/juminos.MoreAnimalSkins/BlueChicken_2, Mods/juminos.MoreAnimalSkins/BabyBlueChicken_2, Mods/juminos.MoreAnimalSkins/BlueChicken_3, Mods/juminos.MoreAnimalSkins/BabyBlueChicken_3, Mods/juminos.MoreAnimalSkins/BlueChicken_4, Mods/juminos.MoreAnimalSkins/BabyBlueChicken_4, Mods/juminos.MoreAnimalSkins/BlueChicken_5, Mods/juminos.MoreAnimalSkins/BabyBlueChicken_5, Mods/juminos.MoreAnimalSkins/BlueChicken_6, Mods/juminos.MoreAnimalSkins/BabyBlueChicken_6, Mods/juminos.MoreAnimalSkins/BlueChicken_7, Mods/juminos.MoreAnimalSkins/BabyBlueChicken_7, Mods/juminos.MoreAnimalSkins/BlueChicken_8, Mods/juminos.MoreAnimalSkins/BabyBlueChicken_8, Mods/juminos.MoreAnimalSkins/BlueChicken_9, Mods/juminos.MoreAnimalSkins/BabyBlueChicken_9",
+      "FromFile": "assets/BlueChicken/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/FarmAnimals",
+      "TargetField": [
+        "Brown Chicken",
+        "Skins"
+      ],
+      "Entries": {
+        "juminos.MoreAnimalSkins_BrownChicken_1": {
+          "ID": "juminos.MoreAnimalSkins_BrownChicken_1",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BrownChicken_1",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBrownChicken_1"
+        },
+        "juminos.MoreAnimalSkins_BrownChicken_10": {
+          "ID": "juminos.MoreAnimalSkins_BrownChicken_10",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BrownChicken_10",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBrownChicken_10"
+        },
+        "juminos.MoreAnimalSkins_BrownChicken_11": {
+          "ID": "juminos.MoreAnimalSkins_BrownChicken_11",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BrownChicken_11",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBrownChicken_11"
+        },
+        "juminos.MoreAnimalSkins_BrownChicken_12": {
+          "ID": "juminos.MoreAnimalSkins_BrownChicken_12",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BrownChicken_12",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBrownChicken_12"
+        },
+        "juminos.MoreAnimalSkins_BrownChicken_2": {
+          "ID": "juminos.MoreAnimalSkins_BrownChicken_2",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BrownChicken_2",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBrownChicken_2"
+        },
+        "juminos.MoreAnimalSkins_BrownChicken_200": {
+          "ID": "juminos.MoreAnimalSkins_BrownChicken_200",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BrownChicken_200",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBrownChicken_200"
+        },
+        "juminos.MoreAnimalSkins_BrownChicken_201": {
+          "ID": "juminos.MoreAnimalSkins_BrownChicken_201",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BrownChicken_201",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBrownChicken_201"
+        },
+        "juminos.MoreAnimalSkins_BrownChicken_202": {
+          "ID": "juminos.MoreAnimalSkins_BrownChicken_202",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BrownChicken_202",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBrownChicken_202"
+        },
+        "juminos.MoreAnimalSkins_BrownChicken_203": {
+          "ID": "juminos.MoreAnimalSkins_BrownChicken_203",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BrownChicken_203",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBrownChicken_203"
+        },
+        "juminos.MoreAnimalSkins_BrownChicken_204": {
+          "ID": "juminos.MoreAnimalSkins_BrownChicken_204",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BrownChicken_204",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBrownChicken_204"
+        },
+        "juminos.MoreAnimalSkins_BrownChicken_205": {
+          "ID": "juminos.MoreAnimalSkins_BrownChicken_205",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BrownChicken_205",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBrownChicken_205"
+        },
+        "juminos.MoreAnimalSkins_BrownChicken_206": {
+          "ID": "juminos.MoreAnimalSkins_BrownChicken_206",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BrownChicken_206",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBrownChicken_206"
+        },
+        "juminos.MoreAnimalSkins_BrownChicken_207": {
+          "ID": "juminos.MoreAnimalSkins_BrownChicken_207",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BrownChicken_207",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBrownChicken_207"
+        },
+        "juminos.MoreAnimalSkins_BrownChicken_208": {
+          "ID": "juminos.MoreAnimalSkins_BrownChicken_208",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BrownChicken_208",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBrownChicken_208"
+        },
+        "juminos.MoreAnimalSkins_BrownChicken_209": {
+          "ID": "juminos.MoreAnimalSkins_BrownChicken_209",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BrownChicken_209",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBrownChicken_209"
+        },
+        "juminos.MoreAnimalSkins_BrownChicken_210": {
+          "ID": "juminos.MoreAnimalSkins_BrownChicken_210",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BrownChicken_210",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBrownChicken_210"
+        },
+        "juminos.MoreAnimalSkins_BrownChicken_211": {
+          "ID": "juminos.MoreAnimalSkins_BrownChicken_211",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BrownChicken_211",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBrownChicken_211"
+        },
+        "juminos.MoreAnimalSkins_BrownChicken_212": {
+          "ID": "juminos.MoreAnimalSkins_BrownChicken_212",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BrownChicken_212",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBrownChicken_212"
+        },
+        "juminos.MoreAnimalSkins_BrownChicken_213": {
+          "ID": "juminos.MoreAnimalSkins_BrownChicken_213",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BrownChicken_213",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBrownChicken_213"
+        },
+        "juminos.MoreAnimalSkins_BrownChicken_214": {
+          "ID": "juminos.MoreAnimalSkins_BrownChicken_214",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BrownChicken_214",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBrownChicken_214"
+        },
+        "juminos.MoreAnimalSkins_BrownChicken_215": {
+          "ID": "juminos.MoreAnimalSkins_BrownChicken_215",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BrownChicken_215",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBrownChicken_215"
+        },
+        "juminos.MoreAnimalSkins_BrownChicken_216": {
+          "ID": "juminos.MoreAnimalSkins_BrownChicken_216",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BrownChicken_216",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBrownChicken_216"
+        },
+        "juminos.MoreAnimalSkins_BrownChicken_217": {
+          "ID": "juminos.MoreAnimalSkins_BrownChicken_217",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BrownChicken_217",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBrownChicken_217"
+        },
+        "juminos.MoreAnimalSkins_BrownChicken_3": {
+          "ID": "juminos.MoreAnimalSkins_BrownChicken_3",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BrownChicken_3",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBrownChicken_3"
+        },
+        "juminos.MoreAnimalSkins_BrownChicken_4": {
+          "ID": "juminos.MoreAnimalSkins_BrownChicken_4",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BrownChicken_4",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBrownChicken_4"
+        },
+        "juminos.MoreAnimalSkins_BrownChicken_5": {
+          "ID": "juminos.MoreAnimalSkins_BrownChicken_5",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BrownChicken_5",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBrownChicken_5"
+        },
+        "juminos.MoreAnimalSkins_BrownChicken_6": {
+          "ID": "juminos.MoreAnimalSkins_BrownChicken_6",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BrownChicken_6",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBrownChicken_6"
+        },
+        "juminos.MoreAnimalSkins_BrownChicken_7": {
+          "ID": "juminos.MoreAnimalSkins_BrownChicken_7",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BrownChicken_7",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBrownChicken_7"
+        },
+        "juminos.MoreAnimalSkins_BrownChicken_8": {
+          "ID": "juminos.MoreAnimalSkins_BrownChicken_8",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BrownChicken_8",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBrownChicken_8"
+        },
+        "juminos.MoreAnimalSkins_BrownChicken_9": {
+          "ID": "juminos.MoreAnimalSkins_BrownChicken_9",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BrownChicken_9",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBrownChicken_9"
+        }
+      }
+    },
+    {
+      "Action": "Load",
+      "Target": "Mods/juminos.MoreAnimalSkins/BrownChicken_1, Mods/juminos.MoreAnimalSkins/BabyBrownChicken_1, Mods/juminos.MoreAnimalSkins/BrownChicken_10, Mods/juminos.MoreAnimalSkins/BabyBrownChicken_10, Mods/juminos.MoreAnimalSkins/BrownChicken_11, Mods/juminos.MoreAnimalSkins/BabyBrownChicken_11, Mods/juminos.MoreAnimalSkins/BrownChicken_12, Mods/juminos.MoreAnimalSkins/BabyBrownChicken_12, Mods/juminos.MoreAnimalSkins/BrownChicken_2, Mods/juminos.MoreAnimalSkins/BabyBrownChicken_2, Mods/juminos.MoreAnimalSkins/BrownChicken_200, Mods/juminos.MoreAnimalSkins/BabyBrownChicken_200, Mods/juminos.MoreAnimalSkins/BrownChicken_201, Mods/juminos.MoreAnimalSkins/BabyBrownChicken_201, Mods/juminos.MoreAnimalSkins/BrownChicken_202, Mods/juminos.MoreAnimalSkins/BabyBrownChicken_202, Mods/juminos.MoreAnimalSkins/BrownChicken_203, Mods/juminos.MoreAnimalSkins/BabyBrownChicken_203, Mods/juminos.MoreAnimalSkins/BrownChicken_204, Mods/juminos.MoreAnimalSkins/BabyBrownChicken_204, Mods/juminos.MoreAnimalSkins/BrownChicken_205, Mods/juminos.MoreAnimalSkins/BabyBrownChicken_205, Mods/juminos.MoreAnimalSkins/BrownChicken_206, Mods/juminos.MoreAnimalSkins/BabyBrownChicken_206, Mods/juminos.MoreAnimalSkins/BrownChicken_207, Mods/juminos.MoreAnimalSkins/BabyBrownChicken_207, Mods/juminos.MoreAnimalSkins/BrownChicken_208, Mods/juminos.MoreAnimalSkins/BabyBrownChicken_208, Mods/juminos.MoreAnimalSkins/BrownChicken_209, Mods/juminos.MoreAnimalSkins/BabyBrownChicken_209, Mods/juminos.MoreAnimalSkins/BrownChicken_210, Mods/juminos.MoreAnimalSkins/BabyBrownChicken_210, Mods/juminos.MoreAnimalSkins/BrownChicken_211, Mods/juminos.MoreAnimalSkins/BabyBrownChicken_211, Mods/juminos.MoreAnimalSkins/BrownChicken_212, Mods/juminos.MoreAnimalSkins/BabyBrownChicken_212, Mods/juminos.MoreAnimalSkins/BrownChicken_213, Mods/juminos.MoreAnimalSkins/BabyBrownChicken_213, Mods/juminos.MoreAnimalSkins/BrownChicken_214, Mods/juminos.MoreAnimalSkins/BabyBrownChicken_214, Mods/juminos.MoreAnimalSkins/BrownChicken_215, Mods/juminos.MoreAnimalSkins/BabyBrownChicken_215, Mods/juminos.MoreAnimalSkins/BrownChicken_216, Mods/juminos.MoreAnimalSkins/BabyBrownChicken_216, Mods/juminos.MoreAnimalSkins/BrownChicken_217, Mods/juminos.MoreAnimalSkins/BabyBrownChicken_217, Mods/juminos.MoreAnimalSkins/BrownChicken_3, Mods/juminos.MoreAnimalSkins/BabyBrownChicken_3, Mods/juminos.MoreAnimalSkins/BrownChicken_4, Mods/juminos.MoreAnimalSkins/BabyBrownChicken_4, Mods/juminos.MoreAnimalSkins/BrownChicken_5, Mods/juminos.MoreAnimalSkins/BabyBrownChicken_5, Mods/juminos.MoreAnimalSkins/BrownChicken_6, Mods/juminos.MoreAnimalSkins/BabyBrownChicken_6, Mods/juminos.MoreAnimalSkins/BrownChicken_7, Mods/juminos.MoreAnimalSkins/BabyBrownChicken_7, Mods/juminos.MoreAnimalSkins/BrownChicken_8, Mods/juminos.MoreAnimalSkins/BabyBrownChicken_8, Mods/juminos.MoreAnimalSkins/BrownChicken_9, Mods/juminos.MoreAnimalSkins/BabyBrownChicken_9",
+      "FromFile": "assets/BrownChicken/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/FarmAnimals",
+      "TargetField": [
+        "Brown Cow",
+        "Skins"
+      ],
+      "Entries": {
+        "juminos.MoreAnimalSkins_BrownCow1": {
+          "ID": "juminos.MoreAnimalSkins_BrownCow1",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BrownCow1",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBrownCow1"
+        },
+        "juminos.MoreAnimalSkins_BrownCow10": {
+          "ID": "juminos.MoreAnimalSkins_BrownCow10",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BrownCow10",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBrownCow10"
+        },
+        "juminos.MoreAnimalSkins_BrownCow11": {
+          "ID": "juminos.MoreAnimalSkins_BrownCow11",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BrownCow11",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBrownCow11"
+        },
+        "juminos.MoreAnimalSkins_BrownCow12": {
+          "ID": "juminos.MoreAnimalSkins_BrownCow12",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BrownCow12",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBrownCow12"
+        },
+        "juminos.MoreAnimalSkins_BrownCow13": {
+          "ID": "juminos.MoreAnimalSkins_BrownCow13",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BrownCow13",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBrownCow13"
+        },
+        "juminos.MoreAnimalSkins_BrownCow14": {
+          "ID": "juminos.MoreAnimalSkins_BrownCow14",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BrownCow14",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBrownCow14"
+        },
+        "juminos.MoreAnimalSkins_BrownCow15": {
+          "ID": "juminos.MoreAnimalSkins_BrownCow15",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BrownCow15",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBrownCow15"
+        },
+        "juminos.MoreAnimalSkins_BrownCow16": {
+          "ID": "juminos.MoreAnimalSkins_BrownCow16",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BrownCow16",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBrownCow16"
+        },
+        "juminos.MoreAnimalSkins_BrownCow17": {
+          "ID": "juminos.MoreAnimalSkins_BrownCow17",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BrownCow17",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBrownCow17"
+        },
+        "juminos.MoreAnimalSkins_BrownCow2": {
+          "ID": "juminos.MoreAnimalSkins_BrownCow2",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BrownCow2",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBrownCow2"
+        },
+        "juminos.MoreAnimalSkins_BrownCow23": {
+          "ID": "juminos.MoreAnimalSkins_BrownCow23",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BrownCow23",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBrownCow23"
+        },
+        "juminos.MoreAnimalSkins_BrownCow3": {
+          "ID": "juminos.MoreAnimalSkins_BrownCow3",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BrownCow3",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBrownCow3"
+        },
+        "juminos.MoreAnimalSkins_BrownCow4": {
+          "ID": "juminos.MoreAnimalSkins_BrownCow4",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BrownCow4",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBrownCow4"
+        },
+        "juminos.MoreAnimalSkins_BrownCow5": {
+          "ID": "juminos.MoreAnimalSkins_BrownCow5",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BrownCow5",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBrownCow5"
+        },
+        "juminos.MoreAnimalSkins_BrownCow6": {
+          "ID": "juminos.MoreAnimalSkins_BrownCow6",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BrownCow6",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBrownCow6"
+        },
+        "juminos.MoreAnimalSkins_BrownCow7": {
+          "ID": "juminos.MoreAnimalSkins_BrownCow7",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BrownCow7",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBrownCow7"
+        },
+        "juminos.MoreAnimalSkins_BrownCow8": {
+          "ID": "juminos.MoreAnimalSkins_BrownCow8",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BrownCow8",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBrownCow8"
+        },
+        "juminos.MoreAnimalSkins_BrownCow9": {
+          "ID": "juminos.MoreAnimalSkins_BrownCow9",
+          "Texture": "Mods/juminos.MoreAnimalSkins/BrownCow9",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyBrownCow9"
+        }
+      }
+    },
+    {
+      "Action": "Load",
+      "Target": "Mods/juminos.MoreAnimalSkins/BrownCow1, Mods/juminos.MoreAnimalSkins/BabyBrownCow1, Mods/juminos.MoreAnimalSkins/BrownCow10, Mods/juminos.MoreAnimalSkins/BabyBrownCow10, Mods/juminos.MoreAnimalSkins/BrownCow11, Mods/juminos.MoreAnimalSkins/BabyBrownCow11, Mods/juminos.MoreAnimalSkins/BrownCow12, Mods/juminos.MoreAnimalSkins/BabyBrownCow12, Mods/juminos.MoreAnimalSkins/BrownCow13, Mods/juminos.MoreAnimalSkins/BabyBrownCow13, Mods/juminos.MoreAnimalSkins/BrownCow14, Mods/juminos.MoreAnimalSkins/BabyBrownCow14, Mods/juminos.MoreAnimalSkins/BrownCow15, Mods/juminos.MoreAnimalSkins/BabyBrownCow15, Mods/juminos.MoreAnimalSkins/BrownCow16, Mods/juminos.MoreAnimalSkins/BabyBrownCow16, Mods/juminos.MoreAnimalSkins/BrownCow17, Mods/juminos.MoreAnimalSkins/BabyBrownCow17, Mods/juminos.MoreAnimalSkins/BrownCow2, Mods/juminos.MoreAnimalSkins/BabyBrownCow2, Mods/juminos.MoreAnimalSkins/BrownCow23, Mods/juminos.MoreAnimalSkins/BabyBrownCow23, Mods/juminos.MoreAnimalSkins/BrownCow3, Mods/juminos.MoreAnimalSkins/BabyBrownCow3, Mods/juminos.MoreAnimalSkins/BrownCow4, Mods/juminos.MoreAnimalSkins/BabyBrownCow4, Mods/juminos.MoreAnimalSkins/BrownCow5, Mods/juminos.MoreAnimalSkins/BabyBrownCow5, Mods/juminos.MoreAnimalSkins/BrownCow6, Mods/juminos.MoreAnimalSkins/BabyBrownCow6, Mods/juminos.MoreAnimalSkins/BrownCow7, Mods/juminos.MoreAnimalSkins/BabyBrownCow7, Mods/juminos.MoreAnimalSkins/BrownCow8, Mods/juminos.MoreAnimalSkins/BabyBrownCow8, Mods/juminos.MoreAnimalSkins/BrownCow9, Mods/juminos.MoreAnimalSkins/BabyBrownCow9",
+      "FromFile": "assets/BrownCow/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/FarmAnimals",
+      "TargetField": [
+        "Dinosaur",
+        "Skins"
+      ],
+      "Entries": {
+        "juminos.MoreAnimalSkins_Dinosaur_1": {
+          "ID": "juminos.MoreAnimalSkins_Dinosaur_1",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Dinosaur_1",
+          "HarvestedTexture": null,
+          "BabyTexture": null
+        },
+        "juminos.MoreAnimalSkins_Dinosaur_2": {
+          "ID": "juminos.MoreAnimalSkins_Dinosaur_2",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Dinosaur_2",
+          "HarvestedTexture": null,
+          "BabyTexture": null
+        },
+        "juminos.MoreAnimalSkins_Dinosaur_3": {
+          "ID": "juminos.MoreAnimalSkins_Dinosaur_3",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Dinosaur_3",
+          "HarvestedTexture": null,
+          "BabyTexture": null
+        },
+        "juminos.MoreAnimalSkins_Dinosaur_4": {
+          "ID": "juminos.MoreAnimalSkins_Dinosaur_4",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Dinosaur_4",
+          "HarvestedTexture": null,
+          "BabyTexture": null
+        },
+        "juminos.MoreAnimalSkins_Dinosaur_5": {
+          "ID": "juminos.MoreAnimalSkins_Dinosaur_5",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Dinosaur_5",
+          "HarvestedTexture": null,
+          "BabyTexture": null
+        },
+        "juminos.MoreAnimalSkins_Dinosaur_6": {
+          "ID": "juminos.MoreAnimalSkins_Dinosaur_6",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Dinosaur_6",
+          "HarvestedTexture": null,
+          "BabyTexture": null
+        },
+        "juminos.MoreAnimalSkins_Dinosaur_7": {
+          "ID": "juminos.MoreAnimalSkins_Dinosaur_7",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Dinosaur_7",
+          "HarvestedTexture": null,
+          "BabyTexture": null
+        }
+      }
+    },
+    {
+      "Action": "Load",
+      "Target": "Mods/juminos.MoreAnimalSkins/Dinosaur_1, Mods/juminos.MoreAnimalSkins/Dinosaur_2, Mods/juminos.MoreAnimalSkins/Dinosaur_3, Mods/juminos.MoreAnimalSkins/Dinosaur_4, Mods/juminos.MoreAnimalSkins/Dinosaur_5, Mods/juminos.MoreAnimalSkins/Dinosaur_6, Mods/juminos.MoreAnimalSkins/Dinosaur_7",
+      "FromFile": "assets/Dinosaur/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/FarmAnimals",
+      "TargetField": [
+        "Goat",
+        "Skins"
+      ],
+      "Entries": {
+        "juminos.MoreAnimalSkins_Goat_1": {
+          "ID": "juminos.MoreAnimalSkins_Goat_1",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Goat_1",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyGoat_1"
+        },
+        "juminos.MoreAnimalSkins_Goat_10": {
+          "ID": "juminos.MoreAnimalSkins_Goat_10",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Goat_10",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyGoat_10"
+        },
+        "juminos.MoreAnimalSkins_Goat_11": {
+          "ID": "juminos.MoreAnimalSkins_Goat_11",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Goat_11",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyGoat_11"
+        },
+        "juminos.MoreAnimalSkins_Goat_12": {
+          "ID": "juminos.MoreAnimalSkins_Goat_12",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Goat_12",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyGoat_12"
+        },
+        "juminos.MoreAnimalSkins_Goat_13": {
+          "ID": "juminos.MoreAnimalSkins_Goat_13",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Goat_13",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyGoat_13"
+        },
+        "juminos.MoreAnimalSkins_Goat_19": {
+          "ID": "juminos.MoreAnimalSkins_Goat_19",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Goat_19",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyGoat_19"
+        },
+        "juminos.MoreAnimalSkins_Goat_2": {
+          "ID": "juminos.MoreAnimalSkins_Goat_2",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Goat_2",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyGoat_2"
+        },
+        "juminos.MoreAnimalSkins_Goat_3": {
+          "ID": "juminos.MoreAnimalSkins_Goat_3",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Goat_3",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyGoat_3"
+        },
+        "juminos.MoreAnimalSkins_Goat_4": {
+          "ID": "juminos.MoreAnimalSkins_Goat_4",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Goat_4",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyGoat_4"
+        },
+        "juminos.MoreAnimalSkins_Goat_5": {
+          "ID": "juminos.MoreAnimalSkins_Goat_5",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Goat_5",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyGoat_5"
+        },
+        "juminos.MoreAnimalSkins_Goat_6": {
+          "ID": "juminos.MoreAnimalSkins_Goat_6",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Goat_6",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyGoat_6"
+        },
+        "juminos.MoreAnimalSkins_Goat_7": {
+          "ID": "juminos.MoreAnimalSkins_Goat_7",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Goat_7",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyGoat_7"
+        },
+        "juminos.MoreAnimalSkins_Goat_8": {
+          "ID": "juminos.MoreAnimalSkins_Goat_8",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Goat_8",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyGoat_8"
+        },
+        "juminos.MoreAnimalSkins_Goat_9": {
+          "ID": "juminos.MoreAnimalSkins_Goat_9",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Goat_9",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyGoat_9"
+        }
+      }
+    },
+    {
+      "Action": "Load",
+      "Target": "Mods/juminos.MoreAnimalSkins/Goat_1, Mods/juminos.MoreAnimalSkins/BabyGoat_1, Mods/juminos.MoreAnimalSkins/Goat_10, Mods/juminos.MoreAnimalSkins/BabyGoat_10, Mods/juminos.MoreAnimalSkins/Goat_11, Mods/juminos.MoreAnimalSkins/BabyGoat_11, Mods/juminos.MoreAnimalSkins/Goat_12, Mods/juminos.MoreAnimalSkins/BabyGoat_12, Mods/juminos.MoreAnimalSkins/Goat_13, Mods/juminos.MoreAnimalSkins/BabyGoat_13, Mods/juminos.MoreAnimalSkins/Goat_19, Mods/juminos.MoreAnimalSkins/BabyGoat_19, Mods/juminos.MoreAnimalSkins/Goat_2, Mods/juminos.MoreAnimalSkins/BabyGoat_2, Mods/juminos.MoreAnimalSkins/Goat_3, Mods/juminos.MoreAnimalSkins/BabyGoat_3, Mods/juminos.MoreAnimalSkins/Goat_4, Mods/juminos.MoreAnimalSkins/BabyGoat_4, Mods/juminos.MoreAnimalSkins/Goat_5, Mods/juminos.MoreAnimalSkins/BabyGoat_5, Mods/juminos.MoreAnimalSkins/Goat_6, Mods/juminos.MoreAnimalSkins/BabyGoat_6, Mods/juminos.MoreAnimalSkins/Goat_7, Mods/juminos.MoreAnimalSkins/BabyGoat_7, Mods/juminos.MoreAnimalSkins/Goat_8, Mods/juminos.MoreAnimalSkins/BabyGoat_8, Mods/juminos.MoreAnimalSkins/Goat_9, Mods/juminos.MoreAnimalSkins/BabyGoat_9",
+      "FromFile": "assets/Goat/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/FarmAnimals",
+      "TargetField": [
+        "Golden Chicken",
+        "Skins"
+      ],
+      "Entries": {
+        "juminos.MoreAnimalSkins_GoldenChicken_1": {
+          "ID": "juminos.MoreAnimalSkins_GoldenChicken_1",
+          "Texture": "Mods/juminos.MoreAnimalSkins/GoldenChicken_1",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyGoldenChicken_1"
+        }
+      }
+    },
+    {
+      "Action": "Load",
+      "Target": "Mods/juminos.MoreAnimalSkins/GoldenChicken_1, Mods/juminos.MoreAnimalSkins/BabyGoldenChicken_1",
+      "FromFile": "assets/GoldenChicken/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/FarmAnimals",
+      "TargetField": [
+        "Ostrich",
+        "Skins"
+      ],
+      "Entries": {
+        "juminos.MoreAnimalSkins_Ostrich_1": {
+          "ID": "juminos.MoreAnimalSkins_Ostrich_1",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Ostrich_1",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyOstrich_1"
+        },
+        "juminos.MoreAnimalSkins_Ostrich_2": {
+          "ID": "juminos.MoreAnimalSkins_Ostrich_2",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Ostrich_2",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyOstrich_2"
+        },
+        "juminos.MoreAnimalSkins_Ostrich_3": {
+          "ID": "juminos.MoreAnimalSkins_Ostrich_3",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Ostrich_3",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyOstrich_3"
+        },
+        "juminos.MoreAnimalSkins_Ostrich_4": {
+          "ID": "juminos.MoreAnimalSkins_Ostrich_4",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Ostrich_4",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyOstrich_4"
+        }
+      }
+    },
+    {
+      "Action": "Load",
+      "Target": "Mods/juminos.MoreAnimalSkins/Ostrich_1, Mods/juminos.MoreAnimalSkins/BabyOstrich_1, Mods/juminos.MoreAnimalSkins/Ostrich_2, Mods/juminos.MoreAnimalSkins/BabyOstrich_2, Mods/juminos.MoreAnimalSkins/Ostrich_3, Mods/juminos.MoreAnimalSkins/BabyOstrich_3, Mods/juminos.MoreAnimalSkins/Ostrich_4, Mods/juminos.MoreAnimalSkins/BabyOstrich_4",
+      "FromFile": "assets/Ostrich/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/FarmAnimals",
+      "TargetField": [
+        "Pig",
+        "Skins"
+      ],
+      "Entries": {
+        "juminos.MoreAnimalSkins_Pig_1": {
+          "ID": "juminos.MoreAnimalSkins_Pig_1",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Pig_1",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyPig_1"
+        },
+        "juminos.MoreAnimalSkins_Pig_10": {
+          "ID": "juminos.MoreAnimalSkins_Pig_10",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Pig_10",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyPig_10"
+        },
+        "juminos.MoreAnimalSkins_Pig_11": {
+          "ID": "juminos.MoreAnimalSkins_Pig_11",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Pig_11",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyPig_11"
+        },
+        "juminos.MoreAnimalSkins_Pig_12": {
+          "ID": "juminos.MoreAnimalSkins_Pig_12",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Pig_12",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyPig_12"
+        },
+        "juminos.MoreAnimalSkins_Pig_13": {
+          "ID": "juminos.MoreAnimalSkins_Pig_13",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Pig_13",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyPig_13"
+        },
+        "juminos.MoreAnimalSkins_Pig_19": {
+          "ID": "juminos.MoreAnimalSkins_Pig_19",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Pig_19",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyPig_19"
+        },
+        "juminos.MoreAnimalSkins_Pig_2": {
+          "ID": "juminos.MoreAnimalSkins_Pig_2",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Pig_2",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyPig_2"
+        },
+        "juminos.MoreAnimalSkins_Pig_3": {
+          "ID": "juminos.MoreAnimalSkins_Pig_3",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Pig_3",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyPig_3"
+        },
+        "juminos.MoreAnimalSkins_Pig_4": {
+          "ID": "juminos.MoreAnimalSkins_Pig_4",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Pig_4",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyPig_4"
+        },
+        "juminos.MoreAnimalSkins_Pig_5": {
+          "ID": "juminos.MoreAnimalSkins_Pig_5",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Pig_5",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyPig_5"
+        },
+        "juminos.MoreAnimalSkins_Pig_6": {
+          "ID": "juminos.MoreAnimalSkins_Pig_6",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Pig_6",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyPig_6"
+        },
+        "juminos.MoreAnimalSkins_Pig_7": {
+          "ID": "juminos.MoreAnimalSkins_Pig_7",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Pig_7",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyPig_7"
+        },
+        "juminos.MoreAnimalSkins_Pig_8": {
+          "ID": "juminos.MoreAnimalSkins_Pig_8",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Pig_8",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyPig_8"
+        },
+        "juminos.MoreAnimalSkins_Pig_9": {
+          "ID": "juminos.MoreAnimalSkins_Pig_9",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Pig_9",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyPig_9"
+        }
+      }
+    },
+    {
+      "Action": "Load",
+      "Target": "Mods/juminos.MoreAnimalSkins/Pig_1, Mods/juminos.MoreAnimalSkins/BabyPig_1, Mods/juminos.MoreAnimalSkins/Pig_10, Mods/juminos.MoreAnimalSkins/BabyPig_10, Mods/juminos.MoreAnimalSkins/Pig_11, Mods/juminos.MoreAnimalSkins/BabyPig_11, Mods/juminos.MoreAnimalSkins/Pig_12, Mods/juminos.MoreAnimalSkins/BabyPig_12, Mods/juminos.MoreAnimalSkins/Pig_13, Mods/juminos.MoreAnimalSkins/BabyPig_13, Mods/juminos.MoreAnimalSkins/Pig_19, Mods/juminos.MoreAnimalSkins/BabyPig_19, Mods/juminos.MoreAnimalSkins/Pig_2, Mods/juminos.MoreAnimalSkins/BabyPig_2, Mods/juminos.MoreAnimalSkins/Pig_3, Mods/juminos.MoreAnimalSkins/BabyPig_3, Mods/juminos.MoreAnimalSkins/Pig_4, Mods/juminos.MoreAnimalSkins/BabyPig_4, Mods/juminos.MoreAnimalSkins/Pig_5, Mods/juminos.MoreAnimalSkins/BabyPig_5, Mods/juminos.MoreAnimalSkins/Pig_6, Mods/juminos.MoreAnimalSkins/BabyPig_6, Mods/juminos.MoreAnimalSkins/Pig_7, Mods/juminos.MoreAnimalSkins/BabyPig_7, Mods/juminos.MoreAnimalSkins/Pig_8, Mods/juminos.MoreAnimalSkins/BabyPig_8, Mods/juminos.MoreAnimalSkins/Pig_9, Mods/juminos.MoreAnimalSkins/BabyPig_9",
+      "FromFile": "assets/Pig/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/FarmAnimals",
+      "TargetField": [
+        "Sheep",
+        "Skins"
+      ],
+      "Entries": {
+        "juminos.MoreAnimalSkins_Sheep_1": {
+          "ID": "juminos.MoreAnimalSkins_Sheep_1",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Sheep_1",
+          "HarvestedTexture": "Mods/juminos.MoreAnimalSkins/ShearedSheep_1",
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabySheep_1"
+        },
+        "juminos.MoreAnimalSkins_Sheep_15": {
+          "ID": "juminos.MoreAnimalSkins_Sheep_15",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Sheep_15",
+          "HarvestedTexture": "Mods/juminos.MoreAnimalSkins/ShearedSheep_15",
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabySheep_15"
+        },
+        "juminos.MoreAnimalSkins_Sheep_2": {
+          "ID": "juminos.MoreAnimalSkins_Sheep_2",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Sheep_2",
+          "HarvestedTexture": "Mods/juminos.MoreAnimalSkins/ShearedSheep_2",
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabySheep_2"
+        },
+        "juminos.MoreAnimalSkins_Sheep_3": {
+          "ID": "juminos.MoreAnimalSkins_Sheep_3",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Sheep_3",
+          "HarvestedTexture": "Mods/juminos.MoreAnimalSkins/ShearedSheep_3",
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabySheep_3"
+        },
+        "juminos.MoreAnimalSkins_Sheep_4": {
+          "ID": "juminos.MoreAnimalSkins_Sheep_4",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Sheep_4",
+          "HarvestedTexture": "Mods/juminos.MoreAnimalSkins/ShearedSheep_4",
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabySheep_4"
+        },
+        "juminos.MoreAnimalSkins_Sheep_5": {
+          "ID": "juminos.MoreAnimalSkins_Sheep_5",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Sheep_5",
+          "HarvestedTexture": "Mods/juminos.MoreAnimalSkins/ShearedSheep_5",
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabySheep_5"
+        },
+        "juminos.MoreAnimalSkins_Sheep_6": {
+          "ID": "juminos.MoreAnimalSkins_Sheep_6",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Sheep_6",
+          "HarvestedTexture": "Mods/juminos.MoreAnimalSkins/ShearedSheep_6",
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabySheep_6"
+        },
+        "juminos.MoreAnimalSkins_Sheep_7": {
+          "ID": "juminos.MoreAnimalSkins_Sheep_7",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Sheep_7",
+          "HarvestedTexture": "Mods/juminos.MoreAnimalSkins/ShearedSheep_7",
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabySheep_7"
+        },
+        "juminos.MoreAnimalSkins_Sheep_8": {
+          "ID": "juminos.MoreAnimalSkins_Sheep_8",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Sheep_8",
+          "HarvestedTexture": "Mods/juminos.MoreAnimalSkins/ShearedSheep_8",
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabySheep_8"
+        },
+        "juminos.MoreAnimalSkins_Sheep_9": {
+          "ID": "juminos.MoreAnimalSkins_Sheep_9",
+          "Texture": "Mods/juminos.MoreAnimalSkins/Sheep_9",
+          "HarvestedTexture": "Mods/juminos.MoreAnimalSkins/ShearedSheep_9",
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabySheep_9"
+        }
+      }
+    },
+    {
+      "Action": "Load",
+      "Target": "Mods/juminos.MoreAnimalSkins/Sheep_1, Mods/juminos.MoreAnimalSkins/BabySheep_1, Mods/juminos.MoreAnimalSkins/ShearedSheep_1, Mods/juminos.MoreAnimalSkins/Sheep_15, Mods/juminos.MoreAnimalSkins/BabySheep_15, Mods/juminos.MoreAnimalSkins/ShearedSheep_15, Mods/juminos.MoreAnimalSkins/Sheep_2, Mods/juminos.MoreAnimalSkins/BabySheep_2, Mods/juminos.MoreAnimalSkins/ShearedSheep_2, Mods/juminos.MoreAnimalSkins/Sheep_3, Mods/juminos.MoreAnimalSkins/BabySheep_3, Mods/juminos.MoreAnimalSkins/ShearedSheep_3, Mods/juminos.MoreAnimalSkins/Sheep_4, Mods/juminos.MoreAnimalSkins/BabySheep_4, Mods/juminos.MoreAnimalSkins/ShearedSheep_4, Mods/juminos.MoreAnimalSkins/Sheep_5, Mods/juminos.MoreAnimalSkins/BabySheep_5, Mods/juminos.MoreAnimalSkins/ShearedSheep_5, Mods/juminos.MoreAnimalSkins/Sheep_6, Mods/juminos.MoreAnimalSkins/BabySheep_6, Mods/juminos.MoreAnimalSkins/ShearedSheep_6, Mods/juminos.MoreAnimalSkins/Sheep_7, Mods/juminos.MoreAnimalSkins/BabySheep_7, Mods/juminos.MoreAnimalSkins/ShearedSheep_7, Mods/juminos.MoreAnimalSkins/Sheep_8, Mods/juminos.MoreAnimalSkins/BabySheep_8, Mods/juminos.MoreAnimalSkins/ShearedSheep_8, Mods/juminos.MoreAnimalSkins/Sheep_9, Mods/juminos.MoreAnimalSkins/BabySheep_9, Mods/juminos.MoreAnimalSkins/ShearedSheep_9",
+      "FromFile": "assets/Sheep/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/FarmAnimals",
+      "TargetField": [
+        "Void Chicken",
+        "Skins"
+      ],
+      "Entries": {
+        "juminos.MoreAnimalSkins_VoidChicken_1": {
+          "ID": "juminos.MoreAnimalSkins_VoidChicken_1",
+          "Texture": "Mods/juminos.MoreAnimalSkins/VoidChicken_1",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyVoidChicken_1"
+        },
+        "juminos.MoreAnimalSkins_VoidChicken_2": {
+          "ID": "juminos.MoreAnimalSkins_VoidChicken_2",
+          "Texture": "Mods/juminos.MoreAnimalSkins/VoidChicken_2",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyVoidChicken_2"
+        },
+        "juminos.MoreAnimalSkins_VoidChicken_200": {
+          "ID": "juminos.MoreAnimalSkins_VoidChicken_200",
+          "Texture": "Mods/juminos.MoreAnimalSkins/VoidChicken_200",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyVoidChicken_200"
+        },
+        "juminos.MoreAnimalSkins_VoidChicken_201": {
+          "ID": "juminos.MoreAnimalSkins_VoidChicken_201",
+          "Texture": "Mods/juminos.MoreAnimalSkins/VoidChicken_201",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyVoidChicken_201"
+        },
+        "juminos.MoreAnimalSkins_VoidChicken_3": {
+          "ID": "juminos.MoreAnimalSkins_VoidChicken_3",
+          "Texture": "Mods/juminos.MoreAnimalSkins/VoidChicken_3",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyVoidChicken_3"
+        },
+        "juminos.MoreAnimalSkins_VoidChicken_4": {
+          "ID": "juminos.MoreAnimalSkins_VoidChicken_4",
+          "Texture": "Mods/juminos.MoreAnimalSkins/VoidChicken_4",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyVoidChicken_4"
+        }
+      }
+    },
+    {
+      "Action": "Load",
+      "Target": "Mods/juminos.MoreAnimalSkins/VoidChicken_1, Mods/juminos.MoreAnimalSkins/BabyVoidChicken_1, Mods/juminos.MoreAnimalSkins/VoidChicken_2, Mods/juminos.MoreAnimalSkins/BabyVoidChicken_2, Mods/juminos.MoreAnimalSkins/VoidChicken_200, Mods/juminos.MoreAnimalSkins/BabyVoidChicken_200, Mods/juminos.MoreAnimalSkins/VoidChicken_201, Mods/juminos.MoreAnimalSkins/BabyVoidChicken_201, Mods/juminos.MoreAnimalSkins/VoidChicken_3, Mods/juminos.MoreAnimalSkins/BabyVoidChicken_3, Mods/juminos.MoreAnimalSkins/VoidChicken_4, Mods/juminos.MoreAnimalSkins/BabyVoidChicken_4",
+      "FromFile": "assets/VoidChicken/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/FarmAnimals",
+      "TargetField": [
+        "White Chicken",
+        "Skins"
+      ],
+      "Entries": {
+        "juminos.MoreAnimalSkins_WhiteChicken_1": {
+          "ID": "juminos.MoreAnimalSkins_WhiteChicken_1",
+          "Texture": "Mods/juminos.MoreAnimalSkins/WhiteChicken_1",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_1"
+        },
+        "juminos.MoreAnimalSkins_WhiteChicken_10": {
+          "ID": "juminos.MoreAnimalSkins_WhiteChicken_10",
+          "Texture": "Mods/juminos.MoreAnimalSkins/WhiteChicken_10",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_10"
+        },
+        "juminos.MoreAnimalSkins_WhiteChicken_11": {
+          "ID": "juminos.MoreAnimalSkins_WhiteChicken_11",
+          "Texture": "Mods/juminos.MoreAnimalSkins/WhiteChicken_11",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_11"
+        },
+        "juminos.MoreAnimalSkins_WhiteChicken_12": {
+          "ID": "juminos.MoreAnimalSkins_WhiteChicken_12",
+          "Texture": "Mods/juminos.MoreAnimalSkins/WhiteChicken_12",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_12"
+        },
+        "juminos.MoreAnimalSkins_WhiteChicken_2": {
+          "ID": "juminos.MoreAnimalSkins_WhiteChicken_2",
+          "Texture": "Mods/juminos.MoreAnimalSkins/WhiteChicken_2",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_2"
+        },
+        "juminos.MoreAnimalSkins_WhiteChicken_200": {
+          "ID": "juminos.MoreAnimalSkins_WhiteChicken_200",
+          "Texture": "Mods/juminos.MoreAnimalSkins/WhiteChicken_200",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_200"
+        },
+        "juminos.MoreAnimalSkins_WhiteChicken_201": {
+          "ID": "juminos.MoreAnimalSkins_WhiteChicken_201",
+          "Texture": "Mods/juminos.MoreAnimalSkins/WhiteChicken_201",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_201"
+        },
+        "juminos.MoreAnimalSkins_WhiteChicken_202": {
+          "ID": "juminos.MoreAnimalSkins_WhiteChicken_202",
+          "Texture": "Mods/juminos.MoreAnimalSkins/WhiteChicken_202",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_202"
+        },
+        "juminos.MoreAnimalSkins_WhiteChicken_203": {
+          "ID": "juminos.MoreAnimalSkins_WhiteChicken_203",
+          "Texture": "Mods/juminos.MoreAnimalSkins/WhiteChicken_203",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_203"
+        },
+        "juminos.MoreAnimalSkins_WhiteChicken_204": {
+          "ID": "juminos.MoreAnimalSkins_WhiteChicken_204",
+          "Texture": "Mods/juminos.MoreAnimalSkins/WhiteChicken_204",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_204"
+        },
+        "juminos.MoreAnimalSkins_WhiteChicken_205": {
+          "ID": "juminos.MoreAnimalSkins_WhiteChicken_205",
+          "Texture": "Mods/juminos.MoreAnimalSkins/WhiteChicken_205",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_205"
+        },
+        "juminos.MoreAnimalSkins_WhiteChicken_206": {
+          "ID": "juminos.MoreAnimalSkins_WhiteChicken_206",
+          "Texture": "Mods/juminos.MoreAnimalSkins/WhiteChicken_206",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_206"
+        },
+        "juminos.MoreAnimalSkins_WhiteChicken_207": {
+          "ID": "juminos.MoreAnimalSkins_WhiteChicken_207",
+          "Texture": "Mods/juminos.MoreAnimalSkins/WhiteChicken_207",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_207"
+        },
+        "juminos.MoreAnimalSkins_WhiteChicken_208": {
+          "ID": "juminos.MoreAnimalSkins_WhiteChicken_208",
+          "Texture": "Mods/juminos.MoreAnimalSkins/WhiteChicken_208",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_208"
+        },
+        "juminos.MoreAnimalSkins_WhiteChicken_209": {
+          "ID": "juminos.MoreAnimalSkins_WhiteChicken_209",
+          "Texture": "Mods/juminos.MoreAnimalSkins/WhiteChicken_209",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_209"
+        },
+        "juminos.MoreAnimalSkins_WhiteChicken_210": {
+          "ID": "juminos.MoreAnimalSkins_WhiteChicken_210",
+          "Texture": "Mods/juminos.MoreAnimalSkins/WhiteChicken_210",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_210"
+        },
+        "juminos.MoreAnimalSkins_WhiteChicken_211": {
+          "ID": "juminos.MoreAnimalSkins_WhiteChicken_211",
+          "Texture": "Mods/juminos.MoreAnimalSkins/WhiteChicken_211",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_211"
+        },
+        "juminos.MoreAnimalSkins_WhiteChicken_212": {
+          "ID": "juminos.MoreAnimalSkins_WhiteChicken_212",
+          "Texture": "Mods/juminos.MoreAnimalSkins/WhiteChicken_212",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_212"
+        },
+        "juminos.MoreAnimalSkins_WhiteChicken_213": {
+          "ID": "juminos.MoreAnimalSkins_WhiteChicken_213",
+          "Texture": "Mods/juminos.MoreAnimalSkins/WhiteChicken_213",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_213"
+        },
+        "juminos.MoreAnimalSkins_WhiteChicken_214": {
+          "ID": "juminos.MoreAnimalSkins_WhiteChicken_214",
+          "Texture": "Mods/juminos.MoreAnimalSkins/WhiteChicken_214",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_214"
+        },
+        "juminos.MoreAnimalSkins_WhiteChicken_215": {
+          "ID": "juminos.MoreAnimalSkins_WhiteChicken_215",
+          "Texture": "Mods/juminos.MoreAnimalSkins/WhiteChicken_215",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_215"
+        },
+        "juminos.MoreAnimalSkins_WhiteChicken_216": {
+          "ID": "juminos.MoreAnimalSkins_WhiteChicken_216",
+          "Texture": "Mods/juminos.MoreAnimalSkins/WhiteChicken_216",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_216"
+        },
+        "juminos.MoreAnimalSkins_WhiteChicken_217": {
+          "ID": "juminos.MoreAnimalSkins_WhiteChicken_217",
+          "Texture": "Mods/juminos.MoreAnimalSkins/WhiteChicken_217",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_217"
+        },
+        "juminos.MoreAnimalSkins_WhiteChicken_3": {
+          "ID": "juminos.MoreAnimalSkins_WhiteChicken_3",
+          "Texture": "Mods/juminos.MoreAnimalSkins/WhiteChicken_3",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_3"
+        },
+        "juminos.MoreAnimalSkins_WhiteChicken_4": {
+          "ID": "juminos.MoreAnimalSkins_WhiteChicken_4",
+          "Texture": "Mods/juminos.MoreAnimalSkins/WhiteChicken_4",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_4"
+        },
+        "juminos.MoreAnimalSkins_WhiteChicken_5": {
+          "ID": "juminos.MoreAnimalSkins_WhiteChicken_5",
+          "Texture": "Mods/juminos.MoreAnimalSkins/WhiteChicken_5",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_5"
+        },
+        "juminos.MoreAnimalSkins_WhiteChicken_6": {
+          "ID": "juminos.MoreAnimalSkins_WhiteChicken_6",
+          "Texture": "Mods/juminos.MoreAnimalSkins/WhiteChicken_6",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_6"
+        },
+        "juminos.MoreAnimalSkins_WhiteChicken_7": {
+          "ID": "juminos.MoreAnimalSkins_WhiteChicken_7",
+          "Texture": "Mods/juminos.MoreAnimalSkins/WhiteChicken_7",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_7"
+        },
+        "juminos.MoreAnimalSkins_WhiteChicken_8": {
+          "ID": "juminos.MoreAnimalSkins_WhiteChicken_8",
+          "Texture": "Mods/juminos.MoreAnimalSkins/WhiteChicken_8",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_8"
+        },
+        "juminos.MoreAnimalSkins_WhiteChicken_9": {
+          "ID": "juminos.MoreAnimalSkins_WhiteChicken_9",
+          "Texture": "Mods/juminos.MoreAnimalSkins/WhiteChicken_9",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_9"
+        }
+      }
+    },
+    {
+      "Action": "Load",
+      "Target": "Mods/juminos.MoreAnimalSkins/WhiteChicken_1, Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_1, Mods/juminos.MoreAnimalSkins/WhiteChicken_10, Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_10, Mods/juminos.MoreAnimalSkins/WhiteChicken_11, Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_11, Mods/juminos.MoreAnimalSkins/WhiteChicken_12, Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_12, Mods/juminos.MoreAnimalSkins/WhiteChicken_2, Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_2, Mods/juminos.MoreAnimalSkins/WhiteChicken_200, Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_200, Mods/juminos.MoreAnimalSkins/WhiteChicken_201, Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_201, Mods/juminos.MoreAnimalSkins/WhiteChicken_202, Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_202, Mods/juminos.MoreAnimalSkins/WhiteChicken_203, Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_203, Mods/juminos.MoreAnimalSkins/WhiteChicken_204, Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_204, Mods/juminos.MoreAnimalSkins/WhiteChicken_205, Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_205, Mods/juminos.MoreAnimalSkins/WhiteChicken_206, Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_206, Mods/juminos.MoreAnimalSkins/WhiteChicken_207, Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_207, Mods/juminos.MoreAnimalSkins/WhiteChicken_208, Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_208, Mods/juminos.MoreAnimalSkins/WhiteChicken_209, Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_209, Mods/juminos.MoreAnimalSkins/WhiteChicken_210, Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_210, Mods/juminos.MoreAnimalSkins/WhiteChicken_211, Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_211, Mods/juminos.MoreAnimalSkins/WhiteChicken_212, Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_212, Mods/juminos.MoreAnimalSkins/WhiteChicken_213, Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_213, Mods/juminos.MoreAnimalSkins/WhiteChicken_214, Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_214, Mods/juminos.MoreAnimalSkins/WhiteChicken_215, Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_215, Mods/juminos.MoreAnimalSkins/WhiteChicken_216, Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_216, Mods/juminos.MoreAnimalSkins/WhiteChicken_217, Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_217, Mods/juminos.MoreAnimalSkins/WhiteChicken_3, Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_3, Mods/juminos.MoreAnimalSkins/WhiteChicken_4, Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_4, Mods/juminos.MoreAnimalSkins/WhiteChicken_5, Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_5, Mods/juminos.MoreAnimalSkins/WhiteChicken_6, Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_6, Mods/juminos.MoreAnimalSkins/WhiteChicken_7, Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_7, Mods/juminos.MoreAnimalSkins/WhiteChicken_8, Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_8, Mods/juminos.MoreAnimalSkins/WhiteChicken_9, Mods/juminos.MoreAnimalSkins/BabyWhiteChicken_9",
+      "FromFile": "assets/WhiteChicken/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/FarmAnimals",
+      "TargetField": [
+        "White Cow",
+        "Skins"
+      ],
+      "Entries": {
+        "juminos.MoreAnimalSkins_WhiteCow1": {
+          "ID": "juminos.MoreAnimalSkins_WhiteCow1",
+          "Texture": "Mods/juminos.MoreAnimalSkins/WhiteCow1",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyWhiteCow1"
+        },
+        "juminos.MoreAnimalSkins_WhiteCow10": {
+          "ID": "juminos.MoreAnimalSkins_WhiteCow10",
+          "Texture": "Mods/juminos.MoreAnimalSkins/WhiteCow10",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyWhiteCow10"
+        },
+        "juminos.MoreAnimalSkins_WhiteCow11": {
+          "ID": "juminos.MoreAnimalSkins_WhiteCow11",
+          "Texture": "Mods/juminos.MoreAnimalSkins/WhiteCow11",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyWhiteCow11"
+        },
+        "juminos.MoreAnimalSkins_WhiteCow12": {
+          "ID": "juminos.MoreAnimalSkins_WhiteCow12",
+          "Texture": "Mods/juminos.MoreAnimalSkins/WhiteCow12",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyWhiteCow12"
+        },
+        "juminos.MoreAnimalSkins_WhiteCow13": {
+          "ID": "juminos.MoreAnimalSkins_WhiteCow13",
+          "Texture": "Mods/juminos.MoreAnimalSkins/WhiteCow13",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyWhiteCow13"
+        },
+        "juminos.MoreAnimalSkins_WhiteCow14": {
+          "ID": "juminos.MoreAnimalSkins_WhiteCow14",
+          "Texture": "Mods/juminos.MoreAnimalSkins/WhiteCow14",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyWhiteCow14"
+        },
+        "juminos.MoreAnimalSkins_WhiteCow15": {
+          "ID": "juminos.MoreAnimalSkins_WhiteCow15",
+          "Texture": "Mods/juminos.MoreAnimalSkins/WhiteCow15",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyWhiteCow15"
+        },
+        "juminos.MoreAnimalSkins_WhiteCow16": {
+          "ID": "juminos.MoreAnimalSkins_WhiteCow16",
+          "Texture": "Mods/juminos.MoreAnimalSkins/WhiteCow16",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyWhiteCow16"
+        },
+        "juminos.MoreAnimalSkins_WhiteCow17": {
+          "ID": "juminos.MoreAnimalSkins_WhiteCow17",
+          "Texture": "Mods/juminos.MoreAnimalSkins/WhiteCow17",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyWhiteCow17"
+        },
+        "juminos.MoreAnimalSkins_WhiteCow2": {
+          "ID": "juminos.MoreAnimalSkins_WhiteCow2",
+          "Texture": "Mods/juminos.MoreAnimalSkins/WhiteCow2",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyWhiteCow2"
+        },
+        "juminos.MoreAnimalSkins_WhiteCow23": {
+          "ID": "juminos.MoreAnimalSkins_WhiteCow23",
+          "Texture": "Mods/juminos.MoreAnimalSkins/WhiteCow23",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyWhiteCow23"
+        },
+        "juminos.MoreAnimalSkins_WhiteCow3": {
+          "ID": "juminos.MoreAnimalSkins_WhiteCow3",
+          "Texture": "Mods/juminos.MoreAnimalSkins/WhiteCow3",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyWhiteCow3"
+        },
+        "juminos.MoreAnimalSkins_WhiteCow4": {
+          "ID": "juminos.MoreAnimalSkins_WhiteCow4",
+          "Texture": "Mods/juminos.MoreAnimalSkins/WhiteCow4",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyWhiteCow4"
+        },
+        "juminos.MoreAnimalSkins_WhiteCow5": {
+          "ID": "juminos.MoreAnimalSkins_WhiteCow5",
+          "Texture": "Mods/juminos.MoreAnimalSkins/WhiteCow5",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyWhiteCow5"
+        },
+        "juminos.MoreAnimalSkins_WhiteCow6": {
+          "ID": "juminos.MoreAnimalSkins_WhiteCow6",
+          "Texture": "Mods/juminos.MoreAnimalSkins/WhiteCow6",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyWhiteCow6"
+        },
+        "juminos.MoreAnimalSkins_WhiteCow7": {
+          "ID": "juminos.MoreAnimalSkins_WhiteCow7",
+          "Texture": "Mods/juminos.MoreAnimalSkins/WhiteCow7",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyWhiteCow7"
+        },
+        "juminos.MoreAnimalSkins_WhiteCow8": {
+          "ID": "juminos.MoreAnimalSkins_WhiteCow8",
+          "Texture": "Mods/juminos.MoreAnimalSkins/WhiteCow8",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyWhiteCow8"
+        },
+        "juminos.MoreAnimalSkins_WhiteCow9": {
+          "ID": "juminos.MoreAnimalSkins_WhiteCow9",
+          "Texture": "Mods/juminos.MoreAnimalSkins/WhiteCow9",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreAnimalSkins/BabyWhiteCow9"
+        }
+      }
+    },
+    {
+      "Action": "Load",
+      "Target": "Mods/juminos.MoreAnimalSkins/WhiteCow1, Mods/juminos.MoreAnimalSkins/BabyWhiteCow1, Mods/juminos.MoreAnimalSkins/WhiteCow10, Mods/juminos.MoreAnimalSkins/BabyWhiteCow10, Mods/juminos.MoreAnimalSkins/WhiteCow11, Mods/juminos.MoreAnimalSkins/BabyWhiteCow11, Mods/juminos.MoreAnimalSkins/WhiteCow12, Mods/juminos.MoreAnimalSkins/BabyWhiteCow12, Mods/juminos.MoreAnimalSkins/WhiteCow13, Mods/juminos.MoreAnimalSkins/BabyWhiteCow13, Mods/juminos.MoreAnimalSkins/WhiteCow14, Mods/juminos.MoreAnimalSkins/BabyWhiteCow14, Mods/juminos.MoreAnimalSkins/WhiteCow15, Mods/juminos.MoreAnimalSkins/BabyWhiteCow15, Mods/juminos.MoreAnimalSkins/WhiteCow16, Mods/juminos.MoreAnimalSkins/BabyWhiteCow16, Mods/juminos.MoreAnimalSkins/WhiteCow17, Mods/juminos.MoreAnimalSkins/BabyWhiteCow17, Mods/juminos.MoreAnimalSkins/WhiteCow2, Mods/juminos.MoreAnimalSkins/BabyWhiteCow2, Mods/juminos.MoreAnimalSkins/WhiteCow23, Mods/juminos.MoreAnimalSkins/BabyWhiteCow23, Mods/juminos.MoreAnimalSkins/WhiteCow3, Mods/juminos.MoreAnimalSkins/BabyWhiteCow3, Mods/juminos.MoreAnimalSkins/WhiteCow4, Mods/juminos.MoreAnimalSkins/BabyWhiteCow4, Mods/juminos.MoreAnimalSkins/WhiteCow5, Mods/juminos.MoreAnimalSkins/BabyWhiteCow5, Mods/juminos.MoreAnimalSkins/WhiteCow6, Mods/juminos.MoreAnimalSkins/BabyWhiteCow6, Mods/juminos.MoreAnimalSkins/WhiteCow7, Mods/juminos.MoreAnimalSkins/BabyWhiteCow7, Mods/juminos.MoreAnimalSkins/WhiteCow8, Mods/juminos.MoreAnimalSkins/BabyWhiteCow8, Mods/juminos.MoreAnimalSkins/WhiteCow9, Mods/juminos.MoreAnimalSkins/BabyWhiteCow9",
+      "FromFile": "assets/WhiteCow/{{TargetWithoutPath}}.png"
+    }
+  ]
+}

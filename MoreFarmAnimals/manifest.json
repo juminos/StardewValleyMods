@@ -1,0 +1,11 @@
+{
+    "Name": "More Farm Animals",
+    "Author": "juminos",
+    "Version": "1.0.0",
+    "Description": "Adds more farm animals.",
+    "UniqueID": "juminos.MoreFarmAnimals",
+    "UpdateKeys": [], // when you release the mod, see https://stardewvalleywiki.com/Modding:Modder_Guide/APIs/Update_checks
+    "ContentPackFor": {
+        "UniqueID": "Pathoschild.ContentPatcher"
+    }
+}

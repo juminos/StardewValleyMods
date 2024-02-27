@@ -1,0 +1,11 @@
+{
+	"Name": "[FTM] Walk to the Desert",
+	"Author": "juminos",
+	"Version": "1.0.0",
+	"Description": "Adds more varied forage items to the new Custom Maps",
+	"UniqueID": "juminos.FTM.WalkToTheDesert",
+	"UpdateKeys": [],
+	"ContentPackFor": {
+		"UniqueID": "Esca.FarmTypeManager"
+	}
+}

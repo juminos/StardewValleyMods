@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "PD6+D8Nc6XE4e/7mpRtkzLfMEUu0rlKUWxnrXlaSSk6j/1be2T/5y28II6P2zXJrH3XDE3gJHrbePzNXRZb5xw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\GhostTownMaps\\GhostTownMaps.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\princ\\.nuget\\packages\\pathoschild.stardew.modbuildconfig\\4.1.1\\pathoschild.stardew.modbuildconfig.4.1.1.nupkg.sha512",
+    "C:\\Users\\princ\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.27\\microsoft.windowsdesktop.app.ref.6.0.27.nupkg.sha512",
+    "C:\\Users\\princ\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.27\\microsoft.netcore.app.ref.6.0.27.nupkg.sha512",
+    "C:\\Users\\princ\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.27\\microsoft.aspnetcore.app.ref.6.0.27.nupkg.sha512"
+  ],
+  "logs": []
+}

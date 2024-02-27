@@ -1,0 +1,4 @@
+{
+    "config.WaterfallColor.name": "Waterfall Color",
+    "config.WaterfallColor.description": "'Default' = original SVE waterfall color (blue)."
+}

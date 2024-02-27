@@ -1,0 +1,304 @@
+{
+  "Format": "2.0.0",
+  "Changes": [
+    {
+      "Action": "EditData",
+      "Target": "Data/Buildings",
+      "Entries": {
+        "juminos.BigTreeBuildings_CherryTree": {
+          "Name": "Large Cherry Tree",
+          "Description": "A very large cherry tree.",
+          "Texture": "Mods/juminos.BigTreeBuildings/CherryLargeTree",
+          "Skins": [],
+          "DrawShadow": false,
+          "Size": {
+            "X": 2,
+            "Y": 1
+          },
+          "FadeWhenBehind": true,
+          "SourceRect": {
+            "X": 0,
+            "Y": 0,
+            "Width": 88,
+            "Height": 112
+          },
+          "SeasonOffset": {
+            "X": 88,
+            "Y": 0
+          },
+          "DrawOffset": "-28, 4",
+          "SortTileOffset": 0.0,
+          "CollisionMap": null,
+          "AdditionalPlacementTiles": null,
+          "BuildingType": null,
+          "Builder": "Robin",
+          "BuildCondition": null,
+          "BuildDays": 0,
+          "BuildCost": 10,
+          "BuildMaterials": [
+            {
+              "ItemId": "(O)388",
+              "Amount": 5
+            }
+          ],
+          "BuildingToUpgrade": null,
+          "MagicalConstruction": false,
+          "BuildMenuDrawOffset": {
+            "X": 0,
+            "Y": 0
+          },
+          "HumanDoor": {
+            "X": -1,
+            "Y": -1
+          },
+          "AnimalDoor": {
+            "X": -1,
+            "Y": -1,
+            "Width": 0,
+            "Height": 0
+          },
+          "NonInstancedIndoorLocation": null,
+          "IndoorMap": null,
+          "IndoorMapType": null,
+          "MaxOccupants": 20,
+          "ValidOccupantTypes": [],
+          "IndoorItemMoves": null,
+          "IndoorItems": null,
+          "AddMailOnBuild": null,
+          "Metadata": {},
+          "ModData": {},
+          "HayCapacity": 0,
+          "Chests": null,
+          "DefaultAction": null,
+          "AdditionalTilePropertyRadius": 0,
+          "ActionTiles": [],
+          "TileProperties": [],
+          "ItemConversions": null,
+          "DrawLayers": null,
+          "CustomFields": {}
+        },
+        "juminos.BigTreeBuildings_MapleTree": {
+          "Name": "Large Maple Tree",
+          "Description": "A very large maple tree.",
+          "Texture": "Mods/juminos.BigTreeBuildings/MapleLargeTree",
+          "Skins": [],
+          "DrawShadow": false,
+          "Size": {
+            "X": 2,
+            "Y": 1
+          },
+          "FadeWhenBehind": true,
+          "SourceRect": {
+            "X": 0,
+            "Y": 0,
+            "Width": 88,
+            "Height": 112
+          },
+          "SeasonOffset": {
+            "X": 88,
+            "Y": 0
+          },
+          "DrawOffset": "-28, 4",
+          "SortTileOffset": 0.0,
+          "CollisionMap": null,
+          "AdditionalPlacementTiles": null,
+          "BuildingType": null,
+          "Builder": "Robin",
+          "BuildCondition": null,
+          "BuildDays": 0,
+          "BuildCost": 10,
+          "BuildMaterials": [
+            {
+              "ItemId": "(O)388",
+              "Amount": 5
+            }
+          ],
+          "BuildingToUpgrade": null,
+          "MagicalConstruction": false,
+          "BuildMenuDrawOffset": {
+            "X": 0,
+            "Y": 0
+          },
+          "HumanDoor": {
+            "X": -1,
+            "Y": -1
+          },
+          "AnimalDoor": {
+            "X": -1,
+            "Y": -1,
+            "Width": 0,
+            "Height": 0
+          },
+          "NonInstancedIndoorLocation": null,
+          "IndoorMap": null,
+          "IndoorMapType": null,
+          "MaxOccupants": 20,
+          "ValidOccupantTypes": [],
+          "IndoorItemMoves": null,
+          "IndoorItems": null,
+          "AddMailOnBuild": null,
+          "Metadata": {},
+          "ModData": {},
+          "HayCapacity": 0,
+          "Chests": null,
+          "DefaultAction": null,
+          "AdditionalTilePropertyRadius": 0,
+          "ActionTiles": [],
+          "TileProperties": [],
+          "ItemConversions": null,
+          "DrawLayers": null,
+          "CustomFields": {}
+        },
+        "juminos.BigTreeBuildings_OakTree": {
+          "Name": "Large Oak Tree",
+          "Description": "A very large oak tree.",
+          "Texture": "Mods/juminos.BigTreeBuildings/OakLargeTree",
+          "Skins": [],
+          "DrawShadow": false,
+          "Size": {
+            "X": 3,
+            "Y": 2
+          },
+          "FadeWhenBehind": true,
+          "SourceRect": {
+            "X": 0,
+            "Y": 0,
+            "Width": 104,
+            "Height": 112
+          },
+          "SeasonOffset": {
+            "X": 104,
+            "Y": 0
+          },
+          "DrawOffset": "-28, 4",
+          "SortTileOffset": 0.0,
+          "CollisionMap": null,
+          "AdditionalPlacementTiles": null,
+          "BuildingType": null,
+          "Builder": "Robin",
+          "BuildCondition": null,
+          "BuildDays": 0,
+          "BuildCost": 10,
+          "BuildMaterials": [
+            {
+              "ItemId": "(O)388",
+              "Amount": 5
+            }
+          ],
+          "BuildingToUpgrade": null,
+          "MagicalConstruction": false,
+          "BuildMenuDrawOffset": {
+            "X": 0,
+            "Y": 0
+          },
+          "HumanDoor": {
+            "X": -1,
+            "Y": -1
+          },
+          "AnimalDoor": {
+            "X": -1,
+            "Y": -1,
+            "Width": 0,
+            "Height": 0
+          },
+          "NonInstancedIndoorLocation": null,
+          "IndoorMap": null,
+          "IndoorMapType": null,
+          "MaxOccupants": 20,
+          "ValidOccupantTypes": [],
+          "IndoorItemMoves": null,
+          "IndoorItems": null,
+          "AddMailOnBuild": null,
+          "Metadata": {},
+          "ModData": {},
+          "HayCapacity": 0,
+          "Chests": null,
+          "DefaultAction": null,
+          "AdditionalTilePropertyRadius": 0,
+          "ActionTiles": [],
+          "TileProperties": [],
+          "ItemConversions": null,
+          "DrawLayers": null,
+          "CustomFields": {}
+        },
+        "juminos.BigTreeBuildings_WildTree": {
+          "Name": "Large Wild Tree",
+          "Description": "A very large wild tree.",
+          "Texture": "Mods/juminos.BigTreeBuildings/WildLargeTree",
+          "Skins": [],
+          "DrawShadow": false,
+          "Size": {
+            "X": 2,
+            "Y": 1
+          },
+          "FadeWhenBehind": true,
+          "SourceRect": {
+            "X": 0,
+            "Y": 0,
+            "Width": 88,
+            "Height": 112
+          },
+          "SeasonOffset": {
+            "X": 88,
+            "Y": 0
+          },
+          "DrawOffset": "-28, 4",
+          "SortTileOffset": 0.0,
+          "CollisionMap": null,
+          "AdditionalPlacementTiles": null,
+          "BuildingType": null,
+          "Builder": "Robin",
+          "BuildCondition": null,
+          "BuildDays": 0,
+          "BuildCost": 10,
+          "BuildMaterials": [
+            {
+              "ItemId": "(O)388",
+              "Amount": 5
+            }
+          ],
+          "BuildingToUpgrade": null,
+          "MagicalConstruction": false,
+          "BuildMenuDrawOffset": {
+            "X": 0,
+            "Y": 0
+          },
+          "HumanDoor": {
+            "X": -1,
+            "Y": -1
+          },
+          "AnimalDoor": {
+            "X": -1,
+            "Y": -1,
+            "Width": 0,
+            "Height": 0
+          },
+          "NonInstancedIndoorLocation": null,
+          "IndoorMap": null,
+          "IndoorMapType": null,
+          "MaxOccupants": 20,
+          "ValidOccupantTypes": [],
+          "IndoorItemMoves": null,
+          "IndoorItems": null,
+          "AddMailOnBuild": null,
+          "Metadata": {},
+          "ModData": {},
+          "HayCapacity": 0,
+          "Chests": null,
+          "DefaultAction": null,
+          "AdditionalTilePropertyRadius": 0,
+          "ActionTiles": [],
+          "TileProperties": [],
+          "ItemConversions": null,
+          "DrawLayers": null,
+          "CustomFields": {}
+        }
+      }
+    },
+    {
+      "Action": "Load",
+      "Target": "Mods/juminos.BigTreeBuildings/CherryLargeTree, Mods/juminos.BigTreeBuildings/MapleLargeTree, Mods/juminos.BigTreeBuildings/OakLargeTree, Mods/juminos.BigTreeBuildings/WildLargeTree",
+      "FromFile": "assets/{{TargetWithoutPath}}.png"
+    }
+  ]
+}

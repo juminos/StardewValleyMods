@@ -1,0 +1,11 @@
+{
+    "Name": "More Wild Trees",
+    "Author": "juminos",
+    "Description": "A collection of new wild trees",
+    "Version": "1.0.0",
+    "UniqueID": "juminos.MoreWildTrees",
+    "ContentPackFor": {
+        "UniqueID": "pathoschild.contentpatcher"
+    },
+    "UpdateKeys": []
+}

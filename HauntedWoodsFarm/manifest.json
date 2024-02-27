@@ -1,0 +1,10 @@
+{
+	"Name": "Haunted Woods Farm",
+	"Author": "juminos",
+	"Version": "1.0.0",
+	"UniqueID": "juminos.HauntedWoodsFarm",
+	"UpdateKeys": [],
+	"ContentPackFor": {
+		"UniqueID": "Pathoschild.ContentPatcher"
+	}
+}

@@ -1,0 +1,100 @@
+{
+	"Format": "2.0",
+	"Changes": [
+		{
+			"Action": "EditMap",
+			"Target": "Maps/Backwoods",
+			"MapProperties": { "ForceAllowTreePlanting": "T" }
+		},
+		{
+			"Action": "EditMap",
+			"Target": "Maps/Beach",
+			"MapProperties": { "ForceAllowTreePlanting": "T" }
+		},
+		{
+			"Action": "EditMap",
+			"Target": "Maps/BugLand",
+			"MapProperties": { "ForceAllowTreePlanting": "T" }
+		},
+		{
+			"Action": "EditMap",
+			"Target": "Maps/BusStop",
+			"MapProperties": { "ForceAllowTreePlanting": "T" }
+		},
+		{
+			"Action": "EditMap",
+			"Target": "Maps/Desert",
+			"MapProperties": { "ForceAllowTreePlanting": "T" }
+		},
+		{
+			"Action": "EditMap",
+			"Target": "Maps/Forest",
+			"MapProperties": { "ForceAllowTreePlanting": "T" }
+		},
+		{
+			"Action": "EditMap",
+			"Target": "Maps/Island_E",
+			"MapProperties": { "ForceAllowTreePlanting": "T" }
+		},
+		{
+			"Action": "EditMap",
+			"Target": "Maps/Island_N",
+			"MapProperties": { "ForceAllowTreePlanting": "T" }
+		},
+		{
+			"Action": "EditMap",
+			"Target": "Maps/Island_S",
+			"MapProperties": { "ForceAllowTreePlanting": "T" }
+		},
+		{
+			"Action": "EditMap",
+			"Target": "Maps/Island_Resort",
+			"MapProperties": { "ForceAllowTreePlanting": "T" }
+		},
+		{
+			"Action": "EditMap",
+			"Target": "Maps/Island_SE",
+			"MapProperties": { "ForceAllowTreePlanting": "T" }
+		},
+		{
+			"Action": "EditMap",
+			"Target": "Maps/Island_Shrine",
+			"MapProperties": { "ForceAllowTreePlanting": "T" }
+		},
+		{
+			"Action": "EditMap",
+			"Target": "Maps/Island_W",
+			"MapProperties": { "ForceAllowTreePlanting": "T" }
+		},
+		{
+			"Action": "EditMap",
+			"Target": "Maps/Mountain",
+			"MapProperties": { "ForceAllowTreePlanting": "T" }
+		},
+		{
+			"Action": "EditMap",
+			"Target": "Maps/Railroad",
+			"MapProperties": { "ForceAllowTreePlanting": "T" }
+		},
+		{
+			"Action": "EditMap",
+			"Target": "Maps/Summit",
+			"MapProperties": { "ForceAllowTreePlanting": "T" }
+		},
+		{
+			"Action": "EditMap",
+			"Target": "Maps/Town",
+			"MapProperties": { "ForceAllowTreePlanting": "T" }
+		},
+		{
+			"Action": "EditMap",
+			"Target": "Maps/WitchSwamp",
+			"MapProperties": { "ForceAllowTreePlanting": "T" }
+		},
+		{
+			"Action": "EditMap",
+			"Target": "Maps/Woods",
+			"MapProperties": { "ForceAllowTreePlanting": "T" }
+		}
+	]
+}

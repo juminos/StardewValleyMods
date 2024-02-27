@@ -1,0 +1,11 @@
+{
+    "Name": "Junimo Valley",
+    "Author": "juminos",
+    "Description": "A valley full of junimos",
+    "Version": "1.0.0",
+    "UniqueID": "juminos.JunimoValley",
+    "ContentPackFor": {
+        "UniqueID": "pathoschild.contentpatcher"
+    },
+    "UpdateKeys": []
+}

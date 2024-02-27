@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "1eOL3E0hd1ww2Bauh2I36w+TZnPfp++zgzPfODyrWnebGzcsuxgh0/P8IxDe06ZceN5YPJ7lyidlU8Zw3a6yow==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\WalkToTheDesert\\WalkToTheDesert.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\princ\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.27\\microsoft.windowsdesktop.app.ref.6.0.27.nupkg.sha512",
+    "C:\\Users\\princ\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.27\\microsoft.netcore.app.ref.6.0.27.nupkg.sha512",
+    "C:\\Users\\princ\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.27\\microsoft.aspnetcore.app.ref.6.0.27.nupkg.sha512"
+  ],
+  "logs": []
+}

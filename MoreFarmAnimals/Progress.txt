@@ -1,0 +1,22 @@
+Progress
+========
+
+Implemented:
+-Barn Rex
+-Llama (add to shop, update farm entry)
+
+Todo:
+-Quail
+-Penguin (create egg sprite, sound, add to shop)
+-Deer (add to shop, update farm entry)
+-Dove (create egg sprite, sound, add to shop)
+-Parrot
+-Turtle
+
+Acknowledgements
+================
+
+junimods - Elle's New Barn & Coop Animals sprites
+AnnaAbramek - Penguins instead of chickens sprites
+Hollowstyx - Banties and Quail for Adopt 'n' Skin sprites
+Greenoctahedron - Deer and llama sounds
