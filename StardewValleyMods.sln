@@ -11,29 +11,29 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MorePetBreeds", "MorePetBre
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Content Patcher Mods", "Content Patcher Mods", "{4C87A715-325F-4A64-9520-EC4CA2ECE682}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "[CP] BigTreeBuildings", "BigTreeBuildings\[CP] BigTreeBuildings.csproj", "{5E1DB977-1787-4FFD-9572-6ECD72E1E640}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "[CP] BigTreeBuildings", "[CP] BigTreeBuildings\[CP] BigTreeBuildings.csproj", "{5E1DB977-1787-4FFD-9572-6ECD72E1E640}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "[CP] HalloweenFeelings", "HalloweenFeelings\[CP] HalloweenFeelings.csproj", "{DED39D00-4846-45D4-A4E4-6B63692CF28D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "[CP] HalloweenFeelings", "[CP] HalloweenFeelings\[CP] HalloweenFeelings.csproj", "{DED39D00-4846-45D4-A4E4-6B63692CF28D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "[CP] HauntedWoodsFarm", "HauntedWoodsFarm\[CP] HauntedWoodsFarm.csproj", "{6A675D81-E006-4DF7-A7E4-B2A17C4EEC8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "[CP] HauntedWoodsFarm", "[CP] HauntedWoodsFarm\[CP] HauntedWoodsFarm.csproj", "{6A675D81-E006-4DF7-A7E4-B2A17C4EEC8C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "[CP] MoreAnimalSkins", "MoreAnimalSkins\[CP] MoreAnimalSkins.csproj", "{7EBD343A-71BE-472F-9B87-4DAC4F21CD63}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "[CP] MoreAnimalSkins", "[CP] MoreAnimalSkins\[CP] MoreAnimalSkins.csproj", "{7EBD343A-71BE-472F-9B87-4DAC4F21CD63}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "[CP] MoreFarmAnimals", "MoreFarmAnimals\[CP] MoreFarmAnimals.csproj", "{3F69A2CB-0A65-4D02-8DA0-BB08F813BB70}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "[CP] MoreFarmAnimals", "[CP] MoreFarmAnimals\[CP] MoreFarmAnimals.csproj", "{3F69A2CB-0A65-4D02-8DA0-BB08F813BB70}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "[CP] MoreFruitTrees", "MoreFruitTrees\[CP] MoreFruitTrees.csproj", "{F4812CEE-02EC-4863-833B-AE78184ACD7C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "[CP] MoreFruitTrees", "[CP] MoreFruitTrees\[CP] MoreFruitTrees.csproj", "{F4812CEE-02EC-4863-833B-AE78184ACD7C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "[CP] PlantFruitTreesAnywhere", "PlantFruitTreesAnywhere\[CP] PlantFruitTreesAnywhere.csproj", "{257B4226-D969-4CB0-8164-AAECB16410E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "[CP] PlantFruitTreesAnywhere", "[CP] PlantFruitTreesAnywhere\[CP] PlantFruitTreesAnywhere.csproj", "{257B4226-D969-4CB0-8164-AAECB16410E4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "[CP] JunimoValley", "JunimoValley\[CP] JunimoValley.csproj", "{D6A7E555-B2FB-4961-BD96-8500B2EA492D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "[CP] JunimoValley", "[CP] JunimoValley\[CP] JunimoValley.csproj", "{D6A7E555-B2FB-4961-BD96-8500B2EA492D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrenshipRings", "FrenshipRings\FrenshipRings.csproj", "{34CDC2E0-161B-4345-9914-2146EBE7D85B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeepSea", "DeepSea\DeepSea.csproj", "{92DE952B-0BCB-4633-923D-8306954CC019}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "[CP] GhostTownMaps", "GhostTownMaps\[CP] GhostTownMaps.csproj", "{6C97D606-80A3-4080-986A-602A42BDE4E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "[CP] GhostTownMaps", "[CP] GhostTownMaps\[CP] GhostTownMaps.csproj", "{6C97D606-80A3-4080-986A-602A42BDE4E3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "[CP] MoreWildTrees", "MoreWildTrees\[CP] MoreWildTrees.csproj", "{29EAD9EA-B206-426C-B5E9-FFDA2C3F4BC5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "[CP] MoreWildTrees", "[CP] MoreWildTrees\[CP] MoreWildTrees.csproj", "{29EAD9EA-B206-426C-B5E9-FFDA2C3F4BC5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WalkToTheDesert", "WalkToTheDesert\WalkToTheDesert.csproj", "{EB1D0E11-2CB9-4DDC-8E7F-30DFE1594B6D}"
 EndProject

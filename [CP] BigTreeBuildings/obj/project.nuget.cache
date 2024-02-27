@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "6OqNnaGPE+LVji3fIucvmW9j2+E+2QS7313r+dIFFPWm4XACT1QR/73JNpPWlC6nraq/w7wvd3YJzhQJh08W6A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\[CP] BigTreeBuildings\\[CP] BigTreeBuildings.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\princ\\.nuget\\packages\\pathoschild.stardew.modbuildconfig\\4.1.1\\pathoschild.stardew.modbuildconfig.4.1.1.nupkg.sha512",
+    "C:\\Users\\princ\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.27\\microsoft.windowsdesktop.app.ref.6.0.27.nupkg.sha512",
+    "C:\\Users\\princ\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.27\\microsoft.netcore.app.ref.6.0.27.nupkg.sha512",
+    "C:\\Users\\princ\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.27\\microsoft.aspnetcore.app.ref.6.0.27.nupkg.sha512"
+  ],
+  "logs": []
+}
