@@ -1,0 +1,11 @@
+{
+  "Name": "GhostTown Maps",
+  "Author": "juminos",
+  "Version": "1.0.0",
+  "Description": "Add corpses to map for GhostTown Mod",
+  "UniqueID": "juminos.GhostTownMaps",
+  "UpdateKeys": [],
+  "ContentPackFor": {
+    "UniqueID": "Pathoschild.ContentPatcher"
+  }
+}

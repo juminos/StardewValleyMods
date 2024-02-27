@@ -1,0 +1,11 @@
+C:\Users\princ\SV modding\StardewValleyMods\[CP] GhostTownMaps\bin\Debug\net6.0\content.json
+C:\Users\princ\SV modding\StardewValleyMods\[CP] GhostTownMaps\bin\Debug\net6.0\manifest.json
+C:\Users\princ\SV modding\StardewValleyMods\[CP] GhostTownMaps\bin\Debug\net6.0\[CP] GhostTownMaps.deps.json
+C:\Users\princ\SV modding\StardewValleyMods\[CP] GhostTownMaps\bin\Debug\net6.0\[CP] GhostTownMaps.dll
+C:\Users\princ\SV modding\StardewValleyMods\[CP] GhostTownMaps\obj\Debug\net6.0\[CP] GhostTownMaps.csproj.AssemblyReference.cache
+C:\Users\princ\SV modding\StardewValleyMods\[CP] GhostTownMaps\obj\Debug\net6.0\[CP] GhostTownMaps.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\princ\SV modding\StardewValleyMods\[CP] GhostTownMaps\obj\Debug\net6.0\[CP] GhostTownMaps.AssemblyInfoInputs.cache
+C:\Users\princ\SV modding\StardewValleyMods\[CP] GhostTownMaps\obj\Debug\net6.0\[CP] GhostTownMaps.AssemblyInfo.cs
+C:\Users\princ\SV modding\StardewValleyMods\[CP] GhostTownMaps\obj\Debug\net6.0\[CP] GhostTownMaps.csproj.CoreCompileInputs.cache
+C:\Users\princ\SV modding\StardewValleyMods\[CP] GhostTownMaps\obj\Debug\net6.0\[CP] GhostTownMaps.sourcelink.json
+C:\Users\princ\SV modding\StardewValleyMods\[CP] GhostTownMaps\obj\Debug\net6.0\[CP] GhostTownMaps.dll
