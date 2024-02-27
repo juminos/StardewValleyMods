@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("[CP] BigTreeBuildings")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f9e0557e638f979239e3b7fb53a0d71e1df192d8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e496d4d7f48b7eed437c473e9e7a9c11bbb143e2")]
 [assembly: System.Reflection.AssemblyProductAttribute("[CP] BigTreeBuildings")]
 [assembly: System.Reflection.AssemblyTitleAttribute("[CP] BigTreeBuildings")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

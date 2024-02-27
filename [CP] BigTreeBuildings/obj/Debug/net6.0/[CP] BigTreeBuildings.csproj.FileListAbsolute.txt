@@ -1,0 +1,6 @@
+C:\Users\princ\SV modding\StardewValleyMods\[CP] BigTreeBuildings\obj\Debug\net6.0\[CP] BigTreeBuildings.csproj.AssemblyReference.cache
+C:\Users\princ\SV modding\StardewValleyMods\[CP] BigTreeBuildings\obj\Debug\net6.0\[CP] BigTreeBuildings.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\princ\SV modding\StardewValleyMods\[CP] BigTreeBuildings\obj\Debug\net6.0\[CP] BigTreeBuildings.AssemblyInfoInputs.cache
+C:\Users\princ\SV modding\StardewValleyMods\[CP] BigTreeBuildings\obj\Debug\net6.0\[CP] BigTreeBuildings.AssemblyInfo.cs
+C:\Users\princ\SV modding\StardewValleyMods\[CP] BigTreeBuildings\obj\Debug\net6.0\[CP] BigTreeBuildings.csproj.CoreCompileInputs.cache
+C:\Users\princ\SV modding\StardewValleyMods\[CP] BigTreeBuildings\obj\Debug\net6.0\[CP] BigTreeBuildings.sourcelink.json
