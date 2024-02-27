@@ -152,12 +152,15 @@ namespace MorePetBreeds
             }
             else
             {
+                GameLocation farm = Game1.getLocationFromName("Farm");
+
+                // Track positions of pets
+                Dictionary<Microsoft.Xna.Framework.Vector2, List<Pet>> petPositions = new Dictionary<Microsoft.Xna.Framework.Vector2, List<Pet>>();
+
                 foreach (Pet pet in GetAllPets())
                 {
                     if (pet.currentLocation is FarmHouse)
                     {
-                        GameLocation farm = Game1.getLocationFromName("Farm");
-
                         // Get the position of the pet owner's home
                         Microsoft.Xna.Framework.Vector2 ownerHomePosition = GetPetOwnerHomePositionOrBowlPosition(pet);
                         if (ownerHomePosition == Microsoft.Xna.Framework.Vector2.Zero)
@@ -178,6 +181,41 @@ namespace MorePetBreeds
                         else
                         {
                             ModEntry.SMonitor.Log($"No suitable warp position found near owner's home for pet {pet.Name}.", LogLevel.Warn);
+                        }
+                    }
+                    if (pet.currentLocation is Farm)
+                    {
+                        Microsoft.Xna.Framework.Vector2 petPosition = new Microsoft.Xna.Framework.Vector2((int)pet.Position.X / Game1.tileSize, (int)pet.Position.Y / Game1.tileSize);
+
+                        // Check if there's already a pet at this position
+                        if (petPositions.ContainsKey(petPosition))
+                        {
+                            // Move the current pet and the pet(s) already at this position
+                            List<Pet> petsAtPosition = petPositions[petPosition];
+                            petsAtPosition.Add(pet);
+
+                            foreach (Pet petAtPosition in petsAtPosition)
+                            {
+                                Microsoft.Xna.Framework.Vector2 newWarpPosition = FindSuitableWarpPosition(farm, petPosition, 15);
+
+                                if (newWarpPosition != Microsoft.Xna.Framework.Vector2.Zero)
+                                {
+                                    Game1.warpCharacter(petAtPosition, farm, newWarpPosition);
+                                    ModEntry.SMonitor.Log($"Pet {petAtPosition.Name} moved to new position on farm: {newWarpPosition}", LogLevel.Info);
+                                }
+                                else
+                                {
+                                    ModEntry.SMonitor.Log($"No suitable warp position found near current position for pet {petAtPosition.Name}.", LogLevel.Warn);
+                                }
+                            }
+
+                            // Clear the list for this position
+                            petPositions[petPosition].Clear();
+                        }
+                        else
+                        {
+                            // Add the pet to the dictionary with its position
+                            petPositions.Add(petPosition, new List<Pet> { pet });
                         }
                     }
                 }

@@ -6,3 +6,13 @@ C:\Users\princ\SV modding\My Mods\MorePetBreeds\obj\Debug\net6.0\MorePetBreeds.A
 C:\Users\princ\SV modding\My Mods\MorePetBreeds\obj\Debug\net6.0\MorePetBreeds.AssemblyInfo.cs
 C:\Users\princ\SV modding\My Mods\MorePetBreeds\obj\Debug\net6.0\MorePetBreeds.csproj.CoreCompileInputs.cache
 C:\Users\princ\SV modding\My Mods\MorePetBreeds\obj\Debug\net6.0\MorePetBreeds.dll
+C:\Users\princ\SV modding\StardewValleyMods\MorePetBreeds\bin\Debug\net6.0\manifest.json
+C:\Users\princ\SV modding\StardewValleyMods\MorePetBreeds\bin\Debug\net6.0\MorePetBreeds.deps.json
+C:\Users\princ\SV modding\StardewValleyMods\MorePetBreeds\bin\Debug\net6.0\MorePetBreeds.dll
+C:\Users\princ\SV modding\StardewValleyMods\MorePetBreeds\obj\Debug\net6.0\MorePetBreeds.csproj.AssemblyReference.cache
+C:\Users\princ\SV modding\StardewValleyMods\MorePetBreeds\obj\Debug\net6.0\MorePetBreeds.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\princ\SV modding\StardewValleyMods\MorePetBreeds\obj\Debug\net6.0\MorePetBreeds.AssemblyInfoInputs.cache
+C:\Users\princ\SV modding\StardewValleyMods\MorePetBreeds\obj\Debug\net6.0\MorePetBreeds.AssemblyInfo.cs
+C:\Users\princ\SV modding\StardewValleyMods\MorePetBreeds\obj\Debug\net6.0\MorePetBreeds.csproj.CoreCompileInputs.cache
+C:\Users\princ\SV modding\StardewValleyMods\MorePetBreeds\obj\Debug\net6.0\MorePetBreeds.sourcelink.json
+C:\Users\princ\SV modding\StardewValleyMods\MorePetBreeds\obj\Debug\net6.0\MorePetBreeds.dll
