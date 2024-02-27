@@ -42,9 +42,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\HalloweenFeelings\\HalloweenFeelings.csproj",
-      "projectName": "HalloweenFeelings",
-      "projectPath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\HalloweenFeelings\\HalloweenFeelings.csproj",
+      "projectUniqueName": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\HalloweenFeelings\\[CP] HalloweenFeelings.csproj",
+      "projectName": "[CP] HalloweenFeelings",
+      "projectPath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\HalloweenFeelings\\[CP] HalloweenFeelings.csproj",
       "packagesPath": "C:\\Users\\princ\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\HalloweenFeelings\\obj\\",
       "projectStyle": "PackageReference",

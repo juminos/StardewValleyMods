@@ -42,9 +42,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\MoreAnimalSkins\\MoreAnimalSkins.csproj",
-      "projectName": "MoreAnimalSkins",
-      "projectPath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\MoreAnimalSkins\\MoreAnimalSkins.csproj",
+      "projectUniqueName": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\MoreAnimalSkins\\[CP] MoreAnimalSkins.csproj",
+      "projectName": "[CP] MoreAnimalSkins",
+      "projectPath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\MoreAnimalSkins\\[CP] MoreAnimalSkins.csproj",
       "packagesPath": "C:\\Users\\princ\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\MoreAnimalSkins\\obj\\",
       "projectStyle": "PackageReference",

@@ -42,9 +42,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\BigTreeBuildings\\BigTreeBuildings.csproj",
-      "projectName": "BigTreeBuildings",
-      "projectPath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\BigTreeBuildings\\BigTreeBuildings.csproj",
+      "projectUniqueName": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\BigTreeBuildings\\[CP] BigTreeBuildings.csproj",
+      "projectName": "[CP] BigTreeBuildings",
+      "projectPath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\BigTreeBuildings\\[CP] BigTreeBuildings.csproj",
       "packagesPath": "C:\\Users\\princ\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\BigTreeBuildings\\obj\\",
       "projectStyle": "PackageReference",

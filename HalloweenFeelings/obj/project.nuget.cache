@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "e8ulzjKWIQLo60bJQjHxPAT+vfq1dgBJBrONm0S4fYTbvOg8rqW8qyjg76OxHfgeYvWyCLgIFguREDVIGG/KIQ==",
+  "dgSpecHash": "M3MeBWQ30aZAPhSuGmsKtT6BW0pFMpGFNFR8bgV2bwFzEOJU3+s5hI3eSUxueEMqQkOr/cI0gB7seEb9C1JjRg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\HalloweenFeelings\\HalloweenFeelings.csproj",
+  "projectFilePath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\HalloweenFeelings\\[CP] HalloweenFeelings.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\princ\\.nuget\\packages\\pathoschild.stardew.modbuildconfig\\4.1.1\\pathoschild.stardew.modbuildconfig.4.1.1.nupkg.sha512",
     "C:\\Users\\princ\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.27\\microsoft.windowsdesktop.app.ref.6.0.27.nupkg.sha512",

@@ -42,9 +42,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\MoreWildTrees\\MoreWildTrees.csproj",
-      "projectName": "MoreWildTrees",
-      "projectPath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\MoreWildTrees\\MoreWildTrees.csproj",
+      "projectUniqueName": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\MoreWildTrees\\[CP] MoreWildTrees.csproj",
+      "projectName": "[CP] MoreWildTrees",
+      "projectPath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\MoreWildTrees\\[CP] MoreWildTrees.csproj",
       "packagesPath": "C:\\Users\\princ\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\MoreWildTrees\\obj\\",
       "projectStyle": "PackageReference",

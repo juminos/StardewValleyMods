@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "h4L0rK88R/pzgrDw32f0n0cwQ97+TpF7moEN8zjwl4gGj2BlisvQ16bf6Bq1fsPafH/FTTxbt1cIOHd3jds8HQ==",
+  "dgSpecHash": "74MwtfUKRa4Iv87ALc9ks/7StuKaMAy/SJZg6mwNjdvZBoMXtNXBtRSD/TQEC2ER68MDtVX1Iqcz77AZILlf+A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\MoreAnimalSkins\\MoreAnimalSkins.csproj",
+  "projectFilePath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\MoreAnimalSkins\\[CP] MoreAnimalSkins.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\princ\\.nuget\\packages\\pathoschild.stardew.modbuildconfig\\4.1.1\\pathoschild.stardew.modbuildconfig.4.1.1.nupkg.sha512",
     "C:\\Users\\princ\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.27\\microsoft.windowsdesktop.app.ref.6.0.27.nupkg.sha512",

@@ -42,9 +42,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\HauntedWoodsFarm\\HauntedWoodsFarm.csproj",
-      "projectName": "HauntedWoodsFarm",
-      "projectPath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\HauntedWoodsFarm\\HauntedWoodsFarm.csproj",
+      "projectUniqueName": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\HauntedWoodsFarm\\[CP] HauntedWoodsFarm.csproj",
+      "projectName": "[CP] HauntedWoodsFarm",
+      "projectPath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\HauntedWoodsFarm\\[CP] HauntedWoodsFarm.csproj",
       "packagesPath": "C:\\Users\\princ\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\HauntedWoodsFarm\\obj\\",
       "projectStyle": "PackageReference",

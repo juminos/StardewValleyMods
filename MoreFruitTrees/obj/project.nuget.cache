@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1XoaiqX7hoPP0VP5YhmQyUluCjtIitmiwo466WwKxMPxDb1WnvQFC1LruHClp34dbp2DJ2RiG19CcCFI8BM/Lw==",
+  "dgSpecHash": "TvNb0VtTgMQ+17wM6mGBef4R68eGUCymHWYbLtZuopNiDciFchHv8Jt1XhCawqFHKIxIIc0eS1ZMPH6kBF7SLQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\MoreFruitTrees\\MoreFruitTrees.csproj",
+  "projectFilePath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\MoreFruitTrees\\[CP] MoreFruitTrees.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\princ\\.nuget\\packages\\pathoschild.stardew.modbuildconfig\\4.1.1\\pathoschild.stardew.modbuildconfig.4.1.1.nupkg.sha512",
     "C:\\Users\\princ\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.27\\microsoft.windowsdesktop.app.ref.6.0.27.nupkg.sha512",

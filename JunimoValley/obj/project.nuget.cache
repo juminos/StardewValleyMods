@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tzaaOr36saXvMbnF+ZxHNDEn3Jb35HxfK9EE1R6KN7yUWcZSaMfyiNIKb9vXSPj4p6Pjy5CGe9y4zw3s6/PIig==",
+  "dgSpecHash": "2U3pElejt+uYs1cHbypCd4EgZkW8DvPjCgqQAevNbDX7iNRgu7xZ9umyMt+aaNa7NBgskFt6+OHCh/SZ8TTg3w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\JunimoValley\\JunimoValley.csproj",
+  "projectFilePath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\JunimoValley\\[CP] JunimoValley.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\princ\\.nuget\\packages\\pathoschild.stardew.modbuildconfig\\4.1.1\\pathoschild.stardew.modbuildconfig.4.1.1.nupkg.sha512",
     "C:\\Users\\princ\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.27\\microsoft.windowsdesktop.app.ref.6.0.27.nupkg.sha512",

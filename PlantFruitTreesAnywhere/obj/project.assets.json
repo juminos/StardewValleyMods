@@ -42,9 +42,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\PlantFruitTreesAnywhere\\PlantFruitTreesAnywhere.csproj",
-      "projectName": "PlantFruitTreesAnywhere",
-      "projectPath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\PlantFruitTreesAnywhere\\PlantFruitTreesAnywhere.csproj",
+      "projectUniqueName": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\PlantFruitTreesAnywhere\\[CP] PlantFruitTreesAnywhere.csproj",
+      "projectName": "[CP] PlantFruitTreesAnywhere",
+      "projectPath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\PlantFruitTreesAnywhere\\[CP] PlantFruitTreesAnywhere.csproj",
       "packagesPath": "C:\\Users\\princ\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\PlantFruitTreesAnywhere\\obj\\",
       "projectStyle": "PackageReference",

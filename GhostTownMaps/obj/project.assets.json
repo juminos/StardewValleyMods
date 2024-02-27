@@ -42,9 +42,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\GhostTownMaps\\GhostTownMaps.csproj",
-      "projectName": "GhostTownMaps",
-      "projectPath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\GhostTownMaps\\GhostTownMaps.csproj",
+      "projectUniqueName": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\GhostTownMaps\\[CP] GhostTownMaps.csproj",
+      "projectName": "[CP] GhostTownMaps",
+      "projectPath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\GhostTownMaps\\[CP] GhostTownMaps.csproj",
       "packagesPath": "C:\\Users\\princ\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\GhostTownMaps\\obj\\",
       "projectStyle": "PackageReference",

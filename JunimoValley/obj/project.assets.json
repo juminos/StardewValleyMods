@@ -42,9 +42,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\JunimoValley\\JunimoValley.csproj",
-      "projectName": "JunimoValley",
-      "projectPath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\JunimoValley\\JunimoValley.csproj",
+      "projectUniqueName": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\JunimoValley\\[CP] JunimoValley.csproj",
+      "projectName": "[CP] JunimoValley",
+      "projectPath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\JunimoValley\\[CP] JunimoValley.csproj",
       "packagesPath": "C:\\Users\\princ\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\JunimoValley\\obj\\",
       "projectStyle": "PackageReference",

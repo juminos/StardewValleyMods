@@ -42,9 +42,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\MoreFruitTrees\\MoreFruitTrees.csproj",
-      "projectName": "MoreFruitTrees",
-      "projectPath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\MoreFruitTrees\\MoreFruitTrees.csproj",
+      "projectUniqueName": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\MoreFruitTrees\\[CP] MoreFruitTrees.csproj",
+      "projectName": "[CP] MoreFruitTrees",
+      "projectPath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\MoreFruitTrees\\[CP] MoreFruitTrees.csproj",
       "packagesPath": "C:\\Users\\princ\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\MoreFruitTrees\\obj\\",
       "projectStyle": "PackageReference",

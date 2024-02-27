@@ -42,9 +42,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\MoreFarmAnimals\\MoreFarmAnimals.csproj",
-      "projectName": "MoreFarmAnimals",
-      "projectPath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\MoreFarmAnimals\\MoreFarmAnimals.csproj",
+      "projectUniqueName": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\MoreFarmAnimals\\[CP] MoreFarmAnimals.csproj",
+      "projectName": "[CP] MoreFarmAnimals",
+      "projectPath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\MoreFarmAnimals\\[CP] MoreFarmAnimals.csproj",
       "packagesPath": "C:\\Users\\princ\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\MoreFarmAnimals\\obj\\",
       "projectStyle": "PackageReference",

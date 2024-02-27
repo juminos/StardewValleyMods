@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XdBBY6kXrXpBan6zqlxPDYrGeNz4MxPPV6AwOzwgIS2QoSqP5t4p8mJbfJgoZA/je6yoHrH6RDjROLwGGarGnQ==",
+  "dgSpecHash": "yeXaSH6QJh6wIMHbs4O8GtKh4lJh5QarBHxfOepI8F/8QNrAf8ff9Zb73/UdFy9qgkxqo9uiMWsrR2u0i5PuAQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\PlantFruitTreesAnywhere\\PlantFruitTreesAnywhere.csproj",
+  "projectFilePath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\PlantFruitTreesAnywhere\\[CP] PlantFruitTreesAnywhere.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\princ\\.nuget\\packages\\pathoschild.stardew.modbuildconfig\\4.1.1\\pathoschild.stardew.modbuildconfig.4.1.1.nupkg.sha512",
     "C:\\Users\\princ\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.27\\microsoft.windowsdesktop.app.ref.6.0.27.nupkg.sha512",
