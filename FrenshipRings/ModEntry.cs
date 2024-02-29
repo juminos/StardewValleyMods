@@ -17,14 +17,22 @@ namespace FrenshipRings
 
         public override void Entry(IModHelper helper)
         {
-            helper.Events.GameLoop.TimeChanged += GameLoop_TimeChanged;
+            helper.Events.Player.Warped += OnWarp;
         }
 
-        private void GameLoop_TimeChanged(object? sender, TimeChangedEventArgs e)
+        private void OnWarp(object? sender, WarpedEventArgs e)
         {
+            if (!e.IsLocalPlayer)
+            {
+                return;
+            }
             if (Game1.player.isWearingRing("juminos.FrenshipRings_Shadow"))
             {
                 Shadow.DisableShadow(Monitor);
+            }
+            if (Game1.player.isWearingRing("juminos.FrenshipRings_Spider"))
+            {
+                Spider.DisableSpider(Monitor);
             }
         }
     }
