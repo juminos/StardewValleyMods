@@ -1,20 +1,21 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\In Progress\\FrenshipRings\\FrenshipRings\\",
+  "WorkspaceRootPath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\FrenshipRings\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4E2CA0B1-32E7-46A1-84B5-EA105D4D7284}|FrenshipRings.csproj|c:\\users\\princ\\sv modding\\stardewvalleymods\\in progress\\frenshiprings\\frenshiprings\\modentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4E2CA0B1-32E7-46A1-84B5-EA105D4D7284}|FrenshipRings.csproj|C:\\Users\\princ\\SV modding\\StardewValleyMods\\FrenshipRings\\modentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4E2CA0B1-32E7-46A1-84B5-EA105D4D7284}|FrenshipRings.csproj|solutionrelative:modentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4E2CA0B1-32E7-46A1-84B5-EA105D4D7284}|FrenshipRings.csproj|c:\\users\\princ\\sv modding\\stardewvalleymods\\in progress\\frenshiprings\\frenshiprings\\shadow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4E2CA0B1-32E7-46A1-84B5-EA105D4D7284}|FrenshipRings.csproj|c:\\users\\princ\\sv modding\\stardewvalleymods\\frenshiprings\\spider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E2CA0B1-32E7-46A1-84B5-EA105D4D7284}|FrenshipRings.csproj|solutionrelative:spider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E2CA0B1-32E7-46A1-84B5-EA105D4D7284}|FrenshipRings.csproj|C:\\Users\\princ\\SV modding\\StardewValleyMods\\FrenshipRings\\shadow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4E2CA0B1-32E7-46A1-84B5-EA105D4D7284}|FrenshipRings.csproj|solutionrelative:shadow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\princ\\SV modding\\StardewValleyMods\\In Progress\\FrenshipRings\\DisableShadowAttacks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4E2CA0B1-32E7-46A1-84B5-EA105D4D7284}|FrenshipRings.csproj|c:\\users\\princ\\sv modding\\stardewvalleymods\\in progress\\frenshiprings\\frenshiprings\\manifest.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{4E2CA0B1-32E7-46A1-84B5-EA105D4D7284}|FrenshipRings.csproj|C:\\Users\\princ\\SV modding\\StardewValleyMods\\FrenshipRings\\manifest.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{4E2CA0B1-32E7-46A1-84B5-EA105D4D7284}|FrenshipRings.csproj|solutionrelative:manifest.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
@@ -25,21 +26,30 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Spider.cs",
+              "DocumentMoniker": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\FrenshipRings\\Spider.cs",
+              "RelativeDocumentMoniker": "Spider.cs",
+              "ToolTip": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\FrenshipRings\\Spider.cs",
+              "RelativeToolTip": "Spider.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAuwBkAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-29T05:34:38.284Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Shadow.cs",
-              "DocumentMoniker": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\In Progress\\FrenshipRings\\FrenshipRings\\Shadow.cs",
+              "DocumentMoniker": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\FrenshipRings\\Shadow.cs",
               "RelativeDocumentMoniker": "Shadow.cs",
-              "ToolTip": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\In Progress\\FrenshipRings\\FrenshipRings\\Shadow.cs",
+              "ToolTip": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\FrenshipRings\\Shadow.cs",
               "RelativeToolTip": "Shadow.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACIAAAA3AAAA",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAcwDkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-20T03:12:08.051Z",
               "EditorCaption": ""
@@ -48,9 +58,9 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "manifest.json",
-              "DocumentMoniker": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\In Progress\\FrenshipRings\\FrenshipRings\\manifest.json",
+              "DocumentMoniker": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\FrenshipRings\\manifest.json",
               "RelativeDocumentMoniker": "manifest.json",
-              "ToolTip": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\In Progress\\FrenshipRings\\FrenshipRings\\manifest.json",
+              "ToolTip": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\FrenshipRings\\manifest.json",
               "RelativeToolTip": "manifest.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
@@ -61,47 +71,13 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "ModEntry.cs",
-              "DocumentMoniker": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\In Progress\\FrenshipRings\\FrenshipRings\\ModEntry.cs",
+              "DocumentMoniker": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\FrenshipRings\\ModEntry.cs",
               "RelativeDocumentMoniker": "ModEntry.cs",
-              "ToolTip": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\In Progress\\FrenshipRings\\FrenshipRings\\ModEntry.cs",
+              "ToolTip": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\FrenshipRings\\ModEntry.cs",
               "RelativeToolTip": "ModEntry.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAfAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAB8AAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-20T03:00:27.012Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "497d8119-bf9b-4d64-b98f-43a3f470650b",
-        "Display": 0,
-        "X": 951,
-        "Y": 43,
-        "Width": 945,
-        "Height": 946,
-        "WindowState": 0
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DisableShadowAttacks.cs",
-              "DocumentMoniker": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\In Progress\\FrenshipRings\\DisableShadowAttacks.cs",
-              "RelativeDocumentMoniker": "..\\DisableShadowAttacks.cs",
-              "ToolTip": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\In Progress\\FrenshipRings\\DisableShadowAttacks.cs",
-              "RelativeToolTip": "..\\DisableShadowAttacks.cs",
-              "ViewState": "AQIAAK0AAAAAAAAAAAAAALoAAAAhAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-20T03:00:54.291Z",
               "EditorCaption": ""
             }
           ]
