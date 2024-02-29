@@ -231,7 +231,7 @@
 
 		// Map Patches
 		{
-			"LogName": "This unblocks the road going to the left towards Ridgeside Village if the Ridgeside Village mod isn't installed",
+			"LogName": "This unblocks the road going to the left towards Ridgeside Village if the Ridgeside Village mod is installed",
 			"Action": "EditMap",
 			"Target": "Maps/juminos.CP.WalkToTheDesert_WindingRoad",
 			"FromFile": "assets/Maps/Patches/WindingRoadRSV.tmx",

@@ -44,6 +44,7 @@ namespace MorePetBreeds
         private static Dictionary<string, Farmer> allFarmers = new Dictionary<string, Farmer>();
         private static Dictionary<string, Texture2D> catTextureMap = new Dictionary<string, Texture2D>();
         private static Dictionary<string, Texture2D> dogTextureMap = new Dictionary<string, Texture2D>();
+        private static Dictionary<string, Texture2D> redpandaTextureMap = new Dictionary<string, Texture2D>();
 
 
         internal static bool IsEnabled = true;
@@ -84,8 +85,9 @@ namespace MorePetBreeds
 
             // SMAPI Commands
             helper.ConsoleCommands.Add("list_pets", "Lists the names of all pets on your farm.", CommandHandler.OnCommandReceived);
-            helper.ConsoleCommands.Add("add_cat", "Adds a cat of given breed. Breed is a number between 0-2. This will give you an in-game naming prompt.", CommandHandler.OnCommandReceived);
-            helper.ConsoleCommands.Add("add_dog", "Adds a dog of given breed. Breed is a number between 0-2. This will give you an in-game naming prompt.", CommandHandler.OnCommandReceived);
+            helper.ConsoleCommands.Add("add_cat", "Adds a cat of given breed. This will give you an in-game naming prompt.", CommandHandler.OnCommandReceived);
+            helper.ConsoleCommands.Add("add_dog", "Adds a dog of given breed. This will give you an in-game naming prompt.", CommandHandler.OnCommandReceived);
+            helper.ConsoleCommands.Add("add_redpanda", "Adds a red panda of given breed. This will give you an in-game naming prompt.", CommandHandler.OnCommandReceived);
             helper.ConsoleCommands.Add("remove_pet", "Removes pet of given name from your farm.", CommandHandler.OnCommandReceived);
             helper.ConsoleCommands.Add("list_farmers", "Lists the names and Multiplayer ID of all farmers", CommandHandler.OnCommandReceived);
             helper.ConsoleCommands.Add("give_pet", "Specify pet name and farmer name that you want to give pet to", CommandHandler.OnCommandReceived);
@@ -120,6 +122,7 @@ namespace MorePetBreeds
 
             LoadCatSprites();
             LoadDogSprites();
+            LoadRedPandaSprites();
             SetPetSprites();
             GenerateAllFarmersDict();
 
@@ -363,8 +366,10 @@ namespace MorePetBreeds
 
                 if (message.petType == "cat")
                     InitializeCat("0");
-                else
+                else if (message.petType == "dog")
                     InitializeDog("0");
+                else
+                    InitializeRedPanda("0");
 
                 newPet.Name = message.petName;
                 newPet.displayName = message.petDisplayName;
@@ -430,7 +435,7 @@ namespace MorePetBreeds
             // Right click near water bowl
             if (e.Button.IsActionButton())
             {
-                // Player holding fish to adopt Cat or vegetable to adopt Dog
+                // Player holding fish to adopt Cat, vegetable to adopt Dog, bamboo to adopt Red Panda
                 if (Game1.player.CurrentItem != null && Game1.player.CurrentItem.getCategoryName() != null)
                 {
                     if (Game1.player.CurrentItem.getCategoryName().Contains("Fish"))
@@ -456,6 +461,19 @@ namespace MorePetBreeds
                                 Helper.Input.Suppress(e.Button);
                                 InitializeDog("0");
                                 ShowAdoptPetDialog("dog");
+                            }
+                        }
+                    }
+                    else if (Game1.player.CurrentItem.ItemId.Contains("bamboo"))
+                    {
+                        foreach (PetBowl petBowl in GetPetBowls())
+                        {
+                            if (IsPlayerNearWaterBowl(petBowl))
+                            {
+                                Game1.player.reduceActiveItemByOne();
+                                Helper.Input.Suppress(e.Button);
+                                InitializeRedPanda("0");
+                                ShowAdoptPetDialog("red panda");
                             }
                         }
                     }
@@ -500,8 +518,14 @@ namespace MorePetBreeds
                         Game1.activeClickableMenu = new NamingMenu(AddPet, $"What will you name it?");
                         return;
                     }
+                    else if (petType == "red panda" && redpandaTextureMap.Count < 1)
+                    {
+                        SMonitor.Log("The pet adoption texture selection menu is not available because no textures were found", LogLevel.Warn);
+                        Game1.activeClickableMenu = new NamingMenu(AddPet, $"What will you name it?");
+                        return;
+                    }
 
-                    Game1.activeClickableMenu = new PetSkinSelectMenu(petType == "cat" ? catTextureMap : dogTextureMap);
+                    Game1.activeClickableMenu = new PetSkinSelectMenu(petType == "cat" ? catTextureMap : (petType == "dog" ? dogTextureMap : redpandaTextureMap));
                 }
 
             });
@@ -602,6 +626,24 @@ namespace MorePetBreeds
             };
             newPet.modData[MOD_DATA_OWNER] = Game1.player.displayName;
         }
+        /// <summary>
+        /// Initializes newPet to be a red panda
+        /// </summary>
+        /// <param name="breed">breed id for selecting pet texture</param>
+        internal static void InitializeRedPanda(string breed)
+        {
+            newPet = new Pet(0, 0, breed, "Red Panda")
+            {
+                Name = $"red panda{breed}",
+                displayName = $"red panda{breed}",
+                Position = new Microsoft.Xna.Framework.Vector2(0, 0),
+                DefaultPosition = new Microsoft.Xna.Framework.Vector2(0, 0),
+                Breather = false,
+                willDestroyObjectsUnderfoot = false,
+                HideShadow = true,
+            };
+            newPet.modData[MOD_DATA_OWNER] = Game1.player.displayName;
+        }
 
         /// <summary>
         /// For assigning an owner to a pet.
@@ -678,7 +720,7 @@ namespace MorePetBreeds
             {
                 // Send message to main player
                 SHelper.Multiplayer.SendMessage(
-                    message: new PlayerAddedPetMessage(newPet.Name, newPet.displayName, newPet.modData[MOD_DATA_OWNER], newPet.modData[MOD_DATA_SKIN_ID], newPet.petType.Value == "Cat" ? "cat" : "dog"),
+                    message: new PlayerAddedPetMessage(newPet.Name, newPet.displayName, newPet.modData[MOD_DATA_OWNER], newPet.modData[MOD_DATA_SKIN_ID], newPet.petType.Value == "Cat" ? "cat" : (newPet.petType.Value == "Dog" ? "dog" : "red panda")),
                     messageType: PlayerAddedPetMessageId,
                     modIDs: new[] { SModManifest.UniqueID }
                     );
@@ -720,6 +762,10 @@ namespace MorePetBreeds
             else if (pet.petType.Value == "Dog" && dogTextureMap.Count > 0 && dogTextureMap.ContainsKey(pet.modData[MOD_DATA_SKIN_ID]))
             {
                 pet.Sprite.spriteTexture = dogTextureMap[pet.modData[MOD_DATA_SKIN_ID]];
+            }
+            else if (pet.petType.Value == "Red Panda" && redpandaTextureMap.Count > 0 && redpandaTextureMap.ContainsKey(pet.modData[MOD_DATA_SKIN_ID]))
+            {
+                pet.Sprite.spriteTexture = redpandaTextureMap[pet.modData[MOD_DATA_SKIN_ID]];
             }
         }
 
@@ -787,6 +833,23 @@ namespace MorePetBreeds
                 dogTextureMap[(i + 1).ToString()] = SHelper.ModContent.Load<Texture2D>(relFileName); // TODO: refactor to use filename for key
             }
         }
+        private void LoadRedPandaSprites()
+        {
+            string modPath = PathUtilities.NormalizePath(SHelper.DirectoryPath + "\\");
+            string redPandaPath = PathUtilities.NormalizePath($"{modPath}assets\\Red Panda");
+
+            if (!Directory.Exists(redPandaPath))
+            {
+                SMonitor.Log($"Red Panda asssets path could not be found. {redPandaPath}", LogLevel.Warn);
+                return;
+            }
+            var files = Directory.GetFiles(redPandaPath, "*.png");
+            for (var i = 0; i < files.Length; i++)
+            {
+                var relFileName = AbsoluteToRelativePath(files[i], modPath);
+                redpandaTextureMap[(i + 1).ToString()] = SHelper.ModContent.Load<Texture2D>(relFileName); // TODO: refactor to use filename for key
+            }
+        }
 
         private string AbsoluteToRelativePath(string absolutePath, string modPath)
         {
@@ -847,7 +910,7 @@ namespace MorePetBreeds
         /// <summary>
         /// Helper function for getting a sprite's texture name
         /// </summary>
-        /// <param name="pet">"cat" or "dog"</param>
+        /// <param name="pet">"cat" or "dog" or "red panda"</param>
         /// <param name="breed">breed id for selecting pet texture</param>
         /// <returns>string value for textureName</returns>
         private static string GetPetTextureName(string pet, string breed)

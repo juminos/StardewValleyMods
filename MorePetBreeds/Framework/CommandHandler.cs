@@ -40,7 +40,13 @@ namespace MorePetBreeds.Framework
             {
                 case "list_pets":
                     ModEntry.GetAllPets().ForEach(delegate (Pet pet) {
-                        var petType = pet.petType.Value == Pet.type_cat ? "cat" : "dog";
+                        var petType = pet.petType.Value switch
+                        {
+                            Pet.type_cat => "cat",
+                            Pet.type_dog => "dog",
+                            "juminos.MorePets_RedPanda" => "red panda",
+                            _ => throw new InvalidOperationException("Unknown pet type")
+                        };
                         var owner = pet.modData.ContainsKey(ModEntry.MOD_DATA_OWNER) ? pet.modData[ModEntry.MOD_DATA_OWNER] : "unknown";
                         var skinId = pet.modData.ContainsKey(ModEntry.MOD_DATA_SKIN_ID) ? pet.modData[ModEntry.MOD_DATA_SKIN_ID] : "none";
                         ModEntry.SMonitor.Log($"{pet.displayName}, {petType}, owner: {owner}, skinId: {skinId}", LogLevel.Info);
@@ -99,6 +105,33 @@ namespace MorePetBreeds.Framework
                     }
                     ModEntry.InitializeDog(breed);
                     ModEntry.ShowAdoptPetDialog("dog");
+                    return;
+                case "add_redpanda":
+                    breed = "0";
+                    if (args.Length == 1)
+                    {
+                        try
+                        {
+                            breed = args[0];
+                            if (breed is null)
+                            {
+                                ModEntry.SMonitor.Log($"{args[0]} is an invalid breed value.", LogLevel.Error);
+                                return;
+                            }
+                        }
+                        catch
+                        {
+                            ModEntry.SMonitor.Log($"{args[0]} is an invalid breed value.", LogLevel.Error);
+                            return;
+                        }
+                    }
+                    else if (args.Length > 1)
+                    {
+                        ModEntry.SMonitor.Log($"add_redpanda only takes one argument, the breed ID.", LogLevel.Error);
+                        return;
+                    }
+                    ModEntry.InitializeRedPanda(breed);
+                    ModEntry.ShowAdoptPetDialog("red panda");
                     return;
                 case "remove_pet":
                     if (args.Length == 0)
