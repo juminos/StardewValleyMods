@@ -1,5 +1,4 @@
-﻿using MorePetBreeds.Framework;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using StardewModdingAPI;
 using StardewModdingAPI.Events;
@@ -18,6 +17,7 @@ using System.Numerics;
 using System.Threading;
 using StardewValley.Buildings;
 using xTile.Dimensions;
+using MorePetBreeds.Framework;
 
 namespace MorePetBreeds
 {
@@ -44,6 +44,7 @@ namespace MorePetBreeds
         private static Dictionary<string, Farmer> allFarmers = new Dictionary<string, Farmer>();
         private static Dictionary<string, Texture2D> catTextureMap = new Dictionary<string, Texture2D>();
         private static Dictionary<string, Texture2D> dogTextureMap = new Dictionary<string, Texture2D>();
+        private static Dictionary<string, Texture2D> redpandaTextureMap = new Dictionary<string, Texture2D>();
 
 
         internal static bool IsEnabled = true;
@@ -84,8 +85,9 @@ namespace MorePetBreeds
 
             // SMAPI Commands
             helper.ConsoleCommands.Add("list_pets", "Lists the names of all pets on your farm.", CommandHandler.OnCommandReceived);
-            helper.ConsoleCommands.Add("add_cat", "Adds a cat of given breed. Breed is a number between 0-2. This will give you an in-game naming prompt.", CommandHandler.OnCommandReceived);
-            helper.ConsoleCommands.Add("add_dog", "Adds a dog of given breed. Breed is a number between 0-2. This will give you an in-game naming prompt.", CommandHandler.OnCommandReceived);
+            helper.ConsoleCommands.Add("add_cat", "Adds a cat of given breed. This will give you an in-game naming prompt.", CommandHandler.OnCommandReceived);
+            helper.ConsoleCommands.Add("add_dog", "Adds a dog of given breed. This will give you an in-game naming prompt.", CommandHandler.OnCommandReceived);
+            helper.ConsoleCommands.Add("add_redpanda", "Adds a red panda of given breed. This will give you an in-game naming prompt.", CommandHandler.OnCommandReceived);
             helper.ConsoleCommands.Add("remove_pet", "Removes pet of given name from your farm.", CommandHandler.OnCommandReceived);
             helper.ConsoleCommands.Add("list_farmers", "Lists the names and Multiplayer ID of all farmers", CommandHandler.OnCommandReceived);
             helper.ConsoleCommands.Add("give_pet", "Specify pet name and farmer name that you want to give pet to", CommandHandler.OnCommandReceived);
@@ -103,16 +105,16 @@ namespace MorePetBreeds
             IsEnabled = Context.IsMainPlayer;
             if (!IsEnabled)
             {
-                ISemanticVersion hostVersion = SHelper.Multiplayer.GetConnectedPlayer(Game1.MasterPlayer.UniqueMultiplayerID)?.GetMod(this.ModManifest.UniqueID)?.Version;
+                ISemanticVersion hostVersion = SHelper.Multiplayer.GetConnectedPlayer(Game1.MasterPlayer.UniqueMultiplayerID)?.GetMod(ModManifest.UniqueID)?.Version;
                 if (hostVersion == null)
                 {
                     IsEnabled = false;
                     SMonitor.Log("This mod is disabled because the host player doesn't have it installed.", LogLevel.Warn);
                 }
-                else if (hostVersion.IsOlderThan(this.MinHostVersion))
+                else if (hostVersion.IsOlderThan(MinHostVersion))
                 {
                     IsEnabled = false;
-                    SMonitor.Log($"This mod is disabled because the host player has {this.ModManifest.Name} {hostVersion}, but the minimum compatible version is {this.MinHostVersion}.", LogLevel.Warn);
+                    SMonitor.Log($"This mod is disabled because the host player has {ModManifest.Name} {hostVersion}, but the minimum compatible version is {MinHostVersion}.", LogLevel.Warn);
                 }
                 else
                     IsEnabled = true;
@@ -120,6 +122,7 @@ namespace MorePetBreeds
 
             LoadCatSprites();
             LoadDogSprites();
+            LoadRedPandaSprites();
             SetPetSprites();
             GenerateAllFarmersDict();
 
@@ -165,7 +168,7 @@ namespace MorePetBreeds
                         Microsoft.Xna.Framework.Vector2 ownerHomePosition = GetPetOwnerHomePositionOrBowlPosition(pet);
                         if (ownerHomePosition == Microsoft.Xna.Framework.Vector2.Zero)
                         {
-                            ModEntry.SMonitor.Log($"Could not find owner's home for pet {pet.Name}.", LogLevel.Warn);
+                            SMonitor.Log($"Could not find owner's home for pet {pet.Name}.", LogLevel.Warn);
                             continue;
                         }
 
@@ -176,11 +179,11 @@ namespace MorePetBreeds
                         if (warpPosition != Microsoft.Xna.Framework.Vector2.Zero)
                         {
                             Game1.warpCharacter(pet, farm, warpPosition);
-                            ModEntry.SMonitor.Log($"Pet {pet.Name} warped to farm near owner's home at tile: {warpPosition}", LogLevel.Info);
+                            SMonitor.Log($"Pet {pet.Name} warped to farm near owner's home at tile: {warpPosition}", LogLevel.Info);
                         }
                         else
                         {
-                            ModEntry.SMonitor.Log($"No suitable warp position found near owner's home for pet {pet.Name}.", LogLevel.Warn);
+                            SMonitor.Log($"No suitable warp position found near owner's home for pet {pet.Name}.", LogLevel.Warn);
                         }
                     }
                     if (pet.currentLocation is Farm)
@@ -201,11 +204,11 @@ namespace MorePetBreeds
                                 if (newWarpPosition != Microsoft.Xna.Framework.Vector2.Zero)
                                 {
                                     Game1.warpCharacter(petAtPosition, farm, newWarpPosition);
-                                    ModEntry.SMonitor.Log($"Pet {petAtPosition.Name} moved to new position on farm: {newWarpPosition}", LogLevel.Info);
+                                    SMonitor.Log($"Pet {petAtPosition.Name} moved to new position on farm: {newWarpPosition}", LogLevel.Info);
                                 }
                                 else
                                 {
-                                    ModEntry.SMonitor.Log($"No suitable warp position found near current position for pet {petAtPosition.Name}.", LogLevel.Warn);
+                                    SMonitor.Log($"No suitable warp position found near current position for pet {petAtPosition.Name}.", LogLevel.Warn);
                                 }
                             }
 
@@ -235,17 +238,17 @@ namespace MorePetBreeds
                     }
                     else
                     {
-                        ModEntry.SMonitor.Log($"Owner's home not found for pet {pet.Name}.", LogLevel.Warn);
+                        SMonitor.Log($"Owner's home not found for pet {pet.Name}.", LogLevel.Warn);
                     }
                 }
                 else
                 {
-                    ModEntry.SMonitor.Log($"Owner not found in allFarmers for pet {pet.Name}.", LogLevel.Warn);
+                    SMonitor.Log($"Owner not found in allFarmers for pet {pet.Name}.", LogLevel.Warn);
                 }
             }
             else
             {
-                ModEntry.SMonitor.Log($"MOD_DATA_OWNER not found for pet {pet.Name}.", LogLevel.Warn);
+                SMonitor.Log($"MOD_DATA_OWNER not found for pet {pet.Name}.", LogLevel.Warn);
             }
 
             // Fallback to pet bowl position if owner's home is not found
@@ -257,7 +260,7 @@ namespace MorePetBreeds
             }
             else
             {
-                ModEntry.SMonitor.Log($"No pet bowls found for pet {pet.Name}.", LogLevel.Warn);
+                SMonitor.Log($"No pet bowls found for pet {pet.Name}.", LogLevel.Warn);
             }
 
             // If no pet bowls are found, return Vector2.Zero
@@ -363,8 +366,10 @@ namespace MorePetBreeds
 
                 if (message.petType == "cat")
                     InitializeCat("0");
-                else
+                else if (message.petType == "dog")
                     InitializeDog("0");
+                else
+                    InitializeRedPanda("juminos.MorePets_RedPanda1");
 
                 newPet.Name = message.petName;
                 newPet.displayName = message.petDisplayName;
@@ -407,7 +412,7 @@ namespace MorePetBreeds
             if (Game1.activeClickableMenu != null)
                 return;
 
-            if (Game1.player.CurrentItem == null) 
+            if (Game1.player.CurrentItem == null)
                 return;
 
             bool IsPlayerNearWaterBowl(Building petBowl)
@@ -415,9 +420,9 @@ namespace MorePetBreeds
                 var playerPosition = Game1.player.getStandingPosition();
                 var playerTile = new Microsoft.Xna.Framework.Vector2(playerPosition.X, playerPosition.Y);
                 var petBowlRect = new Microsoft.Xna.Framework.Rectangle(
-                    petBowl.tileX.Value * 64, 
-                    petBowl.tileY.Value * 64, 
-                    petBowl.tilesWide.Value * 64, 
+                    petBowl.tileX.Value * 64,
+                    petBowl.tileY.Value * 64,
+                    petBowl.tilesWide.Value * 64,
                     petBowl.tilesHigh.Value * 64
                 );
 
@@ -430,7 +435,7 @@ namespace MorePetBreeds
             // Right click near water bowl
             if (e.Button.IsActionButton())
             {
-                // Player holding fish to adopt Cat or vegetable to adopt Dog
+                // Player holding fish to adopt Cat, vegetable to adopt Dog, bamboo to adopt Red Panda
                 if (Game1.player.CurrentItem != null && Game1.player.CurrentItem.getCategoryName() != null)
                 {
                     if (Game1.player.CurrentItem.getCategoryName().Contains("Fish"))
@@ -459,6 +464,19 @@ namespace MorePetBreeds
                             }
                         }
                     }
+                    else if (Game1.player.CurrentItem.ItemId.Contains("bamboo"))
+                    {
+                        foreach (PetBowl petBowl in GetPetBowls())
+                        {
+                            if (IsPlayerNearWaterBowl(petBowl))
+                            {
+                                Game1.player.reduceActiveItemByOne();
+                                Helper.Input.Suppress(e.Button);
+                                InitializeRedPanda("juminos.MorePets_RedPanda1");
+                                ShowAdoptPetDialog("juminos.MorePets_RedPanda");
+                            }
+                        }
+                    }
                 }
                 else
                 {
@@ -481,7 +499,7 @@ namespace MorePetBreeds
         /// </summary>
         internal static void ShowAdoptPetDialog(string petType)
         {
-            Game1.activeClickableMenu = new ConfirmationDialog($"Would you like to adopt a {petType}?", (who) =>
+            Game1.activeClickableMenu = new ConfirmationDialog($"Would you like to adopt a {NPC.GetDisplayName(petType)}?", (who) =>
             {
                 if (Game1.activeClickableMenu is ConfirmationDialog cd)
                     cd.cancel();
@@ -500,8 +518,14 @@ namespace MorePetBreeds
                         Game1.activeClickableMenu = new NamingMenu(AddPet, $"What will you name it?");
                         return;
                     }
+                    else if (petType == "juminos.MorePets_RedPanda" && redpandaTextureMap.Count < 1)
+                    {
+                        SMonitor.Log("The pet adoption texture selection menu is not available because no textures were found", LogLevel.Warn);
+                        Game1.activeClickableMenu = new NamingMenu(AddPet, $"What will you name it?");
+                        return;
+                    }
 
-                    Game1.activeClickableMenu = new PetSkinSelectMenu(petType == "cat" ? catTextureMap : dogTextureMap);
+                    Game1.activeClickableMenu = new PetSkinSelectMenu(petType == "cat" ? catTextureMap : petType == "dog" ? dogTextureMap : redpandaTextureMap);
                 }
 
             });
@@ -515,7 +539,8 @@ namespace MorePetBreeds
         {
             Pet petToRemove = null;
 
-            GetAllPets().ForEach(delegate (Pet pet) {
+            GetAllPets().ForEach(delegate (Pet pet)
+            {
                 if (pet.displayName.TrimEnd() == petName)
                     petToRemove = pet;
             });
@@ -534,7 +559,8 @@ namespace MorePetBreeds
                 return;
             }
             SMonitor.Log($"Pet list after Remove performed", LogLevel.Info);
-            GetAllPets().ForEach(delegate (Pet pet) {
+            GetAllPets().ForEach(delegate (Pet pet)
+            {
                 SMonitor.Log($"- {pet.displayName}", LogLevel.Info);
             });
         }
@@ -602,13 +628,30 @@ namespace MorePetBreeds
             };
             newPet.modData[MOD_DATA_OWNER] = Game1.player.displayName;
         }
+        /// <summary>
+        /// Initializes newPet to be a red panda
+        /// </summary>
+        /// <param name="breed">breed id for selecting pet texture</param>
+        internal static void InitializeRedPanda(string breed)
+        {
+            newPet = new Pet(0, 0, breed, "juminos.MorePets_RedPanda")
+            {
+                Name = $"red panda{breed}",
+                displayName = $"red panda{breed}",
+                Position = new Microsoft.Xna.Framework.Vector2(0, 0),
+                DefaultPosition = new Microsoft.Xna.Framework.Vector2(0, 0),
+                Breather = false,
+                willDestroyObjectsUnderfoot = false,
+                HideShadow = true,
+            };
+            newPet.modData[MOD_DATA_OWNER] = Game1.player.displayName;
+        }
 
         /// <summary>
         /// For assigning an owner to a pet.
         /// </summary>
         /// <param name="petName">Name of pet to get new owner</param>
         /// <param name="farmerName">Name of farmer to assign as new owner</param>       
-        /// <param name="farmerId">Multiplayer ID of farmer to assign as new owner</param>
 
         internal static void AssignPetOwner(string petName, string farmerName)
         {
@@ -678,7 +721,7 @@ namespace MorePetBreeds
             {
                 // Send message to main player
                 SHelper.Multiplayer.SendMessage(
-                    message: new PlayerAddedPetMessage(newPet.Name, newPet.displayName, newPet.modData[MOD_DATA_OWNER], newPet.modData[MOD_DATA_SKIN_ID], newPet.petType.Value == "Cat" ? "cat" : "dog"),
+                    message: new PlayerAddedPetMessage(newPet.Name, newPet.displayName, newPet.modData[MOD_DATA_OWNER], newPet.modData[MOD_DATA_SKIN_ID], newPet.petType.Value == "Cat" ? "cat" : newPet.petType.Value == "Dog" ? "dog" : "red panda"),
                     messageType: PlayerAddedPetMessageId,
                     modIDs: new[] { SModManifest.UniqueID }
                     );
@@ -720,6 +763,10 @@ namespace MorePetBreeds
             else if (pet.petType.Value == "Dog" && dogTextureMap.Count > 0 && dogTextureMap.ContainsKey(pet.modData[MOD_DATA_SKIN_ID]))
             {
                 pet.Sprite.spriteTexture = dogTextureMap[pet.modData[MOD_DATA_SKIN_ID]];
+            }
+            else if (pet.petType.Value == "juminos.MorePets_RedPanda" && redpandaTextureMap.Count > 0 && redpandaTextureMap.ContainsKey(pet.modData[MOD_DATA_SKIN_ID]))
+            {
+                pet.Sprite.spriteTexture = redpandaTextureMap[pet.modData[MOD_DATA_SKIN_ID]];
             }
         }
 
@@ -787,6 +834,23 @@ namespace MorePetBreeds
                 dogTextureMap[(i + 1).ToString()] = SHelper.ModContent.Load<Texture2D>(relFileName); // TODO: refactor to use filename for key
             }
         }
+        private void LoadRedPandaSprites()
+        {
+            string modPath = PathUtilities.NormalizePath(SHelper.DirectoryPath + "\\");
+            string redPandaPath = PathUtilities.NormalizePath($"{modPath}assets\\Red Panda");
+
+            if (!Directory.Exists(redPandaPath))
+            {
+                SMonitor.Log($"Red Panda asssets path could not be found. {redPandaPath}", LogLevel.Warn);
+                return;
+            }
+            var files = Directory.GetFiles(redPandaPath, "*.png");
+            for (var i = 0; i < files.Length; i++)
+            {
+                var relFileName = AbsoluteToRelativePath(files[i], modPath);
+                redpandaTextureMap[(i + 1).ToString()] = SHelper.ModContent.Load<Texture2D>(relFileName); // TODO: refactor to use filename for key
+            }
+        }
 
         private string AbsoluteToRelativePath(string absolutePath, string modPath)
         {
@@ -847,12 +911,12 @@ namespace MorePetBreeds
         /// <summary>
         /// Helper function for getting a sprite's texture name
         /// </summary>
-        /// <param name="pet">"cat" or "dog"</param>
+        /// <param name="pet">"cat" or "dog" or "red panda"</param>
         /// <param name="breed">breed id for selecting pet texture</param>
         /// <returns>string value for textureName</returns>
         private static string GetPetTextureName(string pet, string breed)
         {
-            return $"Animals\\{pet}" + ((breed == "0") ? "" : string.Concat(breed));
+            return $"Animals\\{pet}" + (breed == "0" ? "" : string.Concat(breed));
         }
 
         private void HandleTeleportingPetsHomeAtNight(Farmer player)
@@ -925,7 +989,7 @@ namespace MorePetBreeds
             List<Furniture> rugs = new List<Furniture>();
             foreach (Furniture house_furniture in farmHouse.furniture)
             {
-                if ((int)house_furniture.furniture_type.Value == 12)
+                if (house_furniture.furniture_type.Value == 12)
                 {
                     rugs.Add(house_furniture);
                 }

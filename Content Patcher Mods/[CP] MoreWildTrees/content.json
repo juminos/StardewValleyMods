@@ -13,7 +13,7 @@
               "Texture": "Mods/juminos.MoreWildTrees/Sycamore"
             }
           ],
-          "SeedItemId": "(O)309"
+          "SeedItemId": "juminos.MoreWildTrees_SycamoreSeed"
         }
       }
     },

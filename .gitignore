@@ -1,11 +1,12 @@
 # Ignore Visual Studio temporary files
 .vs/
+**/.vs
 
 # Ignore node_modules directory
 node_modules/
 
 # Ignore obj folders in all projects
-*/obj/
+**/obj/
 
 # Ignore bin folders in all projects
-*/bin/
+**/bin/

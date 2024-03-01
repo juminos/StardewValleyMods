@@ -6,5 +6,12 @@
   "UniqueID": "juminos.MorePetBreeds",
   "EntryDll": "MorePetBreeds.dll",
   "MinimumApiVersion": "4.0.0-alpha.20231227",
+  "Dependencies": [
+    {
+      "UniqueID": "juminos.MorePets",
+      "IsRequired": true,
+      "MinimumVersion": "1.0.0"
+    }
+  ],
   "UpdateKeys": []
 }

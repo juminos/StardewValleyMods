@@ -1,0 +1,10 @@
+C:\Users\princ\SV modding\StardewValleyMods\FrenshipRings\bin\Debug\net6.0\manifest.json
+C:\Users\princ\SV modding\StardewValleyMods\FrenshipRings\bin\Debug\net6.0\FrenshipRings.deps.json
+C:\Users\princ\SV modding\StardewValleyMods\FrenshipRings\bin\Debug\net6.0\FrenshipRings.dll
+C:\Users\princ\SV modding\StardewValleyMods\FrenshipRings\obj\Debug\net6.0\FrenshipRings.csproj.AssemblyReference.cache
+C:\Users\princ\SV modding\StardewValleyMods\FrenshipRings\obj\Debug\net6.0\FrenshipRings.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\princ\SV modding\StardewValleyMods\FrenshipRings\obj\Debug\net6.0\FrenshipRings.AssemblyInfoInputs.cache
+C:\Users\princ\SV modding\StardewValleyMods\FrenshipRings\obj\Debug\net6.0\FrenshipRings.AssemblyInfo.cs
+C:\Users\princ\SV modding\StardewValleyMods\FrenshipRings\obj\Debug\net6.0\FrenshipRings.csproj.CoreCompileInputs.cache
+C:\Users\princ\SV modding\StardewValleyMods\FrenshipRings\obj\Debug\net6.0\FrenshipRings.sourcelink.json
+C:\Users\princ\SV modding\StardewValleyMods\FrenshipRings\obj\Debug\net6.0\FrenshipRings.dll

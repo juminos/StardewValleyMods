@@ -6,3 +6,13 @@ C:\Users\princ\SV modding\My Mods\HorseReskin\HorseReskin\obj\Debug\net6.0\Horse
 C:\Users\princ\SV modding\My Mods\HorseReskin\HorseReskin\obj\Debug\net6.0\HorseReskin.AssemblyInfo.cs
 C:\Users\princ\SV modding\My Mods\HorseReskin\HorseReskin\obj\Debug\net6.0\HorseReskin.csproj.CoreCompileInputs.cache
 C:\Users\princ\SV modding\My Mods\HorseReskin\HorseReskin\obj\Debug\net6.0\HorseReskin.dll
+C:\Users\princ\SV modding\StardewValleyMods\HorseReskin\bin\Debug\net6.0\manifest.json
+C:\Users\princ\SV modding\StardewValleyMods\HorseReskin\bin\Debug\net6.0\HorseReskin.deps.json
+C:\Users\princ\SV modding\StardewValleyMods\HorseReskin\bin\Debug\net6.0\HorseReskin.dll
+C:\Users\princ\SV modding\StardewValleyMods\HorseReskin\obj\Debug\net6.0\HorseReskin.csproj.AssemblyReference.cache
+C:\Users\princ\SV modding\StardewValleyMods\HorseReskin\obj\Debug\net6.0\HorseReskin.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\princ\SV modding\StardewValleyMods\HorseReskin\obj\Debug\net6.0\HorseReskin.AssemblyInfoInputs.cache
+C:\Users\princ\SV modding\StardewValleyMods\HorseReskin\obj\Debug\net6.0\HorseReskin.AssemblyInfo.cs
+C:\Users\princ\SV modding\StardewValleyMods\HorseReskin\obj\Debug\net6.0\HorseReskin.csproj.CoreCompileInputs.cache
+C:\Users\princ\SV modding\StardewValleyMods\HorseReskin\obj\Debug\net6.0\HorseReskin.sourcelink.json
+C:\Users\princ\SV modding\StardewValleyMods\HorseReskin\obj\Debug\net6.0\HorseReskin.dll

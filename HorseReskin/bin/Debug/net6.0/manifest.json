@@ -1,0 +1,10 @@
+{
+  "Name": "HorseReskin",
+  "Author": "juminos",
+  "Version": "1.0.0",
+  "Description": "Change horse skins.",
+  "UniqueID": "juminos.HorseReskin",
+  "EntryDll": "HorseReskin.dll",
+  "MinimumApiVersion": "4.0.0-alpha.20231227",
+  "UpdateKeys": []
+}
