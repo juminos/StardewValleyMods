@@ -1,5 +1,4 @@
 ﻿using System;
-
 using StardewModdingAPI;
 
 using StardewValley;
@@ -39,7 +38,8 @@ namespace MorePetBreeds.Framework
             switch (command)
             {
                 case "list_pets":
-                    ModEntry.GetAllPets().ForEach(delegate (Pet pet) {
+                    ModEntry.GetAllPets().ForEach(delegate (Pet pet)
+                    {
                         var petType = pet.petType.Value switch
                         {
                             Pet.type_cat => "cat",
@@ -131,7 +131,7 @@ namespace MorePetBreeds.Framework
                         return;
                     }
                     ModEntry.InitializeRedPanda(breed);
-                    ModEntry.ShowAdoptPetDialog("red panda");
+                    ModEntry.ShowAdoptPetDialog("juminos.MorePets_RedPanda");
                     return;
                 case "remove_pet":
                     if (args.Length == 0)

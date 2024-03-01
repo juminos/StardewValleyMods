@@ -35,7 +35,7 @@ namespace BetterFruitTrees
                     if (pair.Value is FruitTree fruitTree && fruitTree.growthStage.Value < 4)
                     {
                         // Logging current custom countdown
-                        monitor.Log($"UpdateFruitTrees: Current custom countdown for tree at {pair.Key}: {(fruitTree.modData.ContainsKey("CustomCountdown") ? fruitTree.modData["CustomCountdown"] : "Not set")}", LogLevel.Trace);
+                        //monitor.Log($"UpdateFruitTrees: Current custom countdown for tree at {pair.Key}: {(fruitTree.modData.ContainsKey("CustomCountdown") ? fruitTree.modData["CustomCountdown"] : "Not set")}", LogLevel.Trace);
 
                         // Initialize customCountdown and countdownFallback if not already set
                         if (!fruitTree.modData.ContainsKey("CustomCountdown"))
@@ -44,7 +44,7 @@ namespace BetterFruitTrees
                             int countdownFallback = 0;
                             fruitTree.modData["CountdownFallback"] = countdownFallback.ToString();
                             // Logging initialized custom countdown
-                            monitor.Log($"UpdateFruitTrees: Initialized custom countdown {customFruitCountdown} and fallback {countdownFallback} for tree at {pair.Key}", LogLevel.Trace);
+                            //monitor.Log($"UpdateFruitTrees: Initialized custom countdown {customFruitCountdown} and fallback {countdownFallback} for tree at {pair.Key}", LogLevel.Trace);
                         }
 
                         // Check surrounding area for bigger trees, update customCountdown, fallback
@@ -72,7 +72,7 @@ namespace BetterFruitTrees
                         fruitTree.modData["CountdownFallback"] = currentCountdownFallback.ToString();
 
                         // Logging updated custom countdown
-                        monitor.Log($"UpdateFruitTrees: Updated custom countdown for tree at {pair.Key} to {remainingCustomCountdown}", LogLevel.Trace);
+                        //monitor.Log($"UpdateFruitTrees: Updated custom countdown for tree at {pair.Key} to {remainingCustomCountdown}", LogLevel.Trace);
 
                         // Update growth stage
                         if (remainingCustomCountdown < customFruitCountdown)
@@ -80,7 +80,7 @@ namespace BetterFruitTrees
                             int newGrowthStage = CalculateFruitTreeGrowthStage(remainingCustomCountdown, customFruitCountdown);
                             fruitTree.growthStage.Value = newGrowthStage;
                             // Logging updated growth stage
-                            monitor.Log($"UpdateFruitTrees: Updated growth stage for tree at {pair.Key} to {newGrowthStage}", LogLevel.Trace);
+                            //monitor.Log($"UpdateFruitTrees: Updated growth stage for tree at {pair.Key} to {newGrowthStage}", LogLevel.Trace);
                         }
 
                         // Remove unneeded countdown for mature trees
@@ -89,13 +89,13 @@ namespace BetterFruitTrees
                             fruitTree.daysUntilMature.Value = 0;
                             fruitTree.modData.Remove("CustomCountdown");
                             // Logging removed custom countdown
-                            monitor.Log($"UpdateFruitTrees: Removed custom countdown for mature tree at {pair.Key}", LogLevel.Trace);
+                            //monitor.Log($"UpdateFruitTrees: Removed custom countdown for mature tree at {pair.Key}", LogLevel.Trace);
                         }
                     }
                     else if (pair.Value is Tree wildTree && wildTree.growthStage.Value < 5)
                     {
                         // Logging current custom countdown
-                        monitor.Log($"UpdateWildTrees: Current custom countdown for tree at {pair.Key}: {(wildTree.modData.ContainsKey("CustomCountdown") ? wildTree.modData["CustomCountdown"] : "Not set")}", LogLevel.Trace);
+                        //monitor.Log($"UpdateWildTrees: Current custom countdown for tree at {pair.Key}: {(wildTree.modData.ContainsKey("CustomCountdown") ? wildTree.modData["CustomCountdown"] : "Not set")}", LogLevel.Trace);
 
                         // Initialize customCountdown if not already set
                         if (!wildTree.modData.ContainsKey("CustomCountdown"))
@@ -104,7 +104,7 @@ namespace BetterFruitTrees
                             int countdownFallback = 0;
                             wildTree.modData["CountdownFallback"] = countdownFallback.ToString();
                             // Logging initialized custom countdown
-                            monitor.Log($"UpdateWildTrees: Initialized custom countdown for tree at {pair.Key} to {customWildCountdown}", LogLevel.Trace);
+                            //monitor.Log($"UpdateWildTrees: Initialized custom countdown for tree at {pair.Key} to {customWildCountdown}", LogLevel.Trace);
                         }
 
                         // Check surrounding area for bigger trees, decrement customCountdown
@@ -133,7 +133,7 @@ namespace BetterFruitTrees
                         wildTree.modData["CountdownFallback"] = currentCountdownFallback.ToString();
 
                         // Logging updated custom countdown
-                        monitor.Log($"UpdateFruitTrees: Updated custom countdown for tree at {pair.Key} to {remainingCustomCountdown}", LogLevel.Trace);
+                        //monitor.Log($"UpdateFruitTrees: Updated custom countdown for tree at {pair.Key} to {remainingCustomCountdown}", LogLevel.Trace);
 
                         // Update growth stage
                         if (remainingCustomCountdown < customWildCountdown)
@@ -141,7 +141,7 @@ namespace BetterFruitTrees
                             int newGrowthStage = CalculateWildTreeGrowthStage(remainingCustomCountdown, customWildCountdown);
                             wildTree.growthStage.Value = newGrowthStage;
                             // Logging updated growth stage
-                            monitor.Log($"UpdateFruitTrees: Updated growth stage for tree at {pair.Key} to {newGrowthStage}", LogLevel.Trace);
+                            //monitor.Log($"UpdateFruitTrees: Updated growth stage for tree at {pair.Key} to {newGrowthStage}", LogLevel.Trace);
                         }
 
                         // Remove unneeded countdown for mature trees
@@ -149,7 +149,7 @@ namespace BetterFruitTrees
                         {
                             wildTree.modData.Remove("CustomCountdown");
                             // Logging removed custom countdown
-                            monitor.Log($"UpdateFruitTrees: Removed custom countdown for mature tree at {pair.Key}", LogLevel.Trace);
+                            //monitor.Log($"UpdateFruitTrees: Removed custom countdown for mature tree at {pair.Key}", LogLevel.Trace);
                         }
                     }
                     // Large wild tree growth
@@ -161,7 +161,7 @@ namespace BetterFruitTrees
                             int largeTreeCount = 0;
                             matureWildTree.modData["LargeTreeCount"] = largeTreeCount.ToString();
                             // Logging to check if the counter is initialized
-                            monitor.Log($"Initialized LargeTreeCount for tree at position {pair.Key}.", LogLevel.Trace);
+                            //monitor.Log($"Initialized LargeTreeCount for tree at position {pair.Key}.", LogLevel.Trace);
                         }
                         // check and update counter
                         int currentLargeTreeCount = Convert.ToInt32(matureWildTree.modData["LargeTreeCount"]);
@@ -170,12 +170,12 @@ namespace BetterFruitTrees
                         {
                             currentLargeTreeCount++;
                             // Logging to check if the tree will grow this day
-                            monitor.Log($"Tree at position {pair.Key} will grow into a large tree.", LogLevel.Trace);
+                            //monitor.Log($"Tree at position {pair.Key} will grow into a large tree.", LogLevel.Trace);
                         }
                         else
                         {
                             // Logging to check if the tree will not grow this day
-                            monitor.Log($"Tree at position {pair.Key} will not grow into a large tree.", LogLevel.Trace);
+                            //monitor.Log($"Tree at position {pair.Key} will not grow into a large tree.", LogLevel.Trace);
                         }
                         matureWildTree.modData["LargeTreeCount"] = currentLargeTreeCount.ToString();
                         // check if surrounding area is clear
@@ -189,7 +189,7 @@ namespace BetterFruitTrees
                             {
                                 clearArea = false;
                                 // Logging to check which tile prevents growth
-                                monitor.Log($"Tile at position {tileLocation} prevents growth of tree at position {pair.Key}.", LogLevel.Trace);
+                                //monitor.Log($"Tile at position {tileLocation} prevents growth of tree at position {pair.Key}.", LogLevel.Trace);
                                 break;
                             }
                         }
@@ -198,14 +198,14 @@ namespace BetterFruitTrees
                             // replace tree with large tree building
                             string wildTreeKeyword = GetKeywordFromTreeId(matureWildTree.treeType.Value);
 
-                            monitor.Log($"Looking for keyword match for treeId: {matureWildTree.treeType.Value}", LogLevel.Trace);
-                            monitor.Log($"Matching wild tree keyword found: {wildTreeKeyword}", LogLevel.Trace);
+                            //monitor.Log($"Looking for keyword match for treeId: {matureWildTree.treeType.Value}", LogLevel.Trace);
+                            //monitor.Log($"Matching wild tree keyword found: {wildTreeKeyword}", LogLevel.Trace);
 
                             // Iterate through building data to find the matching building ID
                             foreach (var kvp in Game1.buildingData)
                             {
                                 // Log the building ID being checked
-                                monitor.Log($"Checking building ID: {kvp.Key}", LogLevel.Trace);
+                                //monitor.Log($"Checking building ID: {kvp.Key}", LogLevel.Trace);
 
                                 // Convert both the tree keyword and building ID to lowercase for case-insensitive comparison
                                 string lowerCaseTreeKeyword = wildTreeKeyword.ToLower();
@@ -214,19 +214,19 @@ namespace BetterFruitTrees
                                 if (!string.IsNullOrEmpty(wildTreeKeyword) && lowerCaseBuildingId.Contains(lowerCaseTreeKeyword))
                                 {
                                     // Log the matching building ID
-                                    monitor.Log($"Matching building ID found: {kvp.Key}", LogLevel.Trace);
+                                    //monitor.Log($"Matching building ID found: {kvp.Key}", LogLevel.Trace);
 
                                     // Create the large tree building at the same tile position
                                     Building largeTree = new Building(kvp.Key, pair.Key);
 
                                     // Log the creation of the large tree building
-                                    monitor.Log($"Large tree building created at position {pair.Key}", LogLevel.Trace);
+                                    //monitor.Log($"Large tree building created at position {pair.Key}", LogLevel.Trace);
 
                                     // Remove the tree from terrain features
                                     location.terrainFeatures.Remove(pair.Key);
 
                                     // Log the removal of the tree from terrain features
-                                    monitor.Log($"Tree removed from terrain features at position {pair.Key}", LogLevel.Trace);
+                                    //monitor.Log($"Tree removed from terrain features at position {pair.Key}", LogLevel.Trace);
 
                                     // Add large tree to map
                                     location.buildings.Add(largeTree);
@@ -235,7 +235,7 @@ namespace BetterFruitTrees
                                     matureWildTree.modData.Remove("LargeTreeCount");
 
                                     // Logging to confirm texture expansion
-                                    monitor.Log($"Texture expanded for tree at position {pair.Key}.", LogLevel.Trace);
+                                    //monitor.Log($"Texture expanded for tree at position {pair.Key}.", LogLevel.Trace);
 
                                     // Exit the loop once a match is found
                                     break;
@@ -243,7 +243,7 @@ namespace BetterFruitTrees
                                 else
                                 {
                                     // Log an error if no matching building ID is found
-                                    monitor.Log($"Error: No matching building found for tree keyword '{wildTreeKeyword}'", LogLevel.Error);
+                                    //monitor.Log($"Error: No matching building found for tree keyword '{wildTreeKeyword}'", LogLevel.Error);
                                 }
                             }
                         }
@@ -256,7 +256,7 @@ namespace BetterFruitTrees
                             int largeTreeCount = 0;
                             matureFruitTree.modData["LargeTreeCount"] = largeTreeCount.ToString();
                             // Logging to check if the counter is initialized
-                            monitor.Log($"Initialized LargeTreeCount for tree at position {pair.Key}.", LogLevel.Trace);
+                            //monitor.Log($"Initialized LargeTreeCount for tree at position {pair.Key}.", LogLevel.Trace);
                         }
                         // check and update counter
                         int currentLargeTreeCount = Convert.ToInt32(matureFruitTree.modData["LargeTreeCount"]);
@@ -265,12 +265,12 @@ namespace BetterFruitTrees
                         {
                             currentLargeTreeCount++;
                             // Logging to check if the tree will grow this day
-                            monitor.Log($"Tree at position {pair.Key} will grow into a large tree.", LogLevel.Trace);
+                            //monitor.Log($"Tree at position {pair.Key} will grow into a large tree.", LogLevel.Trace);
                         }
                         else
                         {
                             // Logging to check if the tree will not grow this day
-                            monitor.Log($"Tree at position {pair.Key} will not grow into a large tree.", LogLevel.Trace);
+                            //monitor.Log($"Tree at position {pair.Key} will not grow into a large tree.", LogLevel.Trace);
                         }
                         matureFruitTree.modData["LargeTreeCount"] = currentLargeTreeCount.ToString();
                         // check if surrounding area is clear
@@ -284,7 +284,7 @@ namespace BetterFruitTrees
                             {
                                 clearArea = false;
                                 // Logging to check which tile prevents growth
-                                monitor.Log($"Tile at position {tileLocation} prevents growth of tree at position {pair.Key}.", LogLevel.Trace);
+                                //monitor.Log($"Tile at position {tileLocation} prevents growth of tree at position {pair.Key}.", LogLevel.Trace);
                                 break;
                             }
                         }
@@ -293,14 +293,14 @@ namespace BetterFruitTrees
                             // replace tree with large tree building
                             string fruitTreeKeyword = GetKeywordFromTreeId(matureFruitTree.treeId.Value);
 
-                            monitor.Log($"Looking for keyword match for treeId: {matureFruitTree.treeId.Value}", LogLevel.Trace);
-                            monitor.Log($"Matching wild tree keyword found: {fruitTreeKeyword}", LogLevel.Trace);
+                            //monitor.Log($"Looking for keyword match for treeId: {matureFruitTree.treeId.Value}", LogLevel.Trace);
+                            //monitor.Log($"Matching wild tree keyword found: {fruitTreeKeyword}", LogLevel.Trace);
 
                             // Iterate through building data to find the matching building ID
                             foreach (var kvp in Game1.buildingData)
                             {
                                 // Log the building ID being checked
-                                monitor.Log($"Checking building ID: {kvp.Key}", LogLevel.Trace);
+                                //monitor.Log($"Checking building ID: {kvp.Key}", LogLevel.Trace);
 
                                 // Convert both the tree keyword and building ID to lowercase for case-insensitive comparison
                                 string lowerCaseTreeKeyword = fruitTreeKeyword.ToLower();
@@ -309,20 +309,20 @@ namespace BetterFruitTrees
                                 if (!string.IsNullOrEmpty(fruitTreeKeyword) && lowerCaseBuildingId.Contains(lowerCaseTreeKeyword))
                                 {
                                     // Log the matching building ID
-                                    monitor.Log($"Matching building ID found: {kvp.Key}", LogLevel.Trace);
+                                    //monitor.Log($"Matching building ID found: {kvp.Key}", LogLevel.Trace);
 
                                     // Create the large tree building 1 tile to the left of the current position
                                     Vector2 newBuildingPosition = new Vector2(pair.Key.X - 1, pair.Key.Y);
                                     Building largeTree = new Building(kvp.Key, newBuildingPosition);
 
                                     // Log the creation of the large tree building
-                                    monitor.Log($"Large tree building created at position {newBuildingPosition}", LogLevel.Trace);
+                                    //monitor.Log($"Large tree building created at position {newBuildingPosition}", LogLevel.Trace);
 
                                     // Remove the tree from terrain features
                                     location.terrainFeatures.Remove(pair.Key);
 
                                     // Log the removal of the tree from terrain features
-                                    monitor.Log($"Tree removed from terrain features at position {pair.Key}", LogLevel.Trace);
+                                    //monitor.Log($"Tree removed from terrain features at position {pair.Key}", LogLevel.Trace);
 
                                     // Add large tree to map
                                     location.buildings.Add(largeTree);
@@ -331,7 +331,7 @@ namespace BetterFruitTrees
                                     matureFruitTree.modData.Remove("LargeTreeCount");
 
                                     // Logging to confirm texture expansion
-                                    monitor.Log($"Texture expanded for tree at position {pair.Key}.", LogLevel.Trace);
+                                    //monitor.Log($"Texture expanded for tree at position {pair.Key}.", LogLevel.Trace);
 
                                     // Exit the loop once a match is found
                                     break;
@@ -339,7 +339,7 @@ namespace BetterFruitTrees
                                 else
                                 {
                                     // Log an error if no matching building ID is found
-                                    monitor.Log($"Error: No matching building found for tree keyword '{fruitTreeKeyword}'", LogLevel.Error);
+                                    //monitor.Log($"Error: No matching building found for tree keyword '{fruitTreeKeyword}'", LogLevel.Error);
                                 }
                             }
                         }

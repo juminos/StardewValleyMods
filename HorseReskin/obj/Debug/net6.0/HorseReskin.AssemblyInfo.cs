@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HorseReskin")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1396637cdb4965c8b2e4ef9e7977a5f5de7e2b9b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+17c9770b679a5a3b6fa7c86746448f25dff194c7")]
 [assembly: System.Reflection.AssemblyProductAttribute("HorseReskin")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HorseReskin")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

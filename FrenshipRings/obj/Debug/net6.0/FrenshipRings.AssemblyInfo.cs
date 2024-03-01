@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FrenshipRings")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+77d64006a0ddcf38e1035d09fbb68e75d268248b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+17c9770b679a5a3b6fa7c86746448f25dff194c7")]
 [assembly: System.Reflection.AssemblyProductAttribute("FrenshipRings")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FrenshipRings")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

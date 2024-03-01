@@ -1,0 +1,10 @@
+{
+  "Name": "Frenship Rings",
+  "Author": "juminos",
+  "Version": "1.0.0",
+  "Description": "Adds rings to befriend others.",
+  "UniqueID": "juminos.FrenshipRings",
+  "EntryDll": "FrenshipRings.dll",
+  "MinimumApiVersion": "3.0.0",
+  "UpdateKeys": []
+}

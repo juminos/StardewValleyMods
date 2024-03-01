@@ -18,6 +18,8 @@
             "X": -32,
             "Y": 0
           },
+          "AdoptionEventLocation": "Farm",
+          "AdoptionEventId": "1590166",
           "MoveSpeed": 2,
           "SleepOnBedChance": 0.75,
           "SleepNearBedChance": 0.3,

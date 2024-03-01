@@ -1,0 +1,164 @@
+{
+  "FruitSpreadChance": 0.15,
+  "WildSpreadChance": 0.15,
+  "FruitTreeDensityModifier": 0.2,
+  "WildTreeDensityModifier": 0.5,
+  "SpreadRadius": 3,
+  "FruitDaysToFinalStage": 28,
+  "FarmFruitModifier": 2,
+  "FruitDailyGrowthChance": 0.8,
+  "WildDaysToFinalStage": 28,
+  "FarmWildModifier": 2,
+  "WildDailyGrowthChance": 0.8,
+  "EnergyCost": 5,
+  "FruitTreeChance": 0.53333,
+  "TreeConfigurations": {
+    "OakTreeReplacements": {
+      "FruitTrees": [
+        { "Keyword": "apple", "Weight": 1 },
+        { "Keyword": "apricot", "Weight": 1 },
+        { "Keyword": "banana", "Weight": 1 },
+        { "Keyword": "cherry", "Weight": 1 },
+        { "Keyword": "mango", "Weight": 1 },
+        { "Keyword": "orange", "Weight": 1 },
+        { "Keyword": "peach", "Weight": 1 },
+        { "Keyword": "pomegranate", "Weight": 1 }
+      ],
+      "WildTrees": [
+        { "Keyword": "oak", "Weight": 1 },
+        { "Keyword": "maple", "Weight": 1 },
+        { "Keyword": "pine", "Weight": 1 },
+        { "Keyword": "mushroom", "Weight": 1 },
+        { "Keyword": "mahogany", "Weight": 1 },
+        { "Keyword": "desertpalm", "Weight": 1 },
+        { "Keyword": "islandpalm", "Weight": 1 }
+      ]
+    },
+    "MapleTreeReplacements": {
+      "FruitTrees": [
+        { "Keyword": "apple", "Weight": 1 },
+        { "Keyword": "apricot", "Weight": 1 },
+        { "Keyword": "banana", "Weight": 1 },
+        { "Keyword": "cherry", "Weight": 1 },
+        { "Keyword": "mango", "Weight": 1 },
+        { "Keyword": "orange", "Weight": 1 },
+        { "Keyword": "peach", "Weight": 1 },
+        { "Keyword": "pomegranate", "Weight": 1 }
+      ],
+      "WildTrees": [
+        { "Keyword": "oak", "Weight": 1 },
+        { "Keyword": "maple", "Weight": 1 },
+        { "Keyword": "pine", "Weight": 1 },
+        { "Keyword": "mushroom", "Weight": 1 },
+        { "Keyword": "mahogany", "Weight": 1 },
+        { "Keyword": "desertpalm", "Weight": 1 },
+        { "Keyword": "islandpalm", "Weight": 1 }
+      ]
+    },
+    "PineTreeReplacements": {
+      "FruitTrees": [
+        { "Keyword": "apple", "Weight": 1 },
+        { "Keyword": "apricot", "Weight": 1 },
+        { "Keyword": "banana", "Weight": 1 },
+        { "Keyword": "cherry", "Weight": 1 },
+        { "Keyword": "mango", "Weight": 1 },
+        { "Keyword": "orange", "Weight": 1 },
+        { "Keyword": "peach", "Weight": 1 },
+        { "Keyword": "pomegranate", "Weight": 1 }
+      ],
+      "WildTrees": [
+        { "Keyword": "oak", "Weight": 1 },
+        { "Keyword": "maple", "Weight": 1 },
+        { "Keyword": "pine", "Weight": 1 },
+        { "Keyword": "mushroom", "Weight": 1 },
+        { "Keyword": "mahogany", "Weight": 1 },
+        { "Keyword": "desertpalm", "Weight": 1 },
+        { "Keyword": "islandpalm", "Weight": 1 }
+      ]
+    },
+    "MushroomTreeReplacements": {
+      "FruitTrees": [
+        { "Keyword": "apple", "Weight": 1 },
+        { "Keyword": "apricot", "Weight": 1 },
+        { "Keyword": "banana", "Weight": 1 },
+        { "Keyword": "cherry", "Weight": 1 },
+        { "Keyword": "mango", "Weight": 1 },
+        { "Keyword": "orange", "Weight": 1 },
+        { "Keyword": "peach", "Weight": 1 },
+        { "Keyword": "pomegranate", "Weight": 1 }
+      ],
+      "WildTrees": [
+        { "Keyword": "oak", "Weight": 1 },
+        { "Keyword": "maple", "Weight": 1 },
+        { "Keyword": "pine", "Weight": 1 },
+        { "Keyword": "mushroom", "Weight": 1 },
+        { "Keyword": "mahogany", "Weight": 1 },
+        { "Keyword": "desertpalm", "Weight": 1 },
+        { "Keyword": "islandpalm", "Weight": 1 }
+      ]
+    },
+    "MahoganyTreeReplacements": {
+      "FruitTrees": [
+        { "Keyword": "apple", "Weight": 1 },
+        { "Keyword": "apricot", "Weight": 1 },
+        { "Keyword": "banana", "Weight": 1 },
+        { "Keyword": "cherry", "Weight": 1 },
+        { "Keyword": "mango", "Weight": 1 },
+        { "Keyword": "orange", "Weight": 1 },
+        { "Keyword": "peach", "Weight": 1 },
+        { "Keyword": "pomegranate", "Weight": 1 }
+      ],
+      "WildTrees": [
+        { "Keyword": "oak", "Weight": 1 },
+        { "Keyword": "maple", "Weight": 1 },
+        { "Keyword": "pine", "Weight": 1 },
+        { "Keyword": "mushroom", "Weight": 1 },
+        { "Keyword": "mahogany", "Weight": 1 },
+        { "Keyword": "desertpalm", "Weight": 1 },
+        { "Keyword": "islandpalm", "Weight": 1 }
+      ]
+    },
+    "DesertPalmTreeReplacements": {
+      "FruitTrees": [
+        { "Keyword": "apple", "Weight": 1 },
+        { "Keyword": "apricot", "Weight": 1 },
+        { "Keyword": "banana", "Weight": 1 },
+        { "Keyword": "cherry", "Weight": 1 },
+        { "Keyword": "mango", "Weight": 1 },
+        { "Keyword": "orange", "Weight": 1 },
+        { "Keyword": "peach", "Weight": 1 },
+        { "Keyword": "pomegranate", "Weight": 1 }
+      ],
+      "WildTrees": [
+        { "Keyword": "oak", "Weight": 1 },
+        { "Keyword": "maple", "Weight": 1 },
+        { "Keyword": "pine", "Weight": 1 },
+        { "Keyword": "mushroom", "Weight": 1 },
+        { "Keyword": "mahogany", "Weight": 1 },
+        { "Keyword": "desertpalm", "Weight": 1 },
+        { "Keyword": "islandpalm", "Weight": 1 }
+      ]
+    },
+    "IslandPalmTreeReplacements": {
+      "FruitTrees": [
+        { "Keyword": "apple", "Weight": 1 },
+        { "Keyword": "apricot", "Weight": 1 },
+        { "Keyword": "banana", "Weight": 1 },
+        { "Keyword": "cherry", "Weight": 1 },
+        { "Keyword": "mango", "Weight": 1 },
+        { "Keyword": "orange", "Weight": 1 },
+        { "Keyword": "peach", "Weight": 1 },
+        { "Keyword": "pomegranate", "Weight": 1 }
+      ],
+      "WildTrees": [
+        { "Keyword": "oak", "Weight": 1 },
+        { "Keyword": "maple", "Weight": 1 },
+        { "Keyword": "pine", "Weight": 1 },
+        { "Keyword": "mushroom", "Weight": 1 },
+        { "Keyword": "mahogany", "Weight": 1 },
+        { "Keyword": "desertpalm", "Weight": 1 },
+        { "Keyword": "islandpalm", "Weight": 1 }
+      ]
+    }
+  }
+}

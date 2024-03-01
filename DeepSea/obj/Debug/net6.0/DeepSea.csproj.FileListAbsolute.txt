@@ -1,0 +1,11 @@
+C:\Users\princ\SV modding\StardewValleyMods\DeepSea\bin\Debug\net6.0\content.json
+C:\Users\princ\SV modding\StardewValleyMods\DeepSea\bin\Debug\net6.0\manifest.json
+C:\Users\princ\SV modding\StardewValleyMods\DeepSea\bin\Debug\net6.0\DeepSea.deps.json
+C:\Users\princ\SV modding\StardewValleyMods\DeepSea\bin\Debug\net6.0\DeepSea.dll
+C:\Users\princ\SV modding\StardewValleyMods\DeepSea\obj\Debug\net6.0\DeepSea.csproj.AssemblyReference.cache
+C:\Users\princ\SV modding\StardewValleyMods\DeepSea\obj\Debug\net6.0\DeepSea.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\princ\SV modding\StardewValleyMods\DeepSea\obj\Debug\net6.0\DeepSea.AssemblyInfoInputs.cache
+C:\Users\princ\SV modding\StardewValleyMods\DeepSea\obj\Debug\net6.0\DeepSea.AssemblyInfo.cs
+C:\Users\princ\SV modding\StardewValleyMods\DeepSea\obj\Debug\net6.0\DeepSea.csproj.CoreCompileInputs.cache
+C:\Users\princ\SV modding\StardewValleyMods\DeepSea\obj\Debug\net6.0\DeepSea.sourcelink.json
+C:\Users\princ\SV modding\StardewValleyMods\DeepSea\obj\Debug\net6.0\DeepSea.dll
