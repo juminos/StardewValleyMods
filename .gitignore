@@ -6,3 +6,6 @@ node_modules/
 
 # Ignore obj folders in all projects
 */obj/
+
+# Ignore bin folders in all projects
+*/bin/
