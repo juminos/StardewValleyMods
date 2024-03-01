@@ -18,7 +18,8 @@ namespace BetterFruitTrees
         internal static float wildSpreadChance;
         internal static float fruitTreeDensityModifier;
         internal static float wildTreeDensityModifier;
-        internal static int spreadRadius;
+        internal static int spreadFruitRadius;
+        internal static int spreadWildRadius;
         internal static int fruitDaysToFinalStage;
         internal static float farmFruitModifier;
         internal static float fruitDailyGrowthChance;
@@ -41,7 +42,8 @@ namespace BetterFruitTrees
             wildSpreadChance = config.WildSpreadChance.Value;
             fruitTreeDensityModifier = config.FruitTreeDensityModifier.Value;
             wildTreeDensityModifier = config.WildTreeDensityModifier.Value;
-            spreadRadius = config.SpreadRadius.Value;
+            spreadFruitRadius = config.SpreadFruitRadius.Value;
+            spreadWildRadius = config.SpreadWildRadius.Value;
             fruitDaysToFinalStage = config.FruitDaysToFinalStage.Value;
             farmFruitModifier = config.FarmFruitModifier.Value;
             fruitDailyGrowthChance = config.FruitDailyGrowthChance.Value;

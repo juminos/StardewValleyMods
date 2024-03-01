@@ -9,23 +9,25 @@ namespace BetterFruitTrees
         public float? WildSpreadChance { get; set; } = 0.15f;
 
         // Spread chance modifiers for tree adjacency
-        public float? FruitTreeDensityModifier { get; set; } = 0.02f;
-        public float? WildTreeDensityModifier { get; set; } = 0.02f;
+        public float? FruitTreeDensityModifier { get; set; } = 0.2f;
+        public float? WildTreeDensityModifier { get; set; } = 0.8f;
 
         // Radius for fruit tree spreading check
-        public int? SpreadRadius { get; set; } = 3;
+        public int? SpreadFruitRadius { get; set; } = 3;
+        // Radius for wild tree spreading check
+        public int? SpreadWildRadius { get; set; } = 3;
 
         // Days until fruit trees reach maturity
-        public int? FruitDaysToFinalStage { get; set; } = 32;
+        public int? FruitDaysToFinalStage { get; set; } = 112;
         // Modify growth rate for fruit trees on farm
-        public float? FarmFruitModifier { get; set; } = 4.0f;
+        public float? FarmFruitModifier { get; set; } = 2.0f;
 
         // Chance for a fruit tree to grow on a given day (0.0 to 1.0)
-        public float? FruitDailyGrowthChance { get; set; } = 0.9f;
+        public float? FruitDailyGrowthChance { get; set; } = 0.6f;
         // Days until wild trees reach maturity
-        public int? WildDaysToFinalStage { get; set; } = 32;
+        public int? WildDaysToFinalStage { get; set; } = 20;
         // Modify growth rate for wild trees on farm
-        public float? FarmWildModifier { get; set; } = 4.0f;
+        public float? FarmWildModifier { get; set; } = 2.0f;
 
         // Chance for a wild tree to grow on a given day (0.0 to 1.0)
         public float? WildDailyGrowthChance { get; set; } = 0.9f;

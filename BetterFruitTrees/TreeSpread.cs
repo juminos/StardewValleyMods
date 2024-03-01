@@ -79,9 +79,9 @@ namespace BetterFruitTrees
             bool neighboringTreesPresent = false;
 
             // Iterate over surrounding tiles within spread radius
-            for (int x = (int)treeTile.X - ModEntry.spreadRadius; x <= (int)treeTile.X + ModEntry.spreadRadius; x++)
+            for (int x = (int)treeTile.X - ModEntry.spreadFruitRadius; x <= (int)treeTile.X + ModEntry.spreadFruitRadius; x++)
             {
-                for (int y = (int)treeTile.Y - ModEntry.spreadRadius; y <= (int)treeTile.Y + ModEntry.spreadRadius; y++)
+                for (int y = (int)treeTile.Y - ModEntry.spreadFruitRadius; y <= (int)treeTile.Y + ModEntry.spreadFruitRadius; y++)
                 {
                     Vector2 tileLocation = new Vector2(x, y);
 
@@ -93,14 +93,16 @@ namespace BetterFruitTrees
                         continue;
 
                     // Check if the neighboring tile contains a tree
-                    if (IsSurroundingAreaBlocked(tileLocation, location))
+                    if (IsSurroundingAreaOvershadowed(tileLocation, location))
                     {
                         // Set the flag to true if neighboring trees are present
                         neighboringTreesPresent = true;
                         break;
                     }
 
-                    float adjustedSpreadChance = ModEntry.fruitSpreadChance;
+                    int surroundedCount = CountOccupiedSurroundingTiles(tileLocation, location);
+
+                    float adjustedSpreadChance = ModEntry.fruitSpreadChance / MathF.Pow((float)surroundedCount + 0.1f, 1.1f);
 
                     // Check if the tile is a suitable terrain type
                     string terrainType = location.doesTileHaveProperty((int)tileLocation.X, (int)tileLocation.Y, "Type", "Back");
@@ -136,9 +138,9 @@ namespace BetterFruitTrees
         {
             bool neighboringTreesPresent = false;
 
-            for (int x = (int)treeTile.X - ModEntry.spreadRadius; x <= (int)treeTile.X + ModEntry.spreadRadius; x++)
+            for (int x = (int)treeTile.X - ModEntry.spreadWildRadius; x <= (int)treeTile.X + ModEntry.spreadWildRadius; x++)
             {
-                for (int y = (int)treeTile.Y - ModEntry.spreadRadius; y <= (int)treeTile.Y + ModEntry.spreadRadius; y++)
+                for (int y = (int)treeTile.Y - ModEntry.spreadWildRadius; y <= (int)treeTile.Y + ModEntry.spreadWildRadius; y++)
                 {
                     Vector2 tileLocation = new Vector2(x, y);
 
@@ -150,14 +152,16 @@ namespace BetterFruitTrees
                         continue;
 
                     // Check if the neighboring tile contains a tree
-                    if (IsSurroundingAreaBlocked(tileLocation, location))
+                    if (IsSurroundingAreaOvershadowed(tileLocation, location))
                     {
                         // Set the flag to true if neighboring trees are present
                         neighboringTreesPresent = true;
                         break;
                     }
 
-                    float adjustedSpreadChance = ModEntry.wildSpreadChance;
+                    int surroundedCount = CountOccupiedSurroundingTiles(tileLocation, location);
+
+                    float adjustedSpreadChance = ModEntry.wildSpreadChance / MathF.Pow((float)surroundedCount + 0.1f, 1.1f);
 
                     // Check if the tile is a suitable terrain type
                     string terrainType = location.doesTileHaveProperty((int)tileLocation.X, (int)tileLocation.Y, "Type", "Back");
@@ -189,7 +193,7 @@ namespace BetterFruitTrees
         }
 
         // Check for nearby larger trees
-        public static bool IsSurroundingAreaBlocked(Vector2 treeTile, GameLocation location)
+        public static bool IsSurroundingAreaOvershadowed(Vector2 treeTile, GameLocation location)
         {
             Vector2[] surroundingTileLocationsArray = Utility.getSurroundingTileLocationsArray(treeTile);
             foreach (Vector2 tileLocation in surroundingTileLocationsArray)
@@ -203,6 +207,26 @@ namespace BetterFruitTrees
                 }
             }
             return false;
+        }
+
+        // Count occupied surrounding tiles
+        public static int CountOccupiedSurroundingTiles(Vector2 treeTile, GameLocation location)
+        {
+            int occupiedCount = 0;
+            Vector2[] surroundingTileLocationsArray = Utility.getSurroundingTileLocationsArray(treeTile);
+            foreach (Vector2 tileLocation in surroundingTileLocationsArray )
+            {
+                if(!location.isTileOnMap(tileLocation))
+                {
+                    continue;
+                }
+
+                if (location.IsTileOccupiedBy(tileLocation))
+                {
+                    occupiedCount++;
+                }
+            }
+            return occupiedCount;
         }
     }
 }

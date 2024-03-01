@@ -2,100 +2,310 @@
   "FruitSpreadChance": 0.15,
   "WildSpreadChance": 0.15,
   "FruitTreeDensityModifier": 0.2,
-  "WildTreeDensityModifier": 0.5,
-  "SpreadRadius": 3,
-  "FruitDaysToFinalStage": 28,
-  "FruitDailyGrowthChance": 0.8,
-  "WildDaysToFinalStage": 28,
-  "WildDailyGrowthChance": 0.8,
+  "WildTreeDensityModifier": 0.8,
+  "SpreadFruitRadius": 3,
+  "SpreadWildRadius": 3,
+  "FruitDaysToFinalStage": 112,
+  "FarmFruitModifier": 2.0,
+  "FruitDailyGrowthChance": 0.6,
+  "WildDaysToFinalStage": 20,
+  "FarmWildModifier": 2.0,
+  "WildDailyGrowthChance": 0.9,
   "EnergyCost": 5,
-  "FruitTreeChance": 0.7,
+  "FruitTreeChance": 0.53333,
   "TreeConfigurations": {
     "OakTreeReplacements": {
       "FruitTrees": [
-        { "Keyword": "apple", "Weight": 1 },
-        { "Keyword": "apricot", "Weight": 1 },
-        { "Keyword": "banana", "Weight": 0 },
-        { "Keyword": "cherry", "Weight": 1 },
-        { "Keyword": "mango", "Weight": 0 },
-        { "Keyword": "orange", "Weight": 1 },
-        { "Keyword": "peach", "Weight": 1 },
-        { "Keyword": "pomegranate", "Weight": 1 },
-        { "Keyword": "asian pear", "Weight": 1 },
-        { "Keyword": "wisteria", "Weight": 1 },
-        { "Keyword": "granny smith", "Weight": 1 },
-        { "Keyword": "hazelnut", "Weight": 0 },
-        { "Keyword": "holly", "Weight": 0 },
-        { "Keyword": "pear", "Weight": 1 },
-        { "Keyword": "pecan", "Weight": 1 },
-        { "Keyword": "persimmon", "Weight": 1 },
-        { "Keyword": "walnut", "Weight": 1 }
+        {
+          "Keyword": "apple",
+          "Weight": 1
+        },
+        {
+          "Keyword": "apricot",
+          "Weight": 1
+        },
+        {
+          "Keyword": "banana",
+          "Weight": 0
+        },
+        {
+          "Keyword": "cherry",
+          "Weight": 1
+        },
+        {
+          "Keyword": "mango",
+          "Weight": 0
+        },
+        {
+          "Keyword": "orange",
+          "Weight": 1
+        },
+        {
+          "Keyword": "peach",
+          "Weight": 1
+        },
+        {
+          "Keyword": "pomegranate",
+          "Weight": 1
+        },
+        {
+          "Keyword": "asian pear",
+          "Weight": 1
+        },
+        {
+          "Keyword": "wisteria",
+          "Weight": 1
+        },
+        {
+          "Keyword": "granny smith",
+          "Weight": 1
+        },
+        {
+          "Keyword": "hazelnut",
+          "Weight": 0
+        },
+        {
+          "Keyword": "holly",
+          "Weight": 0
+        },
+        {
+          "Keyword": "pear",
+          "Weight": 1
+        },
+        {
+          "Keyword": "pecan",
+          "Weight": 1
+        },
+        {
+          "Keyword": "persimmon",
+          "Weight": 1
+        },
+        {
+          "Keyword": "walnut",
+          "Weight": 1
+        }
       ],
       "WildTrees": [
-        { "Keyword": "oak", "Weight": 5 },
-        { "Keyword": "maple", "Weight": 2 },
-        { "Keyword": "pine", "Weight": 2 },
-        { "Keyword": "mushroom", "Weight": 1 },
-        { "Keyword": "mahogany", "Weight": 0 },
-        { "Keyword": "desertpalm", "Weight": 0 },
-        { "Keyword": "islandpalm", "Weight": 0 }
+        {
+          "Keyword": "oak",
+          "Weight": 5
+        },
+        {
+          "Keyword": "maple",
+          "Weight": 2
+        },
+        {
+          "Keyword": "pine",
+          "Weight": 2
+        },
+        {
+          "Keyword": "mushroom",
+          "Weight": 1
+        },
+        {
+          "Keyword": "mahogany",
+          "Weight": 0
+        },
+        {
+          "Keyword": "desertpalm",
+          "Weight": 0
+        },
+        {
+          "Keyword": "islandpalm",
+          "Weight": 0
+        }
       ]
     },
     "MapleTreeReplacements": {
       "FruitTrees": [
-        { "Keyword": "apple", "Weight": 1 },
-        { "Keyword": "apricot", "Weight": 1 },
-        { "Keyword": "banana", "Weight": 0 },
-        { "Keyword": "cherry", "Weight": 1 },
-        { "Keyword": "mango", "Weight": 0 },
-        { "Keyword": "orange", "Weight": 1 },
-        { "Keyword": "peach", "Weight": 1 },
-        { "Keyword": "pomegranate", "Weight": 1 },
-        { "Keyword": "asian pear", "Weight": 1 },
-        { "Keyword": "wisteria", "Weight": 1 },
-        { "Keyword": "granny smith", "Weight": 1 },
-        { "Keyword": "hazelnut", "Weight": 0 },
-        { "Keyword": "holly", "Weight": 0 },
-        { "Keyword": "pear", "Weight": 1 },
-        { "Keyword": "pecan", "Weight": 1 },
-        { "Keyword": "persimmon", "Weight": 1 },
-        { "Keyword": "walnut", "Weight": 1 }
+        {
+          "Keyword": "apple",
+          "Weight": 1
+        },
+        {
+          "Keyword": "apricot",
+          "Weight": 1
+        },
+        {
+          "Keyword": "banana",
+          "Weight": 0
+        },
+        {
+          "Keyword": "cherry",
+          "Weight": 1
+        },
+        {
+          "Keyword": "mango",
+          "Weight": 0
+        },
+        {
+          "Keyword": "orange",
+          "Weight": 1
+        },
+        {
+          "Keyword": "peach",
+          "Weight": 1
+        },
+        {
+          "Keyword": "pomegranate",
+          "Weight": 1
+        },
+        {
+          "Keyword": "asian pear",
+          "Weight": 1
+        },
+        {
+          "Keyword": "wisteria",
+          "Weight": 1
+        },
+        {
+          "Keyword": "granny smith",
+          "Weight": 1
+        },
+        {
+          "Keyword": "hazelnut",
+          "Weight": 0
+        },
+        {
+          "Keyword": "holly",
+          "Weight": 0
+        },
+        {
+          "Keyword": "pear",
+          "Weight": 1
+        },
+        {
+          "Keyword": "pecan",
+          "Weight": 1
+        },
+        {
+          "Keyword": "persimmon",
+          "Weight": 1
+        },
+        {
+          "Keyword": "walnut",
+          "Weight": 1
+        }
       ],
       "WildTrees": [
-        { "Keyword": "oak", "Weight": 2 },
-        { "Keyword": "maple", "Weight": 5 },
-        { "Keyword": "pine", "Weight": 2 },
-        { "Keyword": "mushroom", "Weight": 1 },
-        { "Keyword": "mahogany", "Weight": 0 },
-        { "Keyword": "desertpalm", "Weight": 0 },
-        { "Keyword": "islandpalm", "Weight": 0 }
+        {
+          "Keyword": "oak",
+          "Weight": 2
+        },
+        {
+          "Keyword": "maple",
+          "Weight": 5
+        },
+        {
+          "Keyword": "pine",
+          "Weight": 2
+        },
+        {
+          "Keyword": "mushroom",
+          "Weight": 1
+        },
+        {
+          "Keyword": "mahogany",
+          "Weight": 0
+        },
+        {
+          "Keyword": "desertpalm",
+          "Weight": 0
+        },
+        {
+          "Keyword": "islandpalm",
+          "Weight": 0
+        }
       ]
     },
     "PineTreeReplacements": {
       "FruitTrees": [
-        { "Keyword": "apple", "Weight": 1 },
-        { "Keyword": "apricot", "Weight": 1 },
-        { "Keyword": "banana", "Weight": 0 },
-        { "Keyword": "cherry", "Weight": 1 },
-        { "Keyword": "mango", "Weight": 0 },
-        { "Keyword": "orange", "Weight": 0 },
-        { "Keyword": "peach", "Weight": 1 },
-        { "Keyword": "pomegranate", "Weight": 0 },
-        { "Keyword": "crystal fruit", "Weight": 0 },
-        { "Keyword": "wisteria", "Weight": 1 },
-        { "Keyword": "hazelnut", "Weight": 0 },
-        { "Keyword": "holly", "Weight": 0 },
-        { "Keyword": "pear", "Weight": 1 },
-        { "Keyword": "walnut", "Weight": 1 }
+        {
+          "Keyword": "apple",
+          "Weight": 1
+        },
+        {
+          "Keyword": "apricot",
+          "Weight": 1
+        },
+        {
+          "Keyword": "banana",
+          "Weight": 0
+        },
+        {
+          "Keyword": "cherry",
+          "Weight": 1
+        },
+        {
+          "Keyword": "mango",
+          "Weight": 0
+        },
+        {
+          "Keyword": "orange",
+          "Weight": 0
+        },
+        {
+          "Keyword": "peach",
+          "Weight": 1
+        },
+        {
+          "Keyword": "pomegranate",
+          "Weight": 0
+        },
+        {
+          "Keyword": "crystal fruit",
+          "Weight": 0
+        },
+        {
+          "Keyword": "wisteria",
+          "Weight": 1
+        },
+        {
+          "Keyword": "hazelnut",
+          "Weight": 0
+        },
+        {
+          "Keyword": "holly",
+          "Weight": 0
+        },
+        {
+          "Keyword": "pear",
+          "Weight": 1
+        },
+        {
+          "Keyword": "walnut",
+          "Weight": 1
+        }
       ],
       "WildTrees": [
-        { "Keyword": "oak", "Weight": 0 },
-        { "Keyword": "maple", "Weight": 0 },
-        { "Keyword": "pine", "Weight": 1 },
-        { "Keyword": "mushroom", "Weight": 0 },
-        { "Keyword": "mahogany", "Weight": 0 },
-        { "Keyword": "desertpalm", "Weight": 0 },
-        { "Keyword": "islandpalm", "Weight": 0 }
+        {
+          "Keyword": "oak",
+          "Weight": 0
+        },
+        {
+          "Keyword": "maple",
+          "Weight": 0
+        },
+        {
+          "Keyword": "pine",
+          "Weight": 1
+        },
+        {
+          "Keyword": "mushroom",
+          "Weight": 0
+        },
+        {
+          "Keyword": "mahogany",
+          "Weight": 0
+        },
+        {
+          "Keyword": "desertpalm",
+          "Weight": 0
+        },
+        {
+          "Keyword": "islandpalm",
+          "Weight": 0
+        }
       ]
     },
     "MushroomTreeReplacements": {
@@ -106,103 +316,352 @@
     },
     "MahoganyTreeReplacements": {
       "FruitTrees": [
-        { "Keyword": "apple", "Weight": 0 },
-        { "Keyword": "apricot", "Weight": 1 },
-        { "Keyword": "banana", "Weight": 0 },
-        { "Keyword": "cherry", "Weight": 1 },
-        { "Keyword": "mango", "Weight": 0 },
-        { "Keyword": "orange", "Weight": 1 },
-        { "Keyword": "peach", "Weight": 1 },
-        { "Keyword": "pomegranate", "Weight": 1 },
-        { "Keyword": "avocado", "Weight": 1 },
-        { "Keyword": "breadfruit", "Weight": 1 },
-        { "Keyword": "camphor", "Weight": 1 },
-        { "Keyword": "cashew", "Weight": 1 },
-        { "Keyword": "cocoa", "Weight": 1 },
-        { "Keyword": "dragon fruit", "Weight": 1 },
-        { "Keyword": "eucalyptus", "Weight": 1 },
-        { "Keyword": "grapefruit", "Weight": 1 },
-        { "Keyword": "lychee", "Weight": 1 },
-        { "Keyword": "melaleuca", "Weight": 1 },
-        { "Keyword": "pomelo", "Weight": 1 },
-        { "Keyword": "yuzu", "Weight": 1 }
+        {
+          "Keyword": "apple",
+          "Weight": 0
+        },
+        {
+          "Keyword": "apricot",
+          "Weight": 1
+        },
+        {
+          "Keyword": "banana",
+          "Weight": 0
+        },
+        {
+          "Keyword": "cherry",
+          "Weight": 1
+        },
+        {
+          "Keyword": "mango",
+          "Weight": 0
+        },
+        {
+          "Keyword": "orange",
+          "Weight": 1
+        },
+        {
+          "Keyword": "peach",
+          "Weight": 1
+        },
+        {
+          "Keyword": "pomegranate",
+          "Weight": 1
+        },
+        {
+          "Keyword": "avocado",
+          "Weight": 1
+        },
+        {
+          "Keyword": "breadfruit",
+          "Weight": 1
+        },
+        {
+          "Keyword": "camphor",
+          "Weight": 1
+        },
+        {
+          "Keyword": "cashew",
+          "Weight": 1
+        },
+        {
+          "Keyword": "cocoa",
+          "Weight": 1
+        },
+        {
+          "Keyword": "dragon fruit",
+          "Weight": 1
+        },
+        {
+          "Keyword": "eucalyptus",
+          "Weight": 1
+        },
+        {
+          "Keyword": "grapefruit",
+          "Weight": 1
+        },
+        {
+          "Keyword": "lychee",
+          "Weight": 1
+        },
+        {
+          "Keyword": "melaleuca",
+          "Weight": 1
+        },
+        {
+          "Keyword": "pomelo",
+          "Weight": 1
+        },
+        {
+          "Keyword": "yuzu",
+          "Weight": 1
+        }
       ],
       "WildTrees": [
-        { "Keyword": "oak", "Weight": 0 },
-        { "Keyword": "maple", "Weight": 0 },
-        { "Keyword": "pine", "Weight": 0 },
-        { "Keyword": "mushroom", "Weight": 1 },
-        { "Keyword": "mahogany", "Weight": 9 },
-        { "Keyword": "desertpalm", "Weight": 0 },
-        { "Keyword": "islandpalm", "Weight": 0 }
+        {
+          "Keyword": "oak",
+          "Weight": 0
+        },
+        {
+          "Keyword": "maple",
+          "Weight": 0
+        },
+        {
+          "Keyword": "pine",
+          "Weight": 0
+        },
+        {
+          "Keyword": "mushroom",
+          "Weight": 1
+        },
+        {
+          "Keyword": "mahogany",
+          "Weight": 9
+        },
+        {
+          "Keyword": "desertpalm",
+          "Weight": 0
+        },
+        {
+          "Keyword": "islandpalm",
+          "Weight": 0
+        }
       ]
     },
     "DesertPalmTreeReplacements": {
       "FruitTrees": [
-        { "Keyword": "apple", "Weight": 0 },
-        { "Keyword": "apricot", "Weight": 1 },
-        { "Keyword": "banana", "Weight": 0 },
-        { "Keyword": "cherry", "Weight": 0 },
-        { "Keyword": "mango", "Weight": 0 },
-        { "Keyword": "orange", "Weight": 1 },
-        { "Keyword": "peach", "Weight": 1 },
-        { "Keyword": "pomegranate", "Weight": 1 },
-        { "Keyword": "almond", "Weight": 1 },
-        { "Keyword": "fig", "Weight": 1 },
-        { "Keyword": "lemon", "Weight": 1 },
-        { "Keyword": "lime", "Weight": 1 },
-        { "Keyword": "olive", "Weight": 1 }
+        {
+          "Keyword": "apple",
+          "Weight": 0
+        },
+        {
+          "Keyword": "apricot",
+          "Weight": 1
+        },
+        {
+          "Keyword": "banana",
+          "Weight": 0
+        },
+        {
+          "Keyword": "cherry",
+          "Weight": 0
+        },
+        {
+          "Keyword": "mango",
+          "Weight": 0
+        },
+        {
+          "Keyword": "orange",
+          "Weight": 1
+        },
+        {
+          "Keyword": "peach",
+          "Weight": 1
+        },
+        {
+          "Keyword": "pomegranate",
+          "Weight": 1
+        },
+        {
+          "Keyword": "almond",
+          "Weight": 1
+        },
+        {
+          "Keyword": "fig",
+          "Weight": 1
+        },
+        {
+          "Keyword": "lemon",
+          "Weight": 1
+        },
+        {
+          "Keyword": "lime",
+          "Weight": 1
+        },
+        {
+          "Keyword": "olive",
+          "Weight": 1
+        }
       ],
       "WildTrees": [
-        { "Keyword": "oak", "Weight": 0 },
-        { "Keyword": "maple", "Weight": 0 },
-        { "Keyword": "pine", "Weight": 0 },
-        { "Keyword": "mushroom", "Weight": 0 },
-        { "Keyword": "mahogany", "Weight": 0 },
-        { "Keyword": "desertpalm", "Weight": 1 },
-        { "Keyword": "islandpalm", "Weight": 0 }
+        {
+          "Keyword": "oak",
+          "Weight": 0
+        },
+        {
+          "Keyword": "maple",
+          "Weight": 0
+        },
+        {
+          "Keyword": "pine",
+          "Weight": 0
+        },
+        {
+          "Keyword": "mushroom",
+          "Weight": 0
+        },
+        {
+          "Keyword": "mahogany",
+          "Weight": 0
+        },
+        {
+          "Keyword": "desertpalm",
+          "Weight": 1
+        },
+        {
+          "Keyword": "islandpalm",
+          "Weight": 0
+        }
       ]
     },
     "IslandPalmTreeReplacements": {
       "FruitTrees": [
-        { "Keyword": "apple", "Weight": 0 },
-        { "Keyword": "apricot", "Weight": 0 },
-        { "Keyword": "banana", "Weight": 1 },
-        { "Keyword": "cherry", "Weight": 0 },
-        { "Keyword": "mango", "Weight": 1 },
-        { "Keyword": "orange", "Weight": 0 },
-        { "Keyword": "peach", "Weight": 0 },
-        { "Keyword": "pomegranate", "Weight": 0 },
-        { "Keyword": "avocado", "Weight": 1 },
-        { "Keyword": "breadfruit", "Weight": 1 },
-        { "Keyword": "camphor", "Weight": 1 },
-        { "Keyword": "cashew", "Weight": 1 },
-        { "Keyword": "cinnamon", "Weight": 1 },
-        { "Keyword": "cocoa", "Weight": 1 },
-        { "Keyword": "coconut", "Weight": 1 },
-        { "Keyword": "dragon fruit", "Weight": 1 },
-        { "Keyword": "durian", "Weight": 1 },
-        { "Keyword": "eucalyptus", "Weight": 1 },
-        { "Keyword": "golden coconut", "Weight": 0 },
-        { "Keyword": "golden walnut", "Weight": 0 },
-        { "Keyword": "grapefruit", "Weight": 1 },
-        { "Keyword": "lychee", "Weight": 1 },
-        { "Keyword": "melaleuca", "Weight": 1 },
-        { "Keyword": "papaya", "Weight": 1 },
-        { "Keyword": "pomelo", "Weight": 1 },
-        { "Keyword": "ume", "Weight": 1 },
-        { "Keyword": "vanilla", "Weight": 1 },
-        { "Keyword": "ylang ylang", "Weight": 1 },
-        { "Keyword": "yuzu", "Weight": 1 }
+        {
+          "Keyword": "apple",
+          "Weight": 0
+        },
+        {
+          "Keyword": "apricot",
+          "Weight": 0
+        },
+        {
+          "Keyword": "banana",
+          "Weight": 1
+        },
+        {
+          "Keyword": "cherry",
+          "Weight": 0
+        },
+        {
+          "Keyword": "mango",
+          "Weight": 1
+        },
+        {
+          "Keyword": "orange",
+          "Weight": 0
+        },
+        {
+          "Keyword": "peach",
+          "Weight": 0
+        },
+        {
+          "Keyword": "pomegranate",
+          "Weight": 0
+        },
+        {
+          "Keyword": "avocado",
+          "Weight": 1
+        },
+        {
+          "Keyword": "breadfruit",
+          "Weight": 1
+        },
+        {
+          "Keyword": "camphor",
+          "Weight": 1
+        },
+        {
+          "Keyword": "cashew",
+          "Weight": 1
+        },
+        {
+          "Keyword": "cinnamon",
+          "Weight": 1
+        },
+        {
+          "Keyword": "cocoa",
+          "Weight": 1
+        },
+        {
+          "Keyword": "coconut",
+          "Weight": 1
+        },
+        {
+          "Keyword": "dragon fruit",
+          "Weight": 1
+        },
+        {
+          "Keyword": "durian",
+          "Weight": 1
+        },
+        {
+          "Keyword": "eucalyptus",
+          "Weight": 1
+        },
+        {
+          "Keyword": "golden coconut",
+          "Weight": 0
+        },
+        {
+          "Keyword": "golden walnut",
+          "Weight": 0
+        },
+        {
+          "Keyword": "grapefruit",
+          "Weight": 1
+        },
+        {
+          "Keyword": "lychee",
+          "Weight": 1
+        },
+        {
+          "Keyword": "melaleuca",
+          "Weight": 1
+        },
+        {
+          "Keyword": "papaya",
+          "Weight": 1
+        },
+        {
+          "Keyword": "pomelo",
+          "Weight": 1
+        },
+        {
+          "Keyword": "ume",
+          "Weight": 1
+        },
+        {
+          "Keyword": "vanilla",
+          "Weight": 1
+        },
+        {
+          "Keyword": "ylang ylang",
+          "Weight": 1
+        },
+        {
+          "Keyword": "yuzu",
+          "Weight": 1
+        }
       ],
       "WildTrees": [
-        { "Keyword": "oak", "Weight": 0 },
-        { "Keyword": "maple", "Weight": 0 },
-        { "Keyword": "pine", "Weight": 0 },
-        { "Keyword": "mushroom", "Weight": 1 },
-        { "Keyword": "mahogany", "Weight": 0 },
-        { "Keyword": "desertpalm", "Weight": 0 },
-        { "Keyword": "islandpalm", "Weight": 9 }
+        {
+          "Keyword": "oak",
+          "Weight": 0
+        },
+        {
+          "Keyword": "maple",
+          "Weight": 0
+        },
+        {
+          "Keyword": "pine",
+          "Weight": 0
+        },
+        {
+          "Keyword": "mushroom",
+          "Weight": 1
+        },
+        {
+          "Keyword": "mahogany",
+          "Weight": 0
+        },
+        {
+          "Keyword": "desertpalm",
+          "Weight": 0
+        },
+        {
+          "Keyword": "islandpalm",
+          "Weight": 9
+        }
       ]
     }
   }
