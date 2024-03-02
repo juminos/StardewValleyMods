@@ -178,7 +178,7 @@ namespace BetterFruitTrees
                         Console.WriteLine($"Checked that fruit tree data contains key: {randomFruitTreeId}");
 #endif
                         FruitTree fruitTree = new FruitTree(randomFruitTreeId, FruitTree.seedStage);
-                        fruitTree.growthStage.Value = Game1.random.Next(4);
+                        fruitTree.growthStage.Value = Game1.random.Next(3,5);
 #if LOGGING
                         Console.WriteLine($"adding fruit tree: {fruitTree.treeId} at stage: {fruitTree.growthStage}");
 #endif

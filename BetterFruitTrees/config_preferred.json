@@ -11,6 +11,7 @@
   "WildDaysToFinalStage": 20,
   "FarmWildModifier": 2.0,
   "WildDailyGrowthChance": 0.9,
+  "LargeTreeGrowthRate": 28,
   "EnergyCost": 5,
   "FruitTreeChance": 0.53333,
   "TreeConfigurations": {

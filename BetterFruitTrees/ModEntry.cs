@@ -26,6 +26,7 @@ namespace BetterFruitTrees
         internal static int wildDaysToFinalStage;
         internal static float farmWildModifier;
         internal static float wildDailyGrowthChance;
+        internal static int largeTreeGrowthRate;
         private int energyCost;
 
         internal static bool IsEnabled = true;
@@ -50,6 +51,7 @@ namespace BetterFruitTrees
             wildDaysToFinalStage = config.WildDaysToFinalStage.Value;
             farmWildModifier = config.FarmWildModifier.Value;
             wildDailyGrowthChance = config.WildDailyGrowthChance.Value;
+            largeTreeGrowthRate = config.LargeTreeGrowthRate.Value;
             energyCost = config.EnergyCost;
 
         }
@@ -65,7 +67,7 @@ namespace BetterFruitTrees
             {
                 foreach (GameLocation location in Game1.locations)
                 {
-                    TreeSpread.SpreadFruitTrees(location);
+                    TreeSpread.SpreadTrees(location);
                 }
             }
             TreeGrowth.UpdateFruitTrees(this.Monitor);

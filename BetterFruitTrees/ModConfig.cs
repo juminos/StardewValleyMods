@@ -10,7 +10,7 @@ namespace BetterFruitTrees
 
         // Spread chance modifiers for tree adjacency
         public float? FruitTreeDensityModifier { get; set; } = 0.2f;
-        public float? WildTreeDensityModifier { get; set; } = 0.8f;
+        public float? WildTreeDensityModifier { get; set; } = 0.2f;
 
         // Radius for fruit tree spreading check
         public int? SpreadFruitRadius { get; set; } = 3;
@@ -31,6 +31,8 @@ namespace BetterFruitTrees
 
         // Chance for a wild tree to grow on a given day (0.0 to 1.0)
         public float? WildDailyGrowthChance { get; set; } = 0.9f;
+        // Days until growing into large tree
+        public int? LargeTreeGrowthRate { get; set; } = 28;
 
         // Energy cost for digging up saplings
         public int EnergyCost { get; set; } = 5;

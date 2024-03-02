@@ -1,0 +1,11 @@
+{
+    "Name": "Hobbit Holes",
+    "Author": "juminos",
+    "Description": "Live in hobbit holes",
+    "Version": "1.0.0",
+    "UniqueID": "juminos.HobbitHoles",
+    "ContentPackFor": {
+        "UniqueID": "pathoschild.contentpatcher"
+    },
+    "UpdateKeys": []
+}

@@ -12,7 +12,7 @@
           "Skins": [],
           "DrawShadow": false,
           "Size": {
-            "X": 2,
+            "X": 4,
             "Y": 1
           },
           "FadeWhenBehind": true,
@@ -26,9 +26,9 @@
             "X": 88,
             "Y": 0
           },
-          "DrawOffset": "-28, 4",
+          "DrawOffset": "-12, 4",
           "SortTileOffset": 0.0,
-          "CollisionMap": null,
+          "CollisionMap": "OXXO",
           "AdditionalPlacementTiles": null,
           "BuildingType": null,
           "BuildCondition": null,
@@ -83,7 +83,7 @@
           "Skins": [],
           "DrawShadow": false,
           "Size": {
-            "X": 2,
+            "X": 4,
             "Y": 1
           },
           "FadeWhenBehind": true,
@@ -97,9 +97,9 @@
             "X": 88,
             "Y": 0
           },
-          "DrawOffset": "-28, 4",
+          "DrawOffset": "-12, 4",
           "SortTileOffset": 0.0,
-          "CollisionMap": null,
+          "CollisionMap": "OXXO",
           "AdditionalPlacementTiles": null,
           "BuildingType": null,
           "BuildCondition": null,
@@ -154,7 +154,7 @@
           "Skins": [],
           "DrawShadow": false,
           "Size": {
-            "X": 2,
+            "X": 4,
             "Y": 1
           },
           "FadeWhenBehind": true,
@@ -168,9 +168,9 @@
             "X": 88,
             "Y": 0
           },
-          "DrawOffset": "-27, 6",
+          "DrawOffset": "-11, 6",
           "SortTileOffset": 0.0,
-          "CollisionMap": null,
+          "CollisionMap": "OXXO",
           "AdditionalPlacementTiles": null,
           "BuildingType": null,
           "BuildCondition": null,
@@ -225,7 +225,7 @@
           "Skins": [],
           "DrawShadow": false,
           "Size": {
-            "X": 3,
+            "X": 5,
             "Y": 2
           },
           "FadeWhenBehind": true,
@@ -239,9 +239,9 @@
             "X": 104,
             "Y": 0
           },
-          "DrawOffset": "-28, 4",
+          "DrawOffset": "-12, 4",
           "SortTileOffset": 0.0,
-          "CollisionMap": null,
+          "CollisionMap": "OXXXO\nOXXXO",
           "AdditionalPlacementTiles": null,
           "BuildingType": null,
           "BuildCondition": null,
@@ -296,7 +296,7 @@
           "Skins": [],
           "DrawShadow": false,
           "Size": {
-            "X": 4,
+            "X": 6,
             "Y": 1
           },
           "FadeWhenBehind": true,
@@ -310,9 +310,9 @@
             "X": 112,
             "Y": 0
           },
-          "DrawOffset": "-35, 10",
+          "DrawOffset": "-3, 10",
           "SortTileOffset": 0.0,
-          "CollisionMap": null,
+          "CollisionMap": "OOXXXX",
           "AdditionalPlacementTiles": null,
           "BuildingType": null,
           "Builder": "Robin",
@@ -368,7 +368,7 @@
           "Skins": [],
           "DrawShadow": false,
           "Size": {
-            "X": 4,
+            "X": 6,
             "Y": 1
           },
           "FadeWhenBehind": true,
@@ -384,7 +384,7 @@
           },
           "DrawOffset": "-13, 10",
           "SortTileOffset": 0.0,
-          "CollisionMap": null,
+          "CollisionMap": "XXXXOO",
           "AdditionalPlacementTiles": null,
           "BuildingType": null,
           "Builder": "Robin",
@@ -447,7 +447,7 @@
           ],
           "DrawShadow": false,
           "Size": {
-            "X": 6,
+            "X": 7,
             "Y": 1
           },
           "FadeWhenBehind": true,
@@ -461,9 +461,9 @@
             "X": 128,
             "Y": 0
           },
-          "DrawOffset": "-18, 10",
+          "DrawOffset": "-2, 10",
           "SortTileOffset": 0.0,
-          "CollisionMap": null,
+          "CollisionMap": "OXXXXXX",
           "AdditionalPlacementTiles": null,
           "BuildingType": null,
           "Builder": "Robin",

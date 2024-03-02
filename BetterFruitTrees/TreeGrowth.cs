@@ -178,22 +178,31 @@ namespace BetterFruitTrees
                             //monitor.Log($"Tree at position {pair.Key} will not grow into a large tree.", LogLevel.Trace);
                         }
                         matureWildTree.modData["LargeTreeCount"] = currentLargeTreeCount.ToString();
-                        // check if surrounding area is clear
-                        Vector2[] surroundingTileLocationsArray = Utility.getSurroundingTileLocationsArray(pair.Key);
+                        // check if surrounding 5x5 area is clear
                         bool clearArea = true;
-                        foreach (Vector2 tileLocation in surroundingTileLocationsArray)
+                        for (int dx = -2; dx <= 2; dx++)
                         {
-                            if (!location.isTileOnMap(tileLocation) ||
-                                !location.isTilePassable(tileLocation) ||
-                                location.IsTileOccupiedBy(tileLocation))
+                            for (int dy = -2; dy <= 2; dy++)
                             {
-                                clearArea = false;
-                                // Logging to check which tile prevents growth
-                                //monitor.Log($"Tile at position {tileLocation} prevents growth of tree at position {pair.Key}.", LogLevel.Trace);
+                                Vector2 checkLocation = new Vector2(pair.Key.X + dx, pair.Key.Y + dy);
+
+                                if (!location.isTileOnMap(checkLocation) ||
+                                    !location.isTilePassable(checkLocation) ||
+                                    location.IsTileOccupiedBy(checkLocation))
+                                {
+                                    clearArea = false;
+                                    // Logging to check which tile prevents growth
+                                    //monitor.Log($"Tile at position {checkLocation} prevents growth to large tree at position {pair.Key}.", LogLevel.Trace);
+                                    break;
+                                }
+                            }
+
+                            if (!clearArea)
+                            {
                                 break;
                             }
                         }
-                        if (clearArea && currentLargeTreeCount > 2)
+                        if (clearArea && currentLargeTreeCount > ModEntry.largeTreeGrowthRate)
                         {
                             // replace tree with large tree building
                             string wildTreeKeyword = GetKeywordFromTreeId(matureWildTree.treeType.Value);
@@ -248,6 +257,7 @@ namespace BetterFruitTrees
                             }
                         }
                     }
+                    // Large fruit tree growth
                     else if (pair.Value is FruitTree matureFruitTree && matureFruitTree.growthStage.Value >= 4 && location is Farm)
                     {
                         string fruitTreeKeyword = GetKeywordFromTreeId(matureFruitTree.treeId.Value);
@@ -316,12 +326,12 @@ namespace BetterFruitTrees
                                     break;
                                 }
                             }
-                            if (clearArea && currentLargeTreeCount > 2)
+                            if (clearArea && currentLargeTreeCount > ModEntry.largeTreeGrowthRate)
                             {
                                 // replace tree with large tree building
 
                                 // Create the large tree building 1 tile to the left of the current position
-                                Vector2 newBuildingPosition = new Vector2(pair.Key.X - 1, pair.Key.Y);
+                                Vector2 newBuildingPosition = new Vector2(pair.Key.X - 2, pair.Key.Y);
                                 Building largeTree = new Building(matchingBuildingId, newBuildingPosition);
 
                                 // Log the creation of the large tree building
