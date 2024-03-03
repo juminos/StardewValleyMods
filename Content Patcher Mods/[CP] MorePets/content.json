@@ -876,7 +876,7 @@
               "IconTexture": "Mods/juminos.MorePets/RedPanda1",
               "IconSourceRect": {
                 "X": 8,
-                "Y": 8,
+                "Y": 16,
                 "Width": 16,
                 "Height": 16
               },

@@ -1,0 +1,1013 @@
+{
+  "Format": "2.0.0",
+  "Changes": [
+    {
+      "Action": "EditData",
+      "Target": "Data/Buildings",
+      "Entries": {
+        "juminos.AlternateObelisks_EarthBear": {
+          "Name": "Earth Obelisk (Trash Bear)",
+          "Description": "Travel to the mountains through the power of Trash Bear!",
+          "Texture": "Mods/juminos.AlternateObelisks/EarthBear",
+          "Skins": [],
+          "DrawShadow": false,
+          "UpgradeSignTile": "1, 1",
+          "UpgradeSignHeight": 16.0,
+          "Size": {
+            "X": 3,
+            "Y": 2
+          },
+          "FadeWhenBehind": true,
+          "SourceRect": {
+            "X": 0,
+            "Y": 0,
+            "Width": 0,
+            "Height": 0
+          },
+          "SeasonOffset": {
+            "X": 0,
+            "Y": 0
+          },
+          "DrawOffset": "0, 0",
+          "SortTileOffset": 0.0,
+          "CollisionMap": null,
+          "AdditionalPlacementTiles": null,
+          "BuildingType": null,
+          "Builder": "Wizard",
+          "BuildCondition": null,
+          "BuildDays": 0,
+          "BuildCost": 500000,
+          "BuildMaterials": [
+            {
+              "ItemId": "(O)337",
+              "Amount": 10
+            },
+            {
+              "ItemId": "(O)86",
+              "Amount": 10
+            }
+          ],
+          "BuildingToUpgrade": null,
+          "MagicalConstruction": true,
+          "BuildMenuDrawOffset": {
+            "X": 0,
+            "Y": 0
+          },
+          "HumanDoor": {
+            "X": -1,
+            "Y": -1
+          },
+          "AnimalDoor": {
+            "X": -1,
+            "Y": -1,
+            "Width": 0,
+            "Height": 0
+          },
+          "AnimalDoorOpenDuration": 0.0,
+          "AnimalDoorOpenSound": null,
+          "AnimalDoorCloseDuration": 0.0,
+          "AnimalDoorCloseSound": null,
+          "NonInstancedIndoorLocation": null,
+          "IndoorMap": null,
+          "IndoorMapType": null,
+          "MaxOccupants": 20,
+          "ValidOccupantTypes": [],
+          "AllowAnimalPregnancy": false,
+          "IndoorItemMoves": null,
+          "IndoorItems": null,
+          "AddMailOnBuild": null,
+          "Metadata": {},
+          "ModData": {},
+          "HayCapacity": 0,
+          "Chests": null,
+          "DefaultAction": "ObeliskWarp Mountain 31 20 false",
+          "AdditionalTilePropertyRadius": 0,
+          "ActionTiles": [],
+          "TileProperties": [],
+          "ItemConversions": null,
+          "DrawLayers": null,
+          "CustomFields": {}
+        },
+        "juminos.AlternateObelisks_WaterBear": {
+          "Name": "Water Obelisk (Trash Bear)",
+          "Description": "Travel to the beach through the power of Trash Bear!",
+          "Texture": "Mods/juminos.AlternateObelisks/WaterBear",
+          "Skins": [],
+          "DrawShadow": false,
+          "UpgradeSignTile": "1, 1",
+          "UpgradeSignHeight": 16.0,
+          "Size": {
+            "X": 3,
+            "Y": 2
+          },
+          "FadeWhenBehind": true,
+          "SourceRect": {
+            "X": 0,
+            "Y": 0,
+            "Width": 0,
+            "Height": 0
+          },
+          "SeasonOffset": {
+            "X": 0,
+            "Y": 0
+          },
+          "DrawOffset": "0, 0",
+          "SortTileOffset": 0.0,
+          "CollisionMap": null,
+          "AdditionalPlacementTiles": null,
+          "BuildingType": null,
+          "Builder": "Wizard",
+          "BuildCondition": null,
+          "BuildDays": 0,
+          "BuildCost": 500000,
+          "BuildMaterials": [
+            {
+              "ItemId": "(O)337",
+              "Amount": 10
+            },
+            {
+              "ItemId": "(O)86",
+              "Amount": 10
+            }
+          ],
+          "BuildingToUpgrade": null,
+          "MagicalConstruction": true,
+          "BuildMenuDrawOffset": {
+            "X": 0,
+            "Y": 0
+          },
+          "HumanDoor": {
+            "X": -1,
+            "Y": -1
+          },
+          "AnimalDoor": {
+            "X": -1,
+            "Y": -1,
+            "Width": 0,
+            "Height": 0
+          },
+          "AnimalDoorOpenDuration": 0.0,
+          "AnimalDoorOpenSound": null,
+          "AnimalDoorCloseDuration": 0.0,
+          "AnimalDoorCloseSound": null,
+          "NonInstancedIndoorLocation": null,
+          "IndoorMap": null,
+          "IndoorMapType": null,
+          "MaxOccupants": 20,
+          "ValidOccupantTypes": [],
+          "AllowAnimalPregnancy": false,
+          "IndoorItemMoves": null,
+          "IndoorItems": null,
+          "AddMailOnBuild": null,
+          "Metadata": {},
+          "ModData": {},
+          "HayCapacity": 0,
+          "Chests": null,
+          "DefaultAction": "ObeliskWarp Mountain 31 20 false",
+          "AdditionalTilePropertyRadius": 0,
+          "ActionTiles": [],
+          "TileProperties": [],
+          "ItemConversions": null,
+          "DrawLayers": null,
+          "CustomFields": {}
+        },
+        "juminos.AlternateObelisks_DesertBear": {
+          "Name": "Desert Obelisk (Trash Bear)",
+          "Description": "Travel to the desert through the power of Trash Bear!",
+          "Texture": "Mods/juminos.AlternateObelisks/DesertBear",
+          "Skins": [],
+          "DrawShadow": false,
+          "UpgradeSignTile": "1, 1",
+          "UpgradeSignHeight": 16.0,
+          "Size": {
+            "X": 3,
+            "Y": 2
+          },
+          "FadeWhenBehind": true,
+          "SourceRect": {
+            "X": 0,
+            "Y": 0,
+            "Width": 0,
+            "Height": 0
+          },
+          "SeasonOffset": {
+            "X": 0,
+            "Y": 0
+          },
+          "DrawOffset": "0, 0",
+          "SortTileOffset": 0.0,
+          "CollisionMap": null,
+          "AdditionalPlacementTiles": null,
+          "BuildingType": null,
+          "Builder": "Wizard",
+          "BuildCondition": null,
+          "BuildDays": 0,
+          "BuildCost": 500000,
+          "BuildMaterials": [
+            {
+              "ItemId": "(O)337",
+              "Amount": 10
+            },
+            {
+              "ItemId": "(O)86",
+              "Amount": 10
+            }
+          ],
+          "BuildingToUpgrade": null,
+          "MagicalConstruction": true,
+          "BuildMenuDrawOffset": {
+            "X": 0,
+            "Y": 0
+          },
+          "HumanDoor": {
+            "X": -1,
+            "Y": -1
+          },
+          "AnimalDoor": {
+            "X": -1,
+            "Y": -1,
+            "Width": 0,
+            "Height": 0
+          },
+          "AnimalDoorOpenDuration": 0.0,
+          "AnimalDoorOpenSound": null,
+          "AnimalDoorCloseDuration": 0.0,
+          "AnimalDoorCloseSound": null,
+          "NonInstancedIndoorLocation": null,
+          "IndoorMap": null,
+          "IndoorMapType": null,
+          "MaxOccupants": 20,
+          "ValidOccupantTypes": [],
+          "AllowAnimalPregnancy": false,
+          "IndoorItemMoves": null,
+          "IndoorItems": null,
+          "AddMailOnBuild": null,
+          "Metadata": {},
+          "ModData": {},
+          "HayCapacity": 0,
+          "Chests": null,
+          "DefaultAction": "ObeliskWarp Mountain 31 20 false",
+          "AdditionalTilePropertyRadius": 0,
+          "ActionTiles": [],
+          "TileProperties": [],
+          "ItemConversions": null,
+          "DrawLayers": null,
+          "CustomFields": {}
+        },
+        "juminos.AlternateObelisks_IslandBear": {
+          "Name": "Island Obelisk (Trash Bear)",
+          "Description": "Travel to Ginger Island through the power of Trash Bear!",
+          "Texture": "Mods/juminos.AlternateObelisks/IslandBear",
+          "Skins": [],
+          "DrawShadow": false,
+          "UpgradeSignTile": "1, 1",
+          "UpgradeSignHeight": 16.0,
+          "Size": {
+            "X": 3,
+            "Y": 2
+          },
+          "FadeWhenBehind": true,
+          "SourceRect": {
+            "X": 0,
+            "Y": 0,
+            "Width": 0,
+            "Height": 0
+          },
+          "SeasonOffset": {
+            "X": 0,
+            "Y": 0
+          },
+          "DrawOffset": "0, 0",
+          "SortTileOffset": 0.0,
+          "CollisionMap": null,
+          "AdditionalPlacementTiles": null,
+          "BuildingType": null,
+          "Builder": "Wizard",
+          "BuildCondition": null,
+          "BuildDays": 0,
+          "BuildCost": 500000,
+          "BuildMaterials": [
+            {
+              "ItemId": "(O)337",
+              "Amount": 10
+            },
+            {
+              "ItemId": "(O)86",
+              "Amount": 10
+            }
+          ],
+          "BuildingToUpgrade": null,
+          "MagicalConstruction": true,
+          "BuildMenuDrawOffset": {
+            "X": 0,
+            "Y": 0
+          },
+          "HumanDoor": {
+            "X": -1,
+            "Y": -1
+          },
+          "AnimalDoor": {
+            "X": -1,
+            "Y": -1,
+            "Width": 0,
+            "Height": 0
+          },
+          "AnimalDoorOpenDuration": 0.0,
+          "AnimalDoorOpenSound": null,
+          "AnimalDoorCloseDuration": 0.0,
+          "AnimalDoorCloseSound": null,
+          "NonInstancedIndoorLocation": null,
+          "IndoorMap": null,
+          "IndoorMapType": null,
+          "MaxOccupants": 20,
+          "ValidOccupantTypes": [],
+          "AllowAnimalPregnancy": false,
+          "IndoorItemMoves": null,
+          "IndoorItems": null,
+          "AddMailOnBuild": null,
+          "Metadata": {},
+          "ModData": {},
+          "HayCapacity": 0,
+          "Chests": null,
+          "DefaultAction": "ObeliskWarp Mountain 31 20 false",
+          "AdditionalTilePropertyRadius": 0,
+          "ActionTiles": [],
+          "TileProperties": [],
+          "ItemConversions": null,
+          "DrawLayers": null,
+          "CustomFields": {}
+        },
+        "juminos.AlternateObelisks_EarthTree": {
+          "Name": "Earth Obelisk (Tree)",
+          "Description": "This tree shares a mystical connection to the mountains.",
+          "Texture": "Mods/juminos.AlternateObelisks/EarthTree",
+          "Skins": [],
+          "DrawShadow": false,
+          "UpgradeSignTile": "1, 1",
+          "UpgradeSignHeight": 16.0,
+          "Size": {
+            "X": 3,
+            "Y": 2
+          },
+          "FadeWhenBehind": true,
+          "SourceRect": {
+            "X": 0,
+            "Y": 0,
+            "Width": 0,
+            "Height": 0
+          },
+          "SeasonOffset": {
+            "X": 0,
+            "Y": 0
+          },
+          "DrawOffset": "0, 0",
+          "SortTileOffset": 0.0,
+          "CollisionMap": null,
+          "AdditionalPlacementTiles": null,
+          "BuildingType": null,
+          "Builder": "Wizard",
+          "BuildCondition": null,
+          "BuildDays": 0,
+          "BuildCost": 500000,
+          "BuildMaterials": [
+            {
+              "ItemId": "(O)337",
+              "Amount": 10
+            },
+            {
+              "ItemId": "(O)86",
+              "Amount": 10
+            }
+          ],
+          "BuildingToUpgrade": null,
+          "MagicalConstruction": true,
+          "BuildMenuDrawOffset": {
+            "X": 0,
+            "Y": 0
+          },
+          "HumanDoor": {
+            "X": -1,
+            "Y": -1
+          },
+          "AnimalDoor": {
+            "X": -1,
+            "Y": -1,
+            "Width": 0,
+            "Height": 0
+          },
+          "AnimalDoorOpenDuration": 0.0,
+          "AnimalDoorOpenSound": null,
+          "AnimalDoorCloseDuration": 0.0,
+          "AnimalDoorCloseSound": null,
+          "NonInstancedIndoorLocation": null,
+          "IndoorMap": null,
+          "IndoorMapType": null,
+          "MaxOccupants": 20,
+          "ValidOccupantTypes": [],
+          "AllowAnimalPregnancy": false,
+          "IndoorItemMoves": null,
+          "IndoorItems": null,
+          "AddMailOnBuild": null,
+          "Metadata": {},
+          "ModData": {},
+          "HayCapacity": 0,
+          "Chests": null,
+          "DefaultAction": "ObeliskWarp Mountain 31 20 false",
+          "AdditionalTilePropertyRadius": 0,
+          "ActionTiles": [],
+          "TileProperties": [],
+          "ItemConversions": null,
+          "DrawLayers": null,
+          "CustomFields": {}
+        },
+        "juminos.AlternateObelisks_WaterTree": {
+          "Name": "Water Obelisk (Tree)",
+          "Description": "This tree shares a mystical connection to the beach.",
+          "Texture": "Mods/juminos.AlternateObelisks/WaterTree",
+          "Skins": [],
+          "DrawShadow": false,
+          "UpgradeSignTile": "1, 1",
+          "UpgradeSignHeight": 16.0,
+          "Size": {
+            "X": 3,
+            "Y": 2
+          },
+          "FadeWhenBehind": true,
+          "SourceRect": {
+            "X": 0,
+            "Y": 0,
+            "Width": 0,
+            "Height": 0
+          },
+          "SeasonOffset": {
+            "X": 0,
+            "Y": 0
+          },
+          "DrawOffset": "0, 0",
+          "SortTileOffset": 0.0,
+          "CollisionMap": null,
+          "AdditionalPlacementTiles": null,
+          "BuildingType": null,
+          "Builder": "Wizard",
+          "BuildCondition": null,
+          "BuildDays": 0,
+          "BuildCost": 500000,
+          "BuildMaterials": [
+            {
+              "ItemId": "(O)337",
+              "Amount": 10
+            },
+            {
+              "ItemId": "(O)86",
+              "Amount": 10
+            }
+          ],
+          "BuildingToUpgrade": null,
+          "MagicalConstruction": true,
+          "BuildMenuDrawOffset": {
+            "X": 0,
+            "Y": 0
+          },
+          "HumanDoor": {
+            "X": -1,
+            "Y": -1
+          },
+          "AnimalDoor": {
+            "X": -1,
+            "Y": -1,
+            "Width": 0,
+            "Height": 0
+          },
+          "AnimalDoorOpenDuration": 0.0,
+          "AnimalDoorOpenSound": null,
+          "AnimalDoorCloseDuration": 0.0,
+          "AnimalDoorCloseSound": null,
+          "NonInstancedIndoorLocation": null,
+          "IndoorMap": null,
+          "IndoorMapType": null,
+          "MaxOccupants": 20,
+          "ValidOccupantTypes": [],
+          "AllowAnimalPregnancy": false,
+          "IndoorItemMoves": null,
+          "IndoorItems": null,
+          "AddMailOnBuild": null,
+          "Metadata": {},
+          "ModData": {},
+          "HayCapacity": 0,
+          "Chests": null,
+          "DefaultAction": "ObeliskWarp Mountain 31 20 false",
+          "AdditionalTilePropertyRadius": 0,
+          "ActionTiles": [],
+          "TileProperties": [],
+          "ItemConversions": null,
+          "DrawLayers": null,
+          "CustomFields": {}
+        },
+        "juminos.AlternateObelisks_DesertTree": {
+          "Name": "Desert Obelisk (Tree)",
+          "Description": "This tree shares a mystical connection to the desert.",
+          "Texture": "Mods/juminos.AlternateObelisks/DesertTree",
+          "Skins": [],
+          "DrawShadow": false,
+          "UpgradeSignTile": "1, 1",
+          "UpgradeSignHeight": 16.0,
+          "Size": {
+            "X": 3,
+            "Y": 2
+          },
+          "FadeWhenBehind": true,
+          "SourceRect": {
+            "X": 0,
+            "Y": 0,
+            "Width": 0,
+            "Height": 0
+          },
+          "SeasonOffset": {
+            "X": 0,
+            "Y": 0
+          },
+          "DrawOffset": "0, 0",
+          "SortTileOffset": 0.0,
+          "CollisionMap": null,
+          "AdditionalPlacementTiles": null,
+          "BuildingType": null,
+          "Builder": "Wizard",
+          "BuildCondition": null,
+          "BuildDays": 0,
+          "BuildCost": 500000,
+          "BuildMaterials": [
+            {
+              "ItemId": "(O)337",
+              "Amount": 10
+            },
+            {
+              "ItemId": "(O)86",
+              "Amount": 10
+            }
+          ],
+          "BuildingToUpgrade": null,
+          "MagicalConstruction": true,
+          "BuildMenuDrawOffset": {
+            "X": 0,
+            "Y": 0
+          },
+          "HumanDoor": {
+            "X": -1,
+            "Y": -1
+          },
+          "AnimalDoor": {
+            "X": -1,
+            "Y": -1,
+            "Width": 0,
+            "Height": 0
+          },
+          "AnimalDoorOpenDuration": 0.0,
+          "AnimalDoorOpenSound": null,
+          "AnimalDoorCloseDuration": 0.0,
+          "AnimalDoorCloseSound": null,
+          "NonInstancedIndoorLocation": null,
+          "IndoorMap": null,
+          "IndoorMapType": null,
+          "MaxOccupants": 20,
+          "ValidOccupantTypes": [],
+          "AllowAnimalPregnancy": false,
+          "IndoorItemMoves": null,
+          "IndoorItems": null,
+          "AddMailOnBuild": null,
+          "Metadata": {},
+          "ModData": {},
+          "HayCapacity": 0,
+          "Chests": null,
+          "DefaultAction": "ObeliskWarp Mountain 31 20 false",
+          "AdditionalTilePropertyRadius": 0,
+          "ActionTiles": [],
+          "TileProperties": [],
+          "ItemConversions": null,
+          "DrawLayers": null,
+          "CustomFields": {}
+        },
+        "juminos.AlternateObelisks_IslandTree": {
+          "Name": "Island Obelisk (Tree)",
+          "Description": "This tree shares a mystical connection to Ginger Island.",
+          "Texture": "Mods/juminos.AlternateObelisks/IslandTree",
+          "Skins": [],
+          "DrawShadow": false,
+          "UpgradeSignTile": "1, 1",
+          "UpgradeSignHeight": 16.0,
+          "Size": {
+            "X": 3,
+            "Y": 2
+          },
+          "FadeWhenBehind": true,
+          "SourceRect": {
+            "X": 0,
+            "Y": 0,
+            "Width": 0,
+            "Height": 0
+          },
+          "SeasonOffset": {
+            "X": 0,
+            "Y": 0
+          },
+          "DrawOffset": "0, 0",
+          "SortTileOffset": 0.0,
+          "CollisionMap": null,
+          "AdditionalPlacementTiles": null,
+          "BuildingType": null,
+          "Builder": "Wizard",
+          "BuildCondition": null,
+          "BuildDays": 0,
+          "BuildCost": 500000,
+          "BuildMaterials": [
+            {
+              "ItemId": "(O)337",
+              "Amount": 10
+            },
+            {
+              "ItemId": "(O)86",
+              "Amount": 10
+            }
+          ],
+          "BuildingToUpgrade": null,
+          "MagicalConstruction": true,
+          "BuildMenuDrawOffset": {
+            "X": 0,
+            "Y": 0
+          },
+          "HumanDoor": {
+            "X": -1,
+            "Y": -1
+          },
+          "AnimalDoor": {
+            "X": -1,
+            "Y": -1,
+            "Width": 0,
+            "Height": 0
+          },
+          "AnimalDoorOpenDuration": 0.0,
+          "AnimalDoorOpenSound": null,
+          "AnimalDoorCloseDuration": 0.0,
+          "AnimalDoorCloseSound": null,
+          "NonInstancedIndoorLocation": null,
+          "IndoorMap": null,
+          "IndoorMapType": null,
+          "MaxOccupants": 20,
+          "ValidOccupantTypes": [],
+          "AllowAnimalPregnancy": false,
+          "IndoorItemMoves": null,
+          "IndoorItems": null,
+          "AddMailOnBuild": null,
+          "Metadata": {},
+          "ModData": {},
+          "HayCapacity": 0,
+          "Chests": null,
+          "DefaultAction": "ObeliskWarp Mountain 31 20 false",
+          "AdditionalTilePropertyRadius": 0,
+          "ActionTiles": [],
+          "TileProperties": [],
+          "ItemConversions": null,
+          "DrawLayers": null,
+          "CustomFields": {}
+        },
+        "juminos.AlternateObelisks_EarthBarrel": {
+          "Name": "Earth Obelisk (Barrel)",
+          "Description": "It evokes an image of the mountains...",
+          "Texture": "Mods/juminos.AlternateObelisks/EarthBarrel",
+          "Skins": [],
+          "DrawShadow": false,
+          "UpgradeSignTile": "1, 1",
+          "UpgradeSignHeight": 16.0,
+          "Size": {
+            "X": 3,
+            "Y": 2
+          },
+          "FadeWhenBehind": true,
+          "SourceRect": {
+            "X": 0,
+            "Y": 0,
+            "Width": 48,
+            "Height": 70
+          },
+          "SeasonOffset": {
+            "X": 0,
+            "Y": 70
+          },
+          "DrawOffset": "0, 0",
+          "SortTileOffset": 0.0,
+          "CollisionMap": null,
+          "AdditionalPlacementTiles": null,
+          "BuildingType": null,
+          "Builder": "Wizard",
+          "BuildCondition": null,
+          "BuildDays": 0,
+          "BuildCost": 500000,
+          "BuildMaterials": [
+            {
+              "ItemId": "(O)337",
+              "Amount": 10
+            },
+            {
+              "ItemId": "(O)86",
+              "Amount": 10
+            }
+          ],
+          "BuildingToUpgrade": null,
+          "MagicalConstruction": true,
+          "BuildMenuDrawOffset": {
+            "X": 0,
+            "Y": 0
+          },
+          "HumanDoor": {
+            "X": -1,
+            "Y": -1
+          },
+          "AnimalDoor": {
+            "X": -1,
+            "Y": -1,
+            "Width": 0,
+            "Height": 0
+          },
+          "AnimalDoorOpenDuration": 0.0,
+          "AnimalDoorOpenSound": null,
+          "AnimalDoorCloseDuration": 0.0,
+          "AnimalDoorCloseSound": null,
+          "NonInstancedIndoorLocation": null,
+          "IndoorMap": null,
+          "IndoorMapType": null,
+          "MaxOccupants": 20,
+          "ValidOccupantTypes": [],
+          "AllowAnimalPregnancy": false,
+          "IndoorItemMoves": null,
+          "IndoorItems": null,
+          "AddMailOnBuild": null,
+          "Metadata": {},
+          "ModData": {},
+          "HayCapacity": 0,
+          "Chests": null,
+          "DefaultAction": "ObeliskWarp Mountain 31 20 false",
+          "AdditionalTilePropertyRadius": 0,
+          "ActionTiles": [],
+          "TileProperties": [],
+          "ItemConversions": null,
+          "DrawLayers": null,
+          "CustomFields": {}
+        },
+        "juminos.AlternateObelisks_WaterBarrel": {
+          "Name": "Water Obelisk (Barrel)",
+          "Description": "It evokes an image of the ocean...",
+          "Texture": "Mods/juminos.AlternateObelisks/WaterBarrel",
+          "Skins": [],
+          "DrawShadow": false,
+          "UpgradeSignTile": "1, 1",
+          "UpgradeSignHeight": 16.0,
+          "Size": {
+            "X": 3,
+            "Y": 2
+          },
+          "FadeWhenBehind": true,
+          "SourceRect": {
+            "X": 0,
+            "Y": 0,
+            "Width": 48,
+            "Height": 70
+          },
+          "SeasonOffset": {
+            "X": 0,
+            "Y": 70
+          },
+          "DrawOffset": "0, 0",
+          "SortTileOffset": 0.0,
+          "CollisionMap": null,
+          "AdditionalPlacementTiles": null,
+          "BuildingType": null,
+          "Builder": "Wizard",
+          "BuildCondition": null,
+          "BuildDays": 0,
+          "BuildCost": 500000,
+          "BuildMaterials": [
+            {
+              "ItemId": "(O)337",
+              "Amount": 10
+            },
+            {
+              "ItemId": "(O)86",
+              "Amount": 10
+            }
+          ],
+          "BuildingToUpgrade": null,
+          "MagicalConstruction": true,
+          "BuildMenuDrawOffset": {
+            "X": 0,
+            "Y": 0
+          },
+          "HumanDoor": {
+            "X": -1,
+            "Y": -1
+          },
+          "AnimalDoor": {
+            "X": -1,
+            "Y": -1,
+            "Width": 0,
+            "Height": 0
+          },
+          "AnimalDoorOpenDuration": 0.0,
+          "AnimalDoorOpenSound": null,
+          "AnimalDoorCloseDuration": 0.0,
+          "AnimalDoorCloseSound": null,
+          "NonInstancedIndoorLocation": null,
+          "IndoorMap": null,
+          "IndoorMapType": null,
+          "MaxOccupants": 20,
+          "ValidOccupantTypes": [],
+          "AllowAnimalPregnancy": false,
+          "IndoorItemMoves": null,
+          "IndoorItems": null,
+          "AddMailOnBuild": null,
+          "Metadata": {},
+          "ModData": {},
+          "HayCapacity": 0,
+          "Chests": null,
+          "DefaultAction": "ObeliskWarp Mountain 31 20 false",
+          "AdditionalTilePropertyRadius": 0,
+          "ActionTiles": [],
+          "TileProperties": [],
+          "ItemConversions": null,
+          "DrawLayers": null,
+          "CustomFields": {}
+        },
+        "juminos.AlternateObelisks_DesertBarrel": {
+          "Name": "Desert Obelisk (Barrel)",
+          "Description": "It evokes an image of the desert...",
+          "Texture": "Mods/juminos.AlternateObelisks/DesertBarrel",
+          "Skins": [],
+          "DrawShadow": false,
+          "UpgradeSignTile": "1, 1",
+          "UpgradeSignHeight": 16.0,
+          "Size": {
+            "X": 3,
+            "Y": 2
+          },
+          "FadeWhenBehind": true,
+          "SourceRect": {
+            "X": 0,
+            "Y": 0,
+            "Width": 48,
+            "Height": 70
+          },
+          "SeasonOffset": {
+            "X": 0,
+            "Y": 70
+          },
+          "DrawOffset": "0, 0",
+          "SortTileOffset": 0.0,
+          "CollisionMap": null,
+          "AdditionalPlacementTiles": null,
+          "BuildingType": null,
+          "Builder": "Wizard",
+          "BuildCondition": null,
+          "BuildDays": 0,
+          "BuildCost": 500000,
+          "BuildMaterials": [
+            {
+              "ItemId": "(O)337",
+              "Amount": 10
+            },
+            {
+              "ItemId": "(O)86",
+              "Amount": 10
+            }
+          ],
+          "BuildingToUpgrade": null,
+          "MagicalConstruction": true,
+          "BuildMenuDrawOffset": {
+            "X": 0,
+            "Y": 0
+          },
+          "HumanDoor": {
+            "X": -1,
+            "Y": -1
+          },
+          "AnimalDoor": {
+            "X": -1,
+            "Y": -1,
+            "Width": 0,
+            "Height": 0
+          },
+          "AnimalDoorOpenDuration": 0.0,
+          "AnimalDoorOpenSound": null,
+          "AnimalDoorCloseDuration": 0.0,
+          "AnimalDoorCloseSound": null,
+          "NonInstancedIndoorLocation": null,
+          "IndoorMap": null,
+          "IndoorMapType": null,
+          "MaxOccupants": 20,
+          "ValidOccupantTypes": [],
+          "AllowAnimalPregnancy": false,
+          "IndoorItemMoves": null,
+          "IndoorItems": null,
+          "AddMailOnBuild": null,
+          "Metadata": {},
+          "ModData": {},
+          "HayCapacity": 0,
+          "Chests": null,
+          "DefaultAction": "ObeliskWarp Mountain 31 20 false",
+          "AdditionalTilePropertyRadius": 0,
+          "ActionTiles": [],
+          "TileProperties": [],
+          "ItemConversions": null,
+          "DrawLayers": null,
+          "CustomFields": {}
+        },
+        "juminos.AlternateObelisks_IslandBarrel": {
+          "Name": "Island Obelisk (Barrel)",
+          "Description": "It evokes an image of a tropical island...",
+          "Texture": "Mods/juminos.AlternateObelisks/IslandBarrel",
+          "Skins": [],
+          "DrawShadow": false,
+          "UpgradeSignTile": "1, 1",
+          "UpgradeSignHeight": 16.0,
+          "Size": {
+            "X": 3,
+            "Y": 2
+          },
+          "FadeWhenBehind": true,
+          "SourceRect": {
+            "X": 0,
+            "Y": 0,
+            "Width": 48,
+            "Height": 70
+          },
+          "SeasonOffset": {
+            "X": 0,
+            "Y": 70
+          },
+          "DrawOffset": "0, 0",
+          "SortTileOffset": 0.0,
+          "CollisionMap": null,
+          "AdditionalPlacementTiles": null,
+          "BuildingType": null,
+          "Builder": "Wizard",
+          "BuildCondition": null,
+          "BuildDays": 0,
+          "BuildCost": 500000,
+          "BuildMaterials": [
+            {
+              "ItemId": "(O)337",
+              "Amount": 10
+            },
+            {
+              "ItemId": "(O)86",
+              "Amount": 10
+            }
+          ],
+          "BuildingToUpgrade": null,
+          "MagicalConstruction": true,
+          "BuildMenuDrawOffset": {
+            "X": 0,
+            "Y": 0
+          },
+          "HumanDoor": {
+            "X": -1,
+            "Y": -1
+          },
+          "AnimalDoor": {
+            "X": -1,
+            "Y": -1,
+            "Width": 0,
+            "Height": 0
+          },
+          "AnimalDoorOpenDuration": 0.0,
+          "AnimalDoorOpenSound": null,
+          "AnimalDoorCloseDuration": 0.0,
+          "AnimalDoorCloseSound": null,
+          "NonInstancedIndoorLocation": null,
+          "IndoorMap": null,
+          "IndoorMapType": null,
+          "MaxOccupants": 20,
+          "ValidOccupantTypes": [],
+          "AllowAnimalPregnancy": false,
+          "IndoorItemMoves": null,
+          "IndoorItems": null,
+          "AddMailOnBuild": null,
+          "Metadata": {},
+          "ModData": {},
+          "HayCapacity": 0,
+          "Chests": null,
+          "DefaultAction": "ObeliskWarp Mountain 31 20 false",
+          "AdditionalTilePropertyRadius": 0,
+          "ActionTiles": [],
+          "TileProperties": [],
+          "ItemConversions": null,
+          "DrawLayers": null,
+          "CustomFields": {}
+        }
+      }
+    },
+
+    {
+      "Action": "Load",
+      "Target": "Mods/juminos.AlternateObelisks/EarthBear, Mods/juminos.AlternateObelisks/EarthTree, Mods/juminos.AlternateObelisks/EarthBarrel, Mods/juminos.AlternateObelisks/DesertBear, Mods/juminos.AlternateObelisks/DesertTree, Mods/juminos.AlternateObelisks/DesertBarrel, Mods/juminos.AlternateObelisks/IslandBear, Mods/juminos.AlternateObelisks/IslandTree, Mods/juminos.AlternateObelisks/IslandBarrel, Mods/juminos.AlternateObelisks/WaterBear, Mods/juminos.AlternateObelisks/WaterTree, Mods/juminos.AlternateObelisks/WaterBarrel",
+      "FromFile": "assets/{{TargetWithoutPath}}.png"
+    }
+  ]
+}
