@@ -20,11 +20,12 @@ namespace BetterFruitTrees
         internal static float wildTreeDensityModifier;
         internal static int spreadRadius;
         internal static int fruitDaysToFinalStage;
-        internal static float farmFruitModifier;
-        internal static float fruitDailyGrowthChance;
+        internal static int fruitFarmDaysToFinalStage;
         internal static int wildDaysToFinalStage;
-        internal static float farmWildModifier;
-        internal static float wildDailyGrowthChance;
+        internal static int wildFarmDaysToFinalStage;
+        internal static int daysToLargeTree;
+        internal static float largeTreeChance;
+        internal static bool winterGrowth;
         private int energyCost;
 
         internal static bool IsEnabled = true;
@@ -43,13 +44,13 @@ namespace BetterFruitTrees
             wildTreeDensityModifier = config.WildTreeDensityModifier.Value;
             spreadRadius = config.SpreadRadius.Value;
             fruitDaysToFinalStage = config.FruitDaysToFinalStage.Value;
-            farmFruitModifier = config.FarmFruitModifier.Value;
-            fruitDailyGrowthChance = config.FruitDailyGrowthChance.Value;
+            fruitFarmDaysToFinalStage = config.FruitFarmDaysToFinalStage.Value;
             wildDaysToFinalStage = config.WildDaysToFinalStage.Value;
-            farmWildModifier = config.FarmWildModifier.Value;
-            wildDailyGrowthChance = config.WildDailyGrowthChance.Value;
+            wildFarmDaysToFinalStage = config.WildFarmDaysToFinalStage.Value;
+            daysToLargeTree = config.DaysToLargeTree.Value;
+            largeTreeChance = config.LargeTreeChance.Value;
+            winterGrowth = config.WinterGrowth.Value;
             energyCost = config.EnergyCost;
-
         }
 
         // Update trees in all locations

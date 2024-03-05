@@ -12,25 +12,10 @@ namespace BetterFruitTrees
             List<Tuple<Vector2, string>> newFruitTreesInfo = new List<Tuple<Vector2, string>>();
             List<Tuple<Vector2, string>> newWildTreesInfo = new List<Tuple<Vector2, string>>();
 
-            float customFruitCountdownFloat;
-            float customWildCountdownFloat;
-            if (location is Farm)
-            {
-                customFruitCountdownFloat = Math.Max(ModEntry.fruitDaysToFinalStage / ModEntry.farmFruitModifier, 1);
-                customWildCountdownFloat = Math.Max(ModEntry.wildDaysToFinalStage / ModEntry.farmWildModifier, 1);
-            }
-            else
-            {
-                customFruitCountdownFloat = ModEntry.fruitDaysToFinalStage;
-                customWildCountdownFloat = ModEntry.wildDaysToFinalStage;
-            }
-            int customFruitCountdown = (int)customFruitCountdownFloat;
-            int customWildCountdown = (int)customWildCountdownFloat;
-
             // Check for spreading fruit trees
             foreach (KeyValuePair<Vector2, TerrainFeature> pair in location.terrainFeatures.Pairs)
             {
-                if (pair.Value is FruitTree fruitTree && fruitTree.growthStage.Value == 4)
+                if (pair.Value is FruitTree fruitTree && fruitTree.growthStage.Value == 4) // && pass random check against fruitSpreadChance before trySpreadFruitTree, update method to add 1 sapling at random with weighted conditions
                 {
                     TrySpreadFruitTree(location, pair.Key, fruitTree, newFruitTreesInfo);
                 }
@@ -43,9 +28,6 @@ namespace BetterFruitTrees
                 string treeId = fruitTreeInfo.Item2;
 
                 FruitTree newFruitTree = new FruitTree(treeId, 0);
-                newFruitTree.modData["CustomCountdown"] = customFruitCountdown.ToString();
-                int countdownFallback = 0;
-                newFruitTree.modData["CountdownFallback"] = countdownFallback.ToString();
                 location.terrainFeatures.Add(tileLocation, newFruitTree);
             }
 
@@ -65,9 +47,6 @@ namespace BetterFruitTrees
                 string treeId = wildTreeInfo.Item2;
 
                 Tree newWildTree = new Tree(treeId, 0);
-                newWildTree.modData["CustomCountdown"] = customWildCountdown.ToString();
-                int countdownFallback = 0;
-                newWildTree.modData["CountdownFallback"] = countdownFallback.ToString();
                 location.terrainFeatures.Add(tileLocation, newWildTree);
             }
 
