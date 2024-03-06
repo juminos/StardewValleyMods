@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using StardewValley;
+using StardewValley.Buildings;
 using StardewValley.TerrainFeatures;
 
 namespace BetterFruitTrees
@@ -15,7 +16,8 @@ namespace BetterFruitTrees
             // Check for spreading fruit trees
             foreach (KeyValuePair<Vector2, TerrainFeature> pair in location.terrainFeatures.Pairs)
             {
-                if (pair.Value is FruitTree fruitTree && fruitTree.growthStage.Value == 4) // && pass random check against fruitSpreadChance before trySpreadFruitTree, update method to add 1 sapling at random with weighted conditions
+                if (pair.Value is FruitTree fruitTree && 
+                    fruitTree.growthStage.Value == 4) // && pass random check against fruitSpreadChance before trySpreadFruitTree, update method to add 1 sapling at random with weighted conditions
                 {
                     TrySpreadFruitTree(location, pair.Key, fruitTree, newFruitTreesInfo);
                 }
@@ -176,6 +178,13 @@ namespace BetterFruitTrees
                 if (location.terrainFeatures.TryGetValue(tileLocation, out TerrainFeature terrainFeature))
                 { 
                     if (terrainFeature is FruitTree || terrainFeature is Tree)
+                    {
+                        return true;
+                    }
+                }
+                foreach (Building building in location.buildings)
+                {
+                    if (building.occupiesTile(tileLocation) && building.modData.ContainsKey("IsLargeTree"))
                     {
                         return true;
                     }

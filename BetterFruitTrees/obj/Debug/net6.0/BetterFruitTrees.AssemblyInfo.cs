@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BetterFruitTrees")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+17c9770b679a5a3b6fa7c86746448f25dff194c7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ced337c75b8ce58e93800d0ec7bf6897b7de7e4f")]
 [assembly: System.Reflection.AssemblyProductAttribute("BetterFruitTrees")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BetterFruitTrees")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

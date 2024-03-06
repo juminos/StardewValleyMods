@@ -26,7 +26,7 @@ namespace BetterFruitTrees
         internal static int daysToLargeTree;
         internal static float largeTreeChance;
         internal static bool winterGrowth;
-        private int energyCost;
+        internal static int energyCost;
 
         internal static bool IsEnabled = true;
 
@@ -82,33 +82,16 @@ namespace BetterFruitTrees
             if (Game1.activeClickableMenu != null)
                 return;
 
+            // Fertilize trees
+            if (e.Button.IsActionButton() && Game1.player.ActiveObject != null && Game1.player.ActiveObject.ParentSheetIndex == 805)
+            {
+                FertilizerExpansion.FertilizeFruitTrees(sender, e);
+            }
+
             // Check if using Hoe and target tile
             if (e.Button.IsUseToolButton() && Game1.player.CurrentTool is Hoe)
             {
-                Vector2 playerPosition = new Vector2(Game1.player.Tile.X, Game1.player.Tile.Y);
-                Vector2 targetTile = ToolHelper.GetTargetTile(playerPosition, Game1.player.FacingDirection);
-
-                if (Game1.currentLocation.terrainFeatures.TryGetValue(targetTile, out TerrainFeature terrainFeature) && terrainFeature is FruitTree fruitTree)
-                {
-                    // Check growth stage
-                    if (fruitTree.growthStage.Value == 0 || fruitTree.growthStage.Value == 1 || fruitTree.growthStage.Value == 2)
-                    {
-                        // Hoe dirt, use stamina
-                        Game1.player.stamina -= energyCost;
-
-                        bool treeDestroyed = Game1.currentLocation.terrainFeatures.Remove(targetTile);
-
-                        if (treeDestroyed)
-                        {
-                            // Get sapling item and drop it
-                            string treeTypeId = fruitTree.treeId.ToString();
-                            if (Game1.objectData.ContainsKey(treeTypeId))
-                            {
-                                Game1.createItemDebris(new StardewValley.Object(treeTypeId, 1), targetTile * Game1.tileSize, -1);
-                            }
-                        }
-                    }
-                }    
+                ToolHelper.DigSapling(sender, e);
             }
         }
 
