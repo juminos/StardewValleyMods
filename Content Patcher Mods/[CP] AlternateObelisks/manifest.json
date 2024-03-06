@@ -1,0 +1,11 @@
+{
+    "Name": "Alternate Obelisks",
+    "Author": "juminos",
+    "Version": "1.0.0",
+    "Description": "Alternate skins for obelisks.",
+    "UniqueID": "juminos.AlternateObelisks",
+    "UpdateKeys": [], 
+    "ContentPackFor": {
+        "UniqueID": "Pathoschild.ContentPatcher"
+    }
+}

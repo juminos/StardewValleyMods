@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using StardewValley;
+using StardewValley.Buildings;
 using StardewValley.TerrainFeatures;
 
 namespace BetterFruitTrees
@@ -9,52 +10,39 @@ namespace BetterFruitTrees
         // Iterate through all mature trees
         public static void SpreadTrees(GameLocation location)
         {
-            float customFruitCountdownFloat;
-            float customWildCountdownFloat;
-            if (location is Farm)
-            {
-                customFruitCountdownFloat = Math.Max(ModEntry.fruitDaysToFinalStage / ModEntry.farmFruitModifier, 1);
-                customWildCountdownFloat = Math.Max(ModEntry.wildDaysToFinalStage / ModEntry.farmWildModifier, 1);
-            }
-            else
-            {
-                customFruitCountdownFloat = ModEntry.fruitDaysToFinalStage;
-                customWildCountdownFloat = ModEntry.wildDaysToFinalStage;
-            }
-            int customFruitCountdown = (int)customFruitCountdownFloat;
-            int customWildCountdown = (int)customWildCountdownFloat;
-
             // Check for spreading fruit trees
             var treesAndFruitTrees = location.terrainFeatures.Pairs
                 .Where(pair => pair.Value is Tree || pair.Value is FruitTree)
                 .ToArray();
             foreach (KeyValuePair<Vector2, TerrainFeature> pair in treesAndFruitTrees)
             {
-                if (pair.Value is FruitTree fruitTree && fruitTree.growthStage.Value == 4)
+                if (pair.Value is FruitTree fruitTree &&
+                    fruitTree.growthStage.Value == 4) // && pass random check against fruitSpreadChance before trySpreadFruitTree, update method to add 1 sapling at random with weighted conditions
                 {
-                    TrySpreadFruitTree(location, pair.Key, fruitTree, customFruitCountdown);
+                    TrySpreadFruitTree(location, pair.Key, fruitTree);
                 }
             }
+
 
             // Check for spreading wild trees
             foreach (KeyValuePair<Vector2, TerrainFeature> pair in treesAndFruitTrees)
             {
                 if (pair.Value is Tree wildTree && wildTree.growthStage.Value == 5)
                 {
-                    TrySpreadWildTree(location, pair.Key, wildTree, customWildCountdown);
+                    TrySpreadWildTree(location, pair.Key, wildTree);
                 }
             }
         }
 
         // Check surrounding area for adding new fruit trees
-        public static void TrySpreadFruitTree(GameLocation location, Vector2 treeTile, FruitTree fruitTree, int customFruitCountdown)
+        public static void TrySpreadFruitTree(GameLocation location, Vector2 treeTile, FruitTree fruitTree)
         {
             bool neighboringTreesPresent = false;
 
             // Iterate over surrounding tiles within spread radius
-            for (int x = (int)treeTile.X - ModEntry.spreadFruitRadius; x <= (int)treeTile.X + ModEntry.spreadFruitRadius; x++)
+            for (int x = (int)treeTile.X - ModEntry.spreadRadius; x <= (int)treeTile.X + ModEntry.spreadRadius; x++)
             {
-                for (int y = (int)treeTile.Y - ModEntry.spreadFruitRadius; y <= (int)treeTile.Y + ModEntry.spreadFruitRadius; y++)
+                for (int y = (int)treeTile.Y - ModEntry.spreadRadius; y <= (int)treeTile.Y + ModEntry.spreadRadius; y++)
                 {
                     Vector2 tileLocation = new Vector2(x, y);
 
@@ -88,9 +76,6 @@ namespace BetterFruitTrees
                         {
                             string fruitTreeId = fruitTree.treeId.Value;
                             FruitTree newFruitTree = new FruitTree(fruitTreeId, 0);
-                            newFruitTree.modData["CustomCountdown"] = customFruitCountdown.ToString();
-                            int countdownFallback = 0;
-                            newFruitTree.modData["CountdownFallback"] = countdownFallback.ToString();
                             location.terrainFeatures.Add(tileLocation, newFruitTree);
                         }
                     }
@@ -99,13 +84,13 @@ namespace BetterFruitTrees
         }
 
         // Check surrounding area for adding new wild trees
-        public static void TrySpreadWildTree(GameLocation location, Vector2 treeTile, Tree wildTree, int customWildCountdown)
+        public static void TrySpreadWildTree(GameLocation location, Vector2 treeTile, Tree wildTree)
         {
             bool neighboringTreesPresent = false;
 
-            for (int x = (int)treeTile.X - ModEntry.spreadWildRadius; x <= (int)treeTile.X + ModEntry.spreadWildRadius; x++)
+            for (int x = (int)treeTile.X - ModEntry.spreadRadius; x <= (int)treeTile.X + ModEntry.spreadRadius; x++)
             {
-                for (int y = (int)treeTile.Y - ModEntry.spreadWildRadius; y <= (int)treeTile.Y + ModEntry.spreadWildRadius; y++)
+                for (int y = (int)treeTile.Y - ModEntry.spreadRadius; y <= (int)treeTile.Y + ModEntry.spreadRadius; y++)
                 {
                     Vector2 tileLocation = new Vector2(x, y);
 
@@ -139,9 +124,6 @@ namespace BetterFruitTrees
                         {
                             string wildTreeId = wildTree.treeType.Value.ToString();
                             Tree newWildTree = new Tree(wildTreeId, 0);
-                            newWildTree.modData["CustomCountdown"] = customWildCountdown.ToString();
-                            int countdownFallback = 0;
-                            newWildTree.modData["CountdownFallback"] = countdownFallback.ToString();
                             location.terrainFeatures.Add(tileLocation, newWildTree);
                         }
                     }
@@ -158,6 +140,13 @@ namespace BetterFruitTrees
                 if (location.terrainFeatures.TryGetValue(tileLocation, out TerrainFeature terrainFeature))
                 { 
                     if (terrainFeature is FruitTree || terrainFeature is Tree)
+                    {
+                        return true;
+                    }
+                }
+                foreach (Building building in location.buildings)
+                {
+                    if (building.occupiesTile(tileLocation) && building.modData.ContainsKey("IsLargeTree"))
                     {
                         return true;
                     }

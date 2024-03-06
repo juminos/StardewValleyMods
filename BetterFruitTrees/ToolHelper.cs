@@ -1,32 +1,38 @@
 ﻿using Microsoft.Xna.Framework;
+using StardewModdingAPI.Events;
 using StardewValley;
+using StardewValley.TerrainFeatures;
 
 namespace BetterFruitTrees
 {
     public class ToolHelper
     {
-        // Calculate the tile position in front of the player based on the direction
-        public static Vector2 GetTargetTile(Vector2 playerPosition, int direction)
+        public static void DigSapling(object sender, ButtonPressedEventArgs e)
         {
-            Vector2 targetTile = playerPosition;
+            Vector2 selectedTile = Game1.currentCursorTile;
 
-            switch (direction)
+            if (Game1.currentLocation.terrainFeatures.TryGetValue(selectedTile, out TerrainFeature terrainFeature) && terrainFeature is FruitTree fruitTree)
             {
-                case Game1.down:
-                    targetTile.Y += 1;
-                    break;
-                case Game1.up:
-                    targetTile.Y -= 1;
-                    break;
-                case Game1.left:
-                    targetTile.X -= 1;
-                    break;
-                case Game1.right:
-                    targetTile.X += 1;
-                    break;
+                // Check growth stage
+                if (fruitTree.growthStage.Value <= 1)
+                {
+                    // Hoe dirt, use stamina
+                    Game1.player.stamina -= ModEntry.energyCost;
+
+                    bool treeDestroyed = Game1.currentLocation.terrainFeatures.Remove(selectedTile);
+
+                    if (treeDestroyed)
+                    {
+                        // Get sapling item and drop it
+                        string treeTypeId = fruitTree.treeId.ToString();
+                        if (Game1.objectData.ContainsKey(treeTypeId))
+                        {
+                            Game1.createItemDebris(new StardewValley.Object(treeTypeId, 1), selectedTile * Game1.tileSize, -1);
+                        }
+                    }
+                }
             }
 
-            return targetTile;
         }
     }
 }

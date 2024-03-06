@@ -18,16 +18,15 @@ namespace BetterFruitTrees
         internal static float wildSpreadChance;
         internal static float fruitTreeDensityModifier;
         internal static float wildTreeDensityModifier;
-        internal static int spreadFruitRadius;
-        internal static int spreadWildRadius;
+        internal static int spreadRadius;
         internal static int fruitDaysToFinalStage;
-        internal static float farmFruitModifier;
-        internal static float fruitDailyGrowthChance;
+        internal static int fruitFarmDaysToFinalStage;
         internal static int wildDaysToFinalStage;
-        internal static float farmWildModifier;
-        internal static float wildDailyGrowthChance;
-        internal static int largeTreeGrowthRate;
-        private int energyCost;
+        internal static int wildFarmDaysToFinalStage;
+        internal static int daysToLargeTree;
+        internal static float largeTreeChance;
+        internal static bool winterGrowth;
+        internal static int energyCost;
 
         internal static bool IsEnabled = true;
 
@@ -43,17 +42,15 @@ namespace BetterFruitTrees
             wildSpreadChance = config.WildSpreadChance.Value;
             fruitTreeDensityModifier = config.FruitTreeDensityModifier.Value;
             wildTreeDensityModifier = config.WildTreeDensityModifier.Value;
-            spreadFruitRadius = config.SpreadFruitRadius.Value;
-            spreadWildRadius = config.SpreadWildRadius.Value;
+            spreadRadius = config.SpreadRadius.Value;
             fruitDaysToFinalStage = config.FruitDaysToFinalStage.Value;
-            farmFruitModifier = config.FarmFruitModifier.Value;
-            fruitDailyGrowthChance = config.FruitDailyGrowthChance.Value;
+            fruitFarmDaysToFinalStage = config.FruitFarmDaysToFinalStage.Value;
             wildDaysToFinalStage = config.WildDaysToFinalStage.Value;
-            farmWildModifier = config.FarmWildModifier.Value;
-            wildDailyGrowthChance = config.WildDailyGrowthChance.Value;
-            largeTreeGrowthRate = config.LargeTreeGrowthRate.Value;
+            wildFarmDaysToFinalStage = config.WildFarmDaysToFinalStage.Value;
+            daysToLargeTree = config.DaysToLargeTree.Value;
+            largeTreeChance = config.LargeTreeChance.Value;
+            winterGrowth = config.WinterGrowth.Value;
             energyCost = config.EnergyCost;
-
         }
 
         // Update trees in all locations
@@ -85,33 +82,16 @@ namespace BetterFruitTrees
             if (Game1.activeClickableMenu != null)
                 return;
 
+            // Fertilize trees
+            if (e.Button.IsActionButton() && Game1.player.ActiveObject != null && Game1.player.ActiveObject.ParentSheetIndex == 805)
+            {
+                FertilizerExpansion.FertilizeFruitTrees(sender, e);
+            }
+
             // Check if using Hoe and target tile
             if (e.Button.IsUseToolButton() && Game1.player.CurrentTool is Hoe)
             {
-                Vector2 playerPosition = new Vector2(Game1.player.Tile.X, Game1.player.Tile.Y);
-                Vector2 targetTile = ToolHelper.GetTargetTile(playerPosition, Game1.player.FacingDirection);
-
-                if (Game1.currentLocation.terrainFeatures.TryGetValue(targetTile, out TerrainFeature terrainFeature) && terrainFeature is FruitTree fruitTree)
-                {
-                    // Check growth stage
-                    if (fruitTree.growthStage.Value == 0 || fruitTree.growthStage.Value == 1 || fruitTree.growthStage.Value == 2)
-                    {
-                        // Hoe dirt, use stamina
-                        Game1.player.stamina -= energyCost;
-
-                        bool treeDestroyed = Game1.currentLocation.terrainFeatures.Remove(targetTile);
-
-                        if (treeDestroyed)
-                        {
-                            // Get sapling item and drop it
-                            string treeTypeId = fruitTree.treeId.ToString();
-                            if (Game1.objectData.ContainsKey(treeTypeId))
-                            {
-                                Game1.createItemDebris(new StardewValley.Object(treeTypeId, 1), targetTile * Game1.tileSize, -1);
-                            }
-                        }
-                    }
-                }    
+                ToolHelper.DigSapling(sender, e);
             }
         }
 

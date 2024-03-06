@@ -17,143 +17,123 @@ namespace BetterFruitTrees
             {
                 foreach (KeyValuePair<Vector2, TerrainFeature> pair in location.terrainFeatures.Pairs)
                 {
-                    float customFruitCountdownFloat;
-                    float customWildCountdownFloat;
-                    if (location is Farm)
-                    {
-                        customFruitCountdownFloat = Math.Max(ModEntry.fruitDaysToFinalStage / ModEntry.farmFruitModifier, 1);
-                        customWildCountdownFloat = Math.Max(ModEntry.wildDaysToFinalStage / ModEntry.farmWildModifier, 1);
-                    }
-                    else
-                    {
-                        customFruitCountdownFloat = ModEntry.fruitDaysToFinalStage;
-                        customWildCountdownFloat = ModEntry.wildDaysToFinalStage;
-                    }
-                    int customFruitCountdown = (int)customFruitCountdownFloat;
-                    int customWildCountdown = (int)customWildCountdownFloat;
-
+                    // Check for growing fruit trees
                     if (pair.Value is FruitTree fruitTree && fruitTree.growthStage.Value < 4)
                     {
-                        // Logging current custom countdown
-                        //monitor.Log($"UpdateFruitTrees: Current custom countdown for tree at {pair.Key}: {(fruitTree.modData.ContainsKey("CustomCountdown") ? fruitTree.modData["CustomCountdown"] : "Not set")}", LogLevel.Trace);
-
-                        // Initialize customCountdown and countdownFallback if not already set
-                        if (!fruitTree.modData.ContainsKey("CustomCountdown"))
+                        // Revert vanilla daily growth
+                        if (fruitTree.modData.ContainsKey("GrowthCheck"))
                         {
-                            fruitTree.modData["CustomCountdown"] = customFruitCountdown.ToString();
-                            int countdownFallback = 0;
-                            fruitTree.modData["CountdownFallback"] = countdownFallback.ToString();
-                            // Logging initialized custom countdown
-                            //monitor.Log($"UpdateFruitTrees: Initialized custom countdown {customFruitCountdown} and fallback {countdownFallback} for tree at {pair.Key}", LogLevel.Trace);
-                        }
-
-                        // Check surrounding area for bigger trees, update customCountdown, fallback
-                        int remainingCustomCountdown = Convert.ToInt32(fruitTree.modData["CustomCountdown"]);
-                        int currentCountdownFallback = Convert.ToInt32(fruitTree.modData["CountdownFallback"]);
-
-                        // Determine whether fruit tree will grow based on configurable weight value
-                        bool willGrow = Game1.random.NextDouble() < ModEntry.fruitDailyGrowthChance;
-
-                        if (!IsSurroundingFruitAreaOvershadowed(pair.Key, location, fruitTree) && !Game1.IsWinter && remainingCustomCountdown < customFruitCountdown && willGrow)
-                        {
-                            remainingCustomCountdown = Math.Max(remainingCustomCountdown - 1, 0);
-                            currentCountdownFallback++;
-                        }
-                        else if (currentCountdownFallback >= 1 / ModEntry.fruitDailyGrowthChance)
-                        {
-                            remainingCustomCountdown = Math.Max(remainingCustomCountdown - 1, 0);
-                            currentCountdownFallback = 0;
+                            fruitTree.daysUntilMature.Value = Convert.ToInt32(fruitTree.modData["GrowthCheck"]);
                         }
                         else
                         {
-                            currentCountdownFallback++;
-                        }
-                        fruitTree.modData["CustomCountdown"] = remainingCustomCountdown.ToString();
-                        fruitTree.modData["CountdownFallback"] = currentCountdownFallback.ToString();
-
-                        // Logging updated custom countdown
-                        //monitor.Log($"UpdateFruitTrees: Updated custom countdown for tree at {pair.Key} to {remainingCustomCountdown}", LogLevel.Trace);
-
-                        // Update growth stage
-                        if (remainingCustomCountdown < customFruitCountdown)
-                        {
-                            int newGrowthStage = CalculateFruitTreeGrowthStage(remainingCustomCountdown, customFruitCountdown);
-                            fruitTree.growthStage.Value = newGrowthStage;
-                            // Logging updated growth stage
-                            //monitor.Log($"UpdateFruitTrees: Updated growth stage for tree at {pair.Key} to {newGrowthStage}", LogLevel.Trace);
+                            fruitTree.modData["GrowthCheck"] = fruitTree.daysUntilMature.Value.ToString();
                         }
 
-                        // Remove unneeded countdown for mature trees
-                        if (fruitTree.growthStage.Value == 4)
+                        // Check if growing conditions are met
+                        if (!IsSurroundingFruitAreaOvershadowed(pair.Key, location, fruitTree) && (!location.IsWinterHere() || ModEntry.winterGrowth))
                         {
-                            fruitTree.daysUntilMature.Value = 0;
-                            fruitTree.modData.Remove("CustomCountdown");
-                            // Logging removed custom countdown
-                            //monitor.Log($"UpdateFruitTrees: Removed custom countdown for mature tree at {pair.Key}", LogLevel.Trace);
+                            // Calculate daily growth chance
+                            float fruitGrowthChance = 28f / Math.Max(ModEntry.fruitDaysToFinalStage, 1);
+                            float fruitFarmGrowthChance = 28f / Math.Max(ModEntry.fruitFarmDaysToFinalStage, 1);
+
+                            if (fruitTree.modData.ContainsKey("Fertilized") && fruitTree.modData["Fertilized"].ToString() == "true")
+                            {
+                                fruitGrowthChance *= 2f;
+                                fruitFarmGrowthChance *= 2f;
+                                fruitTree.modData.Remove("Fertilized");
+                            }
+                            // Use farm growth rate
+                            if (location.IsGreenhouse || location.IsFarm)
+                            {
+                                // Decrement integer part of growth chance
+                                fruitTree.daysUntilMature.Value -= (int)fruitFarmGrowthChance;
+                                // Randomly decrement an extra day based on the fractional part of growth chance
+                                if (Game1.random.NextDouble() < fruitFarmGrowthChance - (int)fruitFarmGrowthChance)
+                                {
+                                    fruitTree.daysUntilMature.Value--;
+                                }
+                                fruitTree.modData["GrowthCheck"] = fruitTree.daysUntilMature.Value.ToString();
+                            }
+                            // Universal growth for all other locations
+                            else
+                            {
+                                // Decrement integer part of growth chance
+                                fruitTree.daysUntilMature.Value -= (int)fruitGrowthChance;
+                                // Randomly decrement an extra day based on the fractional part of growth chance
+                                if (Game1.random.NextDouble() < fruitGrowthChance - (int)fruitGrowthChance)
+                                {
+                                    fruitTree.daysUntilMature.Value--;
+                                }
+                                fruitTree.modData["GrowthCheck"] = fruitTree.daysUntilMature.Value.ToString();
+                            }
                         }
                     }
-                    else if (pair.Value is Tree wildTree && wildTree.growthStage.Value < 5)
+                    else if (pair.Value is Tree wildTree && wildTree.growthStage.Value <= 5)
                     {
-                        // Logging current custom countdown
-                        //monitor.Log($"UpdateWildTrees: Current custom countdown for tree at {pair.Key}: {(wildTree.modData.ContainsKey("CustomCountdown") ? wildTree.modData["CustomCountdown"] : "Not set")}", LogLevel.Trace);
-
-                        // Initialize customCountdown if not already set
-                        if (!wildTree.modData.ContainsKey("CustomCountdown"))
+                        // Revert to previous day growth stage
+                        if (wildTree.modData.ContainsKey("GrowthCheck"))
                         {
-                            wildTree.modData["CustomCountdown"] = customWildCountdown.ToString();
-                            int countdownFallback = 0;
-                            wildTree.modData["CountdownFallback"] = countdownFallback.ToString();
-                            // Logging initialized custom countdown
-                            //monitor.Log($"UpdateWildTrees: Initialized custom countdown for tree at {pair.Key} to {customWildCountdown}", LogLevel.Trace);
+                            wildTree.growthStage.Value = Convert.ToInt32(wildTree.modData["GrowthCheck"]);
                         }
-
-                        // Check surrounding area for bigger trees, decrement customCountdown
-                        int remainingCustomCountdown = Convert.ToInt32(wildTree.modData["CustomCountdown"]);
-                        int currentCountdownFallback = Convert.ToInt32(wildTree.modData["CountdownFallback"]);
-                        
-                        // Determine whether wild tree will grow based on configurable weight value
-                        bool willGrow = Game1.random.NextDouble() < ModEntry.wildDailyGrowthChance;
-
-                        if (!IsSurroundingWildAreaOvershadowed(pair.Key, location, wildTree) && !Game1.IsWinter && remainingCustomCountdown < customWildCountdown && willGrow)
+                        // Initialize growth check for growing trees
+                        else if (!wildTree.modData.ContainsKey("GrowthCheck") && wildTree.growthStage.Value < 5)
                         {
-                            remainingCustomCountdown = Math.Max(remainingCustomCountdown - 1, 0);
-                            currentCountdownFallback++;
+                            wildTree.modData["GrowthCheck"] = wildTree.growthStage.Value.ToString();
                         }
-                        else if (currentCountdownFallback >= 1 / ModEntry.wildDailyGrowthChance)
+                        // Check if growing conditions are met
+                        if (!IsSurroundingWildAreaOvershadowed(pair.Key, location, wildTree) && (!location.IsWinterHere() || ModEntry.winterGrowth))
                         {
-                            remainingCustomCountdown = Math.Max(remainingCustomCountdown - 1, 0);
-                            currentCountdownFallback = 0;
-                        }
-                        else
-                        {
-                            currentCountdownFallback++;
-                        }
-
-                        wildTree.modData["CustomCountdown"] = remainingCustomCountdown.ToString();
-                        wildTree.modData["CountdownFallback"] = currentCountdownFallback.ToString();
-
-                        // Logging updated custom countdown
-                        //monitor.Log($"UpdateFruitTrees: Updated custom countdown for tree at {pair.Key} to {remainingCustomCountdown}", LogLevel.Trace);
-
-                        // Update growth stage
-                        if (remainingCustomCountdown < customWildCountdown)
-                        {
-                            int newGrowthStage = CalculateWildTreeGrowthStage(remainingCustomCountdown, customWildCountdown);
-                            wildTree.growthStage.Value = newGrowthStage;
-                            // Logging updated growth stage
-                            //monitor.Log($"UpdateFruitTrees: Updated growth stage for tree at {pair.Key} to {newGrowthStage}", LogLevel.Trace);
-                        }
-
-                        // Remove unneeded countdown for mature trees
-                        if (wildTree.growthStage.Value == 5)
-                        {
-                            wildTree.modData.Remove("CustomCountdown");
-                            // Logging removed custom countdown
-                            //monitor.Log($"UpdateFruitTrees: Removed custom countdown for mature tree at {pair.Key}", LogLevel.Trace);
+                            // Calculate growth chance
+                            float wildGrowthChance = 5f / Math.Max(ModEntry.wildDaysToFinalStage, 1);
+                            float wildFarmGrowthChance = 5f / Math.Max(ModEntry.wildFarmDaysToFinalStage, 1);
+                            if (wildTree.modData.ContainsKey("Fertilized") && wildTree.modData["Fertilized"] == "true")
+                            {
+                                wildGrowthChance *= 2;
+                                wildFarmGrowthChance *= 2;
+                                wildTree.modData.Remove("Fertilized");
+                            }
+                            wildGrowthChance = Math.Min(wildGrowthChance, 1);
+                            wildFarmGrowthChance = Math.Min(wildFarmGrowthChance, 1);
+                            // Check for growth on farm or greenhouse
+                            if (location.IsGreenhouse || location.IsFarm)
+                            {
+                                if (Game1.random.NextDouble() < wildFarmGrowthChance)
+                                {
+                                    // Increment growth stage
+                                    wildTree.growthStage.Value++;
+                                    // Remove growth check from fully grown trees
+                                    if (wildTree.growthStage.Value >= 5)
+                                    {
+                                        wildTree.modData.Remove("GrowthCheck");
+                                    }
+                                    // Update growth check value for all others
+                                    else
+                                    {
+                                        wildTree.modData["GrowthCheck"] = wildTree.growthStage.Value.ToString();
+                                    }
+                                }
+                            }
+                            // Universal growth for all other locations
+                            else
+                            {
+                                if (Game1.random.NextDouble() < wildGrowthChance)
+                                {
+                                    wildTree.growthStage.Value++;
+                                    if (wildTree.growthStage.Value >= 5)
+                                    {
+                                        wildTree.modData.Remove("GrowthCheck");
+                                    }
+                                    else
+                                    {
+                                        wildTree.modData["GrowthCheck"] = wildTree.growthStage.Value.ToString();
+                                    }
+                                }
+                            }
                         }
                     }
                     // Large wild tree growth
-                    else if (pair.Value is Tree matureWildTree && matureWildTree.growthStage.Value >= 5 && location is Farm)
+                    else if (pair.Value is Tree matureWildTree && matureWildTree.growthStage.Value >= 5 && location.IsFarm)
                     {
                         // initialize custom counter for days to large tree growth
                         if (!matureWildTree.modData.ContainsKey("LargeTreeCount"))
@@ -163,88 +143,61 @@ namespace BetterFruitTrees
                             // Logging to check if the counter is initialized
                             //monitor.Log($"Initialized LargeTreeCount for tree at position {pair.Key}.", LogLevel.Trace);
                         }
-                        // check and update counter
-                        int currentLargeTreeCount = Convert.ToInt32(matureWildTree.modData["LargeTreeCount"]);
-                        bool willGrow = Game1.random.NextDouble() < ModEntry.wildDailyGrowthChance;
-                        if (willGrow)
+                        // Increment large tree counter if allowed
+                        else if (!location.IsWinterHere() || ModEntry.winterGrowth)
                         {
-                            currentLargeTreeCount++;
-                            // Logging to check if the tree will grow this day
-                            //monitor.Log($"Tree at position {pair.Key} will grow into a large tree.", LogLevel.Trace);
+                            int updateCounter = Convert.ToInt32(matureWildTree.modData["LargeTreeCount"]);
+                            updateCounter++;
+                            matureWildTree.modData["LargeTreeCount"] = updateCounter.ToString();
                         }
-                        else
-                        {
-                            // Logging to check if the tree will not grow this day
-                            //monitor.Log($"Tree at position {pair.Key} will not grow into a large tree.", LogLevel.Trace);
-                        }
-                        matureWildTree.modData["LargeTreeCount"] = currentLargeTreeCount.ToString();
-                        // check if surrounding 5x5 area is clear
+                        // check if surrounding area is clear in 2 tile radius
                         bool clearArea = true;
-                        for (int dx = -2; dx <= 2; dx++)
+                        for (int x = -2; x <= 2 && clearArea; x++)
                         {
-                            for (int dy = -2; dy <= 2; dy++)
+                            for (int y = -2; y <= 2 && clearArea; y++)
                             {
-                                Vector2 checkLocation = new Vector2(pair.Key.X + dx, pair.Key.Y + dy);
-
-                                if (!location.isTileOnMap(checkLocation) ||
-                                    !location.isTilePassable(checkLocation) ||
-                                    location.IsTileOccupiedBy(checkLocation))
+                                Vector2 tilelocation = new Vector2(pair.Key.X + x, pair.Key.Y + y);
+                                if (!location.isTileOnMap(tilelocation) ||
+                                    !location.isTilePassable(tilelocation) ||
+                                    location.IsTileOccupiedBy(tilelocation))
                                 {
                                     clearArea = false;
                                     // Logging to check which tile prevents growth
-                                    //monitor.Log($"Tile at position {checkLocation} prevents growth to large tree at position {pair.Key}.", LogLevel.Trace);
-                                    break;
+                                    //monitor.Log($"Tile at position {tileLocation} prevents growth of tree at position {pair.Key}.", LogLevel.Trace);
                                 }
                             }
-
-                            if (!clearArea)
-                            {
-                                break;
-                            }
                         }
-                        if (clearArea && currentLargeTreeCount > ModEntry.largeTreeGrowthRate)
+                        // Check growing conditions and chance
+                        if (clearArea && 
+                            Convert.ToInt32(matureWildTree.modData["LargeTreeCount"]) >= ModEntry.daysToLargeTree && 
+                            Game1.random.NextDouble() < ModEntry.largeTreeChance && 
+                            (!location.IsWinterHere() || ModEntry.winterGrowth) &&
+                            matureWildTree.modData.ContainsKey("Fertilized"))
                         {
                             // replace tree with large tree building
                             string wildTreeKeyword = GetKeywordFromTreeId(matureWildTree.treeType.Value);
 
-                            //monitor.Log($"Looking for keyword match for treeId: {matureWildTree.treeType.Value}", LogLevel.Trace);
-                            //monitor.Log($"Matching wild tree keyword found: {wildTreeKeyword}", LogLevel.Trace);
-
                             // Iterate through building data to find the matching building ID
                             foreach (var kvp in Game1.buildingData)
                             {
-                                // Log the building ID being checked
-                                //monitor.Log($"Checking building ID: {kvp.Key}", LogLevel.Trace);
-
                                 // Convert both the tree keyword and building ID to lowercase for case-insensitive comparison
                                 string lowerCaseTreeKeyword = wildTreeKeyword.ToLower();
                                 string lowerCaseBuildingId = kvp.Key.ToLower();
 
                                 if (!string.IsNullOrEmpty(wildTreeKeyword) && lowerCaseBuildingId.Contains(lowerCaseTreeKeyword))
                                 {
-                                    // Log the matching building ID
-                                    //monitor.Log($"Matching building ID found: {kvp.Key}", LogLevel.Trace);
-
-                                    // Create the large tree building at the same tile position
-                                    Building largeTree = new Building(kvp.Key, pair.Key);
-
-                                    // Log the creation of the large tree building
-                                    //monitor.Log($"Large tree building created at position {pair.Key}", LogLevel.Trace);
+                                    // Create the large tree building 1 tile to the left of the current position
+                                    Vector2 newBuildingPosition = new Vector2(pair.Key.X - 1, pair.Key.Y);
+                                    Building largeTree = new Building(kvp.Key, newBuildingPosition);
 
                                     // Remove the tree from terrain features
                                     location.terrainFeatures.Remove(pair.Key);
 
-                                    // Log the removal of the tree from terrain features
-                                    //monitor.Log($"Tree removed from terrain features at position {pair.Key}", LogLevel.Trace);
-
                                     // Add large tree to map
                                     location.buildings.Add(largeTree);
 
-                                    // Remove unneeded counter
-                                    matureWildTree.modData.Remove("LargeTreeCount");
-
-                                    // Logging to confirm texture expansion
-                                    //monitor.Log($"Texture expanded for tree at position {pair.Key}.", LogLevel.Trace);
+                                    // Add tree marker
+                                    largeTree.modData["IsLargeTree"] = "true";
 
                                     // Exit the loop once a match is found
                                     break;
@@ -252,167 +205,85 @@ namespace BetterFruitTrees
                                 else
                                 {
                                     // Log an error if no matching building ID is found
-                                    //monitor.Log($"Error: No matching building found for tree keyword '{wildTreeKeyword}'", LogLevel.Error);
+                                    monitor.Log($"Error: No matching building found for tree keyword '{wildTreeKeyword}'", LogLevel.Error);
                                 }
                             }
                         }
                     }
-                    // Large fruit tree growth
                     else if (pair.Value is FruitTree matureFruitTree && matureFruitTree.growthStage.Value >= 4 && location is Farm)
                     {
-                        string fruitTreeKeyword = GetKeywordFromTreeId(matureFruitTree.treeId.Value);
-                        string matchingBuildingId = null;
-
-                        //monitor.Log($"Looking for keyword match for treeId: {matureFruitTree.treeId.Value}", LogLevel.Trace);
-                        //monitor.Log($"Matching wild tree keyword found: {fruitTreeKeyword}", LogLevel.Trace);
-
-                        // Iterate through building data to find the matching building ID
-                        foreach (var kvp in Game1.buildingData)
+                        // Initialize custom counter for days to large tree growth
+                        if (!matureFruitTree.modData.ContainsKey("LargeTreeCount"))
                         {
-                            // Log the building ID being checked
-                            //monitor.Log($"Checking building ID: {kvp.Key}", LogLevel.Trace);
-
-                            // Convert both the tree keyword and building ID to lowercase for case-insensitive comparison
-                            string lowerCaseTreeKeyword = fruitTreeKeyword.ToLower();
-                            string lowerCaseBuildingId = kvp.Key.ToLower();
-
-                            if (!string.IsNullOrEmpty(fruitTreeKeyword) && lowerCaseBuildingId.Contains(lowerCaseTreeKeyword))
-                            {
-                                // Log the matching building ID
-                                //monitor.Log($"Matching building ID found: {kvp.Key}", LogLevel.Trace);
-
-                                matchingBuildingId = kvp.Key;
-                                break;
-                            }
+                            int largeTreeCount = 0;
+                            matureFruitTree.modData["LargeTreeCount"] = largeTreeCount.ToString();
                         }
-
-                        if (matchingBuildingId != null)
+                        // Increment large tree counter if allowed
+                        else if (!location.IsWinterHere() || ModEntry.winterGrowth)
                         {
-                            // initialize custom counter for days to large tree growth
-                            if (!matureFruitTree.modData.ContainsKey("LargeTreeCount"))
+                            int updateCounter = Convert.ToInt32(matureFruitTree.modData["LargeTreeCount"]);
+                            updateCounter++;
+                            matureFruitTree.modData["LargeTreeCount"] = updateCounter.ToString();
+                        }
+                        // check if surrounding area is clear in 2 tile radius
+                        bool clearArea = true;
+                        for (int x = -2; x <= 2 && clearArea; x++)
+                        {
+                            for (int y = -2; y <= 2 && clearArea; y++)
                             {
-                                int largeTreeCount = 0;
-                                matureFruitTree.modData["LargeTreeCount"] = largeTreeCount.ToString();
-                                // Logging to check if the counter is initialized
-                                //monitor.Log($"Initialized LargeTreeCount for tree at position {pair.Key}.", LogLevel.Trace);
-                            }
-                            // check and update counter
-                            int currentLargeTreeCount = Convert.ToInt32(matureFruitTree.modData["LargeTreeCount"]);
-                            bool willGrow = Game1.random.NextDouble() < ModEntry.fruitDailyGrowthChance;
-                            if (willGrow)
-                            {
-                                currentLargeTreeCount++;
-                                // Logging to check if the tree will grow this day
-                                //monitor.Log($"Tree at position {pair.Key} will grow into a large tree.", LogLevel.Trace);
-                            }
-                            else
-                            {
-                                // Logging to check if the tree will not grow this day
-                                //monitor.Log($"Tree at position {pair.Key} will not grow into a large tree.", LogLevel.Trace);
-                            }
-                            matureFruitTree.modData["LargeTreeCount"] = currentLargeTreeCount.ToString();
-                            // check if surrounding area is clear
-                            Vector2[] surroundingTileLocationsArray = Utility.getSurroundingTileLocationsArray(pair.Key);
-                            bool clearArea = true;
-                            foreach (Vector2 tileLocation in surroundingTileLocationsArray)
-                            {
-                                if (!location.isTileOnMap(tileLocation) ||
-                                    !location.isTilePassable(tileLocation) ||
-                                    location.IsTileOccupiedBy(tileLocation))
+                                Vector2 tilelocation = new Vector2(pair.Key.X + x, pair.Key.Y + y);
+                                if (!location.isTileOnMap(tilelocation) ||
+                                    !location.isTilePassable(tilelocation) ||
+                                    location.IsTileOccupiedBy(tilelocation))
                                 {
                                     clearArea = false;
-                                    // Logging to check which tile prevents growth
-                                    //monitor.Log($"Tile at position {tileLocation} prevents growth of tree at position {pair.Key}.", LogLevel.Trace);
-                                    break;
                                 }
                             }
-                            if (clearArea && currentLargeTreeCount > ModEntry.largeTreeGrowthRate)
+                        }
+                        // Check growing conditions and chance
+                        if (clearArea && 
+                            Convert.ToInt32(matureFruitTree.modData["LargeTreeCount"]) >= ModEntry.daysToLargeTree && 
+                            Game1.random.NextDouble() < ModEntry.largeTreeChance && 
+                            (!location.IsWinterHere() || ModEntry.winterGrowth) &&
+                            matureFruitTree.modData.ContainsKey("Fertilized"))
+                        {
+                            // replace tree with large tree building
+                            string fruitTreeKeyword = GetKeywordFromTreeId(matureFruitTree.treeId.Value);
+
+                            // Iterate through building data to find the matching building ID
+                            foreach (var kvp in Game1.buildingData)
                             {
-                                // replace tree with large tree building
+                                // Convert both the tree keyword and building ID to lowercase for case-insensitive comparison
+                                string lowerCaseTreeKeyword = fruitTreeKeyword.ToLower();
+                                string lowerCaseBuildingId = kvp.Key.ToLower();
 
-                                // Create the large tree building 1 tile to the left of the current position
-                                Vector2 newBuildingPosition = new Vector2(pair.Key.X - 2, pair.Key.Y);
-                                Building largeTree = new Building(matchingBuildingId, newBuildingPosition);
+                                if (!string.IsNullOrEmpty(fruitTreeKeyword) && lowerCaseBuildingId.Contains(lowerCaseTreeKeyword))
+                                {
+                                    // Create the large tree building 1 tile to the left of the current position
+                                    Vector2 newBuildingPosition = new Vector2(pair.Key.X - 1, pair.Key.Y);
+                                    Building largeTree = new Building(kvp.Key, newBuildingPosition);
 
-                                // Log the creation of the large tree building
-                                //monitor.Log($"Large tree building created at position {newBuildingPosition}", LogLevel.Trace);
+                                    // Remove the tree from terrain features
+                                    location.terrainFeatures.Remove(pair.Key);
 
-                                // Remove the tree from terrain features
-                                location.terrainFeatures.Remove(pair.Key);
+                                    // Add large tree to map
+                                    location.buildings.Add(largeTree);
 
-                                // Log the removal of the tree from terrain features
-                                //monitor.Log($"Tree removed from terrain features at position {pair.Key}", LogLevel.Trace);
+                                    // Add tree marker
+                                    largeTree.modData["IsLargeTree"] = "true";
 
-                                // Add large tree to map
-                                location.buildings.Add(largeTree);
-
-                                // Remove unneeded counter
-                                matureFruitTree.modData.Remove("LargeTreeCount");
-
-                                // Logging to confirm texture expansion
-                                //monitor.Log($"Texture expanded for tree at position {pair.Key}.", LogLevel.Trace);
+                                    // Exit the loop once a match is found
+                                    break;
+                                }
+                                else
+                                {
+                                    // Log an error if no matching building ID is found
+                                    monitor.Log($"Error: No matching building found for tree keyword '{fruitTreeKeyword}'", LogLevel.Error);
+                                }
                             }
                         }
                     }
                 }
-            }
-        }
-
-        private static int CalculateFruitTreeGrowthStage(int remainingCustomCountdown, int customFruitCountdown)
-        {
-            int daysPerStage = Math.Max(customFruitCountdown / 4, 1);
-
-            // Calculate the current growth stage based on the number of days until maturity
-            if (remainingCustomCountdown > (customFruitCountdown - daysPerStage))
-            {
-                return 0;
-            }
-            else if (remainingCustomCountdown > (customFruitCountdown - (daysPerStage * 2)))
-            {
-                return 1;
-            }
-            else if (remainingCustomCountdown > (customFruitCountdown - (daysPerStage * 3)))
-            {
-                return 2;
-            }
-            else if (remainingCustomCountdown > 0)
-            {
-                return 3;
-            }
-            else
-            {
-                return 4;
-            }
-        }
-
-        private static int CalculateWildTreeGrowthStage(int remainingCustomCountdown, int customWildCountdown)
-        {
-            int daysPerStage = Math.Max(customWildCountdown / 5, 1);
-
-            // Calculate the current growth stage based on the number of days until maturity
-            if (remainingCustomCountdown > (customWildCountdown - daysPerStage))
-            {
-                return 0;
-            }
-            else if (remainingCustomCountdown > (customWildCountdown - (daysPerStage * 2)))
-            {
-                return 1;
-            }
-            else if (remainingCustomCountdown > (customWildCountdown - (daysPerStage * 3)))
-            {
-                return 2;
-            }
-            else if (remainingCustomCountdown > (customWildCountdown - (daysPerStage * 4)))
-            {
-                return 3;
-            }
-            else if (remainingCustomCountdown > 0)
-            {
-                return 4;
-            }
-            else
-            {
-                return 5;
             }
         }
 
@@ -433,6 +304,13 @@ namespace BetterFruitTrees
                         return true;
                     }
                 }
+                foreach (Building building in location.buildings)
+                {
+                    if (building.occupiesTile(tileLocation) && building.modData.ContainsKey("IsLargeTree"))
+                    {
+                        return true;
+                    }
+                }
             }
             return false;
         }
@@ -448,6 +326,13 @@ namespace BetterFruitTrees
                         return true;
                     }
                     else if (terrainFeature is Tree otherWildTree && otherWildTree.growthStage.Value > 0 && otherWildTree.growthStage.Value > wildTree.growthStage.Value)
+                    {
+                        return true;
+                    }
+                }
+                foreach (Building building in location.buildings)
+                {
+                    if (building.occupiesTile(tileLocation) && building.modData.ContainsKey("IsLargeTree"))
                     {
                         return true;
                     }

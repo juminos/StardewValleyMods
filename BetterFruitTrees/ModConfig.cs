@@ -7,39 +7,29 @@ namespace BetterFruitTrees
         // Chance for fruit tree to spread to a given tile within its spread radius
         public float? FruitSpreadChance { get; set; } = 0.15f;
         public float? WildSpreadChance { get; set; } = 0.15f;
-
         // Spread chance modifiers for tree adjacency
-        public float? FruitTreeDensityModifier { get; set; } = 0.2f;
-        public float? WildTreeDensityModifier { get; set; } = 0.2f;
-
+        public float? FruitTreeDensityModifier { get; set; } = 0.02f;
+        public float? WildTreeDensityModifier { get; set; } = 0.02f;
         // Radius for fruit tree spreading check
-        public int? SpreadFruitRadius { get; set; } = 3;
-        // Radius for wild tree spreading check
-        public int? SpreadWildRadius { get; set; } = 3;
-
+        public int? SpreadRadius { get; set; } = 3;
         // Days until fruit trees reach maturity
-        public int? FruitDaysToFinalStage { get; set; } = 112;
-        // Modify growth rate for fruit trees on farm
-        public float? FarmFruitModifier { get; set; } = 2.0f;
-
-        // Chance for a fruit tree to grow on a given day (0.0 to 1.0)
-        public float? FruitDailyGrowthChance { get; set; } = 0.6f;
+        public int? FruitDaysToFinalStage { get; set; } = 84;
+        // Days until fruit trees reach maturity on farm or in greenhouse
+        public int? FruitFarmDaysToFinalStage { get; set; } = 56;
         // Days until wild trees reach maturity
-        public int? WildDaysToFinalStage { get; set; } = 20;
-        // Modify growth rate for wild trees on farm
-        public float? FarmWildModifier { get; set; } = 2.0f;
-
-        // Chance for a wild tree to grow on a given day (0.0 to 1.0)
-        public float? WildDailyGrowthChance { get; set; } = 0.9f;
-        // Days until growing into large tree
-        public int? LargeTreeGrowthRate { get; set; } = 28;
-
+        public int? WildDaysToFinalStage { get; set; } = 21;
+        // Days until wild trees reach maturity on farm or in greenhouse
+        public int? WildFarmDaysToFinalStage { get; set; } = 14;
+        // Minimum number of days for mature tree to grow into large tree
+        public int? DaysToLargeTree { get; set; } = 28;
+        // Chance for mature tree to grow into large tree once conditions are met
+        public float? LargeTreeChance { get; set; } = 0.2f;
+        // Toggle winter growth
+        public bool? WinterGrowth { get; set; } = false;
         // Energy cost for digging up saplings
         public int EnergyCost { get; set; } = 5;
-
         // Chance for a tree to be replaced by a fruit tree (0.0 to 1.0)
         public float FruitTreeChance { get; set; } = 0.53333f;
-
         // Weighted lists of tree replacement options
         public Dictionary<string, Dictionary<string, List<TreeReplacement>>> TreeConfigurations { get; set; }
 
@@ -71,8 +61,7 @@ namespace BetterFruitTrees
                                 new TreeReplacement { Keyword = "mushroom", Weight = 1 },
                                 new TreeReplacement { Keyword = "mahogany", Weight = 1 },
                                 new TreeReplacement { Keyword = "desertpalm", Weight = 1 },
-                                new TreeReplacement { Keyword = "islandpalm", Weight = 1 },
-                                new TreeReplacement { Keyword = "sycamore", Weight = 100 }
+                                new TreeReplacement { Keyword = "islandpalm", Weight = 1 }
                             }
                         }
                     }
@@ -100,8 +89,7 @@ namespace BetterFruitTrees
                                 new TreeReplacement { Keyword = "mushroom", Weight = 1 },
                                 new TreeReplacement { Keyword = "mahogany", Weight = 1 },
                                 new TreeReplacement { Keyword = "desertpalm", Weight = 1 },
-                                new TreeReplacement { Keyword = "islandpalm", Weight = 1 },
-                                new TreeReplacement { Keyword = "sycamore", Weight = 1 }
+                                new TreeReplacement { Keyword = "islandpalm", Weight = 1 }
                             }
                         }
                     }
@@ -129,8 +117,7 @@ namespace BetterFruitTrees
                                 new TreeReplacement { Keyword = "mushroom", Weight = 1 },
                                 new TreeReplacement { Keyword = "mahogany", Weight = 1 },
                                 new TreeReplacement { Keyword = "desertpalm", Weight = 1 },
-                                new TreeReplacement { Keyword = "islandpalm", Weight = 1 },
-                                new TreeReplacement { Keyword = "sycamore", Weight = 1 }
+                                new TreeReplacement { Keyword = "islandpalm", Weight = 1 }
                             }
                         }
                     }
