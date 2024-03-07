@@ -17,25 +17,22 @@ namespace BetterFruitTrees
             foreach (KeyValuePair<Vector2, TerrainFeature> pair in treesAndFruitTrees)
             {
                 if (pair.Value is FruitTree fruitTree &&
-                    fruitTree.growthStage.Value == 4) // && pass random check against fruitSpreadChance before trySpreadFruitTree, update method to add 1 sapling at random with weighted conditions
+                    fruitTree.growthStage.Value == 4 &&
+                    Game1.random.NextDouble() < ModEntry.fruitSpreadChance)
                 {
-                    TrySpreadFruitTree(location, pair.Key, fruitTree);
+                    SpreadFruitTree(location, pair.Key, fruitTree);
                 }
-            }
-
-
-            // Check for spreading wild trees
-            foreach (KeyValuePair<Vector2, TerrainFeature> pair in treesAndFruitTrees)
-            {
-                if (pair.Value is Tree wildTree && wildTree.growthStage.Value == 5)
+                if (pair.Value is Tree wildTree &&
+                    wildTree.growthStage.Value == 5 &&
+                    Game1.random.NextDouble() < ModEntry.wildSpreadChance)
                 {
-                    TrySpreadWildTree(location, pair.Key, wildTree);
+                    SpreadWildTree(location, pair.Key, wildTree);
                 }
             }
         }
 
-        // Check surrounding area for adding new fruit trees
-        public static void TrySpreadFruitTree(GameLocation location, Vector2 treeTile, FruitTree fruitTree)
+        // Add new fruit tree at random tile within spread radius
+        public static void SpreadFruitTree(GameLocation location, Vector2 treeTile, FruitTree fruitTree)
         {
             bool neighboringTreesPresent = false;
 
@@ -52,8 +49,8 @@ namespace BetterFruitTrees
                         location.IsTileOccupiedBy(tileLocation))
                         continue;
 
-                    // Check if the neighboring tile contains a tree
-                    if (IsSurroundingAreaOvershadowed(tileLocation, location))
+                    // Check if any neighboring tile contains a larger tree
+                    if (TreeGrowth.IsSurroundingFruitAreaOvershadowed(tileLocation, location, fruitTree))
                     {
                         // Set the flag to true if neighboring trees are present
                         neighboringTreesPresent = true;
@@ -83,8 +80,8 @@ namespace BetterFruitTrees
             }
         }
 
-        // Check surrounding area for adding new wild trees
-        public static void TrySpreadWildTree(GameLocation location, Vector2 treeTile, Tree wildTree)
+        // Add new wild tree at random tile within spread radius
+        public static void SpreadWildTree(GameLocation location, Vector2 treeTile, Tree wildTree)
         {
             bool neighboringTreesPresent = false;
 
@@ -100,8 +97,8 @@ namespace BetterFruitTrees
                         location.IsTileOccupiedBy(tileLocation))
                         continue;
 
-                    // Check if the neighboring tile contains a tree
-                    if (IsSurroundingAreaOvershadowed(tileLocation, location))
+                    // Check if any neighboring tile contains a larger tree
+                    if (TreeGrowth.IsSurroundingWildAreaOvershadowed(tileLocation, location, wildTree))
                     {
                         // Set the flag to true if neighboring trees are present
                         neighboringTreesPresent = true;
@@ -129,30 +126,6 @@ namespace BetterFruitTrees
                     }
                 }
             }
-        }
-
-        // Check for nearby larger trees
-        public static bool IsSurroundingAreaOvershadowed(Vector2 treeTile, GameLocation location)
-        {
-            Vector2[] surroundingTileLocationsArray = Utility.getSurroundingTileLocationsArray(treeTile);
-            foreach (Vector2 tileLocation in surroundingTileLocationsArray)
-            {
-                if (location.terrainFeatures.TryGetValue(tileLocation, out TerrainFeature terrainFeature))
-                { 
-                    if (terrainFeature is FruitTree || terrainFeature is Tree)
-                    {
-                        return true;
-                    }
-                }
-                foreach (Building building in location.buildings)
-                {
-                    if (building.occupiesTile(tileLocation) && building.modData.ContainsKey("IsLargeTree"))
-                    {
-                        return true;
-                    }
-                }
-            }
-            return false;
         }
 
         // Count occupied surrounding tiles
