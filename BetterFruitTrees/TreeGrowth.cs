@@ -11,7 +11,7 @@ namespace BetterFruitTrees
     public class TreeGrowth
     {
         private static Random random = new Random();
-        public static void UpdateFruitTrees(IMonitor monitor)
+        public static void UpdateTreeGrowth(IMonitor monitor)
         {
             foreach (GameLocation location in Game1.locations)
             {
@@ -29,7 +29,6 @@ namespace BetterFruitTrees
                         {
                             fruitTree.modData["GrowthCheck"] = fruitTree.daysUntilMature.Value.ToString();
                         }
-
                         // Check if growing conditions are met
                         if (!IsSurroundingFruitAreaOvershadowed(pair.Key, location, fruitTree) && (!location.IsWinterHere() || ModEntry.winterGrowth))
                         {
@@ -68,6 +67,8 @@ namespace BetterFruitTrees
                                 fruitTree.modData["GrowthCheck"] = fruitTree.daysUntilMature.Value.ToString();
                             }
                         }
+                        // Force update growth stage
+                        fruitTree.growthStage.Value = FruitTree.DaysUntilMatureToGrowthStage(fruitTree.daysUntilMature.Value);
                     }
                     else if (pair.Value is Tree wildTree && wildTree.growthStage.Value <= 5)
                     {

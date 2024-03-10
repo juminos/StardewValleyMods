@@ -9,7 +9,7 @@ namespace BetterFruitTrees
     {
         public static void DigSapling(object sender, ButtonPressedEventArgs e)
         {
-            Vector2 selectedTile = Game1.currentCursorTile;
+            Vector2 selectedTile = Game1.player.GetToolLocation();
 
             if (Game1.currentLocation.terrainFeatures.TryGetValue(selectedTile, out TerrainFeature terrainFeature) && terrainFeature is FruitTree fruitTree)
             {
@@ -27,12 +27,31 @@ namespace BetterFruitTrees
                         string treeTypeId = fruitTree.treeId.ToString();
                         if (Game1.objectData.ContainsKey(treeTypeId))
                         {
-                            Game1.createItemDebris(new StardewValley.Object(treeTypeId, 1), selectedTile * Game1.tileSize, -1);
+                            DelayedAction delayedAction = new DelayedAction(400, () => DropItem(selectedTile, treeTypeId));
+                            Game1.delayedActions.Add(delayedAction);
                         }
                     }
                 }
-            }
+                // Protect larger growing trees
+                else if (fruitTree.growthStage.Value > 1)
+                {
+                    float originalHealth = fruitTree.health.Value;
 
+                    // Dead tree is indestructible
+                    fruitTree.health.Value = -99f;
+
+                    // Restore original health after delay
+                    Game1.delayedActions.Add(new DelayedAction(500, () => RestoreHealth(fruitTree, originalHealth)));
+                }
+            }
+        }
+        private static void RestoreHealth(FruitTree fruitTree, float originalHealth)
+        {
+            fruitTree.health.Value = originalHealth;
+        }
+        private static void DropItem(Vector2 tileLocation, string treeTypeId)
+        {
+            Game1.createItemDebris(new StardewValley.Object(treeTypeId, 1), tileLocation * Game1.tileSize, -1);
         }
     }
 }

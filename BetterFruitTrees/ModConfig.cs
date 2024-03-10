@@ -7,9 +7,6 @@ namespace BetterFruitTrees
         // Chance for fruit tree to spread to a given tile within its spread radius
         public float? FruitSpreadChance { get; set; } = 0.15f;
         public float? WildSpreadChance { get; set; } = 0.15f;
-        // Spread chance modifiers for tree adjacency
-        public float? FruitTreeDensityModifier { get; set; } = 0.02f;
-        public float? WildTreeDensityModifier { get; set; } = 0.02f;
         // Radius for fruit tree spreading check
         public int? SpreadRadius { get; set; } = 3;
         // Days until fruit trees reach maturity

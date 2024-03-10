@@ -239,7 +239,7 @@
             "X": 104,
             "Y": 0
           },
-          "DrawOffset": "-12, 4",
+          "DrawOffset": "-12, 0",
           "SortTileOffset": 0.0,
           "CollisionMap": "OXXXO\nOXXXO",
           "AdditionalPlacementTiles": null,

@@ -1,10 +1,13 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Newtonsoft.Json.Linq;
 using StardewModdingAPI;
 using StardewModdingAPI.Events;
 using StardewModdingAPI.Utilities;
 using StardewValley;
 using StardewValley.Extensions;
+using StardewValley.GameData.WildTrees;
 using StardewValley.TerrainFeatures;
 using StardewValley.Tools;
 using xTile.Dimensions;
@@ -13,6 +16,9 @@ namespace BetterFruitTrees
 {
     public class ModEntry : Mod
     {
+        internal static IMonitor SMonitor;
+        internal static IModHelper SHelper;
+
         private ModConfig? config;
         internal static float fruitSpreadChance;
         internal static float wildSpreadChance;
@@ -32,16 +38,18 @@ namespace BetterFruitTrees
 
         public override void Entry(IModHelper helper)
         {
+            SMonitor = Monitor;
+            SHelper = helper;
+
             config = helper.ReadConfig<ModConfig>();
 
             helper.Events.GameLoop.DayStarted += OnDayStarted;
             helper.Events.Input.ButtonPressed += OnButtonPressed;
             helper.Events.GameLoop.SaveCreated += OnSaveCreated;
+            helper.Events.Content.AssetRequested += OnAssetRequested;
 
             fruitSpreadChance = config.FruitSpreadChance.Value;
             wildSpreadChance = config.WildSpreadChance.Value;
-            fruitTreeDensityModifier = config.FruitTreeDensityModifier.Value;
-            wildTreeDensityModifier = config.WildTreeDensityModifier.Value;
             spreadRadius = config.SpreadRadius.Value;
             fruitDaysToFinalStage = config.FruitDaysToFinalStage.Value;
             fruitFarmDaysToFinalStage = config.FruitFarmDaysToFinalStage.Value;
@@ -51,6 +59,54 @@ namespace BetterFruitTrees
             largeTreeChance = config.LargeTreeChance.Value;
             winterGrowth = config.WinterGrowth.Value;
             energyCost = config.EnergyCost;
+        }
+
+        // Turn off wild tree spreading, allow tree planting anywhere
+        private void OnAssetRequested(object sender, AssetRequestedEventArgs e)
+        {
+            if (e.NameWithoutLocale.IsEquivalentTo("Data/WildTrees"))
+            {
+                e.Edit(asset =>
+                {
+                    var data = asset.AsDictionary<string, JObject>().Data;
+
+                    if (data != null)
+                    {
+                        foreach (var kvp in data)
+                        {
+                            var treeId = kvp.Key;
+                            var treeData = kvp.Value;
+
+                            treeData["SeedPlantChance"] = "0.0";
+
+                            data[treeId] = treeData;
+                        }
+                    }
+                    else
+                    {
+                        Monitor.Log("Failed to load or edit WildTrees data.");
+                    }
+                });
+            }
+            if (e.NameWithoutLocale.IsEquivalentTo("Data/Locations"))
+            {
+                e.Edit(asset =>
+                {
+                    var data = asset.AsDictionary<string, StardewValley.GameData.Locations.LocationData>().Data;
+
+                    if (data != null)
+                    {
+                        foreach (var kvp in data)
+                        {
+                            kvp.Value.CanPlantHere = true;
+                        }
+                    }
+                    else
+                    {
+                        Monitor.Log("Failed to load or edit Locations data.");
+                    }
+                });
+            }
         }
 
         // Update trees in all locations
@@ -64,10 +120,10 @@ namespace BetterFruitTrees
             {
                 foreach (GameLocation location in Game1.locations)
                 {
-                    TreeSpread.SpreadTrees(location);
+                    TreeSpread.SpreadTrees(location, Monitor);
                 }
             }
-            TreeGrowth.UpdateFruitTrees(this.Monitor);
+            TreeGrowth.UpdateTreeGrowth(Monitor);
         }
 
         // Hoe small fruit trees to pick up sapling
@@ -104,7 +160,7 @@ namespace BetterFruitTrees
                 {
                     if (feature is Tree tree)
                     {
-                        TreeReplacer.ReplaceTree(tree, location, config);
+                        TreeReplacer.ReplaceTree(tree, location, config, Monitor);
                     }
                 }
             }
