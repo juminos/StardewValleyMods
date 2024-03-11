@@ -16,42 +16,90 @@ namespace FrenshipRings
     {
         public static void DisableShadow(IMonitor monitor)
         {
-            foreach (ShadowShaman shadowShaman in Game1.player.currentLocation.characters)
+            foreach (var character in Game1.player.currentLocation.characters)
             {
-                shadowShaman.DamageToFarmer = 0;
-                shadowShaman.Health = 999999;
-                shadowShaman.MaxHealth = 999999;
-                shadowShaman.missChance.Value = 999999;
-                shadowShaman.moveTowardPlayerThreshold.Value = 0;
-                shadowShaman.setInvincibleCountdown(10);
+                if (character is ShadowShaman shadowShaman)
+                {
+                    shadowShaman.DamageToFarmer = 0;
+                    shadowShaman.Health = 999999;
+                    shadowShaman.MaxHealth = 999999;
+                    shadowShaman.missChance.Value = 999999;
+                    shadowShaman.moveTowardPlayerThreshold.Value = 0;
+                    shadowShaman.setInvincibleCountdown(10);
+                }
+                else if (character is ShadowBrute shadowBrute)
+                {
+                    shadowBrute.DamageToFarmer = 0;
+                    shadowBrute.Health = 999999;
+                    shadowBrute.MaxHealth = 999999;
+                    shadowBrute.missChance.Value = 999999;
+                    shadowBrute.moveTowardPlayerThreshold.Value = 0;
+                    shadowBrute.setInvincibleCountdown(10);
+                }
+                else if (character is ShadowGirl shadowGirl)
+                {
+                    shadowGirl.DamageToFarmer = 0;
+                    shadowGirl.Health = 999999;
+                    shadowGirl.MaxHealth = 999999;
+                    shadowGirl.missChance.Value = 999999;
+                    shadowGirl.moveTowardPlayerThreshold.Value = 0;
+                    shadowGirl.setInvincibleCountdown(10);
+                }
+                else if (character is ShadowGuy shadowGuy)
+                {
+                    shadowGuy.DamageToFarmer = 0;
+                    shadowGuy.Health = 999999;
+                    shadowGuy.MaxHealth = 999999;
+                    shadowGuy.missChance.Value = 999999;
+                    shadowGuy.moveTowardPlayerThreshold.Value = 0;
+                    shadowGuy.setInvincibleCountdown(10);
+                }
             }
-            foreach (ShadowBrute shadowBrute in Game1.player.currentLocation.characters)
+            ModEntry.shadowDisabled = true;
+        }
+
+        public static void EnableShadow()
+        {
+            foreach (var character in Game1.player.currentLocation.characters)
             {
-                shadowBrute.DamageToFarmer = 0;
-                shadowBrute.Health = 999999;
-                shadowBrute.MaxHealth = 999999;
-                shadowBrute.missChance.Value = 999999;
-                shadowBrute.moveTowardPlayerThreshold.Value = 0;
-                shadowBrute.setInvincibleCountdown(10);
+                if (character is ShadowShaman shadowShaman)
+                {
+                    shadowShaman.DamageToFarmer = 17;
+                    shadowShaman.Health = 80;
+                    shadowShaman.MaxHealth = 80;
+                    shadowShaman.missChance.Value = 0.0;
+                    shadowShaman.moveTowardPlayerThreshold.Value = 8;
+                    shadowShaman.setInvincibleCountdown(0);
+                }
+                else if (character is ShadowBrute shadowBrute)
+                {
+                    shadowBrute.DamageToFarmer = 18;
+                    shadowBrute.Health = 160;
+                    shadowBrute.MaxHealth = 160;
+                    shadowBrute.missChance.Value = 0.0;
+                    shadowBrute.moveTowardPlayerThreshold.Value = 8;
+                    shadowBrute.setInvincibleCountdown(0);
+                }
+                else if (character is ShadowGirl shadowGirl)
+                {
+                    shadowGirl.DamageToFarmer = 18;
+                    shadowGirl.Health = 300;
+                    shadowGirl.MaxHealth = 300;
+                    shadowGirl.missChance.Value = 0.0;
+                    shadowGirl.moveTowardPlayerThreshold.Value = 8;
+                    shadowGirl.setInvincibleCountdown(0);
+                }
+                else if (character is ShadowGuy shadowGuy)
+                {
+                    shadowGuy.DamageToFarmer = 20;
+                    shadowGuy.Health = 125;
+                    shadowGuy.MaxHealth = 125;
+                    shadowGuy.missChance.Value = 0.0;
+                    shadowGuy.moveTowardPlayerThreshold.Value = -1;
+                    shadowGuy.setInvincibleCountdown(0);
+                }
             }
-            foreach (ShadowGuy shadowGuy in Game1.player.currentLocation.characters)
-            {
-                shadowGuy.DamageToFarmer = 0;
-                shadowGuy.Health = 999999;
-                shadowGuy.MaxHealth = 999999;
-                shadowGuy.missChance.Value = 999999;
-                shadowGuy.moveTowardPlayerThreshold.Value = 0;
-                shadowGuy.setInvincibleCountdown(10);
-            }
-            foreach (ShadowGirl shadowGirl in Game1.player.currentLocation.characters)
-            {
-                shadowGirl.DamageToFarmer = 0;
-                shadowGirl.Health = 999999;
-                shadowGirl.MaxHealth = 999999;
-                shadowGirl.missChance.Value = 999999;
-                shadowGirl.moveTowardPlayerThreshold.Value = 0;
-                shadowGirl.setInvincibleCountdown(10);
-            }
+            ModEntry.shadowDisabled = false;
         }
     }
 }

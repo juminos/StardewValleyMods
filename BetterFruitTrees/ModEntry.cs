@@ -68,18 +68,18 @@ namespace BetterFruitTrees
             {
                 e.Edit(asset =>
                 {
-                    var data = asset.AsDictionary<string, JObject>().Data;
+                    var data = asset.AsDictionary<string, JObject>().Data; // ***Change to WildTreeData?
 
                     if (data != null)
                     {
                         foreach (var kvp in data)
                         {
-                            var treeId = kvp.Key;
-                            var treeData = kvp.Value;
+                            var treeId = kvp.Key; // ***Remove?
+                            var treeData = kvp.Value; // ***Remove?
+                            
+                            treeData["SeedPlantChance"] = "0.0"; // ***Change to treeData.SeedPlantChance?
 
-                            treeData["SeedPlantChance"] = "0.0";
-
-                            data[treeId] = treeData;
+                            data[treeId] = treeData; // ***Remove?
                         }
                     }
                     else
