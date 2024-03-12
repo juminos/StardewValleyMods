@@ -143,12 +143,6 @@ namespace BetterFruitTrees
             {
                 FertilizerExpansion.FertilizeFruitTrees(sender, e);
             }
-
-            // Check if using Hoe and target tile
-            if (e.Button.IsUseToolButton() && Game1.player.CurrentTool is Hoe)
-            {
-                ToolHelper.DigSapling(sender, e);
-            }
         }
 
         // Randomize trees on save creation
