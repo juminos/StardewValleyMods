@@ -13,7 +13,7 @@ namespace FrenshipRings
 {
     public class ModEntry : Mod
     {
-        internal static bool IsEnabled = true;
+        internal static bool shadowDisabled = false;
 
         public override void Entry(IModHelper helper)
         {
@@ -23,9 +23,11 @@ namespace FrenshipRings
         private void OnWarp(object? sender, WarpedEventArgs e)
         {
             if (!e.IsLocalPlayer)
-            {
                 return;
-            }
+
+            if (shadowDisabled)
+                Shadow.EnableShadow();
+
             if (Game1.player.isWearingRing("juminos.FrenshipRings_Shadow"))
             {
                 Shadow.DisableShadow(Monitor);

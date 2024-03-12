@@ -1,10 +1,13 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Newtonsoft.Json.Linq;
 using StardewModdingAPI;
 using StardewModdingAPI.Events;
 using StardewModdingAPI.Utilities;
 using StardewValley;
 using StardewValley.Extensions;
+using StardewValley.GameData.WildTrees;
 using StardewValley.TerrainFeatures;
 using StardewValley.Tools;
 using xTile.Dimensions;
@@ -13,6 +16,9 @@ namespace BetterFruitTrees
 {
     public class ModEntry : Mod
     {
+        internal static IMonitor SMonitor;
+        internal static IModHelper SHelper;
+
         private ModConfig? config;
         internal static float fruitSpreadChance;
         internal static float wildSpreadChance;
@@ -20,36 +26,87 @@ namespace BetterFruitTrees
         internal static float wildTreeDensityModifier;
         internal static int spreadRadius;
         internal static int fruitDaysToFinalStage;
-        internal static float farmFruitModifier;
-        internal static float fruitDailyGrowthChance;
+        internal static int fruitFarmDaysToFinalStage;
         internal static int wildDaysToFinalStage;
-        internal static float farmWildModifier;
-        internal static float wildDailyGrowthChance;
-        private int energyCost;
+        internal static int wildFarmDaysToFinalStage;
+        internal static int daysToLargeTree;
+        internal static float largeTreeChance;
+        internal static bool winterGrowth;
+        internal static int energyCost;
 
         internal static bool IsEnabled = true;
 
         public override void Entry(IModHelper helper)
         {
+            SMonitor = Monitor;
+            SHelper = helper;
+
             config = helper.ReadConfig<ModConfig>();
 
             helper.Events.GameLoop.DayStarted += OnDayStarted;
             helper.Events.Input.ButtonPressed += OnButtonPressed;
             helper.Events.GameLoop.SaveCreated += OnSaveCreated;
+            helper.Events.Content.AssetRequested += OnAssetRequested;
 
             fruitSpreadChance = config.FruitSpreadChance.Value;
             wildSpreadChance = config.WildSpreadChance.Value;
-            fruitTreeDensityModifier = config.FruitTreeDensityModifier.Value;
-            wildTreeDensityModifier = config.WildTreeDensityModifier.Value;
             spreadRadius = config.SpreadRadius.Value;
             fruitDaysToFinalStage = config.FruitDaysToFinalStage.Value;
-            farmFruitModifier = config.FarmFruitModifier.Value;
-            fruitDailyGrowthChance = config.FruitDailyGrowthChance.Value;
+            fruitFarmDaysToFinalStage = config.FruitFarmDaysToFinalStage.Value;
             wildDaysToFinalStage = config.WildDaysToFinalStage.Value;
-            farmWildModifier = config.FarmWildModifier.Value;
-            wildDailyGrowthChance = config.WildDailyGrowthChance.Value;
+            wildFarmDaysToFinalStage = config.WildFarmDaysToFinalStage.Value;
+            daysToLargeTree = config.DaysToLargeTree.Value;
+            largeTreeChance = config.LargeTreeChance.Value;
+            winterGrowth = config.WinterGrowth.Value;
             energyCost = config.EnergyCost;
+        }
 
+        // Turn off wild tree spreading, allow tree planting anywhere
+        private void OnAssetRequested(object sender, AssetRequestedEventArgs e)
+        {
+            if (e.NameWithoutLocale.IsEquivalentTo("Data/WildTrees"))
+            {
+                e.Edit(asset =>
+                {
+                    var data = asset.AsDictionary<string, JObject>().Data; // ***Change to WildTreeData?
+
+                    if (data != null)
+                    {
+                        foreach (var kvp in data)
+                        {
+                            var treeId = kvp.Key; // ***Remove?
+                            var treeData = kvp.Value; // ***Remove?
+                            
+                            treeData["SeedPlantChance"] = "0.0"; // ***Change to treeData.SeedPlantChance?
+
+                            data[treeId] = treeData; // ***Remove?
+                        }
+                    }
+                    else
+                    {
+                        Monitor.Log("Failed to load or edit WildTrees data.");
+                    }
+                });
+            }
+            if (e.NameWithoutLocale.IsEquivalentTo("Data/Locations"))
+            {
+                e.Edit(asset =>
+                {
+                    var data = asset.AsDictionary<string, StardewValley.GameData.Locations.LocationData>().Data;
+
+                    if (data != null)
+                    {
+                        foreach (var kvp in data)
+                        {
+                            kvp.Value.CanPlantHere = true;
+                        }
+                    }
+                    else
+                    {
+                        Monitor.Log("Failed to load or edit Locations data.");
+                    }
+                });
+            }
         }
 
         // Update trees in all locations
@@ -63,10 +120,10 @@ namespace BetterFruitTrees
             {
                 foreach (GameLocation location in Game1.locations)
                 {
-                    TreeSpread.SpreadFruitTrees(location);
+                    TreeSpread.SpreadTrees(location, Monitor);
                 }
             }
-            TreeGrowth.UpdateFruitTrees(this.Monitor);
+            TreeGrowth.UpdateTreeGrowth(Monitor);
         }
 
         // Hoe small fruit trees to pick up sapling
@@ -81,33 +138,10 @@ namespace BetterFruitTrees
             if (Game1.activeClickableMenu != null)
                 return;
 
-            // Check if using Hoe and target tile
-            if (e.Button.IsUseToolButton() && Game1.player.CurrentTool is Hoe)
+            // Fertilize trees
+            if (e.Button.IsActionButton() && Game1.player.ActiveObject != null && Game1.player.ActiveObject.ParentSheetIndex == 805)
             {
-                Vector2 playerPosition = new Vector2(Game1.player.Tile.X, Game1.player.Tile.Y);
-                Vector2 targetTile = ToolHelper.GetTargetTile(playerPosition, Game1.player.FacingDirection);
-
-                if (Game1.currentLocation.terrainFeatures.TryGetValue(targetTile, out TerrainFeature terrainFeature) && terrainFeature is FruitTree fruitTree)
-                {
-                    // Check growth stage
-                    if (fruitTree.growthStage.Value == 0 || fruitTree.growthStage.Value == 1 || fruitTree.growthStage.Value == 2)
-                    {
-                        // Hoe dirt, use stamina
-                        Game1.player.stamina -= energyCost;
-
-                        bool treeDestroyed = Game1.currentLocation.terrainFeatures.Remove(targetTile);
-
-                        if (treeDestroyed)
-                        {
-                            // Get sapling item and drop it
-                            string treeTypeId = fruitTree.treeId.ToString();
-                            if (Game1.objectData.ContainsKey(treeTypeId))
-                            {
-                                Game1.createItemDebris(new StardewValley.Object(treeTypeId, 1), targetTile * Game1.tileSize, -1);
-                            }
-                        }
-                    }
-                }    
+                FertilizerExpansion.FertilizeFruitTrees(sender, e);
             }
         }
 
@@ -120,7 +154,7 @@ namespace BetterFruitTrees
                 {
                     if (feature is Tree tree)
                     {
-                        TreeReplacer.ReplaceTree(tree, location, config);
+                        TreeReplacer.ReplaceTree(tree, location, config, Monitor);
                     }
                 }
             }

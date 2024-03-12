@@ -13,7 +13,7 @@ namespace BetterFruitTrees
 {
     public class TreeReplacer
     {
-        public static void ReplaceTree(Tree tree, GameLocation location, ModConfig config)
+        public static void ReplaceTree(Tree tree, GameLocation location, ModConfig config, IMonitor monitor)
         {
             if (config == null)
             {
@@ -178,7 +178,7 @@ namespace BetterFruitTrees
                         Console.WriteLine($"Checked that fruit tree data contains key: {randomFruitTreeId}");
 #endif
                         FruitTree fruitTree = new FruitTree(randomFruitTreeId, FruitTree.seedStage);
-                        fruitTree.growthStage.Value = Game1.random.Next(4);
+                        fruitTree.growthStage.Value = Game1.random.Next(3,5);
 #if LOGGING
                         Console.WriteLine($"adding fruit tree: {fruitTree.treeId} at stage: {fruitTree.growthStage}");
 #endif
@@ -216,22 +216,27 @@ namespace BetterFruitTrees
                     else
                     {
                         // Iterate through all wild tree ids found in the game data
-                        foreach (var wildTreeId in Tree.GetWildTreeDataDictionary().Keys)
+                        foreach (var treeType in Enum.GetValues(typeof(Tree)))
                         {
-                            // Remove spaces from keyword
-                            string keywordToCompare = keyword.Replace(" ", string.Empty);
-#if LOGGING
-                            // Log the keyword and the current wild tree ID for debugging
-                            Console.WriteLine($"Comparing keyword '{keywordToCompare}' with wild tree ID '{wildTreeId}'");
-#endif
-                            // Case-insensitive comparison of wild tree ids with keyword substring
-                            if (wildTreeId.IndexOf(keywordToCompare, StringComparison.OrdinalIgnoreCase) >= 0)
+                            string wildTreeId = treeType.ToString();
+
+                            WildTreeData wildTreeData;
+                            if (Tree.TryGetData(wildTreeId, out wildTreeData))
                             {
-                                // Add matching wild tree ids with the weight value
-                                wildTreeIdMatches.Add(wildTreeId, weight);
-#if LOGGING
-                                Console.WriteLine($"Found matching wild tree id: {wildTreeId}");
-#endif
+                                // Remove spaces from keyword
+                                string keywordToCompare = keyword.Replace(" ", string.Empty);
+
+                                // Log the keyword and the current wild tree ID for debugging
+                                monitor.Log ($"Comparing keyword '{keywordToCompare}' with wild tree ID '{wildTreeId}'");
+
+                                // Case-insensitive comparison of wild tree ids with keyword substring
+                                if (wildTreeId.IndexOf(keywordToCompare, StringComparison.OrdinalIgnoreCase) >= 0)
+                                {
+                                    // Add matching wild tree ids with the weight value
+                                    wildTreeIdMatches.Add(wildTreeId, weight);
+
+                                    monitor.Log ($"Found matching wild tree ID: {wildTreeId}");
+                                }
                             }
                         }
                     }
@@ -285,30 +290,22 @@ namespace BetterFruitTrees
                         weightedWildTreeList.Add(wildTreeId);
                     }
                 }
-#if LOGGING
-                // Log the contents of weightedWildTreeList
-                Console.WriteLine("Contents of weightedWildTreeList:");
-                Console.WriteLine(string.Join(", ", weightedWildTreeList));
-                Console.WriteLine($"Weighted wild tree list count: {weightedWildTreeList.Count}");
-#endif
                 // Select a random wild tree ID from the weighted list
                 if (weightedWildTreeList.Count > 0)
                 {
                     string randomWildTreeId = weightedWildTreeList[Game1.random.Next(weightedWildTreeList.Count)];
-#if LOGGING
-                    Console.WriteLine($"Selected wild tree id: {randomWildTreeId}");
-#endif
-                    // Create the new tree using selected tree ID
-                    if (Tree.GetWildTreeDataDictionary().Keys.Contains(randomWildTreeId))
+
+                    // Check if the tree data exists for selected ID
+                    if (Tree.TryGetData(randomWildTreeId, out var wildTreeData))
                     {
-#if LOGGING
-                        Console.WriteLine($"Checked that wild tree data contains key: {randomWildTreeId}");
-#endif
+                        monitor.Log ($"Checked that wild tree data contains key: {randomWildTreeId}");
+
+                        // Create the new tree using selected tree ID and tree data
                         Tree wildTree = new Tree(randomWildTreeId, Tree.seedStage);
                         wildTree.growthStage.Value = Game1.random.Next(4, 6);
-#if LOGGING
-                        Console.WriteLine($"adding wild tree: {randomWildTreeId} at stage: {wildTree.growthStage}");
-#endif
+
+                        monitor.Log ($"adding wild tree: {randomWildTreeId} at stage: {wildTree.growthStage}");
+
                         newTree = wildTree;
                     }
                 }

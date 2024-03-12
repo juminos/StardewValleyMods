@@ -1,15 +1,16 @@
 {
   "FruitSpreadChance": 0.15,
   "WildSpreadChance": 0.15,
-  "FruitTreeDensityModifier": 0.2,
-  "WildTreeDensityModifier": 0.5,
   "SpreadRadius": 3,
-  "FruitDaysToFinalStage": 28,
-  "FruitDailyGrowthChance": 0.8,
-  "WildDaysToFinalStage": 28,
-  "WildDailyGrowthChance": 0.8,
+  "FruitDaysToFinalStage": 84,
+  "FruitFarmDaysToFinalStage": 56,
+  "WildDaysToFinalStage": 21,
+  "WildFarmDaysToFinalStage": 14,
+  "DaysToLargeTree": 28,
+  "LargeTreeChance": 0.2,
+  "WinterGrowth": false,
   "EnergyCost": 5,
-  "FruitTreeChance": 0.7,
+  "FruitTreeChance": 0.5,
   "TreeConfigurations": {
     "OakTreeReplacements": {
       "FruitTrees": [

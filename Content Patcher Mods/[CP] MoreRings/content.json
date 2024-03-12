@@ -1,0 +1,36 @@
+{
+  "Format": "2.0",
+  "Changes": [
+    {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries": {
+        "juminos.MoreRings_Shadow": {
+          "DisplayName": "Shadow Ring",
+          "Description": "Surrounds you with a strange aura.",
+          "Type": "Ring",
+          "Category": -96,
+          "Price": 0,
+          "Texture": "Mods/juminos.MoreRings/Shadow",
+          "SpriteIndex": 0,
+          "Edibility": -300,
+          "IsDrink": false,
+          "Buff": null,
+          "GeodeDropsDefaultItems": false,
+          "GeodeDrops": null,
+          "ArtifactSpotChances": null,
+          "ExcludeFromFishingCollection": false,
+          "ExcludeFromShippingCollection": false,
+          "ExcludeFromRandomSale": true,
+          "ContextTags": null,
+          "CustomFields": {}
+        }
+      }
+    },
+    {
+      "Action": "Load",
+      "Target": "Mods/juminos.MoreRings/Shadow",
+      "FromFile": "assets/{{TargetWithoutPath}}.png"
+    }
+  ]
+}
