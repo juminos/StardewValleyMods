@@ -14,7 +14,7 @@ namespace FrenshipRings
 {
     public class Shadow
     {
-        public static void DisableShadow(IMonitor monitor)
+        public static void DisableShadow()
         {
             foreach (var character in Game1.player.currentLocation.characters)
             {
@@ -58,9 +58,9 @@ namespace FrenshipRings
             ModEntry.shadowDisabled = true;
         }
 
-        public static void EnableShadow()
+        public static void EnableShadow(GameLocation oldLocation)
         {
-            foreach (var character in Game1.player.currentLocation.characters)
+            foreach (var character in oldLocation.characters)
             {
                 if (character is ShadowShaman shadowShaman)
                 {
