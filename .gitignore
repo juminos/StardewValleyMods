@@ -10,3 +10,7 @@ node_modules/
 
 # Ignore bin folders in all projects
 **/bin/
+/BetterFruitTrees/obj/Debug/net6.0/BetterFruitTrees.AssemblyInfo.cs
+/BetterFruitTrees/obj/Debug/net6.0/BetterFruitTrees.AssemblyInfoInputs.cache
+/BetterFruitTrees/obj/Debug/net6.0/BetterFruitTrees.assets.cache
+/BetterFruitTrees/obj/Debug/net6.0/BetterFruitTrees.csproj.AssemblyReference.cache
