@@ -10,7 +10,7 @@
           "Description": "Surrounds you with a strange aura.",
           "Type": "Ring",
           "Category": -96,
-          "Price": 0,
+          "Price": 1500,
           "Texture": "Mods/juminos.MoreRings/Shadow",
           "SpriteIndex": 0,
           "Edibility": -300,
@@ -22,7 +22,10 @@
           "ExcludeFromFishingCollection": false,
           "ExcludeFromShippingCollection": false,
           "ExcludeFromRandomSale": true,
-          "ContextTags": null,
+          "ContextTags": [
+            "color_black",
+            "ring_item"
+          ],
           "CustomFields": {}
         }
       }

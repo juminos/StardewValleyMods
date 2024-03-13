@@ -6,6 +6,7 @@ using StardewModdingAPI.Utilities;
 using StardewValley;
 using StardewValley.Extensions;
 using StardewValley.Monsters;
+using StardewValley.Objects;
 using StardewValley.TerrainFeatures;
 using StardewValley.Tools;
 
@@ -17,6 +18,7 @@ namespace FrenshipRings
         internal static IModHelper SHelper;
 
         internal static bool shadowDisabled = false;
+        internal static bool spiderDisabled = false;
 
         public override void Entry(IModHelper helper)
         {
@@ -24,6 +26,7 @@ namespace FrenshipRings
             SHelper = helper;
 
             helper.Events.Player.Warped += OnWarp;
+            helper.Events.GameLoop.UpdateTicked += OnUpdateTicked;
         }
 
         private void OnWarp(object? sender, WarpedEventArgs e)
@@ -32,36 +35,87 @@ namespace FrenshipRings
                 return;
 
             var newLocation = e.NewLocation;
-            var newShadowPeople = newLocation.characters.Any(c => c is ShadowShaman || c is ShadowBrute || c is ShadowGuy || c is ShadowGirl);
-
-            if (newShadowPeople)
-            {
-                // Check if any player in the new location is wearing a shadow ring
-                var anyShadowRing = newLocation.farmers.Any(farmer => farmer.isWearingRing("juminos.MoreRings_Shadow"));
-
-                if (anyShadowRing)
-                {
-                    Monitor.Log($"Attempting to disable shadow aggression at {newLocation}.");
-                    Shadow.DisableShadow();
-                }
-            }
-
             var oldLocation = e.OldLocation;
-            var previousShadowPeople = oldLocation.characters.Any(c => c is ShadowShaman || c is ShadowBrute || c is ShadowGuy || c is ShadowGirl);
 
-            if (previousShadowPeople)
+            // Check for spiders in location
+            var newSpiders = newLocation.characters.Any(c => c is Leaper);
+
+            if (newSpiders)
             {
-                var oldLocationPlayers = oldLocation.farmers.ToList();
+                // Check for players wearing spider ring
+                var anySpiderRing = newLocation.farmers.Any(farmer => farmer.isWearingRing("juminos.MoreRings_Spider"));
 
-                if (!oldLocationPlayers.Any() || oldLocationPlayers.All(player => player != Game1.player && player.isWearingRing("juminos.MoreRings_Shadow")))
+                if (anySpiderRing)
                 {
-                    Monitor.Log($"Attempting to enable shadow aggression at {oldLocation}.");
-                    Shadow.EnableShadow(oldLocation);
+                    Monitor.Log($"Attempting to disable spider aggression at {newLocation}.");
+                    Spider.DisableSpider(newLocation);
                 }
             }
-            if (Game1.player.isWearingRing("juminos.MoreRings_Spider"))
+
+            // Check previous locationo for spiders
+            var previousSpiders = oldLocation.characters.Any(c => c is Leaper);
+
+            if (previousSpiders)
             {
-                Spider.DisableSpider(Monitor);
+                // Check for players wearing spider ring
+                var anySpiderRing = oldLocation.farmers.Any(farmer => farmer.isWearingRing("juminos.MoreRings_Spider"));
+
+                if (!anySpiderRing)
+                {
+                    Monitor.Log($"Attempting to enable spider aggression at {oldLocation}.");
+                    Spider.EnableSpider(oldLocation);
+                }
+            }
+        }
+        private void OnUpdateTicked(object? sender, UpdateTickedEventArgs e)
+        {
+            if (!e.IsMultipleOf(20) || !Context.IsWorldReady || Game1.player == null)
+                return;
+
+            var currentLocation = Game1.player.currentLocation;
+
+            // Check for shadow people in current location
+            var anyShadowPeople = currentLocation.characters.Any(c => c is ShadowShaman || c is ShadowBrute || c is ShadowGuy || c is ShadowGirl);
+
+            if (anyShadowPeople)
+            {
+                // Check for players wearing shadow ring
+                var anyShadowRing = currentLocation.farmers.Any(farmer => farmer.isWearingRing("juminos.MoreRings_Shadow"));
+
+                if (anyShadowRing && !shadowDisabled)
+                {
+                    Monitor.Log($"Attempting to disable shadow aggression at {currentLocation}.");
+                    Shadow.DisableShadow(currentLocation);
+                    shadowDisabled = true;
+                }
+                else if (!anyShadowRing && shadowDisabled)
+                {
+                    Monitor.Log($"Attempting to enable shadow aggression at {currentLocation}.");
+                    Shadow.EnableShadow(currentLocation);
+                    shadowDisabled = false;
+                }
+            }
+
+            // Check for spiders in current location
+            var anySpiders = currentLocation.characters.Any(c => c is Leaper);
+
+            if (anySpiders)
+            {
+                // Check for players wearing spider ring
+                var anySpiderRing = currentLocation.farmers.Any(farmer => farmer.isWearingRing("juminos.MoreRings_Spider"));
+
+                if (anySpiderRing && !spiderDisabled)
+                {
+                    Monitor.Log($"Attempting to disable spider aggression at {currentLocation}.");
+                    Spider.DisableSpider(currentLocation);
+                    spiderDisabled = true;
+                }
+                else if (!anySpiderRing && spiderDisabled)
+                {
+                    Monitor.Log($"Attempting to enable spider aggression at {currentLocation}.");
+                    Spider.EnableSpider(currentLocation);
+                    spiderDisabled = false;
+                }
             }
         }
     }
