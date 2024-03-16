@@ -24,12 +24,35 @@
           "ExcludeFromRandomSale": true,
           "ContextTags": null,
           "CustomFields": {}
+        },
+        "juminos.MoreRings_Spider": {
+          "DisplayName": "Spider Ring",
+          "Description": "Wearing it gives you a spring in your step.",
+          "Type": "Ring",
+          "Category": -96,
+          "Price": 1500,
+          "Texture": "Mods/juminos.MoreRings/Spider",
+          "SpriteIndex": 1,
+          "Edibility": -300,
+          "IsDrink": false,
+          "Buff": null,
+          "GeodeDropsDefaultItems": false,
+          "GeodeDrops": null,
+          "ArtifactSpotChances": null,
+          "ExcludeFromFishingCollection": false,
+          "ExcludeFromShippingCollection": false,
+          "ExcludeFromRandomSale": true,
+          "ContextTags": [
+            "color_blue",
+            "ring_item"
+          ],
+          "CustomFields": {}
         }
       }
     },
     {
       "Action": "Load",
-      "Target": "Mods/juminos.MoreRings/Shadow",
+      "Target": "Mods/juminos.MoreRings/Shadow, Mods/juminos.MoreRings/Spider",
       "FromFile": "assets/{{TargetWithoutPath}}.png"
     }
   ]
