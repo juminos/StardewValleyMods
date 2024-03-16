@@ -14,9 +14,9 @@ namespace FrenshipRings
 {
     public class Shadow
     {
-        public static void DisableShadow(IMonitor monitor)
+        public static void DisableShadow(GameLocation currentLocation)
         {
-            foreach (var character in Game1.player.currentLocation.characters)
+            foreach (var character in currentLocation.characters)
             {
                 if (character is ShadowShaman shadowShaman)
                 {
@@ -55,12 +55,11 @@ namespace FrenshipRings
                     shadowGuy.setInvincibleCountdown(10);
                 }
             }
-            ModEntry.shadowDisabled = true;
         }
 
-        public static void EnableShadow()
+        public static void EnableShadow(GameLocation oldLocation)
         {
-            foreach (var character in Game1.player.currentLocation.characters)
+            foreach (var character in oldLocation.characters)
             {
                 if (character is ShadowShaman shadowShaman)
                 {
@@ -99,7 +98,6 @@ namespace FrenshipRings
                     shadowGuy.setInvincibleCountdown(0);
                 }
             }
-            ModEntry.shadowDisabled = false;
         }
     }
 }
