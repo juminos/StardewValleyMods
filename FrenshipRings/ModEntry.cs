@@ -19,53 +19,14 @@ namespace FrenshipRings
 
         internal static bool shadowDisabled = false;
         internal static bool spiderDisabled = false;
+        internal static bool dustDisabled = false;
 
         public override void Entry(IModHelper helper)
         {
             SMonitor = Monitor;
             SHelper = helper;
 
-            helper.Events.Player.Warped += OnWarp;
             helper.Events.GameLoop.UpdateTicked += OnUpdateTicked;
-        }
-
-        private void OnWarp(object? sender, WarpedEventArgs e)
-        {
-            if (!e.IsLocalPlayer || e.NewLocation == null)
-                return;
-
-            var newLocation = e.NewLocation;
-            var oldLocation = e.OldLocation;
-
-            // Check for spiders in location
-            var newSpiders = newLocation.characters.Any(c => c is Leaper);
-
-            if (newSpiders)
-            {
-                // Check for players wearing spider ring
-                var anySpiderRing = newLocation.farmers.Any(farmer => farmer.isWearingRing("juminos.MoreRings_Spider"));
-
-                if (anySpiderRing)
-                {
-                    Monitor.Log($"Attempting to disable spider aggression at {newLocation}.");
-                    Spider.DisableSpider(newLocation);
-                }
-            }
-
-            // Check previous locationo for spiders
-            var previousSpiders = oldLocation.characters.Any(c => c is Leaper);
-
-            if (previousSpiders)
-            {
-                // Check for players wearing spider ring
-                var anySpiderRing = oldLocation.farmers.Any(farmer => farmer.isWearingRing("juminos.MoreRings_Spider"));
-
-                if (!anySpiderRing)
-                {
-                    Monitor.Log($"Attempting to enable spider aggression at {oldLocation}.");
-                    Spider.EnableSpider(oldLocation);
-                }
-            }
         }
         private void OnUpdateTicked(object? sender, UpdateTickedEventArgs e)
         {
@@ -115,6 +76,28 @@ namespace FrenshipRings
                     Monitor.Log($"Attempting to enable spider aggression at {currentLocation}.");
                     Spider.EnableSpider(currentLocation);
                     spiderDisabled = false;
+                }
+            }
+
+            // Check for dust spirit in current location
+            var anyDust = currentLocation.characters.Any(c => c is DustSpirit);
+
+            if (anyDust)
+            {
+                // Check for players wearing dust ring
+                var anyDustRing = currentLocation.farmers.Any(farmer => farmer.isWearingRing("juminos.MoreRings_Dust"));
+
+                if (anyDustRing && !dustDisabled)
+                {
+                    Monitor.Log($"Attempting to disable dust spirit aggression at {currentLocation}.");
+                    Dust.DisableDust(currentLocation);
+                    dustDisabled = true;
+                }
+                else if (!anyDustRing && dustDisabled)
+                {
+                    Monitor.Log($"Attempting to enable dust spirit aggression at {currentLocation}.");
+                    Dust.EnableDust(currentLocation);
+                    dustDisabled = false;
                 }
             }
         }

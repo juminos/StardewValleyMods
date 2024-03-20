@@ -1,0 +1,145 @@
+{
+  "Format": "2.0.0",
+  "Changes": [
+    {
+      "Action": "Load",
+      "Target": "Mods/juminos.AquariumBuilding/AquariumExt",
+      "FromFile": "assets/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "Load",
+      "Target": "Maps/AquariumInt",
+      "FromFile": "assets/AquariumInt.tmx"
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Buildings",
+      "Entries": {
+        "juminos.AquariumBuilding_AquariumExt": {
+          "Name": "Aquarium",
+          "Description": "A nice, big space for all your fish.",
+          "Texture": "Mods/juminos.AquariumBuilding/AquariumExt",
+          "Skins": [],
+          "DrawShadow": true,
+          "Size": {
+            "X": 12,
+            "Y": 5
+          },
+          "FadeWhenBehind": true,
+          "SourceRect": {
+            "X": 0,
+            "Y": 0,
+            "Width": 0,
+            "Height": 0
+          },
+          "SeasonOffset": {
+            "X": 0,
+            "Y": 0
+          },
+          "DrawOffset": "0, 0",
+          "SortTileOffset": 0.0,
+          "CollisionMap": null,
+          "AdditionalPlacementTiles": null,
+          "BuildingType": null,
+          "BuildCondition": null,
+          "BuildDays": 0,
+          "BuildCost": 1000,
+          "BuildMaterials": [
+            {
+              "ItemId": "(O)388",
+              "Amount": 5
+            }
+          ],
+          "BuildingToUpgrade": null,
+          "MagicalConstruction": false,
+          "BuildMenuDrawOffset": {
+            "X": 0,
+            "Y": 0
+          },
+          "HumanDoor": {
+            "X": 6,
+            "Y": 4
+          },
+          "AnimalDoor": {
+            "X": -1,
+            "Y": -1,
+            "Width": 0,
+            "Height": 0
+          },
+          "NonInstancedIndoorLocation": null,
+          "IndoorMap": "AquariumInt",
+          "IndoorMapType": "StardewValley.Locations.DecoratableLocation",
+          "MaxOccupants": 20,
+          "ValidOccupantTypes": [ "Coop" ],
+          "IndoorItemMoves": null,
+          "IndoorItems": [
+            {
+              "Id": "Default_Tank",
+              "ItemId": "(F)2312",
+              "Tile": {
+                "X": 32,
+                "Y": 13
+              },
+              "Indestructible": true
+            }
+          ],
+          "AddMailOnBuild": null,
+          "Metadata": {},
+          "ModData": {},
+          "HayCapacity": 0,
+          "Chests": null,
+          "DefaultAction": null,
+          "AdditionalTilePropertyRadius": 0,
+          "ActionTiles": [],
+          "TileProperties": [],
+          "ItemConversions": null,
+          "DrawLayers": null,
+          "CustomFields": {}
+        }
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Locations",
+      "Entries": {
+        "juminos.AquariumBuilding_AquariumInt": {
+          "DisplayName": "Aquarium",
+          "DefaultArrivalTile": {
+            "X": 32,
+            "Y": 23
+          },
+          "ExcludeFromNpcPathfinding": false,
+          "CreateOnLoad": {
+            "MapPath": "Maps/AquariumInt",
+            "Type": "StardewValley.Locations.DecoratableLocation",
+            "AlwaysActive": true
+          },
+          "FormerLocationNames": [],
+          "CanPlantHere": true,
+          "ArtifactSpots": [],
+          "FishAreas": {},
+          "Fish": [],
+          "Forage": [],
+          "MinDailyWeeds": 2,
+          "MaxDailyWeeds": 5,
+          "FirstDayWeedMultiplier": 15,
+          "MinDailyForageSpawn": 1,
+          "MaxDailyForageSpawn": 4,
+          "MaxSpawnedForageAtOnce": 6,
+          "ChanceForClay": 0.03,
+          "Music": [],
+          "MusicDefault": null,
+          "MusicContext": "Default",
+          "MusicIgnoredInRain": false,
+          "MusicIgnoredInSpring": false,
+          "MusicIgnoredInSummer": false,
+          "MusicIgnoredInFall": false,
+          "MusicIgnoredInFallDebris": false,
+          "MusicIgnoredInWinter": false,
+          "MusicIsTownTheme": false,
+          "CustomFields": {}
+        }
+      }
+    }
+  ]
+}

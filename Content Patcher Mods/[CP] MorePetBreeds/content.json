@@ -1,0 +1,2915 @@
+{
+  "Format": "2.0",
+  "Changes": [
+    {
+      "Action": "EditData",
+      "Target": "Data/Pets",
+      "TargetField": [
+        "Cat",
+        "Breeds"
+      ],
+      "Entries": {
+        "juminos.MorePetBreeds_Cat_1": {
+          "ID": "juminos.MorePetBreeds_Cat_1",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_1",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_1",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_2": {
+          "ID": "juminos.MorePetBreeds_Cat_2",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_10",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_10",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_3": {
+          "ID": "juminos.MorePetBreeds_Cat_3",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_11",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_11",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_4": {
+          "ID": "juminos.MorePetBreeds_Cat_4",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_12",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_12",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_5": {
+          "ID": "juminos.MorePetBreeds_Cat_5",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_13",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_13",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_6": {
+          "ID": "juminos.MorePetBreeds_Cat_6",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_14",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_14",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_7": {
+          "ID": "juminos.MorePetBreeds_Cat_7",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_15",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_15",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_8": {
+          "ID": "juminos.MorePetBreeds_Cat_8",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_16",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_16",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_9": {
+          "ID": "juminos.MorePetBreeds_Cat_9",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_17",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_17",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_10": {
+          "ID": "juminos.MorePetBreeds_Cat_10",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_18",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_18",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_11": {
+          "ID": "juminos.MorePetBreeds_Cat_11",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_19",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_19",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_12": {
+          "ID": "juminos.MorePetBreeds_Cat_12",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_2",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_2",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_13": {
+          "ID": "juminos.MorePetBreeds_Cat_13",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_20",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_20",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_14": {
+          "ID": "juminos.MorePetBreeds_Cat_14",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_21",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_21",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_15": {
+          "ID": "juminos.MorePetBreeds_Cat_15",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_22",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_22",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_16": {
+          "ID": "juminos.MorePetBreeds_Cat_16",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_23",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_23",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_17": {
+          "ID": "juminos.MorePetBreeds_Cat_17",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_24",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_24",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_18": {
+          "ID": "juminos.MorePetBreeds_Cat_18",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_25",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_25",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_19": {
+          "ID": "juminos.MorePetBreeds_Cat_19",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_26",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_26",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_20": {
+          "ID": "juminos.MorePetBreeds_Cat_20",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_27",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_27",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_21": {
+          "ID": "juminos.MorePetBreeds_Cat_21",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_28",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_28",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_22": {
+          "ID": "juminos.MorePetBreeds_Cat_22",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_29",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_29",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_23": {
+          "ID": "juminos.MorePetBreeds_Cat_23",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_3",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_3",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_24": {
+          "ID": "juminos.MorePetBreeds_Cat_24",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_30",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_30",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_25": {
+          "ID": "juminos.MorePetBreeds_Cat_25",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_31",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_31",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_26": {
+          "ID": "juminos.MorePetBreeds_Cat_26",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_32",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_32",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_27": {
+          "ID": "juminos.MorePetBreeds_Cat_27",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_33",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_33",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_28": {
+          "ID": "juminos.MorePetBreeds_Cat_28",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_34",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_34",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_29": {
+          "ID": "juminos.MorePetBreeds_Cat_29",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_35",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_35",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_30": {
+          "ID": "juminos.MorePetBreeds_Cat_30",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_36",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_36",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_31": {
+          "ID": "juminos.MorePetBreeds_Cat_31",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_37",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_37",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_32": {
+          "ID": "juminos.MorePetBreeds_Cat_32",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_38",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_38",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_33": {
+          "ID": "juminos.MorePetBreeds_Cat_33",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_39",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_39",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_34": {
+          "ID": "juminos.MorePetBreeds_Cat_34",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_4",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_4",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_35": {
+          "ID": "juminos.MorePetBreeds_Cat_35",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_40",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_40",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_36": {
+          "ID": "juminos.MorePetBreeds_Cat_36",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_41",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_41",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_37": {
+          "ID": "juminos.MorePetBreeds_Cat_37",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_42",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_42",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_38": {
+          "ID": "juminos.MorePetBreeds_Cat_38",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_43",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_43",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_39": {
+          "ID": "juminos.MorePetBreeds_Cat_39",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_44",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_44",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_40": {
+          "ID": "juminos.MorePetBreeds_Cat_40",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_45",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_45",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_41": {
+          "ID": "juminos.MorePetBreeds_Cat_41",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_46",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_46",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_42": {
+          "ID": "juminos.MorePetBreeds_Cat_42",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_47",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_47",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_43": {
+          "ID": "juminos.MorePetBreeds_Cat_43",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_48",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_48",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_44": {
+          "ID": "juminos.MorePetBreeds_Cat_44",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_49",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_49",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_45": {
+          "ID": "juminos.MorePetBreeds_Cat_45",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_5",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_5",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_46": {
+          "ID": "juminos.MorePetBreeds_Cat_46",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_50",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_50",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_47": {
+          "ID": "juminos.MorePetBreeds_Cat_47",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_51",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_51",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_48": {
+          "ID": "juminos.MorePetBreeds_Cat_48",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_6",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_6",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_49": {
+          "ID": "juminos.MorePetBreeds_Cat_49",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_7",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_7",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_50": {
+          "ID": "juminos.MorePetBreeds_Cat_50",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_8",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_8",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Cat_51": {
+          "ID": "juminos.MorePetBreeds_Cat_51",
+          "Texture": "Mods/juminos.MorePetBreeds/Cat_9",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Cat_9",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 135,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        }
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Pets",
+      "TargetField": [
+        "Dog",
+        "Breeds"
+      ],
+      "Entries": {
+        "juminos.MorePetBreeds_Dog_1": {
+          "ID": "juminos.MorePetBreeds_Dog_1",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_1",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_1",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_2": {
+          "ID": "juminos.MorePetBreeds_Dog_2",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_10",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_10",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_3": {
+          "ID": "juminos.MorePetBreeds_Dog_3",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_100",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_100",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_4": {
+          "ID": "juminos.MorePetBreeds_Dog_4",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_101",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_101",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_5": {
+          "ID": "juminos.MorePetBreeds_Dog_5",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_11",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_11",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_6": {
+          "ID": "juminos.MorePetBreeds_Dog_6",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_12",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_12",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_7": {
+          "ID": "juminos.MorePetBreeds_Dog_7",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_13",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_13",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_8": {
+          "ID": "juminos.MorePetBreeds_Dog_8",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_14",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_14",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_9": {
+          "ID": "juminos.MorePetBreeds_Dog_9",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_15",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_15",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_10": {
+          "ID": "juminos.MorePetBreeds_Dog_10",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_16",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_16",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_11": {
+          "ID": "juminos.MorePetBreeds_Dog_11",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_17",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_17",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_12": {
+          "ID": "juminos.MorePetBreeds_Dog_12",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_18",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_18",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_13": {
+          "ID": "juminos.MorePetBreeds_Dog_13",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_19",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_19",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_14": {
+          "ID": "juminos.MorePetBreeds_Dog_14",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_2",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_2",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_15": {
+          "ID": "juminos.MorePetBreeds_Dog_15",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_20",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_20",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_16": {
+          "ID": "juminos.MorePetBreeds_Dog_16",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_21",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_21",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_17": {
+          "ID": "juminos.MorePetBreeds_Dog_17",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_22",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_22",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_18": {
+          "ID": "juminos.MorePetBreeds_Dog_18",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_23",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_23",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_19": {
+          "ID": "juminos.MorePetBreeds_Dog_19",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_24",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_24",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_20": {
+          "ID": "juminos.MorePetBreeds_Dog_20",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_25",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_25",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_21": {
+          "ID": "juminos.MorePetBreeds_Dog_21",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_26",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_26",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_22": {
+          "ID": "juminos.MorePetBreeds_Dog_22",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_27",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_27",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_23": {
+          "ID": "juminos.MorePetBreeds_Dog_23",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_28",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_28",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_24": {
+          "ID": "juminos.MorePetBreeds_Dog_24",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_29",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_29",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_25": {
+          "ID": "juminos.MorePetBreeds_Dog_25",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_3",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_3",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_26": {
+          "ID": "juminos.MorePetBreeds_Dog_26",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_30",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_30",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_27": {
+          "ID": "juminos.MorePetBreeds_Dog_27",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_31",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_31",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_28": {
+          "ID": "juminos.MorePetBreeds_Dog_28",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_32",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_32",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_29": {
+          "ID": "juminos.MorePetBreeds_Dog_29",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_33",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_33",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_30": {
+          "ID": "juminos.MorePetBreeds_Dog_30",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_34",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_34",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_31": {
+          "ID": "juminos.MorePetBreeds_Dog_31",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_35",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_35",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_32": {
+          "ID": "juminos.MorePetBreeds_Dog_32",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_36",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_36",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_33": {
+          "ID": "juminos.MorePetBreeds_Dog_33",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_37",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_37",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_34": {
+          "ID": "juminos.MorePetBreeds_Dog_34",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_38",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_38",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_35": {
+          "ID": "juminos.MorePetBreeds_Dog_35",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_39",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_39",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_36": {
+          "ID": "juminos.MorePetBreeds_Dog_36",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_4",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_4",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_37": {
+          "ID": "juminos.MorePetBreeds_Dog_37",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_40",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_40",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_38": {
+          "ID": "juminos.MorePetBreeds_Dog_38",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_41",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_41",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_39": {
+          "ID": "juminos.MorePetBreeds_Dog_39",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_42",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_42",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_40": {
+          "ID": "juminos.MorePetBreeds_Dog_40",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_43",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_43",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_41": {
+          "ID": "juminos.MorePetBreeds_Dog_41",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_44",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_44",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_42": {
+          "ID": "juminos.MorePetBreeds_Dog_42",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_45",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_45",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_43": {
+          "ID": "juminos.MorePetBreeds_Dog_43",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_46",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_46",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_44": {
+          "ID": "juminos.MorePetBreeds_Dog_44",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_47",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_47",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_45": {
+          "ID": "juminos.MorePetBreeds_Dog_45",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_48",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_48",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_46": {
+          "ID": "juminos.MorePetBreeds_Dog_46",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_49",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_49",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_47": {
+          "ID": "juminos.MorePetBreeds_Dog_47",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_5",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_5",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_48": {
+          "ID": "juminos.MorePetBreeds_Dog_48",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_50",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_50",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_49": {
+          "ID": "juminos.MorePetBreeds_Dog_49",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_51",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_51",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_50": {
+          "ID": "juminos.MorePetBreeds_Dog_50",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_52",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_52",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_51": {
+          "ID": "juminos.MorePetBreeds_Dog_51",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_53",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_53",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_52": {
+          "ID": "juminos.MorePetBreeds_Dog_52",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_54",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_54",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_53": {
+          "ID": "juminos.MorePetBreeds_Dog_53",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_55",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_55",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_54": {
+          "ID": "juminos.MorePetBreeds_Dog_54",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_56",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_56",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_55": {
+          "ID": "juminos.MorePetBreeds_Dog_55",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_57",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_57",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_56": {
+          "ID": "juminos.MorePetBreeds_Dog_56",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_58",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_58",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_57": {
+          "ID": "juminos.MorePetBreeds_Dog_57",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_59",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_59",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_58": {
+          "ID": "juminos.MorePetBreeds_Dog_58",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_6",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_6",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_59": {
+          "ID": "juminos.MorePetBreeds_Dog_59",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_60",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_60",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_60": {
+          "ID": "juminos.MorePetBreeds_Dog_60",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_61",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_61",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_61": {
+          "ID": "juminos.MorePetBreeds_Dog_61",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_62",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_62",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_62": {
+          "ID": "juminos.MorePetBreeds_Dog_62",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_63",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_63",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_63": {
+          "ID": "juminos.MorePetBreeds_Dog_63",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_64",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_64",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_64": {
+          "ID": "juminos.MorePetBreeds_Dog_64",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_65",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_65",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_65": {
+          "ID": "juminos.MorePetBreeds_Dog_65",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_66",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_66",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_66": {
+          "ID": "juminos.MorePetBreeds_Dog_66",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_67",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_67",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_67": {
+          "ID": "juminos.MorePetBreeds_Dog_67",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_68",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_68",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_68": {
+          "ID": "juminos.MorePetBreeds_Dog_68",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_69",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_69",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_69": {
+          "ID": "juminos.MorePetBreeds_Dog_69",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_7",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_7",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_70": {
+          "ID": "juminos.MorePetBreeds_Dog_70",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_70",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_70",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_71": {
+          "ID": "juminos.MorePetBreeds_Dog_71",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_71",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_71",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_72": {
+          "ID": "juminos.MorePetBreeds_Dog_72",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_72",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_72",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_73": {
+          "ID": "juminos.MorePetBreeds_Dog_73",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_73",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_73",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_74": {
+          "ID": "juminos.MorePetBreeds_Dog_74",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_74",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_74",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_75": {
+          "ID": "juminos.MorePetBreeds_Dog_75",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_75",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_75",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_76": {
+          "ID": "juminos.MorePetBreeds_Dog_76",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_76",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_76",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_77": {
+          "ID": "juminos.MorePetBreeds_Dog_77",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_77",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_77",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_78": {
+          "ID": "juminos.MorePetBreeds_Dog_78",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_78",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_78",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_79": {
+          "ID": "juminos.MorePetBreeds_Dog_79",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_79",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_79",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_80": {
+          "ID": "juminos.MorePetBreeds_Dog_80",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_8",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_8",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_81": {
+          "ID": "juminos.MorePetBreeds_Dog_81",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_80",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_80",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_82": {
+          "ID": "juminos.MorePetBreeds_Dog_82",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_81",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_81",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_83": {
+          "ID": "juminos.MorePetBreeds_Dog_83",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_82",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_82",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_84": {
+          "ID": "juminos.MorePetBreeds_Dog_84",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_83",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_83",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_85": {
+          "ID": "juminos.MorePetBreeds_Dog_85",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_84",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_84",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_86": {
+          "ID": "juminos.MorePetBreeds_Dog_86",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_85",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_85",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_87": {
+          "ID": "juminos.MorePetBreeds_Dog_87",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_86",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_86",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_88": {
+          "ID": "juminos.MorePetBreeds_Dog_88",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_87",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_87",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_89": {
+          "ID": "juminos.MorePetBreeds_Dog_89",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_88",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_88",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_90": {
+          "ID": "juminos.MorePetBreeds_Dog_90",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_89",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_89",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_91": {
+          "ID": "juminos.MorePetBreeds_Dog_91",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_9",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_9",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_92": {
+          "ID": "juminos.MorePetBreeds_Dog_92",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_90",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_90",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_93": {
+          "ID": "juminos.MorePetBreeds_Dog_93",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_91",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_91",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_94": {
+          "ID": "juminos.MorePetBreeds_Dog_94",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_92",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_92",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_95": {
+          "ID": "juminos.MorePetBreeds_Dog_95",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_93",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_93",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_96": {
+          "ID": "juminos.MorePetBreeds_Dog_96",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_94",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_94",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_97": {
+          "ID": "juminos.MorePetBreeds_Dog_97",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_95",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_95",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_98": {
+          "ID": "juminos.MorePetBreeds_Dog_98",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_96",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_96",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_99": {
+          "ID": "juminos.MorePetBreeds_Dog_99",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_97",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_97",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_100": {
+          "ID": "juminos.MorePetBreeds_Dog_100",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_98",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_98",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        },
+        "juminos.MorePetBreeds_Dog_101": {
+          "ID": "juminos.MorePetBreeds_Dog_101",
+          "Texture": "Mods/juminos.MorePetBreeds/Dog_99",
+          "IconTexture": "Mods/juminos.MorePetBreeds/Dog_99",
+          "IconSourceRect": {
+            "X": 73,
+            "Y": 130,
+            "Width": 16,
+            "Height": 16
+          },
+          "BarkOverride": null,
+          "VoicePitch": 1.0
+        }
+      }
+    },
+    {
+      "Action": "Load",
+      "Target": "Mods/juminos.MorePetBreeds/Cat_1, Mods/juminos.MorePetBreeds/Cat_10, Mods/juminos.MorePetBreeds/Cat_11, Mods/juminos.MorePetBreeds/Cat_12, Mods/juminos.MorePetBreeds/Cat_13, Mods/juminos.MorePetBreeds/Cat_14, Mods/juminos.MorePetBreeds/Cat_15, Mods/juminos.MorePetBreeds/Cat_16, Mods/juminos.MorePetBreeds/Cat_17, Mods/juminos.MorePetBreeds/Cat_18, Mods/juminos.MorePetBreeds/Cat_19, Mods/juminos.MorePetBreeds/Cat_2, Mods/juminos.MorePetBreeds/Cat_20, Mods/juminos.MorePetBreeds/Cat_21, Mods/juminos.MorePetBreeds/Cat_22, Mods/juminos.MorePetBreeds/Cat_23, Mods/juminos.MorePetBreeds/Cat_24, Mods/juminos.MorePetBreeds/Cat_25, Mods/juminos.MorePetBreeds/Cat_26, Mods/juminos.MorePetBreeds/Cat_27, Mods/juminos.MorePetBreeds/Cat_28, Mods/juminos.MorePetBreeds/Cat_29, Mods/juminos.MorePetBreeds/Cat_3, Mods/juminos.MorePetBreeds/Cat_30, Mods/juminos.MorePetBreeds/Cat_31, Mods/juminos.MorePetBreeds/Cat_32, Mods/juminos.MorePetBreeds/Cat_33, Mods/juminos.MorePetBreeds/Cat_34, Mods/juminos.MorePetBreeds/Cat_35, Mods/juminos.MorePetBreeds/Cat_36, Mods/juminos.MorePetBreeds/Cat_37, Mods/juminos.MorePetBreeds/Cat_38, Mods/juminos.MorePetBreeds/Cat_39, Mods/juminos.MorePetBreeds/Cat_4, Mods/juminos.MorePetBreeds/Cat_40, Mods/juminos.MorePetBreeds/Cat_41, Mods/juminos.MorePetBreeds/Cat_42, Mods/juminos.MorePetBreeds/Cat_43, Mods/juminos.MorePetBreeds/Cat_44, Mods/juminos.MorePetBreeds/Cat_45, Mods/juminos.MorePetBreeds/Cat_46, Mods/juminos.MorePetBreeds/Cat_47, Mods/juminos.MorePetBreeds/Cat_48, Mods/juminos.MorePetBreeds/Cat_49, Mods/juminos.MorePetBreeds/Cat_5, Mods/juminos.MorePetBreeds/Cat_50, Mods/juminos.MorePetBreeds/Cat_51, Mods/juminos.MorePetBreeds/Cat_6, Mods/juminos.MorePetBreeds/Cat_7, Mods/juminos.MorePetBreeds/Cat_8, Mods/juminos.MorePetBreeds/Cat_9",
+      "FromFile": "assets/Cat/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "Load",
+      "Target": "Mods/juminos.MorePetBreeds/Dog_1, Mods/juminos.MorePetBreeds/Dog_10, Mods/juminos.MorePetBreeds/Dog_100, Mods/juminos.MorePetBreeds/Dog_101, Mods/juminos.MorePetBreeds/Dog_11, Mods/juminos.MorePetBreeds/Dog_12, Mods/juminos.MorePetBreeds/Dog_13, Mods/juminos.MorePetBreeds/Dog_14, Mods/juminos.MorePetBreeds/Dog_15, Mods/juminos.MorePetBreeds/Dog_16, Mods/juminos.MorePetBreeds/Dog_17, Mods/juminos.MorePetBreeds/Dog_18, Mods/juminos.MorePetBreeds/Dog_19, Mods/juminos.MorePetBreeds/Dog_2, Mods/juminos.MorePetBreeds/Dog_20, Mods/juminos.MorePetBreeds/Dog_21, Mods/juminos.MorePetBreeds/Dog_22, Mods/juminos.MorePetBreeds/Dog_23, Mods/juminos.MorePetBreeds/Dog_24, Mods/juminos.MorePetBreeds/Dog_25, Mods/juminos.MorePetBreeds/Dog_26, Mods/juminos.MorePetBreeds/Dog_27, Mods/juminos.MorePetBreeds/Dog_28, Mods/juminos.MorePetBreeds/Dog_29, Mods/juminos.MorePetBreeds/Dog_3, Mods/juminos.MorePetBreeds/Dog_30, Mods/juminos.MorePetBreeds/Dog_31, Mods/juminos.MorePetBreeds/Dog_32, Mods/juminos.MorePetBreeds/Dog_33, Mods/juminos.MorePetBreeds/Dog_34, Mods/juminos.MorePetBreeds/Dog_35, Mods/juminos.MorePetBreeds/Dog_36, Mods/juminos.MorePetBreeds/Dog_37, Mods/juminos.MorePetBreeds/Dog_38, Mods/juminos.MorePetBreeds/Dog_39, Mods/juminos.MorePetBreeds/Dog_4, Mods/juminos.MorePetBreeds/Dog_40, Mods/juminos.MorePetBreeds/Dog_41, Mods/juminos.MorePetBreeds/Dog_42, Mods/juminos.MorePetBreeds/Dog_43, Mods/juminos.MorePetBreeds/Dog_44, Mods/juminos.MorePetBreeds/Dog_45, Mods/juminos.MorePetBreeds/Dog_46, Mods/juminos.MorePetBreeds/Dog_47, Mods/juminos.MorePetBreeds/Dog_48, Mods/juminos.MorePetBreeds/Dog_49, Mods/juminos.MorePetBreeds/Dog_5, Mods/juminos.MorePetBreeds/Dog_50, Mods/juminos.MorePetBreeds/Dog_51, Mods/juminos.MorePetBreeds/Dog_52, Mods/juminos.MorePetBreeds/Dog_53, Mods/juminos.MorePetBreeds/Dog_54, Mods/juminos.MorePetBreeds/Dog_55, Mods/juminos.MorePetBreeds/Dog_56, Mods/juminos.MorePetBreeds/Dog_57, Mods/juminos.MorePetBreeds/Dog_58, Mods/juminos.MorePetBreeds/Dog_59, Mods/juminos.MorePetBreeds/Dog_6, Mods/juminos.MorePetBreeds/Dog_60, Mods/juminos.MorePetBreeds/Dog_61, Mods/juminos.MorePetBreeds/Dog_62, Mods/juminos.MorePetBreeds/Dog_63, Mods/juminos.MorePetBreeds/Dog_64, Mods/juminos.MorePetBreeds/Dog_65, Mods/juminos.MorePetBreeds/Dog_66, Mods/juminos.MorePetBreeds/Dog_67, Mods/juminos.MorePetBreeds/Dog_68, Mods/juminos.MorePetBreeds/Dog_69, Mods/juminos.MorePetBreeds/Dog_7, Mods/juminos.MorePetBreeds/Dog_70, Mods/juminos.MorePetBreeds/Dog_71, Mods/juminos.MorePetBreeds/Dog_72, Mods/juminos.MorePetBreeds/Dog_73, Mods/juminos.MorePetBreeds/Dog_74, Mods/juminos.MorePetBreeds/Dog_75, Mods/juminos.MorePetBreeds/Dog_76, Mods/juminos.MorePetBreeds/Dog_77, Mods/juminos.MorePetBreeds/Dog_78, Mods/juminos.MorePetBreeds/Dog_79, Mods/juminos.MorePetBreeds/Dog_8, Mods/juminos.MorePetBreeds/Dog_80, Mods/juminos.MorePetBreeds/Dog_81, Mods/juminos.MorePetBreeds/Dog_82, Mods/juminos.MorePetBreeds/Dog_83, Mods/juminos.MorePetBreeds/Dog_84, Mods/juminos.MorePetBreeds/Dog_85, Mods/juminos.MorePetBreeds/Dog_86, Mods/juminos.MorePetBreeds/Dog_87, Mods/juminos.MorePetBreeds/Dog_88, Mods/juminos.MorePetBreeds/Dog_89, Mods/juminos.MorePetBreeds/Dog_9, Mods/juminos.MorePetBreeds/Dog_90, Mods/juminos.MorePetBreeds/Dog_91, Mods/juminos.MorePetBreeds/Dog_92, Mods/juminos.MorePetBreeds/Dog_93, Mods/juminos.MorePetBreeds/Dog_94, Mods/juminos.MorePetBreeds/Dog_95, Mods/juminos.MorePetBreeds/Dog_96, Mods/juminos.MorePetBreeds/Dog_97, Mods/juminos.MorePetBreeds/Dog_98, Mods/juminos.MorePetBreeds/Dog_99",
+      "FromFile": "assets/Dog/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Pets",
+      "Entries": {
+        "juminos.MorePets_RedPanda": {
+          "DisplayName": "red panda",
+          "BarkSound": "juminos.MorePets_RedPandaSound",
+          "ContentSound": "juminos.MorePets_RedPandaSound",
+          "RepeatContentSoundAfter": -1,
+          "EmoteOffset": {
+            "X": 0,
+            "Y": 0
+          },
+          "EventOffset": {
+            "X": -32,
+            "Y": 0
+          },
+          "AdoptionEventLocation": "Farm",
+          "AdoptionEventId": "1590166",
+          "MoveSpeed": 2,
+          "SleepOnBedChance": 0.75,
+          "SleepNearBedChance": 0.3,
+          "SleepOnRugChance": 0.5,
+          "Behaviors": [
+            {
+              "Name": "Walk",
+              "IsSideBehavior": false,
+              "RandomizeDirection": true,
+              "Direction": null,
+              "WalkInDirection": true,
+              "MoveSpeed": -1,
+              "SoundOnStart": null,
+              "SoundRangeFromBorder": -1,
+              "SoundRange": -1,
+              "SoundIsVoice": false,
+              "Shake": 0,
+              "Animation": null,
+              "LoopMode": "None",
+              "AnimationMinimumLoops": -1,
+              "AnimationMaximumLoops": -1,
+              "AnimationEndBehaviorChanges": null,
+              "Duration": -1,
+              "MinimumDuration": -1,
+              "MaximumDuration": -1,
+              "TimeoutBehaviorChanges": null,
+              "PlayerNearbyBehaviorChanges": null,
+              "RandomBehaviorChangeChance": 0.01,
+              "RandomBehaviorChanges": [
+                {
+                  "Weight": 3.0,
+                  "OutsideOnly": false,
+                  "UpBehavior": null,
+                  "DownBehavior": null,
+                  "LeftBehavior": null,
+                  "RightBehavior": null,
+                  "Behavior": null
+                },
+                {
+                  "Weight": 0.85,
+                  "OutsideOnly": false,
+                  "UpBehavior": "BeginSitDown",
+                  "DownBehavior": "BeginSitDown",
+                  "LeftBehavior": null,
+                  "RightBehavior": null,
+                  "Behavior": "Flop"
+                },
+                {
+                  "Weight": 0.15,
+                  "OutsideOnly": false,
+                  "UpBehavior": "BeginSitDown",
+                  "DownBehavior": "BeginSitDown",
+                  "LeftBehavior": null,
+                  "RightBehavior": null,
+                  "Behavior": "Leap"
+                }
+              ],
+              "JumpLandBehaviorChanges": null
+            },
+            {
+              "Name": "BeginSitDown",
+              "IsSideBehavior": false,
+              "RandomizeDirection": false,
+              "Direction": "down",
+              "WalkInDirection": false,
+              "MoveSpeed": -1,
+              "SoundOnStart": null,
+              "SoundRangeFromBorder": -1,
+              "SoundRange": -1,
+              "SoundIsVoice": false,
+              "Shake": 0,
+              "Animation": [
+                {
+                  "Frame": 16,
+                  "Duration": 100,
+                  "HitGround": false,
+                  "Jump": false,
+                  "Sound": null,
+                  "SoundRangeFromBorder": -1,
+                  "SoundRange": -1,
+                  "SoundIsVoice": false
+                },
+                {
+                  "Frame": 17,
+                  "Duration": 100,
+                  "HitGround": false,
+                  "Jump": false,
+                  "Sound": null,
+                  "SoundRangeFromBorder": -1,
+                  "SoundRange": -1,
+                  "SoundIsVoice": false
+                },
+                {
+                  "Frame": 18,
+                  "Duration": 100,
+                  "HitGround": false,
+                  "Jump": false,
+                  "Sound": null,
+                  "SoundRangeFromBorder": -1,
+                  "SoundRange": -1,
+                  "SoundIsVoice": false
+                },
+                {
+                  "Frame": 19,
+                  "Duration": 100,
+                  "HitGround": false,
+                  "Jump": false,
+                  "Sound": null,
+                  "SoundRangeFromBorder": -1,
+                  "SoundRange": -1,
+                  "SoundIsVoice": false
+                }
+              ],
+              "LoopMode": "None",
+              "AnimationMinimumLoops": -1,
+              "AnimationMaximumLoops": -1,
+              "AnimationEndBehaviorChanges": [
+                {
+                  "Weight": 1.0,
+                  "OutsideOnly": false,
+                  "UpBehavior": null,
+                  "DownBehavior": null,
+                  "LeftBehavior": null,
+                  "RightBehavior": null,
+                  "Behavior": "SitDown"
+                }
+              ],
+              "Duration": -1,
+              "MinimumDuration": -1,
+              "MaximumDuration": -1,
+              "TimeoutBehaviorChanges": null,
+              "PlayerNearbyBehaviorChanges": null,
+              "RandomBehaviorChangeChance": 0.0,
+              "RandomBehaviorChanges": null,
+              "JumpLandBehaviorChanges": null
+            },
+            {
+              "Name": "SitDownBlinkShort",
+              "IsSideBehavior": false,
+              "RandomizeDirection": false,
+              "Direction": "down",
+              "WalkInDirection": false,
+              "MoveSpeed": -1,
+              "SoundOnStart": null,
+              "SoundRangeFromBorder": -1,
+              "SoundRange": -1,
+              "SoundIsVoice": false,
+              "Shake": 0,
+              "Animation": [
+                {
+                  "Frame": 19,
+                  "Duration": 100,
+                  "HitGround": false,
+                  "Jump": false,
+                  "Sound": null,
+                  "SoundRangeFromBorder": -1,
+                  "SoundRange": -1,
+                  "SoundIsVoice": false
+                }
+              ],
+              "LoopMode": "Hold",
+              "AnimationMinimumLoops": -1,
+              "AnimationMaximumLoops": -1,
+              "AnimationEndBehaviorChanges": null,
+              "Duration": 200,
+              "MinimumDuration": -1,
+              "MaximumDuration": -1,
+              "TimeoutBehaviorChanges": [
+                {
+                  "Weight": 1.0,
+                  "OutsideOnly": false,
+                  "UpBehavior": null,
+                  "DownBehavior": null,
+                  "LeftBehavior": null,
+                  "RightBehavior": null,
+                  "Behavior": "SitDown"
+                }
+              ],
+              "PlayerNearbyBehaviorChanges": null,
+              "RandomBehaviorChangeChance": 0.0,
+              "RandomBehaviorChanges": null,
+              "JumpLandBehaviorChanges": null
+            },
+            {
+              "Name": "SitDownBlink",
+              "IsSideBehavior": false,
+              "RandomizeDirection": false,
+              "Direction": "down",
+              "WalkInDirection": false,
+              "MoveSpeed": -1,
+              "SoundOnStart": null,
+              "SoundRangeFromBorder": -1,
+              "SoundRange": -1,
+              "SoundIsVoice": false,
+              "Shake": 0,
+              "Animation": [
+                {
+                  "Frame": 19,
+                  "Duration": 100,
+                  "HitGround": false,
+                  "Jump": false,
+                  "Sound": null,
+                  "SoundRangeFromBorder": -1,
+                  "SoundRange": -1,
+                  "SoundIsVoice": false
+                }
+              ],
+              "LoopMode": "Hold",
+              "AnimationMinimumLoops": -1,
+              "AnimationMaximumLoops": -1,
+              "AnimationEndBehaviorChanges": null,
+              "Duration": -1,
+              "MinimumDuration": 8000,
+              "MaximumDuration": 30000,
+              "TimeoutBehaviorChanges": [
+                {
+                  "Weight": 1.0,
+                  "OutsideOnly": false,
+                  "UpBehavior": null,
+                  "DownBehavior": null,
+                  "LeftBehavior": null,
+                  "RightBehavior": null,
+                  "Behavior": "SitDown"
+                }
+              ],
+              "PlayerNearbyBehaviorChanges": null,
+              "RandomBehaviorChangeChance": 0.0,
+              "RandomBehaviorChanges": null,
+              "JumpLandBehaviorChanges": null
+            },
+            {
+              "Name": "SitDownBlinkShortContent",
+              "IsSideBehavior": false,
+              "RandomizeDirection": false,
+              "Direction": "down",
+              "WalkInDirection": false,
+              "MoveSpeed": -1,
+              "SoundOnStart": "BARK",
+              "SoundRangeFromBorder": 2,
+              "SoundRange": -1,
+              "SoundIsVoice": true,
+              "Shake": 200,
+              "Animation": [
+                {
+                  "Frame": 19,
+                  "Duration": 100,
+                  "HitGround": false,
+                  "Jump": false,
+                  "Sound": null,
+                  "SoundRangeFromBorder": -1,
+                  "SoundRange": -1,
+                  "SoundIsVoice": false
+                }
+              ],
+              "LoopMode": "Hold",
+              "AnimationMinimumLoops": -1,
+              "AnimationMaximumLoops": -1,
+              "AnimationEndBehaviorChanges": null,
+              "Duration": 200,
+              "MinimumDuration": -1,
+              "MaximumDuration": -1,
+              "TimeoutBehaviorChanges": [
+                {
+                  "Weight": 1.0,
+                  "OutsideOnly": false,
+                  "UpBehavior": null,
+                  "DownBehavior": null,
+                  "LeftBehavior": null,
+                  "RightBehavior": null,
+                  "Behavior": "SitDown"
+                }
+              ],
+              "PlayerNearbyBehaviorChanges": null,
+              "RandomBehaviorChangeChance": 0.0,
+              "RandomBehaviorChanges": null,
+              "JumpLandBehaviorChanges": null
+            },
+            {
+              "Name": "SitDownBlinkContent",
+              "IsSideBehavior": false,
+              "RandomizeDirection": false,
+              "Direction": "down",
+              "WalkInDirection": false,
+              "MoveSpeed": -1,
+              "SoundOnStart": "BARK",
+              "SoundRangeFromBorder": 2,
+              "SoundRange": -1,
+              "SoundIsVoice": true,
+              "Shake": 200,
+              "Animation": [
+                {
+                  "Frame": 19,
+                  "Duration": 100,
+                  "HitGround": false,
+                  "Jump": false,
+                  "Sound": null,
+                  "SoundRangeFromBorder": -1,
+                  "SoundRange": -1,
+                  "SoundIsVoice": false
+                }
+              ],
+              "LoopMode": "Hold",
+              "AnimationMinimumLoops": -1,
+              "AnimationMaximumLoops": -1,
+              "AnimationEndBehaviorChanges": null,
+              "Duration": -1,
+              "MinimumDuration": 8000,
+              "MaximumDuration": 30000,
+              "TimeoutBehaviorChanges": [
+                {
+                  "Weight": 1.0,
+                  "OutsideOnly": false,
+                  "UpBehavior": null,
+                  "DownBehavior": null,
+                  "LeftBehavior": null,
+                  "RightBehavior": null,
+                  "Behavior": "SitDown"
+                }
+              ],
+              "PlayerNearbyBehaviorChanges": null,
+              "RandomBehaviorChangeChance": 0.0,
+              "RandomBehaviorChanges": null,
+              "JumpLandBehaviorChanges": null
+            },
+            {
+              "Name": "SitDownLick",
+              "IsSideBehavior": false,
+              "RandomizeDirection": false,
+              "Direction": "down",
+              "WalkInDirection": false,
+              "MoveSpeed": -1,
+              "SoundOnStart": null,
+              "SoundRangeFromBorder": -1,
+              "SoundRange": -1,
+              "SoundIsVoice": false,
+              "Shake": 0,
+              "Animation": [
+                {
+                  "Frame": 19,
+                  "Duration": 300,
+                  "HitGround": false,
+                  "Jump": false,
+                  "Sound": null,
+                  "SoundRangeFromBorder": -1,
+                  "SoundRange": -1,
+                  "SoundIsVoice": false
+                },
+                {
+                  "Frame": 21,
+                  "Duration": 200,
+                  "HitGround": false,
+                  "Jump": false,
+                  "Sound": null,
+                  "SoundRangeFromBorder": -1,
+                  "SoundRange": -1,
+                  "SoundIsVoice": false
+                },
+                {
+                  "Frame": 22,
+                  "Duration": 200,
+                  "HitGround": false,
+                  "Jump": false,
+                  "Sound": "Cowboy_Footstep",
+                  "SoundRangeFromBorder": 2,
+                  "SoundRange": -1,
+                  "SoundIsVoice": false
+                },
+                {
+                  "Frame": 23,
+                  "Duration": 200,
+                  "HitGround": false,
+                  "Jump": false,
+                  "Sound": null,
+                  "SoundRangeFromBorder": -1,
+                  "SoundRange": -1,
+                  "SoundIsVoice": false
+                }
+              ],
+              "LoopMode": "None",
+              "AnimationMinimumLoops": -1,
+              "AnimationMaximumLoops": -1,
+              "AnimationEndBehaviorChanges": [
+                {
+                  "Weight": 1.0,
+                  "OutsideOnly": false,
+                  "UpBehavior": null,
+                  "DownBehavior": null,
+                  "LeftBehavior": null,
+                  "RightBehavior": null,
+                  "Behavior": "SitDownLickRepeat"
+                }
+              ],
+              "Duration": -1,
+              "MinimumDuration": -1,
+              "MaximumDuration": -1,
+              "TimeoutBehaviorChanges": null,
+              "PlayerNearbyBehaviorChanges": null,
+              "RandomBehaviorChangeChance": 0.0,
+              "RandomBehaviorChanges": null,
+              "JumpLandBehaviorChanges": null
+            },
+            {
+              "Name": "SitDownLickRepeat",
+              "IsSideBehavior": false,
+              "RandomizeDirection": false,
+              "Direction": "down",
+              "WalkInDirection": false,
+              "MoveSpeed": -1,
+              "SoundOnStart": null,
+              "SoundRangeFromBorder": -1,
+              "SoundRange": -1,
+              "SoundIsVoice": false,
+              "Shake": 0,
+              "Animation": [
+                {
+                  "Frame": 21,
+                  "Duration": 150,
+                  "HitGround": false,
+                  "Jump": false,
+                  "Sound": null,
+                  "SoundRangeFromBorder": -1,
+                  "SoundRange": -1,
+                  "SoundIsVoice": false
+                },
+                {
+                  "Frame": 22,
+                  "Duration": 150,
+                  "HitGround": false,
+                  "Jump": false,
+                  "Sound": "Cowboy_Footstep",
+                  "SoundRangeFromBorder": 2,
+                  "SoundRange": -1,
+                  "SoundIsVoice": false
+                },
+                {
+                  "Frame": 23,
+                  "Duration": 150,
+                  "HitGround": false,
+                  "Jump": false,
+                  "Sound": null,
+                  "SoundRangeFromBorder": -1,
+                  "SoundRange": -1,
+                  "SoundIsVoice": false
+                }
+              ],
+              "LoopMode": "None",
+              "AnimationMinimumLoops": 1,
+              "AnimationMaximumLoops": 5,
+              "AnimationEndBehaviorChanges": [
+                {
+                  "Weight": 1.0,
+                  "OutsideOnly": false,
+                  "UpBehavior": null,
+                  "DownBehavior": null,
+                  "LeftBehavior": null,
+                  "RightBehavior": null,
+                  "Behavior": "SitDown"
+                }
+              ],
+              "Duration": -1,
+              "MinimumDuration": -1,
+              "MaximumDuration": -1,
+              "TimeoutBehaviorChanges": null,
+              "PlayerNearbyBehaviorChanges": null,
+              "RandomBehaviorChangeChance": 0.0,
+              "RandomBehaviorChanges": null,
+              "JumpLandBehaviorChanges": null
+            },
+            {
+              "Name": "SitDown",
+              "IsSideBehavior": false,
+              "RandomizeDirection": false,
+              "Direction": "down",
+              "WalkInDirection": false,
+              "MoveSpeed": -1,
+              "SoundOnStart": null,
+              "SoundRangeFromBorder": -1,
+              "SoundRange": -1,
+              "SoundIsVoice": false,
+              "Shake": 0,
+              "Animation": [
+                {
+                  "Frame": 18,
+                  "Duration": 100,
+                  "HitGround": false,
+                  "Jump": false,
+                  "Sound": null,
+                  "SoundRangeFromBorder": -1,
+                  "SoundRange": -1,
+                  "SoundIsVoice": false
+                }
+              ],
+              "LoopMode": "Hold",
+              "AnimationMinimumLoops": -1,
+              "AnimationMaximumLoops": -1,
+              "AnimationEndBehaviorChanges": null,
+              "Duration": -1,
+              "MinimumDuration": -1,
+              "MaximumDuration": -1,
+              "TimeoutBehaviorChanges": null,
+              "PlayerNearbyBehaviorChanges": null,
+              "RandomBehaviorChangeChance": 0.01,
+              "RandomBehaviorChanges": [
+                {
+                  "Weight": 2.0,
+                  "OutsideOnly": false,
+                  "UpBehavior": null,
+                  "DownBehavior": null,
+                  "LeftBehavior": null,
+                  "RightBehavior": null,
+                  "Behavior": "StandUpDown"
+                },
+                {
+                  "Weight": 2.0,
+                  "OutsideOnly": false,
+                  "UpBehavior": null,
+                  "DownBehavior": null,
+                  "LeftBehavior": null,
+                  "RightBehavior": null,
+                  "Behavior": "SitDownLick"
+                },
+                {
+                  "Weight": 0.72,
+                  "OutsideOnly": false,
+                  "UpBehavior": null,
+                  "DownBehavior": null,
+                  "LeftBehavior": null,
+                  "RightBehavior": null,
+                  "Behavior": "SitDownBlinkShort"
+                },
+                {
+                  "Weight": 0.88,
+                  "OutsideOnly": false,
+                  "UpBehavior": null,
+                  "DownBehavior": null,
+                  "LeftBehavior": null,
+                  "RightBehavior": null,
+                  "Behavior": "SitDownBlink"
+                },
+                {
+                  "Weight": 0.18,
+                  "OutsideOnly": false,
+                  "UpBehavior": null,
+                  "DownBehavior": null,
+                  "LeftBehavior": null,
+                  "RightBehavior": null,
+                  "Behavior": "SitDownBlinkShortContent"
+                },
+                {
+                  "Weight": 0.22,
+                  "OutsideOnly": false,
+                  "UpBehavior": null,
+                  "DownBehavior": null,
+                  "LeftBehavior": null,
+                  "RightBehavior": null,
+                  "Behavior": "SitDownBlinkContent"
+                }
+              ],
+              "JumpLandBehaviorChanges": null
+            },
+            {
+              "Name": "StandUpDown",
+              "IsSideBehavior": false,
+              "RandomizeDirection": false,
+              "Direction": "down",
+              "WalkInDirection": false,
+              "MoveSpeed": -1,
+              "SoundOnStart": null,
+              "SoundRangeFromBorder": -1,
+              "SoundRange": -1,
+              "SoundIsVoice": false,
+              "Shake": 0,
+              "Animation": [
+                {
+                  "Frame": 17,
+                  "Duration": 200,
+                  "HitGround": false,
+                  "Jump": false,
+                  "Sound": null,
+                  "SoundRangeFromBorder": -1,
+                  "SoundRange": -1,
+                  "SoundIsVoice": false
+                },
+                {
+                  "Frame": 16,
+                  "Duration": 200,
+                  "HitGround": false,
+                  "Jump": false,
+                  "Sound": null,
+                  "SoundRangeFromBorder": -1,
+                  "SoundRange": -1,
+                  "SoundIsVoice": false
+                },
+                {
+                  "Frame": 0,
+                  "Duration": 200,
+                  "HitGround": false,
+                  "Jump": false,
+                  "Sound": null,
+                  "SoundRangeFromBorder": -1,
+                  "SoundRange": -1,
+                  "SoundIsVoice": false
+                }
+              ],
+              "LoopMode": "None",
+              "AnimationMinimumLoops": -1,
+              "AnimationMaximumLoops": -1,
+              "AnimationEndBehaviorChanges": [
+                {
+                  "Weight": 1.0,
+                  "OutsideOnly": false,
+                  "UpBehavior": null,
+                  "DownBehavior": null,
+                  "LeftBehavior": null,
+                  "RightBehavior": null,
+                  "Behavior": "Walk"
+                }
+              ],
+              "Duration": -1,
+              "MinimumDuration": -1,
+              "MaximumDuration": -1,
+              "TimeoutBehaviorChanges": null,
+              "PlayerNearbyBehaviorChanges": null,
+              "RandomBehaviorChangeChance": 0.0,
+              "RandomBehaviorChanges": null,
+              "JumpLandBehaviorChanges": null
+            },
+            {
+              "Name": "Leap",
+              "IsSideBehavior": true,
+              "RandomizeDirection": false,
+              "Direction": null,
+              "WalkInDirection": false,
+              "MoveSpeed": -1,
+              "SoundOnStart": null,
+              "SoundRangeFromBorder": -1,
+              "SoundRange": -1,
+              "SoundIsVoice": false,
+              "Shake": 0,
+              "Animation": [
+                {
+                  "Frame": 30,
+                  "Duration": 300,
+                  "HitGround": false,
+                  "Jump": false,
+                  "Sound": null,
+                  "SoundRangeFromBorder": -1,
+                  "SoundRange": -1,
+                  "SoundIsVoice": false
+                },
+                {
+                  "Frame": 31,
+                  "Duration": 300,
+                  "HitGround": false,
+                  "Jump": false,
+                  "Sound": null,
+                  "SoundRangeFromBorder": -1,
+                  "SoundRange": -1,
+                  "SoundIsVoice": false
+                },
+                {
+                  "Frame": 30,
+                  "Duration": 300,
+                  "HitGround": false,
+                  "Jump": false,
+                  "Sound": null,
+                  "SoundRangeFromBorder": -1,
+                  "SoundRange": -1,
+                  "SoundIsVoice": false
+                },
+                {
+                  "Frame": 31,
+                  "Duration": 300,
+                  "HitGround": false,
+                  "Jump": false,
+                  "Sound": null,
+                  "SoundRangeFromBorder": -1,
+                  "SoundRange": -1,
+                  "SoundIsVoice": false
+                },
+                {
+                  "Frame": 30,
+                  "Duration": 300,
+                  "HitGround": false,
+                  "Jump": false,
+                  "Sound": null,
+                  "SoundRangeFromBorder": -1,
+                  "SoundRange": -1,
+                  "SoundIsVoice": false
+                },
+                {
+                  "Frame": 31,
+                  "Duration": 500,
+                  "HitGround": false,
+                  "Jump": false,
+                  "Sound": null,
+                  "SoundRangeFromBorder": -1,
+                  "SoundRange": -1,
+                  "SoundIsVoice": false
+                }
+              ],
+              "LoopMode": "None",
+              "AnimationMinimumLoops": -1,
+              "AnimationMaximumLoops": -1,
+              "AnimationEndBehaviorChanges": [
+                {
+                  "Weight": 1.0,
+                  "OutsideOnly": false,
+                  "UpBehavior": null,
+                  "DownBehavior": null,
+                  "LeftBehavior": null,
+                  "RightBehavior": null,
+                  "Behavior": "LeapJump"
+                }
+              ],
+              "Duration": -1,
+              "MinimumDuration": -1,
+              "MaximumDuration": -1,
+              "TimeoutBehaviorChanges": null,
+              "PlayerNearbyBehaviorChanges": null,
+              "RandomBehaviorChangeChance": 0.0,
+              "RandomBehaviorChanges": null,
+              "JumpLandBehaviorChanges": null
+            },
+            {
+              "Name": "LeapJump",
+              "IsSideBehavior": true,
+              "RandomizeDirection": false,
+              "Direction": null,
+              "WalkInDirection": true,
+              "MoveSpeed": 4,
+              "SoundOnStart": null,
+              "SoundRangeFromBorder": -1,
+              "SoundRange": -1,
+              "SoundIsVoice": false,
+              "Shake": 0,
+              "Animation": [
+                {
+                  "Frame": 24,
+                  "Duration": 800,
+                  "HitGround": false,
+                  "Jump": true,
+                  "Sound": null,
+                  "SoundRangeFromBorder": -1,
+                  "SoundRange": -1,
+                  "SoundIsVoice": false
+                }
+              ],
+              "LoopMode": "Hold",
+              "AnimationMinimumLoops": -1,
+              "AnimationMaximumLoops": -1,
+              "AnimationEndBehaviorChanges": null,
+              "Duration": -1,
+              "MinimumDuration": -1,
+              "MaximumDuration": -1,
+              "TimeoutBehaviorChanges": null,
+              "PlayerNearbyBehaviorChanges": null,
+              "RandomBehaviorChangeChance": 0.0,
+              "RandomBehaviorChanges": null,
+              "JumpLandBehaviorChanges": [
+                {
+                  "Weight": 1.0,
+                  "OutsideOnly": false,
+                  "UpBehavior": null,
+                  "DownBehavior": null,
+                  "LeftBehavior": null,
+                  "RightBehavior": null,
+                  "Behavior": "Walk"
+                }
+              ]
+            },
+            {
+              "Name": "Flop",
+              "IsSideBehavior": true,
+              "RandomizeDirection": false,
+              "Direction": null,
+              "WalkInDirection": false,
+              "MoveSpeed": -1,
+              "SoundOnStart": null,
+              "SoundRangeFromBorder": -1,
+              "SoundRange": -1,
+              "SoundIsVoice": false,
+              "Shake": 0,
+              "Animation": [
+                {
+                  "Frame": 24,
+                  "Duration": 200,
+                  "HitGround": false,
+                  "Jump": false,
+                  "Sound": null,
+                  "SoundRangeFromBorder": -1,
+                  "SoundRange": -1,
+                  "SoundIsVoice": false
+                },
+                {
+                  "Frame": 25,
+                  "Duration": 200,
+                  "HitGround": false,
+                  "Jump": false,
+                  "Sound": null,
+                  "SoundRangeFromBorder": -1,
+                  "SoundRange": -1,
+                  "SoundIsVoice": false
+                },
+                {
+                  "Frame": 26,
+                  "Duration": 200,
+                  "HitGround": false,
+                  "Jump": false,
+                  "Sound": null,
+                  "SoundRangeFromBorder": -1,
+                  "SoundRange": -1,
+                  "SoundIsVoice": false
+                },
+                {
+                  "Frame": 27,
+                  "Duration": 200,
+                  "HitGround": false,
+                  "Jump": false,
+                  "Sound": "thudStep",
+                  "SoundRangeFromBorder": 2,
+                  "SoundRange": -1,
+                  "SoundIsVoice": false
+                }
+              ],
+              "LoopMode": "Hold",
+              "AnimationMinimumLoops": -1,
+              "AnimationMaximumLoops": -1,
+              "AnimationEndBehaviorChanges": null,
+              "Duration": -1,
+              "MinimumDuration": 8000,
+              "MaximumDuration": 30000,
+              "TimeoutBehaviorChanges": [
+                {
+                  "Weight": 1.0,
+                  "OutsideOnly": false,
+                  "UpBehavior": null,
+                  "DownBehavior": null,
+                  "LeftBehavior": null,
+                  "RightBehavior": null,
+                  "Behavior": "Walk"
+                }
+              ],
+              "PlayerNearbyBehaviorChanges": null,
+              "RandomBehaviorChangeChance": 0.0,
+              "RandomBehaviorChanges": null,
+              "JumpLandBehaviorChanges": null
+            }
+          ],
+          "Breeds": [
+            {
+              "Id": "juminos.MorePets_RedPanda1",
+              "Texture": "Mods/juminos.MorePets/RedPanda1",
+              "IconTexture": "Mods/juminos.MorePets/RedPanda1",
+              "IconSourceRect": {
+                "X": 8,
+                "Y": 16,
+                "Width": 16,
+                "Height": 16
+              },
+              "BarkOverride": null,
+              "VoicePitch": 1.0
+            }
+          ],
+          "CustomFields": {}
+        }
+
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/AudioChanges",
+      "Entries": {
+        "juminos.MorePets_RedPandaSound": {
+          "ID": "juminos.MorePets_RedPandaSound",
+          "FilePaths": [ "{{AbsoluteFilePath: assets/Red Panda/RedPandaSound.wav}}" ],
+          "Category": "Sound"
+        }
+      }
+    },
+    {
+      "Action": "Load",
+      "Target": "Mods/juminos.MorePets/RedPanda1",
+      "FromFile": "assets/Red Panda/{{TargetWithoutPath}}.png"
+    }
+  ]
+}
