@@ -62,7 +62,7 @@ namespace BetterFruitTrees
             if (isFruitTree)
             {
                 // Initialize dictionary
-                Dictionary<string, Dictionary<string, int>> validFruitTreeIds = new Dictionary<string, Dictionary<string, int>>();
+                Dictionary<string, int> validFruitTreeIds = new Dictionary<string, int>();
 
                 // Define vanilla fruit tree keywords
                 List<string> vanillaFruitTreeKeywords = new List<string> { "apple", "apricot", "banana", "cherry", "mango", "orange", "peach", "pomegranate" };
@@ -75,70 +75,35 @@ namespace BetterFruitTrees
 #if LOGGING
                     Console.WriteLine($"Processing fruit tree keyword: {fruitTreeKeyword.Keyword}");
 #endif
-                    // Initialize dictionary for all fruit tree ids that match and the weight value
-                    Dictionary<string, int> fruitTreeIdMatches = new Dictionary<string, int>();
-
                     if (vanillaFruitTreeKeywords.Contains(keyword.ToLower()))
                     {
                         // Convert the keyword to the corresponding numerical id using a switch
                         string fruitTreeId = GetVanillaTreeId(keyword);
 
                         // Add matching fruit tree ids with the weight value
-                        fruitTreeIdMatches.Add(fruitTreeId, weight);
+                        validFruitTreeIds.Add(fruitTreeId, weight);
                     }
                     else
                     {
                         // Iterate through all fruit tree ids found in the game data
                         foreach (var fruitTreeId in Game1.fruitTreeData.Keys)
                         {
-                            // Remove spaces from keyword
-                            string keywordToCompare = keyword.Replace(" ", string.Empty);
                             // Case-insensitive comparison of fruit tree ids with keyword substring
-                            if (fruitTreeId.IndexOf(keywordToCompare, StringComparison.OrdinalIgnoreCase) >= 0)
+                            if (fruitTreeId.IndexOf(keyword, StringComparison.OrdinalIgnoreCase) >= 0)
                             {
                                 // Add matching fruit tree ids with the weight value
-                                fruitTreeIdMatches.Add(fruitTreeId, weight);
+                                validFruitTreeIds.Add(fruitTreeId, weight);
 #if LOGGING
                             Console.WriteLine($"Found matching fruit tree id: {fruitTreeId}");
 #endif
                             }
                         }
                     }
-
-                    // add each keyword along with it's matching fruit tree ids and weights to valid fruit tree dictionary
-                    validFruitTreeIds[keyword] = fruitTreeIdMatches;
-#if LOGGING
-                    Console.WriteLine($"Matching fruit tree ids: {string.Join(", ", fruitTreeIdMatches)}");
-#endif
                 }
-
-                // Initialize dictionary for list of all valid fruit tree replacement options and their weight values
-                Dictionary<string, int> weightedFruitTreeIds = new Dictionary<string, int>();
-
-                // iterate through the dictionary starting with keywords that had the fewest matching fruit tree ids (to prioritize unique matches)
-                foreach (var entry in validFruitTreeIds.OrderBy(kvp => kvp.Value.Count))
-                {
-                    Dictionary<string, int> matchingFruitTreeIds = entry.Value;
-
-#if LOGGING
-                    Console.WriteLine($"Keyword: {entry.Key}, Matching fruit tree IDs: {string.Join(", ", matchingFruitTreeIds.Keys)}");
-#endif
-
-                    //Add the matching tree ids if they haven't already been added
-                    foreach (string treeId in matchingFruitTreeIds.Keys)
-                    {
-                        if (!weightedFruitTreeIds.ContainsKey(treeId))
-                        {
-                            // add the valid fruit tree id and weight pair to matchingTreeIds dictionary
-                            weightedFruitTreeIds.Add(treeId, matchingFruitTreeIds[treeId]);
-                        }
-                    }
-                }
-
 #if LOGGING
                 // Log the structure of weightedFruitTreeIds after populating
                 Console.WriteLine("Weighted fruit tree IDs:");
-                foreach (var kvp in weightedFruitTreeIds)
+                foreach (var kvp in validFruitTreeIds)
                 {
                     Console.WriteLine($"Fruit tree ID: {kvp.Key}, Weight: {kvp.Value}");
                 }
@@ -147,12 +112,12 @@ namespace BetterFruitTrees
                 // Initialize list of valid fruit tree id replacements with weights applied
                 List<string> weightedFruitTreeList = new List<string>();
                 // Add valid fruit tree ids by weight
-                foreach (string fruitTreeId in weightedFruitTreeIds.Keys)
+                foreach (string fruitTreeId in validFruitTreeIds.Keys)
                 {
 #if LOGGING
-                    Console.WriteLine($"Processing fruit tree ID: {fruitTreeId} with weight: {weightedFruitTreeIds[fruitTreeId]}");
+                    Console.WriteLine($"Processing fruit tree ID: {fruitTreeId} with weight: {validFruitTreeIds[fruitTreeId]}");
 #endif
-                    int weight = weightedFruitTreeIds[fruitTreeId];
+                    int weight = validFruitTreeIds[fruitTreeId];
                     for (int i = 0; i < weight; i++)
                     {
                         weightedFruitTreeList.Add(fruitTreeId);
@@ -189,7 +154,7 @@ namespace BetterFruitTrees
             else
             {
                 // Initialize dictionary for valid wild tree keywords with their weight value
-                Dictionary<string, Dictionary<string, int>> validWildTreeIds = new Dictionary<string, Dictionary<string, int>>();
+                Dictionary<string, int> validWildTreeIds = new Dictionary<string, int>();
 
                 // Define vanilla wild tree keywords
                 List<string> vanillaWildTreeKeywords = new List<string> { "oak", "maple", "pine", "mushroom", "mahogany", "desertpalm", "islandpalm" };
@@ -203,15 +168,13 @@ namespace BetterFruitTrees
 #if LOGGING
                     Console.WriteLine($"Processing wild tree keyword: {wildTreeKeyword.Keyword}");
 #endif
-                    // Initialize dictionary for all wild tree ids that match and the weight value
-                    Dictionary<string, int> wildTreeIdMatches = new Dictionary<string, int>();
                     if (vanillaWildTreeKeywords.Contains(keyword.ToLower()))
                     {
                         // Convert the keyword to the corresponding numerical id using a switch
                         string wildTreeId = GetVanillaTreeId(keyword);
 
                         // Add matching wild tree ids with the weight value
-                        wildTreeIdMatches.Add(wildTreeId, weight);
+                        validWildTreeIds.Add(wildTreeId, weight);
                     }
                     else
                     {
@@ -223,55 +186,28 @@ namespace BetterFruitTrees
                             WildTreeData wildTreeData;
                             if (Tree.TryGetData(wildTreeId, out wildTreeData))
                             {
-                                // Remove spaces from keyword
-                                string keywordToCompare = keyword.Replace(" ", string.Empty);
-
                                 // Log the keyword and the current wild tree ID for debugging
-                                monitor.Log ($"Comparing keyword '{keywordToCompare}' with wild tree ID '{wildTreeId}'");
+                                monitor.Log ($"Comparing keyword '{keyword}' with wild tree ID '{wildTreeId}'");
 
                                 // Case-insensitive comparison of wild tree ids with keyword substring
-                                if (wildTreeId.IndexOf(keywordToCompare, StringComparison.OrdinalIgnoreCase) >= 0)
+                                if (wildTreeId.IndexOf(keyword, StringComparison.OrdinalIgnoreCase) >= 0)
                                 {
                                     // Add matching wild tree ids with the weight value
-                                    wildTreeIdMatches.Add(wildTreeId, weight);
+                                    validWildTreeIds.Add(wildTreeId, weight);
 
                                     monitor.Log ($"Found matching wild tree ID: {wildTreeId}");
                                 }
                             }
                         }
                     }
-                    // add each keyword along with it's matching wild tree ids and weights to valid wild tree dictionary
-                    validWildTreeIds[keyword] = wildTreeIdMatches;
 #if LOGGING
-                    Console.WriteLine($"Matching wild tree ids: {string.Join(", ", wildTreeIdMatches)}");
+                    Console.WriteLine($"Matching wild tree ids: {string.Join(", ", validWildTreeIds)}");
 #endif
                 }
-                // Initialize dictionary for list of all valid wild tree replacement options and their weight values
-                Dictionary<string, int> weightedWildTreeIds = new Dictionary<string, int>();
-
-                // iterate through the dictionary starting with keywords that had the fewest matching wild tree ids (to prioritize unique matches)
-                foreach (var entry in validWildTreeIds.OrderBy(kvp => kvp.Value.Count))
-                {
-                    Dictionary<string, int> matchingWildTreeIds = entry.Value;
-
-#if LOGGING
-                    Console.WriteLine($"Keyword: {entry.Key}, Matching wild tree IDs: {string.Join(", ", matchingWildTreeIds.Keys)}");
-#endif
-                    //Add the matching tree ids if they haven't already been added
-                    foreach (string treeId in matchingWildTreeIds.Keys)
-                    {
-                        if (!weightedWildTreeIds.ContainsKey(treeId))
-                        {
-                            // add the valid wild tree id and weight pair to matchingTreeIds dictionary
-                            weightedWildTreeIds.Add(treeId, matchingWildTreeIds[treeId]);
-                        }
-                    }
-                }
-
 #if LOGGING
                 // Log the structure of weightedWildTreeIds after populating
                 Console.WriteLine("Weighted wild tree IDs:");
-                foreach (var kvp in weightedWildTreeIds)
+                foreach (var kvp in validWildTreeIds)
                 {
                     Console.WriteLine($"Wild tree ID: {kvp.Key}, Weight: {kvp.Value}");
                 }
@@ -279,12 +215,12 @@ namespace BetterFruitTrees
                 // Initialize list of valid wild tree id replacements with weights applied
                 List<string> weightedWildTreeList = new List<string>();
                 // Add valid wild tree ids by weight
-                foreach (string wildTreeId in weightedWildTreeIds.Keys)
+                foreach (string wildTreeId in validWildTreeIds.Keys)
                 {
 #if LOGGING
-                    Console.WriteLine($"Processing wild tree ID: {wildTreeId} with weight: {weightedWildTreeIds[wildTreeId]}");
+                    Console.WriteLine($"Processing wild tree ID: {wildTreeId} with weight: {validWildTreeIds[wildTreeId]}");
 #endif
-                    int weight = weightedWildTreeIds[wildTreeId];
+                    int weight = validWildTreeIds[wildTreeId];
                     for (int i = 0; i < weight; i++)
                     {
                         weightedWildTreeList.Add(wildTreeId);
