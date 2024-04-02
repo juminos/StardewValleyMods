@@ -11,7 +11,7 @@
           "Type": "Ring",
           "Category": -96,
           "Price": 1500,
-          "Texture": "Mods/juminos.MoreRings/Shadow",
+          "Texture": "Mods/juminos.MoreRings/MoreRings",
           "SpriteIndex": 0,
           "Edibility": -300,
           "IsDrink": false,
@@ -34,7 +34,7 @@
           "Type": "Ring",
           "Category": -96,
           "Price": 1500,
-          "Texture": "Mods/juminos.MoreRings/Spider",
+          "Texture": "Mods/juminos.MoreRings/MoreRings",
           "SpriteIndex": 1,
           "Edibility": -300,
           "IsDrink": false,
@@ -54,8 +54,34 @@
       }
     },
     {
+      "Action": "EditData",
+      "Target": "Data/Mail",
+      "Entries": {
+        "juminos.MoreRings_Shadow": "@,^If you truly wish to be a friend to the Shadow People, you should have this.  ^   -Krobus %item object juminos.MoreRings_Shadow 1 %%[#]A Gift From Krobus",
+        "juminos.MoreRings_Spider": "@,^I found this in my pocket. Maybe it will be of some use to you.   ^   -Krobus %item object juminos.MoreRings_Spider 1 %%[#]A Gift From Krobus"
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/TriggerActions",
+      "Entries": {
+        "juminos.MoreRings_Krobus10Heart": {
+          "Id": "juminos.MoreRings_Krobus10Heart",
+          "Trigger": "DayEnding",
+          "Condition": "PLAYER_HEARTS Current Krobus 10",
+          "Action": "AddMail Current juminos.MoreRings_Shadow"
+        },
+        "juminos.MoreRings_Krobus8Heart": {
+          "Id": "juminos.MoreRings_Krobus8Heart",
+          "Trigger": "DayEnding",
+          "Condition": "PLAYER_HEARTS Current Krobus 8",
+          "Action": "AddMail Current juminos.MoreRings_Spider"
+        }
+      }
+    },
+    {
       "Action": "Load",
-      "Target": "Mods/juminos.MoreRings/Shadow, Mods/juminos.MoreRings/Spider",
+      "Target": "Mods/juminos.MoreRings/MoreRings",
       "FromFile": "assets/{{TargetWithoutPath}}.png"
     }
   ]

@@ -7,219 +7,8 @@
       "Action": "EditData",
       "Target": "Data/Objects",
       "Entries": {
-        "juminos.MoreFruitTrees_AlmondTree": {
-          "Name": "juminos.MoreFruitTrees_AlmondTree",
-          "DisplayName": "Almond Sapling",
-          "Description": "Takes 28 days to produce a mature Almond tree. Ready to harvest in the fall.",
-          "Type": "Basic",
-          "Category": -74,
-          "Price": 3750,
-          "Texture": "Mods/juminos.MoreFruitTrees/AlmondSapling",
-          "SpriteIndex": 0,
-          "Edibility": -300
-        },
-        "juminos.MoreFruitTrees_Almond": {
-          "Name": "juminos.MoreFruitTrees_Almond",
-          "DisplayName": "Almond",
-          "Description": "A drupe consisting of an outer hull and a hard shell with the seed within.",
-          "Type": "Basic",
-          "Category": -79,
-          "Price": 90,
-          "Texture": "Mods/juminos.MoreFruitTrees/Almond",
-          "SpriteIndex": 0,
-          "Edibility": 12,
-          "ContextTags": [
-            "fruit_tree_item"
-          ]
-        },
-        "juminos.MoreFruitTrees_AsianPearTree": {
-          "Name": "juminos.MoreFruitTrees_AsianPearTree",
-          "DisplayName": "Asian Pear Sapling",
-          "Description": "Takes 28 days to produce a mature Asian Pear tree. Ready to harvest in the fall.",
-          "Type": "Basic",
-          "Category": -74,
-          "Price": 3500,
-          "Texture": "Mods/juminos.MoreFruitTrees/AsianPearSapling",
-          "SpriteIndex": 0,
-          "Edibility": -300
-        },
-        "juminos.MoreFruitTrees_AsianPear": {
-          "Name": "juminos.MoreFruitTrees_AsianPear",
-          "DisplayName": "Asian Pear",
-          "Description": "Not to be confused with the normal pear.",
-          "Type": "Basic",
-          "Category": -79,
-          "Price": 125,
-          "Texture": "Mods/juminos.MoreFruitTrees/AsianPear",
-          "SpriteIndex": 0,
-          "Edibility": 15,
-          "ContextTags": [
-            "fruit_tree_item"
-          ]
-        },
-        "juminos.MoreFruitTrees_AvocadoTree": {
-          "Name": "juminos.MoreFruitTrees_AvocadoTree",
-          "DisplayName": "Avocado Sapling",
-          "Description": "Takes 28 days to produce a mature Avocado tree. Ready to harvest in the summer.",
-          "Type": "Basic",
-          "Category": -74,
-          "Price": 8000,
-          "Texture": "Mods/juminos.MoreFruitTrees/AvocadoSapling",
-          "SpriteIndex": 0,
-          "Edibility": -300
-        },
-        "juminos.MoreFruitTrees_Avocado": {
-          "Name": "juminos.MoreFruitTrees_Avocado",
-          "DisplayName": "Avocado",
-          "Description": "A soft plant that is a popular topping and addition to many meals.",
-          "Type": "Basic",
-          "Category": -79,
-          "Price": 200,
-          "Texture": "Mods/juminos.MoreFruitTrees/Avocado",
-          "SpriteIndex": 0,
-          "Edibility": 20,
-          "ContextTags": [
-            "fruit_tree_item"
-          ]
-        },
-        "juminos.MoreFruitTrees_BreadfruitTree": {
-          "Name": "juminos.MoreFruitTrees_BreadfruitTree",
-          "DisplayName": "Breadfruit Sapling",
-          "Description": "Takes 28 days to produce a mature Breadfruit tree. Bears fruit in the spring.",
-          "Type": "Basic",
-          "Category": -74,
-          "Price": 8000,
-          "Texture": "Mods/juminos.MoreFruitTrees/BreadfruitSapling",
-          "SpriteIndex": 0,
-          "Edibility": -300
-        },
-        "juminos.MoreFruitTrees_Breadfruit": {
-          "Name": "juminos.MoreFruitTrees_Breadfruit",
-          "DisplayName": "Breadfruit",
-          "Description": "A relative of the jackfruit. It has a robust flavor that is surprisingly fruity and sweet.",
-          "Type": "Basic",
-          "Category": -79,
-          "Price": 200,
-          "Texture": "Mods/juminos.MoreFruitTrees/Breadfruit",
-          "SpriteIndex": 0,
-          "Edibility": 15,
-          "ContextTags": [
-            "fruit_tree_item"
-          ]
-        },
-        "juminos.MoreFruitTrees_CamphorTree": {
-          "Name": "juminos.MoreFruitTrees_CamphorTree",
-          "DisplayName": "Camphor Sapling",
-          "Description": "Takes 28 days to produce a mature Camphor tree. Ready to harvest in the winter.",
-          "Type": "Basic",
-          "Category": -74,
-          "Price": 4000,
-          "Texture": "Mods/juminos.MoreFruitTrees/CamphorSapling",
-          "SpriteIndex": 0,
-          "Edibility": -300
-        },
-        "juminos.MoreFruitTrees_CamphorLeaves": {
-          "Name": "juminos.MoreFruitTrees_CamphorLeaves",
-          "DisplayName": "Camphor Leaves",
-          "Description": "Glossy oval leaves that are very fragrant when crushed.",
-          "Type": "Basic",
-          "Category": -75,
-          "Price": 100,
-          "Texture": "Mods/juminos.MoreFruitTrees/CamphorLeaves",
-          "SpriteIndex": 0,
-          "Edibility": -300,
-          "ContextTags": [
-            "fruit_tree_item"
-          ]
-        },
-        "juminos.MoreFruitTrees_CashewTree": {
-          "Name": "juminos.MoreFruitTrees_CashewTree",
-          "DisplayName": "Cashew Sapling",
-          "Description": "Takes 28 days to produce a mature Cashew tree. Ready to harvest in the fall.",
-          "Type": "Basic",
-          "Category": -74,
-          "Price": 4000,
-          "Texture": "Mods/juminos.MoreFruitTrees/CashewSapling",
-          "SpriteIndex": 0,
-          "Edibility": -300
-        },
-        "juminos.MoreFruitTrees_Cashew": {
-          "Name": "juminos.MoreFruitTrees_Cashew",
-          "DisplayName": "Cashew",
-          "Description": "A buttery nut that buds at the bottom of the cashew apple.",
-          "Type": "Basic",
-          "Category": -79,
-          "Price": 100,
-          "Texture": "Mods/juminos.MoreFruitTrees/Cashew",
-          "SpriteIndex": 0,
-          "Edibility": 12,
-          "ContextTags": [
-            "fruit_tree_item"
-          ]
-        },
-        "juminos.MoreFruitTrees_CinnamonTree": {
-          "Name": "juminos.MoreFruitTrees_CinnamonTree",
-          "DisplayName": "Cinnamon Sapling",
-          "Description": "Takes 28 days to produce a mature Cinnamon tree. Ready to harvest in the winter.",
-          "Type": "Basic",
-          "Category": -74,
-          "Price": 6000,
-          "Texture": "Mods/juminos.MoreFruitTrees/CinnamonSapling",
-          "SpriteIndex": 0,
-          "Edibility": -300
-        },
-        "juminos.MoreFruitTrees_CinnamonSticks": {
-          "Name": "juminos.MoreFruitTrees_CinnamonSticks",
-          "DisplayName": "Cinnamon Sticks",
-          "Description": "Its scent is uniquely warming, uplifting, and stimulating, and its flavor sweet and delicious.",
-          "Type": "Basic",
-          "Category": -75,
-          "Price": 140,
-          "Texture": "Mods/juminos.MoreFruitTrees/CinnamonSticks",
-          "SpriteIndex": 0,
-          "Edibility": -300,
-          "ContextTags": [
-            "fruit_tree_item"
-          ]
-        },
-        "juminos.MoreFruitTrees_CocoaTree": {
-          "Name": "juminos.MoreFruitTrees_CocoaTree",
-          "DisplayName": "Cocoa Sapling",
-          "Description": "Takes 28 days to produce a mature Cocoa tree. Bears fruit in the spring.",
-          "Type": "Basic",
-          "Category": -74,
-          "Price": 5000,
-          "Texture": "Mods/juminos.MoreFruitTrees/CocoaSapling",
-          "SpriteIndex": 0,
-          "Edibility": -300
-        },
-        "juminos.MoreFruitTrees_CocoaPod": {
-          "Name": "juminos.MoreFruitTrees_CocoaPod",
-          "DisplayName": "Cocoa Pod",
-          "Description": "The pod obtained from a cocoa tree. Mmm! Who's ready to make some chocolate?",
-          "Type": "Basic",
-          "Category": -79,
-          "Price": 125,
-          "Texture": "Mods/juminos.MoreFruitTrees/CocoaPod",
-          "SpriteIndex": 0,
-          "Edibility": -300,
-          "ContextTags": [
-            "fruit_tree_item"
-          ]
-        },
-        "juminos.MoreFruitTrees_CoconutTree": {
-          "Name": "juminos.MoreFruitTrees_CoconutTree",
-          "DisplayName": "Coconut Sapling",
-          "Description": "Takes 28 days to produce a mature Coconut tree. Ready to harvest in the summer.",
-          "Type": "Basic",
-          "Category": -74,
-          "Price": 7500,
-          "Texture": "Mods/juminos.MoreFruitTrees/CoconutSapling",
-          "SpriteIndex": 0,
-          "Edibility": -300
-        },
-        "juminos.MoreFruitTrees_CrystalFruitTree": {
-          "Name": "juminos.MoreFruitTrees_CrystalFruitTree",
+        "juminos.MoreFruitTrees_CrystalFruitSapling": {
+          "Name": "juminos.MoreFruitTrees_CrystalFruitSapling",
           "DisplayName": "Crystal Fruit Sapling",
           "Description": "Takes 28 days to produce a mature Crystal Fruit tree. Bears fruit in the winter.",
           "Type": "Basic",
@@ -229,133 +18,8 @@
           "SpriteIndex": 0,
           "Edibility": -300
         },
-        "juminos.MoreFruitTrees_DragonFruitTree": {
-          "Name": "juminos.MoreFruitTrees_DragonFruitTree",
-          "DisplayName": "Dragon Fruit Sapling",
-          "Description": "Takes 28 days to produce a mature Dragon Fruit tree. Bears fruit in the summer.",
-          "Type": "Basic",
-          "Category": -74,
-          "Price": 5000,
-          "Texture": "Mods/juminos.MoreFruitTrees/DragonFruitSapling",
-          "SpriteIndex": 0,
-          "Edibility": -300
-        },
-        "juminos.MoreFruitTrees_DragonFruit": {
-          "Name": "juminos.MoreFruitTrees_DragonFruit",
-          "DisplayName": "Dragon Fruit",
-          "Description": "Also called a pitaya, this is the fruit of a large cactus.",
-          "Type": "Basic",
-          "Category": -79,
-          "Price": 125,
-          "Texture": "Mods/juminos.MoreFruitTrees/DragonFruit",
-          "SpriteIndex": 0,
-          "Edibility": 15,
-          "ContextTags": [
-            "fruit_tree_item"
-          ]
-        },
-        "juminos.MoreFruitTrees_DurianTree": {
-          "Name": "juminos.MoreFruitTrees_DurianTree",
-          "DisplayName": "Durian Sapling",
-          "Description": "Takes 28 days to produce a mature Durian tree. Ready to harvest in the summer.",
-          "Type": "Basic",
-          "Category": -74,
-          "Price": 8000,
-          "Texture": "Mods/juminos.MoreFruitTrees/DurianSapling",
-          "SpriteIndex": 0,
-          "Edibility": -300
-        },
-        "juminos.MoreFruitTrees_Durian": {
-          "Name": "juminos.MoreFruitTrees_Durian",
-          "DisplayName": "Durian",
-          "Description": "A smelly fruit with a spiky husk.",
-          "Type": "Basic",
-          "Category": -79,
-          "Price": 200,
-          "Texture": "Mods/juminos.MoreFruitTrees/Durian",
-          "SpriteIndex": 0,
-          "Edibility": 15,
-          "ContextTags": [
-            "fruit_tree_item"
-          ]
-        },
-        "juminos.MoreFruitTrees_EucalyptusTree": {
-          "Name": "juminos.MoreFruitTrees_EucalyptusTree",
-          "DisplayName": "Eucalyptus Sapling",
-          "Description": "Takes 28 days to produce a mature Eucalyptus tree. Ready to harvest in the spring.",
-          "Type": "Basic",
-          "Category": -74,
-          "Price": 5500,
-          "Texture": "Mods/juminos.MoreFruitTrees/EucalyptusSapling",
-          "SpriteIndex": 0,
-          "Edibility": -300
-        },
-        "juminos.MoreFruitTrees_EucalyptusLeaves": {
-          "Name": "juminos.MoreFruitTrees_EucalyptusLeaves",
-          "DisplayName": "Eucalyptus Leaves",
-          "Description": "Leathery blue-green leaves are studded with glands containing a fragrant, volatile oil. Luckily not an exploding oil!",
-          "Type": "Basic",
-          "Category": -75,
-          "Price": 135,
-          "Texture": "Mods/juminos.MoreFruitTrees/EucalyptusLeaves",
-          "SpriteIndex": 0,
-          "Edibility": -300,
-          "ContextTags": [
-            "fruit_tree_item"
-          ]
-        },
-        "juminos.MoreFruitTrees_FigTree": {
-          "Name": "juminos.MoreFruitTrees_FigTree",
-          "DisplayName": "Fig Sapling",
-          "Description": "Takes 28 days to produce a mature Fig tree. Bears fruit in the winter.",
-          "Type": "Basic",
-          "Category": -74,
-          "Price": 4000,
-          "Texture": "Mods/juminos.MoreFruitTrees/FigSapling",
-          "SpriteIndex": 0,
-          "Edibility": -300
-        },
-        "juminos.MoreFruitTrees_Fig": {
-          "Name": "juminos.MoreFruitTrees_Fig",
-          "DisplayName": "Fig",
-          "Description": "A small and sweet fruit. It is soft and delicious.",
-          "Type": "Basic",
-          "Category": -79,
-          "Price": 100,
-          "Texture": "Mods/juminos.MoreFruitTrees/Fig",
-          "SpriteIndex": 0,
-          "Edibility": 15,
-          "ContextTags": [
-            "fruit_tree_item"
-          ]
-        },
-        "juminos.MoreFruitTrees_FragrantWisteriaTree": {
-          "Name": "juminos.MoreFruitTrees_FragrantWisteriaTree",
-          "DisplayName": "Wisteria Sapling",
-          "Description": "Takes 28 days to produce a mature Wisteria tree. Blossoms in the spring.",
-          "Type": "Basic",
-          "Category": -74,
-          "Price": 2500,
-          "Texture": "Mods/juminos.MoreFruitTrees/FragrantWisteriaSapling",
-          "SpriteIndex": 0,
-          "Edibility": -300
-        },
-        "juminos.MoreFruitTrees_FragrantWisteria": {
-          "Name": "juminos.MoreFruitTrees_FragrantWisteria",
-          "DisplayName": "Fragrant Wisteria",
-          "Description": "An especially fragrant cluster of purple flowers.",
-          "Type": "Basic",
-          "Category": -80,
-          "Price": 60,
-          "Texture": "Mods/juminos.MoreFruitTrees/FragrantWisteria",
-          "SpriteIndex": 0,
-          "Edibility": 10,
-          "ContextTags": [
-            "fruit_tree_item"
-          ]
-        },
-        "juminos.MoreFruitTrees_GoldenCoconutTree": {
-          "Name": "juminos.MoreFruitTrees_GoldenCoconutTree",
+        "juminos.MoreFruitTrees_GoldenCoconutSapling": {
+          "Name": "juminos.MoreFruitTrees_GoldenCoconutSapling",
           "DisplayName": "Golden Coconut Sapling",
           "Description": "Takes 28 days to produce a mature Golden Coconut tree. Ready to harvest in the summer.",
           "Type": "Basic",
@@ -365,8 +29,8 @@
           "SpriteIndex": 0,
           "Edibility": -300
         },
-        "juminos.MoreFruitTrees_GoldenWalnutTree": {
-          "Name": "juminos.MoreFruitTrees_GoldenWalnutTree",
+        "juminos.MoreFruitTrees_GoldenWalnutSapling": {
+          "Name": "juminos.MoreFruitTrees_GoldenWalnutSapling",
           "DisplayName": "Golden Walnut Sapling",
           "Description": "Takes 28 days to produce a mature Golden Walnut tree. Ready to harvest in the summer.",
           "Type": "Basic",
@@ -376,330 +40,8 @@
           "SpriteIndex": 0,
           "Edibility": -300
         },
-        "juminos.MoreFruitTrees_GrannySmithAppleTree": {
-          "Name": "juminos.MoreFruitTrees_GrannySmithAppleTree",
-          "DisplayName": "Granny Smith Apple Sapling",
-          "Description": "Takes 28 days to produce a mature Granny Smith tree. Bears fruit in the fall.",
-          "Type": "Basic",
-          "Category": -74,
-          "Price": 3500,
-          "Texture": "Mods/juminos.MoreFruitTrees/GrannySmithAppleSapling",
-          "SpriteIndex": 0,
-          "Edibility": -300
-        },
-        "juminos.MoreFruitTrees_GrannySmithApple": {
-          "Name": "juminos.MoreFruitTrees_GrannySmithApple",
-          "DisplayName": "Granny Smith Apple",
-          "Description": "The flavor is tart and acidic, but it makes for a good baking apple.",
-          "Type": "Basic",
-          "Category": -79,
-          "Price": 100,
-          "Texture": "Mods/juminos.MoreFruitTrees/GrannySmithApple",
-          "SpriteIndex": 0,
-          "Edibility": 17,
-          "ContextTags": [
-            "fruit_tree_item"
-          ]
-        },
-        "juminos.MoreFruitTrees_GrapefruitTree": {
-          "Name": "juminos.MoreFruitTrees_GrapefruitTree",
-          "DisplayName": "Grapefruit Sapling",
-          "Description": "Takes 28 days to produce a mature Grapefruit tree. Bears fruit in the fall.",
-          "Type": "Basic",
-          "Category": -74,
-          "Price": 6000,
-          "Texture": "Mods/juminos.MoreFruitTrees/GrapefruitSapling",
-          "SpriteIndex": 0,
-          "Edibility": -300
-        },
-        "juminos.MoreFruitTrees_Grapefruit": {
-          "Name": "juminos.MoreFruitTrees_Grapefruit",
-          "DisplayName": "Grapefruit",
-          "Description": "A large bitter fruit, high in Vitamin C. Are you a salty or sugary kind of person?",
-          "Type": "Basic",
-          "Category": -79,
-          "Price": 140,
-          "Texture": "Mods/juminos.MoreFruitTrees/Grapefruit",
-          "SpriteIndex": 0,
-          "Edibility": 15,
-          "ContextTags": [
-            "fruit_tree_item"
-          ]
-        },
-        "juminos.MoreFruitTrees_HazelnutTree": {
-          "Name": "juminos.MoreFruitTrees_HazelnutTree",
-          "DisplayName": "Hazelnut Sapling",
-          "Description": "Takes 28 days to produce a mature Hazelnut tree. Ready to harvest in the fall.",
-          "Type": "Basic",
-          "Category": -74,
-          "Price": 2500,
-          "Texture": "Mods/juminos.MoreFruitTrees/HazelnutSapling",
-          "SpriteIndex": 0,
-          "Edibility": -300
-        },
-        "juminos.MoreFruitTrees_HollyTree": {
-          "Name": "juminos.MoreFruitTrees_HollyTree",
-          "DisplayName": "Holly Sapling",
-          "Description": "Takes 28 days to produce a mature Holly tree. Ready to harvest in the winter.",
-          "Type": "Basic",
-          "Category": -74,
-          "Price": 2500,
-          "Texture": "Mods/juminos.MoreFruitTrees/HollySapling",
-          "SpriteIndex": 0,
-          "Edibility": -300
-        },
-        "juminos.MoreFruitTrees_LemonTree": {
-          "Name": "juminos.MoreFruitTrees_LemonTree",
-          "DisplayName": "Lemon Sapling",
-          "Description": "Takes 28 days to produce a mature Lemon tree. Bears fruit in the spring.",
-          "Type": "Basic",
-          "Category": -74,
-          "Price": 2000,
-          "Texture": "Mods/juminos.MoreFruitTrees/LemonSapling",
-          "SpriteIndex": 0,
-          "Edibility": -300
-        },
-        "juminos.MoreFruitTrees_Lemon": {
-          "Name": "juminos.MoreFruitTrees_Lemon",
-          "DisplayName": "Lemon",
-          "Description": "A tangy citrus fruit that is used to make lemonade.",
-          "Type": "Basic",
-          "Category": -79,
-          "Price": 50,
-          "Texture": "Mods/juminos.MoreFruitTrees/Lemon",
-          "SpriteIndex": 0,
-          "Edibility": 15,
-          "ContextTags": [
-            "fruit_tree_item"
-          ]
-        },
-        "juminos.MoreFruitTrees_LimeTree": {
-          "Name": "juminos.MoreFruitTrees_LimeTree",
-          "DisplayName": "Lime Sapling",
-          "Description": "Takes 28 days to produce a mature Lime tree. Bears fruit in the spring.",
-          "Type": "Basic",
-          "Category": -74,
-          "Price": 2000,
-          "Texture": "Mods/juminos.MoreFruitTrees/LimeSapling",
-          "SpriteIndex": 0,
-          "Edibility": -300
-        },
-        "juminos.MoreFruitTrees_Lime": {
-          "Name": "juminos.MoreFruitTrees_Lime",
-          "DisplayName": "Lime",
-          "Description": "The tarter cousin of the lemon. It is often used as an accent to numerous dishes.",
-          "Type": "Basic",
-          "Category": -79,
-          "Price": 50,
-          "Texture": "Mods/juminos.MoreFruitTrees/Lime",
-          "SpriteIndex": 0,
-          "Edibility": 15,
-          "ContextTags": [
-            "fruit_tree_item"
-          ]
-        },
-        "juminos.MoreFruitTrees_LycheeTree": {
-          "Name": "juminos.MoreFruitTrees_LycheeTree",
-          "DisplayName": "Lychee Sapling",
-          "Description": "Takes 28 days to produce a mature Lychee tree. Bears fruit in the summer.",
-          "Type": "Basic",
-          "Category": -74,
-          "Price": 5000,
-          "Texture": "Mods/juminos.MoreFruitTrees/LycheeSapling",
-          "SpriteIndex": 0,
-          "Edibility": -300
-        },
-        "juminos.MoreFruitTrees_Lychee": {
-          "Name": "juminos.MoreFruitTrees_Lychee",
-          "DisplayName": "Lychee",
-          "Description": "The outside is roughly textured and inedible, but the inside is sweet.",
-          "Type": "Basic",
-          "Category": -79,
-          "Price": 110,
-          "Texture": "Mods/juminos.MoreFruitTrees/Lychee",
-          "SpriteIndex": 0,
-          "Edibility": 12,
-          "ContextTags": [
-            "fruit_tree_item"
-          ]
-        },
-        "juminos.MoreFruitTrees_MelaleucaTree": {
-          "Name": "juminos.MoreFruitTrees_MelaleucaTree",
-          "DisplayName": "Melaleuca Sapling",
-          "Description": "Takes 28 days to produce a mature Melaleuca tree. Ready to harvest in the spring.",
-          "Type": "Basic",
-          "Category": -74,
-          "Price": 4000,
-          "Texture": "Mods/juminos.MoreFruitTrees/MelaleucaSapling",
-          "SpriteIndex": 0,
-          "Edibility": -300
-        },
-        "juminos.MoreFruitTrees_MelaleucaLeaves": {
-          "Name": "juminos.MoreFruitTrees_MelaleucaLeaves",
-          "DisplayName": "Melaleuca Leaves",
-          "Description": "A prickly cone of leaves that are often used as a homemade remedy for cuts and bruises.",
-          "Type": "Basic",
-          "Category": -75,
-          "Price": 100,
-          "Texture": "Mods/juminos.MoreFruitTrees/MelaleucaLeaves",
-          "SpriteIndex": 0,
-          "Edibility": -300,
-          "ContextTags": [
-            "fruit_tree_item"
-          ]
-        },
-        "juminos.MoreFruitTrees_OliveTree": {
-          "Name": "juminos.MoreFruitTrees_OliveTree",
-          "DisplayName": "Olive Sapling",
-          "Description": "Takes 28 days to produce a mature Olive tree. Ready to harvest in the fall.",
-          "Type": "Basic",
-          "Category": -74,
-          "Price": 2000,
-          "Texture": "Mods/juminos.MoreFruitTrees/OliveSapling",
-          "SpriteIndex": 0,
-          "Edibility": -300
-        },
-        "juminos.MoreFruitTrees_Olive": {
-          "Name": "juminos.MoreFruitTrees_Olive",
-          "DisplayName": "Olive",
-          "Description": "It is packed with vitamins! Olives are used to make oil and salads.",
-          "Type": "Basic",
-          "Category": -79,
-          "Price": 50,
-          "Texture": "Mods/juminos.MoreFruitTrees/Olive",
-          "SpriteIndex": 0,
-          "Edibility": 12,
-          "ContextTags": [
-            "fruit_tree_item"
-          ]
-        },
-        "juminos.MoreFruitTrees_PapayaTree": {
-          "Name": "juminos.MoreFruitTrees_PapayaTree",
-          "DisplayName": "Papaya Sapling",
-          "Description": "Takes 28 days to produce a mature Papaya tree. Bears fruit in the summer.",
-          "Type": "Basic",
-          "Category": -74,
-          "Price": 5500,
-          "Texture": "Mods/juminos.MoreFruitTrees/PapayaSapling",
-          "SpriteIndex": 0,
-          "Edibility": -300
-        },
-        "juminos.MoreFruitTrees_Papaya": {
-          "Name": "juminos.MoreFruitTrees_Papaya",
-          "DisplayName": "Papaya",
-          "Description": "A tropical fruit from the rainforest. It has a sweet flavor and a lot of natural juiciness.",
-          "Type": "Basic",
-          "Category": -79,
-          "Price": 135,
-          "Texture": "Mods/juminos.MoreFruitTrees/Papaya",
-          "SpriteIndex": 0,
-          "Edibility": 15,
-          "ContextTags": [
-            "fruit_tree_item"
-          ]
-        },
-        "juminos.MoreFruitTrees_PearTree": {
-          "Name": "juminos.MoreFruitTrees_PearTree",
-          "DisplayName": "Pear Sapling",
-          "Description": "Takes 28 days to produce a mature Pear tree. Bears fruit in the winter.",
-          "Type": "Basic",
-          "Category": -74,
-          "Price": 5500,
-          "Texture": "Mods/juminos.MoreFruitTrees/PearSapling",
-          "SpriteIndex": 0,
-          "Edibility": -300
-        },
-        "juminos.MoreFruitTrees_Pear": {
-          "Name": "juminos.MoreFruitTrees_Pear",
-          "DisplayName": "Pear",
-          "Description": "A mildly sweet fruit that grows in the winter. Let it ripen for a few days before eating.",
-          "Type": "Basic",
-          "Category": -79,
-          "Price": 135,
-          "Texture": "Mods/juminos.MoreFruitTrees/Pear",
-          "SpriteIndex": 0,
-          "Edibility": 15,
-          "ContextTags": [
-            "fruit_tree_item"
-          ]
-        },
-        "juminos.MoreFruitTrees_PecanTree": {
-          "Name": "juminos.MoreFruitTrees_PecanTree",
-          "DisplayName": "Pecan Sapling",
-          "Description": "Takes 28 days to produce a mature Pecan tree. Ready to harvest in the fall.",
-          "Type": "Basic",
-          "Category": -74,
-          "Price": 5000,
-          "Texture": "Mods/juminos.MoreFruitTrees/PecanSapling",
-          "SpriteIndex": 0,
-          "Edibility": -300
-        },
-        "juminos.MoreFruitTrees_Pecan": {
-          "Name": "juminos.MoreFruitTrees_Pecan",
-          "DisplayName": "Pecan",
-          "Description": "A savory nut with a striped seed. Do you own a nutcracker?",
-          "Type": "Basic",
-          "Category": -79,
-          "Price": 125,
-          "Texture": "Mods/juminos.MoreFruitTrees/Pecan",
-          "SpriteIndex": 0,
-          "Edibility": 20,
-          "ContextTags": [
-            "fruit_tree_item"
-          ]
-        },
-        "juminos.MoreFruitTrees_PersimmonTree": {
-          "Name": "juminos.MoreFruitTrees_PersimmonTree",
-          "DisplayName": "Persimmon Sapling",
-          "Description": "Takes 28 days to produce a mature Persimmon tree. Bears fruit in the winter.",
-          "Type": "Basic",
-          "Category": -74,
-          "Price": 7000,
-          "Texture": "Mods/juminos.MoreFruitTrees/PersimmonSapling",
-          "SpriteIndex": 0,
-          "Edibility": -300
-        },
-        "juminos.MoreFruitTrees_Persimmon": {
-          "Name": "juminos.MoreFruitTrees_Persimmon",
-          "DisplayName": "Persimmon",
-          "Description": "A somewhat uncommon fruit filled with a honey-like flavor.",
-          "Type": "Basic",
-          "Category": -79,
-          "Price": 155,
-          "Texture": "Mods/juminos.MoreFruitTrees/Persimmon",
-          "SpriteIndex": 0,
-          "Edibility": 15,
-          "ContextTags": [
-            "fruit_tree_item"
-          ]
-        },
-        "juminos.MoreFruitTrees_PomeloTree": {
-          "Name": "juminos.MoreFruitTrees_PomeloTree",
-          "DisplayName": "Pomelo Sapling",
-          "Description": "Takes 28 days to produce a mature Pomelo tree. Bears fruit in the winter.",
-          "Type": "Basic",
-          "Category": -74,
-          "Price": 3400,
-          "Texture": "Mods/juminos.MoreFruitTrees/PomeloSapling",
-          "SpriteIndex": 0,
-          "Edibility": -300
-        },
-        "juminos.MoreFruitTrees_Pomelo": {
-          "Name": "juminos.MoreFruitTrees_Pomelo",
-          "DisplayName": "Pomelo",
-          "Description": "A really large, not so bitter, cousin of the grapefruit.",
-          "Type": "Basic",
-          "Category": -79,
-          "Price": 80,
-          "Texture": "Mods/juminos.MoreFruitTrees/Pomelo",
-          "SpriteIndex": 0,
-          "Edibility": 15,
-          "ContextTags": [
-            "fruit_tree_item"
-          ]
-        },
-        "juminos.MoreFruitTrees_QiGemTree": {
-          "Name": "juminos.MoreFruitTrees_QiGemTree",
+        "juminos.MoreFruitTrees_QiGemSapling": {
+          "Name": "juminos.MoreFruitTrees_QiGemSapling",
           "DisplayName": "Qi Gem Sapling",
           "Description": "Some things transcend time and space, kid. Plant this somewhere far and warm.",
           "Type": "Basic",
@@ -709,8 +51,8 @@
           "SpriteIndex": 0,
           "Edibility": -300
         },
-        "juminos.MoreFruitTrees_SpiceBerryTree": {
-          "Name": "juminos.MoreFruitTrees_SpiceBerryTree",
+        "juminos.MoreFruitTrees_SpiceBerrySapling": {
+          "Name": "juminos.MoreFruitTrees_SpiceBerrySapling",
           "DisplayName": "Spice Berry Sapling",
           "Description": "Takes 28 days to produce a mature Spice Berry tree. Bears fruit in the summer.",
           "Type": "Basic",
@@ -720,83 +62,8 @@
           "SpriteIndex": 0,
           "Edibility": -300
         },
-        "juminos.MoreFruitTrees_UmeTree": {
-          "Name": "juminos.MoreFruitTrees_UmeTree",
-          "DisplayName": "Ume Sapling",
-          "Description": "Takes 28 days to produce a mature Ume tree. Bears fruit in the summer.",
-          "Type": "Basic",
-          "Category": -74,
-          "Price": 2000,
-          "Texture": "Mods/juminos.MoreFruitTrees/UmeSapling",
-          "SpriteIndex": 0,
-          "Edibility": -300
-        },
-        "juminos.MoreFruitTrees_Ume": {
-          "Name": "juminos.MoreFruitTrees_Ume",
-          "DisplayName": "Ume",
-          "Description": "A sweet and sour green fruit. It is usually preserved with sugar or salt.",
-          "Type": "Basic",
-          "Category": -79,
-          "Price": 50,
-          "Texture": "Mods/juminos.MoreFruitTrees/Ume",
-          "SpriteIndex": 0,
-          "Edibility": 15,
-          "ContextTags": [
-            "fruit_tree_item"
-          ]
-        },
-        "juminos.MoreFruitTrees_VanillaTree": {
-          "Name": "juminos.MoreFruitTrees_VanillaTree",
-          "DisplayName": "Vanilla Sapling",
-          "Description": "Takes 28 days to produce a mature Vanilla tree. Ready to harvest in the spring.",
-          "Type": "Basic",
-          "Category": -74,
-          "Price": 5000,
-          "Texture": "Mods/juminos.MoreFruitTrees/VanillaSapling",
-          "SpriteIndex": 0,
-          "Edibility": -300
-        },
-        "juminos.MoreFruitTrees_Vanilla": {
-          "Name": "juminos.MoreFruitTrees_Vanilla",
-          "DisplayName": "Vanilla",
-          "Description": "Easily be one of the most well-known flavors in the world. Who's hungry for ice cream?",
-          "Type": "Basic",
-          "Category": -80,
-          "Price": 200,
-          "Texture": "Mods/juminos.MoreFruitTrees/Vanilla",
-          "SpriteIndex": 0,
-          "Edibility": -300,
-          "ContextTags": [
-            "fruit_tree_item"
-          ]
-        },
-        "juminos.MoreFruitTrees_WalnutTree": {
-          "Name": "juminos.MoreFruitTrees_WalnutTree",
-          "DisplayName": "Walnut Sapling",
-          "Description": "Takes 28 days to produce a mature Walnut tree. Ready to harvest in the fall.",
-          "Type": "Basic",
-          "Category": -74,
-          "Price": 3750,
-          "Texture": "Mods/juminos.MoreFruitTrees/WalnutSapling",
-          "SpriteIndex": 0,
-          "Edibility": -300
-        },
-        "juminos.MoreFruitTrees_Walnut": {
-          "Name": "juminos.MoreFruitTrees_Walnut",
-          "DisplayName": "Walnut",
-          "Description": "A nut that makes delicious candies and pies. It is often used in the filling of sweet treats.",
-          "Type": "Basic",
-          "Category": -79,
-          "Price": 90,
-          "Texture": "Mods/juminos.MoreFruitTrees/Walnut",
-          "SpriteIndex": 0,
-          "Edibility": 12,
-          "ContextTags": [
-            "fruit_tree_item"
-          ]
-        },
-        "juminos.MoreFruitTrees_WildPlumTree": {
-          "Name": "juminos.MoreFruitTrees_WildPlumTree",
+        "juminos.MoreFruitTrees_WildPlumSapling": {
+          "Name": "juminos.MoreFruitTrees_WildPlumSapling",
           "DisplayName": "Wild Plum Sapling",
           "Description": "Takes 28 days to produce a mature Wild Plum tree. Bears fruit in the fall.",
           "Type": "Basic",
@@ -806,56 +73,6 @@
           "SpriteIndex": 0,
           "Edibility": -300
         },
-        "juminos.MoreFruitTrees_YlangYlangTree": {
-          "Name": "juminos.MoreFruitTrees_YlangYlangTree",
-          "DisplayName": "Ylang Ylang Sapling",
-          "Description": "Takes 28 days to produce a mature Ylang Ylang tree. Blossoms in the summer.",
-          "Type": "Basic",
-          "Category": -74,
-          "Price": 3000,
-          "Texture": "Mods/juminos.MoreFruitTrees/YlangYlangSapling",
-          "SpriteIndex": 0,
-          "Edibility": -300
-        },
-        "juminos.MoreFruitTrees_YlangYlang": {
-          "Name": "juminos.MoreFruitTrees_YlangYlang",
-          "DisplayName": "Ylang Ylang",
-          "Description": "A highly appreciated flower in perfumery and aromatherapy.",
-          "Type": "Basic",
-          "Category": -80,
-          "Price": 75,
-          "Texture": "Mods/juminos.MoreFruitTrees/YlangYlang",
-          "SpriteIndex": 0,
-          "Edibility": 18,
-          "ContextTags": [
-            "fruit_tree_item"
-          ]
-        },
-        "juminos.MoreFruitTrees_YuzuTree": {
-          "Name": "juminos.MoreFruitTrees_YuzuTree",
-          "DisplayName": "Yuzu Sapling",
-          "Description": "Takes 28 days to produce a mature Yuzu tree. Bears fruit in the winter.",
-          "Type": "Basic",
-          "Category": -74,
-          "Price": 2000,
-          "Texture": "Mods/juminos.MoreFruitTrees/YuzuSapling",
-          "SpriteIndex": 0,
-          "Edibility": -300
-        },
-        "juminos.MoreFruitTrees_Yuzu": {
-          "Name": "juminos.MoreFruitTrees_Yuzu",
-          "DisplayName": "Yuzu",
-          "Description": "An aromatic citrus fruit that is usually preserved with sugar.",
-          "Type": "Basic",
-          "Category": -79,
-          "Price": 50,
-          "Texture": "Mods/juminos.MoreFruitTrees/Yuzu",
-          "SpriteIndex": 0,
-          "Edibility": 15,
-          "ContextTags": [
-            "fruit_tree_item"
-          ]
-        }
       }
     },
 
@@ -864,143 +81,7 @@
       "Action": "EditData",
       "Target": "Data/FruitTrees",
       "Entries": {
-        "juminos.MoreFruitTrees_AlmondTree": {
-          "DisplayName": "Almond",
-          "PlantableLocationRules": null,
-          "Seasons": [ "Fall" ],
-          "Fruit": [
-            {
-              "Id": "juminos.MoreFruitTrees_Almond",
-              "ItemId": "juminos.MoreFruitTrees_Almond",
-              "Chance": 1.0,
-              "Condition": null
-            }
-          ],
-          "Texture": "Mods/juminos.MoreFruitTrees/AlmondTree",
-          "TextureSpriteRow": 0
-        },
-        "juminos.MoreFruitTrees_AsianPearTree": {
-          "PlantableLocationRules": null,
-          "DisplayName": "Asian Pear",
-          "Seasons": [
-            "Fall"
-          ],
-          "Fruit": [
-            {
-              "Season": null,
-              "Chance": 1.0,
-              "Condition": null,
-              "ItemId": "juminos.MoreFruitTrees_AsianPear"
-            }
-          ],
-          "Texture": "Mods/juminos.MoreFruitTrees/AsianPearTree",
-          "TextureSpriteRow": 0
-        },
-        "juminos.MoreFruitTrees_AvocadoTree": {
-          "DisplayName": "Avocado",
-          "PlantableLocationRules": null,
-          "Seasons": [ "Summer" ],
-          "Fruit": [
-            {
-              "Id": "juminos.MoreFruitTrees_Avocado",
-              "ItemId": "juminos.MoreFruitTrees_Avocado",
-              "Chance": 1.0,
-              "Condition": null
-            }
-          ],
-          "Texture": "Mods/juminos.MoreFruitTrees/AvocadoTree",
-          "TextureSpriteRow": 0
-        },
-        "juminos.MoreFruitTrees_BreadfruitTree": {
-          "DisplayName": "Breadfruit",
-          "PlantableLocationRules": null,
-          "Seasons": [ "Spring" ],
-          "Fruit": [
-            {
-              "Id": "juminos.MoreFruitTrees_Breadfruit",
-              "ItemId": "juminos.MoreFruitTrees_Breadfruit",
-              "Chance": 1.0,
-              "Condition": null
-            }
-          ],
-          "Texture": "Mods/juminos.MoreFruitTrees/BreadfruitTree",
-          "TextureSpriteRow": 0
-        },
-        "juminos.MoreFruitTrees_CamphorTree": {
-          "DisplayName": "Camphor",
-          "PlantableLocationRules": null,
-          "Seasons": [ "Winter" ],
-          "Fruit": [
-            {
-              "Id": "juminos.MoreFruitTrees_Camphor",
-              "ItemId": "juminos.MoreFruitTrees_Camphor",
-              "Chance": 1.0,
-              "Condition": null
-            }
-          ],
-          "Texture": "Mods/juminos.MoreFruitTrees/CamphorTree",
-          "TextureSpriteRow": 0
-        },
-        "juminos.MoreFruitTrees_CashewTree": {
-          "DisplayName": "Cashew",
-          "PlantableLocationRules": null,
-          "Seasons": [ "Fall" ],
-          "Fruit": [
-            {
-              "Id": "juminos.MoreFruitTrees_Cashew",
-              "ItemId": "juminos.MoreFruitTrees_Cashew",
-              "Chance": 1.0,
-              "Condition": null
-            }
-          ],
-          "Texture": "Mods/juminos.MoreFruitTrees/CashewTree",
-          "TextureSpriteRow": 0
-        },
-        "juminos.MoreFruitTrees_CinnamonTree": {
-          "DisplayName": "Cinnamon",
-          "PlantableLocationRules": null,
-          "Seasons": [ "Winter" ],
-          "Fruit": [
-            {
-              "Id": "juminos.MoreFruitTrees_Cinnamon",
-              "ItemId": "juminos.MoreFruitTrees_Cinnamon",
-              "Chance": 1.0,
-              "Condition": null
-            }
-          ],
-          "Texture": "Mods/juminos.MoreFruitTrees/CinnamonTree",
-          "TextureSpriteRow": 0
-        },
-        "juminos.MoreFruitTrees_CocoaTree": {
-          "DisplayName": "Cocoa",
-          "PlantableLocationRules": null,
-          "Seasons": [ "Spring" ],
-          "Fruit": [
-            {
-              "Id": "juminos.MoreFruitTrees_CocoaPod",
-              "ItemId": "juminos.MoreFruitTrees_CocoaPod",
-              "Chance": 1.0,
-              "Condition": null
-            }
-          ],
-          "Texture": "Mods/juminos.MoreFruitTrees/CocoaTree",
-          "TextureSpriteRow": 0
-        },
-        "juminos.MoreFruitTrees_CoconutTree": {
-          "DisplayName": "Coconut",
-          "PlantableLocationRules": null,
-          "Seasons": [ "Summer" ],
-          "Fruit": [
-            {
-              "ItemId": "88",
-              "Chance": 1.0,
-              "Condition": null
-            }
-          ],
-          "Texture": "Mods/juminos.MoreFruitTrees/CoconutTree",
-          "TextureSpriteRow": 0
-        },
-        "juminos.MoreFruitTrees_CrystalFruitTree": {
+        "juminos.MoreFruitTrees_CrystalFruitSapling": {
           "DisplayName": "Crystal Fruit",
           "PlantableLocationRules": null,
           "Seasons": [ "Winter" ],
@@ -1014,82 +95,7 @@
           "Texture": "Mods/juminos.MoreFruitTrees/CrystalFruitTree",
           "TextureSpriteRow": 0
         },
-        "juminos.MoreFruitTrees_DragonFruitTree": {
-          "DisplayName": "Dragon Fruit",
-          "PlantableLocationRules": null,
-          "Seasons": [ "Summer" ],
-          "Fruit": [
-            {
-              "Id": "juminos.MoreFruitTrees_DragonFruit",
-              "ItemId": "juminos.MoreFruitTrees_DragonFruit",
-              "Chance": 1.0,
-              "Condition": null
-            }
-          ],
-          "Texture": "Mods/juminos.MoreFruitTrees/DragonFruitTree",
-          "TextureSpriteRow": 0
-        },
-        "juminos.MoreFruitTrees_DurianTree": {
-          "DisplayName": "Durian",
-          "PlantableLocationRules": null,
-          "Seasons": [ "Summer" ],
-          "Fruit": [
-            {
-              "Id": "juminos.MoreFruitTrees_Durian",
-              "ItemId": "juminos.MoreFruitTrees_Durian",
-              "Chance": 1.0,
-              "Condition": null
-            }
-          ],
-          "Texture": "Mods/juminos.MoreFruitTrees/DurianTree",
-          "TextureSpriteRow": 0
-        },
-        "juminos.MoreFruitTrees_EucalyptusTree": {
-          "DisplayName": "Eucalyptus",
-          "PlantableLocationRules": null,
-          "Seasons": [ "Spring" ],
-          "Fruit": [
-            {
-              "Id": "juminos.MoreFruitTrees_Eucalyptus",
-              "ItemId": "juminos.MoreFruitTrees_Eucalyptus",
-              "Chance": 1.0,
-              "Condition": null
-            }
-          ],
-          "Texture": "Mods/juminos.MoreFruitTrees/EucalyptusTree",
-          "TextureSpriteRow": 0
-        },
-        "juminos.MoreFruitTrees_FigTree": {
-          "DisplayName": "Fig",
-          "PlantableLocationRules": null,
-          "Seasons": [ "Winter" ],
-          "Fruit": [
-            {
-              "Id": "juminos.MoreFruitTrees_Fig",
-              "ItemId": "juminos.MoreFruitTrees_Fig",
-              "Chance": 1.0,
-              "Condition": null
-            }
-          ],
-          "Texture": "Mods/juminos.MoreFruitTrees/FigTree",
-          "TextureSpriteRow": 0
-        },
-        "juminos.MoreFruitTrees_FragrantWisteriaTree": {
-          "DisplayName": "Wisteria",
-          "PlantableLocationRules": null,
-          "Seasons": [ "Spring" ],
-          "Fruit": [
-            {
-              "Id": "juminos.MoreFruitTrees_FragrantWisteria",
-              "ItemId": "juminos.MoreFruitTrees_FragrantWisteria",
-              "Chance": 1.0,
-              "Condition": null
-            }
-          ],
-          "Texture": "Mods/juminos.MoreFruitTrees/FragrantWisteriaTree",
-          "TextureSpriteRow": 0
-        },
-        "juminos.MoreFruitTrees_GoldenCoconutTree": {
+        "juminos.MoreFruitTrees_GoldenCoconutSapling": {
           "DisplayName": "Golden Coconut",
           "PlantableLocationRules": null,
           "Seasons": [ "Summer" ],
@@ -1103,7 +109,7 @@
           "Texture": "Mods/juminos.MoreFruitTrees/GoldenCoconutTree",
           "TextureSpriteRow": 0
         },
-        "juminos.MoreFruitTrees_GoldenWalnutTree": {
+        "juminos.MoreFruitTrees_GoldenWalnutSapling": {
           "DisplayName": "Golden Walnut",
           "PlantableLocationRules": null,
           "Seasons": [ "Summer" ],
@@ -1117,215 +123,7 @@
           "Texture": "Mods/juminos.MoreFruitTrees/GoldenWalnutTree",
           "TextureSpriteRow": 0
         },
-        "juminos.MoreFruitTrees_GrannySmithAppleTree": {
-          "DisplayName": "Granny Smith Apple",
-          "PlantableLocationRules": null,
-          "Seasons": [ "Fall" ],
-          "Fruit": [
-            {
-              "Id": "juminos.MoreFruitTrees_GrannySmithApple",
-              "ItemId": "juminos.MoreFruitTrees_GrannySmithApple",
-              "Chance": 1.0,
-              "Condition": null
-            }
-          ],
-          "Texture": "Mods/juminos.MoreFruitTrees/GrannySmithAppleTree",
-          "TextureSpriteRow": 0
-        },
-        "juminos.MoreFruitTrees_GrapefruitTree": {
-          "DisplayName": "Grapefruit",
-          "PlantableLocationRules": null,
-          "Seasons": [ "Fall" ],
-          "Fruit": [
-            {
-              "Id": "juminos.MoreFruitTrees_Grapefruit",
-              "ItemId": "juminos.MoreFruitTrees_Grapefruit",
-              "Chance": 1.0,
-              "Condition": null
-            }
-          ],
-          "Texture": "Mods/juminos.MoreFruitTrees/GrapefruitTree",
-          "TextureSpriteRow": 0
-        },
-        "juminos.MoreFruitTrees_HazelnutTree": {
-          "DisplayName": "Hazelnut",
-          "PlantableLocationRules": null,
-          "Seasons": [ "Fall" ],
-          "Fruit": [
-            {
-              "ItemId": "408",
-              "Chance": 1.0,
-              "Condition": null
-            }
-          ],
-          "Texture": "Mods/juminos.MoreFruitTrees/HazelnutTree",
-          "TextureSpriteRow": 0
-        },
-        "juminos.MoreFruitTrees_HollyTree": {
-          "DisplayName": "Holly",
-          "PlantableLocationRules": null,
-          "Seasons": [ "Winter" ],
-          "Fruit": [
-            {
-              "ItemId": "283",
-              "Chance": 1.0,
-              "Condition": null
-            }
-          ],
-          "Texture": "Mods/juminos.MoreFruitTrees/HollyTree",
-          "TextureSpriteRow": 0
-        },
-        "juminos.MoreFruitTrees_LemonTree": {
-          "DisplayName": "Lemon",
-          "PlantableLocationRules": null,
-          "Seasons": [ "Spring" ],
-          "Fruit": [
-            {
-              "Id": "juminos.MoreFruitTrees_Lemon",
-              "ItemId": "juminos.MoreFruitTrees_Lemon",
-              "Chance": 1.0,
-              "Condition": null
-            }
-          ],
-          "Texture": "Mods/juminos.MoreFruitTrees/LemonTree",
-          "TextureSpriteRow": 0
-        },
-        "juminos.MoreFruitTrees_LimeTree": {
-          "DisplayName": "Lime",
-          "PlantableLocationRules": null,
-          "Seasons": [ "Spring" ],
-          "Fruit": [
-            {
-              "Id": "juminos.MoreFruitTrees_Lime",
-              "ItemId": "juminos.MoreFruitTrees_Lime",
-              "Chance": 1.0,
-              "Condition": null
-            }
-          ],
-          "Texture": "Mods/juminos.MoreFruitTrees/LimeTree",
-          "TextureSpriteRow": 0
-        },
-        "juminos.MoreFruitTrees_LycheeTree": {
-          "DisplayName": "Lychee",
-          "PlantableLocationRules": null,
-          "Seasons": [ "Summer" ],
-          "Fruit": [
-            {
-              "Id": "juminos.MoreFruitTrees_Lychee",
-              "ItemId": "juminos.MoreFruitTrees_Lychee",
-              "Chance": 1.0,
-              "Condition": null
-            }
-          ],
-          "Texture": "Mods/juminos.MoreFruitTrees/LycheeTree",
-          "TextureSpriteRow": 0
-        },
-        "juminos.MoreFruitTrees_MelaleucaTree": {
-          "DisplayName": "Melaleuca",
-          "PlantableLocationRules": null,
-          "Seasons": [ "Spring" ],
-          "Fruit": [
-            {
-              "Id": "juminos.MoreFruitTrees_MelaleucaLeaves",
-              "ItemId": "juminos.MoreFruitTrees_MelaleucaLeaves",
-              "Chance": 1.0,
-              "Condition": null
-            }
-          ],
-          "Texture": "Mods/juminos.MoreFruitTrees/MelaleucaTree",
-          "TextureSpriteRow": 0
-        },
-        "juminos.MoreFruitTrees_OliveTree": {
-          "DisplayName": "Olive",
-          "PlantableLocationRules": null,
-          "Seasons": [ "Fall" ],
-          "Fruit": [
-            {
-              "Id": "juminos.MoreFruitTrees_Olive",
-              "ItemId": "juminos.MoreFruitTrees_Olive",
-              "Chance": 1.0,
-              "Condition": null
-            }
-          ],
-          "Texture": "Mods/juminos.MoreFruitTrees/OliveTree",
-          "TextureSpriteRow": 0
-        },
-        "juminos.MoreFruitTrees_PapayaTree": {
-          "DisplayName": "Papaya",
-          "PlantableLocationRules": null,
-          "Seasons": [ "Summer" ],
-          "Fruit": [
-            {
-              "Id": "juminos.MoreFruitTrees_Papaya",
-              "ItemId": "juminos.MoreFruitTrees_Papaya",
-              "Chance": 1.0,
-              "Condition": null
-            }
-          ],
-          "Texture": "Mods/juminos.MoreFruitTrees/PapayaTree",
-          "TextureSpriteRow": 0
-        },
-        "juminos.MoreFruitTrees_PearTree": {
-          "DisplayName": "Pear",
-          "PlantableLocationRules": null,
-          "Seasons": [ "Winter" ],
-          "Fruit": [
-            {
-              "Id": "juminos.MoreFruitTrees_Pear",
-              "ItemId": "juminos.MoreFruitTrees_Pear",
-              "Chance": 1.0,
-              "Condition": null
-            }
-          ],
-          "Texture": "Mods/juminos.MoreFruitTrees/PearTree",
-          "TextureSpriteRow": 0
-        },
-        "juminos.MoreFruitTrees_PecanTree": {
-          "DisplayName": "Pecan",
-          "PlantableLocationRules": null,
-          "Seasons": [ "Fall" ],
-          "Fruit": [
-            {
-              "Id": "juminos.MoreFruitTrees_Pecan",
-              "ItemId": "juminos.MoreFruitTrees_Pecan",
-              "Chance": 1.0,
-              "Condition": null
-            }
-          ],
-          "Texture": "Mods/juminos.MoreFruitTrees/PecanTree",
-          "TextureSpriteRow": 0
-        },
-        "juminos.MoreFruitTrees_PersimmonTree": {
-          "DisplayName": "Persimmon",
-          "PlantableLocationRules": null,
-          "Seasons": [ "Winter" ],
-          "Fruit": [
-            {
-              "Id": "juminos.MoreFruitTrees_Persimmon",
-              "ItemId": "juminos.MoreFruitTrees_Persimmon",
-              "Chance": 1.0,
-              "Condition": null
-            }
-          ],
-          "Texture": "Mods/juminos.MoreFruitTrees/PersimmonTree",
-          "TextureSpriteRow": 0
-        },
-        "juminos.MoreFruitTrees_PomeloTree": {
-          "DisplayName": "Pomelo",
-          "PlantableLocationRules": null,
-          "Seasons": [ "Winter" ],
-          "Fruit": [
-            {
-              "Id": "juminos.MoreFruitTrees_Pomelo",
-              "ItemId": "juminos.MoreFruitTrees_Pomelo",
-              "Chance": 1.0,
-              "Condition": null
-            }
-          ],
-          "Texture": "Mods/juminos.MoreFruitTrees/PomeloTree",
-          "TextureSpriteRow": 0
-        },
-        "juminos.MoreFruitTrees_QiGemTree": {
+        "juminos.MoreFruitTrees_QiGemSapling": {
           "DisplayName": "Qi Gem",
           "PlantableLocationRules": null,
           "Seasons": [ "Spring", "Summer", "Fall", "Winter" ],
@@ -1339,7 +137,7 @@
           "Texture": "Mods/juminos.MoreFruitTrees/QiGemTree",
           "TextureSpriteRow": 0
         },
-        "juminos.MoreFruitTrees_SpiceBerryTree": {
+        "juminos.MoreFruitTrees_SpiceBerrySapling": {
           "DisplayName": "Spice Berry Gem",
           "PlantableLocationRules": null,
           "Seasons": [ "Summer" ],
@@ -1350,55 +148,10 @@
               "Condition": null
             }
           ],
-          "Texture": "Mods/juminos.MoreFruitTrees/SpiceBerry",
+          "Texture": "Mods/juminos.MoreFruitTrees/SpiceBerryTree",
           "TextureSpriteRow": 0
         },
-        "juminos.MoreFruitTrees_UmeTree": {
-          "DisplayName": "Ume",
-          "PlantableLocationRules": null,
-          "Seasons": [ "Summer" ],
-          "Fruit": [
-            {
-              "Id": "juminos.MoreFruitTrees_Ume",
-              "ItemId": "juminos.MoreFruitTrees_Ume",
-              "Chance": 1.0,
-              "Condition": null
-            }
-          ],
-          "Texture": "Mods/juminos.MoreFruitTrees/UmeTree",
-          "TextureSpriteRow": 0
-        },
-        "juminos.MoreFruitTrees_VanillaTree": {
-          "DisplayName": "Vanilla",
-          "PlantableLocationRules": null,
-          "Seasons": [ "Spring" ],
-          "Fruit": [
-            {
-              "Id": "juminos.MoreFruitTrees_Vanilla",
-              "ItemId": "juminos.MoreFruitTrees_Vanilla",
-              "Chance": 1.0,
-              "Condition": null
-            }
-          ],
-          "Texture": "Mods/juminos.MoreFruitTrees/VanillaTree",
-          "TextureSpriteRow": 0
-        },
-        "juminos.MoreFruitTrees_WalnutTree": {
-          "DisplayName": "Walnut",
-          "PlantableLocationRules": null,
-          "Seasons": [ "Fall" ],
-          "Fruit": [
-            {
-              "Id": "juminos.MoreFruitTrees_Walnut",
-              "ItemId": "juminos.MoreFruitTrees_Walnut",
-              "Chance": 1.0,
-              "Condition": null
-            }
-          ],
-          "Texture": "Mods/juminos.MoreFruitTrees/WalnutTree",
-          "TextureSpriteRow": 0
-        },
-        "juminos.MoreFruitTrees_WildPlumTree": {
+        "juminos.MoreFruitTrees_WildPlumSapling": {
           "DisplayName": "Wild Plum",
           "PlantableLocationRules": null,
           "Seasons": [ "Fall" ],
@@ -1412,36 +165,6 @@
           "Texture": "Mods/juminos.MoreFruitTrees/WildPlumTree",
           "TextureSpriteRow": 0
         },
-        "juminos.MoreFruitTrees_YlangYlangTree": {
-          "DisplayName": "Ylang Ylang",
-          "PlantableLocationRules": null,
-          "Seasons": [ "Summer" ],
-          "Fruit": [
-            {
-              "Id": "juminos.MoreFruitTrees_YlangYlang",
-              "ItemId": "juminos.MoreFruitTrees_YlangYlang",
-              "Chance": 1.0,
-              "Condition": null
-            }
-          ],
-          "Texture": "Mods/juminos.MoreFruitTrees/YlangYlangTree",
-          "TextureSpriteRow": 0
-        },
-        "juminos.MoreFruitTrees_YuzuTree": {
-          "DisplayName": "Yuzu",
-          "PlantableLocationRules": null,
-          "Seasons": [ "Winter" ],
-          "Fruit": [
-            {
-              "Id": "juminos.MoreFruitTrees_Yuzu",
-              "ItemId": "juminos.MoreFruitTrees_Yuzu",
-              "Chance": 1.0,
-              "Condition": null
-            }
-          ],
-          "Texture": "Mods/juminos.MoreFruitTrees/YuzuTree",
-          "TextureSpriteRow": 0
-        }
       }
     },
 
@@ -1456,7 +179,7 @@
             "Entries",
             "Universal_Like"
           ],
-          "Value": "juminos.MoreFruitTrees_Almond juminos.MoreFruitTrees_AsianPear juminos.MoreFruitTrees_Avocado juminos.MoreFruitTrees_Breadfruit juminos.MoreFruitTrees_Cashew juminos.MoreFruitTrees_Fig juminos.MoreFruitTrees_FragrantWisteria juminos.MoreFruitTrees_GrannySmithApple juminos.MoreFruitTrees_Grapefruit juminos.MoreFruitTrees_Lemon juminos.MoreFruitTrees_Lime juminos.MoreFruitTrees_Olive juminos.MoreFruitTrees_Papaya juminos.MoreFruitTrees_Pear juminos.MoreFruitTrees_Pecan juminos.MoreFruitTrees_Persimmon juminos.MoreFruitTrees_Pomelo juminos.MoreFruitTrees_Ume juminos.MoreFruitTrees_Vanilla juminos.MoreFruitTrees_Walnut juminos.MoreFruitTrees_YlangYlang juminos.MoreFruitTrees_Yuzu",
+          "Value": "",
           "Delimiter": " "
         },
         {
@@ -1465,7 +188,7 @@
             "Entries",
             "Universal_Dislike"
           ],
-          "Value": "juminos.MoreFruitTrees_CamphorLeaves juminos.MoreFruitTrees_CocoaPod juminos.MoreFruitTrees_EucalyptusLeaves juminos.MoreFruitTrees_MelaleucaLeaves",
+          "Value": "",
           "Delimiter": " "
         },
         {
@@ -1474,7 +197,7 @@
             "Entries",
             "Universal_Neutral"
           ],
-          "Value": "juminos.MoreFruitTrees_CinnamonSticks juminos.MoreFruitTrees_DragonFruit juminos.MoreFruitTrees_Durian juminos.MoreFruitTrees_Lychee",
+          "Value": "",
           "Delimiter": " "
         },
         {
@@ -1484,7 +207,7 @@
             "Emily",
             1
           ],
-          "Value": "juminos.MoreFruitTrees_Avocado",
+          "Value": "",
           "Delimiter": " "
         },
         {
@@ -1494,7 +217,7 @@
             "Krobus",
             3
           ],
-          "Value": "juminos.MoreFruitTrees_Avocado juminos.MoreFruitTrees_CinnamonSticks juminos.MoreFruitTrees_Durian juminos.MoreFruitTrees_Lychee",
+          "Value": "",
           "Delimiter": " "
         },
         {
@@ -1504,7 +227,7 @@
             "Krobus",
             7
           ],
-          "Value": "juminos.MoreFruitTrees_CocoaPod",
+          "Value": "",
           "Delimiter": " "
         },
         {
@@ -1515,7 +238,7 @@
             "Sebastian",
             3
           ],
-          "Value": "juminos.MoreFruitTrees_Avocado"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -1525,7 +248,7 @@
             "Wizard",
             3
           ],
-          "Value": "juminos.MoreFruitTrees_Avocado"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -1535,7 +258,7 @@
             "Sandy",
             1
           ],
-          "Value": "juminos.MoreFruitTrees_Avocado juminos.MoreFruitTrees_DragonFruit juminos.MoreFruitTrees_FragrantWisteria juminos.MoreFruitTrees_Lychee juminos.MoreFruitTrees_Vanilla juminos.MoreFruitTrees_YlangYlang"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -1545,7 +268,7 @@
             "Sandy",
             3
           ],
-          "Value": "juminos.MoreFruitTrees_Avocado juminos.MoreFruitTrees_DragonFruit"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -1555,7 +278,7 @@
             "Kent",
             3
           ],
-          "Value": "juminos.MoreFruitTrees_DragonFruit"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -1565,7 +288,7 @@
             "Linus",
             1
           ],
-          "Value": "juminos.MoreFruitTrees_Papaya"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -1575,7 +298,7 @@
             "Linus",
             3
           ],
-          "Value": "juminos.MoreFruitTrees_Avocado juminos.MoreFruitTrees_DragonFruit juminos.MoreFruitTrees_EucalyptusLeaves juminos.MoreFruitTrees_MelaleucaLeaves"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -1585,7 +308,7 @@
             "Leah",
             1
           ],
-          "Value": "juminos.MoreFruitTrees_Avocado juminos.MoreFruitTrees_Pecan"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -1595,7 +318,7 @@
             "Leah",
             3
           ],
-          "Value": "juminos.MoreFruitTrees_DragonFruit juminos.MoreFruitTrees_EucalyptusLeaves juminos.MoreFruitTrees_MelaleucaLeaves"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -1605,7 +328,7 @@
             "Abigail",
             1
           ],
-          "Value": "juminos.MoreFruitTrees_Avocado juminos.MoreFruitTrees_FragrantWisteria juminos.MoreFruitTrees_YlangYlang"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -1615,7 +338,7 @@
             "Abigail",
             5
           ],
-          "Value": "juminos.MoreFruitTrees_DragonFruit juminos.MoreFruitTrees_Durian juminos.MoreFruitTrees_Grapefruit juminos.MoreFruitTrees_Olive"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -1625,7 +348,7 @@
             "Abigail",
             9
           ],
-          "Value": "juminos.MoreFruitTrees_Fig juminos.MoreFruitTrees_Lemon juminos.MoreFruitTrees_Lime juminos.MoreFruitTrees_Yuzu"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -1635,7 +358,7 @@
             "Sam",
             1
           ],
-          "Value": "juminos.MoreFruitTrees_Avocado juminos.MoreFruitTrees_DragonFruit"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -1645,7 +368,7 @@
             "Sam",
             5
           ],
-          "Value": "juminos.MoreFruitTrees_Olive"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -1655,7 +378,7 @@
             "Willy",
             3
           ],
-          "Value": "juminos.MoreFruitTrees_Avocado"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -1665,7 +388,7 @@
             "Elliott",
             3
           ],
-          "Value": "juminos.MoreFruitTrees_Avocado juminos.MoreFruitTrees_DragonFruit juminos.MoreFruitTrees_Lychee"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -1675,7 +398,7 @@
             "Maru",
             3
           ],
-          "Value": "juminos.MoreFruitTrees_Avocado"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -1685,7 +408,7 @@
             "Maru",
             5
           ],
-          "Value": "juminos.MoreFruitTrees_Persimmon"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -1695,7 +418,7 @@
             "Robin",
             1
           ],
-          "Value": "juminos.MoreFruitTrees_Fig"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -1705,7 +428,7 @@
             "Robin",
             3
           ],
-          "Value": "juminos.MoreFruitTrees_Avocado juminos.MoreFruitTrees_DragonFruit"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -1715,7 +438,7 @@
             "Demetrius",
             3
           ],
-          "Value": "juminos.MoreFruitTrees_Avocado"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -1725,7 +448,7 @@
             "George",
             3
           ],
-          "Value": "juminos.MoreFruitTrees_Avocado"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -1735,7 +458,7 @@
             "Gus",
             1
           ],
-          "Value": "juminos.MoreFruitTrees_Lemon juminos.MoreFruitTrees_Pomelo juminos.MoreFruitTrees_Vanilla juminos.MoreFruitTrees_Yuzu"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -1745,7 +468,7 @@
             "Gus",
             3
           ],
-          "Value": "juminos.MoreFruitTrees_Avocado juminos.MoreFruitTrees_CinnamonSticks"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -1755,7 +478,7 @@
             "Marnie",
             1
           ],
-          "Value": "juminos.MoreFruitTrees_Walnut"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -1765,7 +488,7 @@
             "Marnie",
             3
           ],
-          "Value": "juminos.MoreFruitTrees_Avocado"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -1775,7 +498,7 @@
             "Alex",
             1
           ],
-          "Value": "juminos.MoreFruitTrees_Avocado juminos.MoreFruitTrees_Grapefruit"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -1785,7 +508,7 @@
             "Caroline",
             3
           ],
-          "Value": "juminos.MoreFruitTrees_Avocado"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -1795,7 +518,7 @@
             "Clint",
             3
           ],
-          "Value": "juminos.MoreFruitTrees_Avocado"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -1805,7 +528,7 @@
             "Dwarf",
             3
           ],
-          "Value": "juminos.MoreFruitTrees_Avocado"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -1815,7 +538,7 @@
             "Dwarf",
             9
           ],
-          "Value": "juminos.MoreFruitTrees_Papaya"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -1825,7 +548,7 @@
             "Evelyn",
             1
           ],
-          "Value": "juminos.MoreFruitTrees_Walnut"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -1835,7 +558,7 @@
             "Evelyn",
             3
           ],
-          "Value": "juminos.MoreFruitTrees_Avocado juminos.MoreFruitTrees_Lychee"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -1845,7 +568,7 @@
             "Harvey",
             3
           ],
-          "Value": "juminos.MoreFruitTrees_Avocado juminos.MoreFruitTrees_DragonFruit juminos.MoreFruitTrees_MelaleucaLeaves"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -1855,7 +578,7 @@
             "Jodi",
             1
           ],
-          "Value": "juminos.MoreFruitTrees_Lychee"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -1865,7 +588,7 @@
             "Jodi",
             3
           ],
-          "Value": "juminos.MoreFruitTrees_Avocado juminos.MoreFruitTrees_CinnamonSticks juminos.MoreFruitTrees_DragonFruit"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -1875,7 +598,7 @@
             "Lewis",
             3
           ],
-          "Value": "juminos.MoreFruitTrees_Avocado juminos.MoreFruitTrees_DragonFruit"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -1885,7 +608,7 @@
             "Pam",
             1
           ],
-          "Value": "juminos.MoreFruitTrees_DragonFruit"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -1895,7 +618,7 @@
             "Pam",
             3
           ],
-          "Value": "juminos.MoreFruitTrees_Avocado"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -1905,7 +628,7 @@
             "Penny",
             3
           ],
-          "Value": "juminos.MoreFruitTrees_Avocado"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -1915,7 +638,7 @@
             "Pierre",
             3
           ],
-          "Value": "juminos.MoreFruitTrees_Avocado"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -1925,7 +648,7 @@
             "Shane",
             3
           ],
-          "Value": "juminos.MoreFruitTrees_Avocado juminos.MoreFruitTrees_DragonFruit"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -1935,7 +658,7 @@
             "Haley",
             1
           ],
-          "Value": "juminos.MoreFruitTrees_Lychee juminos.MoreFruitTrees_Papaya juminos.MoreFruitTrees_YlangYlang"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -1945,7 +668,7 @@
             "Haley",
             3
           ],
-          "Value": "juminos.MoreFruitTrees_Avocado"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -1955,7 +678,7 @@
             "Haley",
             5
           ],
-          "Value": "juminos.MoreFruitTrees_DragonFruit juminos.MoreFruitTrees_Durian juminos.MoreFruitTrees_Grapefruit  juminos.MoreFruitTrees_Olive"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -1965,7 +688,7 @@
             "Haley",
             9
           ],
-          "Value": "juminos.MoreFruitTrees_Fig juminos.MoreFruitTrees_Lemon juminos.MoreFruitTrees_Lime juminos.MoreFruitTrees_Yuzu"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -1975,7 +698,7 @@
             "Jas",
             3
           ],
-          "Value": "juminos.MoreFruitTrees_Avocado"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -1985,7 +708,7 @@
             "Jas",
             5
           ],
-          "Value": "juminos.MoreFruitTrees_DragonFruit juminos.MoreFruitTrees_Durian juminos.MoreFruitTrees_Grapefruit juminos.MoreFruitTrees_Olive"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -1995,7 +718,7 @@
             "Jas",
             9
           ],
-          "Value": "juminos.MoreFruitTrees_Fig juminos.MoreFruitTrees_Lemon juminos.MoreFruitTrees_Lime juminos.MoreFruitTrees_Yuzu"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -2005,7 +728,7 @@
             "Vincent",
             3
           ],
-          "Value": "juminos.MoreFruitTrees_Avocado"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -2015,7 +738,7 @@
             "Vincent",
             5
           ],
-          "Value": "juminos.MoreFruitTrees_DragonFruit juminos.MoreFruitTrees_Durian juminos.MoreFruitTrees_Grapefruit juminos.MoreFruitTrees_Olive"
+          "Value": ""
         },
         {
           "Delimiter": " ",
@@ -2025,153 +748,9 @@
             "Vincent",
             9
           ],
-          "Value": "juminos.MoreFruitTrees_Fig juminos.MoreFruitTrees_Lemon juminos.MoreFruitTrees_Lime juminos.MoreFruitTrees_Yuzu"
+          "Value": ""
         }
       ]
-    },
-
-    // Sell to shops
-    {
-      "Action": "EditData",
-      "Target": "Data/Shops",
-      "TargetField": [ "SeedShop" ],
-      "Entries": {
-        "SalableItemTags": [ "fruit_tree_item" ]
-      }
-    },
-
-    // Pierre stock
-    {
-      "Action": "EditData",
-      "Target": "Data/Shops",
-      "TargetField": [ "SeedShop", "Items" ],
-      "Entries": {
-        "juminos.MoreFruitTrees_AlmondTree": {
-          "Id": "juminos.MoreFruitTrees_AlmondTree",
-          "ItemId": "juminos.MoreFruitTrees_AlmondTree",
-          "AvailableStock": 1
-        },
-        "juminos.MoreFruitTrees_AsianPearTree": {
-          "Id": "juminos.MoreFruitTrees_AsianPearTree",
-          "ItemId": "juminos.MoreFruitTrees_AsianPearTree",
-          "AvailableStock": 1
-        },
-        "juminos.MoreFruitTrees_AvocadoTree": {
-          "Id": "juminos.MoreFruitTrees_AvocadoTree",
-          "ItemId": "juminos.MoreFruitTrees_AvocadoTree",
-          "AvailableStock": 1,
-          "Condition": "YEAR 2"
-        },
-        "juminos.MoreFruitTrees_CamphorTree": {
-          "Id": "juminos.MoreFruitTrees_CamphorTree",
-          "ItemId": "juminos.MoreFruitTrees_CamphorTree",
-          "AvailableStock": 1,
-          "Condition": "YEAR 3"
-        },
-        "juminos.MoreFruitTrees_CashewTree": {
-          "Id": "juminos.MoreFruitTrees_CashewTree",
-          "ItemId": "juminos.MoreFruitTrees_CashewTree",
-          "AvailableStock": 1
-        },
-        "juminos.MoreFruitTrees_CinnamonTree": {
-          "Id": "juminos.MoreFruitTrees_CinnamonTree",
-          "ItemId": "juminos.MoreFruitTrees_CinnamonTree",
-          "AvailableStock": 1,
-          "Condition": "YEAR 2"
-        },
-        "juminos.MoreFruitTrees_CocoaTree": {
-          "Id": "juminos.MoreFruitTrees_CocoaTree",
-          "ItemId": "juminos.MoreFruitTrees_CocoaTree",
-          "AvailableStock": 1,
-          "Condition": "YEAR 2"
-        },
-        "juminos.MoreFruitTrees_FigTree": {
-          "Id": "juminos.MoreFruitTrees_FigTree",
-          "ItemId": "juminos.MoreFruitTrees_FigTree",
-          "AvailableStock": 1,
-          "Condition": "YEAR 2"
-        },
-        "juminos.MoreFruitTrees_FragantWisteriaTree": {
-          "Id": "juminos.MoreFruitTrees_FragantWisteriaTree",
-          "ItemId": "juminos.MoreFruitTrees_FragantWisteriaTree",
-          "AvailableStock": 1
-        },
-        "juminos.MoreFruitTrees_GrannySmithAppleTree": {
-          "Id": "juminos.MoreFruitTrees_GrannySmithAppleTree",
-          "ItemId": "juminos.MoreFruitTrees_GrannySmithAppleTree",
-          "AvailableStock": 1
-        },
-        "juminos.MoreFruitTrees_GrapefruitTree": {
-          "Id": "juminos.MoreFruitTrees_GrapefruitTree",
-          "ItemId": "juminos.MoreFruitTrees_GrapefruitTree",
-          "AvailableStock": 1,
-          "Condition": "YEAR 2"
-        },
-        "juminos.MoreFruitTrees_LemonTree": {
-          "Id": "juminos.MoreFruitTrees_LemonTree",
-          "ItemId": "juminos.MoreFruitTrees_LemonTree",
-          "AvailableStock": 1
-        },
-        "juminos.MoreFruitTrees_LimeTree": {
-          "Id": "juminos.MoreFruitTrees_LimeTree",
-          "ItemId": "juminos.MoreFruitTrees_LimeTree",
-          "AvailableStock": 1
-        },
-        "juminos.MoreFruitTrees_MelaleucaTree": {
-          "Id": "juminos.MoreFruitTrees_MelaleucaTree",
-          "ItemId": "juminos.MoreFruitTrees_MelaleucaTree",
-          "AvailableStock": 1
-        },
-        "juminos.MoreFruitTrees_OliveTree": {
-          "Id": "juminos.MoreFruitTrees_OliveTree",
-          "ItemId": "juminos.MoreFruitTrees_OliveTree",
-          "AvailableStock": 1,
-          "Condition": "YEAR 2"
-        },
-        "juminos.MoreFruitTrees_PearTree": {
-          "Id": "juminos.MoreFruitTrees_PearTree",
-          "ItemId": "juminos.MoreFruitTrees_PearTree",
-          "AvailableStock": 1,
-          "Condition": "YEAR 2"
-        },
-        "juminos.MoreFruitTrees_PecanTree": {
-          "Id": "juminos.MoreFruitTrees_PecanTree",
-          "ItemId": "juminos.MoreFruitTrees_PecanTree",
-          "AvailableStock": 1,
-          "Condition": "YEAR 3"
-        },
-        "juminos.MoreFruitTrees_PersimmonTree": {
-          "Id": "juminos.MoreFruitTrees_PersimmonTree",
-          "ItemId": "juminos.MoreFruitTrees_PersimmonTree",
-          "AvailableStock": 1
-        },
-        "juminos.MoreFruitTrees_PomeloTree": {
-          "Id": "juminos.MoreFruitTrees_PomeloTree",
-          "ItemId": "juminos.MoreFruitTrees_PomeloTree",
-          "AvailableStock": 1,
-          "Condition": "YEAR 2"
-        },
-        "juminos.MoreFruitTrees_UmeTree": {
-          "Id": "juminos.MoreFruitTrees_UmeTree",
-          "ItemId": "juminos.MoreFruitTrees_UmeTree",
-          "AvailableStock": 1
-        },
-        "juminos.MoreFruitTrees_VanillaTree": {
-          "Id": "juminos.MoreFruitTrees_VanillaTree",
-          "ItemId": "juminos.MoreFruitTrees_VanillaTree",
-          "AvailableStock": 1
-        },
-        "juminos.MoreFruitTrees_WalnutTree": {
-          "Id": "juminos.MoreFruitTrees_WalnutTree",
-          "ItemId": "juminos.MoreFruitTrees_WalnutTree",
-          "AvailableStock": 1
-        },
-        "juminos.MoreFruitTrees_YuzuTree": {
-          "Id": "juminos.MoreFruitTrees_YuzuTree",
-          "ItemId": "juminos.MoreFruitTrees_YuzuTree",
-          "AvailableStock": 1
-        }
-      }
     },
 
     // Sandy stock
@@ -2180,66 +759,12 @@
       "Target": "Data/Shops",
       "TargetField": [ "Sandy", "Items" ],
       "Entries": {
-        "juminos.MoreFruitTrees_BreadfruitTree": {
-          "Id": "juminos.MoreFruitTrees_BreadfruitTree",
-          "ItemId": "juminos.MoreFruitTrees_BreadfruitTree",
+        "juminos.MoreFruitTrees_GoldenCoconutSapling": {
+          "Id": "juminos.MoreFruitTrees_GoldenCoconutSapling",
+          "ItemId": "juminos.MoreFruitTrees_GoldenCoconutSapling",
           "AvailableStock": 1,
           "Condition": "YEAR 2"
         },
-        "juminos.MoreFruitTrees_CoconutTree": {
-          "Id": "juminos.MoreFruitTrees_CoconutTree",
-          "ItemId": "juminos.MoreFruitTrees_CoconutTree",
-          "AvailableStock": 1
-        },
-        "juminos.MoreFruitTrees_DragonFruitTree": {
-          "Id": "juminos.MoreFruitTrees_DragonFruitTree",
-          "ItemId": "juminos.MoreFruitTrees_DragonFruitTree",
-          "AvailableStock": 1
-        },
-        "juminos.MoreFruitTrees_DurianTree": {
-          "Id": "juminos.MoreFruitTrees_DurianTree",
-          "ItemId": "juminos.MoreFruitTrees_DurianTree",
-          "AvailableStock": 1,
-          "Condition": "YEAR 2"
-        },
-        "juminos.MoreFruitTrees_GoldenCoconutTree": {
-          "Id": "juminos.MoreFruitTrees_GoldenCoconutTree",
-          "ItemId": "juminos.MoreFruitTrees_GoldenCoconutTree",
-          "AvailableStock": 1,
-          "Condition": "YEAR 2"
-        },
-        "juminos.MoreFruitTrees_LycheeTree": {
-          "Id": "juminos.MoreFruitTrees_LycheeTree",
-          "ItemId": "juminos.MoreFruitTrees_LycheeTree",
-          "AvailableStock": 1,
-          "Condition": "YEAR 2"
-        },
-        "juminos.MoreFruitTrees_PapayaTree": {
-          "Id": "juminos.MoreFruitTrees_PapayaTree",
-          "ItemId": "juminos.MoreFruitTrees_PapayaTree",
-          "AvailableStock": 1
-        },
-        "juminos.MoreFruitTrees_YlangYlangTree": {
-          "Id": "juminos.MoreFruitTrees_YlangYlangTree",
-          "ItemId": "juminos.MoreFruitTrees_YlangYlangTree",
-          "AvailableStock": 1,
-          "Condition": "YEAR 3"
-        }
-      }
-    },
-
-    // Harvey stock
-    {
-      "Action": "EditData",
-      "Target": "Data/Shops",
-      "TargetField": [ "Hospital", "Items" ],
-      "Entries": {
-        "juminos.MoreFruitTrees_EucalyptusTree": {
-          "Id": "juminos.MoreFruitTrees_EucalyptusTree",
-          "ItemId": "juminos.MoreFruitTrees_EucalyptusTree",
-          "AvailableStock": 1,
-          "Condition": "YEAR 2"
-        }
       }
     },
 
@@ -2249,9 +774,9 @@
       "Target": "Data/Shops",
       "TargetField": [ "Dwarf", "Items" ],
       "Entries": {
-        "juminos.MoreFruitTrees_CrystalFruitTree": {
-          "Id": "juminos.MoreFruitTrees_CrystalFruitTree",
-          "ItemId": "juminos.MoreFruitTrees_CrystalFruitTree",
+        "juminos.MoreFruitTrees_CrystalFruitSapling": {
+          "Id": "juminos.MoreFruitTrees_CrystalFruitSapling",
+          "ItemId": "juminos.MoreFruitTrees_CrystalFruitSapling",
           "AvailableStock": 1
         }
       }
@@ -2263,14 +788,14 @@
       "Target": "Data/Shops",
       "TargetField": [ "ShadowShop", "Items" ],
       "Entries": {
-        "juminos.MoreFruitTrees_GoldenWalnutTree": {
-          "Id": "juminos.MoreFruitTrees_GoldenWalnutTree",
-          "ItemId": "juminos.MoreFruitTrees_GoldenWalnutTree",
+        "juminos.MoreFruitTrees_GoldenWalnutSapling": {
+          "Id": "juminos.MoreFruitTrees_GoldenWalnutSapling",
+          "ItemId": "juminos.MoreFruitTrees_GoldenWalnutSapling",
           "AvailableStock": 1
         },
-        "juminos.MoreFruitTrees_QiGemTree": {
-          "Id": "juminos.MoreFruitTrees_QiGemTree",
-          "ItemId": "juminos.MoreFruitTrees_QiGemTree",
+        "juminos.MoreFruitTrees_QiGemSapling": {
+          "Id": "juminos.MoreFruitTrees_QiGemSapling",
+          "ItemId": "juminos.MoreFruitTrees_QiGemSapling",
           "AvailableStock": 1
         }
       }
@@ -2282,24 +807,14 @@
       "Target": "Data/Shops",
       "TargetField": [ "HatMouse", "Items" ],
       "Entries": {
-        "juminos.MoreFruitTrees_HazelnutTree": {
-          "Id": "juminos.MoreFruitTrees_HazelnutTree",
-          "ItemId": "juminos.MoreFruitTrees_HazelnutTree",
+        "juminos.MoreFruitTrees_SpiceBerrySapling": {
+          "Id": "juminos.MoreFruitTrees_SpiceBerrySapling",
+          "ItemId": "juminos.MoreFruitTrees_SpiceBerrySapling",
           "AvailableStock": 1
         },
-        "juminos.MoreFruitTrees_HollyTree": {
-          "Id": "juminos.MoreFruitTrees_HollyTree",
-          "ItemId": "juminos.MoreFruitTrees_HollyTree",
-          "AvailableStock": 1
-        },
-        "juminos.MoreFruitTrees_SpiceBerryTree": {
-          "Id": "juminos.MoreFruitTrees_SpiceBerryTree",
-          "ItemId": "juminos.MoreFruitTrees_SpiceBerryTree",
-          "AvailableStock": 1
-        },
-        "juminos.MoreFruitTrees_WildPlumTree": {
-          "Id": "juminos.MoreFruitTrees_WildPlumTree",
-          "ItemId": "juminos.MoreFruitTrees_WildPlumTree",
+        "juminos.MoreFruitTrees_WildPlumSapling": {
+          "Id": "juminos.MoreFruitTrees_WildPlumSapling",
+          "ItemId": "juminos.MoreFruitTrees_WildPlumSapling",
           "AvailableStock": 1
         }
       }
@@ -2308,7 +823,7 @@
     // Load assets
     {
       "Action": "Load",
-      "Target": "Mods/juminos.MoreFruitTrees/Almond, Mods/juminos.MoreFruitTrees/AlmondSapling, Mods/juminos.MoreFruitTrees/AlmondTree,Mods/juminos.MoreFruitTrees/AsianPear, Mods/juminos.MoreFruitTrees/AsianPearSapling, Mods/juminos.MoreFruitTrees/AsianPearTree,Mods/juminos.MoreFruitTrees/Avocado, Mods/juminos.MoreFruitTrees/AvocadoSapling, Mods/juminos.MoreFruitTrees/AvocadoTree,Mods/juminos.MoreFruitTrees/Breadfruit, Mods/juminos.MoreFruitTrees/BreadfruitSapling, Mods/juminos.MoreFruitTrees/BreadfruitTree,Mods/juminos.MoreFruitTrees/CamphorLeaves, Mods/juminos.MoreFruitTrees/CamphorSapling, Mods/juminos.MoreFruitTrees/CamphorTree,Mods/juminos.MoreFruitTrees/Cashew, Mods/juminos.MoreFruitTrees/CashewSapling, Mods/juminos.MoreFruitTrees/CashewTree,Mods/juminos.MoreFruitTrees/CinnamonSticks, Mods/juminos.MoreFruitTrees/CinnamonSapling, Mods/juminos.MoreFruitTrees/CinnamonTree,Mods/juminos.MoreFruitTrees/CocoaPod, Mods/juminos.MoreFruitTrees/CocoaSapling, Mods/juminos.MoreFruitTrees/CocoaTree,Mods/juminos.MoreFruitTrees/DragonFruit, Mods/juminos.MoreFruitTrees/DragonFruitSapling, Mods/juminos.MoreFruitTrees/DragonFruitTree,Mods/juminos.MoreFruitTrees/Durian, Mods/juminos.MoreFruitTrees/DurianSapling, Mods/juminos.MoreFruitTrees/DurianTree,Mods/juminos.MoreFruitTrees/EucalyptusLeaves, Mods/juminos.MoreFruitTrees/EucalyptusSapling, Mods/juminos.MoreFruitTrees/EucalyptusTree,Mods/juminos.MoreFruitTrees/Fig, Mods/juminos.MoreFruitTrees/FigSapling, Mods/juminos.MoreFruitTrees/FigTree,Mods/juminos.MoreFruitTrees/FragrantWisteria, Mods/juminos.MoreFruitTrees/FragrantWisteriaSapling, Mods/juminos.MoreFruitTrees/FragrantWisteriaTree,Mods/juminos.MoreFruitTrees/GrannySmithApple, Mods/juminos.MoreFruitTrees/GrannySmithAppleSapling, Mods/juminos.MoreFruitTrees/GrannySmithAppleTree,Mods/juminos.MoreFruitTrees/Grapefruit, Mods/juminos.MoreFruitTrees/GrapefruitSapling, Mods/juminos.MoreFruitTrees/GrapefruitTree,Mods/juminos.MoreFruitTrees/Lemon, Mods/juminos.MoreFruitTrees/LemonSapling, Mods/juminos.MoreFruitTrees/LemonTree,Mods/juminos.MoreFruitTrees/Lime, Mods/juminos.MoreFruitTrees/LimeSapling, Mods/juminos.MoreFruitTrees/LimeTree,Mods/juminos.MoreFruitTrees/Lychee, Mods/juminos.MoreFruitTrees/LycheeSapling, Mods/juminos.MoreFruitTrees/LycheeTree,Mods/juminos.MoreFruitTrees/MelaleucaLeaves, Mods/juminos.MoreFruitTrees/MelaleucaSapling, Mods/juminos.MoreFruitTrees/MelaleucaTree,Mods/juminos.MoreFruitTrees/Olive, Mods/juminos.MoreFruitTrees/OliveSapling, Mods/juminos.MoreFruitTrees/OliveTree,Mods/juminos.MoreFruitTrees/Papaya, Mods/juminos.MoreFruitTrees/PapayaSapling, Mods/juminos.MoreFruitTrees/PapayaTree,Mods/juminos.MoreFruitTrees/Pear, Mods/juminos.MoreFruitTrees/PearSapling, Mods/juminos.MoreFruitTrees/PearTree,Mods/juminos.MoreFruitTrees/Pecan, Mods/juminos.MoreFruitTrees/PecanSapling, Mods/juminos.MoreFruitTrees/PecanTree,Mods/juminos.MoreFruitTrees/Persimmon, Mods/juminos.MoreFruitTrees/PersimmonSapling, Mods/juminos.MoreFruitTrees/PersimmonTree,Mods/juminos.MoreFruitTrees/Pomelo, Mods/juminos.MoreFruitTrees/PomeloSapling, Mods/juminos.MoreFruitTrees/PomeloTree,Mods/juminos.MoreFruitTrees/Ume, Mods/juminos.MoreFruitTrees/UmeSapling, Mods/juminos.MoreFruitTrees/UmeTree,Mods/juminos.MoreFruitTrees/Vanilla, Mods/juminos.MoreFruitTrees/VanillaSapling, Mods/juminos.MoreFruitTrees/VanillaTree,Mods/juminos.MoreFruitTrees/Walnut, Mods/juminos.MoreFruitTrees/WalnutSapling, Mods/juminos.MoreFruitTrees/WalnutTree,Mods/juminos.MoreFruitTrees/YlangYlang, Mods/juminos.MoreFruitTrees/YlangYlangSapling, Mods/juminos.MoreFruitTrees/YlangYlangTree,Mods/juminos.MoreFruitTrees/Yuzu, Mods/juminos.MoreFruitTrees/YuzuSapling, Mods/juminos.MoreFruitTrees/YuzuTree, Mods/juminos.MoreFruitTrees/CoconutTree, Mods/juminos.MoreFruitTrees/CoconutSapling, Mods/juminos.MoreFruitTrees/CrystalFruitTree, Mods/juminos.MoreFruitTrees/CrystalFruitSapling, Mods/juminos.MoreFruitTrees/GoldenCoconutTree, Mods/juminos.MoreFruitTrees/GoldenCoconutSapling, Mods/juminos.MoreFruitTrees/GoldenWalnutTree, Mods/juminos.MoreFruitTrees/GoldenWalnutSapling, Mods/juminos.MoreFruitTrees/HazelnutTree, Mods/juminos.MoreFruitTrees/HazelnutSapling, Mods/juminos.MoreFruitTrees/HollyTree, Mods/juminos.MoreFruitTrees/HollySapling, Mods/juminos.MoreFruitTrees/QiGemTree, Mods/juminos.MoreFruitTrees/QiGemSapling, Mods/juminos.MoreFruitTrees/SpiceBerryTree, Mods/juminos.MoreFruitTrees/SpiceBerrySapling, Mods/juminos.MoreFruitTrees/WildPlumTree, Mods/juminos.MoreFruitTrees/WildPlumSapling",
+      "Target": "Mods/juminos.MoreFruitTrees/CrystalFruitTree, Mods/juminos.MoreFruitTrees/CrystalFruitSapling, Mods/juminos.MoreFruitTrees/GoldenCoconutTree, Mods/juminos.MoreFruitTrees/GoldenCoconutSapling, Mods/juminos.MoreFruitTrees/GoldenWalnutTree, Mods/juminos.MoreFruitTrees/GoldenWalnutSapling, Mods/juminos.MoreFruitTrees/QiGemTree, Mods/juminos.MoreFruitTrees/QiGemSapling, Mods/juminos.MoreFruitTrees/SpiceBerryTree, Mods/juminos.MoreFruitTrees/SpiceBerrySapling, Mods/juminos.MoreFruitTrees/WildPlumTree, Mods/juminos.MoreFruitTrees/WildPlumSapling",
       "FromFile": "assets/{{TargetWithoutPath}}.png"
     }
   ]

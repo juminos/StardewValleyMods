@@ -643,6 +643,77 @@
           "StatToIncrementOnProduce": null,
           "ShowInSummitCredits": true,
           "CustomFields": {}
+        },
+        "juminos.MoreFarmAnimals_BillyGoat": {
+          "DisplayName": "Billy Goat",
+          "House": "Barn",
+          "Gender": "Male",
+          "PurchasePrice": 2000,
+          "SellPrice": 4000,
+          "ShopTexture": "LooseSprites\\Cursors",
+          "ShopSourceRect": {
+            "X": 64,
+            "Y": 448,
+            "Width": 32,
+            "Height": 16
+          },
+          "ShopDisplayName": "Billy Goat",
+          "ShopDescription": "May produce a kid with a female goat.\\n[LocalizedText Strings\\StringsFromCSFiles:PurchaseAnimalsMenu.cs.11344]",
+          "ShopMissingBuildingDescription": "[LocalizedText Strings\\StringsFromCSFiles:Utility.cs.5936]",
+          "RequiredBuilding": "Big Barn",
+          "UnlockCondition": null,
+          "AlternatePurchaseTypes": null,
+          "EggItemIds": null,
+          "IncubationTime": -1,
+          "IncubatorParentSheetOffset": 1,
+          "BirthText": null,
+          "DaysToMature": 5,
+          "CanGetPregnant": false,
+          "DaysToProduce": 2,
+          "HarvestType": null,
+          "HarvestTool": null,
+          "ProduceItemIds": [],
+          "DeluxeProduceItemIds": [],
+          "ProduceOnMature": false,
+          "FriendshipForFasterProduce": -1,
+          "DeluxeProduceMinimumFriendship": 200,
+          "DeluxeProduceCareDivisor": 1200.0,
+          "DeluxeProduceLuckMultiplier": 0.0,
+          "ProfessionForHappinessBoost": 3,
+          "ProfessionForQualityBoost": 3,
+          "ProfessionForFasterProduce": -1,
+          "Sound": "goat",
+          "BabySound": null,
+          "Texture": "Mods/juminos.MoreFarmAnimals/BillyGoat",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreFarmAnimals/BabyBillyGoat",
+          "UseFlippedRightForLeft": false,
+          "SpriteWidth": 32,
+          "SpriteHeight": 32,
+          "EmoteOffset": {
+            "X": 0,
+            "Y": 0
+          },
+          "SwimOffset": {
+            "X": 0,
+            "Y": 112
+          },
+          "Skins": null,
+          "ShadowWhenBabySwims": null,
+          "ShadowWhenBaby": null,
+          "ShadowWhenAdultSwims": null,
+          "ShadowWhenAdult": null,
+          "CanSwim": false,
+          "BabiesFollowAdults": false,
+          "GrassEatAmount": 4,
+          "HappinessDrain": 5,
+          "UpDownPetHitboxTileSize": "1, 1.75",
+          "LeftRightPetHitboxTileSize": "1.75, 1.25",
+          "BabyUpDownPetHitboxTileSize": "1, 1.75",
+          "BabyLeftRightPetHitboxTileSize": "1.75, 1",
+          "StatToIncrementOnProduce": null,
+          "ShowInSummitCredits": true,
+          "CustomFields": null
         }
       }
     },
@@ -691,11 +762,16 @@
       "Action": "Load",
       "Target": "Mods/juminos.MoreFarmAnimals/Penguin_1, Mods/juminos.MoreFarmAnimals/BabyPenguin_1, Mods/juminos.MoreFarmAnimals/Penguin_2, Mods/juminos.MoreFarmAnimals/BabyPenguin_2, Mods/juminos.MoreFarmAnimals/Penguin_3, Mods/juminos.MoreFarmAnimals/BabyPenguin_3, Mods/juminos.MoreFarmAnimals/Penguin_4, Mods/juminos.MoreFarmAnimals/BabyPenguin_4, Mods/juminos.MoreFarmAnimals/Penguin_5, Mods/juminos.MoreFarmAnimals/BabyPenguin_5, Mods/juminos.MoreFarmAnimals/Penguin_6, Mods/juminos.MoreFarmAnimals/BabyPenguin_6, Mods/juminos.MoreFarmAnimals/Penguin_7, Mods/juminos.MoreFarmAnimals/BabyPenguin_7",
       "FromFile": "assets/Penguin/{{TargetWithoutPath}}.png"
-    },    
+    },
     {
       "Action": "Load",
       "Target": "Mods/juminos.MoreFarmAnimals/Quail_218, Mods/juminos.MoreFarmAnimals/BabyQuail_218, Mods/juminos.MoreFarmAnimals/Quail_219, Mods/juminos.MoreFarmAnimals/BabyQuail_219, Mods/juminos.MoreFarmAnimals/Quail_220, Mods/juminos.MoreFarmAnimals/BabyQuail_220, Mods/juminos.MoreFarmAnimals/Quail_221, Mods/juminos.MoreFarmAnimals/BabyQuail_221, Mods/juminos.MoreFarmAnimals/Quail_222, Mods/juminos.MoreFarmAnimals/BabyQuail_222, Mods/juminos.MoreFarmAnimals/Quail_223, Mods/juminos.MoreFarmAnimals/BabyQuail_223, Mods/juminos.MoreFarmAnimals/Quail_224, Mods/juminos.MoreFarmAnimals/BabyQuail_224, Mods/juminos.MoreFarmAnimals/Quail_225, Mods/juminos.MoreFarmAnimals/BabyQuail_225, Mods/juminos.MoreFarmAnimals/Quail_226, Mods/juminos.MoreFarmAnimals/BabyQuail_226",
       "FromFile": "assets/Quail/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "Load",
+      "Target": "Mods/juminos.MoreFarmAnimals/BillyGoat, Mods/juminos.MoreFarmAnimals/BabyBillyGoat",
+      "FromFile": "assets/Billy Goat/{{TargetWithoutPath}}.png"
     },
 
     {
