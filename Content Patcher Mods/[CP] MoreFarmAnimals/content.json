@@ -1,6 +1,7 @@
 {
   "Format": "2.0",
   "Changes": [
+    // Animals
     {
       "Action": "EditData",
       "Target": "Data/FarmAnimals",
@@ -25,7 +26,7 @@
           "UnlockCondition": null,
           "AlternatePurchaseTypes": null,
           "EggItemIds": [
-            "107"
+            "juminos.MoreFarmAnimals_BarnRexEgg"
           ],
           "IncubationTime": 18000,
           "IncubatorParentSheetOffset": 1,
@@ -40,7 +41,7 @@
               "Id": "Default",
               "Condition": null,
               "MinimumFriendship": 0,
-              "ItemId": "107"
+              "ItemId": "juminos.MoreFarmAnimals_BarnRexEgg"
             }
           ],
           "DeluxeProduceItemIds": [
@@ -132,7 +133,7 @@
           "IncubatorParentSheetOffset": 1,
           "BirthText": null,
           "DaysToMature": 7,
-          "CanGetPregnant": true,
+          "CanGetPregnant": false,
           "DaysToProduce": 1,
           "HarvestType": "HarvestWithTool",
           "HarvestTool": null,
@@ -325,7 +326,7 @@
           "IncubatorParentSheetOffset": 1,
           "BirthText": null,
           "DaysToMature": 5,
-          "CanGetPregnant": true,
+          "CanGetPregnant": false,
           "DaysToProduce": 3,
           "HarvestType": "HarvestWithTool",
           "HarvestTool": "Shears",
@@ -406,147 +407,35 @@
           "ShowInSummitCredits": true,
           "CustomFields": {}
         },
-        "juminos.MoreFarmAnimals_Penguin": {
-          "DisplayName": "Penguin",
-          "House": "Coop",
-          "Gender": "Female",
-          "PurchasePrice": 4000,
-          "SellPrice": 8000,
-          "ShopTexture": null,
-          "ShopSourceRect": {
-            "X": 0,
-            "Y": 0,
-            "Width": 0,
-            "Height": 0
-          },
-          "ShopDisplayName": "Penguin",
-          "ShopDescription": null,
-          "ShopMissingBuildingDescription": null,
-          "RequiredBuilding": "Deluxe Coop",
-          "UnlockCondition": null,
-          "AlternatePurchaseTypes": null,
-          "EggItemIds": [
-            "juminos.MoreFarmAnimals_PenguinEgg"
-          ],
-          "IncubationTime": 9000,
-          "IncubatorParentSheetOffset": 1,
-          "BirthText": "A new baby penguin hatched!",
-          "DaysToMature": 7,
-          "CanGetPregnant": false,
-          "DaysToProduce": 5,
-          "HarvestType": "DropOvernight",
-          "HarvestTool": null,
-          "ProduceItemIds": [
-            {
-              "Id": "Default",
-              "Condition": null,
-              "MinimumFriendship": 0,
-              "ItemId": "juminos.MoreFarmAnimals_PenguinEgg"
-            }
-          ],
-          "DeluxeProduceItemIds": [],
-          "ProduceOnMature": false,
-          "FriendshipForFasterProduce": -1,
-          "DeluxeProduceMinimumFriendship": 0,
-          "DeluxeProduceCareDivisor": 1200.0,
-          "DeluxeProduceLuckMultiplier": 1.02,
-          "ProfessionForHappinessBoost": 3,
-          "ProfessionForQualityBoost": 3,
-          "ProfessionForFasterProduce": -1,
-          "Sound": "juminos.MoreFarmAnimals_PenguinSound",
-          "BabySound": "juminos.MoreFarmAnimals_PenguinSound",
-          "Texture": "Mods/juminos.MoreFarmAnimals/Penguin_1",
-          "HarvestedTexture": null,
-          "BabyTexture": "Mods/juminos.MoreFarmAnimals/Penguin_1",
-          "UseFlippedRightForLeft": false,
-          "SpriteWidth": 16,
-          "SpriteHeight": 16,
-          "EmoteOffset": {
-            "X": 0,
-            "Y": -16
-          },
-          "Skins": [
-            {
-              "ID": "juminos.MoreFarmAnimals_Penguin_2",
-              "Texture": "Mods/juminos.MoreFarmAnimals/Penguin_2",
-              "HarvestedTexture": null,
-              "BabyTexture": "Mods/juminos.MoreFarmAnimals/BabyPenguin_2"
-            },
-            {
-              "ID": "juminos.MoreFarmAnimals_Penguin_3",
-              "Texture": "Mods/juminos.MoreFarmAnimals/Penguin_3",
-              "HarvestedTexture": null,
-              "BabyTexture": "Mods/juminos.MoreFarmAnimals/BabyPenguin_3"
-            },
-            {
-              "ID": "juminos.MoreFarmAnimals_Penguin_4",
-              "Texture": "Mods/juminos.MoreFarmAnimals/Penguin_4",
-              "HarvestedTexture": null,
-              "BabyTexture": "Mods/juminos.MoreFarmAnimals/BabyPenguin_4"
-            },
-            {
-              "ID": "juminos.MoreFarmAnimals_Penguin_5",
-              "Texture": "Mods/juminos.MoreFarmAnimals/Penguin_5",
-              "HarvestedTexture": null,
-              "BabyTexture": "Mods/juminos.MoreFarmAnimals/BabyPenguin_5"
-            },
-            {
-              "ID": "juminos.MoreFarmAnimals_Penguin_6",
-              "Texture": "Mods/juminos.MoreFarmAnimals/Penguin_6",
-              "HarvestedTexture": null,
-              "BabyTexture": "Mods/juminos.MoreFarmAnimals/BabyPenguin_6"
-            },
-            {
-              "ID": "juminos.MoreFarmAnimals_Penguin_7",
-              "Texture": "Mods/juminos.MoreFarmAnimals/Penguin_7",
-              "HarvestedTexture": null,
-              "BabyTexture": "Mods/juminos.MoreFarmAnimals/BabyPenguin_7"
-            }
-          ],
-          "ShadowWhenBabySwims": null,
-          "ShadowWhenBaby": null,
-          "ShadowWhenAdultSwims": null,
-          "ShadowWhenAdult": null,
-          "CanSwim": true,
-          "BabiesFollowAdults": true,
-          "GrassEatAmount": 2,
-          "HappinessDrain": 8,
-          "UpDownPetHitboxTileSize": "1, 1",
-          "LeftRightPetHitboxTileSize": "1, 1",
-          "BabyUpDownPetHitboxTileSize": "1, 1",
-          "BabyLeftRightPetHitboxTileSize": "1, 1",
-          "StatToIncrementOnProduce": null,
-          "ShowInSummitCredits": true,
-          "CustomFields": {}
-        },
         "juminos.MoreFarmAnimals_Quail": {
           "DisplayName": "Quail",
           "House": "Coop",
           "Gender": "Female",
           "PurchasePrice": 1000,
           "SellPrice": 2000,
-          "ShopTexture": null,
+          "ShopTexture": "Mods/juminos.MoreFarmAnimals/ShopIcons",
           "ShopSourceRect": {
-            "X": 0,
-            "Y": 0,
-            "Width": 0,
-            "Height": 0
+            "X": 64,
+            "Y": 16,
+            "Width": 32,
+            "Height": 16
           },
           "ShopDisplayName": "Quail",
-          "ShopDescription": null,
-          "ShopMissingBuildingDescription": null,
+          "ShopDescription": "Quaint little ground birds.",
+          "ShopMissingBuildingDescription": "[LocalizedText Strings\\StringsFromCSFiles:Utility.cs.5947]",
           "RequiredBuilding": "Deluxe Coop",
           "UnlockCondition": null,
           "AlternatePurchaseTypes": null,
           "EggItemIds": [
-            "juminos.MoreFarmAnimals_QuailEgg"
+            "juminos.MoreFarmAnimals_QuailEgg",
+            "juminos.MoreFarmAnimals_LargeQuailEgg"
           ],
           "IncubationTime": -1,
           "IncubatorParentSheetOffset": 1,
           "BirthText": "A new baby quail hatched!",
-          "DaysToMature": 5,
+          "DaysToMature": 3,
           "CanGetPregnant": false,
-          "DaysToProduce": 2,
+          "DaysToProduce": 1,
           "HarvestType": "DropOvernight",
           "HarvestTool": null,
           "ProduceItemIds": [
@@ -557,17 +446,24 @@
               "ItemId": "juminos.MoreFarmAnimals_QuailEgg"
             }
           ],
-          "DeluxeProduceItemIds": [],
+          "DeluxeProduceItemIds": [
+            {
+              "Id": "Default",
+              "Condition": null,
+              "MinimumFriendship": 500,
+              "ItemId": "juminos.MoreFarmAnimals_LargeQuailEgg"
+            }
+          ],
           "ProduceOnMature": false,
           "FriendshipForFasterProduce": -1,
-          "DeluxeProduceMinimumFriendship": 0,
+          "DeluxeProduceMinimumFriendship": 200,
           "DeluxeProduceCareDivisor": 1200.0,
-          "DeluxeProduceLuckMultiplier": 1.02,
-          "ProfessionForHappinessBoost": 3,
-          "ProfessionForQualityBoost": 3,
+          "DeluxeProduceLuckMultiplier": 0.0,
+          "ProfessionForHappinessBoost": 2,
+          "ProfessionForQualityBoost": 2,
           "ProfessionForFasterProduce": -1,
-          "Sound": "Duck",
-          "BabySound": null,
+          "Sound": "Mods/juminos.MoreFarmAnimals/quail",
+          "BabySound": "SpringBirds",
           "Texture": "Mods/juminos.MoreFarmAnimals/Quail_218",
           "HarvestedTexture": null,
           "BabyTexture": "Mods/juminos.MoreFarmAnimals/BabyQuail_218",
@@ -626,6 +522,18 @@
               "Texture": "Mods/juminos.MoreFarmAnimals/Quail_226",
               "HarvestedTexture": null,
               "BabyTexture": "Mods/juminos.MoreFarmAnimals/BabyQuail_226"
+            },
+            {
+              "ID": "juminos.MoreFarmAnimals_commonquail",
+              "Texture": "Mods/juminos.MoreFarmAnimals/commonquail",
+              "HarvestedTexture": null,
+              "BabyTexture": "Mods/juminos.MoreFarmAnimals/commonquailbaby"
+            },
+            {
+              "ID": "juminos.MoreFarmAnimals_valleyquail",
+              "Texture": "Mods/juminos.MoreFarmAnimals/valleyquail",
+              "HarvestedTexture": null,
+              "BabyTexture": "Mods/juminos.MoreFarmAnimals/valleyquailbaby"
             }
           ],
           "ShadowWhenBabySwims": null,
@@ -670,7 +578,7 @@
           "DaysToMature": 5,
           "CanGetPregnant": false,
           "DaysToProduce": 2,
-          "HarvestType": null,
+          "HarvestType": "DropOvernight",
           "HarvestTool": null,
           "ProduceItemIds": [],
           "DeluxeProduceItemIds": [],
@@ -714,9 +622,485 @@
           "StatToIncrementOnProduce": null,
           "ShowInSummitCredits": true,
           "CustomFields": null
+        },
+        "juminos.MoreFarmAnimals_Rooster": {
+          "DisplayName": "Rooster",
+          "House": "Coop",
+          "Gender": "Male",
+          "PurchasePrice": 1000,
+          "SellPrice": 2000,
+          "ShopTexture": "Mods/juminos.MoreFarmAnimals/animal_shop_rooster",
+          "ShopSourceRect": {
+            "X": 0,
+            "Y": 0,
+            "Width": 0,
+            "Height": 0
+          },
+          "ShopDisplayName": "Rooster",
+          "ShopDescription": null,
+          "ShopMissingBuildingDescription": "[LocalizedText Strings\\StringsFromCSFiles:Utility.cs.5926]",
+          "RequiredBuilding": "Coop",
+          "UnlockCondition": null,
+          "AlternatePurchaseTypes": [
+            {
+              "Condition": "RANDOM 0.25, PLAYER_HAS_SEEN_EVENT Current 3900074",
+              "AnimalIds": [
+                "juminos.MoreFarmAnimals_BlueRooster"
+              ]
+            },
+            {
+              "Condition": null,
+              "AnimalIds": [
+                "juminos.MoreFarmAnimals_Rooster",
+                "juminos.MoreFarmAnimals_BrownRooster",
+                "juminos.MoreFarmAnimals_WhiteRooster"
+              ]
+            }
+          ],
+          "EggItemIds": [
+            "juminos.MoreFarmAnimals_FertilizedWhiteEgg",
+            "juminos.MoreFarmAnimals_FertilizedBrownEgg"
+          ],
+          "IncubationTime": -1,
+          "IncubatorParentSheetOffset": 1,
+          "BirthText": "A new baby chick hatched!",
+          "DaysToMature": 5,
+          "CanGetPregnant": false,
+          "DaysToProduce": 2,
+          "HarvestType": "DropOvernight",
+          "HarvestTool": null,
+          "ProduceItemIds": [
+            {
+              "Id": "Default",
+              "Condition": null,
+              "MinimumFriendship": 0,
+              "ItemId": "juminos.MoreFarmAnimals_BrownRoosterFeather"
+            },
+            {
+              "Id": "Default",
+              "Condition": null,
+              "MinimumFriendship": 0,
+              "ItemId": "juminos.MoreFarmAnimals_WhiteRoosterFeather"
+            }
+          ],
+          "DeluxeProduceItemIds": [],
+          "ProduceOnMature": false,
+          "FriendshipForFasterProduce": -1,
+          "DeluxeProduceMinimumFriendship": 0,
+          "DeluxeProduceCareDivisor": 1200.0,
+          "DeluxeProduceLuckMultiplier": 1.02,
+          "ProfessionForHappinessBoost": 3,
+          "ProfessionForQualityBoost": 3,
+          "ProfessionForFasterProduce": -1,
+          "Sound": "rooster",
+          "BabySound": null,
+          "Texture": "Mods/juminos.MoreFarmAnimals/rooster",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreFarmAnimals/babyrooster",
+          "UseFlippedRightForLeft": false,
+          "SpriteWidth": 16,
+          "SpriteHeight": 16,
+          "EmoteOffset": {
+            "X": 0,
+            "Y": -16
+          },
+          "Skins": [],
+          "ShadowWhenBabySwims": null,
+          "ShadowWhenBaby": null,
+          "ShadowWhenAdultSwims": null,
+          "ShadowWhenAdult": null,
+          "CanSwim": false,
+          "BabiesFollowAdults": true,
+          "GrassEatAmount": 2,
+          "HappinessDrain": 8,
+          "UpDownPetHitboxTileSize": "1, 1",
+          "LeftRightPetHitboxTileSize": "1, 1",
+          "BabyUpDownPetHitboxTileSize": "1, 1",
+          "BabyLeftRightPetHitboxTileSize": "1, 1",
+          "StatToIncrementOnProduce": null,
+          "ShowInSummitCredits": true,
+          "CustomFields": {}
+        },
+        "juminos.MoreFarmAnimals_BlueRooster": {
+          "DisplayName": "Blue Rooster",
+          "House": "Coop",
+          "Gender": "Male",
+          "PurchasePrice": -1,
+          "SellPrice": 2000,
+          "ShopTexture": null,
+          "ShopSourceRect": {
+            "X": 0,
+            "Y": 0,
+            "Width": 0,
+            "Height": 0
+          },
+          "ShopDisplayName": null,
+          "ShopDescription": null,
+          "ShopMissingBuildingDescription": null,
+          "RequiredBuilding": null,
+          "UnlockCondition": null,
+          "AlternatePurchaseTypes": [],
+          "EggItemIds": [
+            "juminos.MoreFarmAnimals_FertilizedBlueEgg"
+          ],
+          "IncubationTime": -1,
+          "IncubatorParentSheetOffset": 1,
+          "BirthText": "A new baby chick hatched!",
+          "DaysToMature": 5,
+          "CanGetPregnant": false,
+          "DaysToProduce": 2,
+          "HarvestType": "DropOvernight",
+          "HarvestTool": null,
+          "ProduceItemIds": [
+            {
+              "Id": "Default",
+              "Condition": null,
+              "MinimumFriendship": 0,
+              "ItemId": "juminos.MoreFarmAnimals_BlueRoosterFeather"
+            }
+          ],
+          "DeluxeProduceItemIds": [],
+          "ProduceOnMature": false,
+          "FriendshipForFasterProduce": -1,
+          "DeluxeProduceMinimumFriendship": 0,
+          "DeluxeProduceCareDivisor": 1200.0,
+          "DeluxeProduceLuckMultiplier": 1.02,
+          "ProfessionForHappinessBoost": 3,
+          "ProfessionForQualityBoost": 3,
+          "ProfessionForFasterProduce": -1,
+          "sound": "rooster",
+          "BabySound": null,
+          "Texture": "Mods/juminos.MoreFarmAnimals/BlueRooster",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreFarmAnimals/BabyBlueRooster",
+          "UseFlippedRightForLeft": false,
+          "SpriteWidth": 16,
+          "SpriteHeight": 16,
+          "EmoteOffset": {
+            "X": 0,
+            "Y": -16
+          },
+          "Skins": [],
+          "ShadowWhenBabySwims": null,
+          "ShadowWhenBaby": null,
+          "ShadowWhenAdultSwims": null,
+          "ShadowWhenAdult": null,
+          "CanSwim": false,
+          "BabiesFollowAdults": true,
+          "GrassEatAmount": 2,
+          "HappinessDrain": 8,
+          "UpDownPetHitboxTileSize": "1, 1",
+          "LeftRightPetHitboxTileSize": "1, 1",
+          "BabyUpDownPetHitboxTileSize": "1, 1",
+          "BabyLeftRightPetHitboxTileSize": "1, 1",
+          "StatToIncrementOnProduce": null,
+          "ShowInSummitCredits": true,
+          "CustomFields": {}
+        },
+        "juminos.MoreFarmAnimals_BrownRooster": {
+          "DisplayName": "Brown Rooster",
+          "House": "Coop",
+          "Gender": "Male",
+          "PurchasePrice": -1,
+          "SellPrice": 2000,
+          "ShopTexture": null,
+          "ShopSourceRect": {
+            "X": 0,
+            "Y": 0,
+            "Width": 0,
+            "Height": 0
+          },
+          "ShopDisplayName": null,
+          "ShopDescription": null,
+          "ShopMissingBuildingDescription": null,
+          "RequiredBuilding": null,
+          "UnlockCondition": null,
+          "AlternatePurchaseTypes": [],
+          "EggItemIds": [
+            "juminos.MoreFarmAnimals_FertilizedBrownEgg"
+          ],
+          "IncubationTime": -1,
+          "IncubatorParentSheetOffset": 1,
+          "BirthText": "A new baby chick hatched!",
+          "DaysToMature": 5,
+          "CanGetPregnant": false,
+          "DaysToProduce": 2,
+          "HarvestType": "DropOvernight",
+          "HarvestTool": null,
+          "ProduceItemIds": [
+            {
+              "Id": "Default",
+              "Condition": null,
+              "MinimumFriendship": 0,
+              "ItemId": "juminos.MoreFarmAnimals_BrownRoosterFeather"
+            }
+          ],
+          "DeluxeProduceItemIds": [],
+          "ProduceOnMature": false,
+          "FriendshipForFasterProduce": -1,
+          "DeluxeProduceMinimumFriendship": 0,
+          "DeluxeProduceCareDivisor": 1200.0,
+          "DeluxeProduceLuckMultiplier": 1.02,
+          "ProfessionForHappinessBoost": 3,
+          "ProfessionForQualityBoost": 3,
+          "ProfessionForFasterProduce": -1,
+          "sound": "rooster",
+          "BabySound": null,
+          "Texture": "Mods/juminos.MoreFarmAnimals/BrownRooster",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreFarmAnimals/BabyBrownRooster",
+          "UseFlippedRightForLeft": false,
+          "SpriteWidth": 16,
+          "SpriteHeight": 16,
+          "EmoteOffset": {
+            "X": 0,
+            "Y": -16
+          },
+          "Skins": [],
+          "ShadowWhenBabySwims": null,
+          "ShadowWhenBaby": null,
+          "ShadowWhenAdultSwims": null,
+          "ShadowWhenAdult": null,
+          "CanSwim": false,
+          "BabiesFollowAdults": true,
+          "GrassEatAmount": 2,
+          "HappinessDrain": 8,
+          "UpDownPetHitboxTileSize": "1, 1",
+          "LeftRightPetHitboxTileSize": "1, 1",
+          "BabyUpDownPetHitboxTileSize": "1, 1",
+          "BabyLeftRightPetHitboxTileSize": "1, 1",
+          "StatToIncrementOnProduce": null,
+          "ShowInSummitCredits": true,
+          "CustomFields": {}
+        },
+        "juminos.MoreFarmAnimals_VoidRooster": {
+          "DisplayName": "Void Rooster",
+          "House": "Coop",
+          "Gender": "Male",
+          "PurchasePrice": -1,
+          "SellPrice": 2000,
+          "ShopTexture": null,
+          "ShopSourceRect": {
+            "X": 0,
+            "Y": 0,
+            "Width": 0,
+            "Height": 0
+          },
+          "ShopDisplayName": null,
+          "ShopDescription": null,
+          "ShopMissingBuildingDescription": null,
+          "RequiredBuilding": null,
+          "UnlockCondition": null,
+          "AlternatePurchaseTypes": [],
+          "EggItemIds": [
+            "juminos.MoreFarmAnimals_FertilizedVoidEgg"
+          ],
+          "IncubationTime": -1,
+          "IncubatorParentSheetOffset": 2,
+          "BirthText": "A new baby chick hatched!",
+          "DaysToMature": 5,
+          "CanGetPregnant": false,
+          "DaysToProduce": 2,
+          "HarvestType": "DropOvernight",
+          "HarvestTool": null,
+          "ProduceItemIds": [
+            {
+              "Id": "Default",
+              "Condition": null,
+              "MinimumFriendship": 0,
+              "ItemId": "juminos.MoreFarmAnimals_VoidRoosterFeather"
+            }
+          ],
+          "DeluxeProduceItemIds": [],
+          "ProduceOnMature": false,
+          "FriendshipForFasterProduce": -1,
+          "DeluxeProduceMinimumFriendship": 0,
+          "DeluxeProduceCareDivisor": 1200.0,
+          "DeluxeProduceLuckMultiplier": 1.02,
+          "ProfessionForHappinessBoost": 3,
+          "ProfessionForQualityBoost": 3,
+          "ProfessionForFasterProduce": -1,
+          "sound": "rooster",
+          "BabySound": null,
+          "Texture": "Mods/juminos.MoreFarmAnimals/VoidRooster",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreFarmAnimals/BabyVoidRooster",
+          "UseFlippedRightForLeft": false,
+          "SpriteWidth": 16,
+          "SpriteHeight": 16,
+          "EmoteOffset": {
+            "X": 0,
+            "Y": -16
+          },
+          "Skins": [],
+          "ShadowWhenBabySwims": null,
+          "ShadowWhenBaby": null,
+          "ShadowWhenAdultSwims": null,
+          "ShadowWhenAdult": null,
+          "CanSwim": false,
+          "BabiesFollowAdults": true,
+          "GrassEatAmount": 2,
+          "HappinessDrain": 8,
+          "UpDownPetHitboxTileSize": "1, 1",
+          "LeftRightPetHitboxTileSize": "1, 1",
+          "BabyUpDownPetHitboxTileSize": "1, 1",
+          "BabyLeftRightPetHitboxTileSize": "1, 1",
+          "StatToIncrementOnProduce": null,
+          "ShowInSummitCredits": true,
+          "CustomFields": {}
+        },
+        "juminos.MoreFarmAnimals_WhiteRooster": {
+          "DisplayName": "White Rooster",
+          "House": "Coop",
+          "Gender": "Male",
+          "PurchasePrice": -1,
+          "SellPrice": 2000,
+          "ShopTexture": null,
+          "ShopSourceRect": {
+            "X": 0,
+            "Y": 0,
+            "Width": 0,
+            "Height": 0
+          },
+          "ShopDisplayName": null,
+          "ShopDescription": null,
+          "ShopMissingBuildingDescription": null,
+          "RequiredBuilding": null,
+          "UnlockCondition": null,
+          "AlternatePurchaseTypes": [],
+          "EggItemIds": [
+            "juminos.MoreFarmAnimals_FertilizedWhiteEgg"
+          ],
+          "IncubationTime": -1,
+          "IncubatorParentSheetOffset": 1,
+          "BirthText": "A new baby chick hatched!",
+          "DaysToMature": 3,
+          "CanGetPregnant": false,
+          "DaysToProduce": 2,
+          "HarvestType": "DropOvernight",
+          "HarvestTool": null,
+          "ProduceItemIds": [
+            {
+              "Id": "Default",
+              "Condition": null,
+              "MinimumFriendship": 0,
+              "ItemId": "juminos.MoreFarmAnimals_WhiteRoosterFeather"
+            }
+          ],
+          "DeluxeProduceItemIds": [],
+          "ProduceOnMature": false,
+          "FriendshipForFasterProduce": -1,
+          "DeluxeProduceMinimumFriendship": 0,
+          "DeluxeProduceCareDivisor": 1200.0,
+          "DeluxeProduceLuckMultiplier": 1.02,
+          "ProfessionForHappinessBoost": 3,
+          "ProfessionForQualityBoost": 3,
+          "ProfessionForFasterProduce": -1,
+          "sound": "rooster",
+          "BabySound": null,
+          "Texture": "Mods/juminos.MoreFarmAnimals/WhiteRooster",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/juminos.MoreFarmAnimals/BabyWhiteRooster",
+          "UseFlippedRightForLeft": false,
+          "SpriteWidth": 16,
+          "SpriteHeight": 16,
+          "EmoteOffset": {
+            "X": 0,
+            "Y": -16
+          },
+          "Skins": [],
+          "ShadowWhenBabySwims": null,
+          "ShadowWhenBaby": null,
+          "ShadowWhenAdultSwims": null,
+          "ShadowWhenAdult": null,
+          "CanSwim": false,
+          "BabiesFollowAdults": true,
+          "GrassEatAmount": 2,
+          "HappinessDrain": 8,
+          "UpDownPetHitboxTileSize": "1, 1",
+          "LeftRightPetHitboxTileSize": "1, 1",
+          "BabyUpDownPetHitboxTileSize": "1, 1",
+          "BabyLeftRightPetHitboxTileSize": "1, 1",
+          "StatToIncrementOnProduce": null,
+          "ShowInSummitCredits": true,
+          "CustomFields": {}
+        },
+        "juminos.MoreFarmAnimals_MaleOstrich": {
+          "DisplayName": "Male Ostrich",
+          "House": "Barn",
+          "Gender": "Male",
+          "PurchasePrice": -1,
+          "SellPrice": 16000,
+          "ShopTexture": "LooseSprites\\Cursors",
+          "ShopSourceRect": {
+            "X": 32,
+            "Y": 480,
+            "Width": 32,
+            "Height": 16
+          },
+          "ShopDisplayName": null,
+          "ShopDescription": "[LocalizedText Strings\\StringsFromCSFiles:Ostrich_Description]\\n[LocalizedText Strings\\StringsFromCSFiles:PurchaseAnimalsMenu.cs.11344]",
+          "ShopMissingBuildingDescription": "[LocalizedText Strings\\StringsFromCSFiles:Utility.cs.5931]",
+          "RequiredBuilding": "Barn",
+          "UnlockCondition": null,
+          "AlternatePurchaseTypes": null,
+          "EggItemIds": [
+            "juminos.MoreFarmAnimals_FertilizedOstrichEgg"
+          ],
+          "IncubationTime": -1,
+          "IncubatorParentSheetOffset": 1,
+          "BirthText": "[LocalizedText Strings\\Locations:AnimalHouse_Incubator_Hatch_Ostrich]",
+          "DaysToMature": 7,
+          "CanGetPregnant": false,
+          "DaysToProduce": 7,
+          "HarvestType": "DropOvernight",
+          "HarvestTool": null,
+          "ProduceItemIds": [],
+          "DeluxeProduceItemIds": [],
+          "ProduceOnMature": false,
+          "FriendshipForFasterProduce": -1,
+          "DeluxeProduceMinimumFriendship": 200,
+          "DeluxeProduceCareDivisor": 1200.0,
+          "DeluxeProduceLuckMultiplier": 0.0,
+          "ProfessionForHappinessBoost": 3,
+          "ProfessionForQualityBoost": 3,
+          "ProfessionForFasterProduce": -1,
+          "Sound": "Ostrich",
+          "BabySound": null,
+          "Texture": "Mods/juminos.MoreFarmAnimals/MaleOstrich",
+          "HarvestedTexture": null,
+          "BabyTexture": "Animals\\BabyOstrich",
+          "UseFlippedRightForLeft": false,
+          "SpriteWidth": 32,
+          "SpriteHeight": 32,
+          "EmoteOffset": {
+            "X": 0,
+            "Y": 0
+          },
+          "SwimOffset": {
+            "X": 0,
+            "Y": 112
+          },
+          "Skins": null,
+          "ShadowWhenBabySwims": null,
+          "ShadowWhenBaby": null,
+          "ShadowWhenAdultSwims": null,
+          "ShadowWhenAdult": null,
+          "CanSwim": false,
+          "BabiesFollowAdults": false,
+          "GrassEatAmount": 4,
+          "HappinessDrain": 5,
+          "UpDownPetHitboxTileSize": "1.5, 2",
+          "LeftRightPetHitboxTileSize": "2, 2",
+          "BabyUpDownPetHitboxTileSize": "1, 1",
+          "BabyLeftRightPetHitboxTileSize": "1, 1",
+          "StatToIncrementOnProduce": null,
+          "ShowInSummitCredits": true,
+          "CustomFields": null
         }
       }
     },
+    // Sounds
     {
       "Action": "EditData",
       "Target": "Data/AudioChanges",
@@ -731,13 +1115,14 @@
           "FilePaths": [ "{{AbsoluteFilePath: assets/Llama/LlamaSound.wav}}" ],
           "Category": "Sound"
         },
-        "juminos.MoreFarmAnimals_PenguinSound": {
-          "ID": "juminos.MoreFarmAnimals_PenguinSound",
-          "FilePaths": [ "{{AbsoluteFilePath: assets/Penguin/penguin.wav}}" ],
+        "juminos.MoreFarmAnimals_quail": {
+          "ID": "juminos.MoreFarmAnimals_quail",
+          "FilePaths": [ "{{AbsoluteFilePath: assets/Quail/quail.wav}}" ],
           "Category": "Sound"
         }
       }
     },
+    // Load Sprites
     {
       "Action": "Load",
       "Target": "Mods/juminos.MoreFarmAnimals/BarnRex, Mods/juminos.MoreFarmAnimals/BabyBarnRex",
@@ -760,12 +1145,7 @@
     },
     {
       "Action": "Load",
-      "Target": "Mods/juminos.MoreFarmAnimals/Penguin_1, Mods/juminos.MoreFarmAnimals/BabyPenguin_1, Mods/juminos.MoreFarmAnimals/Penguin_2, Mods/juminos.MoreFarmAnimals/BabyPenguin_2, Mods/juminos.MoreFarmAnimals/Penguin_3, Mods/juminos.MoreFarmAnimals/BabyPenguin_3, Mods/juminos.MoreFarmAnimals/Penguin_4, Mods/juminos.MoreFarmAnimals/BabyPenguin_4, Mods/juminos.MoreFarmAnimals/Penguin_5, Mods/juminos.MoreFarmAnimals/BabyPenguin_5, Mods/juminos.MoreFarmAnimals/Penguin_6, Mods/juminos.MoreFarmAnimals/BabyPenguin_6, Mods/juminos.MoreFarmAnimals/Penguin_7, Mods/juminos.MoreFarmAnimals/BabyPenguin_7",
-      "FromFile": "assets/Penguin/{{TargetWithoutPath}}.png"
-    },
-    {
-      "Action": "Load",
-      "Target": "Mods/juminos.MoreFarmAnimals/Quail_218, Mods/juminos.MoreFarmAnimals/BabyQuail_218, Mods/juminos.MoreFarmAnimals/Quail_219, Mods/juminos.MoreFarmAnimals/BabyQuail_219, Mods/juminos.MoreFarmAnimals/Quail_220, Mods/juminos.MoreFarmAnimals/BabyQuail_220, Mods/juminos.MoreFarmAnimals/Quail_221, Mods/juminos.MoreFarmAnimals/BabyQuail_221, Mods/juminos.MoreFarmAnimals/Quail_222, Mods/juminos.MoreFarmAnimals/BabyQuail_222, Mods/juminos.MoreFarmAnimals/Quail_223, Mods/juminos.MoreFarmAnimals/BabyQuail_223, Mods/juminos.MoreFarmAnimals/Quail_224, Mods/juminos.MoreFarmAnimals/BabyQuail_224, Mods/juminos.MoreFarmAnimals/Quail_225, Mods/juminos.MoreFarmAnimals/BabyQuail_225, Mods/juminos.MoreFarmAnimals/Quail_226, Mods/juminos.MoreFarmAnimals/BabyQuail_226",
+      "Target": "Mods/juminos.MoreFarmAnimals/Quail_218, Mods/juminos.MoreFarmAnimals/BabyQuail_218, Mods/juminos.MoreFarmAnimals/Quail_219, Mods/juminos.MoreFarmAnimals/BabyQuail_219, Mods/juminos.MoreFarmAnimals/Quail_220, Mods/juminos.MoreFarmAnimals/BabyQuail_220, Mods/juminos.MoreFarmAnimals/Quail_221, Mods/juminos.MoreFarmAnimals/BabyQuail_221, Mods/juminos.MoreFarmAnimals/Quail_222, Mods/juminos.MoreFarmAnimals/BabyQuail_222, Mods/juminos.MoreFarmAnimals/Quail_223, Mods/juminos.MoreFarmAnimals/BabyQuail_223, Mods/juminos.MoreFarmAnimals/Quail_224, Mods/juminos.MoreFarmAnimals/BabyQuail_224, Mods/juminos.MoreFarmAnimals/Quail_225, Mods/juminos.MoreFarmAnimals/BabyQuail_225, Mods/juminos.MoreFarmAnimals/Quail_226, Mods/juminos.MoreFarmAnimals/BabyQuail_226, Mods/juminos.MoreFarmAnimals/QuailEgg, Mods/juminos.MoreFarmAnimals/LargeQuailEgg, Mods/juminos.MoreFarmAnimals/QuailMayo, Mods/juminos.MoreFarmAnimals/LargeQuailMayo, Mods/juminos.MoreFarmAnimals/commonquail, Mods/juminos.MoreFarmAnimals/commonquailbaby, Mods/juminos.MoreFarmAnimals/valleyquail, Mods/juminos.MoreFarmAnimals/valleyquailbaby",
       "FromFile": "assets/Quail/{{TargetWithoutPath}}.png"
     },
     {
@@ -773,11 +1153,50 @@
       "Target": "Mods/juminos.MoreFarmAnimals/BillyGoat, Mods/juminos.MoreFarmAnimals/BabyBillyGoat",
       "FromFile": "assets/Billy Goat/{{TargetWithoutPath}}.png"
     },
-
+    {
+      "Action": "Load",
+      "Target": "Mods/juminos.MoreFarmAnimals/rooster, Mods/juminos.MoreFarmAnimals/babyrooster, Mods/juminos.MoreFarmAnimals/animal_shop_rooster, Mods/juminos.MoreFarmAnimals/BlueRooster, Mods/juminos.MoreFarmAnimals/BabyBlueRooster, Mods/juminos.MoreFarmAnimals/BrownRooster, Mods/juminos.MoreFarmAnimals/BabyBrownRooster, Mods/juminos.MoreFarmAnimals/VoidRooster, Mods/juminos.MoreFarmAnimals/BabyVoidRooster, Mods/juminos.MoreFarmAnimals/WhiteRooster, Mods/juminos.MoreFarmAnimals/BabyWhiteRooster",
+      "FromFile": "assets/Rooster/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "Load",
+      "Target": "Mods/juminos.MoreFarmAnimals/MaleOstrich",
+      "FromFile": "assets/Ostrich/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "Load",
+      "Target": "Mods/juminos.MoreFarmAnimals/MFAObjects, Mods/juminos.MoreFarmAnimals/ShopIcons",
+      "FromFile": "assets/{{TargetWithoutPath}}.png"
+    },
+    // Objects
     {
       "Action": "EditData",
       "Target": "Data/Objects",
       "Entries": {
+        "juminos.MoreFarmAnimals_BarnRexEgg": {
+          "Name": "Barn Rex Egg",
+          "DisplayName": "Barn Rex Egg",
+          "Description": "This could make a lot of mayo.",
+          "Type": "Basic",
+          "Category": -5,
+          "Price": 100,
+          "Texture": "Mods/juminos.MoreFarmAnimals/MFAObjects",
+          "SpriteIndex": 0,
+          "Edibility": 15,
+          "IsDrink": false,
+          "Buff": null,
+          "GeodeDropsDefaultItems": false,
+          "GeodeDrops": null,
+          "ArtifactSpotChances": null,
+          "ExcludeFromFishingCollection": false,
+          "ExcludeFromShippingCollection": false,
+          "ExcludeFromRandomSale": false,
+          "ContextTags": [
+            "color_red",
+            "egg_item"
+          ],
+          "CustomFields": {}
+        },
         "juminos.MoreFarmAnimals_DoveEgg": {
           "Name": "Dove Egg",
           "DisplayName": "Dove Egg",
@@ -802,43 +1221,284 @@
           ],
           "CustomFields": {}
         },
-        "juminos.MoreFarmAnimals_PenguinEgg": {
-          "Name": "Penguin Egg",
-          "DisplayName": "Penguin Egg",
-          "Description": "It's still warm.",
+        "juminos.MoreFarmAnimals_QuailEgg": {
+          "Name": "QuailEgg",
+          "DisplayName": "Quail Egg",
+          "Description": "A tiny speckled egg from a quail.",
+          "Texture": "Mods/juminos.MoreFarmAnimals/QuailEgg",
           "Type": "Basic",
           "Category": -5,
-          "Price": 300,
-          "Texture": null,
-          "SpriteIndex": 174,
-          "Edibility": 15,
+          "Price": 100,
+          "GiftTastes": {
+            "Love": [
+              "Gus",
+              "Lewis"
+            ],
+            "Like": [
+              "Alex",
+              "Demetrius",
+              "Harvey",
+              "Jodi",
+              "Kent",
+              "Linus",
+              "Marnie",
+              "Pierre",
+              "Sam",
+              "Shane"
+            ],
+            "Neutral": [
+              "Caroline",
+              "Clint",
+              "Elliot",
+              "Emily",
+              "Evelyn",
+              "George",
+              "Krobus",
+              "Leo",
+              "Maru",
+              "Penny",
+              "Robin",
+              "Sandy",
+              "Willy"
+            ],
+            "Dislike": [
+              "Abigail",
+              "Dwarf",
+              "Haley",
+              "Jas",
+              "Pam",
+              "Vincent",
+              "Wizard"
+            ],
+            "Hate": [
+              "Sebastian",
+              "Leah"
+            ]
+          },
+          "SpriteIndex": 0,
+          "Edibility": 10,
           "IsDrink": false,
-          "Buff": null,
+          "Buffs": null,
           "GeodeDropsDefaultItems": false,
           "GeodeDrops": null,
           "ArtifactSpotChances": null,
-          "ExcludeFromFishingCollection": false,
+          "ExcludeFromFishingCollection": true,
           "ExcludeFromShippingCollection": false,
           "ExcludeFromRandomSale": false,
           "ContextTags": [
             "color_white",
-            "egg_item",
-            "large_egg_item"
+            "egg_item"
           ],
-          "CustomFields": {}
+          "CustomFields": null
         },
-        "juminos.MoreFarmAnimals_QuailEgg": {
-          "Name": "Quail Egg",
-          "DisplayName": "Quail Egg",
-          "Description": "It's still warm.",
+        "juminos.MoreFarmAnimals_LargeQuailEgg": {
+          "Name": "LargeQuailEgg",
+          "DisplayName": "Large Quail Egg",
+          "Description": "An unusually large speckled egg from a quail. Ouch.",
+          "Texture": "Mods/juminos.MoreFarmAnimals/LargeQuailEgg",
           "Type": "Basic",
           "Category": -5,
           "Price": 300,
-          "Texture": null,
-          "SpriteIndex": 442,
-          "Edibility": 15,
+          "GiftTastes": {
+            "Love": [
+              "Gus",
+              "Lewis"
+            ],
+            "Like": [
+              "Alex",
+              "Demetrius",
+              "Harvey",
+              "Jodi",
+              "Kent",
+              "Linus",
+              "Marnie",
+              "Pierre",
+              "Sam",
+              "Shane"
+            ],
+            "Neutral": [
+              "Caroline",
+              "Clint",
+              "Elliot",
+              "Emily",
+              "Evelyn",
+              "George",
+              "Krobus",
+              "Leo",
+              "Maru",
+              "Penny",
+              "Robin",
+              "Sandy",
+              "Willy"
+            ],
+            "Dislike": [
+              "Abigail",
+              "Dwarf",
+              "Haley",
+              "Jas",
+              "Pam",
+              "Vincent",
+              "Wizard"
+            ],
+            "Hate": [
+              "Sebastian",
+              "Leah"
+            ]
+          },
+          "SpriteIndex": 0,
+          "Edibility": 10,
           "IsDrink": false,
-          "Buff": null,
+          "Buffs": null,
+          "GeodeDropsDefaultItems": false,
+          "GeodeDrops": null,
+          "ArtifactSpotChances": null,
+          "ExcludeFromFishingCollection": true,
+          "ExcludeFromShippingCollection": false,
+          "ExcludeFromRandomSale": false,
+          "ContextTags": [
+            "color_white",
+            "egg_item"
+          ],
+          "CustomFields": null
+        },
+        "juminos.MoreFarmAnimals_QuailMayo": {
+          "Name": "TinyQuailMayo",
+          "DisplayName": "Quail Mayonnaise",
+          "Description": "A tiny jar of mayonnaise made from tiny little eggs. Cute.",
+          "Texture": "Mods/juminos.MoreFarmAnimals/QuailMayo",
+          "Type": "Basic",
+          "Category": -26,
+          "Price": 1200,
+          "GiftTastes": {
+            "Like": [
+              "Abigail",
+              "Alex",
+              "Clint",
+              "Demetrius",
+              "Dwarf",
+              "Elliott",
+              "Emily",
+              "Evelyn",
+              "George",
+              "Gus",
+              "Haley",
+              "Harvey",
+              "Jodi",
+              "Kent",
+              "Krobus",
+              "Leo",
+              "Lewis",
+              "Linus",
+              "Marnie",
+              "Maru",
+              "Pam",
+              "Penny",
+              "Pierre",
+              "Robin",
+              "Sandy",
+              "Shane",
+              "Willy",
+              "Wizard"
+            ],
+            "Dislike": [
+              "Caroline"
+            ],
+            "Hate": [
+              "Jas",
+              "Sam",
+              "Sebastian",
+              "Vincent",
+              "Leah"
+            ]
+          },
+          "SpriteIndex": 0,
+          "Edibility": 20,
+          "IsDrink": true,
+          "Buffs": null,
+          "GeodeDropsDefaultItems": false,
+          "GeodeDrops": null,
+          "ArtifactSpotChances": null,
+          "ExcludeFromFishingCollection": true,
+          "ExcludeFromShippingCollection": false,
+          "ExcludeFromRandomSale": false,
+          "ContextTags": null,
+          "CustomFields": null
+        },
+        "juminos.MoreFarmAnimals_LargeQuailMayo": {
+          "Name": "QuailMayo",
+          "DisplayName": "Quail Mayonnaise",
+          "Description": "A condiment made from a copious quantity of quail eggs.",
+          "Texture": "Mods/juminos.MoreFarmAnimals/LargeQuailMayo",
+          "Type": "Basic",
+          "Category": -26,
+          "Price": 1200,
+          "GiftTastes": {
+            "Like": [
+              "Abigail",
+              "Alex",
+              "Clint",
+              "Demetrius",
+              "Dwarf",
+              "Elliott",
+              "Emily",
+              "Evelyn",
+              "George",
+              "Gus",
+              "Haley",
+              "Harvey",
+              "Jodi",
+              "Kent",
+              "Krobus",
+              "Leo",
+              "Lewis",
+              "Linus",
+              "Marnie",
+              "Maru",
+              "Pam",
+              "Penny",
+              "Pierre",
+              "Robin",
+              "Sandy",
+              "Shane",
+              "Willy",
+              "Wizard"
+            ],
+            "Dislike": [
+              "Caroline"
+            ],
+            "Hate": [
+              "Jas",
+              "Sam",
+              "Sebastian",
+              "Vincent",
+              "Leah"
+            ]
+          },
+          "SpriteIndex": 0,
+          "Edibility": 20,
+          "IsDrink": true,
+          "Buffs": null,
+          "GeodeDropsDefaultItems": false,
+          "GeodeDrops": null,
+          "ArtifactSpotChances": null,
+          "ExcludeFromFishingCollection": true,
+          "ExcludeFromShippingCollection": false,
+          "ExcludeFromRandomSale": false,
+          "ContextTags": null,
+          "CustomFields": null
+        },
+        "juminos.MoreFarmAnimals_FertilizedWhiteEgg": {
+          "Name": "Fertilized Egg",
+          "DisplayName": "Fertilized White Egg",
+          "Description": "Could hatch if you keep it warm.",
+          "Type": "Basic",
+          "Category": -5,
+          "Price": 50,
+          "Texture": null,
+          "SpriteIndex": 176,
+          "Edibility": 10,
+          "IsDrink": false,
+          "Buffs": null,
           "GeodeDropsDefaultItems": false,
           "GeodeDrops": null,
           "ArtifactSpotChances": null,
@@ -849,8 +1509,359 @@
             "color_white",
             "egg_item"
           ],
-          "CustomFields": {}
+          "CustomFields": null
+        },
+        "juminos.MoreFarmAnimals_FertilizedBrownEgg": {
+          "Name": "Fertilized Egg",
+          "DisplayName": "Fertilized Brown Egg",
+          "Description": "Could hatch if you keep it warm.",
+          "Type": "Basic",
+          "Category": -5,
+          "Price": 50,
+          "Texture": null,
+          "SpriteIndex": 180,
+          "Edibility": 10,
+          "IsDrink": false,
+          "Buffs": null,
+          "GeodeDropsDefaultItems": false,
+          "GeodeDrops": null,
+          "ArtifactSpotChances": null,
+          "ExcludeFromFishingCollection": false,
+          "ExcludeFromShippingCollection": false,
+          "ExcludeFromRandomSale": false,
+          "ContextTags": [
+            "color_white",
+            "egg_item"
+          ],
+          "CustomFields": null
+        },
+        "juminos.MoreFarmAnimals_FertilizedVoidEgg": {
+          "Name": "Fertilized Void Egg",
+          "DisplayName": "Fertilized Void Egg",
+          "Description": "Could hatch if you keep it warm.",
+          "Type": "Basic",
+          "Category": -5,
+          "Price": 65,
+          "Texture": null,
+          "SpriteIndex": 305,
+          "Edibility": -15,
+          "IsDrink": false,
+          "Buffs": null,
+          "GeodeDropsDefaultItems": false,
+          "GeodeDrops": null,
+          "ArtifactSpotChances": null,
+          "ExcludeFromFishingCollection": false,
+          "ExcludeFromShippingCollection": false,
+          "ExcludeFromRandomSale": true,
+          "ContextTags": [
+            "color_black",
+            "egg_item"
+          ],
+          "CustomFields": null
+        },
+        "juminos.MoreFarmAnimals_FertilizedBlueEgg": {
+          "Name": "Fertilized Blue Egg",
+          "DisplayName": "Fertilized Blue Egg",
+          "Description": "Could hatch if you keep it warm.",
+          "Type": "Basic",
+          "Category": -5,
+          "Price": 100,
+          "Texture": "6480.blueegg/Objects",
+          "SpriteIndex": 0,
+          "Edibility": 10,
+          "IsDrink": false,
+          "Buffs": null,
+          "GeodeDropsDefaultItems": false,
+          "GeodeDrops": null,
+          "ArtifactSpotChances": null,
+          "ExcludeFromFishingCollection": false,
+          "ExcludeFromShippingCollection": false,
+          "ExcludeFromRandomSale": true,
+          "ContextTags": [
+            "color_blue",
+            "egg_item"
+          ],
+          "CustomFields": null
+        },
+        "juminos.MoreFarmAnimals_FertilizedGoldenEgg": {
+          "Name": "Fertilized Golden Egg",
+          "DisplayName": "Fertilized Golden Egg",
+          "Description": "Could hatch if you keep it warm.",
+          "Type": "Basic",
+          "Category": -5,
+          "Price": 500,
+          "Texture": null,
+          "SpriteIndex": 928,
+          "Edibility": 10,
+          "IsDrink": false,
+          "Buffs": null,
+          "GeodeDropsDefaultItems": false,
+          "GeodeDrops": null,
+          "ArtifactSpotChances": null,
+          "ExcludeFromFishingCollection": false,
+          "ExcludeFromShippingCollection": true,
+          "ExcludeFromRandomSale": false,
+          "ContextTags": [
+            "egg_item"
+          ],
+          "CustomFields": null
+        },
+        "juminos.MoreFarmAnimals_FertilizedDuckEgg": {
+          "Name": "Fertilized Duck Egg",
+          "DisplayName": "Fertilized Duck Egg",
+          "Description": "Could hatch if you keep it warm.",
+          "Type": "Basic",
+          "Category": -5,
+          "Price": 95,
+          "Texture": null,
+          "SpriteIndex": 442,
+          "Edibility": 15,
+          "IsDrink": false,
+          "Buffs": null,
+          "GeodeDropsDefaultItems": false,
+          "GeodeDrops": null,
+          "ArtifactSpotChances": null,
+          "ExcludeFromFishingCollection": false,
+          "ExcludeFromShippingCollection": false,
+          "ExcludeFromRandomSale": false,
+          "ContextTags": [
+            "color_white",
+            "egg_item"
+          ],
+          "CustomFields": null
+        },
+        "juminos.MoreFarmAnimals_FertilizedVoidDuckEgg": {
+          "Name": "Fertilized Void Duck Egg",
+          "DisplayName": "Fertilized Void Duck Egg",
+          "Description": "Could hatch if you keep it warm.",
+          "Type": "Basic",
+          "Category": -5,
+          "Price": 100,
+          "Texture": "assets/voidduckegg",
+          "SpriteIndex": 0,
+          "Edibility": 10,
+          "IsDrink": false,
+          "Buffs": null,
+          "GeodeDropsDefaultItems": false,
+          "GeodeDrops": null,
+          "ArtifactSpotChances": null,
+          "ExcludeFromFishingCollection": false,
+          "ExcludeFromShippingCollection": false,
+          "ExcludeFromRandomSale": false,
+          "ContextTags": [
+            "color_white",
+            "egg_item"
+          ],
+          "CustomFields": null
+        },
+        "juminos.MoreFarmAnimals_FertilizedOstrichEgg": {
+          "Name": "Fertilized Ostrich Egg",
+          "DisplayName": "Fertilized Ostrich Egg",
+          "Description": "Could hatch if you keep it warm.",
+          "Type": "Basic",
+          "Category": -5,
+          "Price": 600,
+          "Texture": null,
+          "SpriteIndex": 289,
+          "Edibility": 15,
+          "IsDrink": false,
+          "Buffs": null,
+          "GeodeDropsDefaultItems": false,
+          "GeodeDrops": null,
+          "ArtifactSpotChances": {
+            "Desert": 0.02
+          },
+          "ExcludeFromFishingCollection": false,
+          "ExcludeFromShippingCollection": false,
+          "ExcludeFromRandomSale": false,
+          "ContextTags": [
+            "color_white",
+            "egg_item",
+            "large_egg_item"
+          ],
+          "CustomFields": null
         }
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries": {
+        "juminos.MoreFarmAnimals_FertilizedBlueEgg": {
+          "Name": "Fertilized Blue Egg",
+          "DisplayName": "Fertilized Blue Egg",
+          "Description": "Could hatch if you keep it warm.",
+          "Type": "Basic",
+          "Category": -5,
+          "Price": 100,
+          "Texture": "6480.blueegg/Objects",
+          "SpriteIndex": 0,
+          "Edibility": 10,
+          "IsDrink": false,
+          "Buffs": null,
+          "GeodeDropsDefaultItems": false,
+          "GeodeDrops": null,
+          "ArtifactSpotChances": null,
+          "ExcludeFromFishingCollection": false,
+          "ExcludeFromShippingCollection": false,
+          "ExcludeFromRandomSale": true,
+          "ContextTags": [
+            "color_blue",
+            "egg_item"
+          ],
+          "CustomFields": null
+        }
+      },
+      "When": {
+        "HasMod": "6480.blueegg"
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries": {
+        "juminos.MoreFarmAnimals_FertilizedVoidDuckEgg": {
+          "Name": "Fertilized Void Duck Egg",
+          "DisplayName": "Fertilized Void Duck Egg",
+          "Description": "Could hatch if you keep it warm.",
+          "Type": "Basic",
+          "Category": -5,
+          "Price": 100,
+          "Texture": "assets/voidduckegg",
+          "SpriteIndex": 0,
+          "Edibility": 10,
+          "IsDrink": false,
+          "Buffs": null,
+          "GeodeDropsDefaultItems": false,
+          "GeodeDrops": null,
+          "ArtifactSpotChances": null,
+          "ExcludeFromFishingCollection": false,
+          "ExcludeFromShippingCollection": false,
+          "ExcludeFromRandomSale": false,
+          "ContextTags": [
+            "color_white",
+            "egg_item"
+          ],
+          "CustomFields": null
+        }
+      },
+      "When": {
+        "HasMod": "Angelltear.BFAV.voidduck1.6"
+      }
+    },
+    // Machines
+    {
+      "Action": "EditData",
+      "Target": "Data/Machines",
+      "TargetField": [ "(BC)24", "OutputRules" ],
+      "Entries": {
+        "juminos.MoreFarmAnimals_QuailMayo": {
+          "Id": "QuailMayo",
+          "Triggers": [
+            {
+              "RequiredItemId": "juminos.MoreFarmAnimals_QuailEgg",
+              "RequiredCount": 5
+            }
+          ],
+          "OutputItem": [
+            {
+              "ItemId": "juminos.MoreFarmAnimals_TinyQuailMayo"
+            }
+          ],
+          "MinutesUntilReady": 100
+        },
+        "juminos.MoreFarmAnimals_LargeQuailMayo": {
+          "Id": "LargeQuailMayo",
+          "Triggers": [
+            {
+              "RequiredItemId": "juminos.MoreFarmAnimals_LargeQuailEgg",
+              "RequiredCount": 5
+            }
+          ],
+          "OutputItem": [
+            {
+              "ItemId": "juminos.MoreFarmAnimals_LargeQuailMayo"
+            }
+          ],
+          "MinutesUntilReady": 200
+        }
+      }
+    },
+    // Monsters
+    {
+      "Action": "EditData",
+      "Target": "Data/Monsters",
+      "Fields": {
+        "Pepper Rex": {
+          "6": "juminos.MoreFarmAnimals_BarnRexEgg 0.1"
+        }
+      }
+    },
+    // Update with fertilized eggs
+    {
+      "Action": "EditData",
+      "Target": "Data/FarmAnimals",
+      "Fields": {
+        "White Chicken": {
+          "EggItemIds": [
+            "juminos.MoreFarmAnimals_FertilizedWhiteEgg"
+          ]
+        },
+        "Brown Chicken": {
+          "EggItemIds": [
+            "juminos.MoreFarmAnimals_FertilizedBrownEgg"
+          ]
+        },
+        "Void Chicken": {
+          "EggItemIds": [
+            "juminos.MoreFarmAnimals_FertilizedVoidEgg"
+          ]
+        },
+        "Golden Chicken": {
+          "EggItemIds": [
+            "juminos.MoreFarmAnimals_FertilizedGoldenEgg"
+          ]
+        },
+        "Duck": {
+          "EggItemIds": [
+            "juminos.MoreFarmAnimals_FertilizedDuckEgg"
+          ]
+        },
+        "Ostrich": {
+          "EggItemIds": [
+            "juminos.MoreFarmAnimals_FertilizedOstrichEgg"
+          ]
+        }
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/FarmAnimals",
+      "Fields": {
+        "Blue Chicken": {
+          "EggItemIds": [
+            "juminos.MoreFarmAnimals_FertilizedBlueEgg",
+            "juminos.MoreFarmAnimals_FertilizedWhiteEgg",
+            "juminos.MoreFarmAnimals_FertilizedBrownEgg"
+          ]
+        }
+      },
+      "When": {
+        "HasMod": "6480.blueegg"
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/FarmAnimals",
+      "Fields": {
+        "VoidDuck": {
+          "EggItemIds": [
+            "juminos.MoreFarmAnimals_FertilizedVoidDuckEgg"
+          ]
+        }
+      },
+      "When": {
+        "HasMod": "Angelltear.BFAV.voidduck1.6"
       }
     }
   ]

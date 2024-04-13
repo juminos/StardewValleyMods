@@ -1,0 +1,18 @@
+{
+  "Name": "Animal Repro",
+  "Author": "juminos",
+  "Version": "1.0.0",
+  "Description": "Farm animals reproduce the old fashioned way.",
+  "UniqueID": "juminos.AnimalRepro",
+  "EntryDll": "AnimalRepro.dll",
+  "MinimumApiVersion": "3.0.0",
+  "UpdateKeys": [],
+  "exclude": [
+    "**/bin",
+    "**/bower_components",
+    "**/jspm_packages",
+    "**/node_modules",
+    "**/obj",
+    "**/platforms"
+  ]
+}
