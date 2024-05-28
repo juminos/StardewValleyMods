@@ -13,7 +13,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeepSea", "DeepSea\DeepSea.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WalkToTheDesert", "WalkToTheDesert\WalkToTheDesert.csproj", "{EB1D0E11-2CB9-4DDC-8E7F-30DFE1594B6D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimalRepro", "AnimalRepro\AnimalRepro.csproj", "{DC99F9B6-9F0D-4699-9905-D905C9C904C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnimalRepro", "AnimalRepro\AnimalRepro.csproj", "{DC99F9B6-9F0D-4699-9905-D905C9C904C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurfFest2", "SurfFest2\SurfFest2.csproj", "{DEDDF3D3-200D-42E1-A5DD-4E32DB89EAD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BugNet2", "BugNet2\BugNet2.csproj", "{1215138C-3A23-4DEF-9634-EA8753571900}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DinoForm2", "DinoForm2\DinoForm2.csproj", "{46021592-8892-4C5F-A273-1EBAB85F36DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +51,18 @@ Global
 		{DC99F9B6-9F0D-4699-9905-D905C9C904C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC99F9B6-9F0D-4699-9905-D905C9C904C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC99F9B6-9F0D-4699-9905-D905C9C904C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEDDF3D3-200D-42E1-A5DD-4E32DB89EAD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEDDF3D3-200D-42E1-A5DD-4E32DB89EAD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEDDF3D3-200D-42E1-A5DD-4E32DB89EAD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEDDF3D3-200D-42E1-A5DD-4E32DB89EAD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1215138C-3A23-4DEF-9634-EA8753571900}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1215138C-3A23-4DEF-9634-EA8753571900}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1215138C-3A23-4DEF-9634-EA8753571900}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1215138C-3A23-4DEF-9634-EA8753571900}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46021592-8892-4C5F-A273-1EBAB85F36DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46021592-8892-4C5F-A273-1EBAB85F36DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46021592-8892-4C5F-A273-1EBAB85F36DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46021592-8892-4C5F-A273-1EBAB85F36DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

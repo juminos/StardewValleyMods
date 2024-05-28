@@ -1,0 +1,13 @@
+{
+  "Name": "[CP] Bug Net 2",
+  "Author": "juminos",
+  "Version": "1.0.0",
+  "Description": "Bug Net mod updated for 1.6",
+  "UniqueID": "juminos.CPBugNet2",
+  "MinimumApiVersion": "4.0.0",
+  "ContentPackFor": {
+    "UniqueID": "Pathoschild.ContentPatcher"
+  },
+  "Dependencies": [],
+  "UpdateKeys": []
+}
