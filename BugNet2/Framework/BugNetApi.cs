@@ -15,13 +15,13 @@ namespace BugNet.Framework
         ** Fields
         *********/
         /// <summary>Add a new critter which can be caught.</summary>
-        private readonly Action<string, Texture2D, Rectangle, string, Dictionary<string, string>, Func<int, int, Critter>, Func<Critter, bool>> RegisterCritterImpl;
+        private readonly Action<string, Texture2D, int, string, Dictionary<string, string>, Func<int, int, Critter>, Func<Critter, bool>> RegisterCritterImpl;
 
         /// <summary>The monitor with which to log critter changes through the API.</summary>
         private readonly IMonitor Monitor;
 
         /// <summary>The placeholder texture for custom critter cages.</summary>
-        private readonly TextureTarget PlaceholderSprite;
+        private readonly int placeholderSprite;
 
 
         /*********
@@ -31,15 +31,15 @@ namespace BugNet.Framework
         /// <param name="registerCritter">Add a new critter which can be caught.</param>
         /// <param name="placeholderSprite">The placeholder texture for custom critter cages.</param>
         /// <param name="monitor">The monitor with which to log critter changes through the API.</param>
-        internal BugNetApi(Action<string, Texture2D, Rectangle, string, Dictionary<string, string>, Func<int, int, Critter>, Func<Critter, bool>> registerCritter, TextureTarget placeholderSprite, IMonitor monitor)
+        internal BugNetApi(Action<string, Texture2D, int, string, Dictionary<string, string>, Func<int, int, Critter>, Func<Critter, bool>> registerCritter, int placeholderSprite, IMonitor monitor)
         {
             this.RegisterCritterImpl = registerCritter;
-            this.PlaceholderSprite = placeholderSprite;
+            this.placeholderSprite = placeholderSprite;
             this.Monitor = monitor;
         }
 
         /// <inheritdoc />
-        public void RegisterCritter(IManifest manifest, string critterId, Texture2D texture, Rectangle textureArea, string defaultCritterName, Dictionary<string, string> translatedCritterNames, Func<int, int, Critter> makeCritter, Func<Critter, bool> isThisCritter)
+        public void RegisterCritter(IManifest manifest, string critterId, Texture2D texture, int spriteIndex, string defaultCritterName, Dictionary<string, string> translatedCritterNames, Func<int, int, Critter> makeCritter, Func<Critter, bool> isThisCritter)
         {
             // validate
             if (manifest is null)
@@ -48,8 +48,6 @@ namespace BugNet.Framework
                 throw new ArgumentNullException(nameof(texture));
             if (texture.IsDisposed)
                 throw new ObjectDisposedException(nameof(texture));
-            if (textureArea == Rectangle.Empty)
-                throw new InvalidOperationException("You must provide a non-empty texture pixel area.");
             if (string.IsNullOrWhiteSpace(defaultCritterName))
                 throw new ArgumentNullException(nameof(defaultCritterName));
             if (makeCritter == null)
@@ -59,13 +57,12 @@ namespace BugNet.Framework
 
             // TODO: this method takes the critter's texture + texture area so it can eventually
             // draw the critter inside the cage, but for now we'll use a placeholder generic cage/jar.
-            texture = this.PlaceholderSprite.Texture;
-            textureArea = this.PlaceholderSprite.SourceRect;
+            spriteIndex = this.placeholderSprite;
 
             // register critter
             try
             {
-                this.RegisterCritterImpl(critterId, texture, textureArea, defaultCritterName, translatedCritterNames, makeCritter, isThisCritter);
+                this.RegisterCritterImpl(critterId, texture, spriteIndex, defaultCritterName, translatedCritterNames, makeCritter, isThisCritter);
                 this.Monitor.Log($"'{manifest.Name}' registered critter ID '{critterId}'.");
             }
             catch (Exception ex)

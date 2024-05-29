@@ -24,7 +24,7 @@ namespace BugNet
         private static readonly Dictionary<string, ObjectData> CritterCageData = new();
 
         /// <summary>The placeholder texture for custom critter cages.</summary>
-        private TextureTarget PlaceholderSprite;
+        private int placeholderSprite;
 
 
         /*********
@@ -49,23 +49,19 @@ namespace BugNet
 
             var tilesheet = helper.ModContent.Load<Texture2D>("assets/critters.png");
 
-            Rectangle GetTilesheetArea(int index)
-            {
-                return new Rectangle(index % 4 * 16, index / 4 * 16, 16, 16);
-            }
             void Register(string name, int index, CritterBuilder critterBuilder)
             {
                 this.RegisterCritter(
                     critterId: name,
                     texture: tilesheet,
-                    textureArea: GetTilesheetArea(index),
+                    spriteIndex: index,
                     translationKey: $"critter.{name}",
                     isThisCritter: critterBuilder.IsThisCritter,
                     makeCritter: critterBuilder.MakeCritter
                 );
             }
 
-            this.PlaceholderSprite = new TextureTarget(tilesheet, GetTilesheetArea(24)); // empty jar sprite
+            this.placeholderSprite = 24; // empty jar sprite
 
             Register("SummerButterflyBlue", 0, CritterBuilder.ForButterfly(128));
             Register("SummerButterflyGreen", 1, CritterBuilder.ForButterfly(148));
@@ -97,18 +93,19 @@ namespace BugNet
             Register("Monkey", 27, CritterBuilder.ForMonkey());
             Register("OrangeIslandButterfly", 28, CritterBuilder.ForButterfly(364, island: true));
             Register("PinkIslandButterfly", 29, CritterBuilder.ForButterfly(368, island: true));
-            Register("PurpleBird", 30, CritterBuilder.ForBirdAlt(390));
-            Register("RedBird", 31, CritterBuilder.ForBirdAlt(430));
+            Register("PurpleBird", 30, CritterBuilder.ForBird(390));
+            Register("RedBird", 31, CritterBuilder.ForBird(430));
             Register("SunsetTropicalButterfly", 32, CritterBuilder.ForButterfly(372, island: true));
             Register("TropicalButterfly", 33, CritterBuilder.ForButterfly(376, island: true));
-            Register("RedHeadBird", 34, CritterBuilder.ForBirdAlt(550));
-            Register("DoveBird", 35, CritterBuilder.ForBirdAlt(570));
+            Register("Opossum",34, CritterBuilder.ForOpossum());
+            Register("RedHeadBird", 34, CritterBuilder.ForBird(550));
+            Register("DoveBird", 34, CritterBuilder.ForBird(570));
         }
 
         /// <inheritdoc />
         public override object GetApi()
         {
-            return new BugNetApi(this.RegisterCritter, this.PlaceholderSprite, this.Monitor);
+            return new BugNetApi(this.RegisterCritter, this.placeholderSprite, this.Monitor);
         }
 
 
@@ -118,11 +115,11 @@ namespace BugNet
         /// <summary>Add a new critter which can be caught.</summary>
         /// <param name="critterId">The unique critter ID.</param>
         /// <param name="texture">The texture to show in the critter cage.</param>
-        /// <param name="textureArea">The pixel area within the <paramref name="texture"/> to show in the critter cage.</param>
+        /// <param name="spriteIndex">The sprite index within the <paramref name="texture"/> to show in the critter cage.</param>
         /// <param name="translationKey">The translation key for the critter name.</param>
         /// <param name="isThisCritter">Get whether a given critter instance matches this critter.</param>
         /// <param name="makeCritter">Create a critter instance at the given X and Y tile position.</param>
-        private void RegisterCritter(string critterId, Texture2D texture, Rectangle textureArea, string translationKey, Func<int, int, Critter> makeCritter, Func<Critter, bool> isThisCritter)
+        private void RegisterCritter(string critterId, Texture2D texture, int spriteIndex, string translationKey, Func<int, int, Critter> makeCritter, Func<Critter, bool> isThisCritter)
         {
             // get name translations
             this.GetTranslationsInAllLocales(
@@ -132,18 +129,18 @@ namespace BugNet
             );
 
             // register critter
-            this.RegisterCritter(critterId, texture, textureArea, defaultCritterName, critterNameTranslations, makeCritter, isThisCritter);
+            this.RegisterCritter(critterId, texture, spriteIndex, defaultCritterName, critterNameTranslations, makeCritter, isThisCritter);
         }
 
         /// <summary>Add a new critter which can be caught.</summary>
         /// <param name="critterId">The unique critter ID.</param>
         /// <param name="texture">The texture to show in the critter cage.</param>
-        /// <param name="textureArea">The pixel area within the <paramref name="texture"/> to show in the critter cage.</param>
+        /// <param name="spriteIndex">The sprite index within the <paramref name="texture"/> to show in the critter cage.</param>
         /// <param name="defaultCritterName">The default English critter name.</param>
         /// <param name="translatedCritterNames">The translated critter names in each available locale.</param>
         /// <param name="makeCritter">Create a critter instance at the given X and Y tile position.</param>
         /// <param name="isThisCritter">Get whether a given critter instance matches this critter.</param>
-        private void RegisterCritter(string critterId, Texture2D texture, Rectangle textureArea, string defaultCritterName, Dictionary<string, string> translatedCritterNames, Func<int, int, Critter> makeCritter, Func<Critter, bool> isThisCritter)
+        private void RegisterCritter(string critterId, Texture2D texture, int spriteIndex, string defaultCritterName, Dictionary<string, string> translatedCritterNames, Func<int, int, Critter> makeCritter, Func<Critter, bool> isThisCritter)
         {
             // get translations
             string TranslateCritterName(string locale)
@@ -157,17 +154,11 @@ namespace BugNet
             Mod.CrittersData.Add(critterId, new CritterData(
                 defaultName: defaultCritterName,
                 translatedName: () => TranslateCritterName(this.Helper.GameContent.CurrentLocale),
-                texture: new TextureTarget(texture, textureArea),
+                texture: texture,
+                spriteIndex: spriteIndex,
                 isThisCritter: isThisCritter,
                 makeCritter: makeCritter
             ));
-
-            // Clone texture area
-            Texture2D critterTexture = this.CloneTextureArea(texture, textureArea);
-
-            // Save the texture as a temporary asset
-            string assetName = $"CritterCage_{critterId}";
-            this.SaveTextureAsTemporaryAsset(assetName, critterTexture);
 
             // Get the current locale
             string currentLocale = this.Helper.GameContent.CurrentLocale;
@@ -185,7 +176,8 @@ namespace BugNet
                 Type = "Basic",
                 Category = StardewValley.Object.monsterLootCategory,
                 Price = critterId.Contains("Butterfly") ? 50 : 100,
-                Texture = Helper.ModContent.GetInternalAssetName($"assets/{assetName}.png").ToString(),
+                Texture = Helper.ModContent.GetInternalAssetName($"assets/critters.png").ToString(),
+                SpriteIndex = spriteIndex,
                 ContextTags = new List<string> { "critter" },
                 ExcludeFromShippingCollection = true
             };
@@ -255,16 +247,35 @@ namespace BugNet
                     if (check == Game1.player.ActiveObject.Name)
                     {
                         activeCritter = critterData.Value;
+                        SMonitor.Log($"Active critter found: {activeCritter.DefaultName}");
                         break;
                     }
                 }
 
-                // Spawn the critter
-                int x = (int)e.Cursor.GrabTile.X + 1, y = (int)e.Cursor.GrabTile.Y + 1;
-                var critter = activeCritter.MakeCritter(x, y);
-                Game1.player.currentLocation.addCritter(critter);
+                if (activeCritter != null)
+                {
+                    SMonitor.Log($"Attempting to spawn critter: {activeCritter.DefaultName}");
 
-                Game1.player.reduceActiveItemByOne();
+                    // Spawn the critter
+                    int x = (int)e.Cursor.GrabTile.X + 1, y = (int)e.Cursor.GrabTile.Y + 1;
+                    var critter = activeCritter.MakeCritter(x, y);
+
+                    if (critter != null)
+                    {
+                        SMonitor.Log($"Critter spawn successful: {activeCritter.DefaultName}");
+                        Game1.player.currentLocation.addCritter(critter);
+                        Game1.player.reduceActiveItemByOne();
+                        SMonitor.Log($"Active item count decremented by one.");
+                    }
+                    else
+                    {
+                        SMonitor.Log($"Failed to spawn critter: {activeCritter.DefaultName}. Critter object is null.");
+                    }
+                }
+                else
+                {
+                    SMonitor.Log("No active critter found. Critter data is null.");
+                }
 
                 this.Helper.Input.Suppress(e.Button);
             }
@@ -287,10 +298,12 @@ namespace BugNet
                                 Category = critterCage.Value.Category,
                                 Price = critterCage.Value.Price,
                                 Texture = critterCage.Value.Texture,
+                                SpriteIndex = critterCage.Value.SpriteIndex,
                                 ContextTags = critterCage.Value.ContextTags,
                                 ExcludeFromShippingCollection = critterCage.Value.ExcludeFromShippingCollection,
                             };
                             data.Add(critterCage.Key, objectData);
+                            SMonitor.Log($"{objectData.Name} has sprite index {objectData.SpriteIndex}");
                         });
                 return;
             }
@@ -332,47 +345,6 @@ namespace BugNet
 
             defaultText = translations.GetValueOrDefault("default");
             translations.Remove("default");
-        }
-
-        /// <summary>Copy an area in a texture into a new texture.</summary>
-        /// <param name="texture">The texture to copy.</param>
-        /// <param name="textureArea">The pixel area within the <paramref name="texture"/> to copy.</param>
-        private Texture2D CloneTextureArea(Texture2D texture, Rectangle textureArea)
-        {
-            // 256 is kinda borderline for array rental.
-            Color[] data = GC.AllocateUninitializedArray<Color>(textureArea.Width * textureArea.Height);
-            texture.GetData(0, textureArea, data, 0, data.Length);
-            Texture2D newTexture = new Texture2D(Game1.graphics.GraphicsDevice, textureArea.Width, textureArea.Height);
-            newTexture.SetData(data);
-
-            return newTexture;
-        }
-        private void SaveTextureAsTemporaryAsset(string assetName, Texture2D texture)
-        {
-            string path = Path.Combine(this.Helper.DirectoryPath, "assets", assetName + ".png");
-            Directory.CreateDirectory(Path.GetDirectoryName(path));
-
-            // Check if the file already exists
-            if (File.Exists(path))
-            {
-                // Log a message indicating that the texture already exists
-                this.Monitor.Log($"Texture {assetName} already exists. Skipping save operation.", LogLevel.Trace);
-                return; // Exit the method early, no need to save again
-            }
-
-            try
-            {
-                using (var stream = new FileStream(path, FileMode.Create))
-                {
-                    texture.SaveAsPng(stream, texture.Width, texture.Height);
-                }
-
-                this.Helper.ModContent.Load<Texture2D>($"assets/{assetName}.png");
-            }
-            catch (Exception ex)
-            {
-                this.Monitor.Log($"Failed to save texture as temporary asset: {ex}", LogLevel.Error);
-            }
         }
     }
 }

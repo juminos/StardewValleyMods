@@ -58,16 +58,6 @@ namespace BugNet.Framework
         {
             return new(
                 makeCritter: (x, y) => new Birdie(x, y, baseFrame),
-                isThisCritter: critter => critter is Birdie birdie && birdie.baseFrame == baseFrame
-            );
-        }
-
-        /// <summary>Create a bird.</summary>
-        /// <param name="baseFrame">The base frame in the critter tilesheet.</param>
-        public static CritterBuilder ForBirdAlt(int baseFrame)
-        {
-            return new(
-                makeCritter: (x, y) => new Birdie(x, y, baseFrame),
                 isThisCritter: critter => critter is Birdie birdie
             );
         }
@@ -188,5 +178,15 @@ namespace BugNet.Framework
                     && parrot.sourceRect.Y <= maxYOffset
             );
         }
+
+        /// <summary>Create an opossum.</summary>
+        public static CritterBuilder ForOpossum()
+        {
+            return new(
+                makeCritter: (x, y) => new Opossum(Game1.currentLocation, new Vector2(x, y), false),
+                isThisCritter: critter => critter is Opossum
+            );
+        }
+
     }
 }
