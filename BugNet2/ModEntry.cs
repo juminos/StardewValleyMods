@@ -164,12 +164,10 @@ namespace BugNet
 
             // Clone texture area
             Texture2D critterTexture = this.CloneTextureArea(texture, textureArea);
-            SMonitor.Log($"Critter texture cloned. Size: {critterTexture.Width}x{critterTexture.Height}", LogLevel.Trace);
 
             // Save the texture as a temporary asset
             string assetName = $"CritterCage_{critterId}";
             this.SaveTextureAsTemporaryAsset(assetName, critterTexture);
-            SMonitor.Log($"Critter texture saved as temporary asset with name: {assetName}", LogLevel.Trace);
 
             // Get the current locale
             string currentLocale = this.Helper.GameContent.CurrentLocale;
@@ -182,17 +180,15 @@ namespace BugNet
             var cageData = new ObjectData
             {
                 Name = defaultCageName,
-                DisplayName = localizedCageName,
-                Description = localizedCageDescription,
+                DisplayName = TranslateCritterName(this.Helper.GameContent.CurrentLocale),
+                Description = defaultCageDescription,
                 Type = "Basic",
                 Category = StardewValley.Object.monsterLootCategory,
                 Price = critterId.Contains("Butterfly") ? 50 : 100,
-                Texture = $"Mods/{this.ModManifest.UniqueID}/assets/{assetName}.png",
-                ContextTags = new List<string>(new[] { "critter" }),
+                Texture = Helper.ModContent.GetInternalAssetName($"assets/{assetName}.png").ToString(),
+                ContextTags = new List<string> { "critter" },
                 ExcludeFromShippingCollection = true
             };
-            SMonitor.Log($"Texture path set to: {$"Mods/{this.ModManifest.UniqueID}/assets/{assetName}.png"}", LogLevel.Trace);
-
             Mod.CritterCageData.Add($"CritterCage_{critterId}", cageData);
         }
         private void OnUpdateTicked(object sender, EventArgs e)
@@ -355,6 +351,14 @@ namespace BugNet
         {
             string path = Path.Combine(this.Helper.DirectoryPath, "assets", assetName + ".png");
             Directory.CreateDirectory(Path.GetDirectoryName(path));
+
+            // Check if the file already exists
+            if (File.Exists(path))
+            {
+                // Log a message indicating that the texture already exists
+                this.Monitor.Log($"Texture {assetName} already exists. Skipping save operation.", LogLevel.Trace);
+                return; // Exit the method early, no need to save again
+            }
 
             try
             {
