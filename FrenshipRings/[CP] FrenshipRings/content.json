@@ -1,0 +1,88 @@
+{
+  "Format": "2.0",
+  "Changes": [
+    {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries": {
+        "{{ModId}}_Shadow": {
+          "DisplayName": "Shadow Ring",
+          "Description": "Surrounds you with a strange aura.",
+          "Type": "Ring",
+          "Category": -96,
+          "Price": 1500,
+          "Texture": "Mods/{{ModId}}/MoreRings",
+          "SpriteIndex": 0,
+          "Edibility": -300,
+          "IsDrink": false,
+          "Buff": null,
+          "GeodeDropsDefaultItems": false,
+          "GeodeDrops": null,
+          "ArtifactSpotChances": null,
+          "ExcludeFromFishingCollection": false,
+          "ExcludeFromShippingCollection": false,
+          "ExcludeFromRandomSale": true,
+          "ContextTags": [
+            "color_black",
+            "ring_item"
+          ],
+          "CustomFields": {}
+        },
+        "{{ModId}}_Spider": {
+          "DisplayName": "Spider Ring",
+          "Description": "Wearing it gives you a spring in your step.",
+          "Type": "Ring",
+          "Category": -96,
+          "Price": 1500,
+          "Texture": "Mods/{{ModId}}/MoreRings",
+          "SpriteIndex": 1,
+          "Edibility": -300,
+          "IsDrink": false,
+          "Buff": null,
+          "GeodeDropsDefaultItems": false,
+          "GeodeDrops": null,
+          "ArtifactSpotChances": null,
+          "ExcludeFromFishingCollection": false,
+          "ExcludeFromShippingCollection": false,
+          "ExcludeFromRandomSale": true,
+          "ContextTags": [
+            "color_blue",
+            "ring_item"
+          ],
+          "CustomFields": {}
+        }
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Mail",
+      "Entries": {
+        "{{ModId}}_Shadow": "@,^If you truly wish to be a friend to the Shadow People, you should have this.  ^   -Krobus %item object {{ModId}}_Shadow 1 %%[#]A Gift From Krobus",
+        "{{ModId}}_Spider": "@,^I found this in my pocket. Maybe it will be of some use to you.   ^   -Krobus %item object {{ModId}}_Spider 1 %%[#]A Gift From Krobus"
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/TriggerActions",
+      "Entries": {
+        "{{ModId}}_Krobus10Heart": {
+          "Id": "{{ModId}}_Krobus10Heart",
+          "Trigger": "DayEnding",
+          "Condition": "PLAYER_HEARTS Current Krobus 10",
+          "Action": "AddMail Current {{ModId}}_Shadow"
+        },
+        "{{ModId}}_Krobus8Heart": {
+          "Id": "{{ModId}}_Krobus8Heart",
+          "Trigger": "DayEnding",
+          "Condition": "PLAYER_HEARTS Current Krobus 8",
+          "Action": "AddMail Current {{ModId}}_Spider"
+        }
+      }
+    },
+    {
+      "Action": "Load",
+      "Target": "Mods/{{ModId}}/MoreRings",
+      "FromFile": "assets/{{TargetWithoutPath}}.png"
+    }
+  ]
+}

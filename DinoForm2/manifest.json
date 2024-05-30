@@ -8,7 +8,7 @@
   "MinimumApiVersion": "4.0.0",
   "Dependencies": [
     {
-      "UniqueID": "juminos.CPDinoForm2",
+      "UniqueID": "juminos.DinoForm2.CP",
       "IsRequired": true
     }
   ],

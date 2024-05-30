@@ -9,8 +9,12 @@ namespace DinoForm
 {
     public partial class ModEntry
     {
-        public static void Transform()
+        public async void Transform()
         {
+            PlayTransform();
+
+            await Task.Delay(50);
+
             var status = DinoFormStatus(Game1.player);
             if (status == DinoForm.Inactive)
                 status = DinoForm.Active;
@@ -18,7 +22,6 @@ namespace DinoForm
                 status = DinoForm.Inactive;
             Game1.player.modData[DinoFormKey] = status + "";
 
-            PlayTransform();
         }
         public static void PlayTransform()
         {

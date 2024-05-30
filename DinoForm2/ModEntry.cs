@@ -95,8 +95,8 @@ namespace DinoForm
                 return;
             if (Game1.player.isEating)
             {
-                await Task.Delay(2200);
-                bool hasDinoBuff = Game1.player.hasBuff("juminos.CPDinoForm2_DinoForm");
+                await Task.Delay(2500);
+                bool hasDinoBuff = Game1.player.hasBuff("juminos.DinoForm2.CP_DinoForm");
                 SMonitor.Log($"Player has Dino Buff: {hasDinoBuff}", LogLevel.Trace);
 
                 if (hasDinoBuff)
@@ -161,7 +161,7 @@ namespace DinoForm
 
         private void GameLoop_UpdateTicked(object sender, StardewModdingAPI.Events.UpdateTickedEventArgs e)
         {
-            if (!Config.ModEnabled || !Context.IsWorldReady || Game1.killScreen || Game1.player is null || Game1.player.health <= 0 || Game1.timeOfDay >= 2600 || Game1.eventUp || Game1.CurrentEvent != null || !Game1.player.hasBuff("juminos.CPDinoForm2_DinoForm"))
+            if (!Config.ModEnabled || !Context.IsWorldReady || Game1.killScreen || Game1.player is null || Game1.player.health <= 0 || Game1.timeOfDay >= 2600 || Game1.eventUp || Game1.CurrentEvent != null || !Game1.player.hasBuff("juminos.DinoForm2.CP_DinoForm"))
             {
                 ResetForm();
                 return;
