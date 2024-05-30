@@ -1,0 +1,15 @@
+{
+  "Name": "Bug Net 2",
+  "Version": "1.0.0",
+  "MinimumApiVersion": "4.0.0",
+  "Description": "Catch bugs and stuff.",
+  "UniqueID": "spacechase0.BugNet",
+  "EntryDll": "BugNet.dll",
+  "UpdateKeys": [],
+  "Dependencies": [
+    {
+      "UniqueID": "juminos.BugNet2.CP",
+      "IsRequired": true
+    }
+  ]
+}

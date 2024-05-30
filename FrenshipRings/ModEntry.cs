@@ -41,7 +41,7 @@ namespace FrenshipRings
             if (anyShadowPeople)
             {
                 // Check for players wearing shadow ring
-                var anyShadowRing = currentLocation.farmers.Any(farmer => farmer.isWearingRing("juminos.MoreRings_Shadow"));
+                var anyShadowRing = currentLocation.farmers.Any(farmer => farmer.isWearingRing("juminos.FrenshipRings.CP_Shadow"));
 
                 if (anyShadowRing && !shadowDisabled)
                 {
@@ -63,7 +63,7 @@ namespace FrenshipRings
             if (anySpiders)
             {
                 // Check for players wearing spider ring
-                var anySpiderRing = currentLocation.farmers.Any(farmer => farmer.isWearingRing("juminos.MoreRings_Spider"));
+                var anySpiderRing = currentLocation.farmers.Any(farmer => farmer.isWearingRing("juminos.FrenshipRings.CP_Spider"));
 
                 if (anySpiderRing && !spiderDisabled)
                 {
@@ -85,7 +85,7 @@ namespace FrenshipRings
             if (anyDust)
             {
                 // Check for players wearing dust ring
-                var anyDustRing = currentLocation.farmers.Any(farmer => farmer.isWearingRing("juminos.MoreRings_Dust"));
+                var anyDustRing = currentLocation.farmers.Any(farmer => farmer.isWearingRing("juminos.FrenshipRings.CP_Dust"));
 
                 if (anyDustRing && !dustDisabled)
                 {

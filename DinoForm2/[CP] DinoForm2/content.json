@@ -1,0 +1,392 @@
+{
+  "Format": "2.0",
+
+  "ConfigSchema": {
+    "TransformationTime": {
+      "AllowValues": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60",
+      "Default": "15",
+      "Description": "The duration (in seconds) of the Pepper Rex Form buff."
+    }
+  },
+  "Changes": [
+    // Animals
+    {
+      "Action": "EditData",
+      "Target": "Data/FarmAnimals",
+      "When": {
+        "HasMod |contains=ilucie.PepperRexBarnAnimal": true
+      },
+      "Fields": {
+        "PepperRex": {
+          "Sound": "croak",
+          "EggItemIds": [ "PepperRexEgg" ],
+          "PurchasePrice": -1,
+          "SellPrice": 1000,
+          "ShopTexture": null,
+          "ShopSourceRect": {
+            "X": 0,
+            "Y": 0,
+            "Width": 0,
+            "Height": 0
+          },
+          "ShopDisplayName": null,
+          "ShopDescription": null,
+          "ShopMissingBuildingDescription": null,
+          "RequiredBuilding": null,
+          "UnlockCondition": null,
+          "AlternatePurchaseTypes": null,
+          "IncubationTime": 18000,
+          "IncubatorParentSheetOffset": 1,
+          "CanGetPregnant": false,
+          "Skins": [
+            {
+              "ID": "MintPepperRex",
+              "Texture": "Mods/PC.ilucie.PepperRexBarnAnimal/PepperRexMint",
+              "BabyTexture": "Mods/PC.ilucie.PepperRexBarnAnimal/BabyPepperRexMint"
+            },
+            {
+              "ID": "RedPepperRex",
+              "Texture": "Mods/PC.ilucie.PepperRexBarnAnimal/PepperRexRed",
+              "BabyTexture": "Mods/PC.ilucie.PepperRexBarnAnimal/BabyPepperRexRed"
+            }
+          ]
+        },
+        "MintPepperRex": {
+          "Sound": "croak",
+          "EggItemIds": [ "PepperRexEgg" ],
+          "PurchasePrice": -1,
+          "SellPrice": 1000,
+          "ShopTexture": null,
+          "ShopSourceRect": {
+            "X": 0,
+            "Y": 0,
+            "Width": 0,
+            "Height": 0
+          },
+          "ShopDisplayName": null,
+          "ShopDescription": null,
+          "ShopMissingBuildingDescription": null,
+          "RequiredBuilding": null,
+          "UnlockCondition": null,
+          "AlternatePurchaseTypes": null,
+          "IncubationTime": 18000,
+          "IncubatorParentSheetOffset": 1,
+          "CanGetPregnant": false,
+          "Skins": [
+            {
+              "ID": "PepperRex",
+              "Texture": "Mods/PC.ilucie.PepperRexBarnAnimal/PepperRex",
+              "BabyTexture": "Mods/PC.ilucie.PepperRexBarnAnimal/BabyPepperRex"
+            },
+            {
+              "ID": "RedPepperRex",
+              "Texture": "Mods/PC.ilucie.PepperRexBarnAnimal/PepperRexRed",
+              "BabyTexture": "Mods/PC.ilucie.PepperRexBarnAnimal/BabyPepperRexRed"
+            }
+          ]
+        },
+        "RedPepperRex": {
+          "Sound": "croak",
+          "EggItemIds": [ "PepperRexEgg" ],
+          "PurchasePrice": -1,
+          "SellPrice": 1000,
+          "ShopTexture": null,
+          "ShopSourceRect": {
+            "X": 0,
+            "Y": 0,
+            "Width": 0,
+            "Height": 0
+          },
+          "ShopDisplayName": null,
+          "ShopDescription": null,
+          "ShopMissingBuildingDescription": null,
+          "RequiredBuilding": null,
+          "UnlockCondition": null,
+          "AlternatePurchaseTypes": null,
+          "IncubationTime": 18000,
+          "IncubatorParentSheetOffset": 1,
+          "CanGetPregnant": false,
+          "Skins": [
+            {
+              "ID": "MintPepperRex",
+              "Texture": "Mods/PC.ilucie.PepperRexBarnAnimal/PepperRexMint",
+              "BabyTexture": "Mods/PC.ilucie.PepperRexBarnAnimal/BabyPepperRexMint"
+            },
+            {
+              "ID": "RedPepperRex",
+              "Texture": "Mods/PC.ilucie.PepperRexBarnAnimal/PepperRex",
+              "BabyTexture": "Mods/PC.ilucie.PepperRexBarnAnimal/BabyPepperRex"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/FarmAnimals",
+      "When": {
+        "HasMod |contains=ilucie.PepperRexBarnAnimal": false
+      },
+      "Entries": {
+        "{{ModId}}_BarnRex": {
+          "DisplayName": "Pepper Rex",
+          "House": "Barn",
+          "Gender": "Female",
+          "PurchasePrice": -1,
+          "SellPrice": 1000,
+          "ShopTexture": null,
+          "ShopSourceRect": {
+            "X": 0,
+            "Y": 0,
+            "Width": 0,
+            "Height": 0
+          },
+          "ShopDisplayName": null,
+          "ShopDescription": null,
+          "ShopMissingBuildingDescription": null,
+          "RequiredBuilding": null,
+          "UnlockCondition": null,
+          "AlternatePurchaseTypes": null,
+          "EggItemIds": [
+            "{{ModId}}_BarnRexEgg"
+          ],
+          "IncubationTime": 18000,
+          "IncubatorParentSheetOffset": 1,
+          "BirthText": "[LocalizedText Strings\\Locations:AnimalHouse_Incubator_Hatch_DinosaurEgg]",
+          "DaysToMature": 28,
+          "CanGetPregnant": false,
+          "DaysToProduce": 7,
+          "HarvestType": "DropOvernight",
+          "HarvestTool": null,
+          "ProduceItemIds": [
+            {
+              "Id": "Default",
+              "Condition": null,
+              "MinimumFriendship": 0,
+              "ItemId": "{{ModId}}_BarnRexEgg"
+            }
+          ],
+          "DeluxeProduceItemIds": [
+            {
+              "Id": "Default",
+              "Condition": null,
+              "MinimumFriendship": 0,
+              "ItemId": "215"
+            },
+            {
+              "Id": "Default",
+              "Condition": null,
+              "MinimumFriendship": 0,
+              "ItemId": "580"
+            },
+            {
+              "Id": "Default",
+              "Condition": null,
+              "MinimumFriendship": 0,
+              "ItemId": "583"
+            },
+            {
+              "Id": "Default",
+              "Condition": null,
+              "MinimumFriendship": 0,
+              "ItemId": "584"
+            }
+          ],
+          "ProduceOnMature": true,
+          "FriendshipForFasterProduce": -1,
+          "DeluxeProduceMinimumFriendship": 0,
+          "DeluxeProduceCareDivisor": 1200.0,
+          "DeluxeProduceLuckMultiplier": 1.02,
+          "ProfessionForHappinessBoost": 3,
+          "ProfessionForQualityBoost": 3,
+          "ProfessionForFasterProduce": -1,
+          "Sound": "croak",
+          "BabySound": null,
+          "Texture": "Mods/{{ModId}}/BarnRex",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyBarnRex",
+          "UseFlippedRightForLeft": false,
+          "SpriteWidth": 32,
+          "SpriteHeight": 32,
+          "EmoteOffset": {
+            "X": 0,
+            "Y": 0
+          },
+          "Skins": null,
+          "ShadowWhenBabySwims": null,
+          "ShadowWhenBaby": null,
+          "ShadowWhenAdultSwims": null,
+          "ShadowWhenAdult": {
+            "Scale": 4
+          },
+          "CanSwim": false,
+          "BabiesFollowAdults": true,
+          "GrassEatAmount": 4,
+          "HappinessDrain": 5,
+          "UpDownPetHitboxTileSize": "1.5, 2",
+          "LeftRightPetHitboxTileSize": "2, 2",
+          "BabyUpDownPetHitboxTileSize": "1, 1",
+          "BabyLeftRightPetHitboxTileSize": "1, 1",
+          "StatToIncrementOnProduce": null,
+          "ShowInSummitCredits": true,
+          "CustomFields": {}
+        }
+      }
+    },
+    // Load Sprites
+    {
+      "Action": "Load",
+      "Target": "Mods/{{ModId}}/DinoFormIcon",
+      "FromFile": "assets/{{TargetWithoutPath}}.png"
+    },
+    {
+      "Action": "Load",
+      "When": {
+        "HasMod |contains=ilucie.PepperRexBarnAnimal": false
+      },
+      "Target": "Mods/{{ModId}}/BarnRexObjects, Mods/{{ModId}}/BarnRex, Mods/{{ModId}}/BabyBarnRex",
+      "FromFile": "assets/BarnRex/{{TargetWithoutPath}}.png"
+    },
+    // Objects
+    {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "When": {
+        "HasMod |contains=ilucie.PepperRexBarnAnimal": true
+      },
+      "Fields": {
+        "PepperRexMayonnaise": {
+          "Buffs": [
+            {
+              "Id": "{{ModId}}_DinoForm",
+              "BuffId": "{{ModId}}_DinoForm"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "Action": "EditData",
+      "When": {
+        "HasMod |contains=ilucie.PepperRexBarnAnimal": false
+      },
+      "Target": "Data/Objects",
+      "Entries": {
+        "{{ModId}}_BarnRexEgg": {
+          "Name": "Pepper Rex Egg",
+          "DisplayName": "Pepper Rex Egg",
+          "Description": "It's hot to the touch.",
+          "Type": "Basic",
+          "Category": -5,
+          "Price": 100,
+          "Texture": "Mods/{{ModId}}/BarnRexObjects",
+          "SpriteIndex": 0,
+          "Edibility": 15,
+          "IsDrink": false,
+          "Buffs": null,
+          "GeodeDropsDefaultItems": false,
+          "GeodeDrops": null,
+          "ArtifactSpotChances": null,
+          "ExcludeFromFishingCollection": false,
+          "ExcludeFromShippingCollection": false,
+          "ExcludeFromRandomSale": false,
+          "ContextTags": [
+            "color_red",
+            "egg_item"
+          ],
+          "CustomFields": {}
+        },
+        "{{ModId}}_BarnRexMayo": {
+          "Name": "BarnRexMayo",
+          "Category": -26,
+          "DisplayName": "Pepper Rex Mayonnaise",
+          "Description": "It might be too spicy to drink.",
+          "Type": "Basic",
+          "Texture": "Mods/{{ModId}}/BarnRexObjects",
+          "SpriteIndex": 5,
+          "Price": 1200,
+          "Edibility": 10,
+          "IsDrink": true,
+          "Buffs": [
+            {
+              "Id": "{{ModId}}_DinoForm",
+              "BuffId": "{{ModId}}_DinoForm"
+            }
+          ]
+        }
+      }
+    },
+    // Machines
+    {
+      "Action": "EditData",
+      "When": {
+        "HasMod |contains=ilucie.PepperRexBarnAnimal": false
+      },
+      "Target": "Data/Machines",
+      "TargetField": [ "(BC)24", "OutputRules" ],
+      "Entries": {
+        "BarnRexMayo": {
+          "Id": "BarnRexMayo",
+          "Triggers": [
+            {
+              "RequiredItemId": "{{ModId}}BarnRexEgg",
+              "RequiredCount": 1
+            }
+          ],
+          "OutputItem": [
+            {
+              "ItemId": "{{ModId}}BarnRexMayo",
+              "Quality": -1,
+              "CopyQuality": true
+            }
+          ],
+          "MinutesUntilReady": 180,
+          "DaysUntilReady": -1
+        }
+      }
+    },
+    // Monsters
+    {
+      "Action": "EditData",
+      "Target": "Data/Monsters",
+      "When": {
+        "HasMod |contains=ilucie.PepperRexBarnAnimal": true
+      },
+      "Fields": {
+        "Pepper Rex": {
+          "6": "(O)PepperRexEgg 0.1"
+        }
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Monsters",
+      "When": {
+        "HasMod |contains=ilucie.PepperRexBarnAnimal": false
+      },
+      "Fields": {
+        "Pepper Rex": {
+          "6": "{{ModId}}BarnRexEgg 0.1"
+        }
+      }
+    },
+    // Buffs
+    {
+      "Action": "EditData",
+      "Target": "Data/Buffs",
+      "Entries": {
+        "{{ModId}}_DinoForm": {
+          "DisplayName": "Pepper Rex Form",
+          "Description": "You've harnessed the power of a Pepper Rex!",
+          "Duration": "{{TransformationTime}}000",
+          "IconTexture": "Mods/{{ModId}}/DinoFormIcon",
+          "Effects": {
+            "Defense": 3.0,
+
+            "Speed": -3.0
+          }
+        }
+      }
+    }
+  ]
+}

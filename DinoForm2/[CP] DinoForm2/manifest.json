@@ -1,0 +1,17 @@
+{
+  "Name": "[CP] Dino Form 2",
+  "Author": "juminos",
+  "Version": "1.0.0",
+  "Description": "Harness the power of Pepper Rex!",
+  "UniqueID": "juminos.DinoForm2.CP",
+  "UpdateKeys": [], // when you release the mod, see https://stardewvalleywiki.com/Modding:Modder_Guide/APIs/Update_checks
+  "ContentPackFor": {
+    "UniqueID": "Pathoschild.ContentPatcher"
+  },
+  "Dependencies": [
+    {
+      "UniqueID": "ilucie.PepperRexBarnAnimal",
+      "IsRequired": false
+    },
+  ]
+}

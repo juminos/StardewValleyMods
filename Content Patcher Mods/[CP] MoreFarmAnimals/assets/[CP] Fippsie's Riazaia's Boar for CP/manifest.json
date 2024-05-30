@@ -1,0 +1,13 @@
+{
+    "Name": "Riazaia's Boar for CP",
+    "Author": "Fippsie",
+    "Version": "1.0.3",
+    "Description": "Turns Riazaia's Boar into a barn animal for CP",
+    "UniqueID": "fippsie.CPboars",
+    "UpdateKeys": [
+        "20836"
+    ],
+    "ContentPackFor": {
+        "UniqueID": "Pathoschild.ContentPatcher"
+    }
+}

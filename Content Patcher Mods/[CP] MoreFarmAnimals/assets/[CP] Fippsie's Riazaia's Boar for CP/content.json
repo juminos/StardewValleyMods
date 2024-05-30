@@ -1,0 +1,126 @@
+{
+    "Format": "2.0.0",
+	"Changes": [
+	
+	{
+		"LogName": "Load assets",
+			"Action": "Load",
+			"Target": "assets/Boar, assets/BoarBaby, assets/BoarIcon, assets/WhiteTruffle, assets/WhiteTruffleOil",
+			"FromFile": "assets/{{TargetWithoutPath}}.png"
+		},
+		
+		{
+            "LogName": "Animal Data",
+            "Action": "EditData",
+            "Target": "Data/FarmAnimals",
+            "Entries": {
+                "Boar": {
+                    "DisplayName": "Boar",
+                    "House": "Barn",
+                    "Gender": "MaleOrFemale",
+                    "PurchasePrice": 10000,
+                    "ShopTexture": "assets/BoarIcon",
+                    "Sound": "pig",
+                    "ShopSourceRect": {
+                        "X": 0,
+                        "Y": 0,
+                        "Width": 32,
+                        "Height": 16
+                    },
+                    "RequiredBuilding": "Deluxe Barn",
+                    "ShopDisplayName": "Boar",
+                    "ShopDescription": "Boars might find something tasty if you leave them out to roam...",
+                    "ShopMissingBuildingDescription": "???",
+                    "BirthText": "A little piglet has been born!",
+                    "DaysToMature": "6",
+                    "DaysToProduce": "1",
+                    "ProduceItemIDs": [
+                        {
+                            "Id": "Default",
+                            "Condition": null,
+                            "MinimumFriendship": 0,
+                            "ItemID": "WhiteTruffle"
+                        }
+                    ],
+                    "HarvestType": "DigUp",
+                    "HappinessDrain": 3,
+                    "GrassEatAmount": 1,
+                    "ShowSummitCredits": true,
+                    "CanGetPregnant": true,
+                    "BabiesFollowAdults": true,
+                    "Texture": "assets/Boar",
+                    "BabyTexture": "assets/BoarBaby",
+                    "SpriteWidth": "32",
+                    "SpriteHeight": "32",
+                    "UseFlippedRightForLeft": true
+                }
+            }
+        },
+        { 
+            "LogName": "Item Data",      
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "Entries": {
+                "WhiteTruffle": {
+                    "Category": -18,
+                    "Description": "Looks like a truffle, but white.",
+                    "Displayname": "White Truffle",
+                    "Name": "White Truffle",
+                    "Price": 700,
+                    "Texture": "assets/WhiteTruffle",
+                    "Type": "Animal Product",
+                    "Edibility": 15,
+                    "GiftTastes": {
+                        "Like": ["Harvey", "Demetrius", "Gus"],
+                        "Hate": ["Jas", "Vincent", "Sebastian"]
+                    }
+                }
+            }
+        },
+        {
+            "LogName": "White Truffle Oil Data",
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "Entries": {
+                "WhiteTruffleOil": {
+                    "Name": "WhiteTruffleOil",
+                    "DisplayName": "White Truffle Oil",
+                    "Description": "Smells a bit funny, but sells for quite a bit.",
+                    "Type": "Artisan Goods",
+                    "Category": -26,
+                    "Price": 1250,
+                    "GiftTastes": {
+                        "Love": ["Harvey", "Demetrius", "Gus", "Evelyn", "Dwarf", "Linus"],
+                        "Hate": ["Jas", "Vincent", "Sebastian"]
+                    },
+                    "Texture": "assets/WhiteTruffleOil",
+                    "Edibility": "25",
+                    "IsDrink": true
+                }
+            }
+        },
+        {
+            "LogName": "Oil Maker Data",
+            "Action": "EditData",
+            "Target": "Data/Machines",
+            "TargetField": [ "(BC)19","OutputRules" ], 
+            "Entries": {
+                "WhiteTruffleOil": {
+                    "ID": "WhiteTruffleOil",
+                    "Triggers": [
+                        {
+                            "RequiredItemID": "WhiteTruffle"
+                        }
+                    ],
+                    "OutputItem": [
+                        {
+                            "ItemID": "WhiteTruffleOil"
+                        }
+                    ],
+                    "MinutesUntilReady": 360
+                }
+            }
+        }
+    ]
+}
+

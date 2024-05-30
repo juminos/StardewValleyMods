@@ -1,0 +1,10 @@
+{
+  "Name": "Critter Rabbit Fix",
+  "Version": "1.0.0",
+  "MinimumApiVersion": "4.0.0",
+  "Description": "Fixes skipped animation sprite.",
+  "UniqueID": "juminos.CritterRabbitFix",
+  "EntryDll": "CritterRabbitFix.dll",
+  "UpdateKeys": [],
+  "Dependencies": []
+}
