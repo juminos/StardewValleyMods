@@ -12,5 +12,5 @@
       "IsRequired": true
     }
   ],
-  "UpdateKeys": []
+  "UpdateKeys": [ "Nexus:24718" ]
 }

@@ -11,5 +11,6 @@ namespace DinoForm
         public string FireSound { get; set; } = "furnace";
         public int FireDamage { get; set; } = 10;
         public int FireDistance { get; set; } = 256;
+        public int Duration { get; set; } = 15;
     }
 }

@@ -1,13 +1,6 @@
 {
   "Format": "2.0",
 
-  "ConfigSchema": {
-    "TransformationTime": {
-      "AllowValues": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60",
-      "Default": "15",
-      "Description": "The duration (in seconds) of the Pepper Rex Form buff."
-    }
-  },
   "Changes": [
     // Animals
     {
@@ -258,8 +251,8 @@
         "PepperRexMayonnaise": {
           "Buffs": [
             {
-              "Id": "{{ModId}}_DinoForm",
-              "BuffId": "{{ModId}}_DinoForm"
+              "Id": "juminos.DinoForm2_DinoForm",
+              "BuffId": "juminos.DinoForm2_DinoForm"
             }
           ]
         }
@@ -309,8 +302,8 @@
           "IsDrink": true,
           "Buffs": [
             {
-              "Id": "{{ModId}}_DinoForm",
-              "BuffId": "{{ModId}}_DinoForm"
+              "Id": "juminos.DinoForm2_DinoForm",
+              "BuffId": "juminos.DinoForm2_DinoForm"
             }
           ]
         }
@@ -371,22 +364,22 @@
       }
     },
     // Buffs
-    {
-      "Action": "EditData",
-      "Target": "Data/Buffs",
-      "Entries": {
-        "{{ModId}}_DinoForm": {
-          "DisplayName": "Pepper Rex Form",
-          "Description": "You've harnessed the power of a Pepper Rex!",
-          "Duration": "{{TransformationTime}}000",
-          "IconTexture": "Mods/{{ModId}}/DinoFormIcon",
-          "Effects": {
-            "Defense": 3.0,
-
-            "Speed": -3.0
-          }
-        }
-      }
-    }
+    //{
+    //  "Action": "EditData",
+    //  "Target": "Data/Buffs",
+    //  "Entries": {
+    //    "{{ModId}}_DinoForm": {
+    //      "DisplayName": "Pepper Rex Form",
+    //      "Description": "You've harnessed the power of a Pepper Rex!",
+    //      "Duration": "{{TransformationTime}}000",
+    //      "IconTexture": "Mods/{{ModId}}/DinoFormIcon",
+    //      "Effects": {
+    //        "Defense": 3.0,
+    //
+    //        "Speed": -3.0
+    //      }
+    //    }
+    //  }
+    //}
   ]
 }

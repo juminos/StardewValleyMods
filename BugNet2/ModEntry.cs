@@ -192,7 +192,7 @@ namespace BugNet
             };
             Mod.CritterCageData.Add($"CritterCage_{critterId}", cageData);
         }
-        private void OnUpdateTicked(object sender, EventArgs e)
+        private void OnUpdateTicked(object? sender, EventArgs e)
         {
             if (Game1.player.UsingTool && Game1.player.CurrentTool is MeleeWeapon weapon && weapon.Name == "Bug Net")
             {
@@ -242,7 +242,7 @@ namespace BugNet
                 }
             }
         }
-        private void OnButtonPressed(object sender, ButtonPressedEventArgs e)
+        private void OnButtonPressed(object? sender, ButtonPressedEventArgs e)
         {
             if (e.Button.IsActionButton() && Game1.player.ActiveObject?.Name.StartsWith("Critter Cage: ") is true)
             {

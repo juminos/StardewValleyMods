@@ -2,8 +2,10 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using StardewModdingAPI;
+using StardewModdingAPI.Events;
 using StardewModdingAPI.Utilities;
 using StardewValley;
+using StardewValley.GameData.Buffs;
 using StardewValley.Network;
 using StardewValley.Projectiles;
 using System;
@@ -53,6 +55,7 @@ namespace DinoForm
             helper.Events.GameLoop.DayStarted += GameLoop_DayStarted;
             helper.Events.GameLoop.DayEnding += GameLoop_DayEnding;
             helper.Events.GameLoop.ReturnedToTitle += GameLoop_ReturnedToTitle;
+            helper.Events.Content.AssetRequested += OnAssetRequested;
 
             helper.Events.Player.Warped += Player_Warped;
             helper.Events.Player.InventoryChanged += Player_InventoryChanged;
@@ -64,12 +67,38 @@ namespace DinoForm
 
         }
 
-        private void GameLoop_DayEnding(object sender, StardewModdingAPI.Events.DayEndingEventArgs e)
+        private void OnAssetRequested(object? sender, AssetRequestedEventArgs e)
+        {
+            if (e.NameWithoutLocale.IsEquivalentTo("Data/Buffs"))
+            {
+                e.Edit(asset =>
+                {
+                    var data = asset.AsDictionary<string, BuffData>().Data;
+                    int buffDuration = Config.Duration * 1000;
+                    var dinoBuffData = new BuffData
+                    {
+                        DisplayName = "Pepper Rex Form",
+                        Description = "You've harnessed the power of a Pepper Rex!",
+                        Duration = buffDuration,
+                        IconTexture = "Mods/juminos.DinoForm2.CP/DinoFormIcon",
+                        Effects = new BuffAttributesData
+                        {
+                            Defense = 3.0f,
+                            Speed = -3.0f
+                        }
+                    };
+                    data.Add("juminos.DinoForm2_DinoForm", dinoBuffData);
+                    SMonitor.Log("Dino Form buff created");
+                });
+            }
+        }
+
+        private void GameLoop_DayEnding(object? sender, StardewModdingAPI.Events.DayEndingEventArgs e)
         {
             ResetForm();
         }
 
-        private void Player_Warped(object sender, StardewModdingAPI.Events.WarpedEventArgs e)
+        private void Player_Warped(object? sender, StardewModdingAPI.Events.WarpedEventArgs e)
         {
             if (!Config.ModEnabled || e.Player != Game1.player || DinoFormStatus(e.Player) == DinoForm.Inactive)
                 return;
@@ -79,24 +108,24 @@ namespace DinoForm
             }
         }
 
-        private void GameLoop_ReturnedToTitle(object sender, StardewModdingAPI.Events.ReturnedToTitleEventArgs e)
+        private void GameLoop_ReturnedToTitle(object? sender, StardewModdingAPI.Events.ReturnedToTitleEventArgs e)
         {
             ResetForm();
         }
 
-        private void GameLoop_DayStarted(object sender, StardewModdingAPI.Events.DayStartedEventArgs e)
+        private void GameLoop_DayStarted(object? sender, StardewModdingAPI.Events.DayStartedEventArgs e)
         {
             ResetForm();
         }
 
-        private async void Player_InventoryChanged(object sender, StardewModdingAPI.Events.InventoryChangedEventArgs e)
+        private async void Player_InventoryChanged(object? sender, StardewModdingAPI.Events.InventoryChangedEventArgs e)
         {
             if (!Config.ModEnabled || DinoFormStatus(Game1.player) == DinoForm.Active)
                 return;
-            if (Game1.player.isEating)
+            if (Game1.player.isEating && Game1.player.ActiveItem.ItemId.Contains("RexMayo"))
             {
-                await Task.Delay(2500);
-                bool hasDinoBuff = Game1.player.hasBuff("juminos.DinoForm2.CP_DinoForm");
+                await Task.Delay(2100);
+                bool hasDinoBuff = Game1.player.hasBuff("juminos.DinoForm2_DinoForm");
                 SMonitor.Log($"Player has Dino Buff: {hasDinoBuff}", LogLevel.Trace);
 
                 if (hasDinoBuff)
@@ -108,7 +137,7 @@ namespace DinoForm
         }
 
 
-        private void GameLoop_UpdateTicking(object sender, StardewModdingAPI.Events.UpdateTickingEventArgs e)
+        private void GameLoop_UpdateTicking(object? sender, StardewModdingAPI.Events.UpdateTickingEventArgs e)
         {
             if (!Config.ModEnabled || !Context.CanPlayerMove)
                 return;
@@ -159,16 +188,16 @@ namespace DinoForm
         }
 
 
-        private void GameLoop_UpdateTicked(object sender, StardewModdingAPI.Events.UpdateTickedEventArgs e)
+        private void GameLoop_UpdateTicked(object? sender, StardewModdingAPI.Events.UpdateTickedEventArgs e)
         {
-            if (!Config.ModEnabled || !Context.IsWorldReady || Game1.killScreen || Game1.player is null || Game1.player.health <= 0 || Game1.timeOfDay >= 2600 || Game1.eventUp || Game1.CurrentEvent != null || !Game1.player.hasBuff("juminos.DinoForm2.CP_DinoForm"))
+            if (!Config.ModEnabled || !Context.IsWorldReady || Game1.killScreen || Game1.player is null || Game1.player.health <= 0 || Game1.timeOfDay >= 2600 || Game1.eventUp || Game1.CurrentEvent != null || !Game1.player.hasBuff("juminos.DinoForm2_DinoForm"))
             {
                 ResetForm();
                 return;
             }
         }
 
-        private void Input_ButtonsChanged(object sender, StardewModdingAPI.Events.ButtonsChangedEventArgs e)
+        private void Input_ButtonsChanged(object? sender, StardewModdingAPI.Events.ButtonsChangedEventArgs e)
         {
             if (!Config.ModEnabled || !Context.CanPlayerMove)
                 return;
@@ -182,7 +211,7 @@ namespace DinoForm
             }
         }
 
-        private void GameLoop_GameLaunched(object sender, StardewModdingAPI.Events.GameLaunchedEventArgs e)
+        private void GameLoop_GameLaunched(object? sender, StardewModdingAPI.Events.GameLaunchedEventArgs e)
         {
 
             // get Generic Mod Config Menu's API (if it's installed)
@@ -223,6 +252,13 @@ namespace DinoForm
                     name: () => Helper.Translation.Get("GMCM_Option_FireDistance_Name"),
                     getValue: () => Config.FireDistance,
                     setValue: value => Config.FireDistance = (int)value
+                );
+
+                configMenu.AddNumberOption(
+                    mod: ModManifest,
+                    name: () => Helper.Translation.Get("GMCM_Option_Duration_Name"),
+                    getValue: () => Config.Duration,
+                    setValue: value => Config.Duration = (int)value
                 );
 
                 configMenu.AddTextOption(
