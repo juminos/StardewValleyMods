@@ -4,7 +4,7 @@
   "MinimumApiVersion": "4.0.0",
   "Description": "Catch bugs and stuff.",
   "UniqueID": "spacechase0.BugNet",
-  "EntryDll": "BugNet.dll",
+  "EntryDll": "BugNet2.dll",
   "UpdateKeys": [],
   "Dependencies": [
     {

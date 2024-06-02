@@ -10,7 +10,7 @@ namespace BugNet.Framework
         /*********
         ** Accessors
         *********/
-        /// <summary>The texture to show in the critter cage.</summary>
+        /// <summary>The texture to show in the inventory.</summary>
         public TextureTarget Texture { get; }
 
         /// <summary>The default English critter name.</summary>
@@ -30,7 +30,7 @@ namespace BugNet.Framework
         ** Public methods
         *********/
         /// <summary>Construct an instance.</summary>
-        /// <param name="texture">The texture to show in the critter cage.</param>
+        /// <param name="texture">The texture to show in the inventory.</param>
         /// <param name="translatedName">The default English critter name.</param>
         /// <param name="defaultName">The critter name translated into the current locale.</param>
         /// <param name="isThisCritter">Get whether a given critter instance matches this critter.</param>
