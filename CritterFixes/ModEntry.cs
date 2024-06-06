@@ -3,18 +3,42 @@ using Microsoft.Xna.Framework;
 using StardewValley.BellsAndWhistles;
 using StardewValley;
 using StardewModdingAPI;
+using StardewModdingAPI.Events;
+using System.Threading;
 
-namespace YourModNamespace
-{
-    public class YourModClass : Mod
+namespace CritterFixes
+{ 
+    public class ModEntry : Mod
     {
+        public static Mod Instance;
+        public static IMonitor SMonitor;
+
         public override void Entry(IModHelper helper)
         {
             var harmony = new Harmony(this.ModManifest.UniqueID);
-            YourPatchClass.ApplyPatch(harmony);
+            CritterFixesPatch.ApplyPatch(harmony);
+
+            ModEntry.Instance = this;
+            SMonitor = this.Monitor;
+
+            helper.Events.Content.AssetRequested += this.OnAssetRequested;
+        }
+
+        private void OnAssetRequested(object sender, AssetRequestedEventArgs e)
+        {
+            if (e.NameWithoutLocale.IsEquivalentTo("TileSheets/critters"))
+            {
+                e.Edit(asset =>
+                {
+                    var editor = asset.AsImage();
+                    IRawTextureData sourceImage = this.Helper.ModContent.Load<IRawTextureData>("assets/butterflyfix.png");
+                    editor.PatchImage(sourceImage, targetArea: new Rectangle(144, 128, sourceImage.Width, sourceImage.Height));
+                });
+            }
         }
     }
-    public static class YourPatchClass
+
+    public static class CritterFixesPatch
     {
         public static void ApplyPatch(Harmony harmony)
         {
@@ -24,13 +48,6 @@ namespace YourModNamespace
         [HarmonyPatch(typeof(Rabbit), nameof(Rabbit.update))]
         public static class Rabbit_Update_Patch
         {
-            public static bool Prefix(Rabbit __instance, GameTime time, GameLocation environment)
-            {
-                // Your logic here if needed before calling the original method
-                // Return true to execute the original method, false to skip it
-                return true;
-            }
-
             public static void Postfix(Rabbit __instance, GameTime time, GameLocation environment)
             {
                 // Ensure the sprite is not null

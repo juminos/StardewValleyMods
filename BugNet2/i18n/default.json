@@ -4,8 +4,8 @@
   "bug-net.description": "Catches critters and stuff.",
 
   // critter cage
-  "cage.name": "Critter Cage: {{critterName}}",
-  "cage.description": "It's a critter! In a cage!",
+  "critter.name": "{{critterName}}",
+  "critter.description": "It's a wild critter!",
 
   // critter names
   "critter.GreenFrog": "Green Frog",
@@ -27,14 +27,20 @@
   "critter.SummerButterflyPink": "Pink Summer Butterfly",
   "critter.SummerButterflyYellow": "Yellow Summer Butterfly",
   "critter.SummerButterflyOrange": "Orange Summer Butterfly",
+  "critter.SummerButterflyRareRed": "Rare Red Summer Butterfly",
+  "critter.SummerButterflyRarePink": "Rare Pink Summer Butterfly",
+  "critter.SummerButterflyRareGreen": "Rare Green Summer Butterfly",
+  "critter.SummerButterflyRarePurple": "Rare Purple Summer Butterfly",
   "critter.SpringButterflyPalePink": "Pale Pink Spring Butterfly",
   "critter.SpringButterflyMagenta": "Magenta Spring Butterfly",
   "critter.SpringButterflyWhite": "White Spring Butterfly",
   "critter.SpringButterflyYellow": "Yellow Spring Butterfly",
   "critter.SpringButterflyPurple": "Purple Spring Butterfly",
   "critter.SpringButterflyPink": "Pink Spring Butterfly",
+  "critter.WinterButterfly": "Winter Butterfly",
   "critter.BlueParrot": "Blue Parrot",
   "critter.GreenParrot": "Green Parrot",
+  "critter.JojaParrot": "Joja Parrot",
   "critter.Monkey": "Monkey",
   "critter.OrangeIslandButterfly": "Orange Island Butterfly",
   "critter.PinkIslandButterfly": "Pink Island Butterfly",
@@ -43,5 +49,6 @@
   "critter.SunsetTropicalButterfly": "Sunset Tropical Butterfly",
   "critter.TropicalButterfly": "Tropical Butterfly",
   "critter.RedHeadBird": "Red-Head Bird",
-  "critter.DoveBird": "Dove"
+  "critter.Dove": "Dove",
+  "critter.Opossum": "Opossum"
 }

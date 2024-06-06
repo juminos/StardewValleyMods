@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace BugNet.Framework
+namespace BugNet2.Framework
 {
     /// <summary>A pixel area within a texture.</summary>
     internal class TextureTarget

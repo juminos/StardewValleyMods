@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using BugNet.Framework;
+using BugNet2.Framework;
 using StardewModdingAPI;
 using StardewValley.BellsAndWhistles;
 
-namespace BugNet.Framework
+namespace BugNet2.Framework
 {
-    /// <summary>The BugNet API which other mods can access.</summary>
+    /// <summary>The BugNet2 API which other mods can access.</summary>
     public class BugNetApi
     {
         /*********
@@ -20,21 +20,15 @@ namespace BugNet.Framework
         /// <summary>The monitor with which to log critter changes through the API.</summary>
         private readonly IMonitor Monitor;
 
-        /// <summary>The placeholder texture for custom critter cages.</summary>
-        private readonly TextureTarget PlaceholderSprite;
-
-
         /*********
         ** Public methods
         *********/
         /// <summary>Construct an instance.</summary>
         /// <param name="registerCritter">Add a new critter which can be caught.</param>
-        /// <param name="placeholderSprite">The placeholder texture for custom critter cages.</param>
         /// <param name="monitor">The monitor with which to log critter changes through the API.</param>
-        internal BugNetApi(Action<string, Texture2D, Rectangle, string, Dictionary<string, string>, Func<int, int, Critter>, Func<Critter, bool>> registerCritter, TextureTarget placeholderSprite, IMonitor monitor)
+        internal BugNetApi(Action<string, Texture2D, Rectangle, string, Dictionary<string, string>, Func<int, int, Critter>, Func<Critter, bool>> registerCritter, IMonitor monitor)
         {
             this.RegisterCritterImpl = registerCritter;
-            this.PlaceholderSprite = placeholderSprite;
             this.Monitor = monitor;
         }
 
@@ -56,11 +50,6 @@ namespace BugNet.Framework
                 throw new ArgumentNullException(nameof(makeCritter));
             if (isThisCritter == null)
                 throw new ArgumentNullException(nameof(isThisCritter));
-
-            // TODO: this method takes the critter's texture + texture area so it can eventually
-            // draw the critter inside the cage, but for now we'll use a placeholder generic cage/jar.
-            texture = this.PlaceholderSprite.Texture;
-            textureArea = this.PlaceholderSprite.SourceRect;
 
             // register critter
             try

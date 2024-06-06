@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Reflection;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using StardewValley;
 using StardewValley.BellsAndWhistles;
 using StardewValley.TerrainFeatures;
 
-namespace BugNet.Framework
+namespace BugNet2.Framework
 {
     /// <summary>Builds a vanilla critter instance.</summary>
     internal class CritterBuilder
@@ -34,7 +36,8 @@ namespace BugNet.Framework
         /// <summary>Create a butterfly.</summary>
         /// <param name="baseFrame">The base frame in the critter tilesheet.</param>
         /// <param name="island">Whether to create an island butterfly.</param>
-        public static CritterBuilder ForButterfly(int baseFrame, bool island = false)
+        /// <param name="summer">Whether the butterfly is a summer butterfly.</param>
+        public static CritterBuilder ForButterfly(int baseFrame, bool island = false, bool summer = false)
         {
             return new(
                 makeCritter: (x, y) =>
@@ -44,6 +47,14 @@ namespace BugNet.Framework
                         baseFrame = baseFrame,
                         sprite = { CurrentFrame = baseFrame }
                     };
+
+                    // Use reflection to set the private summerButterfly field
+                    FieldInfo summerButterflyField = typeof(Butterfly).GetField("summerButterfly", BindingFlags.NonPublic | BindingFlags.Instance);
+                    if (summerButterflyField != null)
+                    {
+                        summerButterflyField.SetValue(butterfly, summer);
+                    }
+
                     return butterfly;
                 },
                 isThisCritter: critter =>
@@ -58,7 +69,7 @@ namespace BugNet.Framework
         {
             return new(
                 makeCritter: (x, y) => new Birdie(x, y, baseFrame),
-                isThisCritter: critter => critter is Birdie birdie
+                isThisCritter: critter => critter is Birdie birdie && birdie.baseFrame == baseFrame
             );
         }
 
@@ -95,7 +106,7 @@ namespace BugNet.Framework
         {
             return new(
                 makeCritter: (x, y) => new Frog(new Vector2(x, y), waterLeaper: olive),
-                isThisCritter: critter => critter is Frog frog && Mod.Instance.Helper.Reflection.GetField<bool>(frog, "waterLeaper").GetValue() == olive
+                isThisCritter: critter => critter is Frog frog && ModEntry.Instance.Helper.Reflection.GetField<bool>(frog, "waterLeaper").GetValue() == olive
             );
         }
 
@@ -161,11 +172,21 @@ namespace BugNet.Framework
 
         /// <summary>Create a parrot.</summary>
         /// <param name="green">Whether to create a green parrot.</param>
-        public static CritterBuilder ForParrot(bool green)
+        public static CritterBuilder ForParrot(string color)
         {
-            int index = green ? 2 : 0;
+            int index = 0;
+            if (color == "blue")
+            {
+                index = 2;
+            }
             int minYOffset = index * 24;
-            int maxYOffset = (index + 1) * 24;
+            int maxYOffset = minYOffset + 1;
+            if (color == "joja")
+            {
+                index = 4;
+                minYOffset = index * 24;
+                maxYOffset = minYOffset;
+            }
 
             return new(
                 makeCritter: (x, y) => new OverheadParrot(new Vector2(x, y))

@@ -21,7 +21,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BugNet2", "BugNet2\BugNet2.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DinoForm2", "DinoForm2\DinoForm2.csproj", "{46021592-8892-4C5F-A273-1EBAB85F36DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CritterRabbitFix", "CritterRabbitFix\CritterRabbitFix.csproj", "{85197508-D9E7-46B1-A2F3-7CB5FB2BCEBA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CritterFixes", "CritterFixes\CritterFixes.csproj", "{85197508-D9E7-46B1-A2F3-7CB5FB2BCEBA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomCritters2", "CustomCritters2\CustomCritters2.csproj", "{1C582055-21C0-4A05-8F22-3B65442B4CE3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,10 @@ Global
 		{85197508-D9E7-46B1-A2F3-7CB5FB2BCEBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{85197508-D9E7-46B1-A2F3-7CB5FB2BCEBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{85197508-D9E7-46B1-A2F3-7CB5FB2BCEBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C582055-21C0-4A05-8F22-3B65442B4CE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C582055-21C0-4A05-8F22-3B65442B4CE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C582055-21C0-4A05-8F22-3B65442B4CE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C582055-21C0-4A05-8F22-3B65442B4CE3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -3,13 +3,17 @@
   "Version": "1.0.0",
   "MinimumApiVersion": "4.0.0",
   "Description": "Catch bugs and stuff.",
-  "UniqueID": "spacechase0.BugNet",
+  "UniqueID": "juminos.BugNet2",
   "EntryDll": "BugNet2.dll",
   "UpdateKeys": [],
   "Dependencies": [
     {
       "UniqueID": "juminos.BugNet2.CP",
       "IsRequired": true
+    },
+    {
+      "UniqueID": "juminos.CritterFixes",
+      "IsRequired": false
     }
   ]
 }

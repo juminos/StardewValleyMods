@@ -2,9 +2,9 @@
 using Microsoft.Xna.Framework.Graphics;
 using StardewValley.BellsAndWhistles;
 
-namespace BugNet.Framework
+namespace BugNet2.Framework
 {
-    /// <summary>Metadata for a critter supported by BugNet.</summary>
+    /// <summary>Metadata for a critter supported by BugNet2.</summary>
     internal class CritterData
     {
         /*********

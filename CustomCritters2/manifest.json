@@ -1,0 +1,10 @@
+{
+  "Name": "Custom Critters 2",
+  "Author": "juminos",
+  "Version": "1.0.0",
+  "MinimumApiVersion": "4.0.0",
+  "Description": "Lets content packs add custom critters to the world.",
+  "UniqueID": "juminos.CustomCritters2",
+  "EntryDll": "CustomCritters2.dll",
+  "UpdateKeys": [ "Nexus:" ]
+}
