@@ -1,0 +1,28 @@
+{
+  "Format": "2.0",
+  "Changes": [
+
+    // Load assets
+    {
+      "Action": "Load",
+      "Target": "Mods/juminos.SeedPackets/MixedSeeds, Mods/juminos.SeedPackets/SunflowerSeeds",
+      "FromFile": "assets/{{TargetWithoutPath}}.png"
+    },
+
+    // Add seed packets
+    {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Fields": {
+        "770": {
+          "Texture": "Mods/juminos.SeedPackets/MixedSeeds",
+          "SpriteIndex": 0
+        },
+        "431": {
+          "Texture": "Mods/juminos.SeedPackets/SunflowerSeeds",
+          "SpriteIndex": 0
+        }
+      }
+    }
+  ]
+}

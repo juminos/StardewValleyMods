@@ -1,0 +1,11 @@
+{
+    "Name": "Seed Packets",
+    "Author": "juminos",
+    "Version": "1.0.0",
+    "Description": "Adds seed packets for mixed and sunflower seeds.",
+    "UniqueID": "juminos.SeedPackets",
+    "UpdateKeys": [],
+    "ContentPackFor": {
+        "UniqueID": "Pathoschild.ContentPatcher"
+    }
+}
