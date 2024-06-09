@@ -13,14 +13,13 @@ using StardewValley.Characters;
 namespace CustomCritters2
 {
     /// <summary>The mod entry point.</summary>
-    internal class ModEntry : StardewModdingAPI.Mod
+    internal partial class ModEntry : StardewModdingAPI.Mod
     {
         /*********
         ** Accessors
         *********/
         public static Mod Instance;
         public static IMonitor SMonitor;
-
 
         /*********
         ** Public methods
@@ -71,16 +70,29 @@ namespace CustomCritters2
                 {
                     Texture2D texture = CustomCritter.LoadCritterTexture(critter.Id);
 
-                    bugNet.RegisterCritter(
-                        manifest: this.ModManifest,
-                        critterId: $"{this.ModManifest.UniqueID}/{critter.Id}",
-                        texture: texture,
-                        textureArea: new Rectangle(0, 0, texture.Width, texture.Height),
-                        defaultCritterName: critter.Id, // TODO: add name fields to critter.json
-                        translatedCritterNames: new Dictionary<string, string>(),
-                        makeCritter: (x, y) => critter.MakeCritter(new Vector2(x, y)),
-                        isThisCritter: instance => (instance as CustomCritter)?.Data.Id == critter.Id
-                    );
+                    int spriteWidth = critter.SpriteData.FrameWidth;
+                    int spriteHeight = critter.SpriteData.FrameHeight;
+
+                    for (int variation = 0; variation < critter.SpriteData.Variations; variation++)
+                    {
+                        int offsetY = variation * spriteHeight;
+                        var textureArea = new Rectangle(0, offsetY, spriteWidth, spriteHeight);
+                        string textureName = Helper.ModContent.GetInternalAssetName($"Critters/{critter.Id}/critter.png").ToString()?.Replace("/", "\\");
+
+                        bugNet.RegisterCritter(
+                            manifest: this.ModManifest,
+                            critterId: $"{this.ModManifest.UniqueID}/{critter.Id}/variation{variation + 1}",
+                            texture: texture,
+                            textureName: textureName,
+                            textureArea: textureArea,
+                            defaultCritterName: $"{critter.Name} (Variation {variation + 1})",
+                            translatedCritterNames: new Dictionary<string, string>(),
+                            makeCritter: (x, y) => critter.MakeCritter(new Vector2(x, y), variation),
+                            isThisCritter: instance => (instance as CustomCritter)?.Data.Id == critter.Id
+                            );
+
+                        SMonitor.Log($"Registering {critter.Id} with BugNet2 using textureName: {textureName}");
+                    }
                 }
             }
         }

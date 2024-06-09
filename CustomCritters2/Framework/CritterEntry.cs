@@ -9,6 +9,7 @@ namespace CustomCritters2.Framework
     internal class CritterEntry
     {
         public string Id { get; set; }
+        public string Name { get; set; }
         public CritterSpriteData SpriteData { get; set; } = new();
         public Dictionary<string, Animation> Animations { get; set; } = new();
         public List<SpawnCondition> SpawnConditions { get; set; } = new();
@@ -39,14 +40,17 @@ namespace CustomCritters2.Framework
             return null;
         }
 
-        public virtual Critter MakeCritter(Vector2 pos)
+        public virtual Critter MakeCritter(Vector2 pos, int? variation = null)
         {
-            return new CustomCritter(pos + new Vector2(1, 1) * (Game1.tileSize / 2), this);
+            return new CustomCritter(pos + new Vector2(1, 1) * (Game1.tileSize / 2), this, variation);
         }
 
         internal static Dictionary<string, CritterEntry> Critters = new();
         public static void Register(CritterEntry entry)
         {
+            if (string.IsNullOrEmpty(entry.Name))
+                entry.Name = entry.Id;
+
             CritterEntry.Critters.Add(entry.Id, entry);
         }
     }

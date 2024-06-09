@@ -21,7 +21,7 @@ namespace CustomCritters2.Framework
 
         public CritterEntry Data { get; }
 
-        public CustomCritter(Vector2 pos, CritterEntry data)
+        public CustomCritter(Vector2 pos, CritterEntry data, int? variation = null)
         {
             this.position = this.startingPosition = pos;
             this.Data = data;
@@ -30,7 +30,11 @@ namespace CustomCritters2.Framework
             var tex = CustomCritter.LoadCritterTexture(data.Id);
             string texStr = ModEntry.Instance.Helper.ModContent.GetInternalAssetName($"Critters/{data.Id}/critter.png").BaseName;
 
-            this.baseFrame = Game1.random.Next(data.SpriteData.Variations) * (tex.Width / data.SpriteData.FrameWidth);
+            // If variation is not specified, choose a random one
+            int selectedVariation = variation ?? Game1.random.Next(data.SpriteData.Variations);
+
+            // Calculate the base frame for the selected variation
+            this.baseFrame = selectedVariation * (tex.Width / data.SpriteData.FrameWidth);
 
             List<FarmerSprite.AnimationFrame> frames = new List<FarmerSprite.AnimationFrame>();
             foreach (var frame in data.Animations["default"].Frames)

@@ -15,7 +15,7 @@ namespace BugNet2.Framework
         ** Fields
         *********/
         /// <summary>Add a new critter which can be caught.</summary>
-        private readonly Action<string, Texture2D, Rectangle, string, Dictionary<string, string>, Func<int, int, Critter>, Func<Critter, bool>> RegisterCritterImpl;
+        private readonly Action<string, Texture2D, string, Rectangle, string, Dictionary<string, string>, Func<int, int, Critter>, Func<Critter, bool>> RegisterCritterImpl;
 
         /// <summary>The monitor with which to log critter changes through the API.</summary>
         private readonly IMonitor Monitor;
@@ -26,14 +26,14 @@ namespace BugNet2.Framework
         /// <summary>Construct an instance.</summary>
         /// <param name="registerCritter">Add a new critter which can be caught.</param>
         /// <param name="monitor">The monitor with which to log critter changes through the API.</param>
-        internal BugNetApi(Action<string, Texture2D, Rectangle, string, Dictionary<string, string>, Func<int, int, Critter>, Func<Critter, bool>> registerCritter, IMonitor monitor)
+        internal BugNetApi(Action<string, Texture2D, string, Rectangle, string, Dictionary<string, string>, Func<int, int, Critter>, Func<Critter, bool>> registerCritter, IMonitor monitor)
         {
             this.RegisterCritterImpl = registerCritter;
             this.Monitor = monitor;
         }
 
         /// <inheritdoc />
-        public void RegisterCritter(IManifest manifest, string critterId, Texture2D texture, Rectangle textureArea, string defaultCritterName, Dictionary<string, string> translatedCritterNames, Func<int, int, Critter> makeCritter, Func<Critter, bool> isThisCritter)
+        public void RegisterCritter(IManifest manifest, string critterId, Texture2D texture, string textureName, Rectangle textureArea, string defaultCritterName, Dictionary<string, string> translatedCritterNames, Func<int, int, Critter> makeCritter, Func<Critter, bool> isThisCritter)
         {
             // validate
             if (manifest is null)
@@ -54,7 +54,7 @@ namespace BugNet2.Framework
             // register critter
             try
             {
-                this.RegisterCritterImpl(critterId, texture, textureArea, defaultCritterName, translatedCritterNames, makeCritter, isThisCritter);
+                this.RegisterCritterImpl(critterId, texture, textureName, textureArea, defaultCritterName, translatedCritterNames, makeCritter, isThisCritter);
                 this.Monitor.Log($"'{manifest.Name}' registered critter ID '{critterId}'.");
             }
             catch (Exception ex)

@@ -1,7 +1,7 @@
 {
   "Format": "2.0",
   "Changes": [
-    // Load bug net texture
+    // Load textures
     {
       "Action": "Load",
       "Target": "Mods/{{ModId}}/BugNet",
@@ -50,6 +50,8 @@
           "AvailableStockLimit": "Player"
         }
       }
-    }
+    },
+    // Elle's critters patch
+
   ]
 }

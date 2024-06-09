@@ -23,6 +23,40 @@ namespace BugNet2
         *********/
         private static readonly Dictionary<string, CritterData> CrittersData = new();
         private static readonly Dictionary<string, ObjectData> CritterCageData = new();
+        private static readonly Dictionary<string, string> ElleCritterNameReplacements = new Dictionary<string, string>
+        {
+            { "SummerButterflyBlue", "Morpho achilles Butterfly" },
+            { "SummerButterflyGreen", "Goliath Butterfly" },
+            { "SummerButterflyRed", "Ulysses Butterfly" },
+            { "SummerButterflyPink", "Janetta Butterfly" },
+            { "SummerButterflyYellow", "Periander Butterfly" },
+            { "SummerButterflyOrange", "Monarch Butterfly" },    
+            //{ "SummerButterflyRareRed", "ElleRareButterflyRed" },
+            //{ "SummerButterflyRarePink", "ElleRareButterflyPink" },
+            //{ "SummerButterflyRareGreen", "ElleRareButterflyGreen" },
+            //{ "SummerButterflyRarePurple", "ElleRareButterflyPurple" },
+            { "SpringButterflyPalePink", "Azure Butterfly" },
+            { "SpringButterflyMagenta", "Zoe Butterfly" },
+            { "SpringButterflyWhite", "Cabbage Butterfly" },
+            { "SpringButterflyYellow", "Cloudless Butterfly" },
+            { "SpringButterflyPurple", "Common Butterfly" },
+            { "SpringButterflyPink", "Migrant Butterfly" },
+            { "WinterButterfly", "Morpho anaxibia Butterfly" },
+            { "BlueBird", "Black Bird" },
+            { "Squirrel", "ElleSquirrel" },
+            { "WhiteRabbit", "White Lop Rabbit" },
+            { "WoodPecker", "Crested Woodpecker" },
+            { "Owl", "Barn Owl" },
+    //{ "BlueParrot", "ElleBlueParrot" },
+    //{ "GreenParrot", "ElleGreenParrot" },
+            { "OrangeIslandButterfly", "Angel Butterfly" },
+            { "PinkIslandButterfly", "Hairstreak Butterfly" },
+            { "PurpleBird", "Jay" },
+            { "RedBird", "Sparrow" },
+            { "SunsetTropicalButterfly", "Crowned Butterfly" },
+            { "TropicalButterfly", "Swallowtail Butterfly" },
+            //{ "RedHeadBird", "ElleRedHeadBird" },
+        };
 
 
         /*********
@@ -66,13 +100,22 @@ namespace BugNet2
             void Register(string name, Texture2D texture, int index, CritterBuilder critterBuilder)
             {
                 string customTexturePath = Path.Combine(this.Helper.DirectoryPath, "assets", "items", name + ".png");
+                string textureName = texture.Name;
                 if (File.Exists(customTexturePath))
                 {
                     texture = helper.ModContent.Load<Texture2D>($"assets\\items\\{name}");
+                    textureName = Helper.ModContent.GetInternalAssetName($"assets/items/{name}").ToString()?.Replace("/", "\\");
                 }
+                // get custom critter texture name?
+                //if (textureName.StartsWith("Critters"))
+                //{
+                //    textureName = Helper.ModContent.GetInternalAssetName(textureName.Substring(0, textureName.Length - 4)).ToString()?.Replace("/", "\\");
+                //}
+
                 this.RegisterCritter(
                     critterId: name,
                     texture: texture,
+                    textureName: textureName,
                     textureArea: GetTilesheetArea(texture, index),
                     translationKey: $"critter.{name}",
                     isThisCritter: critterBuilder.IsThisCritter,
@@ -137,11 +180,12 @@ namespace BugNet2
         /// <summary>Add a new critter which can be caught.</summary>
         /// <param name="critterId">The unique critter ID.</param>
         /// <param name="texture">The texture to show in the inventory.</param>
+        /// <param name="textureName">The texture to add to objects.</param>
         /// <param name="textureArea">The pixel area within the <paramref name="texture"/> to show in the inventory.</param>
         /// <param name="translationKey">The translation key for the critter name.</param>
         /// <param name="isThisCritter">Get whether a given critter instance matches this critter.</param>
         /// <param name="makeCritter">Create a critter instance at the given X and Y tile position.</param>
-        private void RegisterCritter(string critterId, Texture2D texture, Rectangle textureArea, string translationKey, Func<int, int, Critter> makeCritter, Func<Critter, bool> isThisCritter)
+        private void RegisterCritter(string critterId, Texture2D texture, string textureName, Rectangle textureArea, string translationKey, Func<int, int, Critter> makeCritter, Func<Critter, bool> isThisCritter)
         {
             // get name translations
             this.GetTranslationsInAllLocales(
@@ -151,7 +195,7 @@ namespace BugNet2
             );
 
             // register critter
-            this.RegisterCritter(critterId, texture, textureArea, defaultCritterName, critterNameTranslations, makeCritter, isThisCritter);
+            this.RegisterCritter(critterId, texture, textureName, textureArea, defaultCritterName, critterNameTranslations, makeCritter, isThisCritter);
         }
 
         /// <summary>Add a new critter which can be caught.</summary>
@@ -162,7 +206,7 @@ namespace BugNet2
         /// <param name="translatedCritterNames">The translated critter names in each available locale.</param>
         /// <param name="makeCritter">Create a critter instance at the given X and Y tile position.</param>
         /// <param name="isThisCritter">Get whether a given critter instance matches this critter.</param>
-        private void RegisterCritter(string critterId, Texture2D texture, Rectangle textureArea, string defaultCritterName, Dictionary<string, string> translatedCritterNames, Func<int, int, Critter> makeCritter, Func<Critter, bool> isThisCritter)
+        private void RegisterCritter(string critterId, Texture2D texture, string textureName, Rectangle textureArea, string defaultCritterName, Dictionary<string, string> translatedCritterNames, Func<int, int, Critter> makeCritter, Func<Critter, bool> isThisCritter)
         {
             // get translations
             string TranslateCritterName(string locale)
@@ -175,6 +219,7 @@ namespace BugNet2
                 defaultName: defaultCritterName,
                 translatedName: () => TranslateCritterName(this.Helper.GameContent.CurrentLocale),
                 texture: new TextureTarget(texture, textureArea),
+                textureName: textureName,
                 isThisCritter: isThisCritter,
                 makeCritter: makeCritter
             ));
@@ -290,14 +335,11 @@ namespace BugNet2
                             }
                             // Get translated name
                             string displayName = critter.Value.TranslatedName?.Invoke() ?? critter.Value.DefaultName;
-                            string? textureName = critter.Value.Texture.Texture.Name;
-                            if (textureName.StartsWith("Critters"))
+
+                            // Update displayName if Elle's Town Animals is installed
+                            if (Helper.ModRegistry.IsLoaded("Elle.TownAnimals") && ElleCritterNameReplacements.TryGetValue(critter.Key, out string newName))
                             {
-                                textureName = Helper.ModContent.GetInternalAssetName(textureName.Substring(0, textureName.Length - 4)).ToString()?.Replace("/", "\\");
-                            }
-                            else if (textureName.Contains("item"))
-                            {
-                                textureName = Helper.ModContent.GetInternalAssetName($"assets/items/{critter.Key}").ToString()?.Replace("/", "\\");
+                                displayName = newName;
                             }
 
                             int GetIndexFromRectangle(Rectangle rect, int widthMultiplier)
@@ -327,7 +369,7 @@ namespace BugNet2
                                 Type = "Basic",
                                 Category = StardewValley.Object.monsterLootCategory,
                                 Price = critter.Value.DefaultName.Contains("Butterfly") ? 50 : 100,
-                                Texture = textureName,
+                                Texture = critter.Value.TextureName,
                                 SpriteIndex = spriteIndex,
                                 ContextTags = new List<string> { "critter" },
                                 ExcludeFromShippingCollection = true
