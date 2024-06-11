@@ -171,7 +171,7 @@ namespace BugNet2.Framework
         }
 
         /// <summary>Create a parrot.</summary>
-        /// <param name="green">Whether to create a green parrot.</param>
+        /// <param name="color">Which type of parrot to create.</param>
         public static CritterBuilder ForParrot(string color)
         {
             int index = 0;
@@ -180,11 +180,10 @@ namespace BugNet2.Framework
                 index = 2;
             }
             int minYOffset = index * 24;
-            int maxYOffset = minYOffset + 1;
+            int maxYOffset = (index + 1) * 24;
             if (color == "joja")
             {
-                index = 4;
-                minYOffset = index * 24;
+                minYOffset = 96;
                 maxYOffset = minYOffset;
             }
 

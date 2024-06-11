@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Threading;
+using System.Xml;
 using CustomCritters2.Framework;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -60,7 +61,7 @@ namespace CustomCritters2
         /// <inheritdoc cref="IGameLoopEvents.GameLaunched"/>
         /// <param name="sender">The event sender.</param>
         /// <param name="e">The event arguments.</param>
-        private void OnGameLaunched(object sender, GameLaunchedEventArgs e)
+        private void OnGameLaunched(object? sender, GameLaunchedEventArgs e)
         {
             // register critters with BugNet
             var bugNet = this.Helper.ModRegistry.GetApi<IBugNetApi>("juminos.BugNet2");
@@ -70,28 +71,27 @@ namespace CustomCritters2
                 {
                     Texture2D texture = CustomCritter.LoadCritterTexture(critter.Id);
 
-                    int spriteWidth = critter.SpriteData.FrameWidth;
-                    int spriteHeight = critter.SpriteData.FrameHeight;
-
                     for (int variation = 0; variation < critter.SpriteData.Variations; variation++)
                     {
-                        int offsetY = variation * spriteHeight;
-                        var textureArea = new Rectangle(0, offsetY, spriteWidth, spriteHeight);
-                        string textureName = Helper.ModContent.GetInternalAssetName($"Critters/{critter.Id}/critter.png").ToString()?.Replace("/", "\\");
+                        int index = variation * (texture.Width / critter.SpriteData.FrameWidth);
+                        string? textureName = Helper.ModContent.GetInternalAssetName($"Critters/{critter.Id}/critter.png").ToString()?.Replace("/", "\\");
+                        string critterId = $"{this.ModManifest.UniqueID}/{critter.Id.Replace(" ", string.Empty)}/Variation{variation + 1}";
+                        string variationName = critter.VariationNames.TryGetValue(variation, out var name)
+                            ? name
+                            : $"{critter.Name} (Variation {variation + 1})";
 
                         bugNet.RegisterCritter(
                             manifest: this.ModManifest,
-                            critterId: $"{this.ModManifest.UniqueID}/{critter.Id}/variation{variation + 1}",
-                            texture: texture,
+                            critterId: critterId,
                             textureName: textureName,
-                            textureArea: textureArea,
-                            defaultCritterName: $"{critter.Name} (Variation {variation + 1})",
+                            index: index,
+                            defaultCritterName: variationName,
                             translatedCritterNames: new Dictionary<string, string>(),
                             makeCritter: (x, y) => critter.MakeCritter(new Vector2(x, y), variation),
                             isThisCritter: instance => (instance as CustomCritter)?.Data.Id == critter.Id
                             );
 
-                        SMonitor.Log($"Registering {critter.Id} with BugNet2 using textureName: {textureName}");
+                        SMonitor.Log($"Registering {critterId} with BugNet2 using textureName: {textureName} and variation {variation}");
                     }
                 }
             }
@@ -100,7 +100,7 @@ namespace CustomCritters2
         /// <inheritdoc cref="IPlayerEvents.Warped"/>
         /// <param name="sender">The event sender.</param>
         /// <param name="e">The event arguments.</param>
-        private void OnWarped(object sender, WarpedEventArgs e)
+        private void OnWarped(object? sender, WarpedEventArgs e)
         {
             if (!e.IsLocalPlayer || Game1.CurrentEvent != null)
                 return;

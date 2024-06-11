@@ -10,6 +10,7 @@ namespace CustomCritters2.Framework
     {
         public string Id { get; set; }
         public string Name { get; set; }
+        public Dictionary<int, string> VariationNames { get; set; } = new();
         public CritterSpriteData SpriteData { get; set; } = new();
         public Dictionary<string, Animation> Animations { get; set; } = new();
         public List<SpawnCondition> SpawnConditions { get; set; } = new();
@@ -42,7 +43,9 @@ namespace CustomCritters2.Framework
 
         public virtual Critter MakeCritter(Vector2 pos, int? variation = null)
         {
-            return new CustomCritter(pos + new Vector2(1, 1) * (Game1.tileSize / 2), this, variation);
+            var modifiedPos = new Vector2(pos.X * 64, pos.Y * 64);
+            ModEntry.SMonitor.Log($"Position received by MakeCritter: {pos}, modified for CustomCritter: {modifiedPos}, variation: {variation}");
+            return new CustomCritter(modifiedPos, this, variation);
         }
 
         internal static Dictionary<string, CritterEntry> Critters = new();

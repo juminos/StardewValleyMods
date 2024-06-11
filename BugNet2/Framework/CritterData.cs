@@ -11,7 +11,7 @@ namespace BugNet2.Framework
         ** Accessors
         *********/
         /// <summary>The texture to show in the inventory.</summary>
-        public TextureTarget Texture { get; }
+        public int Index { get; }
         /// <summary>The texture to show in the inventory.</summary>
         public string TextureName { get; }
         /// <summary>The default English critter name.</summary>
@@ -31,14 +31,14 @@ namespace BugNet2.Framework
         ** Public methods
         *********/
         /// <summary>Construct an instance.</summary>
-        /// <param name="texture">The texture to show in the inventory.</param>
+        /// <param name="index">The where the sprite is located in the spritesheet.</param>
         /// <param name="translatedName">The default English critter name.</param>
         /// <param name="defaultName">The critter name translated into the current locale.</param>
         /// <param name="isThisCritter">Get whether a given critter instance matches this critter.</param>
         /// <param name="makeCritter">Create a critter instance at the given X and Y tile position.</param>
-        public CritterData(string defaultName, Func<string> translatedName, TextureTarget texture, string textureName, Func<Critter, bool> isThisCritter, Func<int, int, Critter> makeCritter)
+        public CritterData(string defaultName, Func<string> translatedName, int index, string textureName, Func<Critter, bool> isThisCritter, Func<int, int, Critter> makeCritter)
         {
-            this.Texture = texture;
+            this.Index = index;
             this.TextureName = textureName;
             this.DefaultName = defaultName;
             this.TranslatedName = translatedName;

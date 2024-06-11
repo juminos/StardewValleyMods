@@ -23,18 +23,23 @@ namespace CustomCritters2.Framework
 
         public CustomCritter(Vector2 pos, CritterEntry data, int? variation = null)
         {
+            ModEntry.SMonitor.Log($"Original position passed to CustomCritter: {pos}", LogLevel.Debug);
             this.position = this.startingPosition = pos;
+            ModEntry.SMonitor.Log($"CustomCritter created at position: {pos}", LogLevel.Debug);
             this.Data = data;
             this.Rand = new Random(((int)this.startingPosition.X) << 32 | ((int)this.startingPosition.Y));
 
             var tex = CustomCritter.LoadCritterTexture(data.Id);
             string texStr = ModEntry.Instance.Helper.ModContent.GetInternalAssetName($"Critters/{data.Id}/critter.png").BaseName;
 
+            ModEntry.SMonitor.Log($"Variation: {variation}", LogLevel.Debug);
             // If variation is not specified, choose a random one
             int selectedVariation = variation ?? Game1.random.Next(data.SpriteData.Variations);
+            ModEntry.SMonitor.Log($"If variation missing updated to: {variation}", LogLevel.Debug);
 
             // Calculate the base frame for the selected variation
-            this.baseFrame = selectedVariation * (tex.Width / data.SpriteData.FrameWidth);
+            this.baseFrame = (selectedVariation - 1) * (tex.Width / data.SpriteData.FrameWidth);
+            ModEntry.SMonitor.Log($"Calculated baseframe: {baseFrame}", LogLevel.Debug);
 
             List<FarmerSprite.AnimationFrame> frames = new List<FarmerSprite.AnimationFrame>();
             foreach (var frame in data.Animations["default"].Frames)
@@ -43,6 +48,7 @@ namespace CustomCritters2.Framework
             }
             this.sprite = new AnimatedSprite(texStr, this.baseFrame, data.SpriteData.FrameWidth, data.SpriteData.FrameHeight);
             this.sprite.setCurrentAnimation(frames);
+            ModEntry.SMonitor.Log($"Animation frames set for CustomCritter: {frames.Count} frames", LogLevel.Debug);
 
             if (data.Light != null)
             {
@@ -51,6 +57,7 @@ namespace CustomCritters2.Framework
                     ? new LightSource(data.Light.VanillaLightId, this.position, data.Light.Radius, col)
                     : new LightSource(LightSource.sconceLight, this.position, data.Light.Radius, col);
                 Game1.currentLightSources.Add(this.Light);
+                ModEntry.SMonitor.Log($"Light source added for CustomCritter at position: {this.position}", LogLevel.Debug);
             }
         }
 
