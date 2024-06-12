@@ -56,9 +56,9 @@ namespace DinoForm
             helper.Events.GameLoop.DayEnding += GameLoop_DayEnding;
             helper.Events.GameLoop.ReturnedToTitle += GameLoop_ReturnedToTitle;
             helper.Events.Content.AssetRequested += OnAssetRequested;
+            helper.Events.GameLoop.OneSecondUpdateTicked += GameLoop_OneSecondUpdateTicked;
 
             helper.Events.Player.Warped += Player_Warped;
-            helper.Events.Player.InventoryChanged += Player_InventoryChanged;
 
             helper.Events.Input.ButtonsChanged += Input_ButtonsChanged;
 
@@ -83,8 +83,8 @@ namespace DinoForm
                         IconTexture = "Mods/juminos.DinoForm2.CP/DinoFormIcon",
                         Effects = new BuffAttributesData
                         {
-                            Defense = 3.0f,
-                            Speed = -3.0f
+                            Defense = Config.Defense,
+                            Speed = Config.MoveSpeed
                         }
                     };
                     data.Add("juminos.DinoForm2_DinoForm", dinoBuffData);
@@ -117,25 +117,6 @@ namespace DinoForm
         {
             ResetForm();
         }
-
-        private async void Player_InventoryChanged(object? sender, StardewModdingAPI.Events.InventoryChangedEventArgs e)
-        {
-            if (!Config.ModEnabled || DinoFormStatus(Game1.player) == DinoForm.Active)
-                return;
-            if (Game1.player.isEating && Game1.player.ActiveItem.ItemId.Contains("RexMayo"))
-            {
-                await Task.Delay(2100);
-                bool hasDinoBuff = Game1.player.hasBuff("juminos.DinoForm2_DinoForm");
-                SMonitor.Log($"Player has Dino Buff: {hasDinoBuff}", LogLevel.Trace);
-
-                if (hasDinoBuff)
-                {
-                    SMonitor.Log("Player triggered transformation.", LogLevel.Trace);
-                    Transform();
-                }
-            }
-        }
-
 
         private void GameLoop_UpdateTicking(object? sender, StardewModdingAPI.Events.UpdateTickingEventArgs e)
         {
@@ -187,6 +168,17 @@ namespace DinoForm
             }
         }
 
+        private void GameLoop_OneSecondUpdateTicked(object? sender, StardewModdingAPI.Events.OneSecondUpdateTickedEventArgs e)
+        {
+            if (!Config.ModEnabled || DinoFormStatus(Game1.player) != DinoForm.Active || Config.StaminaUse <= 0)
+                return;
+            if (Game1.player.Stamina <= Config.StaminaUse)
+            {
+                Transform();
+                return;
+            }
+            Game1.player.Stamina -= Config.StaminaUse;
+        }
 
         private void GameLoop_UpdateTicked(object? sender, StardewModdingAPI.Events.UpdateTickedEventArgs e)
         {
@@ -195,12 +187,22 @@ namespace DinoForm
                 ResetForm();
                 return;
             }
+
+            if (DinoFormStatus(Game1.player) != DinoForm.Active && Game1.player.hasBuff("juminos.DinoForm2_DinoForm"))
+            {
+                SMonitor.Log("Player triggered transformation.", LogLevel.Trace);
+                Transform();
+            }
         }
 
         private void Input_ButtonsChanged(object? sender, StardewModdingAPI.Events.ButtonsChangedEventArgs e)
         {
             if (!Config.ModEnabled || !Context.CanPlayerMove)
                 return;
+            if (Config.TransformKey.JustPressed())
+            {
+                Transform();
+            }
             else if (Config.FireKey.JustPressed() && DinoFormStatus(Game1.player) != DinoForm.Inactive)
             {
                 breathingFire.Value = true;
@@ -233,11 +235,47 @@ namespace DinoForm
                     setValue: value => Config.ModEnabled = value
                 );
 
+                configMenu.AddTextOption(
+                   mod: ModManifest,
+                   name: () => Helper.Translation.Get("GMCM_Option_BuffedFoods_Name"),
+                   getValue: () => Config.BuffedFoods,
+                   setValue: value => Config.BuffedFoods = value
+               );
+
+                configMenu.AddKeybindList(
+                    mod: ModManifest,
+                    name: () => Helper.Translation.Get("GMCM_Option_TransformKey_Name"),
+                    getValue: () => Config.TransformKey,
+                    setValue: value => Config.TransformKey = value
+                );
+
+
                 configMenu.AddKeybindList(
                     mod: ModManifest,
                     name: () => Helper.Translation.Get("GMCM_Option_FireKey_Name"),
                     getValue: () => Config.FireKey,
                     setValue: value => Config.FireKey = value
+                );
+
+                configMenu.AddNumberOption(
+                    mod: ModManifest,
+                    name: () => Helper.Translation.Get("GMCM_Option_MoveSpeed_Name"),
+                    getValue: () => Config.MoveSpeed,
+                    setValue: value => Config.MoveSpeed = (int)value
+                );
+                
+                configMenu.AddNumberOption(
+                    mod: ModManifest,
+                    name: () => Helper.Translation.Get("GMCM_Option_Defense_Name"),
+                    getValue: () => Config.Defense,
+                    setValue: value => Config.Defense = (int)value
+                );
+
+                configMenu.AddNumberOption(
+                    mod: ModManifest,
+                    name: () => Helper.Translation.Get("GMCM_Option_StaminaUse_Name"),
+                    getValue: () => Config.StaminaUse,
+                    setValue: value => Config.StaminaUse = (int)value
                 );
 
                 configMenu.AddNumberOption(
