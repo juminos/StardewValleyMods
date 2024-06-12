@@ -21,7 +21,7 @@ namespace CustomCritters2.Framework
 
         public CritterEntry Data { get; }
 
-        public CustomCritter(Vector2 pos, CritterEntry data, int? variation = null)
+        public CustomCritter(Vector2 pos, CritterEntry data, int variation)
         {
             ModEntry.SMonitor.Log($"Original position passed to CustomCritter: {pos}", LogLevel.Debug);
             this.position = this.startingPosition = pos;
@@ -32,13 +32,7 @@ namespace CustomCritters2.Framework
             var tex = CustomCritter.LoadCritterTexture(data.Id);
             string texStr = ModEntry.Instance.Helper.ModContent.GetInternalAssetName($"Critters/{data.Id}/critter.png").BaseName;
 
-            ModEntry.SMonitor.Log($"Variation: {variation}", LogLevel.Debug);
-            // If variation is not specified, choose a random one
-            int selectedVariation = variation ?? Game1.random.Next(data.SpriteData.Variations);
-            ModEntry.SMonitor.Log($"If variation missing updated to: {variation}", LogLevel.Debug);
-
-            // Calculate the base frame for the selected variation
-            this.baseFrame = (selectedVariation - 1) * (tex.Width / data.SpriteData.FrameWidth);
+            this.baseFrame = variation * (tex.Width / data.SpriteData.FrameWidth);
             ModEntry.SMonitor.Log($"Calculated baseframe: {baseFrame}", LogLevel.Debug);
 
             List<FarmerSprite.AnimationFrame> frames = new List<FarmerSprite.AnimationFrame>();

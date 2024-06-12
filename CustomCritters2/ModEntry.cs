@@ -84,10 +84,11 @@ namespace CustomCritters2
                             manifest: this.ModManifest,
                             critterId: critterId,
                             textureName: textureName,
+                            variation: variation,
                             index: index,
                             defaultCritterName: variationName,
                             translatedCritterNames: new Dictionary<string, string>(),
-                            makeCritter: (x, y) => critter.MakeCritter(new Vector2(x, y), variation),
+                            makeCritter: (x, y, variation) => critter.MakeCritter(new Vector2(x, y), variation),
                             isThisCritter: instance => (instance as CustomCritter)?.Data.Id == critter.Id
                             );
 
@@ -115,7 +116,7 @@ namespace CustomCritters2
                         if (spot == null)
                             continue;
 
-                        e.NewLocation.addCritter(entry.Value.MakeCritter(spot.Value));
+                        e.NewLocation.addCritter(entry.Value.MakeCritter(spot.Value, Game1.random.Next(entry.Value.SpriteData.Variations)));
                     }
                 }
             }

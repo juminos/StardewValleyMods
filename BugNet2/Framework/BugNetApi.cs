@@ -15,7 +15,7 @@ namespace BugNet2.Framework
         ** Fields
         *********/
         /// <summary>Add a new critter which can be caught.</summary>
-        private readonly Action<string, string, int, string, Dictionary<string, string>, Func<int, int, Critter>, Func<Critter, bool>> RegisterCritterImpl;
+        private readonly Action<string, string, int, string, Dictionary<string, string>, Func<int, int, int, Critter>, Func<Critter, bool>, int> RegisterCritterImpl;
 
         /// <summary>The monitor with which to log critter changes through the API.</summary>
         private readonly IMonitor Monitor;
@@ -26,14 +26,14 @@ namespace BugNet2.Framework
         /// <summary>Construct an instance.</summary>
         /// <param name="registerCritter">Add a new critter which can be caught.</param>
         /// <param name="monitor">The monitor with which to log critter changes through the API.</param>
-        internal BugNetApi(Action<string, string, int, string, Dictionary<string, string>, Func<int, int, Critter>, Func<Critter, bool>> registerCritter, IMonitor monitor)
+        internal BugNetApi(Action<string, string, int, string, Dictionary<string, string>, Func<int, int, int, Critter>, Func<Critter, bool>, int> registerCritter, IMonitor monitor)
         {
             this.RegisterCritterImpl = registerCritter;
             this.Monitor = monitor;
         }
 
         /// <inheritdoc />
-        public void RegisterCritter(IManifest manifest, string critterId, string textureName, int index, string defaultCritterName, Dictionary<string, string> translatedCritterNames, Func<int, int, Critter> makeCritter, Func<Critter, bool> isThisCritter)
+        public void RegisterCritter(IManifest manifest, string critterId, string textureName, int index, string defaultCritterName, Dictionary<string, string> translatedCritterNames, Func<int, int, int, Critter> makeCritter, Func<Critter, bool> isThisCritter, int variation)
         {
             // validate
             if (manifest is null)
@@ -50,7 +50,7 @@ namespace BugNet2.Framework
             // register critter
             try
             {
-                this.RegisterCritterImpl(critterId, textureName, index, defaultCritterName, translatedCritterNames, makeCritter, isThisCritter);
+                this.RegisterCritterImpl(critterId, textureName, index, defaultCritterName, translatedCritterNames, makeCritter, isThisCritter, variation);
                 this.Monitor.Log($"'{manifest.Name}' registered critter ID '{critterId}'.");
             }
             catch (Exception ex)

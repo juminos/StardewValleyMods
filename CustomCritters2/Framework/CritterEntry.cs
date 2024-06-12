@@ -41,10 +41,10 @@ namespace CustomCritters2.Framework
             return null;
         }
 
-        public virtual Critter MakeCritter(Vector2 pos, int? variation = null)
+        public virtual Critter MakeCritter(Vector2 pos, int variation)
         {
-            var modifiedPos = new Vector2(pos.X * 64, pos.Y * 64);
-            ModEntry.SMonitor.Log($"Position received by MakeCritter: {pos}, modified for CustomCritter: {modifiedPos}, variation: {variation}");
+            var modifiedPos = new Vector2((pos.X - 1) * 64, (pos.Y - 1) * 64);
+            ModEntry.SMonitor.Log($"Position received by MakeCritter: {pos}, modified for CustomCritter: {modifiedPos}, variation {variation}");
             return new CustomCritter(modifiedPos, this, variation);
         }
 

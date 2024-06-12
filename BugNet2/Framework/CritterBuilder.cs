@@ -15,7 +15,7 @@ namespace BugNet2.Framework
         ** Accessors
         *********/
         /// <summary>Create a critter instance at the given X and Y tile position.</summary>
-        public Func<int, int, Critter> MakeCritter;
+        public Func<int, int, int, Critter> MakeCritter;
 
         /// <summary>Get whether a given critter instance matches this critter.</summary>
         public Func<Critter, bool> IsThisCritter;
@@ -27,7 +27,7 @@ namespace BugNet2.Framework
         /// <summary>Construct an instance.</summary>
         /// <param name="makeCritter">Create a critter instance at the given X and Y tile position.</param>
         /// <param name="isThisCritter">Get whether a given critter instance matches this critter.</param>
-        public CritterBuilder(Func<int, int, Critter> makeCritter, Func<Critter, bool> isThisCritter)
+        public CritterBuilder(Func<int, int, int, Critter> makeCritter, Func<Critter, bool> isThisCritter)
         {
             this.MakeCritter = makeCritter;
             this.IsThisCritter = isThisCritter;
@@ -40,7 +40,7 @@ namespace BugNet2.Framework
         public static CritterBuilder ForButterfly(int baseFrame, bool island = false, bool summer = false)
         {
             return new(
-                makeCritter: (x, y) =>
+                makeCritter: (x, y, variation) =>
                 {
                     Butterfly butterfly = new Butterfly(Game1.currentLocation, new Vector2(x, y), islandButterfly: island)
                     {
@@ -68,7 +68,7 @@ namespace BugNet2.Framework
         public static CritterBuilder ForBird(int baseFrame)
         {
             return new(
-                makeCritter: (x, y) => new Birdie(x, y, baseFrame),
+                makeCritter: (x, y, variation) => new Birdie(x, y, baseFrame),
                 isThisCritter: critter => critter is Birdie birdie && birdie.baseFrame == baseFrame
             );
         }
@@ -77,7 +77,7 @@ namespace BugNet2.Framework
         public static CritterBuilder ForCloud()
         {
             return new(
-                makeCritter: (x, y) => new Cloud(new Vector2(x, y)),
+                makeCritter: (x, y, variation) => new Cloud(new Vector2(x, y)),
                 isThisCritter: critter => critter is Cloud
             );
         }
@@ -86,7 +86,7 @@ namespace BugNet2.Framework
         public static CritterBuilder ForCrow()
         {
             return new(
-                makeCritter: (x, y) => new Crow(x, y),
+                makeCritter: (x, y, variation) => new Crow(x, y),
                 isThisCritter: critter => critter is Crow
             );
         }
@@ -95,7 +95,7 @@ namespace BugNet2.Framework
         public static CritterBuilder ForFirefly()
         {
             return new(
-                makeCritter: (x, y) => new Firefly(new Vector2(x, y)),
+                makeCritter: (x, y, variation) => new Firefly(new Vector2(x, y)),
                 isThisCritter: critter => critter is Firefly
             );
         }
@@ -105,7 +105,7 @@ namespace BugNet2.Framework
         public static CritterBuilder ForFrog(bool olive)
         {
             return new(
-                makeCritter: (x, y) => new Frog(new Vector2(x, y), waterLeaper: olive),
+                makeCritter: (x, y, variation) => new Frog(new Vector2(x, y), waterLeaper: olive),
                 isThisCritter: critter => critter is Frog frog && ModEntry.Instance.Helper.Reflection.GetField<bool>(frog, "waterLeaper").GetValue() == olive
             );
         }
@@ -114,7 +114,7 @@ namespace BugNet2.Framework
         public static CritterBuilder ForOwl()
         {
             return new(
-                makeCritter: (x, y) => new Owl(new Vector2(x * Game1.tileSize, y * Game1.tileSize)),
+                makeCritter: (x, y, variation) => new Owl(new Vector2(x * Game1.tileSize, y * Game1.tileSize)),
                 isThisCritter: critter => critter is Owl
             );
         }
@@ -126,7 +126,7 @@ namespace BugNet2.Framework
             int baseFrame = white ? 74 : 54;
 
             return new(
-                makeCritter: (x, y) => new Rabbit(Game1.currentLocation, new Vector2(x, y), false)
+                makeCritter: (x, y, variation) => new Rabbit(Game1.currentLocation, new Vector2(x, y), false)
                 {
                     baseFrame = baseFrame
                 },
@@ -138,7 +138,7 @@ namespace BugNet2.Framework
         public static CritterBuilder ForSeagull()
         {
             return new(
-                makeCritter: (x, y) => new Seagull(new Vector2(x * Game1.tileSize, y * Game1.tileSize), Seagull.stopped),
+                makeCritter: (x, y, variation) => new Seagull(new Vector2(x * Game1.tileSize, y * Game1.tileSize), Seagull.stopped),
                 isThisCritter: critter => critter is Seagull
             );
         }
@@ -147,7 +147,7 @@ namespace BugNet2.Framework
         public static CritterBuilder ForSquirrel()
         {
             return new(
-                makeCritter: (x, y) => new Squirrel(new Vector2(x, y), false),
+                makeCritter: (x, y, variation) => new Squirrel(new Vector2(x, y), false),
                 isThisCritter: critter => critter is Squirrel
             );
         }
@@ -156,7 +156,7 @@ namespace BugNet2.Framework
         public static CritterBuilder ForWoodpecker()
         {
             return new(
-                makeCritter: (x, y) => new Woodpecker(new Tree(), new Vector2(x, y)),
+                makeCritter: (x, y, variation) => new Woodpecker(new Tree(), new Vector2(x, y)),
                 isThisCritter: critter => critter is Woodpecker
             );
         }
@@ -165,7 +165,7 @@ namespace BugNet2.Framework
         public static CritterBuilder ForMonkey()
         {
             return new(
-                makeCritter: (x, y) => new CalderaMonkey(new Vector2(x, y)),
+                makeCritter: (x, y, variation) => new CalderaMonkey(new Vector2(x, y)),
                 isThisCritter: critter => critter is CalderaMonkey
             );
         }
@@ -188,7 +188,7 @@ namespace BugNet2.Framework
             }
 
             return new(
-                makeCritter: (x, y) => new OverheadParrot(new Vector2(x, y))
+                makeCritter: (x, y, variation) => new OverheadParrot(new Vector2(x, y))
                 {
                     sourceRect = new Rectangle(0, Game1.random.Next(minYOffset, maxYOffset + 1), 24, 24)
                 },
@@ -203,7 +203,7 @@ namespace BugNet2.Framework
         public static CritterBuilder ForOpossum()
         {
             return new(
-                makeCritter: (x, y) => new Opossum(Game1.currentLocation, new Vector2(x, y), false),
+                makeCritter: (x, y, variation) => new Opossum(Game1.currentLocation, new Vector2(x, y), false),
                 isThisCritter: critter => critter is Opossum
             );
         }
