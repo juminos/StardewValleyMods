@@ -1,4 +1,4 @@
-﻿**Bug Net** is a [Stardew Valley](http://stardewvalley.net/) mod which lets you catch critters with
+﻿**Bug Net 2** is a [Stardew Valley](http://stardewvalley.net/) mod which lets you catch critters with
 a net.
 
 ![](screenshot.gif)
@@ -6,8 +6,7 @@ a net.
 ## Install
 1. Install the latest version of...
    * [SMAPI](https://smapi.io);
-   * and [SpaceCore](https://www.nexusmods.com/stardewvalley/mods/1348).
-2. Install [this mod from Nexus Mods](http://www.nexusmods.com/stardewvalley/mods/5099).
+2. Install [this mod from Nexus Mods](http://www.nexusmods.com/stardewvalley/mods/).
 3. Run the game using SMAPI.
 
 ## Use
@@ -15,14 +14,14 @@ Buy the bug net from Pierre's shop for 500g, hold it like any other tool, and sw
 critters.
 
 ## Compatibility
-Compatible with Stardew Valley 1.5.5+ on Linux/macOS/Windows, both single-player and multiplayer.
+Compatible with Stardew Valley 1.6+ on Linux/macOS/Windows, both single-player and multiplayer.
 
 ## For mod authors
-You can register your custom critters in BugNet to make them catchable. To do so:
+You can register your custom critters in BugNet2 to make them catchable. To do so:
 
 1. Copy [`IBugNetApi.cs`](../../SpaceShared/APIs/IBugNetApi.cs) into your mod code.
 2. [Get the mod-provided API](https://stardewvalleywiki.com/Modding:Modder_Guide/APIs/Integrations#Mod-provided_APIs)
-   for BugNet (mod ID: `spacechase0.BugNet`) using the `IBugNetApi` interface.
+   for BugNet2 (mod ID: `juminos.BugNet2`) using the `IBugNetApi` interface.
 3. Register each custom critter with the `RegisterCritter` method.
 
 For example:
@@ -30,9 +29,9 @@ For example:
 ```c#
 private void OnGameLaunched(object sender, GameLaunchedEventArgs e)
 {
-    var api = this.Helper.ModRegistry.GetApi<IBugNetApi>("spacechase0.BugNet");
+    var api = this.Helper.ModRegistry.GetApi<IBugNetApi>("juminos.BugNet2");
     if (api == null)
-        return; // Bug Net isn't installed
+        return; // Bug Net 2 isn't installed
 
     api.RegisterCritter(
         manifest: this.ModManifest,

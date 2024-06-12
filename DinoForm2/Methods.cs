@@ -13,8 +13,6 @@ namespace DinoForm
         {
             PlayTransform();
 
-            await Task.Delay(50);
-
             var status = DinoFormStatus(Game1.player);
             if (status == DinoForm.Inactive)
                 status = DinoForm.Active;

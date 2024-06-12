@@ -1,0 +1,117 @@
+{
+  "Id": "forest_butterfly",
+  "Name": "Forest Butterfly",
+  "VariationNames": {
+    "0": "Monarch Butterfly",
+    "1": "Swallowtail Butterfly",
+    "2": "Blue Morpho Butterfly"
+  },
+  "SpriteData": {
+    "Variations": 3,
+    "FrameWidth": 16,
+    "FrameHeight": 16,
+    "Scale": 4,
+    "Flying": true
+  },
+  "Animations": {
+    "default": {
+      "Frames": [
+        {"Frame": 0, "Duration": 200},
+        {"Frame": 1, "Duration": 200},
+        {"Frame": 2, "Duration": 200},
+        {"Frame": 1, "Duration": 200}
+      ]
+    },
+    "Idle": {
+      "Frames": [
+        {"Frame": 0, "Duration": 200},
+        {"Frame": 1, "Duration": 200},
+        {"Frame": 2, "Duration": 200},
+        {"Frame": 1, "Duration": 200}
+      ]
+    },
+    "Flying": {
+      "Frames": [
+        {"Frame": 0, "Duration": 100},
+        {"Frame": 1, "Duration": 100},
+        {"Frame": 2, "Duration": 100},
+        {"Frame": 3, "Duration": 100}
+      ]
+    },
+    "Landing": {
+      "Frames": [
+        {"Frame": 0, "Duration": 300},
+        {"Frame": 1, "Duration": 300}
+      ]
+    }
+  },
+  "SpawnConditions": [
+    {
+      "Not": false,
+      "Seasons": ["spring", "summer"],
+      "Locations": ["Forest", "Meadow"],
+      "MinTimeOfDay": 600,
+      "MaxTimeOfDay": 1800,
+      "ChancePerTile": 0.0000667,
+      "RequireDarkOut": false,
+      "AllowRain": true,
+      "ChildrenCombine": "and",
+      "Children": [
+        {
+          "Seasons": ["spring"],
+          "MinTimeOfDay": 600,
+          "MaxTimeOfDay": 1200
+        },
+        {
+          "Seasons": ["summer"],
+          "MinTimeOfDay": 1200,
+          "MaxTimeOfDay": 1800
+        }
+      ]
+    }
+  ],
+  "Behavior": {
+    "Type": "patrol",
+    "Speed": 2.5,
+    "PatrolPoints": [
+      {"Type": "start", "X": 0.0, "Y": 0.0},
+      {"Type": "startoffset", "X": 2.0, "Y": 1.0},
+      {"Type": "offset", "X": 1.0, "Y": -1.0},
+      {"Type": "startrandom", "X": 3.0, "Y": 2.0},
+      {"Type": "random", "X": 4.0, "Y": 3.0},
+      {"Type": "wait"}
+    ],
+    "PatrolPointDelay": 1000,
+    "PatrolPointDelayAddRandom": 500
+  },
+  "SpawnLocations": [
+    {
+      "LocationType": "random",
+      "Conditions": [
+        {"Variable": "locationType", "ValueEquals": "forest", "Chance": 1.0}
+      ]
+    },
+    {
+      "LocationType": "terrainfeature",
+      "Conditions": [
+        {"Variable": "featureType", "ValueEquals": "Tree", "Chance": 0.5}
+      ]
+    },
+    {
+      "LocationType": "object",
+      "Conditions": [
+        {"Variable": "objectType", "ValueEquals": "Flower", "Chance": 0.8}
+      ]
+    }
+  ],
+  "SpawnAttempts": 5,
+  "Light": {
+    "VanillaLightId": 3,
+    "Radius": 1.5,
+    "Color": {
+      "R": 255,
+      "G": 255,
+      "B": 255
+    }
+  }
+}

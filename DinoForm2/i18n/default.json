@@ -1,6 +1,6 @@
 {
   "GMCM_Option_ModEnabled_Name": "Mod Enabled",
-  "GMCM_Option_EatTrigger_Name": "Eat Trigger",
+  "GMCM_Option_BuffedFoods_Name": "Buffed Foods (not implemented)",
   "GMCM_Option_EatLastSeconds_Name": "Duration (s)",
   "GMCM_Option_TransformKey_Name": "Key Trigger",
   "GMCM_Option_FireKey_Name": "Fire Key",
