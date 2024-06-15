@@ -1,0 +1,182 @@
+{
+  "Id": "frog",
+  "Name": "Frog",
+  "VariationNames": {
+    "0": "Regular Frog",
+    "1": "Water Leaper"
+  },
+  "SpriteData": {
+    "Variations": 2,
+    "FrameWidth": 16,
+    "FrameHeight": 16,
+    "Scale": 4,
+    "Flying": false
+  },
+  "Animations": {
+    "default": {
+      "Frames": [
+        {
+          "Frame": 280,
+          "Duration": 60
+        },
+        {
+          "Frame": 281,
+          "Duration": 70
+        },
+        {
+          "Frame": 282,
+          "Duration": 140
+        },
+        {
+          "Frame": 283,
+          "Duration": 90
+        }
+      ]
+    },
+    "WaterLeaper": {
+      "Frames": [
+        {
+          "Frame": 300,
+          "Duration": 600
+        },
+        {
+          "Frame": 304,
+          "Duration": 100
+        },
+        {
+          "Frame": 305,
+          "Duration": 100
+        },
+        {
+          "Frame": 306,
+          "Duration": 300
+        },
+        {
+          "Frame": 305,
+          "Duration": 100
+        },
+        {
+          "Frame": 304,
+          "Duration": 100
+        }
+      ]
+    },
+    "LeapIntoWater": {
+      "Frames": [
+        {
+          "Frame": 300,
+          "Duration": 100
+        },
+        {
+          "Frame": 301,
+          "Duration": 100
+        },
+        {
+          "Frame": 302,
+          "Duration": 100
+        },
+        {
+          "Frame": 303,
+          "Duration": 1500
+        }
+      ]
+    }
+  },
+  "SpawnConditions": [
+    {
+      "Not": false,
+      "Seasons": [ "spring", "summer", "fall" ],
+      "Locations": [ "Forest", "Farm", "Riverlands", "Town" ],
+      "MinTimeOfDay": 600,
+      "MaxTimeOfDay": 1800,
+      "ChancePerTile": 0.1,
+      "RequireDarkOut": false,
+      "AllowRain": true,
+      "ChildrenCombine": "or",
+      "Children": [
+        {
+          "Seasons": [ "spring" ],
+          "MinTimeOfDay": 600,
+          "MaxTimeOfDay": 1200
+        },
+        {
+          "Seasons": [ "summer" ],
+          "MinTimeOfDay": 1200,
+          "MaxTimeOfDay": 1800
+        },
+        {
+          "Seasons": [ "fall" ],
+          "MinTimeOfDay": 600,
+          "MaxTimeOfDay": 1800
+        }
+      ]
+    }
+  ],
+  "Behavior": {
+    "Type": "patrol",
+    "Speed": 3.0,
+    "PatrolPoints": [
+      {
+        "Type": "start",
+        "X": 0.0,
+        "Y": 0.0
+      },
+      {
+        "Type": "offset",
+        "X": 1.0,
+        "Y": 0.0
+      },
+      {
+        "Type": "offset",
+        "X": -1.0,
+        "Y": 0.0
+      },
+      {
+        "Type": "offset",
+        "X": 0.0,
+        "Y": 1.0
+      },
+      {
+        "Type": "offset",
+        "X": 0.0,
+        "Y": -1.0
+      }
+    ],
+    "PatrolPointDelay": 1000,
+    "PatrolPointDelayAddRandom": 500
+  },
+  "SpawnLocations": [
+    {
+      "LocationType": "random",
+      "Conditions": [
+        {
+          "Variable": "locationType",
+          "ValueEquals": "forest",
+          "Chance": 1.0
+        }
+      ]
+    },
+    {
+      "LocationType": "terrainfeature",
+      "Conditions": [
+        {
+          "Variable": "featureType",
+          "ValueEquals": "Tree",
+          "Chance": 0.5
+        }
+      ]
+    },
+    {
+      "LocationType": "object",
+      "Conditions": [
+        {
+          "Variable": "objectType",
+          "ValueEquals": "Flower",
+          "Chance": 0.8
+        }
+      ]
+    }
+  ],
+  "SpawnAttempts": 5,
+  "Light": null
+}

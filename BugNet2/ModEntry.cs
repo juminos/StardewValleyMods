@@ -277,12 +277,14 @@ namespace BugNet2
                     SMonitor.Log($"Active object name: {Game1.player.ActiveObject.Name}");
                     // Get the critter ID
                     CritterData activeCritter = null;
+                    string critterId = null;
                     foreach (var critterData in ModEntry.CrittersData)
                     {
                         SMonitor.Log($"Checking : {critterData.Value.DefaultName}");
                         if (critterData.Value.DefaultName == Game1.player.ActiveObject.Name)
                         {
                             activeCritter = critterData.Value;
+                            critterId = critterData.Key;
                             SMonitor.Log($"Active critter found: {activeCritter.DefaultName}");
                             break;
                         }
@@ -293,8 +295,18 @@ namespace BugNet2
                         SMonitor.Log($"Attempting to spawn critter: {activeCritter.DefaultName}");
 
                         // Create the critter instance
-                        int x = (int)e.Cursor.GrabTile.X + 1;
-                        int y = (int)e.Cursor.GrabTile.Y + 1;
+                        int x;
+                        int y;
+                        if (critterId != null && critterId.Contains("CustomCritters2"))
+                        {
+                            x = (int)e.Cursor.GrabTile.X * 64;
+                            y = (int)e.Cursor.GrabTile.Y * 64;
+                        }
+                        else
+                        {
+                            x = (int)e.Cursor.GrabTile.X + 1;
+                            y = (int)e.Cursor.GrabTile.Y + 1;
+                        }
                         var critter = activeCritter.MakeCritter(x, y, activeCritter.Variation);
                         SMonitor.Log($"Position to spawn critter: {x}, {y}");
 
