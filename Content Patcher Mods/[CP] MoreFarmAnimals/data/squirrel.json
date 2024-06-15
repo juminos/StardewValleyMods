@@ -1,0 +1,135 @@
+{
+  "Changes": [
+    // Animals
+    {
+      "Action": "EditData",
+      "Target": "Data/FarmAnimals",
+      "Entries": {
+        "{{ModId}}_Squirrel": {
+          "DisplayName": "Squirrel",
+          "House": "Coop",
+          "Gender": "MaleOrFemale",
+          "PurchasePrice": 1000,
+          "SellPrice": 2000,
+          "ShopTexture": "Mods/{{ModId}}/shop_squirrel",
+          "ShopSourceRect": {
+            "X": 0,
+            "Y": 0,
+            "Width": 32,
+            "Height": 16
+          },
+          "ShopDisplayName": "Squirrel",
+          "ShopDescription": "If you let them roam around, they make find something useful...",
+          "ShopMissingBuildingDescription": "Requires construction of a Deluxe Coop",
+          "RequiredBuilding": "Deluxe Coop",
+          "UnlockCondition": null,
+          "AlternatePurchaseTypes": null,
+          "EggItemIds": null,
+          "IncubationTime": -1,
+          "IncubatorParentSheetOffset": 1,
+          "BirthText": "A new baby squirrel hatched!",
+          "DaysToMature": 5,
+          "CanGetPregnant": false,
+          "DaysToProduce": 1,
+          "HarvestType": "DigUp",
+          "HarvestTool": null,
+          "ProduceItemIds": [
+            {
+              "Id": "Default",
+              "Condition": null,
+              "MinimumFriendship": 0,
+              "ItemId": "408"
+            },
+            {
+              "Id": "Default",
+              "Condition": null,
+              "MinimumFriendship": 0,
+              "ItemId": "309"
+            }
+          ],
+          "DeluxeProduceItemIds": [],
+          "ProduceOnMature": false,
+          "FriendshipForFasterProduce": -1,
+          "DeluxeProduceMinimumFriendship": 200,
+          "DeluxeProduceCareDivisor": 1200.0,
+          "DeluxeProduceLuckMultiplier": 0.0,
+          "ProfessionForHappinessBoost": 3,
+          "ProfessionForQualityBoost": 3,
+          "ProfessionForFasterProduce": -1,
+          "Sound": null,
+          "BabySound": null,
+          "Texture": "Mods/{{ModId}}/BlackSquirrel",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyBlackSquirrel",
+          "UseFlippedRightForLeft": false,
+          "SpriteWidth": 16,
+          "SpriteHeight": 16,
+          "EmoteOffset": {
+            "X": 0,
+            "Y": -16
+          },
+          "Skins": [
+            {
+              "Id": "{{ModId}}_BrownSquirrel",
+              "Texture": "Mods/{{ModId}}/BrownSquirrel",
+              "BabyTexture": "Mods/{{ModId}}/BabyBrownSquirrel"
+            },
+            {
+              "Id": "{{ModId}}_GreyBrownSquirrel",
+              "Texture": "Mods/{{ModId}}/GreyBrownSquirrel",
+              "BabyTexture": "Mods/{{ModId}}/BabyGreyBrownSquirrel"
+            },
+            {
+              "Id": "{{ModId}}_GreySquirrel",
+              "Texture": "Mods/{{ModId}}/GreySquirrel",
+              "BabyTexture": "Mods/{{ModId}}/BabyGreySquirrel"
+            },
+            {
+              "Id": "{{ModId}}_LightBrownSquirrel",
+              "Texture": "Mods/{{ModId}}/LightBrownSquirrel",
+              "BabyTexture": "Mods/{{ModId}}/BabyLightBrownSquirrel"
+            },
+            {
+              "Id": "{{ModId}}_RedSquirrel",
+              "Texture": "Mods/{{ModId}}/RedSquirrel",
+              "BabyTexture": "Mods/{{ModId}}/BabyRedSquirrel"
+            },
+            {
+              "Id": "{{ModId}}_TanSquirrel",
+              "Texture": "Mods/{{ModId}}/TanSquirrel",
+              "BabyTexture": "Mods/{{ModId}}/BabyTanSquirrel"
+            },
+            {
+              "Id": "{{ModId}}_WhiteSquirrel",
+              "Texture": "Mods/{{ModId}}/WhiteSquirrel",
+              "BabyTexture": "Mods/{{ModId}}/BabyWhiteSquirrel"
+            }
+          ],
+          "SleepFrame": 16,
+          "UseDoubleUniqueAnimationFrames": true,
+          "ShadowWhenBabySwims": null,
+          "ShadowWhenBaby": null,
+          "ShadowWhenAdultSwims": null,
+          "ShadowWhenAdult": null,
+          "CanSwim": false,
+          "BabiesFollowAdults": true,
+          "GrassEatAmount": 2,
+          "HappinessDrain": 8,
+          "UpDownPetHitboxTileSize": "1, 1",
+          "LeftRightPetHitboxTileSize": "1, 1",
+          "BabyUpDownPetHitboxTileSize": "1, 1",
+          "BabyLeftRightPetHitboxTileSize": "1, 1",
+          "StatToIncrementOnProduce": null,
+          "ShowInSummitCredits": true,
+          "CustomFields": {}
+        }
+      }
+    },
+    // Load Sprites
+    {
+      "Action": "Load",
+      "Target": "Mods/{{ModId}}/BlackSquirrel, Mods/{{ModId}}/BabyBlackSquirrel, Mods/{{ModId}}/BrownSquirrel, Mods/{{ModId}}/BabyBrownSquirrel, Mods/{{ModId}}/GreyBrownSquirrel, Mods/{{ModId}}/BabyGreyBrownSquirrel, Mods/{{ModId}}/GreySquirrel, Mods/{{ModId}}/BabyGreySquirrel, Mods/{{ModId}}/LightBrownSquirrel, Mods/{{ModId}}/BabyLightBrownSquirrel, Mods/{{ModId}}/RedSquirrel, Mods/{{ModId}}/BabyRedSquirrel, Mods/{{ModId}}/TanSquirrel, Mods/{{ModId}}/BabyTanSquirrel, Mods/{{ModId}}/WhiteSquirrel, Mods/{{ModId}}/BabyWhiteSquirrel",
+      "FromFile": "assets/Squirrel/{{TargetWithoutPath}}.png"
+    }
+  ]
+}

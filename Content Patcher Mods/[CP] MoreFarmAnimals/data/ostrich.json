@@ -1,0 +1,22 @@
+{
+  "Changes": [
+    // Animals
+    {
+      "Action": "EditData",
+      "Target": "Data/FarmAnimals",
+      "TargetField": [ "Ostrich", "Skins" ],
+      "Entries": {
+        "{{ModId}}_MaleOstrich": {
+          "Id": "{{ModId}}_MaleOstrich",
+          "Texture": "Mods/{{ModId}}/MaleOstrich"
+        }
+      }
+    },
+    // Load Sprites
+    {
+      "Action": "Load",
+      "Target": "Mods/{{ModId}}/MaleOstrich",
+      "FromFile": "assets/Ostrich/{{TargetWithoutPath}}.png"
+    }
+  ]
+}

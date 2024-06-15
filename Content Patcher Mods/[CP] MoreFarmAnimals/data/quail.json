@@ -1,0 +1,487 @@
+{
+  "Changes": [
+    // Animals
+    {
+      "Action": "EditData",
+      "Target": "Data/FarmAnimals",
+      "Entries": {
+        "{{ModId}}_Quail": {
+          "DisplayName": "Quail",
+          "House": "Coop",
+          "Gender": "Female",
+          "PurchasePrice": 1000,
+          "SellPrice": 2000,
+          "ShopTexture": "Mods/{{ModId}}/ShopIcons",
+          "ShopSourceRect": {
+            "X": 64,
+            "Y": 16,
+            "Width": 32,
+            "Height": 16
+          },
+          "ShopDisplayName": "Quail",
+          "ShopDescription": "Quaint little ground birds.",
+          "ShopMissingBuildingDescription": "[LocalizedText Strings\\StringsFromCSFiles:Utility.cs.5947]",
+          "RequiredBuilding": "Deluxe Coop",
+          "UnlockCondition": null,
+          "AlternatePurchaseTypes": null,
+          "EggItemIds": [
+            "{{ModId}}_QuailEgg",
+            "{{ModId}}_LargeQuailEgg"
+          ],
+          "IncubationTime": -1,
+          "IncubatorParentSheetOffset": 1,
+          "BirthText": "A new baby quail hatched!",
+          "DaysToMature": 3,
+          "CanGetPregnant": false,
+          "DaysToProduce": 1,
+          "HarvestType": "DropOvernight",
+          "HarvestTool": null,
+          "ProduceItemIds": [
+            {
+              "Id": "Default",
+              "Condition": null,
+              "MinimumFriendship": 0,
+              "ItemId": "{{ModId}}_QuailEgg"
+            }
+          ],
+          "DeluxeProduceItemIds": [
+            {
+              "Id": "Default",
+              "Condition": null,
+              "MinimumFriendship": 500,
+              "ItemId": "{{ModId}}_LargeQuailEgg"
+            }
+          ],
+          "ProduceOnMature": false,
+          "FriendshipForFasterProduce": -1,
+          "DeluxeProduceMinimumFriendship": 200,
+          "DeluxeProduceCareDivisor": 1200.0,
+          "DeluxeProduceLuckMultiplier": 0.0,
+          "ProfessionForHappinessBoost": 2,
+          "ProfessionForQualityBoost": 2,
+          "ProfessionForFasterProduce": -1,
+          "Sound": "Mods/{{ModId}}/quail",
+          "BabySound": "SpringBirds",
+          "Texture": "Mods/{{ModId}}/Quail_218",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyQuail_218",
+          "UseFlippedRightForLeft": false,
+          "SpriteWidth": 16,
+          "SpriteHeight": 16,
+          "EmoteOffset": {
+            "X": 0,
+            "Y": -16
+          },
+          "Skins": [
+            {
+              "ID": "{{ModId}}_Quail_219",
+              "Texture": "Mods/{{ModId}}/Quail_219",
+              "HarvestedTexture": null,
+              "BabyTexture": "Mods/{{ModId}}/BabyQuail_219"
+            },
+            {
+              "ID": "{{ModId}}_Quail_220",
+              "Texture": "Mods/{{ModId}}/Quail_220",
+              "HarvestedTexture": null,
+              "BabyTexture": "Mods/{{ModId}}/BabyQuail_220"
+            },
+            {
+              "ID": "{{ModId}}_Quail_221",
+              "Texture": "Mods/{{ModId}}/Quail_221",
+              "HarvestedTexture": null,
+              "BabyTexture": "Mods/{{ModId}}/BabyQuail_221"
+            },
+            {
+              "ID": "{{ModId}}_Quail_222",
+              "Texture": "Mods/{{ModId}}/Quail_222",
+              "HarvestedTexture": null,
+              "BabyTexture": "Mods/{{ModId}}/BabyQuail_222"
+            },
+            {
+              "ID": "{{ModId}}_Quail_223",
+              "Texture": "Mods/{{ModId}}/Quail_223",
+              "HarvestedTexture": null,
+              "BabyTexture": "Mods/{{ModId}}/BabyQuail_223"
+            },
+            {
+              "ID": "{{ModId}}_Quail_224",
+              "Texture": "Mods/{{ModId}}/Quail_224",
+              "HarvestedTexture": null,
+              "BabyTexture": "Mods/{{ModId}}/BabyQuail_224"
+            },
+            {
+              "ID": "{{ModId}}_Quail_225",
+              "Texture": "Mods/{{ModId}}/Quail_225",
+              "HarvestedTexture": null,
+              "BabyTexture": "Mods/{{ModId}}/BabyQuail_225"
+            },
+            {
+              "ID": "{{ModId}}_Quail_226",
+              "Texture": "Mods/{{ModId}}/Quail_226",
+              "HarvestedTexture": null,
+              "BabyTexture": "Mods/{{ModId}}/BabyQuail_226"
+            },
+            {
+              "ID": "{{ModId}}_commonquail",
+              "Texture": "Mods/{{ModId}}/commonquail",
+              "HarvestedTexture": null,
+              "BabyTexture": "Mods/{{ModId}}/commonquailbaby"
+            },
+            {
+              "ID": "{{ModId}}_valleyquail",
+              "Texture": "Mods/{{ModId}}/valleyquail",
+              "HarvestedTexture": null,
+              "BabyTexture": "Mods/{{ModId}}/valleyquailbaby"
+            }
+          ],
+          "SleepFrame": 16,
+          "UseDoubleUniqueAnimationFrames": true,
+          "ShadowWhenBabySwims": null,
+          "ShadowWhenBaby": null,
+          "ShadowWhenAdultSwims": null,
+          "ShadowWhenAdult": null,
+          "CanSwim": false,
+          "BabiesFollowAdults": true,
+          "GrassEatAmount": 2,
+          "HappinessDrain": 8,
+          "UpDownPetHitboxTileSize": "1, 1",
+          "LeftRightPetHitboxTileSize": "1, 1",
+          "BabyUpDownPetHitboxTileSize": "1, 1",
+          "BabyLeftRightPetHitboxTileSize": "1, 1",
+          "StatToIncrementOnProduce": null,
+          "ShowInSummitCredits": true,
+          "CustomFields": {}
+        },
+      }
+    },
+    // Sounds
+    {
+      "Action": "EditData",
+      "Target": "Data/AudioChanges",
+      "Entries": {
+        "{{ModId}}_quail": {
+          "ID": "{{ModId}}_quail",
+          "FilePaths": [ "{{AbsoluteFilePath: assets/Quail/quail.wav}}" ],
+          "Category": "Sound"
+        }
+      }
+    },
+    // Load Sprites
+    {
+      "Action": "Load",
+      "Target": "Mods/{{ModId}}/Quail_218, Mods/{{ModId}}/BabyQuail_218, Mods/{{ModId}}/Quail_219, Mods/{{ModId}}/BabyQuail_219, Mods/{{ModId}}/Quail_220, Mods/{{ModId}}/BabyQuail_220, Mods/{{ModId}}/Quail_221, Mods/{{ModId}}/BabyQuail_221, Mods/{{ModId}}/Quail_222, Mods/{{ModId}}/BabyQuail_222, Mods/{{ModId}}/Quail_223, Mods/{{ModId}}/BabyQuail_223, Mods/{{ModId}}/Quail_224, Mods/{{ModId}}/BabyQuail_224, Mods/{{ModId}}/Quail_225, Mods/{{ModId}}/BabyQuail_225, Mods/{{ModId}}/Quail_226, Mods/{{ModId}}/BabyQuail_226, Mods/{{ModId}}/QuailEgg, Mods/{{ModId}}/LargeQuailEgg, Mods/{{ModId}}/QuailMayo, Mods/{{ModId}}/LargeQuailMayo, Mods/{{ModId}}/commonquail, Mods/{{ModId}}/commonquailbaby, Mods/{{ModId}}/valleyquail, Mods/{{ModId}}/valleyquailbaby",
+      "FromFile": "assets/Quail/{{TargetWithoutPath}}.png"
+    },
+    // Objects
+    {
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries": {
+        "{{ModId}}_QuailEgg": {
+          "Name": "QuailEgg",
+          "DisplayName": "Quail Egg",
+          "Description": "A tiny speckled egg from a quail.",
+          "Texture": "Mods/{{ModId}}/QuailEgg",
+          "Type": "Basic",
+          "Category": -5,
+          "Price": 100,
+          "GiftTastes": {
+            "Love": [
+              "Gus",
+              "Lewis"
+            ],
+            "Like": [
+              "Alex",
+              "Demetrius",
+              "Harvey",
+              "Jodi",
+              "Kent",
+              "Linus",
+              "Marnie",
+              "Pierre",
+              "Sam",
+              "Shane"
+            ],
+            "Neutral": [
+              "Caroline",
+              "Clint",
+              "Elliot",
+              "Emily",
+              "Evelyn",
+              "George",
+              "Krobus",
+              "Leo",
+              "Maru",
+              "Penny",
+              "Robin",
+              "Sandy",
+              "Willy"
+            ],
+            "Dislike": [
+              "Abigail",
+              "Dwarf",
+              "Haley",
+              "Jas",
+              "Pam",
+              "Vincent",
+              "Wizard"
+            ],
+            "Hate": [
+              "Sebastian",
+              "Leah"
+            ]
+          },
+          "SpriteIndex": 0,
+          "Edibility": 10,
+          "IsDrink": false,
+          "Buffs": null,
+          "GeodeDropsDefaultItems": false,
+          "GeodeDrops": null,
+          "ArtifactSpotChances": null,
+          "ExcludeFromFishingCollection": true,
+          "ExcludeFromShippingCollection": false,
+          "ExcludeFromRandomSale": false,
+          "ContextTags": [
+            "color_white",
+            "egg_item"
+          ],
+          "CustomFields": null
+        },
+        "{{ModId}}_LargeQuailEgg": {
+          "Name": "LargeQuailEgg",
+          "DisplayName": "Large Quail Egg",
+          "Description": "An unusually large speckled egg from a quail. Ouch.",
+          "Texture": "Mods/{{ModId}}/LargeQuailEgg",
+          "Type": "Basic",
+          "Category": -5,
+          "Price": 300,
+          "GiftTastes": {
+            "Love": [
+              "Gus",
+              "Lewis"
+            ],
+            "Like": [
+              "Alex",
+              "Demetrius",
+              "Harvey",
+              "Jodi",
+              "Kent",
+              "Linus",
+              "Marnie",
+              "Pierre",
+              "Sam",
+              "Shane"
+            ],
+            "Neutral": [
+              "Caroline",
+              "Clint",
+              "Elliot",
+              "Emily",
+              "Evelyn",
+              "George",
+              "Krobus",
+              "Leo",
+              "Maru",
+              "Penny",
+              "Robin",
+              "Sandy",
+              "Willy"
+            ],
+            "Dislike": [
+              "Abigail",
+              "Dwarf",
+              "Haley",
+              "Jas",
+              "Pam",
+              "Vincent",
+              "Wizard"
+            ],
+            "Hate": [
+              "Sebastian",
+              "Leah"
+            ]
+          },
+          "SpriteIndex": 0,
+          "Edibility": 10,
+          "IsDrink": false,
+          "Buffs": null,
+          "GeodeDropsDefaultItems": false,
+          "GeodeDrops": null,
+          "ArtifactSpotChances": null,
+          "ExcludeFromFishingCollection": true,
+          "ExcludeFromShippingCollection": false,
+          "ExcludeFromRandomSale": false,
+          "ContextTags": [
+            "color_white",
+            "egg_item"
+          ],
+          "CustomFields": null
+        },
+        "{{ModId}}_QuailMayo": {
+          "Name": "TinyQuailMayo",
+          "DisplayName": "Quail Mayonnaise",
+          "Description": "A tiny jar of mayonnaise made from tiny little eggs. Cute.",
+          "Texture": "Mods/{{ModId}}/QuailMayo",
+          "Type": "Basic",
+          "Category": -26,
+          "Price": 1200,
+          "GiftTastes": {
+            "Like": [
+              "Abigail",
+              "Alex",
+              "Clint",
+              "Demetrius",
+              "Dwarf",
+              "Elliott",
+              "Emily",
+              "Evelyn",
+              "George",
+              "Gus",
+              "Haley",
+              "Harvey",
+              "Jodi",
+              "Kent",
+              "Krobus",
+              "Leo",
+              "Lewis",
+              "Linus",
+              "Marnie",
+              "Maru",
+              "Pam",
+              "Penny",
+              "Pierre",
+              "Robin",
+              "Sandy",
+              "Shane",
+              "Willy",
+              "Wizard"
+            ],
+            "Dislike": [
+              "Caroline"
+            ],
+            "Hate": [
+              "Jas",
+              "Sam",
+              "Sebastian",
+              "Vincent",
+              "Leah"
+            ]
+          },
+          "SpriteIndex": 0,
+          "Edibility": 20,
+          "IsDrink": true,
+          "Buffs": null,
+          "GeodeDropsDefaultItems": false,
+          "GeodeDrops": null,
+          "ArtifactSpotChances": null,
+          "ExcludeFromFishingCollection": true,
+          "ExcludeFromShippingCollection": false,
+          "ExcludeFromRandomSale": false,
+          "ContextTags": null,
+          "CustomFields": null
+        },
+        "{{ModId}}_LargeQuailMayo": {
+          "Name": "QuailMayo",
+          "DisplayName": "Quail Mayonnaise",
+          "Description": "A condiment made from a copious quantity of quail eggs.",
+          "Texture": "Mods/{{ModId}}/LargeQuailMayo",
+          "Type": "Basic",
+          "Category": -26,
+          "Price": 1200,
+          "GiftTastes": {
+            "Like": [
+              "Abigail",
+              "Alex",
+              "Clint",
+              "Demetrius",
+              "Dwarf",
+              "Elliott",
+              "Emily",
+              "Evelyn",
+              "George",
+              "Gus",
+              "Haley",
+              "Harvey",
+              "Jodi",
+              "Kent",
+              "Krobus",
+              "Leo",
+              "Lewis",
+              "Linus",
+              "Marnie",
+              "Maru",
+              "Pam",
+              "Penny",
+              "Pierre",
+              "Robin",
+              "Sandy",
+              "Shane",
+              "Willy",
+              "Wizard"
+            ],
+            "Dislike": [
+              "Caroline"
+            ],
+            "Hate": [
+              "Jas",
+              "Sam",
+              "Sebastian",
+              "Vincent",
+              "Leah"
+            ]
+          },
+          "SpriteIndex": 0,
+          "Edibility": 20,
+          "IsDrink": true,
+          "Buffs": null,
+          "GeodeDropsDefaultItems": false,
+          "GeodeDrops": null,
+          "ArtifactSpotChances": null,
+          "ExcludeFromFishingCollection": true,
+          "ExcludeFromShippingCollection": false,
+          "ExcludeFromRandomSale": false,
+          "ContextTags": null,
+          "CustomFields": null
+        },
+      }
+    },
+    // Machines
+    {
+      "Action": "EditData",
+      "Target": "Data/Machines",
+      "TargetField": [ "(BC)24", "OutputRules" ],
+      "Entries": {
+        "{{ModId}}_QuailMayo": {
+          "Id": "QuailMayo",
+          "Triggers": [
+            {
+              "RequiredItemId": "{{ModId}}_QuailEgg",
+              "RequiredCount": 5
+            }
+          ],
+          "OutputItem": [
+            {
+              "ItemId": "{{ModId}}_TinyQuailMayo"
+            }
+          ],
+          "MinutesUntilReady": 100
+        },
+        "{{ModId}}_LargeQuailMayo": {
+          "Id": "LargeQuailMayo",
+          "Triggers": [
+            {
+              "RequiredItemId": "{{ModId}}_LargeQuailEgg",
+              "RequiredCount": 5
+            }
+          ],
+          "OutputItem": [
+            {
+              "ItemId": "{{ModId}}_LargeQuailMayo"
+            }
+          ],
+          "MinutesUntilReady": 200
+        }
+      }
+    },
+  ]
+}
