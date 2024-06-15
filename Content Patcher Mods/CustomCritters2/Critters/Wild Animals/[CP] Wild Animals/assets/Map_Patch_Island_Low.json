@@ -1,0 +1,328 @@
+{
+//	"Format": "2.0.0",
+
+	"Changes": [
+
+// Low
+	{
+		"LogName": "Add boars in the east of the island",
+		"Action": "EditMap",
+		"Target": "Maps/Island_E",
+		"MapTiles": [
+            {
+               "Position": { "X": 22, "Y": 37 },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 0, 1, 2}} SmolHooman.WildAnimalsCC.Boar_WA"
+               },
+            },
+         ],
+		"When": {
+			"Load Wild Boars": "true",
+			"Time": "{{Range: 0600, 1800}}",
+			"Weather": "Sun, Wind, Rain",
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Add crabs in south of the island (normal)",
+		"Action": "EditMap",
+		"Target": "Maps/Island_S",
+		"MapTiles": [
+            {
+               "Position": {
+					"X": "{{Random: 33, 13 |key=island s crabs coordinate}}",
+					"Y": "{{Random: 29, 28 |key=island s crabs coordinate}}"
+            },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 1, 2, 3}} SmolHooman.WildAnimalsCC.Crab_WA"
+               },
+            },
+         ],
+		"When": {
+			"Allow Bonus Animals": "false",
+			"Load Wild Crabs": "true",
+			"Weather": "Sun, Wind, Rain",
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Add crabs in southeast of the island (normal)",
+		"Action": "EditMap",
+		"Target": "Maps/Island_SE",
+		"MapTiles": [
+            {
+               "Position": { "X": 22, "Y": 27 },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 1, 2, 3}} SmolHooman.WildAnimalsCC.Crab_WA"
+               },
+            },
+         ],
+		"When": {
+			"Allow Bonus Animals": "false",
+			"Load Wild Crabs": "true",
+			"Weather": "Sun, Wind, Rain",
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Add crabs in west of the island (normal)",
+		"Action": "EditMap",
+		"Target": "Maps/Island_W",
+		"MapTiles": [
+            {
+               "Position": {
+					"X": "{{Random: 37, 19, 79 |key=island w crabs coordinate}}",
+					"Y": "{{Random: 84, 43, 87 |key=island w crabs coordinate}}"
+            },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 1, 2, 3}} SmolHooman.WildAnimalsCC.Crab_WA"
+               },
+            },
+         ],
+		"When": {
+			"Allow Bonus Animals": "false",
+			"Load Wild Crabs": "true",
+			"Weather": "Sun, Wind, Rain",
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Add lemurs in the west of the island",
+		"Action": "EditMap",
+		"Target": "Maps/Island_W",
+		"MapTiles": [
+            {
+               "Position": {
+					"X": "{{Random: 73, 36 |key=island w lemurs coordinate}}",
+					"Y": "{{Random: 13, 28 |key=island w lemurs coordinate}}"
+            },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 0, 0, 2, 3}} SmolHooman.WildAnimalsCC.Lemur_WA"
+               },
+            },
+            {
+               "Position": {
+					"X": "{{Random: 73, 36 |key=island w lemurs coordinate}}",
+					"Y": "{{Random: 14, 27 |key=island w lemurs coordinate}}"
+            },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 0, 0, 1, 2}} SmolHooman.WildAnimalsCC.Lemur_WA"
+               },
+            },
+         ],
+		"When": {
+			"Load Wild Lemurs": "true",
+			"Time": "{{Range: 0600, 1800}}",
+			"Weather": "Sun, Wind",
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Add timid monkeys on the north of the island",
+		"Action": "EditMap",
+		"Target": "Maps/Island_N",
+		"MapTiles": [
+            {
+               "Position": {
+					"X": "{{Random: 35, 55, 49  |key=island n monkeys coordinate}}",
+					"Y": "{{Random: 77, 80, 54 |key=island n monkeys coordinate}}"
+            },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 1, 2, 3}} SmolHooman.WildAnimalsCC.Monkey_Timid_WA"
+               },
+            },
+         ],
+		"When": {
+			"Load Wild Monkeys": "true",
+			"HasWalletItem |contains=SpringOnionMastery": "false",
+			"Weather": "Sun, Wind",
+			"Time": "{{Range: 0600, 1800}}",
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Add monkeys on the north of the island",
+		"Action": "EditMap",
+		"Target": "Maps/Island_N",
+		"MapTiles": [
+            {
+               "Position": {
+					"X": "{{Random: 35, 55, 49  |key=island n monkeys coordinate}}",
+					"Y": "{{Random: 77, 80, 54 |key=island n monkeys coordinate}}"
+            },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 1, 2, 3}} SmolHooman.WildAnimalsCC.Monkey_WA"
+               },
+            },
+         ],
+		"When": {
+			"Load Wild Monkeys": "true",
+			"HasWalletItem |contains=SpringOnionMastery": "true",
+			"Weather": "Sun, Wind",
+			"Time": "{{Range: 0600, 1800}}",
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Add pelicans and seagulls on the island's waters",
+		"Action": "EditMap",
+		"Target": "Maps/Island_S",
+		"MapTiles": [
+            {
+               "Position": { "X": 33, "Y": 40 },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 0, 1, 2}} SmolHooman.WildAnimalsCC.{{Random: PelicanSwimming_WA, PelicanSwimming_WA, SeagullSwimming_WA, SeagullSwimming_WA, SeagullSwimming_WA, PelicanPouchSwimming_WA}}"
+               },
+            },
+            {
+               "Position": { "X": 30, "Y": 43 },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 0, 1, 2, 3}} SmolHooman.WildAnimalsCC.SeagullSwimming_WA"
+               },
+            },
+         ],
+		"When": {
+			"Load Wild Pelicans + Seagulls": "true",
+			"Time": "{{Range: 0600, 1800}}",
+			"Weather": "Rain, Sun, Wind",
+			"HasMod |contains=Lnh.IslandOverhaul": false,
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Add ostriches in the north of the island",
+		"Action": "EditMap",
+		"Target": "Maps/Island_N",
+		"MapTiles": [
+            {
+               "Position": {
+					"X": "{{Random: 58, 43, 30 |key=island n ostriches coordinate}}",
+					"Y": "{{Random: 21, 30, 26 |key=island n ostriches coordinate}}"
+            },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 1, 2, 3 |key=Ostriches}} SmolHooman.WildAnimalsCC.Ostrich_WA"
+               },
+            },
+         ],
+		"When": {
+			"Load Wild Ostriches": "true",		
+			"Weather": "Sun, Wind",
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Add baby ostriches in the north of the island",
+		"Action": "EditMap",
+		"Target": "Maps/Island_N",
+		"MapTiles": [
+            {
+               "Position": {
+					"X": "{{Random: 57, 38, 32 |key=island n ostriches coordinate}}",
+					"Y": "{{Random: 24, 29, 27 |key=island n ostriches coordinate}}"
+            },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 0, 2, 3 |key=Ostriches}} SmolHooman.WildAnimalsCC.OstrichChick_WA"
+               },
+            },
+         ],
+		"When": {
+			"Load Wild Ostriches": "true",		
+			"Weather": "Sun, Wind",
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Add wild peafowls in the north of the island",
+		"Action": "EditMap",
+		"Target": "Maps/Island_N",
+		"MapTiles": [
+            {
+               "Position": { "X": 57, "Y": 64 },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 1}} SmolHooman.WildAnimalsCC.Peacock_WA"
+               },
+            },
+            {
+               "Position": { "X": 56, "Y": 66 },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 1, 1, 2 |key=Peafowls}} SmolHooman.WildAnimalsCC.Peahen_WA"
+               },
+            },
+            {
+               "Position": { "X": 59, "Y": 64 },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 0, 3, 3 |key=Peafowls}} SmolHooman.WildAnimalsCC.Chick_WA"
+               },
+            },
+         ],
+		"When": {
+			"Load Wild Peafowls": "true",	
+			"IsJojaMartComplete": "false",
+			"Weather": "Sun, Wind",
+			"Time": "{{Range: 0600, 1800}}",
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Add sea otters in the west of the island waters",
+		"Action": "EditMap",
+		"Target": "Maps/Island_W",
+		"MapTiles": [
+            {
+               "Position": { "X": 9, "Y": 24 },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 1, 2, 3}} SmolHooman.WildAnimalsCC.OtterSea_WA"
+               },
+            },
+            {
+               "Position": { "X": 9, "Y": 26 },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 0, 1, 2}} SmolHooman.WildAnimalsCC.{{Random: OtterSea_WA, OtterSea_WA, OtterSeaPup_WA}}"
+               },
+            },
+         ],
+		"When": {
+			"Load Wild Otters": "true",
+			"Weather": "Sun, Wind, Rain",	
+			},
+		"Update": "OnLocationChange"
+	},
+	{
+		"LogName": "Add wombats in the east of the island",
+		"Action": "EditMap",
+		"Target": "Maps/Island_E",
+		"MapTiles": [
+            {
+               "Position": { "X": 13, "Y": 45 },
+               "Layer": "Back",
+               "SetProperties": {
+                  "CustomCompanions": "Spawn {{Random: 0, 1, 2, 3}} SmolHooman.WildAnimalsCC.Wombat_WA"
+               },
+            },
+         ],
+		"When": {
+			"Load Wild Wombats": "true",
+			"Weather": "Sun, Wind",
+			"Time": "{{Range: 1800, 2600}}",
+			},
+		"Update": "OnLocationChange"
+	},
+	]
+}

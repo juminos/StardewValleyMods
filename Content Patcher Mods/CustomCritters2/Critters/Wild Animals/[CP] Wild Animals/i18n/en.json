@@ -1,0 +1,209 @@
+{
+	"config.Enable mod?.name": "Enable mod?",
+	"config.Enable mod?.values.true": "true",
+	"config.Enable mod?.values.false": "false",
+
+	"config.Animal Abundance Level.name": "Animal Abundance Level",
+	"config.Animal Abundance Level.values.High": "High",
+	"config.Animal Abundance Level.values.Low": "Low",
+	"config.Animal Abundance Level.values.Vanilla": "Vanilla",
+    "config.Animal Abundance Level.description": "Determines how many animals can appear and whether there should be certain conditions to be met. High: Any animal can show up without requirements and will almost always appear, Low: Animals don't need require any conditions to appear but still have a chance of not showing up on random days, Vanilla: Some animals have certain conditions that need to be met before they start appearing.",
+
+	"config.Allow Bonus Animals.name": "Allow Bonus Animals",
+	"config.Allow Bonus Animals.values.true": "true",
+	"config.Allow Bonus Animals.values.false": "false",
+    "config.Allow Bonus Animals.description": "A collection of random creatures that are added in just for fun . Most (if not all) have a smaller chance of spawning in the random, somewhat hidden places chosen for them.",
+
+	"config.Allow Festive Animals.name": "Allow Festive Animals",
+	"config.Allow Festive Animals.values.true": "true",
+	"config.Allow Festive Animals.values.false": "false",
+    "config.Allow Festive Animals.description": "Certain animals have a chance to spawn in certain maps depending on the near festival dates if enabled.",
+
+	"config.Allow Junimo sprite changes.name": "Allow Junimo sprite changes",
+	"config.Allow Junimo sprite changes.values.true": "true",
+	"config.Allow Junimo sprite changes.values.false": "false",
+    "config.Allow Junimo sprite changes.description": "Junimos spawned in the Community Center/in-game cutscenes could use random Junimo sprites provided by this mod if toggled on. Toggled off will keep the junimo sprites unchanged in the community center and cutscenes.",
+
+	"config.Allow WA Junimo sprite changes.name": "Allow WA Junimo sprite changes",
+	"config.Allow WA Junimo sprite changes.values.true": "true",
+	"config.Allow WA Junimo sprite changes.values.false": "false",
+    "config.Allow WA Junimo sprite changes.description": "Toggle on if you want the Junimos spawned by the Wild Animals mod to use a random set of junimo sprites. Toggling it off if you want to keep using your own personal junimo sprites.",
+
+	"config.Give Junimos Leaf Umbrellas.name": "Give Junimos Leaf Umbrellas",
+	"config.Give Junimos Leaf Umbrellas.values.true": "true",
+	"config.Give Junimos Leaf Umbrellas.values.false": "false",
+    "config.Give Junimos Leaf Umbrellas.description": "Junimos will hold leaf umbrellas when it's raining outside if toggled on.",
+
+	"config.Raccoon Colors.name": "Raccoon Colors",
+	"config.Raccoon Colors.values.Vanilla": "Vanilla",
+	"config.Raccoon Colors.values.Original": "Original",
+    "config.Raccoon Colors.description": "Chooses the color of the raccoons spawned from this mod. 'Vanilla' matches the raccoons in the vanilla game, while 'Original' is the old colors that Wild Animals' raccoons came with.",
+
+	"config.Load Wild Armadillos.name": "Load Wild Armadillos",
+	"config.Load Wild Armadillos.values.true": "true",
+	"config.Load Wild Armadillos.values.false": "false",
+
+	"config.Load Wild Badgers + Wolverines.name": "Load Wild Badgers + Wolverines",
+	"config.Load Wild Badgers + Wolverines.values.true": "true",
+	"config.Load Wild Badgers + Wolverines.values.false": "false",
+
+	"config.Load Wild Bears.name": "Load Wild Bears",
+	"config.Load Wild Bears.values.true": "true",
+	"config.Load Wild Bears.values.false": "false",
+
+	"config.Load Wild Beavers.name": "Load Wild Beavers",
+	"config.Load Wild Beavers.values.true": "true",
+	"config.Load Wild Beavers.values.false": "false",
+
+	"config.Load Wild Boars.name": "Load Wild Boars",
+	"config.Load Wild Boars.values.true": "true",
+	"config.Load Wild Boars.values.false": "false",
+
+	"config.Load Wild Bobcats.name": "Load Wild Bobcats",
+	"config.Load Wild Bobcats.values.true": "true",
+	"config.Load Wild Bobcats.values.false": "false",
+
+	"config.Load Wild Chinchilla.name": "Load Wild Chinchilla",
+	"config.Load Wild Chinchilla.values.true": "true",
+	"config.Load Wild Chinchilla.values.false": "false",
+
+	"config.Load Wild Coyotes.name": "Load Wild Coyotes",
+	"config.Load Wild Coyotes.values.true": "true",
+	"config.Load Wild Coyotes.values.false": "false",
+
+	"config.Load Wild Crabs.name": "Load Wild Crabs",
+	"config.Load Wild Crabs.values.true": "true",
+	"config.Load Wild Crabs.values.false": "false",
+
+	"config.Load Wild Crows.name": "Load Wild Crows",
+	"config.Load Wild Crows.values.true": "true",
+	"config.Load Wild Crows.values.false": "false",
+
+	"config.Load Wild Deers.name": "Load Wild Deers",
+	"config.Load Wild Deers.values.true": "true",
+	"config.Load Wild Deers.values.false": "false",
+
+	"config.Load Wild Ducks.name": "Load Wild Ducks",
+	"config.Load Wild Ducks.values.true": "true",
+	"config.Load Wild Ducks.values.false": "false",
+
+	"config.Load Wild Fennec Foxes.name": "Load Wild Fennec Foxes",
+	"config.Load Wild Fennec Foxes.values.true": "true",
+	"config.Load Wild Fennec Foxes.values.false": "false",
+
+	"config.Load Wild Foxes.name": "Load Wild Foxes",
+	"config.Load Wild Foxes.values.true": "true",
+	"config.Load Wild Foxes.values.false": "false",
+
+	"config.Load Wild Frogs.name": "Load Wild Frogs",
+	"config.Load Wild Frogs.values.true": "true",
+	"config.Load Wild Frogs.values.false": "false",
+
+	"config.Load Wild Geese.name": "Load Wild Geese",
+	"config.Load Wild Geese.values.true": "true",
+	"config.Load Wild Geese.values.false": "false",
+
+	"config.Load Wild Gembirds.name": "Load Wild Gembirds",
+	"config.Load Wild Gembirds.values.true": "true",
+	"config.Load Wild Gembirds.values.false": "false",
+
+	"config.Load Wild Hedgehogs.name": "Load Wild Hedgehogs",
+	"config.Load Wild Hedgehogs.values.true": "true",
+	"config.Load Wild Hedgehogs.values.false": "false",
+
+	"config.Load Wild Lemurs.name": "Load Wild Lemurs",
+	"config.Load Wild Lemurs.values.true": "true",
+	"config.Load Wild Lemurs.values.false": "false",
+
+	"config.Load Wild Meerkats.name": "Load Wild Meerkats",
+	"config.Load Wild Meerkats.values.true": "true",
+	"config.Load Wild Meerkats.values.false": "false",
+
+	"config.Load Wild Monkeys.name": "Load Wild Monkeys",
+	"config.Load Wild Monkeys.values.true": "true",
+	"config.Load Wild Monkeys.values.false": "false",
+
+	"config.Load Wild MoonlightJellies.name": "Load Wild MoonlightJellies",
+	"config.Load Wild MoonlightJellies.values.true": "true",
+	"config.Load Wild MoonlightJellies.values.false": "false",
+
+	"config.Load Wild Opossums.name": "Load Wild Opossums",
+	"config.Load Wild Opossums.values.true": "true",
+	"config.Load Wild Opossums.values.false": "false",
+
+	"config.Load Wild Ostriches.name": "Load Wild Ostriches",
+	"config.Load Wild Ostriches.values.true": "true",
+	"config.Load Wild Ostriches.values.false": "false",
+
+	"config.Load Wild Owls.name": "Load Wild Owls",
+	"config.Load Wild Owls.values.true": "true",
+	"config.Load Wild Owls.values.false": "false",
+
+	"config.Load Wild Peafowls.name": "Load Wild Peafowls",
+	"config.Load Wild Peafowls.values.true": "true",
+	"config.Load Wild Peafowls.values.false": "false",
+
+	"config.Load Wild Pelicans + Seagulls.name": "Load Wild Pelicans + Seagulls",
+	"config.Load Wild Pelicans + Seagulls.values.true": "true",
+	"config.Load Wild Pelicans + Seagulls.values.false": "false",
+
+	"config.Load Wild Pine Martens.name": "Load Wild Pine Martens",
+	"config.Load Wild Pine Martens.values.true": "true",
+	"config.Load Wild Pine Martens.values.false": "false",
+
+	"config.Load Wild Platypuses.name": "Load Wild Platypuses",
+	"config.Load Wild Platypuses.values.true": "true",
+	"config.Load Wild Platypuses.values.false": "false",
+
+	"config.Load Wild Quails.name": "Load Wild Quails",
+	"config.Load Wild Quails.values.true": "true",
+	"config.Load Wild Quails.values.false": "false",
+
+	"config.Load Wild Rabbits.name": "Load Wild Rabbits",
+	"config.Load Wild Rabbits.values.true": "true",
+	"config.Load Wild Rabbits.values.false": "false",
+
+	"config.Load Wild Raccoons.name": "Load Wild Raccoons",
+	"config.Load Wild Raccoons.values.true": "true",
+	"config.Load Wild Raccoons.values.false": "false",
+
+	"config.Load Wild Rats.name": "Load Wild Rats",
+	"config.Load Wild Rats.values.true": "true",
+	"config.Load Wild Rats.values.false": "false",
+
+	"config.Load Wild Otters.name": "Load Wild Otters",
+	"config.Load Wild Otters.values.true": "true",
+	"config.Load Wild Otters.values.false": "false",
+
+	"config.Load Wild Skunks.name": "Load Wild Skunks",
+	"config.Load Wild Skunks.values.true": "true",
+	"config.Load Wild Skunks.values.false": "false",
+
+	"config.Load Wild Squirrels + Chipmunks.name": "Load Wild Squirrels + Chipmunks",
+	"config.Load Wild Squirrels + Chipmunks.values.true": "true",
+	"config.Load Wild Squirrels + Chipmunks.values.false": "false",
+
+	"config.Load Wild Swans.name": "Load Wild Swans",
+	"config.Load Wild Swans.values.true": "true",
+	"config.Load Wild Swans.values.false": "false",
+
+	"config.Load Wild Tortoises.name": "Load Wild Tortoises",
+	"config.Load Wild Tortoises.values.true": "true",
+	"config.Load Wild Tortoises.values.false": "false",
+
+	"config.Load Wild Turtles.name": "Load Wild Turtles",
+	"config.Load Wild Turtles.values.true": "true",
+	"config.Load Wild Turtles.values.false": "false",
+
+	"config.Load Wild Weasels.name": "Load Wild Weasels",
+	"config.Load Wild Weasels.values.true": "true",
+	"config.Load Wild Weasels.values.false": "false",
+
+	"config.Load Wild Wolves.name": "Load Wild Wolves",
+	"config.Load Wild Wolves.values.true": "true",
+	"config.Load Wild Wolves.values.false": "false",
+
+	"config.Load Wild Wombats.name": "Load Wild Wombats",
+	"config.Load Wild Wombats.values.true": "true",
+	"config.Load Wild Wombats.values.false": "false",
+}

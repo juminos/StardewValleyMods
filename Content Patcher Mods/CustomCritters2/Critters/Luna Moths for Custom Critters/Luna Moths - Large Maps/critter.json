@@ -1,0 +1,107 @@
+{
+  "Id": "Luna Moths - Large Maps",
+  "SpriteData": {
+    "Variations": 4,
+    "FrameWidth": 16,
+    "FrameHeight": 16,
+    "Scale": 2
+  },
+  "Animations": {
+    "default": {
+      "Frames": [
+        {
+          "Frame": 0,
+          "Duration": 245
+        },
+        {
+          "Frame": 1,
+          "Duration": 225
+        },
+        {
+          "Frame": 2,
+          "Duration": 225
+        },
+        {
+          "Frame": 3,
+          "Duration": 225
+        },
+        {
+          "Frame": 2,
+          "Duration": 225
+        },
+        {
+          "Frame": 1,
+          "Duration": 225
+        }
+      ]
+    }
+  },
+  "SpawnConditions": [
+    {
+      "Not": false,
+      "Seasons": [ "spring", "summer" ],
+      "Locations": [ "Farm", "Forest", "Town", "Mountain" ],
+      "MinTimeOfDay": 1750,
+      "MaxTimeOfDay": 2600,
+      "ChancePerTile": 1,
+      "RequireDarkOut": true,
+      "AllowRain": false,
+      "ChildrenCombine": "and",
+      "Children": []
+    }  
+  ],
+  "SpawnLocations": [
+    {
+      "LocationType": "random",
+      "Conditions": [
+        {
+          "Not": false,
+          "Chance": 1,
+          "Variable": "ParentSheetIndex",
+          "RequireNotNull": false,
+          "Is": null,
+          "ValueEquals": "0",
+          "ChildrenCombine": "and",
+          "Children": []
+        }
+      ]
+    }
+  ],
+  "SpawnAttempts": 75,
+  "Behavior": {
+     "Type": "random",
+    "Speed": 0.5,
+    "PatrolPoints": [
+      {
+        "Type": "random"
+      },
+      {
+        "Type": "startoffset",
+        "X": 10,
+        "Y": 10
+      },
+      {
+        "Type": "startoffset",
+        "X": -18,
+        "Y": 16
+      },
+      {
+        "Type": "startoffset",
+        "X": 13,
+        "Y": -11
+      },
+      {
+        "Type": "startoffset",
+        "X": -13,
+        "Y": -12
+      }
+    ],
+    "PatrolPointDelay": 1500,
+    "PatrolPointDelayAddRandom": 1500
+  },
+  "Light": {
+    "VanillaLightId": 3,
+    "Radius": 0.3,
+    "Color": { "R": 241, "G": 255, "B": 201 }
+  }
+}
