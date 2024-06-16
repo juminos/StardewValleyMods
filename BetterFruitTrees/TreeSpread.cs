@@ -19,23 +19,41 @@ namespace BetterFruitTrees
             foreach (KeyValuePair<Vector2, TerrainFeature> pair in treesAndFruitTrees)
             {
                 if (pair.Value is FruitTree fruitTree &&
-                    fruitTree.growthStage.Value == 4 &&
-                    Game1.random.NextDouble() < ModEntry.fruitSpreadChance)
+                    fruitTree.growthStage.Value == 4)
                 {
                     // Log spread attempt on farm
                     if (location is Farm)
                     {
-                        monitor.Log($"Attempting to spread fruit tree at position {pair.Key}.", LogLevel.Trace);
+                        //monitor.Log($"Attempting to spread fruit tree at position {pair.Key}.", LogLevel.Trace);
                     }
-                    SpreadFruitTree(location, pair.Key, fruitTree, monitor);
+                    float spreadChance = ModEntry.fruitSpreadChance;
+                    if (fruitTree.modData.ContainsKey("Fertilized"))
+                    {
+                        spreadChance = 0.8f;
+                        fruitTree.modData.Remove("Fertilized");
+                    }
+                    if (Game1.random.NextDouble() < spreadChance)
+                    {
+                        // Log spread attempt
+                        //monitor.Log($"Attempting to spread wild tree at position {pair.Key}.", LogLevel.Trace);
+                        SpreadFruitTree(location, pair.Key, fruitTree, monitor);
+                    }
                 }
                 if (pair.Value is Tree wildTree &&
-                    wildTree.growthStage.Value == 5 &&
-                    Game1.random.NextDouble() < ModEntry.wildSpreadChance)
+                    wildTree.growthStage.Value == 5)
                 {
-                    // Log spread attempt
-                    //monitor.Log($"Attempting to spread wild tree at position {pair.Key}.", LogLevel.Trace);
-                    SpreadWildTree(location, pair.Key, wildTree, monitor);
+                    float spreadChance = ModEntry.wildSpreadChance;
+                    if (wildTree.modData.ContainsKey("Fertilized"))
+                    {
+                        spreadChance = 0.8f;
+                        wildTree.modData.Remove("Fertilized");
+                    }
+                    if (Game1.random.NextDouble() < spreadChance)
+                    {
+                        // Log spread attempt
+                        //monitor.Log($"Attempting to spread wild tree at position {pair.Key}.", LogLevel.Trace);
+                        SpreadWildTree(location, pair.Key, wildTree, monitor);
+                    }
                 }
             }
         }
@@ -62,7 +80,9 @@ namespace BetterFruitTrees
                         !location.isTileLocationOpen(tileLocation) ||
                         !location.isTileOnMap(tileLocation) ||
                         location.isWaterTile((int)tileLocation.X, (int)tileLocation.Y) ||
-                        location.IsTileOccupiedBy(tileLocation))
+                        location.IsTileOccupiedBy(tileLocation) ||
+                        (!ModEntry.denseTrees &&
+                        (Math.Abs(x - treeTile.X) <= 1 && Math.Abs(y - treeTile.Y) <= 1))) 
                         continue;
                     suitableTileCount++;
 

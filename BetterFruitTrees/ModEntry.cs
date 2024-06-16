@@ -22,9 +22,8 @@ namespace BetterFruitTrees
         private ModConfig? config;
         internal static float fruitSpreadChance;
         internal static float wildSpreadChance;
-        internal static float fruitTreeDensityModifier;
-        internal static float wildTreeDensityModifier;
         internal static int spreadRadius;
+        internal static bool denseTrees;
         internal static int fruitDaysToFinalStage;
         internal static int fruitFarmDaysToFinalStage;
         internal static int wildDaysToFinalStage;
@@ -32,7 +31,6 @@ namespace BetterFruitTrees
         internal static int daysToLargeTree;
         internal static float largeTreeChance;
         internal static bool winterGrowth;
-        internal static int energyCost;
 
         internal static bool IsEnabled = true;
 
@@ -51,6 +49,7 @@ namespace BetterFruitTrees
             fruitSpreadChance = config.FruitSpreadChance.Value;
             wildSpreadChance = config.WildSpreadChance.Value;
             spreadRadius = config.SpreadRadius.Value;
+            denseTrees = config.DenseTrees.Value;
             fruitDaysToFinalStage = config.FruitDaysToFinalStage.Value;
             fruitFarmDaysToFinalStage = config.FruitFarmDaysToFinalStage.Value;
             wildDaysToFinalStage = config.WildDaysToFinalStage.Value;
@@ -58,7 +57,6 @@ namespace BetterFruitTrees
             daysToLargeTree = config.DaysToLargeTree.Value;
             largeTreeChance = config.LargeTreeChance.Value;
             winterGrowth = config.WinterGrowth.Value;
-            energyCost = config.EnergyCost;
         }
 
         // Turn off wild tree spreading, allow tree planting anywhere
@@ -109,16 +107,16 @@ namespace BetterFruitTrees
         {
             if (Game1.IsWinter)
             {
-                Monitor.Log("It's winter! Tree spreading logic will be skipped.", LogLevel.Info);
+                Monitor.Log("It's winter! Tree growth & spreading logic will be skipped.", LogLevel.Info);
             }
             else
             {
                 foreach (GameLocation location in Game1.locations)
                 {
+                    TreeGrowth.UpdateTreeGrowth(Monitor);
                     TreeSpread.SpreadTrees(location, Monitor);
                 }
             }
-            TreeGrowth.UpdateTreeGrowth(Monitor);
         }
 
         // Hoe small fruit trees to pick up sapling

@@ -6,5 +6,19 @@
   "UniqueID": "juminos.BetterFruitTrees",
   "EntryDll": "BetterFruitTrees.dll",
   "MinimumApiVersion": "3.0.0",
-  "UpdateKeys": []
+  "UpdateKeys": [],
+  "Dependencies": [
+    {
+      "UniqueID": "juminos.MoreFruitTrees",
+      "IsRequired": false
+    },
+    {
+      "UniqueID": "Cornucopia.MoreCrops",
+      "IsRequired": false
+    },
+    {
+      "UniqueID": "Lumisteria.SereneMeadow",
+      "IsRequired": false
+    }
+  ]
 }

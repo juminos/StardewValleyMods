@@ -46,6 +46,9 @@ namespace BetterFruitTrees
                 case "9":
                     treeTypeKey = "IslandPalmTreeReplacements";
                     break;
+                case "Cornucopia_SapodillaSeed":
+                    treeTypeKey = "SapodillaTreeReplacements";
+                    break;
                 default:
                     // Unknown tree types, return original tree to location
                     location.terrainFeatures[tree.Tile] = tree;
@@ -178,27 +181,29 @@ namespace BetterFruitTrees
                     }
                     else
                     {
+                        monitor.Log("Wild tree type not found.");
+                        return;
                         // Iterate through all wild tree ids found in the game data
-                        foreach (var treeType in Enum.GetValues(typeof(Tree)))
-                        {
-                            string wildTreeId = treeType.ToString();
+                        // foreach (var treeType in Enum.GetValues(typeof(Tree))) // broken
+                        // {
+                        //    string wildTreeId = treeType.ToString();
 
-                            WildTreeData wildTreeData;
-                            if (Tree.TryGetData(wildTreeId, out wildTreeData))
-                            {
-                                // Log the keyword and the current wild tree ID for debugging
-                                monitor.Log ($"Comparing keyword '{keyword}' with wild tree ID '{wildTreeId}'");
+                        //    WildTreeData wildTreeData;
+                        //    if (Tree.TryGetData(wildTreeId, out wildTreeData))
+                        //    {
+                        //        // Log the keyword and the current wild tree ID for debugging
+                        //        monitor.Log ($"Comparing keyword '{keyword}' with wild tree ID '{wildTreeId}'");
 
                                 // Case-insensitive comparison of wild tree ids with keyword substring
-                                if (wildTreeId.IndexOf(keyword, StringComparison.OrdinalIgnoreCase) >= 0)
-                                {
-                                    // Add matching wild tree ids with the weight value
-                                    validWildTreeIds.Add(wildTreeId, weight);
+                        //      if (wildTreeId.IndexOf(keyword, StringComparison.OrdinalIgnoreCase) >= 0)
+                        //        {
+                        //            // Add matching wild tree ids with the weight value
+                        //            validWildTreeIds.Add(wildTreeId, weight);
 
-                                    monitor.Log ($"Found matching wild tree ID: {wildTreeId}");
-                                }
-                            }
-                        }
+                        //            monitor.Log ($"Found matching wild tree ID: {wildTreeId}");
+                        //        }
+                        //    }
+                        //}
                     }
 #if LOGGING
                     Console.WriteLine($"Matching wild tree ids: {string.Join(", ", validWildTreeIds)}");

@@ -9,7 +9,6 @@
   "DaysToLargeTree": 28,
   "LargeTreeChance": 0.2,
   "WinterGrowth": false,
-  "EnergyCost": 5,
   "FruitTreeChance": 0.53333,
   "TreeConfigurations": {
     "OakTreeReplacements": {

@@ -7,9 +7,9 @@ C:\Users\princ\SV modding\My Mods\In Progress\BetterFruitTrees\obj\Debug\net6.0\
 C:\Users\princ\SV modding\My Mods\In Progress\BetterFruitTrees\obj\Debug\net6.0\BetterFruitTrees.csproj.CoreCompileInputs.cache
 C:\Users\princ\SV modding\My Mods\In Progress\BetterFruitTrees\obj\Debug\net6.0\BetterFruitTrees.dll
 C:\Users\princ\SV modding\My Mods\In Progress\BetterFruitTrees\bin\Debug\net6.0\content.json
-C:\Users\princ\SV modding\StardewValleyMods\BetterFruitTrees\bin\Debug\net6.0\config.json
-C:\Users\princ\SV modding\StardewValleyMods\BetterFruitTrees\bin\Debug\net6.0\config_preferred.json
-C:\Users\princ\SV modding\StardewValleyMods\BetterFruitTrees\bin\Debug\net6.0\manifest.json
+C:\Users\princ\SV modding\StardewValleyMods\BetterFruitTrees\bin\Debug\net6.0\configs\preferredconfig.json
+C:\Users\princ\SV modding\StardewValleyMods\BetterFruitTrees\bin\Debug\net6.0\configs\randomconfig.json
+C:\Users\princ\SV modding\StardewValleyMods\BetterFruitTrees\bin\Debug\net6.0\configs\randomCornucopia.json
 C:\Users\princ\SV modding\StardewValleyMods\BetterFruitTrees\bin\Debug\net6.0\BetterFruitTrees.deps.json
 C:\Users\princ\SV modding\StardewValleyMods\BetterFruitTrees\bin\Debug\net6.0\BetterFruitTrees.dll
 C:\Users\princ\SV modding\StardewValleyMods\BetterFruitTrees\obj\Debug\net6.0\BetterFruitTrees.csproj.AssemblyReference.cache
