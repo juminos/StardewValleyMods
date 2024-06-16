@@ -851,66 +851,13 @@
 			"Enabled": "True"
 		},
 
-		// Slime Hutch
-		{
-			"Action": "EditData",
-			"Target": "Data/Buildings",
-			"TargetField": [ "Slime Hutch", "Skins" ],
-			"Entries": {
-				"{{ModId}}_SlimeHutchNoSign_Brick": {
-					"ID": "{{ModId}}_SlimeHutchNoSign_Brick",
-					"Name": "Brick Slime Hutch (No Sign)",
-					"Texture": "Buildings/JSB_SlimeHutchNoSign_Brick"
-				},
-				"{{ModId}}_SlimeHutchNoSign_Color": {
-					"ID": "{{ModId}}_SlimeHutchNoSign_Color",
-					"Name": "Color Slime Hutch (No Sign)",
-					"Texture": "Buildings/JSB_SlimeHutchNoSign_Color"
-				},
-				"{{ModId}}_SlimeHutchNoSign_White": {
-					"ID": "{{ModId}}_SlimeHutchNoSign_White",
-					"Name": "White Slime Hutch (No Sign)",
-					"Texture": "Buildings/JSB_SlimeHutchNoSign_White"
-				},
-				"{{ModId}}_SlimeHutchSign_Brick": {
-					"ID": "{{ModId}}_SlimeHutchSign_Brick",
-					"Name": "Brick Slime Hutch (Sign)",
-					"Texture": "Buildings/JSB_SlimeHutchSign_Brick"
-				},
-				"{{ModId}}_SlimeHutchSign_Color": {
-					"ID": "{{ModId}}_SlimeHutchSign_Color",
-					"Name": "Color Slime Hutch (Sign)",
-					"Texture": "Buildings/JSB_SlimeHutchSign_Color"
-				},
-				"{{ModId}}_SlimeHutchSign_White": {
-					"ID": "{{ModId}}_SlimeHutchSign_White",
-					"Name": "White Slime Hutch (Sign)",
-					"Texture": "Buildings/JSB_SlimeHutchSign_White"
-				}
-			}
-		},
-		{
-			"Action": "EditImage",
-			"Patchmode": "Overlay",
-			"Target": "Buildings/JSB_SlimeHutchNoSign_Brick, Buildings/JSB_SlimeHutchNoSign_Color, Buildings/JSB_SlimeHutchNoSign_White",
-			"FromFile": "assets/Overlays/SlimeHutchNoSign_{{season}}.png",
-			"Enabled": "True"
-		},
-		{
-			"Action": "EditImage",
-			"Patchmode": "Overlay",
-			"Target": "Buildings/JSB_SlimeHutchSign_Brick, Buildings/JSB_SlimeHutchSign_Color, Buildings/JSB_SlimeHutchSign_White",
-			"FromFile": "assets/Overlays/SlimeHutchSign_{{season}}.png",
-			"Enabled": "True"
-		},
-
 		// Winery
 		{
 			"Action": "EditData",
 			"Target": "Data/Buildings",
 			"Entries": {
 				"{{ModId}}_Winery": {
-					"Name": "Winery",
+					"Name": "Winery/Slime Hutch",
 					"Description": "A large building for aging wine.",
 					"Texture": "Buildings/JSB_SlimeHutchBrewery_Brick",
 					"Skins": [
@@ -938,6 +885,36 @@
 							"ID": "{{ModId}}_SlimeHutchWinery_White",
 							"Name": "White Winery",
 							"Texture": "Buildings/JSB_SlimeHutchWinery_White"
+						},
+						{
+							"ID": "{{ModId}}_SlimeHutchNoSign_Brick",
+							"Name": "Brick Slime Hutch (No Sign)",
+							"Texture": "Buildings/JSB_SlimeHutchNoSign_Brick"
+						},
+						{
+							"ID": "{{ModId}}_SlimeHutchNoSign_Color",
+							"Name": "Color Slime Hutch (No Sign)",
+							"Texture": "Buildings/JSB_SlimeHutchNoSign_Color"
+						},
+						{
+							"ID": "{{ModId}}_SlimeHutchNoSign_White",
+							"Name": "White Slime Hutch (No Sign)",
+							"Texture": "Buildings/JSB_SlimeHutchNoSign_White"
+						},
+						{
+							"ID": "{{ModId}}_SlimeHutchSign_Brick",
+							"Name": "Brick Slime Hutch (Sign)",
+							"Texture": "Buildings/JSB_SlimeHutchSign_Brick"
+						},
+						{
+							"ID": "{{ModId}}_SlimeHutchSign_Color",
+							"Name": "Color Slime Hutch (Sign)",
+							"Texture": "Buildings/JSB_SlimeHutchSign_Color"
+						},
+						{
+							"ID": "{{ModId}}_SlimeHutchSign_White",
+							"Name": "White Slime Hutch (Sign)",
+							"Texture": "Buildings/JSB_SlimeHutchSign_White"
 						}
 					],
 					"DrawShadow": true,
@@ -1056,6 +1033,20 @@
 			"Patchmode": "Overlay",
 			"Target": "Buildings/JSB_SlimeHutchWinery_Brick, Buildings/JSB_SlimeHutchWinery_Color, Buildings/JSB_SlimeHutchWinery_White",
 			"FromFile": "assets/Overlays/SlimeHutchWinery_{{season}}.png",
+			"Enabled": "True"
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_SlimeHutchNoSign_Brick, Buildings/JSB_SlimeHutchNoSign_Color, Buildings/JSB_SlimeHutchNoSign_White",
+			"FromFile": "assets/Overlays/SlimeHutchNoSign_{{season}}.png",
+			"Enabled": "True"
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_SlimeHutchSign_Brick, Buildings/JSB_SlimeHutchSign_Color, Buildings/JSB_SlimeHutchSign_White",
+			"FromFile": "assets/Overlays/SlimeHutchSign_{{season}}.png",
 			"Enabled": "True"
 		},
 
