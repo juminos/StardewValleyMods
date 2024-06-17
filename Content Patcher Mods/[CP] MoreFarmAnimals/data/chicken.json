@@ -1,6 +1,6 @@
 {
   "Changes": [
-    // Animals
+    // Add Roosters
     {
       "Action": "EditData",
       "Target": "Data/FarmAnimals",
@@ -291,7 +291,28 @@
             "X": 0,
             "Y": -16
           },
-          "Skins": [],
+          "Skins": [
+            {
+              "Id": "{{ModId}}_BantamRoosterBlue",
+              "Texture": "Mods/{{ModId}}/BantamRoosterBlue",
+              "BabyTexture": "Mods/{{ModId}}/BabyBantamRoosterBlue"
+            },
+            {
+              "Id": "{{ModId}}_BantamRoosterGreen",
+              "Texture": "Mods/{{ModId}}/BantamRoosterGreen",
+              "BabyTexture": "Mods/{{ModId}}/BabyBantamRoosterGreen"
+            },
+            {
+              "Id": "{{ModId}}_BrownBantamRooster",
+              "Texture": "Mods/{{ModId}}/BrownBantamRooster",
+              "BabyTexture": "Mods/{{ModId}}/BabyBrownBantamRooster"
+            },
+            {
+              "Id": "{{ModId}}_RedBrahmaRooster",
+              "Texture": "Mods/{{ModId}}/RedBrahmaRooster",
+              "BabyTexture": "Mods/{{ModId}}/BabyRedBrahmaRooster"
+            }
+          ],
           "SleepFrame": 16,
           "UseDoubleUniqueAnimationFrames": true,
           "ShadowWhenBabySwims": null,
@@ -474,7 +495,38 @@
             "X": 0,
             "Y": -16
           },
-          "Skins": [],
+          "Skins": [
+            {
+              "Id": "{{ModId}}_BarredBantamRooster",
+              "Texture": "Mods/{{ModId}}/BarredBantamRooster",
+              "BabyTexture": "Mods/{{ModId}}/BabyBarredBantamRooster"
+            },
+            {
+              "Id": "{{ModId}}_BlackBantamRooster",
+              "Texture": "Mods/{{ModId}}/BlackBantamRooster",
+              "BabyTexture": "Mods/{{ModId}}/BabyBlackBantamRooster"
+            },
+            {
+              "Id": "{{ModId}}_BuffBrahmaRooster",
+              "Texture": "Mods/{{ModId}}/BuffBrahmaRooster",
+              "BabyTexture": "Mods/{{ModId}}/BabyBuffBrahmaRooster"
+            },
+            {
+              "Id": "{{ModId}}_PureWhiteBantamRooster",
+              "Texture": "Mods/{{ModId}}/PureWhiteBantamRooster",
+              "BabyTexture": "Mods/{{ModId}}/BabyPureWhiteBantamRooster"
+            },
+            {
+              "Id": "{{ModId}}_SilverBrahmaRooster",
+              "Texture": "Mods/{{ModId}}/SilverBrahmaRooster",
+              "BabyTexture": "Mods/{{ModId}}/BabySilverBrahmaRooster"
+            },
+            {
+              "Id": "{{ModId}}_WhiteBantamRooster",
+              "Texture": "Mods/{{ModId}}/WhiteBantamRooster",
+              "BabyTexture": "Mods/{{ModId}}/BabyWhiteBantamRooster"
+            }
+          ],
           "SleepFrame": 16,
           "UseDoubleUniqueAnimationFrames": true,
           "ShadowWhenBabySwims": null,
@@ -573,16 +625,18 @@
         }
       }
     },
+    // Load Rooster Textures
+    {
+      "Action": "Load",
+      "Target": "Mods/{{ModId}}/animal_shop_rooster, Mods/{{ModId}}/BabyBantamRoosterBlue, Mods/{{ModId}}/BabyBantamRoosterGreen, Mods/{{ModId}}/BabyBarredBantamRooster, Mods/{{ModId}}/BabyBlackBantamRooster, Mods/{{ModId}}/BabyBlueRooster, Mods/{{ModId}}/BabyBrownBantamRooster, Mods/{{ModId}}/BabyBrownRooster, Mods/{{ModId}}/BabyBuffBrahmaRooster, Mods/{{ModId}}/BabyGoldRooster, Mods/{{ModId}}/BabyPureWhiteBantamRooster, Mods/{{ModId}}/BabyRedBrahmaRooster, Mods/{{ModId}}/babyrooster, Mods/{{ModId}}/BabySilverBrahmaRooster, Mods/{{ModId}}/BabyVoidRooster, Mods/{{ModId}}/BabyWhiteBantamRooster, Mods/{{ModId}}/BabyWhiteRooster, Mods/{{ModId}}/BantamRoosterBlue, Mods/{{ModId}}/BantamRoosterGreen, Mods/{{ModId}}/BarredBantamRooster, Mods/{{ModId}}/BlackBantamRooster, Mods/{{ModId}}/BlueRooster, Mods/{{ModId}}/BrownBantamRooster, Mods/{{ModId}}/BrownRooster, Mods/{{ModId}}/BuffBrahmaRooster, Mods/{{ModId}}/GoldRooster, Mods/{{ModId}}/PureWhiteBantamRooster, Mods/{{ModId}}/RedBrahmaRooster, Mods/{{ModId}}/rooster, Mods/{{ModId}}/SilverBrahmaRooster, Mods/{{ModId}}/VoidRooster, Mods/{{ModId}}/WhiteBantamRooster, Mods/{{ModId}}/WhiteRooster",
+      "FromFile": "assets/Rooster/{{TargetWithoutPath}}.png"
+    },
+    // Add White Chicken Skins
     {
       "Action": "EditData",
       "Target": "Data/FarmAnimals",
       "TargetField": [ "White Chicken", "Skins" ],
       "Entries": {
-        "{{ModId}}_BuffOrpington": {
-          "Id": "{{ModId}}_BuffOrpington",
-          "Texture": "Mods/{{ModId}}/BuffOrpington",
-          "BabyTexture": "Mods/{{ModId}}/BabyBuffOrpington"
-        },
         "{{ModId}}_CreamLegbar": {
           "Id": "{{ModId}}_CreamLegbar",
           "Texture": "Mods/{{ModId}}/CreamLegbar",
@@ -603,11 +657,6 @@
           "Texture": "Mods/{{ModId}}/OliveEgger3",
           "BabyTexture": "Mods/{{ModId}}/BabyOliveEgger"
         },
-        "{{ModId}}_SalmonFaverolle": {
-          "Id": "{{ModId}}_SalmonFaverolle",
-          "Texture": "Mods/{{ModId}}/SalmonFaverolle",
-          "BabyTexture": "Mods/{{ModId}}/BabySalmonFaverolle"
-        },
         "{{ModId}}_WhiteLegbar": {
           "Id": "{{ModId}}_WhiteLegbar",
           "Texture": "Mods/{{ModId}}/WhiteLegbar",
@@ -617,56 +666,17 @@
           "Id": "{{ModId}}_WhiteSilkie",
           "Texture": "Mods/{{ModId}}/WhiteSilkie",
           "BabyTexture": "Mods/{{ModId}}/BabyWhiteSilkie"
-        }
-      }
-    },
-    {
-      "Action": "EditData",
-      "Target": "Data/FarmAnimals",
-      "TargetField": [ "Brown Chicken", "Skins" ],
-      "Entries": {
-        "{{ModId}}_OliveEgger2": {
-          "Id": "{{ModId}}_OliveEgger2",
-          "Texture": "Mods/{{ModId}}/OliveEgger2",
-          "BabyTexture": "Mods/{{ModId}}/BabyOliveEgger"
         },
-        "{{ModId}}_GoldLacedCochin": {
-          "Id": "{{ModId}}_GoldLacedCochin",
-          "Texture": "Mods/{{ModId}}/GoldLacedCochin",
-          "BabyTexture": "Mods/{{ModId}}/GoldLacedCochin"
+        "{{ModId}}_BarredBantam": {
+          "Id": "{{ModId}}_BarredBantam",
+          "Texture": "Mods/{{ModId}}/BarredBantam",
+          "BabyTexture": "Mods/{{ModId}}/BabyBarredBantam"
         },
-        "{{ModId}}_EasterEgger": {
-          "Id": "{{ModId}}_EasterEgger",
-          "Texture": "Mods/{{ModId}}/EasterEgger",
-          "BabyTexture": "Mods/{{ModId}}/EasterEgger"
+        "{{ModId}}_BlackBantam": {
+          "Id": "{{ModId}}_BlackBantam",
+          "Texture": "Mods/{{ModId}}/BlackBantam",
+          "BabyTexture": "Mods/{{ModId}}/BabyBlackBantam"
         },
-        "{{ModId}}_BuffSilkie": {
-          "Id": "{{ModId}}_BuffSilkie",
-          "Texture": "Mods/{{ModId}}/BuffSilkie",
-          "BabyTexture": "Mods/{{ModId}}/BuffSilkie"
-        },
-        "{{ModId}}_BuffOrpington": {
-          "Id": "{{ModId}}_BuffOrpington",
-          "Texture": "Mods/{{ModId}}/BuffOrpington",
-          "BabyTexture": "Mods/{{ModId}}/BuffOrpington"
-        },
-        "{{ModId}}_Asil": {
-          "Id": "{{ModId}}_Asil",
-          "Texture": "Mods/{{ModId}}/Asil",
-          "BabyTexture": "Mods/{{ModId}}/Asil"
-        },
-        "{{ModId}}_RhodeIslandRed": {
-          "Id": "{{ModId}}_RhodeIslandRed",
-          "Texture": "Mods/{{ModId}}/RhodeIslandRed",
-          "BabyTexture": "Mods/{{ModId}}/BabyRhodeIslandRed"
-        }
-      }
-    },
-    {
-      "Action": "EditData",
-      "Target": "Data/FarmAnimals",
-      "TargetField": [ "Void Chicken", "Skins" ],
-      "Entries": {
         "{{ModId}}_BlackMaran": {
           "Id": "{{ModId}}_BlackMaran",
           "Texture": "Mods/{{ModId}}/BlackMaran",
@@ -677,10 +687,30 @@
           "Texture": "Mods/{{ModId}}/BlackSilkie",
           "BabyTexture": "Mods/{{ModId}}/BabyBlackSilkie"
         },
+        "{{ModId}}_CuckooBluebar": {
+          "Id": "{{ModId}}_CuckooBluebar",
+          "Texture": "Mods/{{ModId}}/CuckooBluebar",
+          "BabyTexture": "Mods/{{ModId}}/BabyCuckooBluebar"
+        },
         "{{ModId}}_Lakenvelder": {
           "Id": "{{ModId}}_Lakenvelder",
           "Texture": "Mods/{{ModId}}/Lakenvelder",
           "BabyTexture": "Mods/{{ModId}}/BabyLakenvelder"
+        },
+        "{{ModId}}_PureWhiteBantam": {
+          "Id": "{{ModId}}_PureWhiteBantam",
+          "Texture": "Mods/{{ModId}}/PureWhiteBantam",
+          "BabyTexture": "Mods/{{ModId}}/BabyPureWhiteBantam"
+        },
+        "{{ModId}}_SilverBrahma": {
+          "Id": "{{ModId}}_SilverBrahma",
+          "Texture": "Mods/{{ModId}}/SilverBrahma",
+          "BabyTexture": "Mods/{{ModId}}/BabySilverBrahma"
+        },
+        "{{ModId}}_WhiteBantam": {
+          "Id": "{{ModId}}_WhiteBantam",
+          "Texture": "Mods/{{ModId}}/WhiteBantam",
+          "BabyTexture": "Mods/{{ModId}}/BabyWhiteBantam"
         },
         "{{ModId}}_WhiteCrestedBlackPolish": {
           "Id": "{{ModId}}_WhiteCrestedBlackPolish",
@@ -689,15 +719,120 @@
         }
       }
     },
+    // Load White Chicken Textures
+    {
+      "Action": "Load",
+      "Target": "Mods/{{ModId}}/BabyBarredBantam, Mods/{{ModId}}/BabyBlackBantam, Mods/{{ModId}}/BabyBlackMaran, Mods/{{ModId}}/BabyBlackSilkie, Mods/{{ModId}}/BabyCreamLegbar, Mods/{{ModId}}/BabyCuckooBluebar, Mods/{{ModId}}/BabyLakenvelder, Mods/{{ModId}}/BabyLightSussex, Mods/{{ModId}}/BabyOliveEgger, Mods/{{ModId}}/BabyPureWhiteBantam, Mods/{{ModId}}/BabySilverBrahma, Mods/{{ModId}}/BabyWhiteBantam, Mods/{{ModId}}/BabyWhiteCrestedBlackPolish, Mods/{{ModId}}/BabyWhiteLegbar, Mods/{{ModId}}/BabyWhiteSilkie, Mods/{{ModId}}/BarredBantam, Mods/{{ModId}}/BlackBantam, Mods/{{ModId}}/BlackMaran, Mods/{{ModId}}/BlackSilkie, Mods/{{ModId}}/CreamLegbar, Mods/{{ModId}}/CuckooBluebar, Mods/{{ModId}}/Lakenvelder, Mods/{{ModId}}/LightSussex, Mods/{{ModId}}/OliveEgger1, Mods/{{ModId}}/OliveEgger3, Mods/{{ModId}}/PureWhiteBantam, Mods/{{ModId}}/SilverBrahma, Mods/{{ModId}}/WhiteBantam, Mods/{{ModId}}/WhiteCrestedBlackPolish, Mods/{{ModId}}/WhiteLegbar, Mods/{{ModId}}/WhiteSilkie",
+      "FromFile": "assets/WhiteChicken/{{TargetWithoutPath}}.png"
+    },
+    // Add Brown Chicken Skins
+    {
+      "Action": "EditData",
+      "Target": "Data/FarmAnimals",
+      "TargetField": [ "Brown Chicken", "Skins" ],
+      "Entries": {
+        "{{ModId}}_Asil": {
+          "Id": "{{ModId}}_Asil",
+          "Texture": "Mods/{{ModId}}/Asil",
+          "BabyTexture": "Mods/{{ModId}}/BabyAsil"
+        },
+        "{{ModId}}_BrownBantam": {
+          "Id": "{{ModId}}_BrownBantam",
+          "Texture": "Mods/{{ModId}}/BrownBantam",
+          "BabyTexture": "Mods/{{ModId}}/BabyBrownBantam"
+        },
+        "{{ModId}}_BuffBrahma": {
+          "Id": "{{ModId}}_BuffBrahma",
+          "Texture": "Mods/{{ModId}}/BuffBrahma",
+          "BabyTexture": "Mods/{{ModId}}/BabyBuffBrahma"
+        },
+        "{{ModId}}_RedBrahma": {
+          "Id": "{{ModId}}_RedBrahma",
+          "Texture": "Mods/{{ModId}}/RedBrahma",
+          "BabyTexture": "Mods/{{ModId}}/BabyRedBrahma"
+        },
+        "{{ModId}}_SalmonFaverolle": {
+          "Id": "{{ModId}}_SalmonFaverolle",
+          "Texture": "Mods/{{ModId}}/SalmonFaverolle",
+          "BabyTexture": "Mods/{{ModId}}/BabySalmonFaverolle"
+        },
+        "{{ModId}}_BuffOrpington": {
+          "Id": "{{ModId}}_BuffOrpington",
+          "Texture": "Mods/{{ModId}}/BuffOrpington",
+          "BabyTexture": "Mods/{{ModId}}/BabyBuffOrpington"
+        },
+        "{{ModId}}_OliveEgger2": {
+          "Id": "{{ModId}}_OliveEgger2",
+          "Texture": "Mods/{{ModId}}/OliveEgger2",
+          "BabyTexture": "Mods/{{ModId}}/BabyOliveEgger"
+        },
+        "{{ModId}}_GoldLacedCochin": {
+          "Id": "{{ModId}}_GoldLacedCochin",
+          "Texture": "Mods/{{ModId}}/GoldLacedCochin",
+          "BabyTexture": "Mods/{{ModId}}/BabyGoldLacedCochin"
+        },
+        "{{ModId}}_EasterEgger": {
+          "Id": "{{ModId}}_EasterEgger",
+          "Texture": "Mods/{{ModId}}/EasterEgger",
+          "BabyTexture": "Mods/{{ModId}}/BabyEasterEgger"
+        },
+        "{{ModId}}_BuffSilkie": {
+          "Id": "{{ModId}}_BuffSilkie",
+          "Texture": "Mods/{{ModId}}/BuffSilkie",
+          "BabyTexture": "Mods/{{ModId}}/BabyBuffSilkie"
+        },
+        "{{ModId}}_RhodeIslandRed": {
+          "Id": "{{ModId}}_RhodeIslandRed",
+          "Texture": "Mods/{{ModId}}/RhodeIslandRed",
+          "BabyTexture": "Mods/{{ModId}}/BabyRhodeIslandRed"
+        }
+      }
+    },
+    // Load Brown Chicken Textures
+    {
+      "Action": "Load",
+      "Target": "Mods/{{ModId}}/Asil, Mods/{{ModId}}/BabyAsil, Mods/{{ModId}}/BabyBrownBantam, Mods/{{ModId}}/BabyBuffBrahma, Mods/{{ModId}}/BabyBuffOrpington, Mods/{{ModId}}/BabyBuffSilkie, Mods/{{ModId}}/BabyEasterEgger, Mods/{{ModId}}/BabyGoldLacedCochin, Mods/{{ModId}}/BabyOliveEgger, Mods/{{ModId}}/BabyRedBrahma, Mods/{{ModId}}/BabyRhodeIslandRed, Mods/{{ModId}}/BabySalmonFaverolle, Mods/{{ModId}}/BrownBantam, Mods/{{ModId}}/BuffBrahma, Mods/{{ModId}}/BuffOrpington, Mods/{{ModId}}/BuffSilkie, Mods/{{ModId}}/EasterEgger, Mods/{{ModId}}/GoldLacedCochin, Mods/{{ModId}}/OliveEgger2, Mods/{{ModId}}/RedBrahma, Mods/{{ModId}}/RhodeIslandRed, Mods/{{ModId}}/SalmonFaverolle",
+      "FromFile": "assets/BrownChicken/{{TargetWithoutPath}}.png"
+    },
+    // Add Void Chicken Skins
+    {
+      "Action": "EditData",
+      "Target": "Data/FarmAnimals",
+      "TargetField": [ "Void Chicken", "Skins" ],
+      "Entries": {
+        "{{ModId}}_VoidBantam": {
+          "Id": "{{ModId}}_VoidBantam",
+          "Texture": "Mods/{{ModId}}/VoidBantam",
+          "BabyTexture": "Mods/{{ModId}}/BabyVoidBantam"
+        },
+        "{{ModId}}_BlueVoidBantam": {
+          "Id": "{{ModId}}_BlueVoidBantam",
+          "Texture": "Mods/{{ModId}}/BlueVoidBantam",
+          "BabyTexture": "Mods/{{ModId}}/BabyBlueVoidBantam"
+        }
+      }
+    },
+    // Load Void Chicken Textures
+    {
+      "Action": "Load",
+      "Target": "Mods/{{ModId}}/BlueVoidBantam, Mods/{{ModId}}/BabyBlueVoidBantam, Mods/{{ModId}}/VoidBantam, Mods/{{ModId}}/BabyVoidBantam",
+      "FromFile": "assets/VoidChicken/{{TargetWithoutPath}}.png"
+    },
+    // Add Blue Chicken Skins
     {
       "Action": "EditData",
       "Target": "Data/FarmAnimals",
       "TargetField": [ "Blue Chicken", "Skins" ],
       "Entries": {
-        "{{ModId}}_CuckooBluebar": {
-          "Id": "{{ModId}}_CuckooBluebar",
-          "Texture": "Mods/{{ModId}}/CuckooBluebar",
-          "BabyTexture": "Mods/{{ModId}}/BabyCuckooBluebar"
+        "{{ModId}}_BlueBantam": {
+          "Id": "{{ModId}}_BlueBantam",
+          "Texture": "Mods/{{ModId}}/BlueBantam",
+          "BabyTexture": "Mods/{{ModId}}/BabyBlueBantam"
+        },
+        "{{ModId}}_PurpleBantam": {
+          "Id": "{{ModId}}_PurpleBantam",
+          "Texture": "Mods/{{ModId}}/PurpleBantam",
+          "BabyTexture": "Mods/{{ModId}}/BabyPurpleBantam"
         },
         "{{ModId}}_LavenderAmericauna": {
           "Id": "{{ModId}}_LavenderAmericauna",
@@ -711,16 +846,11 @@
         }
       }
     },
-    // Load Sprites
+    // Load Blue Chicken Textures
     {
       "Action": "Load",
-      "Target": "Mods/{{ModId}}/rooster, Mods/{{ModId}}/babyrooster, Mods/{{ModId}}/animal_shop_rooster, Mods/{{ModId}}/BlueRooster, Mods/{{ModId}}/BabyBlueRooster, Mods/{{ModId}}/BrownRooster, Mods/{{ModId}}/BabyBrownRooster, Mods/{{ModId}}/VoidRooster, Mods/{{ModId}}/BabyVoidRooster, Mods/{{ModId}}/WhiteRooster, Mods/{{ModId}}/BabyWhiteRooster, Mods/{{ModId}}/GoldRooster, Mods/{{ModId}}/BabyGoldRooster",
-      "FromFile": "assets/Rooster/{{TargetWithoutPath}}.png"
-    },
-    {
-      "Action": "Load",
-      "Target": "Mods/{{ModId}}/Asil, Mods/{{ModId}}/BabyAsil, Mods/{{ModId}}/BabyBlackMaran, Mods/{{ModId}}/BabyBlackSilkie, Mods/{{ModId}}/BabyBuffOrpington, Mods/{{ModId}}/BabyBuffSilkie, Mods/{{ModId}}/BabyCreamLegbar, Mods/{{ModId}}/BabyCuckooBluebar, Mods/{{ModId}}/BabyEasterEgger, Mods/{{ModId}}/BabyGoldLacedCochin, Mods/{{ModId}}/BabyLakenvelder, Mods/{{ModId}}/BabyLavenderAmericauna, Mods/{{ModId}}/BabyLavenderOrpington, Mods/{{ModId}}/BabyLightSussex, Mods/{{ModId}}/BabyOliveEgger, Mods/{{ModId}}/BabyRhodeIslandRed, Mods/{{ModId}}/BabySalmonFaverolle, Mods/{{ModId}}/BabyWhiteCrestedBlackPolish, Mods/{{ModId}}/BabyWhiteLegbar, Mods/{{ModId}}/BabyWhiteSilkie, Mods/{{ModId}}/BlackMaran, Mods/{{ModId}}/BlackSilkie, Mods/{{ModId}}/BuffOrpington, Mods/{{ModId}}/BuffSilkie, Mods/{{ModId}}/CreamLegbar, Mods/{{ModId}}/CuckooBluebar, Mods/{{ModId}}/EasterEgger, Mods/{{ModId}}/GoldLacedCochin, Mods/{{ModId}}/Lakenvelder, Mods/{{ModId}}/LavenderAmericauna, Mods/{{ModId}}/LavenderOrpington, Mods/{{ModId}}/LightSussex, Mods/{{ModId}}/OliveEgger1, Mods/{{ModId}}/OliveEgger2, Mods/{{ModId}}/OliveEgger3, Mods/{{ModId}}/RhodeIslandRed, Mods/{{ModId}}/SalmonFaverolle, Mods/{{ModId}}/WhiteCrestedBlackPolish, Mods/{{ModId}}/WhiteLegbar, Mods/{{ModId}}/WhiteSilkie",
-      "FromFile": "assets/Chicken/{{TargetWithoutPath}}.png"
+      "Target": "Mods/{{ModId}}/BabyBlueBantam, Mods/{{ModId}}/BabyLavenderAmericauna, Mods/{{ModId}}/BabyLavenderOrpington, Mods/{{ModId}}/BabyPurpleBantam, Mods/{{ModId}}/BlueBantam, Mods/{{ModId}}/LavenderAmericauna, Mods/{{ModId}}/LavenderOrpington, Mods/{{ModId}}/PurpleBantam",
+      "FromFile": "assets/BlueChicken/{{TargetWithoutPath}}.png"
     },
     // Randomize egg hatching
     {

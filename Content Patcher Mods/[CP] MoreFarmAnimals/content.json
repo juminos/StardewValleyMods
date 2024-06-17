@@ -3,15 +3,15 @@
   "DynamicTokens": [
     {
       "Name": "WhiteChickenEgg",
-      "Value": "{{Random: {{ModId}}_WhiteRooster, {{ModId}}_WhiteRooster, White Chicken, White Chicken, White Chicken, White Chicken, White Chicken, White Chicken, White Chicken, White Chicken, White Chicken, {{ModId}}_Rooster |key=Location}}"
+      "Value": "{{Random: {{ModId}}_WhiteRooster, {{ModId}}_WhiteRooster, {{ModId}}_WhiteRooster, {{ModId}}_WhiteRooster, {{ModId}}_WhiteRooster, {{ModId}}_WhiteRooster, {{ModId}}_WhiteRooster, White Chicken, White Chicken, White Chicken, White Chicken, White Chicken, White Chicken, White Chicken, White Chicken, White Chicken, White Chicken, White Chicken, White Chicken, White Chicken, White Chicken, White Chicken, White Chicken, White Chicken, {{ModId}}_Rooster |key=Location}}"
     },
     {
       "Name": "BrownChickenEgg",
-      "Value": "{{Random: {{ModId}}_BrownRooster, {{ModId}}_BrownRooster, Brown Chicken, Brown Chicken, Brown Chicken, Brown Chicken, Brown Chicken, Brown Chicken, Brown Chicken, Brown Chicken, Brown Chicken, {{ModId}}_Rooster |key=Location}}"
+      "Value": "{{Random: {{ModId}}_BrownRooster, {{ModId}}_BrownRooster, {{ModId}}_BrownRooster, {{ModId}}_BrownRooster, {{ModId}}_BrownRooster, Brown Chicken, Brown Chicken, Brown Chicken, Brown Chicken, Brown Chicken, Brown Chicken, Brown Chicken, Brown Chicken, Brown Chicken, Brown Chicken, Brown Chicken, Brown Chicken, {{ModId}}_Rooster |key=Location}}"
     },
     {
       "Name": "BlueChickenEgg",
-      "Value": "{{Random: {{ModId}}_BlueRooster, Blue Chicken, Blue Chicken, Blue Chicken |key=Location}}"
+      "Value": "{{Random: {{ModId}}_BlueRooster, Blue Chicken, Blue Chicken, Blue Chicken, Blue Chicken, Blue Chicken |key=Location}}"
     },
     {
       "Name": "VoidChickenEgg",
@@ -19,7 +19,11 @@
     },
     {
       "Name": "GoldChickenEgg",
-      "Value": "{{Random: {{ModId}}_GoldRooster, Golden Chicken, Golden Chicken, Golden Chicken |key=Location}}"
+      "Value": "{{Random: {{ModId}}_GoldRooster, Golden Chicken |key=Location}}"
+    },
+    {
+      "Name": "QuailEgg",
+      "Value": "{{Random: {{ModId}}_Quail, {{ModId}}_Quail, {{ModId}}_Quail, {{ModId}}_Quail, {{ModId}}_Quail, {{ModId}}_Quail, {{ModId}}_Quail, {{ModId}}_QuailRooster, {{ModId}}_QuailRooster |key=Location}}"
     }
   ],
   "Changes": [
