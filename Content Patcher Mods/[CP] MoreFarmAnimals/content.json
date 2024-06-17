@@ -41,10 +41,6 @@
     },
     {
       "Action": "Include",
-      "FromFile": "data/billygoat.json"
-    },
-    {
-      "Action": "Include",
       "FromFile": "data/chicken.json"
     },
     {
@@ -57,15 +53,27 @@
     },
     {
       "Action": "Include",
-      "FromFile": "data/ram.json"
-    },
-    {
-      "Action": "Include",
-      "FromFile": "data/bull.json"
-    },
-    {
-      "Action": "Include",
       "FromFile": "data/squirrel.json"
+    },
+    {
+      "Action": "Include",
+      "FromFile": "data/cow.json"
+    },
+    {
+      "Action": "Include",
+      "FromFile": "data/dinosaur.json"
+    },
+    {
+      "Action": "Include",
+      "FromFile": "data/pig.json"
+    },
+    {
+      "Action": "Include",
+      "FromFile": "data/sheep.json"
+    },
+    {
+      "Action": "Include",
+      "FromFile": "data/goat.json"
     },
 
     // Load shop icons
