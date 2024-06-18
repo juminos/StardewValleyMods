@@ -1,6 +1,6 @@
 {
   "Name": "Critter Fixes",
-  "Version": "2.0.1",
+  "Version": "2.0.2",
   "MinimumApiVersion": "4.0.0",
   "Description": "Fixes rabbit animation and butterfly sprites.",
   "UniqueID": "juminos.CritterFixes",

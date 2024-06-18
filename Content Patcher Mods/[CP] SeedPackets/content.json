@@ -2,27 +2,27 @@
   "Format": "2.0",
   "Changes": [
 
-    // Load assets
+    // Replace seed images
     {
-      "Action": "Load",
-      "Target": "Mods/juminos.SeedPackets/MixedSeeds, Mods/juminos.SeedPackets/SunflowerSeeds",
-      "FromFile": "assets/{{TargetWithoutPath}}.png"
+      "Action": "EditImage",
+      "Target": "Maps/springobjects",
+      "FromFile": "assets/MixedSeeds.png",
+      "FromArea": { "X": 0, "Y": 0, "Width": 16, "Height": 16 },
+      "ToArea": { "X": 32, "Y": 512, "Width": 16, "Height": 16 }
     },
-
-    // Add seed packets
-    {
-      "Action": "EditData",
-      "Target": "Data/Objects",
-      "Fields": {
-        "770": {
-          "Texture": "Mods/juminos.SeedPackets/MixedSeeds",
-          "SpriteIndex": 0
-        },
-        "431": {
-          "Texture": "Mods/juminos.SeedPackets/SunflowerSeeds",
-          "SpriteIndex": 0
-        }
-      }
-    }
+        {
+      "Action": "EditImage",
+      "Target": "Maps/springobjects",
+      "FromFile": "assets/SunflowerSeeds.png",
+      "FromArea": { "X": 0, "Y": 0, "Width": 16, "Height": 16 },
+      "ToArea": { "X": 368, "Y": 272, "Width": 16, "Height": 16 }
+    },
+            {
+      "Action": "EditImage",
+      "Target": "Tilesheets/Objects_2",
+      "FromFile": "assets/MixedFlowerSeeds.png",
+      "FromArea": { "X": 0, "Y": 0, "Width": 16, "Height": 16 },
+      "ToArea": { "X": 0, "Y": 16, "Width": 16, "Height": 16 }
+    },
   ]
 }
