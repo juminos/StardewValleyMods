@@ -1,0 +1,2143 @@
+{
+	"Format": "2.0.0",
+
+	"ConfigSchema": {
+		"Building Theme": {
+			"AllowValues": "Color, White, Brick",
+			"Default": "Color"
+		},
+
+		"Farmhouse Decor": {
+			"AllowValues": "False, True",
+			"Default": "True",
+			"AllowBlank": true
+		},
+
+		"Farmhouse Style": {
+			"AllowValues": "Rustic, Vanilla, Greenhouse, StainedGlass, Cabin, Manor, Cottage, Lodge, False",
+			"Default": "Rustic",
+			"AllowBlank": true
+		},
+
+		"Farmhouse Material": {
+			"AllowValues": "Wood, Stone",
+			"Default": "Wood"
+		},
+
+		"Farmhouse Color": {
+			"AllowValues": "Red, Pink, Purple, Blue, Teal, Green, Yellow, White, Grey, Black",
+			"Default": "Blue",
+			"AllowBlank": true
+		},
+
+		"Log Cabin Decor": {
+			"AllowValues": "False, True",
+			"Default": "True",
+			"AllowBlank": true
+		},
+
+		"Plank Cabin Decor": {
+			"AllowValues": "False, True",
+			"Default": "True",
+			"AllowBlank": true
+		},
+
+		"Stone Cabin Decor": {
+			"AllowValues": "False, True",
+			"Default": "True",
+			"AllowBlank": true
+		},
+
+		"Themed Junimo Hut": {
+			"AllowValues": "True, False",
+			"Default": "True",
+			"AllowBlank": true
+		},
+
+		"Shane Coop": {
+			"AllowValues": "New, Old, False",
+			"Default": "New",
+			"AllowBlank": true
+		},
+
+		"Island Farmhouse": {
+			"AllowValues": "True, False",
+			"Default": "True",
+			"AllowBlank": true
+		},
+
+		"Farm Obelisk": {
+			"AllowValues": "True, False",
+			"Default": "True",
+			"AllowBlank": true
+		},
+
+		"Island Mailbox": {
+			"AllowValues": "True, False",
+			"Default": "True",
+			"AllowBlank": true
+		},
+		"Shipping Bin Recolor": {
+			"AllowValues": "True, False",
+			"Default": "True",
+			"AllowBlank": true
+		}
+	},
+
+	"Changes": [
+		// Load Skins
+		{
+			"Action": "Load",
+			"Target": "Buildings/JSB_BarnBig_New_Brick, Buildings/JSB_BarnBig_New_Color, Buildings/JSB_BarnBig_New_White, Buildings/JSB_BarnBig_Old_Brick, Buildings/JSB_BarnBig_Old_Color, Buildings/JSB_BarnBig_Old_White, Buildings/JSB_BarnDeluxe_New_Brick, Buildings/JSB_BarnDeluxe_New_Color, Buildings/JSB_BarnDeluxe_New_White, Buildings/JSB_BarnDeluxe_Old_Brick, Buildings/JSB_BarnDeluxe_Old_Color, Buildings/JSB_BarnDeluxe_Old_White, Buildings/JSB_Barn_New_Brick, Buildings/JSB_Barn_New_Color, Buildings/JSB_Barn_New_White, Buildings/JSB_Barn_Old_Brick, Buildings/JSB_Barn_Old_Color, Buildings/JSB_Barn_Old_White, Buildings/JSB_CoopBig_New_Brick, Buildings/JSB_CoopBig_New_Color, Buildings/JSB_CoopBig_New_White, Buildings/JSB_CoopBig_Old_Brick, Buildings/JSB_CoopBig_Old_Color, Buildings/JSB_CoopBig_Old_White, Buildings/JSB_CoopDeluxe_New_Brick, Buildings/JSB_CoopDeluxe_New_Color, Buildings/JSB_CoopDeluxe_New_White, Buildings/JSB_CoopDeluxe_Old_Brick, Buildings/JSB_CoopDeluxe_Old_Color, Buildings/JSB_CoopDeluxe_Old_White, Buildings/JSB_Coop_New_Brick, Buildings/JSB_Coop_New_Color, Buildings/JSB_Coop_New_White, Buildings/JSB_Coop_Old_Brick, Buildings/JSB_Coop_Old_Color, Buildings/JSB_Coop_Old_White, Buildings/JSB_DesertObelisk_New_Brick, Buildings/JSB_DesertObelisk_New_Color, Buildings/JSB_DesertObelisk_New_White, Buildings/JSB_DesertObelisk_Old_Brick, Buildings/JSB_DesertObelisk_Old_Color, Buildings/JSB_DesertObelisk_Old_White, Buildings/JSB_DesertObelisk_Original_Brick, Buildings/JSB_DesertObelisk_Original_Color, Buildings/JSB_DesertObelisk_Original_White, Buildings/JSB_EarthObelisk_New_Brick, Buildings/JSB_EarthObelisk_New_Color, Buildings/JSB_EarthObelisk_New_White, Buildings/JSB_EarthObelisk_Old_Brick, Buildings/JSB_EarthObelisk_Old_Color, Buildings/JSB_EarthObelisk_Old_White, Buildings/JSB_EarthObelisk_Original_Brick, Buildings/JSB_EarthObelisk_Original_Color, Buildings/JSB_EarthObelisk_Original_White, Buildings/JSB_FarmhouseCabin_Brick, Buildings/JSB_FarmhouseCabin_Color, Buildings/JSB_FarmhouseCabin_White, Buildings/JSB_FarmhouseCottage_Brick, Buildings/JSB_FarmhouseCottage_Color, Buildings/JSB_FarmhouseCottage_White, Buildings/JSB_FarmhouseGreenhouse_Brick, Buildings/JSB_FarmhouseGreenhouse_Color, Buildings/JSB_FarmhouseGreenhouse_White, Buildings/JSB_FarmhouseLodge_Brick, Buildings/JSB_FarmhouseLodge_Color, Buildings/JSB_FarmhouseLodge_White, Buildings/JSB_FarmhouseManor_Brick, Buildings/JSB_FarmhouseManor_Color, Buildings/JSB_FarmhouseManor_White, Buildings/JSB_FarmhouseRustic_Brick, Buildings/JSB_FarmhouseRustic_Color, Buildings/JSB_FarmhouseRustic_White, Buildings/JSB_FarmhouseStainedGlass_Brick, Buildings/JSB_FarmhouseStainedGlass_Color, Buildings/JSB_FarmhouseStainedGlass_White, Buildings/JSB_FarmhouseVanilla_Brick, Buildings/JSB_FarmhouseVanilla_Color, Buildings/JSB_FarmhouseVanilla_White, Buildings/JSB_FarmObelisk_New_Brick, Buildings/JSB_FarmObelisk_New_Color, Buildings/JSB_FarmObelisk_New_White, Buildings/JSB_GoldClock_New_Brick, Buildings/JSB_GoldClock_New_Color, Buildings/JSB_GoldClock_New_White, Buildings/JSB_GoldClock_Old_Brick, Buildings/JSB_GoldClock_Old_Color, Buildings/JSB_GoldClock_Old_White, Buildings/JSB_GoldClock_Original_Brick, Buildings/JSB_GoldClock_Original_Color, Buildings/JSB_GoldClock_Original_White, Buildings/JSB_GreenhouseStone_Brick, Buildings/JSB_GreenhouseStone_Color, Buildings/JSB_GreenhouseStone_White, Buildings/JSB_GreenhouseWood_Brick, Buildings/JSB_GreenhouseWood_Color, Buildings/JSB_GreenhouseWood_White, Buildings/JSB_IslandObelisk_New_Brick, Buildings/JSB_IslandObelisk_New_Color, Buildings/JSB_IslandObelisk_New_White, Buildings/JSB_IslandObelisk_Old_Brick, Buildings/JSB_IslandObelisk_Old_Color, Buildings/JSB_IslandObelisk_Old_White, Buildings/JSB_IslandObelisk_Original_Brick, Buildings/JSB_IslandObelisk_Original_Color, Buildings/JSB_IslandObelisk_Original_White, Buildings/JSB_JunimoHutBuilt_Brick, Buildings/JSB_JunimoHutBuilt_Color, Buildings/JSB_JunimoHutBuilt_White, Buildings/JSB_JunimoHutNatural_Brick, Buildings/JSB_JunimoHutNatural_Color, Buildings/JSB_JunimoHutNatural_White, Buildings/JSB_LogCabin_New_Brick, Buildings/JSB_LogCabin_New_Color, Buildings/JSB_LogCabin_New_White, Buildings/JSB_LogCabin_Old_Brick, Buildings/JSB_LogCabin_Old_Color, Buildings/JSB_LogCabin_Old_White, Buildings/JSB_MillClosed_Brick, Buildings/JSB_MillClosed_Color, Buildings/JSB_MillClosed_White, Buildings/JSB_MillOpen_Brick, Buildings/JSB_MillOpen_Color, Buildings/JSB_MillOpen_White, Buildings/JSB_PlankCabin_New_Brick, Buildings/JSB_PlankCabin_New_Color, Buildings/JSB_PlankCabin_New_White, Buildings/JSB_PlankCabin_Old_Brick, Buildings/JSB_PlankCabin_Old_Color, Buildings/JSB_PlankCabin_Old_White, Buildings/JSB_ShaneCoop_New_Brick, Buildings/JSB_ShaneCoop_New_Color, Buildings/JSB_ShaneCoop_New_White, Buildings/JSB_ShaneCoop_Old_Brick, Buildings/JSB_ShaneCoop_Old_Color, Buildings/JSB_ShaneCoop_Old_White, Buildings/JSB_ShedBig_New_Brick, Buildings/JSB_ShedBig_New_Color, Buildings/JSB_ShedBig_New_White, Buildings/JSB_ShedBig_Old_Brick, Buildings/JSB_ShedBig_Old_Color, Buildings/JSB_ShedBig_Old_White, Buildings/JSB_ShedBig_Original_Brick, Buildings/JSB_ShedBig_Original_Color, Buildings/JSB_ShedBig_Original_White, Buildings/JSB_Shed_New_Brick, Buildings/JSB_Shed_New_Color, Buildings/JSB_Shed_New_White, Buildings/JSB_Shed_Old_Brick, Buildings/JSB_Shed_Old_Color, Buildings/JSB_Shed_Old_White, Buildings/JSB_Shed_Original_Brick, Buildings/JSB_Shed_Original_Color, Buildings/JSB_Shed_Original_White, Buildings/JSB_SiloStone_Brick, Buildings/JSB_SiloStone_Color, Buildings/JSB_SiloStone_White, Buildings/JSB_SiloWood_Brick, Buildings/JSB_SiloWood_Color, Buildings/JSB_SiloWood_White, Buildings/JSB_SlimeHutchBrewery_Brick, Buildings/JSB_SlimeHutchBrewery_Color, Buildings/JSB_SlimeHutchBrewery_White, Buildings/JSB_SlimeHutchNoSign_Brick, Buildings/JSB_SlimeHutchNoSign_Color, Buildings/JSB_SlimeHutchNoSign_White, Buildings/JSB_SlimeHutchSign_Brick, Buildings/JSB_SlimeHutchSign_Color, Buildings/JSB_SlimeHutchSign_White, Buildings/JSB_SlimeHutchWinery_Brick, Buildings/JSB_SlimeHutchWinery_Color, Buildings/JSB_SlimeHutchWinery_White, Buildings/JSB_StableStone_Brick, Buildings/JSB_StableStone_Color, Buildings/JSB_StableStone_White, Buildings/JSB_StableWood_Brick, Buildings/JSB_StableWood_Color, Buildings/JSB_StableWood_White, Buildings/JSB_StoneCabin_New_Brick, Buildings/JSB_StoneCabin_New_Color, Buildings/JSB_StoneCabin_New_White, Buildings/JSB_StoneCabin_Old_Brick, Buildings/JSB_StoneCabin_Old_Color, Buildings/JSB_StoneCabin_Old_White, Buildings/JSB_WaterObelisk_New_Brick, Buildings/JSB_WaterObelisk_New_Color, Buildings/JSB_WaterObelisk_New_White, Buildings/JSB_WaterObelisk_Old_Brick, Buildings/JSB_WaterObelisk_Old_Color, Buildings/JSB_WaterObelisk_Old_White, Buildings/JSB_WaterObelisk_Original_Brick, Buildings/JSB_WaterObelisk_Original_Color, Buildings/JSB_WaterObelisk_Original_White, Buildings/JSB_WellStone_Brick, Buildings/JSB_WellStone_Color, Buildings/JSB_WellStone_White, Buildings/JSB_WellWood_Brick, Buildings/JSB_WellWood_Color, Buildings/JSB_WellWood_White",
+			"FromFile": "assets/Skins/{{TargetWithoutPath}}.png"
+		},
+
+		// Barn
+		{
+			"Action": "EditData",
+			"Target": "Data/Buildings",
+			"TargetField": [ "Barn", "Skins" ],
+			"Entries": {
+				"{{ModId}}_Barn_New_Brick": {
+					"ID": "{{ModId}}_Barn_New_Brick",
+					"Name": "New Brick Barn",
+					"Texture": "Buildings/JSB_Barn_New_Brick"
+				},
+				"{{ModId}}_Barn_New_Color": {
+					"ID": "{{ModId}}_Barn_New_Color",
+					"Name": "New Color Barn",
+					"Texture": "Buildings/JSB_Barn_New_Color"
+				},
+				"{{ModId}}_Barn_New_White": {
+					"ID": "{{ModId}}_Barn_New_White",
+					"Name": "New White Barn",
+					"Texture": "Buildings/JSB_Barn_New_White"
+				},
+				"{{ModId}}_Barn_Old_Brick": {
+					"ID": "{{ModId}}_Barn_Old_Brick",
+					"Name": "Old Brick Barn",
+					"Texture": "Buildings/JSB_Barn_Old_Brick"
+				},
+				"{{ModId}}_Barn_Old_Color": {
+					"ID": "{{ModId}}_Barn_Old_Color",
+					"Name": "Old Color Barn",
+					"Texture": "Buildings/JSB_Barn_Old_Color"
+				},
+				"{{ModId}}_Barn_Old_White": {
+					"ID": "{{ModId}}_Barn_Old_White",
+					"Name": "Old White Barn",
+					"Texture": "Buildings/JSB_Barn_Old_White"
+				}
+			}
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_Barn_New_Brick, Buildings/JSB_Barn_New_Color, Buildings/JSB_Barn_New_White",
+			"FromFile": "assets/Overlays/Barn_New_{{season}}.png",
+			"Enabled": "True"
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_Barn_Old_Brick, Buildings/JSB_Barn_Old_Color, Buildings/JSB_Barn_Old_White",
+			"FromFile": "assets/Overlays/Barn_Old_{{season}}.png",
+			"Enabled": "True"
+		},
+
+		// Big Barn
+		{
+			"Action": "EditData",
+			"Target": "Data/Buildings",
+			"TargetField": [ "Big Barn", "Skins" ],
+			"Entries": {
+				"{{ModId}}_BarnBig_New_Brick": {
+					"ID": "{{ModId}}_BarnBig_New_Brick",
+					"Name": "New Big Brick Barn",
+					"Texture": "Buildings/JSB_BarnBig_New_Brick"
+				},
+				"{{ModId}}_BarnBig_New_Color": {
+					"ID": "{{ModId}}_BarnBig_New_Color",
+					"Name": "New Big Color Barn",
+					"Texture": "Buildings/JSB_BarnBig_New_Color"
+				},
+				"{{ModId}}_BarnBig_New_White": {
+					"ID": "{{ModId}}_BarnBig_New_White",
+					"Name": "New Big White Barn",
+					"Texture": "Buildings/JSB_BarnBig_New_White"
+				},
+				"{{ModId}}_BarnBig_Old_Brick": {
+					"ID": "{{ModId}}_BarnBig_Old_Brick",
+					"Name": "Old Big Brick Barn",
+					"Texture": "Buildings/JSB_BarnBig_Old_Brick"
+				},
+				"{{ModId}}_BarnBig_Old_Color": {
+					"ID": "{{ModId}}_BarnBig_Old_Color",
+					"Name": "Old Big Color Barn",
+					"Texture": "Buildings/JSB_BarnBig_Old_Color"
+				},
+				"{{ModId}}_BarnBig_Old_White": {
+					"ID": "{{ModId}}_BarnBig_Old_White",
+					"Name": "Old Big White Barn",
+					"Texture": "Buildings/JSB_BarnBig_Old_White"
+				}
+			}
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_BarnBig_New_Brick, Buildings/JSB_BarnBig_New_Color, Buildings/JSB_BarnBig_New_White",
+			"FromFile": "assets/Overlays/BarnBig_New_{{season}}.png",
+			"Enabled": "True"
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_BarnBig_Old_Brick, Buildings/JSB_BarnBig_Old_Color, Buildings/JSB_BarnBig_Old_White",
+			"FromFile": "assets/Overlays/BarnBig_Old_{{season}}.png",
+			"Enabled": "True"
+		},
+
+		// Deluxe Barn
+		{
+			"Action": "EditData",
+			"Target": "Data/Buildings",
+			"TargetField": [ "Deluxe Barn", "Skins" ],
+			"Entries": {
+				"{{ModId}}_BarnDeluxe_New_Brick": {
+					"ID": "{{ModId}}_BarnDeluxe_New_Brick",
+					"Name": "New Deluxe Brick Barn",
+					"Texture": "Buildings/JSB_BarnDeluxe_New_Brick"
+				},
+				"{{ModId}}_BarnDeluxe_New_Color": {
+					"ID": "{{ModId}}_BarnDeluxe_New_Color",
+					"Name": "New Deluxe Color Barn",
+					"Texture": "Buildings/JSB_BarnDeluxe_New_Color"
+				},
+				"{{ModId}}_BarnDeluxe_New_White": {
+					"ID": "{{ModId}}_BarnDeluxe_New_White",
+					"Name": "New Deluxe White Barn",
+					"Texture": "Buildings/JSB_BarnDeluxe_New_White"
+				},
+				"{{ModId}}_BarnDeluxe_Old_Brick": {
+					"ID": "{{ModId}}_BarnDeluxe_Old_Brick",
+					"Name": "Old Deluxe Brick Barn",
+					"Texture": "Buildings/JSB_BarnDeluxe_Old_Brick"
+				},
+				"{{ModId}}_BarnDeluxe_Old_Color": {
+					"ID": "{{ModId}}_BarnDeluxe_Old_Color",
+					"Name": "Old Deluxe Color Barn",
+					"Texture": "Buildings/JSB_BarnDeluxe_Old_Color"
+				},
+				"{{ModId}}_BarnDeluxe_Old_White": {
+					"ID": "{{ModId}}_BarnDeluxe_Old_White",
+					"Name": "Old Deluxe White Barn",
+					"Texture": "Buildings/JSB_BarnDeluxe_Old_White"
+				}
+			}
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_BarnDeluxe_New_Brick, Buildings/JSB_BarnDeluxe_New_Color, Buildings/JSB_BarnDeluxe_New_White",
+			"FromFile": "assets/Overlays/BarnDeluxe_New_{{season}}.png",
+			"Enabled": "True"
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_BarnDeluxe_Old_Brick, Buildings/JSB_BarnDeluxe_Old_Color, Buildings/JSB_BarnDeluxe_Old_White",
+			"FromFile": "assets/Overlays/BarnDeluxe_Old_{{season}}.png",
+			"Enabled": "True"
+		},
+
+		// Coop
+		{
+			"Action": "EditData",
+			"Target": "Data/Buildings",
+			"TargetField": [ "Coop", "Skins" ],
+			"Entries": {
+				"{{ModId}}_Coop_New_Brick": {
+					"ID": "{{ModId}}_Coop_New_Brick",
+					"Name": "New Brick Coop",
+					"Texture": "Buildings/JSB_Coop_New_Brick"
+				},
+				"{{ModId}}_Coop_New_Color": {
+					"ID": "{{ModId}}_Coop_New_Color",
+					"Name": "New Color Coop",
+					"Texture": "Buildings/JSB_Coop_New_Color"
+				},
+				"{{ModId}}_Coop_New_White": {
+					"ID": "{{ModId}}_Coop_New_White",
+					"Name": "New White Coop",
+					"Texture": "Buildings/JSB_Coop_New_White"
+				},
+				"{{ModId}}_Coop_Old_Brick": {
+					"ID": "{{ModId}}_Coop_Old_Brick",
+					"Name": "Old Brick Coop",
+					"Texture": "Buildings/JSB_Coop_Old_Brick"
+				},
+				"{{ModId}}_Coop_Old_Color": {
+					"ID": "{{ModId}}_Coop_Old_Color",
+					"Name": "Old Color Coop",
+					"Texture": "Buildings/JSB_Coop_Old_Color"
+				},
+				"{{ModId}}_Coop_Old_White": {
+					"ID": "{{ModId}}_Coop_Old_White",
+					"Name": "Old White Coop",
+					"Texture": "Buildings/JSB_Coop_Old_White"
+				}
+			}
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_Coop_New_Brick, Buildings/JSB_Coop_New_Color, Buildings/JSB_Coop_New_White",
+			"FromFile": "assets/Overlays/Coop_New_{{season}}.png",
+			"Enabled": "True"
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_Coop_Old_Brick, Buildings/JSB_Coop_Old_Color, Buildings/JSB_Coop_Old_White",
+			"FromFile": "assets/Overlays/Coop_Old_{{season}}.png",
+			"Enabled": "True"
+		},
+
+		// Big Coop
+		{
+			"Action": "EditData",
+			"Target": "Data/Buildings",
+			"TargetField": [ "Big Coop", "Skins" ],
+			"Entries": {
+				"{{ModId}}_CoopBig_New_Brick": {
+					"ID": "{{ModId}}_CoopBig_New_Brick",
+					"Name": "New Big Brick Coop",
+					"Texture": "Buildings/JSB_CoopBig_New_Brick"
+				},
+				"{{ModId}}_CoopBig_New_Color": {
+					"ID": "{{ModId}}_CoopBig_New_Color",
+					"Name": "New Big Color Coop",
+					"Texture": "Buildings/JSB_CoopBig_New_Color"
+				},
+				"{{ModId}}_CoopBig_New_White": {
+					"ID": "{{ModId}}_CoopBig_New_White",
+					"Name": "New Big White Coop",
+					"Texture": "Buildings/JSB_CoopBig_New_White"
+				},
+				"{{ModId}}_CoopBig_Old_Brick": {
+					"ID": "{{ModId}}_CoopBig_Old_Brick",
+					"Name": "Old Big Brick Coop",
+					"Texture": "Buildings/JSB_CoopBig_Old_Brick"
+				},
+				"{{ModId}}_CoopBig_Old_Color": {
+					"ID": "{{ModId}}_CoopBig_Old_Color",
+					"Name": "Old Big Color Coop",
+					"Texture": "Buildings/JSB_CoopBig_Old_Color"
+				},
+				"{{ModId}}_CoopBig_Old_White": {
+					"ID": "{{ModId}}_CoopBig_Old_White",
+					"Name": "Old Big White Coop",
+					"Texture": "Buildings/JSB_CoopBig_Old_White"
+				}
+			}
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_CoopBig_New_Brick, Buildings/JSB_CoopBig_New_Color, Buildings/JSB_CoopBig_New_White",
+			"FromFile": "assets/Overlays/CoopBig_New_{{season}}.png",
+			"Enabled": "True"
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_CoopBig_Old_Brick, Buildings/JSB_CoopBig_Old_Color, Buildings/JSB_CoopBig_Old_White",
+			"FromFile": "assets/Overlays/CoopBig_Old_{{season}}.png",
+			"Enabled": "True"
+		},
+
+		// Deluxe Coop
+		{
+			"Action": "EditData",
+			"Target": "Data/Buildings",
+			"TargetField": [ "Deluxe Coop", "Skins" ],
+			"Entries": {
+				"{{ModId}}_CoopDeluxe_New_Brick": {
+					"ID": "{{ModId}}_CoopDeluxe_New_Brick",
+					"Name": "New Deluxe Brick Coop",
+					"Texture": "Buildings/JSB_CoopDeluxe_New_Brick"
+				},
+				"{{ModId}}_CoopDeluxe_New_Color": {
+					"ID": "{{ModId}}_CoopDeluxe_New_Color",
+					"Name": "New Deluxe Color Coop",
+					"Texture": "Buildings/JSB_CoopDeluxe_New_Color"
+				},
+				"{{ModId}}_CoopDeluxe_New_White": {
+					"ID": "{{ModId}}_CoopDeluxe_New_White",
+					"Name": "New Deluxe White Coop",
+					"Texture": "Buildings/JSB_CoopDeluxe_New_White"
+				},
+				"{{ModId}}_CoopDeluxe_Old_Brick": {
+					"ID": "{{ModId}}_CoopDeluxe_Old_Brick",
+					"Name": "Old Deluxe Brick Coop",
+					"Texture": "Buildings/JSB_CoopDeluxe_Old_Brick"
+				},
+				"{{ModId}}_CoopDeluxe_Old_Color": {
+					"ID": "{{ModId}}_CoopDeluxe_Old_Color",
+					"Name": "Old Deluxe Color Coop",
+					"Texture": "Buildings/JSB_CoopDeluxe_Old_Color"
+				},
+				"{{ModId}}_CoopDeluxe_Old_White": {
+					"ID": "{{ModId}}_CoopDeluxe_Old_White",
+					"Name": "Old Deluxe White Coop",
+					"Texture": "Buildings/JSB_CoopDeluxe_Old_White"
+				}
+			}
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_CoopDeluxe_New_Brick, Buildings/JSB_CoopDeluxe_New_Color, Buildings/JSB_CoopDeluxe_New_White",
+			"FromFile": "assets/Overlays/CoopDeluxe_New_{{season}}.png",
+			"Enabled": "True"
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_CoopDeluxe_Old_Brick, Buildings/JSB_CoopDeluxe_Old_Color, Buildings/JSB_CoopDeluxe_Old_White",
+			"FromFile": "assets/Overlays/CoopDeluxe_Old_{{season}}.png",
+			"Enabled": "True"
+		},
+
+		// Gold Clock
+		{
+			"Action": "EditData",
+			"Target": "Data/Buildings",
+			"TargetField": [ "Gold Clock", "Skins" ],
+			"Entries": {
+				"{{ModId}}_GoldClock_New_Brick": {
+					"ID": "{{ModId}}_GoldClock_New_Brick",
+					"Name": "New Brick Gold Clock",
+					"Texture": "Buildings/JSB_GoldClock_New_Brick"
+				},
+				"{{ModId}}_GoldClock_New_Color": {
+					"ID": "{{ModId}}_GoldClock_New_Color",
+					"Name": "New Color Gold Clock",
+					"Texture": "Buildings/JSB_GoldClock_New_Color"
+				},
+				"{{ModId}}_GoldClock_New_White": {
+					"ID": "{{ModId}}_GoldClock_New_White",
+					"Name": "New White Gold Clock",
+					"Texture": "Buildings/JSB_GoldClock_New_White"
+				},
+				"{{ModId}}_GoldClock_Old_Brick": {
+					"ID": "{{ModId}}_GoldClock_Old_Brick",
+					"Name": "Old Brick Gold Clock",
+					"Texture": "Buildings/JSB_GoldClock_Old_Brick"
+				},
+				"{{ModId}}_GoldClock_Old_Color": {
+					"ID": "{{ModId}}_GoldClock_Old_Color",
+					"Name": "Old Color Gold Clock",
+					"Texture": "Buildings/JSB_GoldClock_Old_Color"
+				},
+				"{{ModId}}_GoldClock_Old_White": {
+					"ID": "{{ModId}}_GoldClock_Old_White",
+					"Name": "Old White Gold Clock",
+					"Texture": "Buildings/JSB_GoldClock_Old_White"
+				},
+				"{{ModId}}_GoldClock_Original_Brick": {
+					"ID": "{{ModId}}_GoldClock_Original_Brick",
+					"Name": "Original Brick Gold Clock",
+					"Texture": "Buildings/JSB_GoldClock_Original_Brick"
+				},
+				"{{ModId}}_GoldClock_Original_Color": {
+					"ID": "{{ModId}}_GoldClock_Original_Color",
+					"Name": "Original Color Gold Clock",
+					"Texture": "Buildings/JSB_GoldClock_Original_Color"
+				},
+				"{{ModId}}_GoldClock_Original_White": {
+					"ID": "{{ModId}}_GoldClock_Original_White",
+					"Name": "Original White Gold Clock",
+					"Texture": "Buildings/JSB_GoldClock_Original_White"
+				}
+			}
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_GoldClock_New_Brick, Buildings/JSB_GoldClock_New_Color, Buildings/JSB_GoldClock_New_White",
+			"FromFile": "assets/Overlays/GoldClock_New_{{season}}.png",
+			"Enabled": "True"
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_GoldClock_Old_Brick, Buildings/JSB_GoldClock_Old_Color, Buildings/JSB_GoldClock_Old_White",
+			"FromFile": "assets/Overlays/GoldClock_Old_{{season}}.png",
+			"Enabled": "True"
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_GoldClock_Original_Brick, Buildings/JSB_GoldClock_Original_Color, Buildings/JSB_GoldClock_Original_White",
+			"FromFile": "assets/Overlays/GoldClock_Original_{{season}}.png",
+			"Enabled": "True"
+		},
+
+		// Farmhouse
+		{
+			"Action": "EditImage",
+			"Target": "Buildings/houses",
+			"FromFile": "assets/Skins/JSB_Farmhouse{{Farmhouse Style}}_{{Building Theme}}.png",
+			"FromArea": {
+				"X": 0,
+				"Y": 0,
+				"Width": 160,
+				"Height": 432
+			},
+			"ToArea": {
+				"X": 0,
+				"Y": 0,
+				"Width": 160,
+				"Height": 432
+			},
+			"Enabled": "True",
+			"When": {
+				"Farmhouse Style": "Cabin, Greenhouse, Manor, Rustic, StainedGlass, Vanilla, Cottage, Lodge"
+			}
+		},
+		//// Color overlay
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/houses",
+			"FromFile": "assets/Overlays/{{Farmhouse Style}}/{{Farmhouse Material}}_{{Farmhouse Color}}.png",
+			"Enabled": "True",
+			"When": {
+				"Farmhouse Style": "Cabin, Greenhouse, Manor, Rustic, StainedGlass, Vanilla, Cottage, Lodge"
+			}
+		},
+		//// Season overlay
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/houses",
+			"FromFile": "assets/Overlays/Farmhouse{{Farmhouse Style}}_{{season}}.png",
+			"Enabled": "True",
+			"When": {
+				"Farmhouse Style": "Cabin, Greenhouse, Manor, Rustic, StainedGlass, Vanilla, Cottage, Lodge"
+			}
+		},
+		//// Holiday overlay
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/houses",
+			"FromFile": "assets/Overlays/Farmhouse{{Farmhouse Style}}_Holiday_{{season}}.png",
+			"Enabled": "True",
+			"When": {
+				"Farmhouse Decor": "True",
+				"Farmhouse Style": "Cabin, Greenhouse, Manor, Rustic, StainedGlass, Vanilla, Cottage, Lodge"
+			}
+		},
+
+		// Greenhouse
+		{
+			"Action": "EditData",
+			"Target": "Data/Buildings",
+			"TargetField": [ "Greenhouse", "Skins" ],
+			"Entries": {
+				"{{ModId}}_GreenhouseStone_Brick": {
+					"ID": "{{ModId}}_GreenhouseStone_Brick",
+					"Name": "Stone Brick Greenhouse",
+					"Texture": "Buildings/JSB_GreenhouseStone_Brick"
+				},
+				"{{ModId}}_GreenhouseStone_Color": {
+					"ID": "{{ModId}}_GreenhouseStone_Color",
+					"Name": "Stone Color Greenhouse",
+					"Texture": "Buildings/JSB_GreenhouseStone_Color"
+				},
+				"{{ModId}}_GreenhouseStone_White": {
+					"ID": "{{ModId}}_GreenhouseStone_White",
+					"Name": "Stone White Greenhouse",
+					"Texture": "Buildings/JSB_GreenhouseStone_White"
+				},
+				"{{ModId}}_GreenhouseWood_Brick": {
+					"ID": "{{ModId}}_GreenhouseWood_Brick",
+					"Name": "Wood Brick Greenhouse",
+					"Texture": "Buildings/JSB_GreenhouseWood_Brick"
+				},
+				"{{ModId}}_GreenhouseWood_Color": {
+					"ID": "{{ModId}}_GreenhouseWood_Color",
+					"Name": "Wood Color Greenhouse",
+					"Texture": "Buildings/JSB_GreenhouseWood_Color"
+				},
+				"{{ModId}}_GreenhouseWood_White": {
+					"ID": "{{ModId}}_GreenhouseWood_White",
+					"Name": "Wood White Greenhouse",
+					"Texture": "Buildings/JSB_GreenhouseWood_White"
+				}
+			}
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_GreenhouseStone_Brick, Buildings/JSB_GreenhouseStone_Color, Buildings/JSB_GreenhouseStone_White",
+			"FromFile": "assets/Overlays/GreenhouseStone_{{season}}.png",
+			"Enabled": "True"
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_GreenhouseWood_Brick, Buildings/JSB_GreenhouseWood_Color, Buildings/JSB_GreenhouseWood_White",
+			"FromFile": "assets/Overlays/GreenhouseWood_{{season}}.png",
+			"Enabled": "True"
+		},
+
+		// Mill
+		{
+			"Action": "EditData",
+			"Target": "Data/Buildings",
+			"TargetField": [ "Mill", "Skins" ],
+			"Entries": {
+				"{{ModId}}_MillClosed_Brick": {
+					"ID": "{{ModId}}_MillClosed_Brick",
+					"Name": "Closed Brick Mill",
+					"Texture": "Buildings/JSB_MillClosed_Brick"
+				},
+				"{{ModId}}_MillClosed_Color": {
+					"ID": "{{ModId}}_MillClosed_Color",
+					"Name": "Closed Color Mill",
+					"Texture": "Buildings/JSB_MillClosed_Color"
+				},
+				"{{ModId}}_MillClosed_White": {
+					"ID": "{{ModId}}_MillClosed_White",
+					"Name": "Closed White Mill",
+					"Texture": "Buildings/JSB_MillClosed_White"
+				},
+				"{{ModId}}_MillOpen_Brick": {
+					"ID": "{{ModId}}_MillOpen_Brick",
+					"Name": "Open Brick Mill",
+					"Texture": "Buildings/JSB_MillOpen_Brick"
+				},
+				"{{ModId}}_MillOpen_Color": {
+					"ID": "{{ModId}}_MillOpen_Color",
+					"Name": "Open Color Mill",
+					"Texture": "Buildings/JSB_MillOpen_Color"
+				},
+				"{{ModId}}_MillOpen_White": {
+					"ID": "{{ModId}}_MillOpen_White",
+					"Name": "Open White Mill",
+					"Texture": "Buildings/JSB_MillOpen_White"
+				}
+			}
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_MillClosed_Brick, Buildings/JSB_MillClosed_Color, Buildings/JSB_MillClosed_White",
+			"FromFile": "assets/Overlays/MillClosed_{{season}}.png",
+			"Enabled": "True"
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_MillOpen_Brick, Buildings/JSB_MillOpen_Color, Buildings/JSB_MillOpen_White",
+			"FromFile": "assets/Overlays/MillOpen_{{season}}.png",
+			"Enabled": "True"
+		},
+
+		// Shed
+		{
+			"Action": "EditData",
+			"Target": "Data/Buildings",
+			"TargetField": [ "Shed", "Skins" ],
+			"Entries": {
+				"{{ModId}}_Shed_New_Brick": {
+					"ID": "{{ModId}}_Shed_New_Brick",
+					"Name": "New Brick Shed",
+					"Texture": "Buildings/JSB_Shed_New_Brick"
+				},
+				"{{ModId}}_Shed_New_Color": {
+					"ID": "{{ModId}}_Shed_New_Color",
+					"Name": "New Color Shed",
+					"Texture": "Buildings/JSB_Shed_New_Color"
+				},
+				"{{ModId}}_Shed_New_White": {
+					"ID": "{{ModId}}_Shed_New_White",
+					"Name": "New White Shed",
+					"Texture": "Buildings/JSB_Shed_New_White"
+				},
+				"{{ModId}}_Shed_Old_Brick": {
+					"ID": "{{ModId}}_Shed_Old_Brick",
+					"Name": "Old Brick Shed",
+					"Texture": "Buildings/JSB_Shed_Old_Brick"
+				},
+				"{{ModId}}_Shed_Old_Color": {
+					"ID": "{{ModId}}_Shed_Old_Color",
+					"Name": "Old Color Shed",
+					"Texture": "Buildings/JSB_Shed_Old_Color"
+				},
+				"{{ModId}}_Shed_Old_White": {
+					"ID": "{{ModId}}_Shed_Old_White",
+					"Name": "Old White Shed",
+					"Texture": "Buildings/JSB_Shed_Old_White"
+				},
+				"{{ModId}}_Shed_Original_Brick": {
+					"ID": "{{ModId}}_Shed_Original_Brick",
+					"Name": "Original Brick Shed",
+					"Texture": "Buildings/JSB_Shed_Original_Brick"
+				},
+				"{{ModId}}_Shed_Original_Color": {
+					"ID": "{{ModId}}_Shed_Original_Color",
+					"Name": "Original Color Shed",
+					"Texture": "Buildings/JSB_Shed_Original_Color"
+				},
+				"{{ModId}}_Shed_Original_White": {
+					"ID": "{{ModId}}_Shed_Original_White",
+					"Name": "Original White Shed",
+					"Texture": "Buildings/JSB_Shed_Original_White"
+				}
+			}
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_Shed_New_Brick, Buildings/JSB_Shed_New_Color, Buildings/JSB_Shed_New_White",
+			"FromFile": "assets/Overlays/Shed_New_{{season}}.png",
+			"Enabled": "True"
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_Shed_Old_Brick, Buildings/JSB_Shed_Old_Color, Buildings/JSB_Shed_Old_White",
+			"FromFile": "assets/Overlays/Shed_Old_{{season}}.png",
+			"Enabled": "True"
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_Shed_Original_Brick, Buildings/JSB_Shed_Original_Color, Buildings/JSB_Shed_Original_White",
+			"FromFile": "assets/Overlays/Shed_Original_{{season}}.png",
+			"Enabled": "True"
+		},
+
+		// Big Shed
+		{
+			"Action": "EditData",
+			"Target": "Data/Buildings",
+			"TargetField": [ "Big Shed", "Skins" ],
+			"Entries": {
+				"{{ModId}}_ShedBig_New_Brick": {
+					"ID": "{{ModId}}_ShedBig_New_Brick",
+					"Name": "New Brick Big Shed",
+					"Texture": "Buildings/JSB_ShedBig_New_Brick"
+				},
+				"{{ModId}}_ShedBig_New_Color": {
+					"ID": "{{ModId}}_ShedBig_New_Color",
+					"Name": "New Color Big Shed",
+					"Texture": "Buildings/JSB_ShedBig_New_Color"
+				},
+				"{{ModId}}_ShedBig_New_White": {
+					"ID": "{{ModId}}_ShedBig_New_White",
+					"Name": "New White Big Shed",
+					"Texture": "Buildings/JSB_ShedBig_New_White"
+				},
+				"{{ModId}}_ShedBig_Old_Brick": {
+					"ID": "{{ModId}}_ShedBig_Old_Brick",
+					"Name": "Old Brick Big Shed",
+					"Texture": "Buildings/JSB_ShedBig_Old_Brick"
+				},
+				"{{ModId}}_ShedBig_Old_Color": {
+					"ID": "{{ModId}}_ShedBig_Old_Color",
+					"Name": "Old Color Big Shed",
+					"Texture": "Buildings/JSB_ShedBig_Old_Color"
+				},
+				"{{ModId}}_ShedBig_Old_White": {
+					"ID": "{{ModId}}_ShedBig_Old_White",
+					"Name": "Old White Big Shed",
+					"Texture": "Buildings/JSB_ShedBig_Old_White"
+				},
+				"{{ModId}}_ShedBig_Original_Brick": {
+					"ID": "{{ModId}}_ShedBig_Original_Brick",
+					"Name": "Original Brick Big Shed",
+					"Texture": "Buildings/JSB_ShedBig_Original_Brick"
+				},
+				"{{ModId}}_ShedBig_Original_Color": {
+					"ID": "{{ModId}}_ShedBig_Original_Color",
+					"Name": "Original Color Big Shed",
+					"Texture": "Buildings/JSB_ShedBig_Original_Color"
+				},
+				"{{ModId}}_ShedBig_Original_White": {
+					"ID": "{{ModId}}_ShedBig_Original_White",
+					"Name": "Original White Big Shed",
+					"Texture": "Buildings/JSB_ShedBig_Original_White"
+				}
+			}
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_ShedBig_New_Brick, Buildings/JSB_ShedBig_New_Color, Buildings/JSB_ShedBig_New_White",
+			"FromFile": "assets/Overlays/ShedBig_New_{{season}}.png",
+			"Enabled": "True"
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_ShedBig_Old_Brick, Buildings/JSB_ShedBig_Old_Color, Buildings/JSB_ShedBig_Old_White",
+			"FromFile": "assets/Overlays/ShedBig_Old_{{season}}.png",
+			"Enabled": "True"
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_ShedBig_Original_Brick, Buildings/JSB_ShedBig_Original_Color, Buildings/JSB_ShedBig_Original_White",
+			"FromFile": "assets/Overlays/ShedBig_Original_{{season}}.png",
+			"Enabled": "True"
+		},
+
+		// Silo
+		{
+			"Action": "EditData",
+			"Target": "Data/Buildings",
+			"TargetField": [ "Silo", "Skins" ],
+			"Entries": {
+				"{{ModId}}_SiloStone_Brick": {
+					"ID": "{{ModId}}_SiloStone_Brick",
+					"Name": "Stone Brick Silo",
+					"Texture": "Buildings/JSB_SiloStone_Brick"
+				},
+				"{{ModId}}_SiloStone_Color": {
+					"ID": "{{ModId}}_SiloStone_Color",
+					"Name": "Stone Color Silo",
+					"Texture": "Buildings/JSB_SiloStone_Color"
+				},
+				"{{ModId}}_SiloStone_White": {
+					"ID": "{{ModId}}_SiloStone_White",
+					"Name": "Stone White Silo",
+					"Texture": "Buildings/JSB_SiloStone_White"
+				},
+				"{{ModId}}_SiloWood_Brick": {
+					"ID": "{{ModId}}_SiloWood_Brick",
+					"Name": "Wood Brick Silo",
+					"Texture": "Buildings/JSB_SiloWood_Brick"
+				},
+				"{{ModId}}_SiloWood_Color": {
+					"ID": "{{ModId}}_SiloWood_Color",
+					"Name": "Wood Color Silo",
+					"Texture": "Buildings/JSB_SiloWood_Color"
+				},
+				"{{ModId}}_SiloWood_White": {
+					"ID": "{{ModId}}_SiloWood_White",
+					"Name": "Wood White Silo",
+					"Texture": "Buildings/JSB_SiloWood_White"
+				}
+			}
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_SiloStone_Brick, Buildings/JSB_SiloStone_Color, Buildings/JSB_SiloStone_White",
+			"FromFile": "assets/Overlays/SiloStone_{{season}}.png",
+			"Enabled": "True"
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_SiloWood_Brick, Buildings/JSB_SiloWood_Color, Buildings/JSB_SiloWood_White",
+			"FromFile": "assets/Overlays/SiloWood_{{season}}.png",
+			"Enabled": "True"
+		},
+
+		// Winery
+		{
+			"Action": "EditData",
+			"Target": "Data/Buildings",
+			"Entries": {
+				"{{ModId}}_Winery": {
+					"Name": "Winery/Slime Hutch",
+					"Description": "A large building for aging wine.",
+					"Texture": "Buildings/JSB_SlimeHutchBrewery_Brick",
+					"Skins": [
+						{
+							"ID": "{{ModId}}_SlimeHutchBrewery_Color",
+							"Name": "Color Brewery",
+							"Texture": "Buildings/JSB_SlimeHutchBrewery_Color"
+						},
+						{
+							"ID": "{{ModId}}_SlimeHutchBrewery_White",
+							"Name": "White Brewery",
+							"Texture": "Buildings/JSB_SlimeHutchBrewery_White"
+						},
+						{
+							"ID": "{{ModId}}_SlimeHutchWinery_Brick",
+							"Name": "Brick Winery",
+							"Texture": "Buildings/JSB_SlimeHutchWinery_Brick"
+						},
+						{
+							"ID": "{{ModId}}_SlimeHutchWinery_Color",
+							"Name": "Color Winery",
+							"Texture": "Buildings/JSB_SlimeHutchWinery_Color"
+						},
+						{
+							"ID": "{{ModId}}_SlimeHutchWinery_White",
+							"Name": "White Winery",
+							"Texture": "Buildings/JSB_SlimeHutchWinery_White"
+						},
+						{
+							"ID": "{{ModId}}_SlimeHutchNoSign_Brick",
+							"Name": "Brick Slime Hutch (No Sign)",
+							"Texture": "Buildings/JSB_SlimeHutchNoSign_Brick"
+						},
+						{
+							"ID": "{{ModId}}_SlimeHutchNoSign_Color",
+							"Name": "Color Slime Hutch (No Sign)",
+							"Texture": "Buildings/JSB_SlimeHutchNoSign_Color"
+						},
+						{
+							"ID": "{{ModId}}_SlimeHutchNoSign_White",
+							"Name": "White Slime Hutch (No Sign)",
+							"Texture": "Buildings/JSB_SlimeHutchNoSign_White"
+						},
+						{
+							"ID": "{{ModId}}_SlimeHutchSign_Brick",
+							"Name": "Brick Slime Hutch (Sign)",
+							"Texture": "Buildings/JSB_SlimeHutchSign_Brick"
+						},
+						{
+							"ID": "{{ModId}}_SlimeHutchSign_Color",
+							"Name": "Color Slime Hutch (Sign)",
+							"Texture": "Buildings/JSB_SlimeHutchSign_Color"
+						},
+						{
+							"ID": "{{ModId}}_SlimeHutchSign_White",
+							"Name": "White Slime Hutch (Sign)",
+							"Texture": "Buildings/JSB_SlimeHutchSign_White"
+						}
+					],
+					"DrawShadow": true,
+					"UpgradeSignTile": "2.5, 5",
+					"UpgradeSignHeight": 12.0,
+					"Size": {
+						"X": 11,
+						"Y": 4
+					},
+					"FadeWhenBehind": true,
+					"SourceRect": {
+						"X": 0,
+						"Y": 0,
+						"Width": 176,
+						"Height": 144
+					},
+					"SeasonOffset": {
+						"X": 0,
+						"Y": 0
+					},
+					"DrawOffset": "0, 0",
+					"SortTileOffset": 0.0,
+					"CollisionMap": null,
+					"AdditionalPlacementTiles": null,
+					"BuildingType": null,
+					"Builder": "Robin",
+					"BuildCondition": null,
+					"BuildDays": 2,
+					"BuildCost": 10000,
+					"BuildMaterials": [
+						{
+							"ItemId": "(O)390",
+							"Amount": 500
+						},
+						{
+							"ItemId": "(O)338",
+							"Amount": 10
+						},
+						{
+							"ItemId": "(O)337",
+							"Amount": 1
+						}
+					],
+					"BuildingToUpgrade": null,
+					"MagicalConstruction": false,
+					"BuildMenuDrawOffset": {
+						"X": 0,
+						"Y": 0
+					},
+					"HumanDoor": {
+						"X": 5,
+						"Y": 3
+					},
+					"AnimalDoor": {
+						"X": -1,
+						"Y": -1,
+						"Width": 0,
+						"Height": 0
+					},
+					"AnimalDoorOpenDuration": 0.0,
+					"AnimalDoorOpenSound": null,
+					"AnimalDoorCloseDuration": 0.0,
+					"AnimalDoorCloseSound": null,
+					"NonInstancedIndoorLocation": null,
+					"IndoorMap": "SlimeHutch",
+					"IndoorMapType": "StardewValley.SlimeHutch",
+					"MaxOccupants": 20,
+					"ValidOccupantTypes": [
+						"Slime"
+					],
+					"AllowAnimalPregnancy": false,
+					"IndoorItemMoves": null,
+					"IndoorItems": [
+						{
+							"Id": "Default_SlimeIncubator",
+							"ItemId": "(BC)156",
+							"Tile": {
+								"X": 1,
+								"Y": 4
+							},
+							"Indestructible": false
+						}
+					],
+					"AddMailOnBuild": null,
+					"Metadata": {},
+					"ModData": {},
+					"HayCapacity": 0,
+					"Chests": null,
+					"DefaultAction": null,
+					"AdditionalTilePropertyRadius": 0,
+					"AllowsFlooringUnderneath": true,
+					"ActionTiles": [],
+					"TileProperties": [],
+					"ItemConversions": null,
+					"DrawLayers": null,
+					"CustomFields": null
+				}
+			}
+		},
+		{
+			"Action": "EditMap",
+			"Target": "Maps/SlimeHutch",
+			"MapProperties": {
+				"CanCaskHere": "T"
+			}
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_SlimeHutchBrewery_Brick, Buildings/JSB_SlimeHutchBrewery_Color, Buildings/JSB_SlimeHutchBrewery_White",
+			"FromFile": "assets/Overlays/SlimeHutchBrewery_{{season}}.png",
+			"Enabled": "True"
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_SlimeHutchWinery_Brick, Buildings/JSB_SlimeHutchWinery_Color, Buildings/JSB_SlimeHutchWinery_White",
+			"FromFile": "assets/Overlays/SlimeHutchWinery_{{season}}.png",
+			"Enabled": "True"
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_SlimeHutchNoSign_Brick, Buildings/JSB_SlimeHutchNoSign_Color, Buildings/JSB_SlimeHutchNoSign_White",
+			"FromFile": "assets/Overlays/SlimeHutchNoSign_{{season}}.png",
+			"Enabled": "True"
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_SlimeHutchSign_Brick, Buildings/JSB_SlimeHutchSign_Color, Buildings/JSB_SlimeHutchSign_White",
+			"FromFile": "assets/Overlays/SlimeHutchSign_{{season}}.png",
+			"Enabled": "True"
+		},
+
+		// Stable
+		{
+			"Action": "EditData",
+			"Target": "Data/Buildings",
+			"TargetField": [ "Stable", "Skins" ],
+			"Entries": {
+				"{{ModId}}_StableStone_Brick": {
+					"ID": "{{ModId}}_StableStone_Brick",
+					"Name": "Stone Brick Stable",
+					"Texture": "Buildings/JSB_StableStone_Brick"
+				},
+				"{{ModId}}_StableStone_Color": {
+					"ID": "{{ModId}}_StableStone_Color",
+					"Name": "Stone Color Stable",
+					"Texture": "Buildings/JSB_StableStone_Color"
+				},
+				"{{ModId}}_StableStone_White": {
+					"ID": "{{ModId}}_StableStone_White",
+					"Name": "Stone White Stable",
+					"Texture": "Buildings/JSB_StableStone_White"
+				},
+				"{{ModId}}_StableWood_Brick": {
+					"ID": "{{ModId}}_StableWood_Brick",
+					"Name": "Wood Brick Stable",
+					"Texture": "Buildings/JSB_StableWood_Brick"
+				},
+				"{{ModId}}_StableWood_Color": {
+					"ID": "{{ModId}}_StableWood_Color",
+					"Name": "Wood Color Stable",
+					"Texture": "Buildings/JSB_StableWood_Color"
+				},
+				"{{ModId}}_StableWood_White": {
+					"ID": "{{ModId}}_StableWood_White",
+					"Name": "Wood White Stable",
+					"Texture": "Buildings/JSB_StableWood_White"
+				}
+			}
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_StableStone_Brick, Buildings/JSB_StableStone_Color, Buildings/JSB_StableStone_White",
+			"FromFile": "assets/Overlays/StableStone_{{season}}.png",
+			"Enabled": "True"
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_StableWood_Brick, Buildings/JSB_StableWood_Color, Buildings/JSB_StableWood_White",
+			"FromFile": "assets/Overlays/StableWood_{{season}}.png",
+			"Enabled": "True"
+		},
+
+		// Well
+		{
+			"Action": "EditData",
+			"Target": "Data/Buildings",
+			"TargetField": [ "Well", "Skins" ],
+			"Entries": {
+				"{{ModId}}_WellStone_Brick": {
+					"ID": "{{ModId}}_WellStone_Brick",
+					"Name": "Stone Brick Well",
+					"Texture": "Buildings/JSB_WellStone_Brick"
+				},
+				"{{ModId}}_WellStone_Color": {
+					"ID": "{{ModId}}_WellStone_Color",
+					"Name": "Stone Color Well",
+					"Texture": "Buildings/JSB_WellStone_Color"
+				},
+				"{{ModId}}_WellStone_White": {
+					"ID": "{{ModId}}_WellStone_White",
+					"Name": "Stone White Well",
+					"Texture": "Buildings/JSB_WellStone_White"
+				},
+				"{{ModId}}_WellWood_Brick": {
+					"ID": "{{ModId}}_WellWood_Brick",
+					"Name": "Wood Brick Well",
+					"Texture": "Buildings/JSB_WellWood_Brick"
+				},
+				"{{ModId}}_WellWood_Color": {
+					"ID": "{{ModId}}_WellWood_Color",
+					"Name": "Wood Color Well",
+					"Texture": "Buildings/JSB_WellWood_Color"
+				},
+				"{{ModId}}_WellWood_White": {
+					"ID": "{{ModId}}_WellWood_White",
+					"Name": "Wood White Well",
+					"Texture": "Buildings/JSB_WellWood_White"
+				}
+			}
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_WellStone_Brick, Buildings/JSB_WellStone_Color, Buildings/JSB_WellStone_White",
+			"FromFile": "assets/Overlays/WellStone_{{season}}.png",
+			"Enabled": "True"
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_WellWood_Brick, Buildings/JSB_WellWood_Color, Buildings/JSB_WellWood_White",
+			"FromFile": "assets/Overlays/WellWood_{{season}}.png",
+			"Enabled": "True"
+		},
+
+		// Junimo Hut
+		{
+			"Action": "EditData",
+			"Target": "Data/Buildings",
+			"TargetField": [ "Junimo Hut", "Skins" ],
+			"Entries": {
+				"{{ModId}}_JunimoHutBuilt_Brick": {
+					"ID": "{{ModId}}_JunimoHutBuilt_Brick",
+					"Name": "Built Brick Junimo Hut",
+					"Texture": "Buildings/JSB_JunimoHutBuilt_Brick"
+				},
+				"{{ModId}}_JunimoHutBuilt_Color": {
+					"ID": "{{ModId}}_JunimoHutBuilt_Color",
+					"Name": "Built Color Junimo Hut",
+					"Texture": "Buildings/JSB_JunimoHutBuilt_Color"
+				},
+				"{{ModId}}_JunimoHutBuilt_White": {
+					"ID": "{{ModId}}_JunimoHutBuilt_White",
+					"Name": "Built White Junimo Hut",
+					"Texture": "Buildings/JSB_JunimoHutBuilt_White"
+				},
+				"{{ModId}}_JunimoHutNatural_Brick": {
+					"ID": "{{ModId}}_JunimoHutNatural_Brick",
+					"Name": "Natural Brick Junimo Hut",
+					"Texture": "Buildings/JSB_JunimoHutNatural_Brick"
+				},
+				"{{ModId}}_JunimoHutNatural_Color": {
+					"ID": "{{ModId}}_JunimoHutNatural_Color",
+					"Name": "Natural Color Junimo Hut",
+					"Texture": "Buildings/JSB_JunimoHutNatural_Color"
+				},
+				"{{ModId}}_JunimoHutNatural_White": {
+					"ID": "{{ModId}}_JunimoHutNatural_White",
+					"Name": "Natural White Junimo Hut",
+					"Texture": "Buildings/JSB_JunimoHutNatural_White"
+				}
+			}
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_JunimoHutBuilt_Brick, Buildings/JSB_JunimoHutBuilt_Color, Buildings/JSB_JunimoHutBuilt_White",
+			"FromFile": "assets/Overlays/JunimoHutBuilt_{{season}}.png",
+			"Enabled": "True"
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_JunimoHutNatural_Brick, Buildings/JSB_JunimoHutNatural_Color, Buildings/JSB_JunimoHutNatural_White",
+			"FromFile": "assets/Overlays/JunimoHutNatural_{{season}}.png",
+			"Enabled": "True"
+		},
+
+		// Shane's Coop
+		{
+			"Action": "EditImage",
+			"Target": "Maps/{{season}}_outdoorsTileSheet",
+			"FromFile": "assets/Skins/JSB_ShaneCoop_{{Shane Coop}}_{{Building Theme}}.png",
+			"FromArea": {
+				"X": 0,
+				"Y": 0,
+				"Width": 48,
+				"Height": 32
+			},
+			"ToArea": {
+				"X": 352,
+				"Y": 1104,
+				"Width": 48,
+				"Height": 32
+			},
+			"Enabled": "True",
+			"When": {
+				"Shane Coop": "New, Old"
+			}
+		},
+		{
+			"Action": "EditImage",
+			"Target": "Maps/{{season}}_outdoorsTileSheet",
+			"FromFile": "assets/Skins/JSB_ShaneCoop_{{Shane Coop}}_{{Building Theme}}.png",
+			"FromArea": {
+				"X": 0,
+				"Y": 32,
+				"Width": 48,
+				"Height": 32
+			},
+			"ToArea": {
+				"X": 240,
+				"Y": 1216,
+				"Width": 48,
+				"Height": 32
+			},
+			"Enabled": "True",
+			"When": {
+				"Shane Coop": "New, Old"
+			}
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Maps/{{season}}_outdoorsTileSheet",
+			"FromFile": "assets/Overlays/ShaneCoop_{{Shane Coop}}_{{season}}.png",
+			"FromArea": {
+				"X": 0,
+				"Y": 0,
+				"Width": 48,
+				"Height": 32
+			},
+			"ToArea": {
+				"X": 352,
+				"Y": 1104,
+				"Width": 48,
+				"Height": 32
+			},
+			"Enabled": "True",
+			"When": {
+				"Shane Coop": "New, Old"
+			}
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Maps/{{season}}_outdoorsTileSheet",
+			"FromFile": "assets/Overlays/ShaneCoop_{{Shane Coop}}_{{season}}.png",
+			"FromArea": {
+				"X": 0,
+				"Y": 32,
+				"Width": 48,
+				"Height": 32
+			},
+			"ToArea": {
+				"X": 240,
+				"Y": 1216,
+				"Width": 48,
+				"Height": 32
+			},
+			"Enabled": "True",
+			"When": {
+				"Shane Coop": "New, Old"
+			}
+		},
+
+		// Earth Obelisk
+		{
+			"Action": "EditData",
+			"Target": "Data/Buildings",
+			"TargetField": [ "Earth Obelisk", "Skins" ],
+			"Entries": {
+				"{{ModId}}_EarthObelisk_New_Brick": {
+					"ID": "{{ModId}}_EarthObelisk_New_Brick",
+					"Name": "New Brick Earth Obelisk",
+					"Texture": "Buildings/JSB_EarthObelisk_New_Brick"
+				},
+				"{{ModId}}_EarthObelisk_New_Color": {
+					"ID": "{{ModId}}_EarthObelisk_New_Color",
+					"Name": "New Color Earth Obelisk",
+					"Texture": "Buildings/JSB_EarthObelisk_New_Color"
+				},
+				"{{ModId}}_EarthObelisk_New_White": {
+					"ID": "{{ModId}}_EarthObelisk_New_White",
+					"Name": "New White Earth Obelisk",
+					"Texture": "Buildings/JSB_EarthObelisk_New_White"
+				},
+				"{{ModId}}_EarthObelisk_Old_Brick": {
+					"ID": "{{ModId}}_EarthObelisk_Old_Brick",
+					"Name": "Old Brick Earth Obelisk",
+					"Texture": "Buildings/JSB_EarthObelisk_Old_Brick"
+				},
+				"{{ModId}}_EarthObelisk_Old_Color": {
+					"ID": "{{ModId}}_EarthObelisk_Old_Color",
+					"Name": "Old Color Earth Obelisk",
+					"Texture": "Buildings/JSB_EarthObelisk_Old_Color"
+				},
+				"{{ModId}}_EarthObelisk_Old_White": {
+					"ID": "{{ModId}}_EarthObelisk_Old_White",
+					"Name": "Old White Earth Obelisk",
+					"Texture": "Buildings/JSB_EarthObelisk_Old_White"
+				},
+				"{{ModId}}_EarthObelisk_Original_Brick": {
+					"ID": "{{ModId}}_EarthObelisk_Original_Brick",
+					"Name": "Original Brick Earth Obelisk",
+					"Texture": "Buildings/JSB_EarthObelisk_Original_Brick"
+				},
+				"{{ModId}}_EarthObelisk_Original_Color": {
+					"ID": "{{ModId}}_EarthObelisk_Original_Color",
+					"Name": "Original Color Earth Obelisk",
+					"Texture": "Buildings/JSB_EarthObelisk_Original_Color"
+				},
+				"{{ModId}}_EarthObelisk_Original_White": {
+					"ID": "{{ModId}}_EarthObelisk_Original_White",
+					"Name": "Original White Earth Obelisk",
+					"Texture": "Buildings/JSB_EarthObelisk_Original_White"
+				}
+			}
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_EarthObelisk_New_Brick, Buildings/JSB_EarthObelisk_New_Color, Buildings/JSB_EarthObelisk_New_White",
+			"FromFile": "assets/Overlays/EarthObelisk_New_{{season}}.png",
+			"Enabled": "True"
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_EarthObelisk_Old_Brick, Buildings/JSB_EarthObelisk_Old_Color, Buildings/JSB_EarthObelisk_Old_White",
+			"FromFile": "assets/Overlays/EarthObelisk_Old_{{season}}.png",
+			"Enabled": "True"
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_EarthObelisk_Original_Brick, Buildings/JSB_EarthObelisk_Original_Color, Buildings/JSB_EarthObelisk_Original_White",
+			"FromFile": "assets/Overlays/EarthObelisk_Original_{{season}}.png",
+			"Enabled": "True"
+		},
+
+		// Water Obelisk
+		{
+			"Action": "EditData",
+			"Target": "Data/Buildings",
+			"TargetField": [ "Water Obelisk", "Skins" ],
+			"Entries": {
+				"{{ModId}}_WaterObelisk_New_Brick": {
+					"ID": "{{ModId}}_WaterObelisk_New_Brick",
+					"Name": "New Brick Water Obelisk",
+					"Texture": "Buildings/JSB_WaterObelisk_New_Brick"
+				},
+				"{{ModId}}_WaterObelisk_New_Color": {
+					"ID": "{{ModId}}_WaterObelisk_New_Color",
+					"Name": "New Color Water Obelisk",
+					"Texture": "Buildings/JSB_WaterObelisk_New_Color"
+				},
+				"{{ModId}}_WaterObelisk_New_White": {
+					"ID": "{{ModId}}_WaterObelisk_New_White",
+					"Name": "New White Water Obelisk",
+					"Texture": "Buildings/JSB_WaterObelisk_New_White"
+				},
+				"{{ModId}}_WaterObelisk_Old_Brick": {
+					"ID": "{{ModId}}_WaterObelisk_Old_Brick",
+					"Name": "Old Brick Water Obelisk",
+					"Texture": "Buildings/JSB_WaterObelisk_Old_Brick"
+				},
+				"{{ModId}}_WaterObelisk_Old_Color": {
+					"ID": "{{ModId}}_WaterObelisk_Old_Color",
+					"Name": "Old Color Water Obelisk",
+					"Texture": "Buildings/JSB_WaterObelisk_Old_Color"
+				},
+				"{{ModId}}_WaterObelisk_Old_White": {
+					"ID": "{{ModId}}_WaterObelisk_Old_White",
+					"Name": "Old White Water Obelisk",
+					"Texture": "Buildings/JSB_WaterObelisk_Old_White"
+				},
+				"{{ModId}}_WaterObelisk_Original_Brick": {
+					"ID": "{{ModId}}_WaterObelisk_Original_Brick",
+					"Name": "Original Brick Water Obelisk",
+					"Texture": "Buildings/JSB_WaterObelisk_Original_Brick"
+				},
+				"{{ModId}}_WaterObelisk_Original_Color": {
+					"ID": "{{ModId}}_WaterObelisk_Original_Color",
+					"Name": "Original Color Water Obelisk",
+					"Texture": "Buildings/JSB_WaterObelisk_Original_Color"
+				},
+				"{{ModId}}_WaterObelisk_Original_White": {
+					"ID": "{{ModId}}_WaterObelisk_Original_White",
+					"Name": "Original White Water Obelisk",
+					"Texture": "Buildings/JSB_WaterObelisk_Original_White"
+				}
+			}
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_WaterObelisk_New_Brick, Buildings/JSB_WaterObelisk_New_Color, Buildings/JSB_WaterObelisk_New_White",
+			"FromFile": "assets/Overlays/WaterObelisk_New_{{season}}.png",
+			"Enabled": "True"
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_WaterObelisk_Old_Brick, Buildings/JSB_WaterObelisk_Old_Color, Buildings/JSB_WaterObelisk_Old_White",
+			"FromFile": "assets/Overlays/WaterObelisk_Old_{{season}}.png",
+			"Enabled": "True"
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_WaterObelisk_Original_Brick, Buildings/JSB_WaterObelisk_Original_Color, Buildings/JSB_WaterObelisk_Original_White",
+			"FromFile": "assets/Overlays/WaterObelisk_Original_{{season}}.png",
+			"Enabled": "True"
+		},
+
+		// Desert Obelisk
+		{
+			"Action": "EditData",
+			"Target": "Data/Buildings",
+			"TargetField": [ "Desert Obelisk", "Skins" ],
+			"Entries": {
+				"{{ModId}}_DesertObelisk_New_Brick": {
+					"ID": "{{ModId}}_DesertObelisk_New_Brick",
+					"Name": "New Brick Desert Obelisk",
+					"Texture": "Buildings/JSB_DesertObelisk_New_Brick"
+				},
+				"{{ModId}}_DesertObelisk_New_Color": {
+					"ID": "{{ModId}}_DesertObelisk_New_Color",
+					"Name": "New Color Desert Obelisk",
+					"Texture": "Buildings/JSB_DesertObelisk_New_Color"
+				},
+				"{{ModId}}_DesertObelisk_New_White": {
+					"ID": "{{ModId}}_DesertObelisk_New_White",
+					"Name": "New White Desert Obelisk",
+					"Texture": "Buildings/JSB_DesertObelisk_New_White"
+				},
+				"{{ModId}}_DesertObelisk_Old_Brick": {
+					"ID": "{{ModId}}_DesertObelisk_Old_Brick",
+					"Name": "Old Brick Desert Obelisk",
+					"Texture": "Buildings/JSB_DesertObelisk_Old_Brick"
+				},
+				"{{ModId}}_DesertObelisk_Old_Color": {
+					"ID": "{{ModId}}_DesertObelisk_Old_Color",
+					"Name": "Old Color Desert Obelisk",
+					"Texture": "Buildings/JSB_DesertObelisk_Old_Color"
+				},
+				"{{ModId}}_DesertObelisk_Old_White": {
+					"ID": "{{ModId}}_DesertObelisk_Old_White",
+					"Name": "Old White Desert Obelisk",
+					"Texture": "Buildings/JSB_DesertObelisk_Old_White"
+				},
+				"{{ModId}}_DesertObelisk_Original_Brick": {
+					"ID": "{{ModId}}_DesertObelisk_Original_Brick",
+					"Name": "Original Brick Desert Obelisk",
+					"Texture": "Buildings/JSB_DesertObelisk_Original_Brick"
+				},
+				"{{ModId}}_DesertObelisk_Original_Color": {
+					"ID": "{{ModId}}_DesertObelisk_Original_Color",
+					"Name": "Original Color Desert Obelisk",
+					"Texture": "Buildings/JSB_DesertObelisk_Original_Color"
+				},
+				"{{ModId}}_DesertObelisk_Original_White": {
+					"ID": "{{ModId}}_DesertObelisk_Original_White",
+					"Name": "Original White Desert Obelisk",
+					"Texture": "Buildings/JSB_DesertObelisk_Original_White"
+				}
+			}
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_DesertObelisk_New_Brick, Buildings/JSB_DesertObelisk_New_Color, Buildings/JSB_DesertObelisk_New_White",
+			"FromFile": "assets/Overlays/DesertObelisk_New_{{season}}.png",
+			"Enabled": "True"
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_DesertObelisk_Old_Brick, Buildings/JSB_DesertObelisk_Old_Color, Buildings/JSB_DesertObelisk_Old_White",
+			"FromFile": "assets/Overlays/DesertObelisk_Old_{{season}}.png",
+			"Enabled": "True"
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_DesertObelisk_Original_Brick, Buildings/JSB_DesertObelisk_Original_Color, Buildings/JSB_DesertObelisk_Original_White",
+			"FromFile": "assets/Overlays/DesertObelisk_Original_{{season}}.png",
+			"Enabled": "True"
+		},
+
+		// Island Obelisk
+		{
+			"Action": "EditData",
+			"Target": "Data/Buildings",
+			"TargetField": [ "Island Obelisk", "Skins" ],
+			"Entries": {
+				"{{ModId}}_IslandObelisk_New_Brick": {
+					"ID": "{{ModId}}_IslandObelisk_New_Brick",
+					"Name": "New Brick Island Obelisk",
+					"Texture": "Buildings/JSB_IslandObelisk_New_Brick"
+				},
+				"{{ModId}}_IslandObelisk_New_Color": {
+					"ID": "{{ModId}}_IslandObelisk_New_Color",
+					"Name": "New Color Island Obelisk",
+					"Texture": "Buildings/JSB_IslandObelisk_New_Color"
+				},
+				"{{ModId}}_IslandObelisk_New_White": {
+					"ID": "{{ModId}}_IslandObelisk_New_White",
+					"Name": "New White Island Obelisk",
+					"Texture": "Buildings/JSB_IslandObelisk_New_White"
+				},
+				"{{ModId}}_IslandObelisk_Old_Brick": {
+					"ID": "{{ModId}}_IslandObelisk_Old_Brick",
+					"Name": "Old Brick Island Obelisk",
+					"Texture": "Buildings/JSB_IslandObelisk_Old_Brick"
+				},
+				"{{ModId}}_IslandObelisk_Old_Color": {
+					"ID": "{{ModId}}_IslandObelisk_Old_Color",
+					"Name": "Old Color Island Obelisk",
+					"Texture": "Buildings/JSB_IslandObelisk_Old_Color"
+				},
+				"{{ModId}}_IslandObelisk_Old_White": {
+					"ID": "{{ModId}}_IslandObelisk_Old_White",
+					"Name": "Old White Island Obelisk",
+					"Texture": "Buildings/JSB_IslandObelisk_Old_White"
+				},
+				"{{ModId}}_IslandObelisk_Original_Brick": {
+					"ID": "{{ModId}}_IslandObelisk_Original_Brick",
+					"Name": "Original Brick Island Obelisk",
+					"Texture": "Buildings/JSB_IslandObelisk_Original_Brick"
+				},
+				"{{ModId}}_IslandObelisk_Original_Color": {
+					"ID": "{{ModId}}_IslandObelisk_Original_Color",
+					"Name": "Original Color Island Obelisk",
+					"Texture": "Buildings/JSB_IslandObelisk_Original_Color"
+				},
+				"{{ModId}}_IslandObelisk_Original_White": {
+					"ID": "{{ModId}}_IslandObelisk_Original_White",
+					"Name": "Original White Island Obelisk",
+					"Texture": "Buildings/JSB_IslandObelisk_Original_White"
+				}
+			}
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_IslandObelisk_New_Brick, Buildings/JSB_IslandObelisk_New_Color, Buildings/JSB_IslandObelisk_New_White",
+			"FromFile": "assets/Overlays/IslandObelisk_New_{{season}}.png",
+			"Enabled": "True"
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_IslandObelisk_Old_Brick, Buildings/JSB_IslandObelisk_Old_Color, Buildings/JSB_IslandObelisk_Old_White",
+			"FromFile": "assets/Overlays/IslandObelisk_Old_{{season}}.png",
+			"Enabled": "True"
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_IslandObelisk_Original_Brick, Buildings/JSB_IslandObelisk_Original_Color, Buildings/JSB_IslandObelisk_Original_White",
+			"FromFile": "assets/Overlays/IslandObelisk_Original_{{season}}.png",
+			"Enabled": "True"
+		},
+
+		// Cabin
+		{
+			"Action": "EditData",
+			"Target": "Data/Buildings",
+			"TargetField": [ "Cabin", "Skins" ],
+			"Entries": {
+				"{{ModId}}_LogCabin_New_Brick": {
+					"ID": "{{ModId}}_LogCabin_New_Brick",
+					"Name": "New Brick Log Cabin",
+					"Texture": "Buildings/JSB_LogCabin_New_Brick"
+				},
+				"{{ModId}}_LogCabin_New_Color": {
+					"ID": "{{ModId}}_LogCabin_New_Color",
+					"Name": "New Color Log Cabin",
+					"Texture": "Buildings/JSB_LogCabin_New_Color"
+				},
+				"{{ModId}}_LogCabin_New_White": {
+					"ID": "{{ModId}}_LogCabin_New_White",
+					"Name": "New White Log Cabin",
+					"Texture": "Buildings/JSB_LogCabin_New_White"
+				},
+				"{{ModId}}_LogCabin_Old_Brick": {
+					"ID": "{{ModId}}_LogCabin_Old_Brick",
+					"Name": "Old Brick Log Cabin",
+					"Texture": "Buildings/JSB_LogCabin_Old_Brick"
+				},
+				"{{ModId}}_LogCabin_Old_Color": {
+					"ID": "{{ModId}}_LogCabin_Old_Color",
+					"Name": "Old Color Log Cabin",
+					"Texture": "Buildings/JSB_LogCabin_Old_Color"
+				},
+				"{{ModId}}_LogCabin_Old_White": {
+					"ID": "{{ModId}}_LogCabin_Old_White",
+					"Name": "Old White Log Cabin",
+					"Texture": "Buildings/JSB_LogCabin_Old_White"
+				},
+				"{{ModId}}_PlankCabin_New_Brick": {
+					"ID": "{{ModId}}_PlankCabin_New_Brick",
+					"Name": "New Brick Plank Cabin",
+					"Texture": "Buildings/JSB_PlankCabin_New_Brick"
+				},
+				"{{ModId}}_PlankCabin_New_Color": {
+					"ID": "{{ModId}}_PlankCabin_New_Color",
+					"Name": "New Color Plank Cabin",
+					"Texture": "Buildings/JSB_PlankCabin_New_Color"
+				},
+				"{{ModId}}_PlankCabin_New_White": {
+					"ID": "{{ModId}}_PlankCabin_New_White",
+					"Name": "New White Plank Cabin",
+					"Texture": "Buildings/JSB_PlankCabin_New_White"
+				},
+				"{{ModId}}_PlankCabin_Old_Brick": {
+					"ID": "{{ModId}}_PlankCabin_Old_Brick",
+					"Name": "Old Brick Plank Cabin",
+					"Texture": "Buildings/JSB_PlankCabin_Old_Brick"
+				},
+				"{{ModId}}_PlankCabin_Old_Color": {
+					"ID": "{{ModId}}_PlankCabin_Old_Color",
+					"Name": "Old Color Plank Cabin",
+					"Texture": "Buildings/JSB_PlankCabin_Old_Color"
+				},
+				"{{ModId}}_PlankCabin_Old_White": {
+					"ID": "{{ModId}}_PlankCabin_Old_White",
+					"Name": "Old White Plank Cabin",
+					"Texture": "Buildings/JSB_PlankCabin_Old_White"
+				},
+				"{{ModId}}_StoneCabin_New_Brick": {
+					"ID": "{{ModId}}_StoneCabin_New_Brick",
+					"Name": "New Brick Stone Cabin",
+					"Texture": "Buildings/JSB_StoneCabin_New_Brick"
+				},
+				"{{ModId}}_StoneCabin_New_Color": {
+					"ID": "{{ModId}}_StoneCabin_New_Color",
+					"Name": "New Color Stone Cabin",
+					"Texture": "Buildings/JSB_StoneCabin_New_Color"
+				},
+				"{{ModId}}_StoneCabin_New_White": {
+					"ID": "{{ModId}}_StoneCabin_New_White",
+					"Name": "New White Stone Cabin",
+					"Texture": "Buildings/JSB_StoneCabin_New_White"
+				},
+				"{{ModId}}_StoneCabin_Old_Brick": {
+					"ID": "{{ModId}}_StoneCabin_Old_Brick",
+					"Name": "Old Brick Stone Cabin",
+					"Texture": "Buildings/JSB_StoneCabin_Old_Brick"
+				},
+				"{{ModId}}_StoneCabin_Old_Color": {
+					"ID": "{{ModId}}_StoneCabin_Old_Color",
+					"Name": "Old Color Stone Cabin",
+					"Texture": "Buildings/JSB_StoneCabin_Old_Color"
+				},
+				"{{ModId}}_StoneCabin_Old_White": {
+					"ID": "{{ModId}}_StoneCabin_Old_White",
+					"Name": "Old White Stone Cabin",
+					"Texture": "Buildings/JSB_StoneCabin_Old_White"
+				}
+			}
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_LogCabin_New_Brick, Buildings/JSB_LogCabin_New_Color, Buildings/JSB_LogCabin_New_White",
+			"FromFile": "assets/Overlays/LogCabin_New_{{season}}.png",
+			"Enabled": "True"
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_LogCabin_Old_Brick, Buildings/JSB_LogCabin_Old_Color, Buildings/JSB_LogCabin_Old_White",
+			"FromFile": "assets/Overlays/LogCabin_Old_{{season}}.png",
+			"Enabled": "True"
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_LogCabin_New_Brick, Buildings/JSB_LogCabin_New_Color, Buildings/JSB_LogCabin_New_White",
+			"FromFile": "assets/Overlays/LogCabin_Holiday_New_{{season}}.png",
+			"Enabled": "True",
+			"When": {
+				"Log Cabin Decor": "True"
+			}
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_LogCabin_Old_Brick, Buildings/JSB_LogCabin_Old_Color, Buildings/JSB_LogCabin_Old_White",
+			"FromFile": "assets/Overlays/LogCabin_Holiday_Old_{{season}}.png",
+			"Enabled": "True",
+			"When": {
+				"Log Cabin Decor": "True"
+			}
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_PlankCabin_New_Brick, Buildings/JSB_PlankCabin_New_Color, Buildings/JSB_PlankCabin_New_White",
+			"FromFile": "assets/Overlays/PlankCabin_New_{{season}}.png",
+			"Enabled": "True"
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_PlankCabin_Old_Brick, Buildings/JSB_PlankCabin_Old_Color, Buildings/JSB_PlankCabin_Old_White",
+			"FromFile": "assets/Overlays/PlankCabin_Old_{{season}}.png",
+			"Enabled": "True"
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_PlankCabin_New_Brick, Buildings/JSB_PlankCabin_New_Color, Buildings/JSB_PlankCabin_New_White",
+			"FromFile": "assets/Overlays/PlankCabin_Holiday_New_{{season}}.png",
+			"Enabled": "True",
+			"When": {
+				"Plank Cabin Decor": "True"
+			}
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_PlankCabin_Old_Brick, Buildings/JSB_PlankCabin_Old_Color, Buildings/JSB_PlankCabin_Old_White",
+			"FromFile": "assets/Overlays/PlankCabin_Holiday_Old_{{season}}.png",
+			"Enabled": "True",
+			"When": {
+				"Plank Cabin Decor": "True"
+			}
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_StoneCabin_New_Brick, Buildings/JSB_StoneCabin_New_Color, Buildings/JSB_StoneCabin_New_White",
+			"FromFile": "assets/Overlays/StoneCabin_New_{{season}}.png",
+			"Enabled": "True"
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_StoneCabin_Old_Brick, Buildings/JSB_StoneCabin_Old_Color, Buildings/JSB_StoneCabin_Old_White",
+			"FromFile": "assets/Overlays/StoneCabin_Old_{{season}}.png",
+			"Enabled": "True"
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_StoneCabin_New_Brick, Buildings/JSB_StoneCabin_New_Color, Buildings/JSB_StoneCabin_New_White",
+			"FromFile": "assets/Overlays/StoneCabin_Holiday_New_{{season}}.png",
+			"Enabled": "True",
+			"When": {
+				"Stone Cabin Decor": "True"
+			}
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_StoneCabin_Old_Brick, Buildings/JSB_StoneCabin_Old_Color, Buildings/JSB_StoneCabin_Old_White",
+			"FromFile": "assets/Overlays/StoneCabin_Holiday_Old_{{season}}.png",
+			"Enabled": "True",
+			"When": {
+				"Stone Cabin Decor": "True"
+			}
+		},
+
+		// Masks
+		{
+			"Action": "Load",
+			"Target": "Buildings/JSB_BarnDeluxe_New_Brick_PaintMask, Buildings/JSB_BarnDeluxe_New_Color_PaintMask, Buildings/JSB_BarnDeluxe_New_White_PaintMask",
+			"FromFile": "assets/Masks/JSB_BarnDeluxe_New_{{season}}.png"
+		},
+		{
+			"Action": "Load",
+			"Target": "Buildings/JSB_BarnDeluxe_Old_Brick_PaintMask, Buildings/JSB_BarnDeluxe_Old_Color_PaintMask, Buildings/JSB_BarnDeluxe_Old_White_PaintMask",
+			"FromFile": "assets/Masks/JSB_BarnDeluxe_Old_{{season}}.png"
+		},
+		{
+			"Action": "Load",
+			"Target": "Buildings/JSB_BigShed_New_Brick_PaintMask, Buildings/JSB_BigShed_New_Color_PaintMask, Buildings/JSB_BigShed_New_White_PaintMask",
+			"FromFile": "assets/Masks/JSB_BigShed_New_{{season}}.png"
+		},
+		{
+			"Action": "Load",
+			"Target": "Buildings/JSB_BigShed_Old_Brick_PaintMask, Buildings/JSB_BigShed_Old_Color_PaintMask, Buildings/JSB_BigShed_Old_White_PaintMask",
+			"FromFile": "assets/Masks/JSB_BigShed_Old_{{season}}.png"
+		},
+		{
+			"Action": "Load",
+			"Target": "Buildings/JSB_CoopDeluxe_New_Brick_PaintMask, Buildings/JSB_CoopDeluxe_New_Color_PaintMask, Buildings/JSB_CoopDeluxe_New_White_PaintMask",
+			"FromFile": "assets/Masks/JSB_CoopDeluxe_New_{{season}}.png"
+		},
+		{
+			"Action": "Load",
+			"Target": "Buildings/JSB_CoopDeluxe_Old_Brick_PaintMask, Buildings/JSB_CoopDeluxe_Old_Color_PaintMask, Buildings/JSB_CoopDeluxe_Old_White_PaintMask",
+			"FromFile": "assets/Masks/JSB_CoopDeluxe_Old_{{season}}.png"
+		},
+		{
+			"Action": "Load",
+			"Target": "Buildings/JSB_LogCabin_New_Brick_PaintMask, Buildings/JSB_LogCabin_New_Color_PaintMask, Buildings/JSB_LogCabin_New_White_PaintMask",
+			"FromFile": "assets/Masks/JSB_LogCabin_New_{{season}}_false.png",
+			"When": {
+				"Log Cabin Decor": "False"
+			}
+		},
+		{
+			"Action": "Load",
+			"Target": "Buildings/JSB_LogCabin_Old_Brick_PaintMask, Buildings/JSB_LogCabin_Old_Color_PaintMask, Buildings/JSB_LogCabin_Old_White_PaintMask",
+			"FromFile": "assets/Masks/JSB_LogCabin_Old_{{season}}_false.png",
+			"When": {
+				"Log Cabin Decor": "False"
+			}
+		},
+		{
+			"Action": "Load",
+			"Target": "Buildings/JSB_LogCabin_New_Brick_PaintMask, Buildings/JSB_LogCabin_New_Color_PaintMask, Buildings/JSB_LogCabin_New_White_PaintMask",
+			"FromFile": "assets/Masks/JSB_LogCabin_New_{{season}}_true.png",
+			"When": {
+				"Log Cabin Decor": "True"
+			}
+		},
+		{
+			"Action": "Load",
+			"Target": "Buildings/JSB_LogCabin_Old_Brick_PaintMask, Buildings/JSB_LogCabin_Old_Color_PaintMask, Buildings/JSB_LogCabin_Old_White_PaintMask",
+			"FromFile": "assets/Masks/JSB_LogCabin_Old_{{season}}_true.png",
+			"When": {
+				"Log Cabin Decor": "True"
+			}
+		},
+		{
+			"Action": "Load",
+			"Target": "Buildings/JSB_PlankCabin_New_Brick_PaintMask, Buildings/JSB_PlankCabin_New_Color_PaintMask, Buildings/JSB_PlankCabin_New_White_PaintMask",
+			"FromFile": "assets/Masks/JSB_PlankCabin_New_{{season}}_false.png",
+			"When": {
+				"Log Cabin Decor": "False"
+			}
+		},
+		{
+			"Action": "Load",
+			"Target": "Buildings/JSB_PlankCabin_Old_Brick_PaintMask, Buildings/JSB_PlankCabin_Old_Color_PaintMask, Buildings/JSB_PlankCabin_Old_White_PaintMask",
+			"FromFile": "assets/Masks/JSB_PlankCabin_Old_{{season}}_false.png",
+			"When": {
+				"Log Cabin Decor": "False"
+			}
+		},
+		{
+			"Action": "Load",
+			"Target": "Buildings/JSB_PlankCabin_New_Brick_PaintMask, Buildings/JSB_PlankCabin_New_Color_PaintMask, Buildings/JSB_PlankCabin_New_White_PaintMask",
+			"FromFile": "assets/Masks/JSB_PlankCabin_New_{{season}}_true.png",
+			"When": {
+				"Log Cabin Decor": "True"
+			}
+		},
+		{
+			"Action": "Load",
+			"Target": "Buildings/JSB_PlankCabin_Old_Brick_PaintMask, Buildings/JSB_PlankCabin_Old_Color_PaintMask, Buildings/JSB_PlankCabin_Old_White_PaintMask",
+			"FromFile": "assets/Masks/JSB_PlankCabin_Old_{{season}}_true.png",
+			"When": {
+				"Log Cabin Decor": "True"
+			}
+		},
+		{
+			"Action": "Load",
+			"Target": "Buildings/JSB_StoneCabin_New_Brick_PaintMask, Buildings/JSB_StoneCabin_New_Color_PaintMask, Buildings/JSB_StoneCabin_New_White_PaintMask",
+			"FromFile": "assets/Masks/JSB_StoneCabin_New_{{season}}_false.png",
+			"When": {
+				"Log Cabin Decor": "False"
+			}
+		},
+		{
+			"Action": "Load",
+			"Target": "Buildings/JSB_StoneCabin_Old_Brick_PaintMask, Buildings/JSB_StoneCabin_Old_Color_PaintMask, Buildings/JSB_StoneCabin_Old_White_PaintMask",
+			"FromFile": "assets/Masks/JSB_StoneCabin_Old_{{season}}_false.png",
+			"When": {
+				"Log Cabin Decor": "False"
+			}
+		},
+		{
+			"Action": "Load",
+			"Target": "Buildings/JSB_StoneCabin_New_Brick_PaintMask, Buildings/JSB_StoneCabin_New_Color_PaintMask, Buildings/JSB_StoneCabin_New_White_PaintMask",
+			"FromFile": "assets/Masks/JSB_StoneCabin_New_{{season}}_true.png",
+			"When": {
+				"Log Cabin Decor": "True"
+			}
+		},
+		{
+			"Action": "Load",
+			"Target": "Buildings/JSB_StoneCabin_Old_Brick_PaintMask, Buildings/JSB_StoneCabin_Old_Color_PaintMask, Buildings/JSB_StoneCabin_Old_White_PaintMask",
+			"FromFile": "assets/Masks/JSB_StoneCabin_Old_{{season}}_true.png",
+			"When": {
+				"Log Cabin Decor": "True"
+			}
+		},
+		{
+			"Action": "Load",
+			"Target": "Buildings/JSB_StableStone_Brick_PaintMask, Buildings/JSB_StableStone_Color_PaintMask, Buildings/JSB_StableStone_White_PaintMask",
+			"FromFile": "assets/Masks/JSB_StableStone_{{season}}.png"
+		},
+		{
+			"Action": "Load",
+			"Target": "Buildings/JSB_StableWood_Brick_PaintMask, Buildings/JSB_StableWood_Color_PaintMask, Buildings/JSB_StableWood_White_PaintMask",
+			"FromFile": "assets/Masks/JSB_StableWood_{{season}}.png"
+		},
+
+		{
+			"Action": "EditImage",
+			"Target": "Buildings/houses_PaintMask",
+			"FromFile": "assets/Masks/JSB_Farmhouse_{{Farmhouse Style}}_{{season}}_{{Farmhouse Decor}}.png",
+			"Enabled": "True",
+			"When": {
+				"Farmhouse Style": "Cabin, Greenhouse, Manor, Rustic, StainedGlass, Vanilla, Cottage, Lodge"
+			}
+		},
+
+		// Island Farm
+		{
+			"LogName": "Island Mailbox",
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Maps/island_tilesheet_1",
+			"FromFile": "assets/Overlays/Island Mailbox.png",
+			"ToArea": {
+				"X": 48,
+				"Y": 368,
+				"Width": 16,
+				"Height": 32
+			},
+			"Enabled": "True",
+			"When": {
+				"Island Mailbox": "True"
+			}
+		},
+		{
+			"LogName": "Island Farmhouse Broken 1",
+			"Action": "EditImage",
+			"Patchmode": "Replace",
+			"Target": "Maps/island_tilesheet_1",
+			"FromFile": "assets/Skins/JSB_IslandFarmhouse_{{Building Theme}}.png",
+			"FromArea": {
+				"X": 0,
+				"Y": 16,
+				"Width": 112,
+				"Height": 112
+			},
+			"ToArea": {
+				"X": 0,
+				"Y": 512,
+				"Width": 112,
+				"Height": 112
+			},
+			"Enabled": "True",
+			"When": {
+				"Island Farmhouse": "True"
+			}
+		},
+		{
+			"LogName": "Island Farmhouse Broken 2",
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Maps/island_tilesheet_1",
+			"FromFile": "assets/Skins/JSB_IslandFarmhouse_{{Building Theme}}.png",
+			"FromArea": {
+				"X": 0,
+				"Y": 128,
+				"Width": 112,
+				"Height": 16
+			},
+			"ToArea": {
+				"X": 0,
+				"Y": 624,
+				"Width": 112,
+				"Height": 16
+			},
+			"Enabled": "True",
+			"When": {
+				"Island Farmhouse": "True"
+			}
+		},
+		{
+			"LogName": "Island Farmhouse Fixed 1",
+			"Action": "EditImage",
+			"Patchmode": "Replace",
+			"Target": "Maps/island_tilesheet_1",
+			"FromFile": "assets/Skins/JSB_IslandFarmhouse_{{Building Theme}}.png",
+			"FromArea": {
+				"X": 112,
+				"Y": 0,
+				"Width": 112,
+				"Height": 128
+			},
+			"ToArea": {
+				"X": 112,
+				"Y": 496,
+				"Width": 112,
+				"Height": 128
+			},
+			"Enabled": "True",
+			"When": {
+				"Island Farmhouse": "True"
+			}
+		},
+		{
+			"LogName": "Island Farmhouse Fixed 2",
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Maps/island_tilesheet_1",
+			"FromFile": "assets/Skins/JSB_IslandFarmhouse_{{Building Theme}}.png",
+			"FromArea": {
+				"X": 112,
+				"Y": 128,
+				"Width": 112,
+				"Height": 16
+			},
+			"ToArea": {
+				"X": 112,
+				"Y": 624,
+				"Width": 112,
+				"Height": 16
+			},
+			"Enabled": "True",
+			"When": {
+				"Island Farmhouse": "True"
+			}
+		},
+		{
+			"LogName": "Island Shipping Bin",
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Maps/island_tilesheet_1",
+			"FromArea": {
+				"X": 192,
+				"Y": 224,
+				"Width": 32,
+				"Height": 32
+			},
+			"ToArea": {
+				"X": 192,
+				"Y": 720,
+				"Width": 32,
+				"Height": 32
+			},
+			"FromFile": "assets/Overlays/spring_outdoorsTileSheet.png",
+			"Enabled": "True",
+			"When": {
+				"Shipping Bin Recolor": "True"
+			}
+		},
+		{
+			"LogName": "Farm Obelisk",
+			"Action": "EditImage",
+			"Target": "Maps/Farm Obelisk",
+			"FromFile": "assets/Skins/JSB_FarmObelisk_New_{{Building Theme}}.png",
+			"Enabled": "True",
+			"When": {
+				"Farm Obelisk": "True"
+			}
+		},
+
+		// PaintData for masks
+		{
+			"Action": "EditData",
+			"Target": "Data/PaintData",
+			"Entries": {
+				"JSB_BarnDeluxe_New_Brick": "Building/-15 0/Roof/-10 5/Trim/-10 5",
+				"JSB_BarnDeluxe_New_Color": "Building/-15 0/Roof/-10 5/Trim/-10 5",
+				"JSB_BarnDeluxe_New_White": "Building/-15 0/Roof/-10 5/Trim/-10 5",
+				"JSB_BarnDeluxe_Old_Brick": "Building/-15 0/Roof/-10 5/Trim/-10 5",
+				"JSB_BarnDeluxe_Old_Color": "Building/-15 0/Roof/-10 5/Trim/-10 5",
+				"JSB_BarnDeluxe_Old_White": "Building/-15 0/Roof/-10 5/Trim/-10 5",
+				"JSB_BigShed_New_Brick": "Building/-45 -10/Roof/-20 5/Trim/-25 0",
+				"JSB_BigShed_New_Color": "Building/-45 -10/Roof/-20 5/Trim/-25 0",
+				"JSB_BigShed_New_White": "Building/-45 -10/Roof/-20 5/Trim/-25 0",
+				"JSB_BigShed_Old_Brick": "Building/-45 -10/Roof/-20 5/Trim/-25 0",
+				"JSB_BigShed_Old_Color": "Building/-45 -10/Roof/-20 5/Trim/-25 0",
+				"JSB_BigShed_Old_White": "Building/-45 -10/Roof/-20 5/Trim/-25 0",
+				"JSB_CoopDeluxe_New_Brick": "Building/-25 0/Roof/-15 5/Trim/-25 0",
+				"JSB_CoopDeluxe_New_Color": "Building/-25 0/Roof/-15 5/Trim/-25 0",
+				"JSB_CoopDeluxe_New_White": "Building/-25 0/Roof/-15 5/Trim/-25 0",
+				"JSB_CoopDeluxe_Old_Brick": "Building/-25 0/Roof/-15 5/Trim/-25 0",
+				"JSB_CoopDeluxe_Old_Color": "Building/-25 0/Roof/-15 5/Trim/-25 0",
+				"JSB_CoopDeluxe_Old_White": "Building/-25 0/Roof/-15 5/Trim/-25 0",
+				"JSB_LogCabin_New_Brick": "Building/-20 20/Roof/-15 5/Trim/-10 5",
+				"JSB_LogCabin_New_Color": "Building/-20 20/Roof/-15 5/Trim/-10 5",
+				"JSB_LogCabin_New_White": "Building/-20 20/Roof/-15 5/Trim/-10 5",
+				"JSB_LogCabin_Old_Brick": "Building/-20 20/Roof/-15 5/Trim/-10 5",
+				"JSB_LogCabin_Old_Color": "Building/-20 20/Roof/-15 5/Trim/-10 5",
+				"JSB_LogCabin_Old_White": "Building/-20 20/Roof/-15 5/Trim/-10 5",
+				"JSB_PlankCabin_New_Brick": "Building/-55 -20/Roof/-10 5/Trim/-55 -30",
+				"JSB_PlankCabin_New_Color": "Building/-55 -20/Roof/-10 5/Trim/-55 -30",
+				"JSB_PlankCabin_New_White": "Building/-55 -20/Roof/-10 5/Trim/-55 -30",
+				"JSB_PlankCabin_Old_Brick": "Building/-55 -20/Roof/-10 5/Trim/-55 -30",
+				"JSB_PlankCabin_Old_Color": "Building/-55 -20/Roof/-10 5/Trim/-55 -30",
+				"JSB_PlankCabin_Old_White": "Building/-55 -20/Roof/-10 5/Trim/-55 -30",
+				"JSB_StoneCabin_New_Brick": "Building/-15 25/Roof/-15 5/Trim/-5 5",
+				"JSB_StoneCabin_New_Color": "Building/-15 25/Roof/-15 5/Trim/-5 5",
+				"JSB_StoneCabin_New_White": "Building/-15 25/Roof/-15 5/Trim/-5 5",
+				"JSB_StoneCabin_Old_Brick": "Building/-15 25/Roof/-15 5/Trim/-5 5",
+				"JSB_StoneCabin_Old_Color": "Building/-15 25/Roof/-15 5/Trim/-5 5",
+				"JSB_StoneCabin_Old_White": "Building/-15 25/Roof/-15 5/Trim/-5 5",
+				"JSB_StableWood_Brick": "Building/-20 5/Roof/-25 0/Trim/-15 0",
+				"JSB_StableWood_Color": "Building/-20 5/Roof/-25 0/Trim/-15 0",
+				"JSB_StableWood_White": "Building/-20 5/Roof/-25 0/Trim/-15 0",
+				"JSB_StableStone_Brick": "Building/-20 5/Roof/-25 0/Trim/-15 0",
+				"JSB_StableStone_Color": "Building/-20 5/Roof/-25 0/Trim/-15 0",
+				"JSB_StableStone_White": "Building/-20 5/Roof/-25 0/Trim/-15 0"
+			}
+		}
+	]
+}
