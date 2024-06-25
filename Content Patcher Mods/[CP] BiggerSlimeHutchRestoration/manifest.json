@@ -1,0 +1,11 @@
+{
+    "Name": "Bigger Slime Hutch Restoration",
+    "Author": "juminos",
+    "Version": "1.0.0",
+    "Description": "Restores the larger Slime Hutch.",
+    "UniqueID": "juminos.BiggerSlimeHutchRestoration",
+    "UpdateKeys": [],
+    "ContentPackFor": {
+        "UniqueID": "Pathoschild.ContentPatcher"
+    }
+}

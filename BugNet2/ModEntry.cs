@@ -126,8 +126,8 @@ namespace BugNet2
             Register("SummerButterflyOrange", tilesheet, 156, CritterBuilder.ForButterfly(156, summer: true));
             Register("SummerButterflyRareRed", tilesheet, 480, CritterBuilder.ForButterfly(480, summer: true));
             Register("SummerButterflyRarePink", tilesheet, 484, CritterBuilder.ForButterfly(484, summer: true));
-            Register("SummerButterflyRareGreen", tilesheet, 169, CritterBuilder.ForButterfly(169, summer: true));
-            Register("SummerButterflyRarePurple", tilesheet, 173, CritterBuilder.ForButterfly(173, summer: true));
+            Register("SummerButterflyRareGreen", tilesheet, 428, CritterBuilder.ForButterfly(428, summer: true));
+            Register("SummerButterflyRarePurple", tilesheet, 432, CritterBuilder.ForButterfly(432, summer: true));
             Register("SpringButterflyPalePink", tilesheet, 160, CritterBuilder.ForButterfly(160, summer: false));
             Register("SpringButterflyMagenta", tilesheet, 180, CritterBuilder.ForButterfly(180, summer: false));
             Register("SpringButterflyWhite", tilesheet, 163, CritterBuilder.ForButterfly(163, summer: false));

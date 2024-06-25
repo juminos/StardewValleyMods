@@ -1,0 +1,17 @@
+{
+  "Format": "2.0",
+  "Changes": [
+
+    // Replace Slime Hutch
+    {
+      "Action": "EditData",
+      "Target": "Data/Buildings",
+
+    },
+    {
+      "Action": "Load",
+      "Target": "Mods/{{ModId}}_SlimeHutch",
+      "FromFile": "assets/SlimeHutch.png"
+    }
+  ]
+}

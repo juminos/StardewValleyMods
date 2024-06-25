@@ -5,6 +5,7 @@ using StardewValley;
 using StardewModdingAPI;
 using StardewModdingAPI.Events;
 using System.Threading;
+using static StardewValley.Minigames.CraneGame;
 
 namespace CritterFixes
 { 
@@ -20,21 +21,6 @@ namespace CritterFixes
 
             ModEntry.Instance = this;
             SMonitor = this.Monitor;
-
-            helper.Events.Content.AssetRequested += this.OnAssetRequested;
-        }
-
-        private void OnAssetRequested(object sender, AssetRequestedEventArgs e)
-        {
-            if (e.NameWithoutLocale.IsEquivalentTo("TileSheets/critters"))
-            {
-                e.Edit(asset =>
-                {
-                    var editor = asset.AsImage();
-                    IRawTextureData sourceImage = this.Helper.ModContent.Load<IRawTextureData>("assets/butterflyfix.png");
-                    editor.PatchImage(sourceImage, targetArea: new Rectangle(144, 128, sourceImage.Width, sourceImage.Height));
-                });
-            }
         }
     }
 
@@ -63,6 +49,26 @@ namespace CritterFixes
                             break;
                         }
                     }
+                }
+            }
+        }
+        [HarmonyPatch(typeof(Butterfly))]
+        [HarmonyPatch(MethodType.Constructor, typeof(GameLocation), typeof(Vector2), typeof(bool), typeof(bool), typeof(int), typeof(bool))]
+        public static class Butterfly_Constructor_Patch
+        {
+            public static void Postfix(Butterfly __instance, GameLocation location, Vector2 position, bool islandButterfly, bool forceSummerButterfly, int baseFrameOverride, bool prismatic)
+            {
+                if (__instance.baseFrame == 169)
+                {
+                    __instance.baseFrame = 428;
+                    __instance.sprite = new AnimatedSprite(Critter.critterTexture, 428, 16, 16);
+                    __instance.sprite.loop = false;
+                }
+                if (__instance.baseFrame == 173)
+                {
+                    __instance.baseFrame = 432;
+                    __instance.sprite = new AnimatedSprite(Critter.critterTexture, 432, 16, 16);
+                    __instance.sprite.loop = false;
                 }
             }
         }

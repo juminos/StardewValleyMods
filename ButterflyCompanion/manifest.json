@@ -1,0 +1,10 @@
+{
+  "Name": "Buttterfly Companion",
+  "Version": "1.0.0",
+  "MinimumApiVersion": "4.0.0",
+  "Description": "Adds a butterfly companion.",
+  "UniqueID": "juminos.ButterflyCompanion",
+  "EntryDll": "ButterflyCompanion.dll",
+  "UpdateKeys": [],
+  "Dependencies": []
+}

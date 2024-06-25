@@ -1,0 +1,105 @@
+{
+  "Changes": [
+    // Animals
+    {
+      "Action": "EditData",
+      "Target": "Data/FarmAnimals",
+      "TargetField": [
+        "Goat",
+        "Skins"
+      ],
+      "Entries": {
+        "{{ModId}}_Goat_1": {
+          "ID": "{{ModId}}_Goat_1",
+          "Texture": "Mods/{{ModId}}/Goat_1",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyGoat_1"
+        },
+        "{{ModId}}_Goat_10": {
+          "ID": "{{ModId}}_Goat_10",
+          "Texture": "Mods/{{ModId}}/Goat_10",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyGoat_10"
+        },
+        "{{ModId}}_Goat_11": {
+          "ID": "{{ModId}}_Goat_11",
+          "Texture": "Mods/{{ModId}}/Goat_11",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyGoat_11"
+        },
+        "{{ModId}}_Goat_12": {
+          "ID": "{{ModId}}_Goat_12",
+          "Texture": "Mods/{{ModId}}/Goat_12",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyGoat_12"
+        },
+        "{{ModId}}_Goat_13": {
+          "ID": "{{ModId}}_Goat_13",
+          "Texture": "Mods/{{ModId}}/Goat_13",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyGoat_13"
+        },
+        "{{ModId}}_Goat_19": {
+          "ID": "{{ModId}}_Goat_19",
+          "Texture": "Mods/{{ModId}}/Goat_19",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyGoat_19"
+        },
+        "{{ModId}}_Goat_2": {
+          "ID": "{{ModId}}_Goat_2",
+          "Texture": "Mods/{{ModId}}/Goat_2",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyGoat_2"
+        },
+        "{{ModId}}_Goat_3": {
+          "ID": "{{ModId}}_Goat_3",
+          "Texture": "Mods/{{ModId}}/Goat_3",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyGoat_3"
+        },
+        "{{ModId}}_Goat_4": {
+          "ID": "{{ModId}}_Goat_4",
+          "Texture": "Mods/{{ModId}}/Goat_4",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyGoat_4"
+        },
+        "{{ModId}}_Goat_5": {
+          "ID": "{{ModId}}_Goat_5",
+          "Texture": "Mods/{{ModId}}/Goat_5",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyGoat_5"
+        },
+        "{{ModId}}_Goat_6": {
+          "ID": "{{ModId}}_Goat_6",
+          "Texture": "Mods/{{ModId}}/Goat_6",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyGoat_6"
+        },
+        "{{ModId}}_Goat_7": {
+          "ID": "{{ModId}}_Goat_7",
+          "Texture": "Mods/{{ModId}}/Goat_7",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyGoat_7"
+        },
+        "{{ModId}}_Goat_8": {
+          "ID": "{{ModId}}_Goat_8",
+          "Texture": "Mods/{{ModId}}/Goat_8",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyGoat_8"
+        },
+        "{{ModId}}_Goat_9": {
+          "ID": "{{ModId}}_Goat_9",
+          "Texture": "Mods/{{ModId}}/Goat_9",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyGoat_9"
+        }
+      }
+    },
+    // Load Sprites
+    {
+      "Action": "Load",
+      "Target": "Mods/{{ModId}}/Goat_1, Mods/{{ModId}}/BabyGoat_1, Mods/{{ModId}}/Goat_10, Mods/{{ModId}}/BabyGoat_10, Mods/{{ModId}}/Goat_11, Mods/{{ModId}}/BabyGoat_11, Mods/{{ModId}}/Goat_12, Mods/{{ModId}}/BabyGoat_12, Mods/{{ModId}}/Goat_13, Mods/{{ModId}}/BabyGoat_13, Mods/{{ModId}}/Goat_19, Mods/{{ModId}}/BabyGoat_19, Mods/{{ModId}}/Goat_2, Mods/{{ModId}}/BabyGoat_2, Mods/{{ModId}}/Goat_3, Mods/{{ModId}}/BabyGoat_3, Mods/{{ModId}}/Goat_4, Mods/{{ModId}}/BabyGoat_4, Mods/{{ModId}}/Goat_5, Mods/{{ModId}}/BabyGoat_5, Mods/{{ModId}}/Goat_6, Mods/{{ModId}}/BabyGoat_6, Mods/{{ModId}}/Goat_7, Mods/{{ModId}}/BabyGoat_7, Mods/{{ModId}}/Goat_8, Mods/{{ModId}}/BabyGoat_8, Mods/{{ModId}}/Goat_9, Mods/{{ModId}}/BabyGoat_9",
+      "FromFile": "assets/Goat/{{TargetWithoutPath}}.png"
+    }
+  ]
+}

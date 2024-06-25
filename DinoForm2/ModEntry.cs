@@ -122,6 +122,14 @@ namespace DinoForm
         {
             if (!Config.ModEnabled || !Context.CanPlayerMove)
                 return;
+            if (Game1.player.hasBuff("juminos.DinoForm2_DinoForm"))
+            {
+                Game1.player.modData[DinoFormKey] = DinoForm.Temporary + "";
+            }
+            else if (DinoFormStatus(Game1.player) == DinoForm.Temporary)
+            {
+                Game1.player.modData.Remove(DinoFormKey);
+            }
             if (Game1.player?.currentLocation != null && breathingFire.Value && DinoFormStatus(Game1.player) != DinoForm.Inactive)
             {
                 if (breathingTicks.Value % 120 == 0 && Config.FireSound != "")
@@ -182,16 +190,18 @@ namespace DinoForm
 
         private void GameLoop_UpdateTicked(object? sender, StardewModdingAPI.Events.UpdateTickedEventArgs e)
         {
-            if (!Config.ModEnabled || !Context.IsWorldReady || Game1.killScreen || Game1.player is null || Game1.player.health <= 0 || Game1.timeOfDay >= 2600 || Game1.eventUp || Game1.CurrentEvent != null || !Game1.player.hasBuff("juminos.DinoForm2_DinoForm"))
+            if (!Config.ModEnabled || !Context.IsWorldReady || Game1.killScreen || Game1.player is null || Game1.player.health <= 0 || Game1.timeOfDay >= 2600 || Game1.eventUp || Game1.CurrentEvent != null)
             {
                 ResetForm();
                 return;
             }
-
-            if (DinoFormStatus(Game1.player) != DinoForm.Active && Game1.player.hasBuff("juminos.DinoForm2_DinoForm"))
+            if (Game1.player.hasBuff("juminos.DinoForm2_DinoForm") && DinoFormStatus(Game1.player) != DinoForm.Temporary)
             {
-                SMonitor.Log("Player triggered transformation.", LogLevel.Trace);
-                Transform();
+                PlayTransform();
+            }
+            if (!Game1.player.hasBuff("juminos.DinoForm2_DinoForm") && DinoFormStatus(Game1.player) == DinoForm.Temporary)
+            {
+                PlayTransform();
             }
         }
 
@@ -199,10 +209,6 @@ namespace DinoForm
         {
             if (!Config.ModEnabled || !Context.CanPlayerMove)
                 return;
-            if (Config.TransformKey.JustPressed())
-            {
-                Transform();
-            }
             else if (Config.FireKey.JustPressed() && DinoFormStatus(Game1.player) != DinoForm.Inactive)
             {
                 breathingFire.Value = true;
@@ -210,6 +216,10 @@ namespace DinoForm
             else if (breathingFire.Value && !Config.FireKey.IsDown() && DinoFormStatus(Game1.player) != DinoForm.Inactive)
             {
                 breathingFire.Value = false;
+            }
+            if (Config.TransformKey.JustPressed())
+            {
+                Transform();
             }
         }
 

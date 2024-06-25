@@ -1,0 +1,248 @@
+{
+  "Changes": [
+    // Animals
+    {
+      "Action": "EditData",
+      "Target": "Data/FarmAnimals",
+      "TargetField": [
+        "White Cow",
+        "Skins"
+      ],
+      "Entries": {
+        "{{ModId}}_Cow1": {
+          "ID": "{{ModId}}_Cow1",
+          "Texture": "Mods/{{ModId}}/Cow1",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyCow1"
+        },
+        "{{ModId}}_Cow10": {
+          "ID": "{{ModId}}_Cow10",
+          "Texture": "Mods/{{ModId}}/Cow10",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyCow10"
+        },
+        "{{ModId}}_Cow11": {
+          "ID": "{{ModId}}_Cow11",
+          "Texture": "Mods/{{ModId}}/Cow11",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyCow11"
+        },
+        "{{ModId}}_Cow12": {
+          "ID": "{{ModId}}_Cow12",
+          "Texture": "Mods/{{ModId}}/Cow12",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyCow12"
+        },
+        "{{ModId}}_Cow13": {
+          "ID": "{{ModId}}_Cow13",
+          "Texture": "Mods/{{ModId}}/Cow13",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyCow13"
+        },
+        "{{ModId}}_Cow14": {
+          "ID": "{{ModId}}_Cow14",
+          "Texture": "Mods/{{ModId}}/Cow14",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyCow14"
+        },
+        "{{ModId}}_Cow15": {
+          "ID": "{{ModId}}_Cow15",
+          "Texture": "Mods/{{ModId}}/Cow15",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyCow15"
+        },
+        "{{ModId}}_Cow16": {
+          "ID": "{{ModId}}_Cow16",
+          "Texture": "Mods/{{ModId}}/Cow16",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyCow16"
+        },
+        "{{ModId}}_Cow17": {
+          "ID": "{{ModId}}_Cow17",
+          "Texture": "Mods/{{ModId}}/Cow17",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyCow17"
+        },
+        "{{ModId}}_Cow2": {
+          "ID": "{{ModId}}_Cow2",
+          "Texture": "Mods/{{ModId}}/Cow2",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyCow2"
+        },
+        "{{ModId}}_Cow23": {
+          "ID": "{{ModId}}_Cow23",
+          "Texture": "Mods/{{ModId}}/Cow23",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyCow23"
+        },
+        "{{ModId}}_Cow3": {
+          "ID": "{{ModId}}_Cow3",
+          "Texture": "Mods/{{ModId}}/Cow3",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyCow3"
+        },
+        "{{ModId}}_Cow4": {
+          "ID": "{{ModId}}_Cow4",
+          "Texture": "Mods/{{ModId}}/Cow4",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyCow4"
+        },
+        "{{ModId}}_Cow5": {
+          "ID": "{{ModId}}_Cow5",
+          "Texture": "Mods/{{ModId}}/Cow5",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyCow5"
+        },
+        "{{ModId}}_Cow6": {
+          "ID": "{{ModId}}_Cow6",
+          "Texture": "Mods/{{ModId}}/Cow6",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyCow6"
+        },
+        "{{ModId}}_Cow7": {
+          "ID": "{{ModId}}_Cow7",
+          "Texture": "Mods/{{ModId}}/Cow7",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyCow7"
+        },
+        "{{ModId}}_Cow8": {
+          "ID": "{{ModId}}_Cow8",
+          "Texture": "Mods/{{ModId}}/Cow8",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyCow8"
+        },
+        "{{ModId}}_Cow9": {
+          "ID": "{{ModId}}_Cow9",
+          "Texture": "Mods/{{ModId}}/Cow9",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyCow9"
+        }
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/FarmAnimals",
+      "TargetField": [
+        "Brown Cow",
+        "Skins"
+      ],
+      "Entries": {
+        "{{ModId}}_Cow1": {
+          "ID": "{{ModId}}_Cow1",
+          "Texture": "Mods/{{ModId}}/Cow1",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyCow1"
+        },
+        "{{ModId}}_Cow10": {
+          "ID": "{{ModId}}_Cow10",
+          "Texture": "Mods/{{ModId}}/Cow10",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyCow10"
+        },
+        "{{ModId}}_Cow11": {
+          "ID": "{{ModId}}_Cow11",
+          "Texture": "Mods/{{ModId}}/Cow11",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyCow11"
+        },
+        "{{ModId}}_Cow12": {
+          "ID": "{{ModId}}_Cow12",
+          "Texture": "Mods/{{ModId}}/Cow12",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyCow12"
+        },
+        "{{ModId}}_Cow13": {
+          "ID": "{{ModId}}_Cow13",
+          "Texture": "Mods/{{ModId}}/Cow13",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyCow13"
+        },
+        "{{ModId}}_Cow14": {
+          "ID": "{{ModId}}_Cow14",
+          "Texture": "Mods/{{ModId}}/Cow14",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyCow14"
+        },
+        "{{ModId}}_Cow15": {
+          "ID": "{{ModId}}_Cow15",
+          "Texture": "Mods/{{ModId}}/Cow15",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyCow15"
+        },
+        "{{ModId}}_Cow16": {
+          "ID": "{{ModId}}_Cow16",
+          "Texture": "Mods/{{ModId}}/Cow16",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyCow16"
+        },
+        "{{ModId}}_Cow17": {
+          "ID": "{{ModId}}_Cow17",
+          "Texture": "Mods/{{ModId}}/Cow17",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyCow17"
+        },
+        "{{ModId}}_Cow2": {
+          "ID": "{{ModId}}_Cow2",
+          "Texture": "Mods/{{ModId}}/Cow2",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyCow2"
+        },
+        "{{ModId}}_Cow23": {
+          "ID": "{{ModId}}_Cow23",
+          "Texture": "Mods/{{ModId}}/Cow23",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyCow23"
+        },
+        "{{ModId}}_Cow3": {
+          "ID": "{{ModId}}_Cow3",
+          "Texture": "Mods/{{ModId}}/Cow3",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyCow3"
+        },
+        "{{ModId}}_Cow4": {
+          "ID": "{{ModId}}_Cow4",
+          "Texture": "Mods/{{ModId}}/Cow4",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyCow4"
+        },
+        "{{ModId}}_Cow5": {
+          "ID": "{{ModId}}_Cow5",
+          "Texture": "Mods/{{ModId}}/Cow5",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyCow5"
+        },
+        "{{ModId}}_Cow6": {
+          "ID": "{{ModId}}_Cow6",
+          "Texture": "Mods/{{ModId}}/Cow6",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyCow6"
+        },
+        "{{ModId}}_Cow7": {
+          "ID": "{{ModId}}_Cow7",
+          "Texture": "Mods/{{ModId}}/Cow7",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyCow7"
+        },
+        "{{ModId}}_Cow8": {
+          "ID": "{{ModId}}_Cow8",
+          "Texture": "Mods/{{ModId}}/Cow8",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyCow8"
+        },
+        "{{ModId}}_Cow9": {
+          "ID": "{{ModId}}_Cow9",
+          "Texture": "Mods/{{ModId}}/Cow9",
+          "HarvestedTexture": null,
+          "BabyTexture": "Mods/{{ModId}}/BabyCow9"
+        }
+      }
+    },
+
+    // Load Sprites
+    {
+      "Action": "Load",
+      "Target": "Mods/{{ModId}}/Cow1, Mods/{{ModId}}/BabyCow1, Mods/{{ModId}}/Cow10, Mods/{{ModId}}/BabyCow10, Mods/{{ModId}}/Cow11, Mods/{{ModId}}/BabyCow11, Mods/{{ModId}}/Cow12, Mods/{{ModId}}/BabyCow12, Mods/{{ModId}}/Cow13, Mods/{{ModId}}/BabyCow13, Mods/{{ModId}}/Cow14, Mods/{{ModId}}/BabyCow14, Mods/{{ModId}}/Cow15, Mods/{{ModId}}/BabyCow15, Mods/{{ModId}}/Cow16, Mods/{{ModId}}/BabyCow16, Mods/{{ModId}}/Cow17, Mods/{{ModId}}/BabyCow17, Mods/{{ModId}}/Cow2, Mods/{{ModId}}/BabyCow2, Mods/{{ModId}}/Cow23, Mods/{{ModId}}/BabyCow23, Mods/{{ModId}}/Cow3, Mods/{{ModId}}/BabyCow3, Mods/{{ModId}}/Cow4, Mods/{{ModId}}/BabyCow4, Mods/{{ModId}}/Cow5, Mods/{{ModId}}/BabyCow5, Mods/{{ModId}}/Cow6, Mods/{{ModId}}/BabyCow6, Mods/{{ModId}}/Cow7, Mods/{{ModId}}/BabyCow7, Mods/{{ModId}}/Cow8, Mods/{{ModId}}/BabyCow8, Mods/{{ModId}}/Cow9, Mods/{{ModId}}/BabyCow9",
+      "FromFile": "assets/Cow/{{TargetWithoutPath}}.png"
+    }
+  ]
+}
