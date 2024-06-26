@@ -128,7 +128,7 @@
     // Load Sprites
     {
       "Action": "Load",
-      "Target": "Mods/{{ModId}}/BlackSquirrel, Mods/{{ModId}}/BabyBlackSquirrel, Mods/{{ModId}}/BrownSquirrel, Mods/{{ModId}}/BabyBrownSquirrel, Mods/{{ModId}}/GreyBrownSquirrel, Mods/{{ModId}}/BabyGreyBrownSquirrel, Mods/{{ModId}}/GreySquirrel, Mods/{{ModId}}/BabyGreySquirrel, Mods/{{ModId}}/LightBrownSquirrel, Mods/{{ModId}}/BabyLightBrownSquirrel, Mods/{{ModId}}/RedSquirrel, Mods/{{ModId}}/BabyRedSquirrel, Mods/{{ModId}}/TanSquirrel, Mods/{{ModId}}/BabyTanSquirrel, Mods/{{ModId}}/WhiteSquirrel, Mods/{{ModId}}/BabyWhiteSquirrel",
+      "Target": "Mods/{{ModId}}/shop_squirrel, Mods/{{ModId}}/BlackSquirrel, Mods/{{ModId}}/BabyBlackSquirrel, Mods/{{ModId}}/BrownSquirrel, Mods/{{ModId}}/BabyBrownSquirrel, Mods/{{ModId}}/GreyBrownSquirrel, Mods/{{ModId}}/BabyGreyBrownSquirrel, Mods/{{ModId}}/GreySquirrel, Mods/{{ModId}}/BabyGreySquirrel, Mods/{{ModId}}/LightBrownSquirrel, Mods/{{ModId}}/BabyLightBrownSquirrel, Mods/{{ModId}}/RedSquirrel, Mods/{{ModId}}/BabyRedSquirrel, Mods/{{ModId}}/TanSquirrel, Mods/{{ModId}}/BabyTanSquirrel, Mods/{{ModId}}/WhiteSquirrel, Mods/{{ModId}}/BabyWhiteSquirrel",
       "FromFile": "assets/Squirrel/{{TargetWithoutPath}}.png"
     }
   ]

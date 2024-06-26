@@ -5,7 +5,7 @@ using StardewValley;
 using StardewModdingAPI;
 using StardewModdingAPI.Events;
 using System.Threading;
-using static StardewValley.Minigames.CraneGame;
+using System.Reflection;
 
 namespace CritterFixes
 { 
@@ -69,6 +69,12 @@ namespace CritterFixes
                     __instance.baseFrame = 432;
                     __instance.sprite = new AnimatedSprite(Critter.critterTexture, 432, 16, 16);
                     __instance.sprite.loop = false;
+                }
+
+                if (baseFrameOverride == 160 || baseFrameOverride == 180 || baseFrameOverride == 163 || baseFrameOverride == 183 || baseFrameOverride == 166 || baseFrameOverride == 186 || baseFrameOverride == 397)
+                {
+                    FieldInfo summerButterflyField = typeof(Butterfly).GetField("summerButterfly", BindingFlags.NonPublic | BindingFlags.Instance);
+                    summerButterflyField.SetValue(__instance, false);
                 }
             }
         }
