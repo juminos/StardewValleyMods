@@ -1,8 +1,8 @@
 {
   "Name": "Critter Fixes",
-  "Version": "2.0.2",
+  "Version": "2.1.0",
   "MinimumApiVersion": "4.0.0",
-  "Description": "Fixes rabbit animation and butterfly sprites.",
+  "Description": "Fixes errors in the game code for various critter animations.",
   "UniqueID": "juminos.CritterFixes",
   "EntryDll": "CritterFixes.dll",
   "UpdateKeys": [ "Nexus:24667" ],
