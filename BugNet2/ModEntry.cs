@@ -371,10 +371,10 @@ namespace BugNet2
                             string displayName = critter.Value.TranslatedName?.Invoke() ?? critter.Value.DefaultName;
 
                             // Update displayName if Elle's Town Animals is installed
-                            if (Helper.ModRegistry.IsLoaded("Elle.TownAnimals") && ElleCritterNameReplacements.TryGetValue(critter.Key, out string newName))
-                            {
-                                displayName = newName;
-                            }
+                            //if (Helper.ModRegistry.IsLoaded("Elle.TownAnimals") && ElleCritterNameReplacements.TryGetValue(critter.Key, out string newName))
+                            //{
+                            //    displayName = newName;
+                            //}
 
                             var objectData = new ObjectData
                             {
