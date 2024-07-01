@@ -1,7 +1,7 @@
 {
   "Name": "Dino Form 2",
   "Author": "juminos",
-  "Version": "1.1.0",
+  "Version": "1.1.1",
   "Description": "Dino Form for 1.6.",
   "UniqueID": "juminos.DinoForm2",
   "EntryDll": "DinoForm2.dll",

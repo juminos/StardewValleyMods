@@ -1,4 +1,4 @@
-﻿#define LOGGING
+﻿//#define LOGGING
 
 using Microsoft.Xna.Framework.Input;
 using Newtonsoft.Json.Linq;
@@ -239,13 +239,17 @@ namespace BetterFruitTrees
                     // Check if the tree data exists for selected ID
                     if (Tree.TryGetData(randomWildTreeId, out var wildTreeData))
                     {
+#if LOGGING
                         monitor.Log ($"Checked that wild tree data contains key: {randomWildTreeId}");
+#endif
 
                         // Create the new tree using selected tree ID and tree data
                         Tree wildTree = new Tree(randomWildTreeId, Tree.seedStage);
                         wildTree.growthStage.Value = Game1.random.Next(4, 6);
 
+#if LOGGING
                         monitor.Log ($"adding wild tree: {randomWildTreeId} at stage: {wildTree.growthStage}");
+#endif
 
                         newTree = wildTree;
                     }
