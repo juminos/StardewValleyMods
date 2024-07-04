@@ -1,11 +1,5 @@
-stable skins?
-
 reset fertilized tag on mature trees ondaystart
 
 replace default cow goat, pig, sheep, chicken, duck, etc skins?
 
-redo farm animals with new framework mod (custom feed, multiple offspring conditions, etc)
-
-fix butterfly companion floating up indefinitely
-
-fix statue of blessing butterflies (spring using summer animation)
+fix rooster shop icon

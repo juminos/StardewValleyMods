@@ -113,7 +113,7 @@ namespace BetterFruitTrees
             {
                 foreach (GameLocation location in Game1.locations)
                 {
-                    TreeGrowth.UpdateTreeGrowth(Monitor);
+                    TreeGrowth.UpdateTreeGrowth(location, Monitor);
                     TreeSpread.SpreadTrees(location, Monitor);
                 }
             }

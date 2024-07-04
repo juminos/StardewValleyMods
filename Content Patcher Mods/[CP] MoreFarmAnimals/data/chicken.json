@@ -9,7 +9,7 @@
           "DisplayName": "Rooster",
           "House": "Coop",
           "Gender": "Male",
-          "PurchasePrice": 1000,
+          "PurchasePrice": -1,
           "SellPrice": 2000,
           "ShopTexture": null,
           "ShopSourceRect": {
@@ -20,37 +20,10 @@
           },
           "ShopDisplayName": null,
           "ShopDescription": null,
-          "ShopMissingBuildingDescription": "[LocalizedText Strings\\StringsFromCSFiles:Utility.cs.5926]",
-          "RequiredBuilding": "Coop",
+          "ShopMissingBuildingDescription": null,
+          "RequiredBuilding": null,
           "UnlockCondition": null,
-          "AlternatePurchaseTypes": [
-            {
-              "Condition": "PLAYER_HAS_SEEN_EVENT Current 3900074",
-              "AnimalIds": [
-                "{{ModId}}_BlueRooster"
-              ]
-            },
-            {
-              "Condition": "PLAYER_HAS_ACHIEVEMENT Current 44",
-              "AnimalIds": [
-                "{{ModId}}_GoldRooster"
-              ]
-            },
-            {
-              "Condition": "PLAYER_HAS_SEEN_EVENT Current 418172",
-              "AnimalIds": [
-                "{{ModId}}_VoidRooster"
-              ]
-            },
-            {
-              "Condition": null,
-              "AnimalIds": [
-                "{{ModId}}_Rooster",
-                "{{ModId}}_BrownRooster",
-                "{{ModId}}_WhiteRooster"
-              ]
-            }
-          ],
+          "AlternatePurchaseTypes": null,
           "EggItemIds": [],
           "IncubationTime": -1,
           "IncubatorParentSheetOffset": 1,
@@ -650,12 +623,12 @@
         "{{ModId}}_OliveEgger1": {
           "Id": "{{ModId}}_OliveEgger1",
           "Texture": "Mods/{{ModId}}/OliveEgger1",
-          "BabyTexture": "Mods/{{ModId}}/BabyOliveEgger"
+          "BabyTexture": "Mods/{{ModId}}/BabyOliveEgger1"
         },
         "{{ModId}}_OliveEgger3": {
           "Id": "{{ModId}}_OliveEgger3",
           "Texture": "Mods/{{ModId}}/OliveEgger3",
-          "BabyTexture": "Mods/{{ModId}}/BabyOliveEgger"
+          "BabyTexture": "Mods/{{ModId}}/BabyOliveEgger3"
         },
         "{{ModId}}_WhiteLegbar": {
           "Id": "{{ModId}}_WhiteLegbar",
@@ -722,7 +695,7 @@
     // Load White Chicken Textures
     {
       "Action": "Load",
-      "Target": "Mods/{{ModId}}/BabyBarredBantam, Mods/{{ModId}}/BabyBlackBantam, Mods/{{ModId}}/BabyBlackMaran, Mods/{{ModId}}/BabyBlackSilkie, Mods/{{ModId}}/BabyCreamLegbar, Mods/{{ModId}}/BabyCuckooBluebar, Mods/{{ModId}}/BabyLakenvelder, Mods/{{ModId}}/BabyLightSussex, Mods/{{ModId}}/BabyOliveEgger, Mods/{{ModId}}/BabyPureWhiteBantam, Mods/{{ModId}}/BabySilverBrahma, Mods/{{ModId}}/BabyWhiteBantam, Mods/{{ModId}}/BabyWhiteCrestedBlackPolish, Mods/{{ModId}}/BabyWhiteLegbar, Mods/{{ModId}}/BabyWhiteSilkie, Mods/{{ModId}}/BarredBantam, Mods/{{ModId}}/BlackBantam, Mods/{{ModId}}/BlackMaran, Mods/{{ModId}}/BlackSilkie, Mods/{{ModId}}/CreamLegbar, Mods/{{ModId}}/CuckooBluebar, Mods/{{ModId}}/Lakenvelder, Mods/{{ModId}}/LightSussex, Mods/{{ModId}}/OliveEgger1, Mods/{{ModId}}/OliveEgger3, Mods/{{ModId}}/PureWhiteBantam, Mods/{{ModId}}/SilverBrahma, Mods/{{ModId}}/WhiteBantam, Mods/{{ModId}}/WhiteCrestedBlackPolish, Mods/{{ModId}}/WhiteLegbar, Mods/{{ModId}}/WhiteSilkie",
+      "Target": "Mods/{{ModId}}/BabyBarredBantam, Mods/{{ModId}}/BabyBlackBantam, Mods/{{ModId}}/BabyBlackMaran, Mods/{{ModId}}/BabyBlackSilkie, Mods/{{ModId}}/BabyCreamLegbar, Mods/{{ModId}}/BabyCuckooBluebar, Mods/{{ModId}}/BabyLakenvelder, Mods/{{ModId}}/BabyLightSussex, Mods/{{ModId}}/BabyOliveEgger1, Mods/{{ModId}}/BabyOliveEgger3, Mods/{{ModId}}/BabyPureWhiteBantam, Mods/{{ModId}}/BabySilverBrahma, Mods/{{ModId}}/BabyWhiteBantam, Mods/{{ModId}}/BabyWhiteCrestedBlackPolish, Mods/{{ModId}}/BabyWhiteLegbar, Mods/{{ModId}}/BabyWhiteSilkie, Mods/{{ModId}}/BarredBantam, Mods/{{ModId}}/BlackBantam, Mods/{{ModId}}/BlackMaran, Mods/{{ModId}}/BlackSilkie, Mods/{{ModId}}/CreamLegbar, Mods/{{ModId}}/CuckooBluebar, Mods/{{ModId}}/Lakenvelder, Mods/{{ModId}}/LightSussex, Mods/{{ModId}}/OliveEgger1, Mods/{{ModId}}/OliveEgger3, Mods/{{ModId}}/PureWhiteBantam, Mods/{{ModId}}/SilverBrahma, Mods/{{ModId}}/WhiteBantam, Mods/{{ModId}}/WhiteCrestedBlackPolish, Mods/{{ModId}}/WhiteLegbar, Mods/{{ModId}}/WhiteSilkie",
       "FromFile": "assets/WhiteChicken/{{TargetWithoutPath}}.png"
     },
     // Add Brown Chicken Skins
@@ -764,7 +737,7 @@
         "{{ModId}}_OliveEgger2": {
           "Id": "{{ModId}}_OliveEgger2",
           "Texture": "Mods/{{ModId}}/OliveEgger2",
-          "BabyTexture": "Mods/{{ModId}}/BabyOliveEgger"
+          "BabyTexture": "Mods/{{ModId}}/BabyOliveEgger2"
         },
         "{{ModId}}_GoldLacedCochin": {
           "Id": "{{ModId}}_GoldLacedCochin",
@@ -791,7 +764,7 @@
     // Load Brown Chicken Textures
     {
       "Action": "Load",
-      "Target": "Mods/{{ModId}}/Asil, Mods/{{ModId}}/BabyAsil, Mods/{{ModId}}/BabyBrownBantam, Mods/{{ModId}}/BabyBuffBrahma, Mods/{{ModId}}/BabyBuffOrpington, Mods/{{ModId}}/BabyBuffSilkie, Mods/{{ModId}}/BabyEasterEgger, Mods/{{ModId}}/BabyGoldLacedCochin, Mods/{{ModId}}/BabyOliveEgger, Mods/{{ModId}}/BabyRedBrahma, Mods/{{ModId}}/BabyRhodeIslandRed, Mods/{{ModId}}/BabySalmonFaverolle, Mods/{{ModId}}/BrownBantam, Mods/{{ModId}}/BuffBrahma, Mods/{{ModId}}/BuffOrpington, Mods/{{ModId}}/BuffSilkie, Mods/{{ModId}}/EasterEgger, Mods/{{ModId}}/GoldLacedCochin, Mods/{{ModId}}/OliveEgger2, Mods/{{ModId}}/RedBrahma, Mods/{{ModId}}/RhodeIslandRed, Mods/{{ModId}}/SalmonFaverolle",
+      "Target": "Mods/{{ModId}}/Asil, Mods/{{ModId}}/BabyAsil, Mods/{{ModId}}/BabyBrownBantam, Mods/{{ModId}}/BabyBuffBrahma, Mods/{{ModId}}/BabyBuffOrpington, Mods/{{ModId}}/BabyBuffSilkie, Mods/{{ModId}}/BabyEasterEgger, Mods/{{ModId}}/BabyGoldLacedCochin, Mods/{{ModId}}/BabyOliveEgger2, Mods/{{ModId}}/BabyRedBrahma, Mods/{{ModId}}/BabyRhodeIslandRed, Mods/{{ModId}}/BabySalmonFaverolle, Mods/{{ModId}}/BrownBantam, Mods/{{ModId}}/BuffBrahma, Mods/{{ModId}}/BuffOrpington, Mods/{{ModId}}/BuffSilkie, Mods/{{ModId}}/EasterEgger, Mods/{{ModId}}/GoldLacedCochin, Mods/{{ModId}}/OliveEgger2, Mods/{{ModId}}/RedBrahma, Mods/{{ModId}}/RhodeIslandRed, Mods/{{ModId}}/SalmonFaverolle",
       "FromFile": "assets/BrownChicken/{{TargetWithoutPath}}.png"
     },
     // Add Void Chicken Skins

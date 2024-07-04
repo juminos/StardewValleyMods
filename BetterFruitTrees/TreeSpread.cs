@@ -1,9 +1,11 @@
-﻿using Microsoft.Xna.Framework;
+﻿#define LOGGING
+
+using Microsoft.Xna.Framework;
 using StardewModdingAPI;
 using StardewValley;
-using StardewValley.Buildings;
 using StardewValley.TerrainFeatures;
-using System.Threading;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace BetterFruitTrees
 {
@@ -18,14 +20,15 @@ namespace BetterFruitTrees
                 .ToArray();
             foreach (KeyValuePair<Vector2, TerrainFeature> pair in treesAndFruitTrees)
             {
-                if (pair.Value is FruitTree fruitTree &&
-                    fruitTree.growthStage.Value == 4)
+                if (pair.Value is FruitTree fruitTree && fruitTree.growthStage.Value == 4)
                 {
+#if LOGGING
                     // Log spread attempt on farm
                     if (location is Farm)
                     {
-                        //monitor.Log($"Attempting to spread fruit tree at position {pair.Key}.", LogLevel.Trace);
+                        monitor.Log($"Attempting to spread fruit tree at position {pair.Key}.", LogLevel.Trace);
                     }
+#endif
                     float spreadChance = ModEntry.fruitSpreadChance;
                     if (fruitTree.modData.ContainsKey("Fertilized"))
                     {
@@ -34,14 +37,21 @@ namespace BetterFruitTrees
                     }
                     if (Game1.random.NextDouble() < spreadChance)
                     {
-                        // Log spread attempt
-                        //monitor.Log($"Attempting to spread wild tree at position {pair.Key}.", LogLevel.Trace);
+#if LOGGING
+                        monitor.Log($"Spreading fruit tree from position {pair.Key} with spread chance {spreadChance}.", LogLevel.Trace);
+#endif
                         SpreadFruitTree(location, pair.Key, fruitTree, monitor);
                     }
                 }
-                if (pair.Value is Tree wildTree &&
-                    wildTree.growthStage.Value == 5)
+                if (pair.Value is Tree wildTree && wildTree.growthStage.Value == 5)
                 {
+#if LOGGING
+                    // Log spread attempt on farm
+                    if (location is Farm)
+                    {
+                        monitor.Log($"Attempting to spread wild tree at position {pair.Key}.", LogLevel.Trace);
+                    }
+#endif
                     float spreadChance = ModEntry.wildSpreadChance;
                     if (wildTree.modData.ContainsKey("Fertilized"))
                     {
@@ -50,8 +60,9 @@ namespace BetterFruitTrees
                     }
                     if (Game1.random.NextDouble() < spreadChance)
                     {
-                        // Log spread attempt
-                        //monitor.Log($"Attempting to spread wild tree at position {pair.Key}.", LogLevel.Trace);
+#if LOGGING
+                        monitor.Log($"Spreading wild tree from position {pair.Key} with spread chance {spreadChance}.", LogLevel.Trace);
+#endif
                         SpreadWildTree(location, pair.Key, wildTree, monitor);
                     }
                 }
@@ -61,43 +72,61 @@ namespace BetterFruitTrees
         // Add new fruit tree at random tile within spread radius
         public static void SpreadFruitTree(GameLocation location, Vector2 treeTile, FruitTree fruitTree, IMonitor monitor)
         {
-            // List to store weighted tiles
             List<Vector2> weightedTiles = new List<Vector2>();
             int suitableTileCount = 0;
 
-            // Iterate over surrounding tiles within spread radius
+#if LOGGING
+            monitor.Log($"Evaluating spread tiles for fruit tree at position {treeTile}.", LogLevel.Trace);
+#endif
+
             for (int x = (int)treeTile.X - ModEntry.spreadRadius; x <= (int)treeTile.X + ModEntry.spreadRadius; x++)
             {
                 for (int y = (int)treeTile.Y - ModEntry.spreadRadius; y <= (int)treeTile.Y + ModEntry.spreadRadius; y++)
                 {
                     Vector2 tileLocation = new Vector2(x, y);
-
-                    // Check tile is suitable for tree placement
                     string terrainType = location.doesTileHaveProperty((int)tileLocation.X, (int)tileLocation.Y, "Type", "Back");
-                    if (terrainType != "Dirt" && terrainType != "Grass")
-                        continue;
-                    if (tileLocation == treeTile ||
+
+                    if (terrainType != "Dirt" && terrainType != "Grass" ||
+                        tileLocation == treeTile ||
                         !location.isTileLocationOpen(tileLocation) ||
                         !location.isTileOnMap(tileLocation) ||
                         location.isWaterTile((int)tileLocation.X, (int)tileLocation.Y) ||
                         location.IsTileOccupiedBy(tileLocation) ||
-                        (!ModEntry.denseTrees &&
-                        (Math.Abs(x - treeTile.X) <= 1 && Math.Abs(y - treeTile.Y) <= 1))) 
+                        (!ModEntry.denseTrees && (Math.Abs(x - treeTile.X) <= 1 && Math.Abs(y - treeTile.Y) <= 1)))
+                    {
                         continue;
-                    suitableTileCount++;
+                    }
 
+                    suitableTileCount++;
                     int surroundedCount = CountOccupiedSurroundingTiles(tileLocation, location);
-                    // Add tile to weighted list based on surrounded tile count
                     for (int i = 0; i < 256 / ((int)Math.Pow(2, surroundedCount)); i++)
                     {
                         weightedTiles.Add(tileLocation);
                     }
                 }
             }
-            if (weightedTiles.Count == 0 || Game1.random.NextDouble() >= ((float)suitableTileCount / ((2 * ModEntry.spreadRadius + 1) * (2 * ModEntry.spreadRadius + 1) - 1)))
+
+            if (weightedTiles.Count == 0)
+            {
+#if LOGGING
+                monitor.Log($"No suitable tiles found for spreading fruit tree from position {treeTile}.", LogLevel.Trace);
+#endif
                 return;
+            }
+
+            float spreadProbability = (float)suitableTileCount / ((2 * ModEntry.spreadRadius + 1) * (2 * ModEntry.spreadRadius + 1) - 1);
+            if (Game1.random.NextDouble() >= spreadProbability)
+            {
+#if LOGGING
+                monitor.Log($"Spread probability check failed for fruit tree at position {treeTile}. Probability: {spreadProbability}.", LogLevel.Trace);
+#endif
+                return;
+            }
 
             Vector2 selectedTile = weightedTiles[Game1.random.Next(weightedTiles.Count)];
+#if LOGGING
+            monitor.Log($"Selected tile {selectedTile} for spreading fruit tree from position {treeTile}.", LogLevel.Trace);
+#endif
 
             string fruitTreeId = fruitTree.treeId.Value;
             FruitTree newFruitTree = new FruitTree(fruitTreeId, 0);
@@ -107,32 +136,32 @@ namespace BetterFruitTrees
         // Add new wild tree at random tile within spread radius
         public static void SpreadWildTree(GameLocation location, Vector2 treeTile, Tree wildTree, IMonitor monitor)
         {
-            // List to store weighted tiles
             List<Vector2> weightedTiles = new List<Vector2>();
             int suitableTileCount = 0;
 
-            // Iterate over surrounding tiles within spread radius
+#if LOGGING
+            monitor.Log($"Evaluating spread tiles for wild tree at position {treeTile}.", LogLevel.Trace);
+#endif
+
             for (int x = (int)treeTile.X - ModEntry.spreadRadius; x <= (int)treeTile.X + ModEntry.spreadRadius; x++)
             {
                 for (int y = (int)treeTile.Y - ModEntry.spreadRadius; y <= (int)treeTile.Y + ModEntry.spreadRadius; y++)
                 {
                     Vector2 tileLocation = new Vector2(x, y);
-
-                    // Check tile is suitable for tree placement
                     string terrainType = location.doesTileHaveProperty((int)tileLocation.X, (int)tileLocation.Y, "Type", "Back");
-                    if (terrainType != "Dirt" && terrainType != "Grass")
-                        continue;
-                    if (tileLocation == treeTile ||
+
+                    if (terrainType != "Dirt" && terrainType != "Grass" ||
+                        tileLocation == treeTile ||
                         !location.isTileLocationOpen(tileLocation) ||
                         !location.isTileOnMap(tileLocation) ||
                         location.isWaterTile((int)tileLocation.X, (int)tileLocation.Y) ||
                         location.IsTileOccupiedBy(tileLocation))
+                    {
                         continue;
+                    }
+
                     suitableTileCount++;
-
                     int surroundedCount = CountOccupiedSurroundingTiles(tileLocation, location);
-
-                    // Add tile to weighted list based on surrounded tile count
                     for (int i = 0; i < 256 / ((int)Math.Pow(2, surroundedCount)); i++)
                     {
                         weightedTiles.Add(tileLocation);
@@ -140,10 +169,27 @@ namespace BetterFruitTrees
                 }
             }
 
-            if (weightedTiles.Count == 0 || Game1.random.NextDouble() >= ((float)suitableTileCount / ((2 * ModEntry.spreadRadius + 1) * (2 * ModEntry.spreadRadius + 1) - 1)))
+            if (weightedTiles.Count == 0)
+            {
+#if LOGGING
+                monitor.Log($"No suitable tiles found for spreading wild tree from position {treeTile}.", LogLevel.Trace);
+#endif
                 return;
+            }
+
+            float spreadProbability = (float)suitableTileCount / ((2 * ModEntry.spreadRadius + 1) * (2 * ModEntry.spreadRadius + 1) - 1);
+            if (Game1.random.NextDouble() >= spreadProbability)
+            {
+#if LOGGING
+                monitor.Log($"Spread probability check failed for wild tree at position {treeTile}. Probability: {spreadProbability}.", LogLevel.Trace);
+#endif
+                return;
+            }
 
             Vector2 selectedTile = weightedTiles[Game1.random.Next(weightedTiles.Count)];
+#if LOGGING
+            monitor.Log($"Selected tile {selectedTile} for spreading wild tree from position {treeTile}.", LogLevel.Trace);
+#endif
 
             string wildTreeId = wildTree.treeType.Value.ToString();
             Tree newWildTree = new Tree(wildTreeId, 0);
@@ -155,9 +201,9 @@ namespace BetterFruitTrees
         {
             int occupiedCount = 0;
             Vector2[] surroundingTileLocationsArray = Utility.getSurroundingTileLocationsArray(treeTile);
-            foreach (Vector2 tileLocation in surroundingTileLocationsArray )
+            foreach (Vector2 tileLocation in surroundingTileLocationsArray)
             {
-                if(!location.isTileOnMap(tileLocation))
+                if (!location.isTileOnMap(tileLocation))
                 {
                     continue;
                 }
