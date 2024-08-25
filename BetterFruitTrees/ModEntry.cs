@@ -107,7 +107,10 @@ namespace BetterFruitTrees
         {
             if (Game1.IsWinter)
             {
-                Monitor.Log("It's winter! Tree growth & spreading logic will be skipped.", LogLevel.Info);
+                Monitor.Log("It's winter! Tree growth logic will be skipped.", LogLevel.Info);
+
+                foreach (GameLocation location in Game1.locations)
+                    TreeSpread.SpreadTrees(location, Monitor);
             }
             else
             {

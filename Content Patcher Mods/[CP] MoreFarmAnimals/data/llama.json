@@ -13,8 +13,8 @@
           "SellPrice": 8000,
           "ShopTexture": "Mods/{{ModId}}/ShopIcons",
           "ShopSourceRect": {
-            "X": 64,
-            "Y": 0,
+            "X": 32,
+            "Y": 16,
             "Width": 32,
             "Height": 16
           },

@@ -1,0 +1,21 @@
+{
+  "Name": "Custom Feed",
+  "Author": "juminos",
+  "Version": "1.0.0",
+  "Description": "Adds custom feed options for farm animals.",
+  "UniqueID": "juminos.CustomFeed",
+  "UpdateKeys": [], // when you release the mod, see https://stardewvalleywiki.com/Modding:Modder_Guide/APIs/Update_checks
+    "Dependencies": [
+      {
+        "UniqueID": "selph.ExtraAnimalConfig",
+        "IsRequired": true
+      },
+      {
+        "UniqueID": "neuralwiles.FrogFriends",
+        "IsRequired": false
+      }
+    ],
+  "ContentPackFor": {
+    "UniqueID": "Pathoschild.ContentPatcher"
+  }
+}

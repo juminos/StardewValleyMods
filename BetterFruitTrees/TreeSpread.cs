@@ -1,4 +1,4 @@
-﻿#define LOGGING
+﻿//#define LOGGING
 
 using Microsoft.Xna.Framework;
 using StardewModdingAPI;
@@ -16,11 +16,11 @@ namespace BetterFruitTrees
         {
             // Check for spreading fruit trees
             var treesAndFruitTrees = location.terrainFeatures.Pairs
-                .Where(pair => pair.Value is Tree || pair.Value is FruitTree)
+            //    .Where(pair => pair.Value is Tree || pair.Value is FruitTree)
                 .ToArray();
             foreach (KeyValuePair<Vector2, TerrainFeature> pair in treesAndFruitTrees)
             {
-                if (pair.Value is FruitTree fruitTree && fruitTree.growthStage.Value == 4)
+                if (pair.Value is FruitTree fruitTree && fruitTree.growthStage.Value >= 4 && fruitTree.IsInSeasonHere())
                 {
 #if LOGGING
                     // Log spread attempt on farm
@@ -30,20 +30,20 @@ namespace BetterFruitTrees
                     }
 #endif
                     float spreadChance = ModEntry.fruitSpreadChance;
-                    if (fruitTree.modData.ContainsKey("Fertilized"))
-                    {
-                        spreadChance = 0.8f;
-                        fruitTree.modData.Remove("Fertilized");
-                    }
+                    //if (fruitTree.modData.ContainsKey("Fertilized"))
+                    //{
+                    //    spreadChance = 0.8f;
+                    //    fruitTree.modData.Remove("Fertilized");
+                    //}
                     if (Game1.random.NextDouble() < spreadChance)
                     {
 #if LOGGING
-                        monitor.Log($"Spreading fruit tree from position {pair.Key} with spread chance {spreadChance}.", LogLevel.Trace);
+                        monitor.Log($"Spreading fruit tree from position {pair.Key} with spread chance {spreadChance} at {location}.", LogLevel.Trace);
 #endif
                         SpreadFruitTree(location, pair.Key, fruitTree, monitor);
                     }
                 }
-                if (pair.Value is Tree wildTree && wildTree.growthStage.Value == 5)
+                if (pair.Value is Tree wildTree && wildTree.growthStage.Value >= 5 && !Game1.IsWinter)
                 {
 #if LOGGING
                     // Log spread attempt on farm
@@ -53,15 +53,15 @@ namespace BetterFruitTrees
                     }
 #endif
                     float spreadChance = ModEntry.wildSpreadChance;
-                    if (wildTree.modData.ContainsKey("Fertilized"))
-                    {
-                        spreadChance = 0.8f;
-                        wildTree.modData.Remove("Fertilized");
-                    }
+                    //if (wildTree.modData.ContainsKey("Fertilized"))
+                    //{
+                    //    spreadChance = 0.8f;
+                    //    wildTree.modData.Remove("Fertilized");
+                    //}
                     if (Game1.random.NextDouble() < spreadChance)
                     {
 #if LOGGING
-                        monitor.Log($"Spreading wild tree from position {pair.Key} with spread chance {spreadChance}.", LogLevel.Trace);
+                        monitor.Log($"Spreading wild tree from position {pair.Key} with spread chance {spreadChance} at {location}.", LogLevel.Trace);
 #endif
                         SpreadWildTree(location, pair.Key, wildTree, monitor);
                     }

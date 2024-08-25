@@ -79,6 +79,10 @@
       "Action": "Include",
       "FromFile": "data/goat.json"
     },
+    {
+      "Action": "Include",
+      "FromFile": "data/rabbit.json"
+    },
 
     // Load shop icons
     {

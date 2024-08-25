@@ -1,16 +1,16 @@
 {
   "FruitSpreadChance": 0.02,
-  "WildSpreadChance": 0.1,
+  "WildSpreadChance": 0.05,
   "SpreadRadius": 3,
   "DenseTrees": false,
   "FruitDaysToFinalStage": 84,
   "FruitFarmDaysToFinalStage": 56,
-  "WildDaysToFinalStage": 14,
-  "WildFarmDaysToFinalStage": 7,
+  "WildDaysToFinalStage": 40,
+  "WildFarmDaysToFinalStage": 20,
   "DaysToLargeTree": 28,
   "LargeTreeChance": 0.2,
   "WinterGrowth": false,
-  "FruitTreeChance": 0.05,
+  "FruitTreeChance": 0.03,
   "TreeConfigurations": {
     "OakTreeReplacements": {
       "FruitTrees": [
@@ -73,7 +73,8 @@
         { "Keyword": "mahogany", "Weight": 0 },
         { "Keyword": "desertpalm", "Weight": 0 },
         { "Keyword": "islandpalm", "Weight": 0 },
-        { "Keyword": "Cornucopia_SapodillaSeed", "Weight": 0 }
+        { "Keyword": "Cornucopia_SapodillaSeed", "Weight": 0 },
+        { "Keyword": "juminos.MoreWildTrees_Chestnut", "Weight": 10 },
       ]
     },
     "MapleTreeReplacements": {
@@ -137,7 +138,8 @@
         { "Keyword": "mahogany", "Weight": 0 },
         { "Keyword": "desertpalm", "Weight": 0 },
         { "Keyword": "islandpalm", "Weight": 0 },
-        { "Keyword": "Cornucopia_SapodillaSeed", "Weight": 0 }
+        { "Keyword": "Cornucopia_SapodillaSeed", "Weight": 0 },
+        { "Keyword": "juminos.MoreWildTrees_Chestnut", "Weight": 0 },
       ]
     },
     "PineTreeReplacements": {
@@ -201,7 +203,8 @@
         { "Keyword": "mahogany", "Weight": 0 },
         { "Keyword": "desertpalm", "Weight": 0 },
         { "Keyword": "islandpalm", "Weight": 0 },
-        { "Keyword": "Cornucopia_SapodillaSeed", "Weight": 0 }
+        { "Keyword": "Cornucopia_SapodillaSeed", "Weight": 0 },
+        { "Keyword": "juminos.MoreWildTrees_Chestnut", "Weight": 0 },
       ]
     },
     "MushroomTreeReplacements": {
@@ -265,7 +268,8 @@
         { "Keyword": "mahogany", "Weight": 0 },
         { "Keyword": "desertpalm", "Weight": 0 },
         { "Keyword": "islandpalm", "Weight": 0 },
-        { "Keyword": "Cornucopia_SapodillaSeed", "Weight": 0 }
+        { "Keyword": "Cornucopia_SapodillaSeed", "Weight": 0 },
+        { "Keyword": "juminos.MoreWildTrees_Chestnut", "Weight": 0 },
       ]
     },
     "MahoganyTreeReplacements": {
@@ -329,7 +333,8 @@
         { "Keyword": "mahogany", "Weight": 20 },
         { "Keyword": "desertpalm", "Weight": 0 },
         { "Keyword": "islandpalm", "Weight": 0 },
-        { "Keyword": "Cornucopia_SapodillaSeed", "Weight": 0 }
+        { "Keyword": "Cornucopia_SapodillaSeed", "Weight": 0 },
+        { "Keyword": "juminos.MoreWildTrees_Chestnut", "Weight": 0 },
       ]
     },
     "DesertPalmTreeReplacements": {
@@ -393,7 +398,8 @@
         { "Keyword": "mahogany", "Weight": 0 },
         { "Keyword": "desertpalm", "Weight": 20 },
         { "Keyword": "islandpalm", "Weight": 0 },
-        { "Keyword": "Cornucopia_SapodillaSeed", "Weight": 0 }
+        { "Keyword": "Cornucopia_SapodillaSeed", "Weight": 0 },
+        { "Keyword": "juminos.MoreWildTrees_Chestnut", "Weight": 0 },
       ]
     },
     "IslandPalmTreeReplacements": {
@@ -457,7 +463,8 @@
         { "Keyword": "mahogany", "Weight": 0 },
         { "Keyword": "desertpalm", "Weight": 0 },
         { "Keyword": "islandpalm", "Weight": 40 },
-        { "Keyword": "Cornucopia_SapodillaSeed", "Weight": 2 }
+        { "Keyword": "Cornucopia_SapodillaSeed", "Weight": 2 },
+        { "Keyword": "juminos.MoreWildTrees_Chestnut", "Weight": 0 },
       ]
     },
     "SapodillaTreeReplacements": {
@@ -520,8 +527,9 @@
         { "Keyword": "mushroom", "Weight": 0 },
         { "Keyword": "mahogany", "Weight": 0 },
         { "Keyword": "desertpalm", "Weight": 0 },
-        { "Keyword": "islandpalm", "Weight": 40 },
-        { "Keyword": "Cornucopia_SapodillaSeed", "Weight": 2 }
+        { "Keyword": "islandpalm", "Weight": 2 },
+        { "Keyword": "Cornucopia_SapodillaSeed", "Weight": 40 },
+        { "Keyword": "juminos.MoreWildTrees_Chestnut", "Weight": 0 },
       ]
     }
   }
