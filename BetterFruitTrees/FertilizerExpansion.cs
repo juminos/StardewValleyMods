@@ -15,13 +15,16 @@ namespace BetterFruitTrees
 
             if (Game1.currentLocation.terrainFeatures.TryGetValue(selectedTile, out TerrainFeature terrainFeature))
             {
-                if (terrainFeature is FruitTree fruitTree)
+                if (terrainFeature is FruitTree fruitTree &&
+                    !fruitTree.modData.ContainsKey("Fertilized"))
                 {
                     fruitTree.modData["Fertilized"] = "true";
                     Game1.player.reduceActiveItemByOne();
                     Game1.playSound("hoeHit");
                 }
-                else if (terrainFeature is Tree wildTree)
+                else if (terrainFeature is Tree wildTree && 
+                    wildTree.growthStage.Value >= 5 &&
+                    !wildTree.modData.ContainsKey("Fertilized"))
                 {
                     wildTree.modData["Fertilized"] = "true";
                     Game1.player.reduceActiveItemByOne();

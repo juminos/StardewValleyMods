@@ -107,7 +107,7 @@
           "ContextTags": [ "color_pink", "nut_item", "tree_seed_item" ]
         },
         ///ADDING MEALS
-        "{{ModId}_ChestnutCauliflowerSoup": {
+        "{{ModId}}_ChestnutCauliflowerSoup": {
           "Name": "Chestnut and Cauliflower Soup",
           "DisplayName": "Chestnut & Cauliflower Soup",
           "Description": "A creamy vegetarian soup.",
