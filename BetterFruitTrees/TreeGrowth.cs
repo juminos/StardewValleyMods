@@ -81,7 +81,7 @@ namespace BetterFruitTrees
 #endif
 
                     // Check if growing conditions are met
-                    if (!IsSurroundingFruitAreaOvershadowed(pair.Key, location, fruitTree) && (!location.IsWinterHere() || ModEntry.winterGrowth))
+                    if (!IsSurroundingFruitAreaOvershadowed(pair.Key, location, fruitTree))
                     {
                         float fruitGrowthChance = 28f / Math.Max(ModEntry.fruitDaysToFinalStage, 1);
                         float fruitFarmGrowthChance = 28f / Math.Max(ModEntry.fruitFarmDaysToFinalStage, 1);
@@ -141,7 +141,7 @@ namespace BetterFruitTrees
                         monitor.Log($"Processing WildTree at position {pair.Key} with growth stage {wildTree.growthStage.Value}.", LogLevel.Trace);
 #endif
 
-                    if (!IsSurroundingWildAreaOvershadowed(pair.Key, location, wildTree) && (!location.IsWinterHere() || ModEntry.winterGrowth))
+                    if (!IsSurroundingWildAreaOvershadowed(pair.Key, location, wildTree))
                     {
                         float wildGrowthChance = 5f / Math.Max(ModEntry.wildDaysToFinalStage, 1);
                         float wildFarmGrowthChance = 5f / Math.Max(ModEntry.wildFarmDaysToFinalStage, 1);
@@ -211,7 +211,7 @@ namespace BetterFruitTrees
                             monitor.Log($"Initialized LargeTreeCount for {matureWildTree.treeType.Name} at position {pair.Key}.", LogLevel.Trace);
 #endif
                         }
-                        else if (!location.IsWinterHere() || ModEntry.winterGrowth)
+                        else
                         {
                             int updateCounter = Convert.ToInt32(matureWildTree.modData["LargeTreeCount"]);
                             updateCounter++;
@@ -239,7 +239,6 @@ namespace BetterFruitTrees
                         if (clearArea &&
                             Convert.ToInt32(matureWildTree.modData["LargeTreeCount"]) >= ModEntry.daysToLargeTree &&
                             Game1.random.NextDouble() < ModEntry.largeTreeChance &&
-                            (!location.IsWinterHere() || ModEntry.winterGrowth) &&
                             matureWildTree.modData.ContainsKey("Fertilized"))
                         {
                             Vector2 newBuildingPosition = new Vector2(pair.Key.X - 1, pair.Key.Y);
@@ -277,7 +276,7 @@ namespace BetterFruitTrees
                             monitor.Log($"Initialized LargeTreeCount for {matureFruitTree.treeId.Name} at position {pair.Key}.", LogLevel.Trace);
 #endif
                         }
-                        else if (!location.IsWinterHere() || ModEntry.winterGrowth)
+                        else
                         {
                             int updateCounter = Convert.ToInt32(matureFruitTree.modData["LargeTreeCount"]);
                             updateCounter++;
@@ -305,7 +304,6 @@ namespace BetterFruitTrees
                         if (clearArea &&
                             Convert.ToInt32(matureFruitTree.modData["LargeTreeCount"]) >= ModEntry.daysToLargeTree &&
                             Game1.random.NextDouble() < ModEntry.largeTreeChance &&
-                            (!location.IsWinterHere() || ModEntry.winterGrowth) &&
                             matureFruitTree.modData.ContainsKey("Fertilized"))
                         {
                             Vector2 newBuildingPosition = new Vector2(pair.Key.X - 1, pair.Key.Y);
