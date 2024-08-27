@@ -111,16 +111,17 @@ namespace BetterFruitTrees
                 {
                     Monitor.Log($"It's winter in {location.DisplayName}! Tree growth logic will be skipped.", LogLevel.Info);
                     TreeSpread.SpreadTrees(location, Monitor);
-                    if (Game1.dayOfMonth.Equals(1))
-                    {
-                        FertilizerExpansion.Unfertilize(location, Monitor);
-                    }
                 }
                 else
                 {
                     TreeGrowth.UpdateTreeGrowth(location, Monitor);
                     TreeSpread.SpreadTrees(location, Monitor);
                 }
+                if (Game1.dayOfMonth.Equals(1))
+                {
+                    FertilizerExpansion.Unfertilize(location, Monitor);
+                }
+                FertilizerExpansion.GrowFruit(location, Monitor);
             }
         }
 

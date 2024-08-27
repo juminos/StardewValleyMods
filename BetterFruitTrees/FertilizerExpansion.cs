@@ -21,7 +21,7 @@ namespace BetterFruitTrees
                 }
                 else if (terrainFeature is FruitTree fruitTree)
                 {
-                    if (!fruitTree.modData.ContainsKey("Fertilized") || fruitTree.modData["Fertilized"] != "true")
+                    if (!fruitTree.modData.ContainsKey("Fertilized") || (fruitTree.modData.ContainsKey("Fertilized") && fruitTree.modData["Fertilized"] != "true"))
                     {
                         fruitTree.modData["Fertilized"] = "true";
                         Game1.player.reduceActiveItemByOne();
@@ -35,7 +35,7 @@ namespace BetterFruitTrees
                 else if (terrainFeature is Tree wildTree && 
                     wildTree.growthStage.Value >= 5)
                 {
-                    if (!wildTree.modData.ContainsKey("Fertilized") || wildTree.modData["Fertilized"] != "true")
+                    if (!wildTree.modData.ContainsKey("Fertilized") || (wildTree.modData.ContainsKey("Fertilized") && wildTree.modData["Fertilized"] != "true"))
                     {
                         wildTree.modData["Fertilized"] = "true";
                         Game1.player.reduceActiveItemByOne();
@@ -57,7 +57,7 @@ namespace BetterFruitTrees
                 {
                     fruitTree.modData.Remove("Fertilized");
                 }
-                if (pair.Value is Tree wildTree && wildTree.modData.ContainsKey("Fertilized"))
+                if (pair.Value is Tree wildTree && location.IsWinterHere() && !ModEntry.winterGrowth)
                 {
                     if (wildTree.modData.ContainsKey("Fertilized"))
                     {
@@ -66,6 +66,23 @@ namespace BetterFruitTrees
                     if (wildTree.fertilized.Value == true)
                     {
                         wildTree.fertilized.Value = false;
+                    }
+                }
+            }
+        }
+        public static void GrowFruit (GameLocation location, IMonitor monitor)
+        {
+            foreach (KeyValuePair<Vector2, TerrainFeature> pair in location.terrainFeatures.Pairs)
+            {
+                if (pair.Value is FruitTree fruitTree && fruitTree.IsInSeasonHere() && fruitTree.modData.ContainsKey("Fertilized") && fruitTree.modData["Fertilized"] == "true")
+                {
+                    if (Game1.random.NextDouble() < 0.7)
+                    {
+                        fruitTree.TryAddFruit();
+                        if (Game1.random.NextDouble() < 0.2)
+                        {
+                            fruitTree.TryAddFruit();
+                        }
                     }
                 }
             }
