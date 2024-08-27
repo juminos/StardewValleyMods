@@ -7,12 +7,12 @@
       "Entries": {
         "juminos.BigTreeBuildings_CherryTree": {
           "Name": "Large Cherry Tree",
-          "Description": "A very large cherry tree.",
+          "Description": "A large cherry tree.",
           "Texture": "Mods/juminos.BigTreeBuildings/CherryLargeTree",
           "Skins": [],
           "DrawShadow": false,
           "Size": {
-            "X": 4,
+            "X": 2,
             "Y": 1
           },
           "FadeWhenBehind": true,
@@ -26,22 +26,23 @@
             "X": 88,
             "Y": 0
           },
-          "DrawOffset": "-12, 4",
+          "DrawOffset": "-28, 4",
           "SortTileOffset": 0.0,
-          "CollisionMap": "OXXO",
+          "CollisionMap": "XX",
           "AdditionalPlacementTiles": null,
+          "Builder": "Wizard",
           "BuildingType": null,
           "BuildCondition": null,
           "BuildDays": 0,
           "BuildCost": 1000,
           "BuildMaterials": [
             {
-              "ItemId": "(O)388",
-              "Amount": 5
+              "ItemId": "(O)709",
+              "Amount": 20
             }
           ],
           "BuildingToUpgrade": null,
-          "MagicalConstruction": false,
+          "MagicalConstruction": true,
           "BuildMenuDrawOffset": {
             "X": 0,
             "Y": 0
@@ -78,12 +79,12 @@
         },
         "juminos.BigTreeBuildings_MahoganyTree": {
           "Name": "Large Mahogany Tree",
-          "Description": "A very large mahogany tree.",
+          "Description": "A large mahogany tree.",
           "Texture": "Mods/juminos.BigTreeBuildings/MahoganyLargeTree",
           "Skins": [],
           "DrawShadow": false,
           "Size": {
-            "X": 4,
+            "X": 2,
             "Y": 1
           },
           "FadeWhenBehind": true,
@@ -97,22 +98,23 @@
             "X": 88,
             "Y": 0
           },
-          "DrawOffset": "-12, 4",
+          "DrawOffset": "-28, 4",
           "SortTileOffset": 0.0,
-          "CollisionMap": "OXXO",
+          "CollisionMap": "XX",
           "AdditionalPlacementTiles": null,
+          "Builder": "Wizard",
           "BuildingType": null,
           "BuildCondition": null,
           "BuildDays": 0,
-          "BuildCost": 10,
+          "BuildCost": 1000,
           "BuildMaterials": [
             {
-              "ItemId": "(O)388",
-              "Amount": 5
+              "ItemId": "(O)709",
+              "Amount": 20
             }
           ],
           "BuildingToUpgrade": null,
-          "MagicalConstruction": false,
+          "MagicalConstruction": true,
           "BuildMenuDrawOffset": {
             "X": 0,
             "Y": 0
@@ -149,12 +151,12 @@
         },
         "juminos.BigTreeBuildings_MapleTree": {
           "Name": "Large Maple Tree",
-          "Description": "A very large maple tree.",
+          "Description": "A large maple tree.",
           "Texture": "Mods/juminos.BigTreeBuildings/MapleLargeTree",
           "Skins": [],
           "DrawShadow": false,
           "Size": {
-            "X": 4,
+            "X": 2,
             "Y": 1
           },
           "FadeWhenBehind": true,
@@ -168,22 +170,95 @@
             "X": 88,
             "Y": 0
           },
-          "DrawOffset": "-11, 6",
+          "DrawOffset": "-27, 6",
           "SortTileOffset": 0.0,
-          "CollisionMap": "OXXO",
+          "CollisionMap": "XX",
           "AdditionalPlacementTiles": null,
+          "Builder": "Wizard",
           "BuildingType": null,
           "BuildCondition": null,
           "BuildDays": 0,
-          "BuildCost": 10,
+          "BuildCost": 1000,
           "BuildMaterials": [
             {
-              "ItemId": "(O)388",
-              "Amount": 0
+              "ItemId": "(O)709",
+              "Amount": 20
             }
           ],
           "BuildingToUpgrade": null,
-          "MagicalConstruction": false,
+          "MagicalConstruction": true,
+          "BuildMenuDrawOffset": {
+            "X": 0,
+            "Y": 0
+          },
+          "HumanDoor": {
+            "X": -1,
+            "Y": -1
+          },
+          "AnimalDoor": {
+            "X": -1,
+            "Y": -1,
+            "Width": 0,
+            "Height": 0
+          },
+          "NonInstancedIndoorLocation": null,
+          "IndoorMap": null,
+          "IndoorMapType": null,
+          "MaxOccupants": 20,
+          "ValidOccupantTypes": [],
+          "IndoorItemMoves": null,
+          "IndoorItems": null,
+          "AddMailOnBuild": null,
+          "Metadata": {},
+          "ModData": {},
+          "HayCapacity": 0,
+          "Chests": null,
+          "DefaultAction": null,
+          "AdditionalTilePropertyRadius": 0,
+          "ActionTiles": [],
+          "TileProperties": [],
+          "ItemConversions": null,
+          "DrawLayers": null,
+          "CustomFields": {}
+        },
+        "juminos.BigTreeBuildings_MapleVLargeTree": {
+          "Name": "Very Large Maple Tree",
+          "Description": "A very large maple tree.",
+          "Texture": "Mods/juminos.BigTreeBuildings/MapleVeryLargeTree",
+          "Skins": [],
+          "DrawShadow": false,
+          "Size": {
+            "X": 3,
+            "Y": 2
+          },
+          "FadeWhenBehind": true,
+          "SourceRect": {
+            "X": 0,
+            "Y": 0,
+            "Width": 112,
+            "Height": 124
+          },
+          "SeasonOffset": {
+            "X": 112,
+            "Y": 0
+          },
+          "DrawOffset": "-32, 0",
+          "SortTileOffset": 0.0,
+          "CollisionMap": "XXX\nXXX",
+          "AdditionalPlacementTiles": null,
+          "Builder": "Wizard",
+          "BuildingType": null,
+          "BuildCondition": null,
+          "BuildDays": 0,
+          "BuildCost": 5000,
+          "BuildMaterials": [
+            {
+              "ItemId": "(O)709",
+              "Amount": 50
+            }
+          ],
+          "BuildingToUpgrade": "juminos.BigTreeBuildings_MapleTree",
+          "MagicalConstruction": true,
           "BuildMenuDrawOffset": {
             "X": 0,
             "Y": 0
@@ -220,12 +295,12 @@
         },
         "juminos.BigTreeBuildings_OakTree": {
           "Name": "Large Oak Tree",
-          "Description": "A very large oak tree.",
+          "Description": "A large oak tree.",
           "Texture": "Mods/juminos.BigTreeBuildings/OakLargeTree",
           "Skins": [],
           "DrawShadow": false,
           "Size": {
-            "X": 5,
+            "X": 3,
             "Y": 2
           },
           "FadeWhenBehind": true,
@@ -239,22 +314,23 @@
             "X": 104,
             "Y": 0
           },
-          "DrawOffset": "-12, 0",
+          "DrawOffset": "-28, 0",
           "SortTileOffset": 0.0,
-          "CollisionMap": "OXXXO\nOXXXO",
+          "CollisionMap": "XXX\nXXX",
           "AdditionalPlacementTiles": null,
+          "Builder": "Wizard",
           "BuildingType": null,
           "BuildCondition": null,
           "BuildDays": 0,
-          "BuildCost": 10,
+          "BuildCost": 1000,
           "BuildMaterials": [
             {
-              "ItemId": "(O)388",
-              "Amount": 5
+              "ItemId": "(O)709",
+              "Amount": 20
             }
           ],
           "BuildingToUpgrade": null,
-          "MagicalConstruction": false,
+          "MagicalConstruction": true,
           "BuildMenuDrawOffset": {
             "X": 0,
             "Y": 0
@@ -289,30 +365,33 @@
           "DrawLayers": null,
           "CustomFields": {}
         },
-        "juminos.BigTreeBuildings_CherryUpgrade3": {
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Buildings",
+      "When": { "HasMod: |contains=hxw.tilesheets": true },
+      "Entries": {
+        "juminos.BigTreeBuildings_CherrySwingRight": {
           "Name": "Swing Cherry Tree (Right)",
           "Description": "Add a swing to your cherry tree.",
-          "Texture": "Mods/juminos.BigTreeBuildings/CherryUpgrade3",
+          "Texture": "Maps/hime_outdoorfurniture",
           "Skins": [],
           "DrawShadow": false,
           "Size": {
-            "X": 6,
+            "X": 4,
             "Y": 1
           },
           "FadeWhenBehind": true,
           "SourceRect": {
-            "X": 0,
-            "Y": 0,
-            "Width": 112,
-            "Height": 120
+            "X": 224,
+            "Y": 248,
+            "Width": 96,
+            "Height": 104
           },
-          "SeasonOffset": {
-            "X": 112,
-            "Y": 0
-          },
-          "DrawOffset": "-3, 10",
+          "DrawOffset": "-28, 0",
           "SortTileOffset": 0.0,
-          "CollisionMap": "OOXXXX",
+          "CollisionMap": "XXXX",
           "AdditionalPlacementTiles": null,
           "BuildingType": null,
           "Builder": "Robin",
@@ -328,7 +407,7 @@
           "BuildingToUpgrade": "juminos.BigTreeBuildings_CherryTree",
           "MagicalConstruction": false,
           "BuildMenuDrawOffset": {
-            "X": 16,
+            "X": 0,
             "Y": 0
           },
           "HumanDoor": {
@@ -361,30 +440,26 @@
           "DrawLayers": null,
           "CustomFields": {}
         },
-        "juminos.BigTreeBuildings_CherryUpgrade4": {
+        "juminos.BigTreeBuildings_CherrySwingLeft": {
           "Name": "Swing Cherry Tree (Left)",
           "Description": "Add a swing to your cherry tree.",
-          "Texture": "Mods/juminos.BigTreeBuildings/CherryUpgrade4",
+          "Texture": "Maps/hime_outdoorfurniture",
           "Skins": [],
           "DrawShadow": false,
           "Size": {
-            "X": 6,
+            "X": 4,
             "Y": 1
           },
           "FadeWhenBehind": true,
           "SourceRect": {
-            "X": 0,
-            "Y": 0,
-            "Width": 112,
-            "Height": 120
+            "X": 320,
+            "Y": 248,
+            "Width": 96,
+            "Height": 104
           },
-          "SeasonOffset": {
-            "X": 112,
-            "Y": 0
-          },
-          "DrawOffset": "-13, 10",
+          "DrawOffset": "-4, 0",
           "SortTileOffset": 0.0,
-          "CollisionMap": "XXXXOO",
+          "CollisionMap": "XXXX",
           "AdditionalPlacementTiles": null,
           "BuildingType": null,
           "Builder": "Robin",
@@ -400,7 +475,7 @@
           "BuildingToUpgrade": "juminos.BigTreeBuildings_CherryTree",
           "MagicalConstruction": false,
           "BuildMenuDrawOffset": {
-            "X": -24,
+            "X": 0,
             "Y": 0
           },
           "HumanDoor": {
@@ -433,37 +508,94 @@
           "DrawLayers": null,
           "CustomFields": {}
         },
-        "juminos.BigTreeBuildings_CherryUpgrade1": {
+        "juminos.BigTreeBuildings_CherryPicnic": {
           "Name": "Picnic Cherry Tree",
           "Description": "Add a picnic table to your cherry tree.",
-          "Texture": "Mods/juminos.BigTreeBuildings/CherryUpgrade1",
-          "Skins": [
-            {
-              "Id": "juminos.BigTreeBuildings_CherryUpgrade2",
-              "Name": "Lighted Picnic Cherry Tree",
-              "Description": "For enjoying late night picnics.",
-              "Texture": "Mods/juminos.BigTreeBuildings/CherryUpgrade2"
-            }
-          ],
+          "Texture": "Maps/hime_outdoorfurniture",
+          "Skins": [],
           "DrawShadow": false,
           "Size": {
-            "X": 7,
+            "X": 6,
             "Y": 1
           },
           "FadeWhenBehind": true,
           "SourceRect": {
             "X": 0,
-            "Y": 0,
-            "Width": 128,
-            "Height": 128
+            "Y": 240,
+            "Width": 112,
+            "Height": 112
           },
-          "SeasonOffset": {
-            "X": 128,
+          "DrawOffset": "-10, 0",
+          "SortTileOffset": 0.0,
+          "CollisionMap": "XXXXXX",
+          "AdditionalPlacementTiles": null,
+          "BuildingType": null,
+          "Builder": "Robin",
+          "BuildCondition": null,
+          "BuildDays": 1,
+          "BuildCost": 2000,
+          "BuildMaterials": [
+            {
+              "ItemId": "(O)388",
+              "Amount": 100
+            }
+          ],
+          "BuildingToUpgrade": "juminos.BigTreeBuildings_CherryTree",
+          "MagicalConstruction": false,
+          "BuildMenuDrawOffset": {
+            "X": 0,
             "Y": 0
           },
-          "DrawOffset": "-2, 10",
+          "HumanDoor": {
+            "X": -1,
+            "Y": -1
+          },
+          "AnimalDoor": {
+            "X": -1,
+            "Y": -1,
+            "Width": 0,
+            "Height": 0
+          },
+          "NonInstancedIndoorLocation": null,
+          "IndoorMap": null,
+          "IndoorMapType": null,
+          "MaxOccupants": 20,
+          "ValidOccupantTypes": [],
+          "IndoorItemMoves": null,
+          "IndoorItems": null,
+          "AddMailOnBuild": null,
+          "Metadata": {},
+          "ModData": {},
+          "HayCapacity": 0,
+          "Chests": null,
+          "DefaultAction": null,
+          "AdditionalTilePropertyRadius": 0,
+          "ActionTiles": [],
+          "TileProperties": [],
+          "ItemConversions": null,
+          "DrawLayers": null,
+          "CustomFields": {}
+        },
+        "juminos.BigTreeBuildings_CherryPicnicLit": {
+          "Name": "Lighted Picnic Cherry Tree",
+          "Description": "For enjoying late night picnics.",
+          "Texture": "Maps/hime_outdoorfurniture",
+          "Skins": [],
+          "DrawShadow": false,
+          "Size": {
+            "X": 6,
+            "Y": 1
+          },
+          "FadeWhenBehind": true,
+          "SourceRect": {
+            "X": 112,
+            "Y": 240,
+            "Width": 112,
+            "Height": 112
+          },
+          "DrawOffset": "-10, 0",
           "SortTileOffset": 0.0,
-          "CollisionMap": "OXXXXXX",
+          "CollisionMap": "XXXXXX",
           "AdditionalPlacementTiles": null,
           "BuildingType": null,
           "Builder": "Robin",
@@ -514,9 +646,10 @@
         }
       }
     },
+
     {
       "Action": "Load",
-      "Target": "Mods/juminos.BigTreeBuildings/CherryLargeTree, Mods/juminos.BigTreeBuildings/MahoganyLargeTree, Mods/juminos.BigTreeBuildings/MapleLargeTree, Mods/juminos.BigTreeBuildings/OakLargeTree, Mods/juminos.BigTreeBuildings/MapleVeryLargeTree, Mods/juminos.BigTreeBuildings/CherryUpgrade1, Mods/juminos.BigTreeBuildings/CherryUpgrade2, Mods/juminos.BigTreeBuildings/CherryUpgrade3, Mods/juminos.BigTreeBuildings/CherryUpgrade4",
+      "Target": "Mods/juminos.BigTreeBuildings/CherryLargeTree, Mods/juminos.BigTreeBuildings/MahoganyLargeTree, Mods/juminos.BigTreeBuildings/MapleLargeTree, Mods/juminos.BigTreeBuildings/OakLargeTree, Mods/juminos.BigTreeBuildings/MapleVeryLargeTree",
       "FromFile": "assets/{{TargetWithoutPath}}.png"
     }
   ]

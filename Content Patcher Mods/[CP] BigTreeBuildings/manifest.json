@@ -1,11 +1,17 @@
 {
-    "Name": "Big Tree Buildings",
-    "Author": "juminos",
-    "Version": "1.0.0",
-    "Description": "Adds large trees as buildings.",
-    "UniqueID": "juminos.BigTreeBuildings",
-    "UpdateKeys": [], // when you release the mod, see https://stardewvalleywiki.com/Modding:Modder_Guide/APIs/Update_checks
-    "ContentPackFor": {
-        "UniqueID": "Pathoschild.ContentPatcher"
+  "Name": "Big Tree Buildings",
+  "Author": "juminos",
+  "Version": "1.0.0",
+  "Description": "Adds large trees as buildings.",
+  "UniqueID": "juminos.BigTreeBuildings",
+  "UpdateKeys": [], // when you release the mod, see https://stardewvalleywiki.com/Modding:Modder_Guide/APIs/Update_checks
+  "Dependencies": [
+    {
+      "UniqueID": "hxw.tilesheets",
+      "IsRequired": false
     }
+  ],
+  "ContentPackFor": {
+    "UniqueID": "Pathoschild.ContentPatcher"
+  }
 }

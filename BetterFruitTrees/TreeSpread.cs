@@ -43,7 +43,7 @@ namespace BetterFruitTrees
                         SpreadFruitTree(location, pair.Key, fruitTree, monitor);
                     }
                 }
-                if (pair.Value is Tree wildTree && wildTree.growthStage.Value >= 5 && !Game1.IsWinter)
+                if (pair.Value is Tree wildTree && wildTree.growthStage.Value >= 5 && !location.IsWinterHere())
                 {
 #if LOGGING
                     // Log spread attempt on farm

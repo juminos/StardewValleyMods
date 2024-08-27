@@ -18,7 +18,6 @@ namespace BetterFruitTrees
 
         public static void UpdateTreeGrowth(GameLocation location, IMonitor monitor)
         {
-
             // Lookup valid large tree ids
             List<string> wildTreeBuildings = new List<string> { "maple", "oak", "mahogany" };
             Dictionary<string, string> treeBuildingIds = new Dictionary<string, string>();
@@ -126,6 +125,7 @@ namespace BetterFruitTrees
                     monitor.Log($"Updated FruitTree at position {pair.Key} to growth stage {fruitTree.growthStage.Value} with daysUntilMature {fruitTree.daysUntilMature.Value}.", LogLevel.Trace);
 #endif
                 }
+                // Check for growing wild trees
                 else if (pair.Value is Tree wildTree && wildTree.growthStage.Value <= 5)
                 {
                     if (wildTree.modData.ContainsKey("GrowthCheck"))

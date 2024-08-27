@@ -105,16 +105,18 @@ namespace BetterFruitTrees
         // Update trees in all locations
         private void OnDayStarted(object sender, EventArgs e)
         {
-            if (Game1.IsWinter)
+            foreach (GameLocation location in Game1.locations)
             {
-                Monitor.Log("It's winter! Tree growth logic will be skipped.", LogLevel.Info);
-
-                foreach (GameLocation location in Game1.locations)
+                if (location.IsWinterHere())
+                {
+                    Monitor.Log($"It's winter in {location.DisplayName}! Tree growth logic will be skipped.", LogLevel.Info);
                     TreeSpread.SpreadTrees(location, Monitor);
-            }
-            else
-            {
-                foreach (GameLocation location in Game1.locations)
+                    if (Game1.dayOfMonth.Equals(1))
+                    {
+                        FertilizerExpansion.Unfertilize(location, Monitor);
+                    }
+                }
+                else
                 {
                     TreeGrowth.UpdateTreeGrowth(location, Monitor);
                     TreeSpread.SpreadTrees(location, Monitor);

@@ -15,20 +15,58 @@ namespace BetterFruitTrees
 
             if (Game1.currentLocation.terrainFeatures.TryGetValue(selectedTile, out TerrainFeature terrainFeature))
             {
-                if (terrainFeature is FruitTree fruitTree &&
-                    !fruitTree.modData.ContainsKey("Fertilized"))
+                if ((terrainFeature is FruitTree fruitTreeW || terrainFeature is Tree wildTreeW) && Game1.IsWinter)
                 {
-                    fruitTree.modData["Fertilized"] = "true";
-                    Game1.player.reduceActiveItemByOne();
-                    Game1.playSound("hoeHit");
+                    Game1.addHUDMessage(new HUDMessage("Wait until spring to fertilize trees", 3));
+                }
+                else if (terrainFeature is FruitTree fruitTree)
+                {
+                    if (!fruitTree.modData.ContainsKey("Fertilized") || fruitTree.modData["Fertilized"] != "true")
+                    {
+                        fruitTree.modData["Fertilized"] = "true";
+                        Game1.player.reduceActiveItemByOne();
+                        Game1.playSound("hoeHit");
+                    }
+                    else
+                    {
+                        Game1.addHUDMessage(new HUDMessage("Tree is already fertilized", 3));
+                    }
                 }
                 else if (terrainFeature is Tree wildTree && 
-                    wildTree.growthStage.Value >= 5 &&
-                    !wildTree.modData.ContainsKey("Fertilized"))
+                    wildTree.growthStage.Value >= 5)
                 {
-                    wildTree.modData["Fertilized"] = "true";
-                    Game1.player.reduceActiveItemByOne();
-                    Game1.playSound("hoeHit");
+                    if (!wildTree.modData.ContainsKey("Fertilized") || wildTree.modData["Fertilized"] != "true")
+                    {
+                        wildTree.modData["Fertilized"] = "true";
+                        Game1.player.reduceActiveItemByOne();
+                        Game1.playSound("hoeHit");
+                    }
+                    else
+                    {
+                        Game1.addHUDMessage(new HUDMessage("Tree is already fertilized", 3));
+
+                    }
+                }
+            }
+        }
+        public static void Unfertilize(GameLocation location, IMonitor monitor)
+        {
+            foreach (KeyValuePair<Vector2, TerrainFeature> pair in location.terrainFeatures.Pairs)
+            {
+                if (pair.Value is FruitTree fruitTree && fruitTree.modData.ContainsKey("Fertilized"))
+                {
+                    fruitTree.modData.Remove("Fertilized");
+                }
+                if (pair.Value is Tree wildTree && wildTree.modData.ContainsKey("Fertilized"))
+                {
+                    if (wildTree.modData.ContainsKey("Fertilized"))
+                    {
+                        wildTree.modData.Remove("Fertilized");
+                    }
+                    if (wildTree.fertilized.Value == true)
+                    {
+                        wildTree.fertilized.Value = false;
+                    }
                 }
             }
         }

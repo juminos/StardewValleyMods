@@ -1,0 +1,6 @@
+Treez:
+unfertilized in winter
+update fruit tree config to take 3 seasons to grow in all locations
+chance for fertilized fruit trees to produce moer fruit
+gmcm integration
+toggle locations on/off
