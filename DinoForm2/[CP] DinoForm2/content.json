@@ -322,13 +322,13 @@
           "Id": "BarnRexMayo",
           "Triggers": [
             {
-              "RequiredItemId": "{{ModId}}BarnRexEgg",
+              "RequiredItemId": "{{ModId}}_BarnRexEgg",
               "RequiredCount": 1
             }
           ],
           "OutputItem": [
             {
-              "ItemId": "{{ModId}}BarnRexMayo",
+              "ItemId": "{{ModId}}_BarnRexMayo",
               "Quality": -1,
               "CopyQuality": true
             }
@@ -359,7 +359,7 @@
       },
       "Fields": {
         "Pepper Rex": {
-          "6": "{{ModId}}BarnRexEgg 0.1"
+          "6": "{{ModId}}_BarnRexEgg 0.1"
         }
       }
     },
