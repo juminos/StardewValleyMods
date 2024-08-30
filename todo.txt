@@ -1,3 +1,0 @@
-Treez:
-gmcm integration
-toggle locations on/off

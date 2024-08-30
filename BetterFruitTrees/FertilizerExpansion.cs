@@ -49,7 +49,7 @@ namespace BetterFruitTrees
                 }
             }
         }
-        public static void Unfertilize(GameLocation location, IMonitor monitor)
+        public static void Unfertilize(GameLocation location, IMonitor monitor, ModConfig config)
         {
             foreach (KeyValuePair<Vector2, TerrainFeature> pair in location.terrainFeatures.Pairs)
             {
@@ -57,7 +57,7 @@ namespace BetterFruitTrees
                 {
                     fruitTree.modData.Remove("Fertilized");
                 }
-                if (pair.Value is Tree wildTree && location.IsWinterHere() && !ModEntry.winterGrowth)
+                if (pair.Value is Tree wildTree && location.IsWinterHere() && !config.WinterGrowth)
                 {
                     if (wildTree.modData.ContainsKey("Fertilized"))
                     {

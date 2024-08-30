@@ -8,6 +8,10 @@ using StardewValley.GameData.WildTrees;
 using StardewValley.TerrainFeatures;
 using System;
 using System.Collections.Generic;
+using xTile.Dimensions;
+using xTile.Layers;
+using xTile;
+using xTile.Tiles;
 
 namespace BetterFruitTrees
 {
@@ -75,6 +79,10 @@ namespace BetterFruitTrees
                     // Get the keyword and weight for each fruit tree in the dictionary
                     string keyword = fruitTreeKeyword.Keyword;
                     int weight = fruitTreeKeyword.Weight;
+                    if (config.RandomTreeReplace)
+                    {
+                        weight = 1;
+                    }
 #if LOGGING
                     Console.WriteLine($"Processing fruit tree keyword: {fruitTreeKeyword.Keyword}");
 #endif
@@ -145,8 +153,12 @@ namespace BetterFruitTrees
 #if LOGGING
                         Console.WriteLine($"Checked that fruit tree data contains key: {randomFruitTreeId}");
 #endif
-                        FruitTree fruitTree = new FruitTree(randomFruitTreeId, FruitTree.seedStage);
-                        fruitTree.growthStage.Value = Game1.random.Next(3,5);
+                        int originalGrowthStage = tree.growthStage.Value;
+                        if (originalGrowthStage == 5)
+                        {
+                            originalGrowthStage = 4;
+                        }
+                        FruitTree fruitTree = new FruitTree(randomFruitTreeId, originalGrowthStage);
 #if LOGGING
                         Console.WriteLine($"adding fruit tree: {fruitTree.treeId} at stage: {fruitTree.growthStage}");
 #endif
@@ -244,8 +256,8 @@ namespace BetterFruitTrees
 #endif
 
                         // Create the new tree using selected tree ID and tree data
-                        Tree wildTree = new Tree(randomWildTreeId, Tree.seedStage);
-                        wildTree.growthStage.Value = Game1.random.Next(4, 6);
+                        int originalGrowthStage = tree.growthStage.Value;
+                        Tree wildTree = new Tree(randomWildTreeId, originalGrowthStage);
 
 #if LOGGING
                         monitor.Log ($"adding wild tree: {randomWildTreeId} at stage: {wildTree.growthStage}");
@@ -281,6 +293,24 @@ namespace BetterFruitTrees
                 case "peach": return "631";
                 case "pomegranate": return "632";
                 default: throw new ArgumentOutOfRangeException(nameof(keyword), "Invalid tree keyword");
+            }
+        }
+
+        public static void ResetTrees(GameLocation location, ModConfig config, IMonitor monitor)
+        {
+            if ((config.ResetTrees == "remove" && !location.IsFarm) || config.ResetTrees == "remove (farm)")
+            {
+                foreach (TerrainFeature feature in location.terrainFeatures.Values)
+                {
+                    if (feature is Tree tree)
+                    {            
+                        location.terrainFeatures.Remove(tree.Tile);
+                    }
+                    else if (feature is FruitTree fruitTree)
+                    {
+                        location.terrainFeatures.Remove(fruitTree.Tile);
+                    }
+                }
             }
         }
     }

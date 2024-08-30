@@ -16,7 +16,7 @@ namespace BetterFruitTrees
     {
         private static Random random = new Random();
 
-        public static void UpdateTreeGrowth(GameLocation location, IMonitor monitor)
+        public static void UpdateTreeGrowth(GameLocation location, IMonitor monitor, ModConfig config)
         {
             // Lookup valid large tree ids
             List<string> wildTreeBuildings = new List<string> { "maple", "oak", "mahogany" };
@@ -83,8 +83,8 @@ namespace BetterFruitTrees
                     // Check if growing conditions are met
                     if (!IsSurroundingFruitAreaOvershadowed(pair.Key, location, fruitTree))
                     {
-                        float fruitGrowthChance = 28f / Math.Max(ModEntry.fruitDaysToFinalStage, 1);
-                        float fruitFarmGrowthChance = 28f / Math.Max(ModEntry.fruitFarmDaysToFinalStage, 1);
+                        float fruitGrowthChance = 28f / Math.Max(config.FruitDaysToFinalStage, 1);
+                        float fruitFarmGrowthChance = 28f / Math.Max(config.FruitFarmDaysToFinalStage, 1);
 
                         if (fruitTree.modData.ContainsKey("Fertilized") && fruitTree.modData["Fertilized"].ToString() == "true")
                         {
@@ -143,8 +143,8 @@ namespace BetterFruitTrees
 
                     if (!IsSurroundingWildAreaOvershadowed(pair.Key, location, wildTree))
                     {
-                        float wildGrowthChance = 5f / Math.Max(ModEntry.wildDaysToFinalStage, 1);
-                        float wildFarmGrowthChance = 5f / Math.Max(ModEntry.wildFarmDaysToFinalStage, 1);
+                        float wildGrowthChance = 5f / Math.Max(config.WildDaysToFinalStage, 1);
+                        float wildFarmGrowthChance = 5f / Math.Max(config.WildFarmDaysToFinalStage, 1);
 
                         if (wildTree.fertilized.Value == true)
                         {
@@ -237,8 +237,8 @@ namespace BetterFruitTrees
                         }
 
                         if (clearArea &&
-                            Convert.ToInt32(matureWildTree.modData["LargeTreeCount"]) >= ModEntry.daysToLargeTree &&
-                            Game1.random.NextDouble() < ModEntry.largeTreeChance &&
+                            Convert.ToInt32(matureWildTree.modData["LargeTreeCount"]) >= config.DaysToLargeTree &&
+                            Game1.random.NextDouble() < config.LargeTreeChance &&
                             matureWildTree.modData.ContainsKey("Fertilized"))
                         {
                             Vector2 newBuildingPosition = new Vector2(pair.Key.X - 1, pair.Key.Y);
@@ -302,8 +302,8 @@ namespace BetterFruitTrees
                         }
 
                         if (clearArea &&
-                            Convert.ToInt32(matureFruitTree.modData["LargeTreeCount"]) >= ModEntry.daysToLargeTree &&
-                            Game1.random.NextDouble() < ModEntry.largeTreeChance &&
+                            Convert.ToInt32(matureFruitTree.modData["LargeTreeCount"]) >= config.DaysToLargeTree &&
+                            Game1.random.NextDouble() < config.LargeTreeChance &&
                             matureFruitTree.modData.ContainsKey("Fertilized"))
                         {
                             Vector2 newBuildingPosition = new Vector2(pair.Key.X - 1, pair.Key.Y);
