@@ -96,7 +96,7 @@ namespace BetterFruitTrees
         {
             foreach (GameLocation location in Game1.locations)
             {
-                if (location.IsWinterHere() && !Config.WinterGrowth)
+                if (location.IsOutdoors && location.IsWinterHere() && !Config.WinterGrowth)
                 {
                     Monitor.Log($"It's winter in {location.DisplayName}! Tree growth logic will be skipped.", LogLevel.Info);
                     TreeSpread.SpreadTrees(location, Monitor, Config);
@@ -104,7 +104,10 @@ namespace BetterFruitTrees
                 else
                 {
                     TreeGrowth.UpdateTreeGrowth(location, Monitor, Config);
-                    TreeSpread.SpreadTrees(location, Monitor, Config);
+                    if (location.IsOutdoors)
+                    {
+                        TreeSpread.SpreadTrees(location, Monitor, Config);
+                    }
                 }
                 if (Game1.dayOfMonth.Equals(1))
                 {
