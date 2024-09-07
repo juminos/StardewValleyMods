@@ -7,7 +7,7 @@ using StardewValley.TerrainFeatures;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace BetterFruitTrees
+namespace WilderTrees
 {
     public class TreeSpread
     {

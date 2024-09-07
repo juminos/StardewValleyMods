@@ -86,9 +86,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\BetterFruitTrees\\BetterFruitTrees.csproj",
-      "projectName": "BetterFruitTrees",
-      "projectPath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\BetterFruitTrees\\BetterFruitTrees.csproj",
+      "projectUniqueName": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\BetterFruitTrees\\WilderTrees.csproj",
+      "projectName": "WilderTrees",
+      "projectPath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\BetterFruitTrees\\WilderTrees.csproj",
       "packagesPath": "C:\\Users\\princ\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\BetterFruitTrees\\obj\\",
       "projectStyle": "PackageReference",

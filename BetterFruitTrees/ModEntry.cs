@@ -12,7 +12,7 @@ using StardewValley.TerrainFeatures;
 using StardewValley.Tools;
 using xTile.Dimensions;
 
-namespace BetterFruitTrees
+namespace WilderTrees
 {
     public class ModEntry : Mod
     {

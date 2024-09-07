@@ -5,7 +5,7 @@ using StardewValley;
 using StardewValley.TerrainFeatures;
 using StardewValley.Tools;
 
-namespace BetterFruitTrees
+namespace WilderTrees
 {
     internal class FertilizerExpansion
     {

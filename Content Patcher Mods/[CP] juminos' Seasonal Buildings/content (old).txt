@@ -81,15 +81,6 @@
 			"AllowValues": "True, False",
 			"Default": "True",
 			"AllowBlank": true
-		},
-		"Stable": {
-			"AllowValues": "Stone, Wood, False",
-			"Default": "Stone",
-			"AllowBlank": true
-		},
-		"Stable Theme": {
-			"AllowValues": "Color, White, Brick",
-			"Default": "Color",
 		}
 	},
 
@@ -97,7 +88,7 @@
 		// Load Skins
 		{
 			"Action": "Load",
-			"Target": "Buildings/JSB_BarnBig_New_Brick, Buildings/JSB_BarnBig_New_Color, Buildings/JSB_BarnBig_New_White, Buildings/JSB_BarnBig_Old_Brick, Buildings/JSB_BarnBig_Old_Color, Buildings/JSB_BarnBig_Old_White, Buildings/JSB_BarnDeluxe_New_Brick, Buildings/JSB_BarnDeluxe_New_Color, Buildings/JSB_BarnDeluxe_New_White, Buildings/JSB_BarnDeluxe_Old_Brick, Buildings/JSB_BarnDeluxe_Old_Color, Buildings/JSB_BarnDeluxe_Old_White, Buildings/JSB_Barn_New_Brick, Buildings/JSB_Barn_New_Color, Buildings/JSB_Barn_New_White, Buildings/JSB_Barn_Old_Brick, Buildings/JSB_Barn_Old_Color, Buildings/JSB_Barn_Old_White, Buildings/JSB_CoopBig_New_Brick, Buildings/JSB_CoopBig_New_Color, Buildings/JSB_CoopBig_New_White, Buildings/JSB_CoopBig_Old_Brick, Buildings/JSB_CoopBig_Old_Color, Buildings/JSB_CoopBig_Old_White, Buildings/JSB_CoopDeluxe_New_Brick, Buildings/JSB_CoopDeluxe_New_Color, Buildings/JSB_CoopDeluxe_New_White, Buildings/JSB_CoopDeluxe_Old_Brick, Buildings/JSB_CoopDeluxe_Old_Color, Buildings/JSB_CoopDeluxe_Old_White, Buildings/JSB_Coop_New_Brick, Buildings/JSB_Coop_New_Color, Buildings/JSB_Coop_New_White, Buildings/JSB_Coop_Old_Brick, Buildings/JSB_Coop_Old_Color, Buildings/JSB_Coop_Old_White, Buildings/JSB_DesertObelisk_New_Brick, Buildings/JSB_DesertObelisk_New_Color, Buildings/JSB_DesertObelisk_New_White, Buildings/JSB_DesertObelisk_Old_Brick, Buildings/JSB_DesertObelisk_Old_Color, Buildings/JSB_DesertObelisk_Old_White, Buildings/JSB_DesertObelisk_Original_Brick, Buildings/JSB_DesertObelisk_Original_Color, Buildings/JSB_DesertObelisk_Original_White, Buildings/JSB_EarthObelisk_New_Brick, Buildings/JSB_EarthObelisk_New_Color, Buildings/JSB_EarthObelisk_New_White, Buildings/JSB_EarthObelisk_Old_Brick, Buildings/JSB_EarthObelisk_Old_Color, Buildings/JSB_EarthObelisk_Old_White, Buildings/JSB_EarthObelisk_Original_Brick, Buildings/JSB_EarthObelisk_Original_Color, Buildings/JSB_EarthObelisk_Original_White, Buildings/JSB_FarmhouseCabin_Brick, Buildings/JSB_FarmhouseCabin_Color, Buildings/JSB_FarmhouseCabin_White, Buildings/JSB_FarmhouseCottage_Brick, Buildings/JSB_FarmhouseCottage_Color, Buildings/JSB_FarmhouseCottage_White, Buildings/JSB_FarmhouseGreenhouse_Brick, Buildings/JSB_FarmhouseGreenhouse_Color, Buildings/JSB_FarmhouseGreenhouse_White, Buildings/JSB_FarmhouseLodge_Brick, Buildings/JSB_FarmhouseLodge_Color, Buildings/JSB_FarmhouseLodge_White, Buildings/JSB_FarmhouseManor_Brick, Buildings/JSB_FarmhouseManor_Color, Buildings/JSB_FarmhouseManor_White, Buildings/JSB_FarmhouseRustic_Brick, Buildings/JSB_FarmhouseRustic_Color, Buildings/JSB_FarmhouseRustic_White, Buildings/JSB_FarmhouseStainedGlass_Brick, Buildings/JSB_FarmhouseStainedGlass_Color, Buildings/JSB_FarmhouseStainedGlass_White, Buildings/JSB_FarmhouseVanilla_Brick, Buildings/JSB_FarmhouseVanilla_Color, Buildings/JSB_FarmhouseVanilla_White, Buildings/JSB_FarmObelisk_New_Brick, Buildings/JSB_FarmObelisk_New_Color, Buildings/JSB_FarmObelisk_New_White, Buildings/JSB_GoldClock_New_Brick, Buildings/JSB_GoldClock_New_Color, Buildings/JSB_GoldClock_New_White, Buildings/JSB_GoldClock_Old_Brick, Buildings/JSB_GoldClock_Old_Color, Buildings/JSB_GoldClock_Old_White, Buildings/JSB_GoldClock_Original_Brick, Buildings/JSB_GoldClock_Original_Color, Buildings/JSB_GoldClock_Original_White, Buildings/JSB_GreenhouseStone_Brick, Buildings/JSB_GreenhouseStone_Color, Buildings/JSB_GreenhouseStone_White, Buildings/JSB_GreenhouseWood_Brick, Buildings/JSB_GreenhouseWood_Color, Buildings/JSB_GreenhouseWood_White, Buildings/JSB_IslandObelisk_New_Brick, Buildings/JSB_IslandObelisk_New_Color, Buildings/JSB_IslandObelisk_New_White, Buildings/JSB_IslandObelisk_Old_Brick, Buildings/JSB_IslandObelisk_Old_Color, Buildings/JSB_IslandObelisk_Old_White, Buildings/JSB_IslandObelisk_Original_Brick, Buildings/JSB_IslandObelisk_Original_Color, Buildings/JSB_IslandObelisk_Original_White, Buildings/JSB_JunimoHutBuilt_Brick, Buildings/JSB_JunimoHutBuilt_Color, Buildings/JSB_JunimoHutBuilt_White, Buildings/JSB_JunimoHutNatural_Brick, Buildings/JSB_JunimoHutNatural_Color, Buildings/JSB_JunimoHutNatural_White, Buildings/JSB_LogCabin_New_Brick, Buildings/JSB_LogCabin_New_Color, Buildings/JSB_LogCabin_New_White, Buildings/JSB_LogCabin_Old_Brick, Buildings/JSB_LogCabin_Old_Color, Buildings/JSB_LogCabin_Old_White, Buildings/JSB_MillClosed_Brick, Buildings/JSB_MillClosed_Color, Buildings/JSB_MillClosed_White, Buildings/JSB_MillOpen_Brick, Buildings/JSB_MillOpen_Color, Buildings/JSB_MillOpen_White, Buildings/JSB_PlankCabin_New_Brick, Buildings/JSB_PlankCabin_New_Color, Buildings/JSB_PlankCabin_New_White, Buildings/JSB_PlankCabin_Old_Brick, Buildings/JSB_PlankCabin_Old_Color, Buildings/JSB_PlankCabin_Old_White, Buildings/JSB_ShaneCoop_New_Brick, Buildings/JSB_ShaneCoop_New_Color, Buildings/JSB_ShaneCoop_New_White, Buildings/JSB_ShaneCoop_Old_Brick, Buildings/JSB_ShaneCoop_Old_Color, Buildings/JSB_ShaneCoop_Old_White, Buildings/JSB_ShedBig_New_Brick, Buildings/JSB_ShedBig_New_Color, Buildings/JSB_ShedBig_New_White, Buildings/JSB_ShedBig_Old_Brick, Buildings/JSB_ShedBig_Old_Color, Buildings/JSB_ShedBig_Old_White, Buildings/JSB_ShedBig_Original_Brick, Buildings/JSB_ShedBig_Original_Color, Buildings/JSB_ShedBig_Original_White, Buildings/JSB_Shed_New_Brick, Buildings/JSB_Shed_New_Color, Buildings/JSB_Shed_New_White, Buildings/JSB_Shed_Old_Brick, Buildings/JSB_Shed_Old_Color, Buildings/JSB_Shed_Old_White, Buildings/JSB_Shed_Original_Brick, Buildings/JSB_Shed_Original_Color, Buildings/JSB_Shed_Original_White, Buildings/JSB_SiloStone_Brick, Buildings/JSB_SiloStone_Color, Buildings/JSB_SiloStone_White, Buildings/JSB_SiloWood_Brick, Buildings/JSB_SiloWood_Color, Buildings/JSB_SiloWood_White, Buildings/JSB_SlimeHutchBrewery_Brick, Buildings/JSB_SlimeHutchBrewery_Color, Buildings/JSB_SlimeHutchBrewery_White, Buildings/JSB_SlimeHutchNoSign_Brick, Buildings/JSB_SlimeHutchNoSign_Color, Buildings/JSB_SlimeHutchNoSign_White, Buildings/JSB_SlimeHutchSign_Brick, Buildings/JSB_SlimeHutchSign_Color, Buildings/JSB_SlimeHutchSign_White, Buildings/JSB_SlimeHutchWinery_Brick, Buildings/JSB_SlimeHutchWinery_Color, Buildings/JSB_SlimeHutchWinery_White, Buildings/JSB_StoneCabin_New_Brick, Buildings/JSB_StoneCabin_New_Color, Buildings/JSB_StoneCabin_New_White, Buildings/JSB_StoneCabin_Old_Brick, Buildings/JSB_StoneCabin_Old_Color, Buildings/JSB_StoneCabin_Old_White, Buildings/JSB_WaterObelisk_New_Brick, Buildings/JSB_WaterObelisk_New_Color, Buildings/JSB_WaterObelisk_New_White, Buildings/JSB_WaterObelisk_Old_Brick, Buildings/JSB_WaterObelisk_Old_Color, Buildings/JSB_WaterObelisk_Old_White, Buildings/JSB_WaterObelisk_Original_Brick, Buildings/JSB_WaterObelisk_Original_Color, Buildings/JSB_WaterObelisk_Original_White, Buildings/JSB_WellStone_Brick, Buildings/JSB_WellStone_Color, Buildings/JSB_WellStone_White, Buildings/JSB_WellWood_Brick, Buildings/JSB_WellWood_Color, Buildings/JSB_WellWood_White",
+			"Target": "Buildings/JSB_BarnBig_New_Brick, Buildings/JSB_BarnBig_New_Color, Buildings/JSB_BarnBig_New_White, Buildings/JSB_BarnBig_Old_Brick, Buildings/JSB_BarnBig_Old_Color, Buildings/JSB_BarnBig_Old_White, Buildings/JSB_BarnDeluxe_New_Brick, Buildings/JSB_BarnDeluxe_New_Color, Buildings/JSB_BarnDeluxe_New_White, Buildings/JSB_BarnDeluxe_Old_Brick, Buildings/JSB_BarnDeluxe_Old_Color, Buildings/JSB_BarnDeluxe_Old_White, Buildings/JSB_Barn_New_Brick, Buildings/JSB_Barn_New_Color, Buildings/JSB_Barn_New_White, Buildings/JSB_Barn_Old_Brick, Buildings/JSB_Barn_Old_Color, Buildings/JSB_Barn_Old_White, Buildings/JSB_CoopBig_New_Brick, Buildings/JSB_CoopBig_New_Color, Buildings/JSB_CoopBig_New_White, Buildings/JSB_CoopBig_Old_Brick, Buildings/JSB_CoopBig_Old_Color, Buildings/JSB_CoopBig_Old_White, Buildings/JSB_CoopDeluxe_New_Brick, Buildings/JSB_CoopDeluxe_New_Color, Buildings/JSB_CoopDeluxe_New_White, Buildings/JSB_CoopDeluxe_Old_Brick, Buildings/JSB_CoopDeluxe_Old_Color, Buildings/JSB_CoopDeluxe_Old_White, Buildings/JSB_Coop_New_Brick, Buildings/JSB_Coop_New_Color, Buildings/JSB_Coop_New_White, Buildings/JSB_Coop_Old_Brick, Buildings/JSB_Coop_Old_Color, Buildings/JSB_Coop_Old_White, Buildings/JSB_DesertObelisk_New_Brick, Buildings/JSB_DesertObelisk_New_Color, Buildings/JSB_DesertObelisk_New_White, Buildings/JSB_DesertObelisk_Old_Brick, Buildings/JSB_DesertObelisk_Old_Color, Buildings/JSB_DesertObelisk_Old_White, Buildings/JSB_DesertObelisk_Original_Brick, Buildings/JSB_DesertObelisk_Original_Color, Buildings/JSB_DesertObelisk_Original_White, Buildings/JSB_EarthObelisk_New_Brick, Buildings/JSB_EarthObelisk_New_Color, Buildings/JSB_EarthObelisk_New_White, Buildings/JSB_EarthObelisk_Old_Brick, Buildings/JSB_EarthObelisk_Old_Color, Buildings/JSB_EarthObelisk_Old_White, Buildings/JSB_EarthObelisk_Original_Brick, Buildings/JSB_EarthObelisk_Original_Color, Buildings/JSB_EarthObelisk_Original_White, Buildings/JSB_FarmhouseCabin_Brick, Buildings/JSB_FarmhouseCabin_Color, Buildings/JSB_FarmhouseCabin_White, Buildings/JSB_FarmhouseCottage_Brick, Buildings/JSB_FarmhouseCottage_Color, Buildings/JSB_FarmhouseCottage_White, Buildings/JSB_FarmhouseGreenhouse_Brick, Buildings/JSB_FarmhouseGreenhouse_Color, Buildings/JSB_FarmhouseGreenhouse_White, Buildings/JSB_FarmhouseLodge_Brick, Buildings/JSB_FarmhouseLodge_Color, Buildings/JSB_FarmhouseLodge_White, Buildings/JSB_FarmhouseManor_Brick, Buildings/JSB_FarmhouseManor_Color, Buildings/JSB_FarmhouseManor_White, Buildings/JSB_FarmhouseRustic_Brick, Buildings/JSB_FarmhouseRustic_Color, Buildings/JSB_FarmhouseRustic_White, Buildings/JSB_FarmhouseStainedGlass_Brick, Buildings/JSB_FarmhouseStainedGlass_Color, Buildings/JSB_FarmhouseStainedGlass_White, Buildings/JSB_FarmhouseVanilla_Brick, Buildings/JSB_FarmhouseVanilla_Color, Buildings/JSB_FarmhouseVanilla_White, Buildings/JSB_FarmObelisk_New_Brick, Buildings/JSB_FarmObelisk_New_Color, Buildings/JSB_FarmObelisk_New_White, Buildings/JSB_GoldClock_New_Brick, Buildings/JSB_GoldClock_New_Color, Buildings/JSB_GoldClock_New_White, Buildings/JSB_GoldClock_Old_Brick, Buildings/JSB_GoldClock_Old_Color, Buildings/JSB_GoldClock_Old_White, Buildings/JSB_GoldClock_Original_Brick, Buildings/JSB_GoldClock_Original_Color, Buildings/JSB_GoldClock_Original_White, Buildings/JSB_GreenhouseStone_Brick, Buildings/JSB_GreenhouseStone_Color, Buildings/JSB_GreenhouseStone_White, Buildings/JSB_GreenhouseWood_Brick, Buildings/JSB_GreenhouseWood_Color, Buildings/JSB_GreenhouseWood_White, Buildings/JSB_IslandObelisk_New_Brick, Buildings/JSB_IslandObelisk_New_Color, Buildings/JSB_IslandObelisk_New_White, Buildings/JSB_IslandObelisk_Old_Brick, Buildings/JSB_IslandObelisk_Old_Color, Buildings/JSB_IslandObelisk_Old_White, Buildings/JSB_IslandObelisk_Original_Brick, Buildings/JSB_IslandObelisk_Original_Color, Buildings/JSB_IslandObelisk_Original_White, Buildings/JSB_JunimoHutBuilt_Brick, Buildings/JSB_JunimoHutBuilt_Color, Buildings/JSB_JunimoHutBuilt_White, Buildings/JSB_JunimoHutNatural_Brick, Buildings/JSB_JunimoHutNatural_Color, Buildings/JSB_JunimoHutNatural_White, Buildings/JSB_LogCabin_New_Brick, Buildings/JSB_LogCabin_New_Color, Buildings/JSB_LogCabin_New_White, Buildings/JSB_LogCabin_Old_Brick, Buildings/JSB_LogCabin_Old_Color, Buildings/JSB_LogCabin_Old_White, Buildings/JSB_MillClosed_Brick, Buildings/JSB_MillClosed_Color, Buildings/JSB_MillClosed_White, Buildings/JSB_MillOpen_Brick, Buildings/JSB_MillOpen_Color, Buildings/JSB_MillOpen_White, Buildings/JSB_PlankCabin_New_Brick, Buildings/JSB_PlankCabin_New_Color, Buildings/JSB_PlankCabin_New_White, Buildings/JSB_PlankCabin_Old_Brick, Buildings/JSB_PlankCabin_Old_Color, Buildings/JSB_PlankCabin_Old_White, Buildings/JSB_ShaneCoop_New_Brick, Buildings/JSB_ShaneCoop_New_Color, Buildings/JSB_ShaneCoop_New_White, Buildings/JSB_ShaneCoop_Old_Brick, Buildings/JSB_ShaneCoop_Old_Color, Buildings/JSB_ShaneCoop_Old_White, Buildings/JSB_ShedBig_New_Brick, Buildings/JSB_ShedBig_New_Color, Buildings/JSB_ShedBig_New_White, Buildings/JSB_ShedBig_Old_Brick, Buildings/JSB_ShedBig_Old_Color, Buildings/JSB_ShedBig_Old_White, Buildings/JSB_ShedBig_Original_Brick, Buildings/JSB_ShedBig_Original_Color, Buildings/JSB_ShedBig_Original_White, Buildings/JSB_Shed_New_Brick, Buildings/JSB_Shed_New_Color, Buildings/JSB_Shed_New_White, Buildings/JSB_Shed_Old_Brick, Buildings/JSB_Shed_Old_Color, Buildings/JSB_Shed_Old_White, Buildings/JSB_Shed_Original_Brick, Buildings/JSB_Shed_Original_Color, Buildings/JSB_Shed_Original_White, Buildings/JSB_SiloStone_Brick, Buildings/JSB_SiloStone_Color, Buildings/JSB_SiloStone_White, Buildings/JSB_SiloWood_Brick, Buildings/JSB_SiloWood_Color, Buildings/JSB_SiloWood_White, Buildings/JSB_SlimeHutchBrewery_Brick, Buildings/JSB_SlimeHutchBrewery_Color, Buildings/JSB_SlimeHutchBrewery_White, Buildings/JSB_SlimeHutchNoSign_Brick, Buildings/JSB_SlimeHutchNoSign_Color, Buildings/JSB_SlimeHutchNoSign_White, Buildings/JSB_SlimeHutchSign_Brick, Buildings/JSB_SlimeHutchSign_Color, Buildings/JSB_SlimeHutchSign_White, Buildings/JSB_SlimeHutchWinery_Brick, Buildings/JSB_SlimeHutchWinery_Color, Buildings/JSB_SlimeHutchWinery_White, Buildings/JSB_StableStone_Brick, Buildings/JSB_StableStone_Color, Buildings/JSB_StableStone_White, Buildings/JSB_StableWood_Brick, Buildings/JSB_StableWood_Color, Buildings/JSB_StableWood_White, Buildings/JSB_StoneCabin_New_Brick, Buildings/JSB_StoneCabin_New_Color, Buildings/JSB_StoneCabin_New_White, Buildings/JSB_StoneCabin_Old_Brick, Buildings/JSB_StoneCabin_Old_Color, Buildings/JSB_StoneCabin_Old_White, Buildings/JSB_WaterObelisk_New_Brick, Buildings/JSB_WaterObelisk_New_Color, Buildings/JSB_WaterObelisk_New_White, Buildings/JSB_WaterObelisk_Old_Brick, Buildings/JSB_WaterObelisk_Old_Color, Buildings/JSB_WaterObelisk_Old_White, Buildings/JSB_WaterObelisk_Original_Brick, Buildings/JSB_WaterObelisk_Original_Color, Buildings/JSB_WaterObelisk_Original_White, Buildings/JSB_WellStone_Brick, Buildings/JSB_WellStone_Color, Buildings/JSB_WellStone_White, Buildings/JSB_WellWood_Brick, Buildings/JSB_WellWood_Color, Buildings/JSB_WellWood_White",
 			"FromFile": "assets/Skins/{{TargetWithoutPath}}.png"
 		},
 
@@ -860,29 +851,6 @@
 			"Enabled": "True"
 		},
 
-		// Stable
-		{
-			"Action": "EditImage",
-			"Target": "Buildings/Stable",
-			"FromFile": "assets/Skins/JSB_Stable{{Stable}}_{{Stable Theme}}.png",
-			"Enabled": "True",
-			"When": {
-				"Stable": "Stone, Wood"
-			}
-		},
-
-		{
-			"Action": "EditImage",
-			"Patchmode": "Overlay",
-			"Target": "Buildings/Stable",
-			"FromFile": "assets/Overlays/Stable{{Stable}}_{{season}}.png",
-			"Enabled": "True",
-			"When": {
-				"Stable": "Stone, Wood"
-			}
-		},
-
-
 		// Winery
 		{
 			"Action": "EditData",
@@ -1079,6 +1047,59 @@
 			"Patchmode": "Overlay",
 			"Target": "Buildings/JSB_SlimeHutchSign_Brick, Buildings/JSB_SlimeHutchSign_Color, Buildings/JSB_SlimeHutchSign_White",
 			"FromFile": "assets/Overlays/SlimeHutchSign_{{season}}.png",
+			"Enabled": "True"
+		},
+
+		// Stable
+		{
+			"Action": "EditData",
+			"Target": "Data/Buildings",
+			"TargetField": [ "Stable", "Skins" ],
+			"Entries": {
+				"{{ModId}}_StableStone_Brick": {
+					"ID": "{{ModId}}_StableStone_Brick",
+					"Name": "Stone Brick Stable",
+					"Texture": "Buildings/JSB_StableStone_Brick"
+				},
+				"{{ModId}}_StableStone_Color": {
+					"ID": "{{ModId}}_StableStone_Color",
+					"Name": "Stone Color Stable",
+					"Texture": "Buildings/JSB_StableStone_Color"
+				},
+				"{{ModId}}_StableStone_White": {
+					"ID": "{{ModId}}_StableStone_White",
+					"Name": "Stone White Stable",
+					"Texture": "Buildings/JSB_StableStone_White"
+				},
+				"{{ModId}}_StableWood_Brick": {
+					"ID": "{{ModId}}_StableWood_Brick",
+					"Name": "Wood Brick Stable",
+					"Texture": "Buildings/JSB_StableWood_Brick"
+				},
+				"{{ModId}}_StableWood_Color": {
+					"ID": "{{ModId}}_StableWood_Color",
+					"Name": "Wood Color Stable",
+					"Texture": "Buildings/JSB_StableWood_Color"
+				},
+				"{{ModId}}_StableWood_White": {
+					"ID": "{{ModId}}_StableWood_White",
+					"Name": "Wood White Stable",
+					"Texture": "Buildings/JSB_StableWood_White"
+				}
+			}
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_StableStone_Brick, Buildings/JSB_StableStone_Color, Buildings/JSB_StableStone_White",
+			"FromFile": "assets/Overlays/StableStone_{{season}}.png",
+			"Enabled": "True"
+		},
+		{
+			"Action": "EditImage",
+			"Patchmode": "Overlay",
+			"Target": "Buildings/JSB_StableWood_Brick, Buildings/JSB_StableWood_Color, Buildings/JSB_StableWood_White",
+			"FromFile": "assets/Overlays/StableWood_{{season}}.png",
 			"Enabled": "True"
 		},
 
@@ -1905,14 +1926,16 @@
 			}
 		},
 		{
-			"Action": "EditImage",
-			"Target": "Buildings/Stable_PaintMask",
-			"FromFile": "assets/Masks/JSB_Stable{{Stable}}_{{season}}.png",
-			"Enabled": "True",
-			"When": {
-				"Stable": "Stone, Wood"
-			}
+			"Action": "Load",
+			"Target": "Buildings/JSB_StableStone_Brick_PaintMask, Buildings/JSB_StableStone_Color_PaintMask, Buildings/JSB_StableStone_White_PaintMask",
+			"FromFile": "assets/Masks/JSB_StableStone_{{season}}.png"
 		},
+		{
+			"Action": "Load",
+			"Target": "Buildings/JSB_StableWood_Brick_PaintMask, Buildings/JSB_StableWood_Color_PaintMask, Buildings/JSB_StableWood_White_PaintMask",
+			"FromFile": "assets/Masks/JSB_StableWood_{{season}}.png"
+		},
+
 		{
 			"Action": "EditImage",
 			"Target": "Buildings/houses_PaintMask",

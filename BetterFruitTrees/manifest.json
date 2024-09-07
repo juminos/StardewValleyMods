@@ -1,10 +1,10 @@
 {
-  "Name": "Better Fruit Trees",
+  "Name": "Wilder Trees",
   "Author": "juminos",
   "Version": "1.0.0",
-  "Description": "Adds more fruit trees and behaviors.",
-  "UniqueID": "juminos.BetterFruitTrees",
-  "EntryDll": "BetterFruitTrees.dll",
+  "Description": "Modifies and adds tree behaviors for wilder landscapes.",
+  "UniqueID": "juminos.WilderTrees",
+  "EntryDll": "WilderTrees.dll",
   "MinimumApiVersion": "3.0.0",
   "UpdateKeys": [],
   "Dependencies": [

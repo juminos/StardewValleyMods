@@ -13,7 +13,7 @@ using xTile.Layers;
 using xTile;
 using xTile.Tiles;
 
-namespace BetterFruitTrees
+namespace WilderTrees
 {
     public class TreeReplacer
     {

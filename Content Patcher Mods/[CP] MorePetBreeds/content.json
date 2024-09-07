@@ -3950,10 +3950,10 @@
       "Action": "EditData",
       "Target": "Data/Pets",
       "Entries": {
-        "juminos.MorePets_skunk": {
-          "DisplayName": "skunk",
-          "BarkSound": "juminos.MorePets_skunkSound",
-          "ContentSound": "juminos.MorePets_skunkSound",
+        "juminos.MorePets_raccoon": {
+          "DisplayName": "Raccoon",
+          "BarkSound": "Raccoon",
+          "ContentSound": "Raccoon",
           "RepeatContentSoundAfter": -1,
           "EmoteOffset": {
             "X": 0,
@@ -4891,22 +4891,6 @@
               "AdoptionPrice": 40000,
               "BarkOverride": null,
               "VoicePitch": 1.0
-            },
-            {
-              "Id": "juminos.MorePets_Raccoon_2",
-              "Texture": "Mods/juminos.MorePets/Raccoon_2",
-              "IconTexture": "Mods/juminos.MorePets/Raccoon_ui",
-              "IconSourceRect": {
-                "X": 0,
-                "Y": 0,
-                "Width": 16,
-                "Height": 16
-              },
-              "CanBeChosenAtStart": false,
-              "CanBeAdoptedFromMarnie": true,
-              "AdoptionPrice": 40000,
-              "BarkOverride": null,
-              "VoicePitch": 1.0
             }
           ],
           "CustomFields": null
@@ -4926,7 +4910,7 @@
     },
     {
       "Action": "Load",
-      "Target": "Mods/juminos.MorePets/Raccoon_1, Mods/juminos.MorePets/Raccoon_2, Mods/juminos.MorePets/Raccoon_ui",
+      "Target": "Mods/juminos.MorePets/Raccoon_1, Mods/juminos.MorePets/Raccoon_ui",
       "FromFile": "assets/Raccoon/{{TargetWithoutPath}}.png"
     },
   ]

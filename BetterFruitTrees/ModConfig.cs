@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace BetterFruitTrees
+namespace WilderTrees
 {
     public class ModConfig
     {
