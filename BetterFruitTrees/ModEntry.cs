@@ -188,6 +188,12 @@ namespace WilderTrees
                 save: () => this.Helper.WriteConfig(this.Config)
             );
 
+            configMenu.AddSectionTitle(
+                mod: this.ModManifest,
+                text: () => "Tree Spreading",
+                tooltip: () => "Options for tree spreading logic"
+                );
+
             configMenu.AddNumberOption(
                 mod: this.ModManifest,
                 name: () => "Fruit Tree Spread Chance",
@@ -219,6 +225,12 @@ namespace WilderTrees
                 min: 0,
                 max: 8,
                 interval: 1
+                );
+
+            configMenu.AddSectionTitle(
+                mod: this.ModManifest,
+                text: () => "Tree Growth",
+                tooltip: () => "Options for tree growth logic"
                 );
 
             configMenu.AddBoolOption(
@@ -301,6 +313,12 @@ namespace WilderTrees
                 tooltip: () => "Allow trees to grow in winter",
                 getValue: () => this.Config.WinterGrowth,
                 setValue: value => this.Config.WinterGrowth = value
+                );
+
+            configMenu.AddSectionTitle(
+                mod: this.ModManifest,
+                text: () => "Tree Replacement",
+                tooltip: () => "Options for tree replacement logic"
                 );
 
             configMenu.AddNumberOption(
