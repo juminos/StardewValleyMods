@@ -5,9 +5,9 @@ namespace WilderTrees
     public class ModConfig
     {
         // Chance for fruit tree to spread to a given tile within its spread radius
-        public float FruitSpreadChance { get; set; } = 0.05f;
+        public float FruitSpreadChance { get; set; } = 0.06f;
         // Chance for wild tree to spread to a given tile within its spread radius
-        public float WildSpreadChance { get; set; } = 0.05f;
+        public float WildSpreadChance { get; set; } = 0.1f;
         // Radius for fruit tree spreading check
         public int SpreadRadius { get; set; } = 3;
         // Whether to spread trees to adjacent tiles
@@ -27,7 +27,7 @@ namespace WilderTrees
         // Toggle winter growth
         public bool WinterGrowth { get; set; } = false;
         // Chance for a tree to be replaced by a fruit tree (0.0 to 1.0)
-        public float FruitTreeChance { get; set; } = 0.03f;
+        public float FruitTreeChance { get; set; } = 0.04f;
         // Toggle equally balanced weights for tree replacement
         public bool RandomTreeReplace { get; set; } = false;
         // Remove all trees not on respawn tiles (ignores farm)

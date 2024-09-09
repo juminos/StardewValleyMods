@@ -197,29 +197,29 @@ namespace WilderTrees
             configMenu.AddNumberOption(
                 mod: this.ModManifest,
                 name: () => "Fruit Tree Spread Chance",
-                tooltip: () => "Chance a mature fruit tree will create a new sapling nearby each day it is in season",
+                tooltip: () => "Chance a mature fruit tree will create a new sapling nearby each day it is in season (default 0.06)",
                 getValue: () => this.Config.FruitSpreadChance,
                 setValue: value => this.Config.FruitSpreadChance = value,
                 min: 0.0f, 
                 max: 1.0f,
-                interval: 0.01f
+                interval: 0.02f
                 );
 
             configMenu.AddNumberOption(
                 mod: this.ModManifest,
                 name: () => "Wild Tree Spread Chance",
-                tooltip: () => "Chance a mature wild tree will create a new sapling nearby each day",
+                tooltip: () => "Chance a mature wild tree will create a new sapling nearby each day (default 0.1)",
                 getValue: () => this.Config.WildSpreadChance,
                 setValue: value => this.Config.WildSpreadChance = value,
                 min: 0.0f,
                 max: 1.0f,
-                interval: 0.01f
+                interval: 0.02f
                 );
 
             configMenu.AddNumberOption(
                 mod: this.ModManifest,
                 name: () => "Tree Spread Radius",
-                tooltip: () => "Maximum tile radius saplings will grow around mature trees",
+                tooltip: () => "Maximum tile radius saplings will grow around mature trees (default 3)",
                 getValue: () => this.Config.SpreadRadius,
                 setValue: value => this.Config.SpreadRadius = (int)value,
                 min: 0,
@@ -236,7 +236,7 @@ namespace WilderTrees
             configMenu.AddBoolOption(
                 mod: this.ModManifest,
                 name: () => "Dense Growth",
-                tooltip: () => "Allow trees to grow adjacent to other trees",
+                tooltip: () => "Allow trees to grow adjacent to other trees (default false)",
                 getValue: () => this.Config.DenseTrees,
                 setValue: value => this.Config.DenseTrees = value
                 );
@@ -244,7 +244,7 @@ namespace WilderTrees
             configMenu.AddNumberOption(
                 mod: this.ModManifest,
                 name: () => "Fruit Tree Growing Time",
-                tooltip: () => "Average number of days for fruit trees to reach maturity",
+                tooltip: () => "Average number of days for fruit trees to reach maturity (default 84)",
                 getValue: () => this.Config.FruitDaysToFinalStage,
                 setValue: value => this.Config.FruitDaysToFinalStage = (int)value,
                 min: 4,
@@ -255,7 +255,7 @@ namespace WilderTrees
             configMenu.AddNumberOption(
                 mod: this.ModManifest,
                 name: () => "Fruit Tree Growing Time (Farm)",
-                tooltip: () => "Average number of days for fruit trees on the farm to reach maturity",
+                tooltip: () => "Average number of days for fruit trees on the farm to reach maturity (default 84)",
                 getValue: () => this.Config.FruitFarmDaysToFinalStage,
                 setValue: value => this.Config.FruitFarmDaysToFinalStage = (int)value,
                 min: 4,
@@ -266,7 +266,7 @@ namespace WilderTrees
             configMenu.AddNumberOption(
                 mod: this.ModManifest,
                 name: () => "Wild Tree Growing Time",
-                tooltip: () => "Average number of days for wild trees to reach maturity",
+                tooltip: () => "Average number of days for wild trees to reach maturity (default 28)",
                 getValue: () => this.Config.WildDaysToFinalStage,
                 setValue: value => this.Config.WildDaysToFinalStage = (int)value,
                 min: 5,
@@ -277,7 +277,7 @@ namespace WilderTrees
             configMenu.AddNumberOption(
                 mod: this.ModManifest,
                 name: () => "Wild Tree Growing Time (Farm)",
-                tooltip: () => "Average number of days for wild trees on the farm to reach maturity",
+                tooltip: () => "Average number of days for wild trees on the farm to reach maturity (default 28)",
                 getValue: () => this.Config.WildFarmDaysToFinalStage,
                 setValue: value => this.Config.WildFarmDaysToFinalStage = (int)value,
                 min: 5,
@@ -288,7 +288,7 @@ namespace WilderTrees
             configMenu.AddNumberOption(
                 mod: this.ModManifest,
                 name: () => "Large Tree Growing Time",
-                tooltip: () => "Minimum number of days until a mature tree grows into a large tree (requires large tree variant added by mods)",
+                tooltip: () => "Minimum number of days until a mature tree grows into a large tree (default 56)",
                 getValue: () => this.Config.DaysToLargeTree,
                 setValue: value => this.Config.DaysToLargeTree = (int)value,
                 min: 1,
@@ -299,18 +299,18 @@ namespace WilderTrees
             configMenu.AddNumberOption(
                 mod: this.ModManifest,
                 name: () => "Large Tree Chance",
-                tooltip: () => "Chance a fertilized mature tree will turn into a large tree each day after the growing time has passed",
+                tooltip: () => "Chance a fertilized mature tree will turn into a large tree each day after the growing time has passed (default 0.2)",
                 getValue: () => this.Config.LargeTreeChance,
                 setValue: value => this.Config.LargeTreeChance = value,
                 min: 0.0f,
                 max: 1.0f,
-                interval: 0.01f
+                interval: 0.02f
                 );
 
             configMenu.AddBoolOption(
                 mod: this.ModManifest,
                 name: () => "Winter Growth",
-                tooltip: () => "Allow trees to grow in winter",
+                tooltip: () => "Allow trees to grow in winter (default false)",
                 getValue: () => this.Config.WinterGrowth,
                 setValue: value => this.Config.WinterGrowth = value
                 );
@@ -324,18 +324,18 @@ namespace WilderTrees
             configMenu.AddNumberOption(
                 mod: this.ModManifest,
                 name: () => "Fruit Tree Replacement Chance",
-                tooltip: () => "Chance of a wild tree being replaced by a fruit tree when tree replacement is run",
+                tooltip: () => "Chance of a wild tree being replaced by a fruit tree when tree replacement is run (default 0.04)",
                 getValue: () => this.Config.FruitTreeChance,
                 setValue: value => this.Config.FruitTreeChance = value,
                 min: 0.0f,
                 max: 1.0f,
-                interval: 0.01f
+                interval: 0.02f
                 );
 
             configMenu.AddBoolOption(
                 mod: this.ModManifest,
                 name: () => "Random Tree Replacement",
-                tooltip: () => "Make tree replacement completely randomized",
+                tooltip: () => "Make tree replacement completely randomized, ignoring weight configurations (default false)",
                 getValue: () => this.Config.RandomTreeReplace,
                 setValue: value => this.Config.RandomTreeReplace = value
                 );
@@ -348,7 +348,6 @@ namespace WilderTrees
                 setValue: value => this.Config.ResetTrees = value,
                 allowedValues: new string[] { "none", "remove", "remove (farm)", "replace" }
                 );
-
         }
     }
 }

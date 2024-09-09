@@ -12,6 +12,10 @@ namespace WilderTrees
         public static void FertilizeFruitTrees(object sender, ButtonPressedEventArgs e)
         {
             Vector2 selectedTile = Game1.GetPlacementGrabTile();
+            if (Game1.IsPerformingMousePlacement())
+            {
+                selectedTile = Game1.currentCursorTile;
+            }
 
             if (Game1.currentLocation.terrainFeatures.TryGetValue(selectedTile, out TerrainFeature terrainFeature))
             {

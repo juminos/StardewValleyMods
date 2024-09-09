@@ -19,7 +19,7 @@ namespace WilderTrees
         public static void UpdateTreeGrowth(GameLocation location, IMonitor monitor, ModConfig config)
         {
             // Lookup valid large tree ids
-            List<string> wildTreeBuildings = new List<string> { "maple", "oak", "mahogany" };
+            List<string> wildTreeBuildings = new List<string> { "maple", "oak", "mahogany", "pine", "mushroom", "palm" };
             Dictionary<string, string> treeBuildingIds = new Dictionary<string, string>();
 
             foreach (var tree in wildTreeBuildings)
@@ -32,11 +32,31 @@ namespace WilderTrees
                         !treeBuildingIds.Keys.Contains(tree))
                     {
                         treeBuildingIds.Add(tree, buildingkvp.Key.ToString());
+#if LOGGING
+                        monitor.Log($"Adding fruit tree building: {buildingkvp.Key.ToString()} for keyword: {tree}", LogLevel.Trace);
+#endif
                     }
                 }
             }
+            List<string> fruitTreeBuildings = new List<string> { "cherry", "apricot", "apple", "pomegranate", "peach", "orange" };
             Dictionary<string, string> fruitTreeBuildingIds = new Dictionary<string, string>();
 
+            foreach (var tree in fruitTreeBuildings)
+            {
+                foreach (var buildingkvp in Game1.buildingData)
+                {
+                    string lowerCaseBuildingId = buildingkvp.Key.ToLower();
+                    if (lowerCaseBuildingId.Contains(tree) &&
+                        buildingkvp.Value.BuildingToUpgrade == null &&
+                        !treeBuildingIds.Keys.Contains(tree))
+                    {
+                        treeBuildingIds.Add(tree, buildingkvp.Key.ToString());
+#if LOGGING
+                        monitor.Log($"Adding fruit tree building: {buildingkvp.Key.ToString()} for keyword: {tree}", LogLevel.Trace);
+#endif
+                    }
+                }
+            }
             foreach (var treekvp in Game1.fruitTreeData)
             {
                 string lowerCaseTreeKeyword = GetKeywordFromTreeId(treekvp.Key).ToLower();
@@ -51,6 +71,9 @@ namespace WilderTrees
                         !fruitTreeBuildingIds.Keys.Contains(lowerCaseTreeKeyword))
                     {
                         fruitTreeBuildingIds.Add(lowerCaseTreeKeyword, buildingkvp.Key.ToString());
+#if LOGGING
+                        monitor.Log($"Adding fruit tree building: {buildingkvp.Key.ToString()} for keyword: {lowerCaseTreeKeyword}", LogLevel.Trace);
+#endif
                     }
                 }
             }
@@ -224,9 +247,10 @@ namespace WilderTrees
                             for (int y = -2; y <= 2 && clearArea; y++)
                             {
                                 Vector2 tilelocation = new Vector2(pair.Key.X + x, pair.Key.Y + y);
-                                if (!location.isTileOnMap(tilelocation) ||
+                                if ((!location.isTileOnMap(tilelocation) ||
                                     !location.isTilePassable(tilelocation) ||
-                                    location.IsTileOccupiedBy(tilelocation))
+                                    location.IsTileOccupiedBy(tilelocation)) &&
+                                    !(x == 0 && y == 0))
                                 {
                                     clearArea = false;
 #if LOGGING
@@ -246,7 +270,6 @@ namespace WilderTrees
                             location.terrainFeatures.Remove(pair.Key);
                             location.buildings.Add(largeTree);
                             largeTree.modData["IsLargeTree"] = "true";
-                            largeTree.modData.Remove("Fertilized");
                         }
                     }
                     else
@@ -289,9 +312,10 @@ namespace WilderTrees
                             for (int y = -2; y <= 2 && clearArea; y++)
                             {
                                 Vector2 tilelocation = new Vector2(pair.Key.X + x, pair.Key.Y + y);
-                                if (!location.isTileOnMap(tilelocation) ||
+                                if ((!location.isTileOnMap(tilelocation) ||
                                     !location.isTilePassable(tilelocation) ||
-                                    location.IsTileOccupiedBy(tilelocation))
+                                    location.IsTileOccupiedBy(tilelocation)) &&
+                                    !(x == 0 && y == 0))
                                 {
                                     clearArea = false;
 #if LOGGING
@@ -311,7 +335,6 @@ namespace WilderTrees
                             location.terrainFeatures.Remove(pair.Key);
                             location.buildings.Add(largeTree);
                             largeTree.modData["IsLargeTree"] = "true";
-                            largeTree.modData.Remove("Fertilized");
                         }
                     }
                     else
