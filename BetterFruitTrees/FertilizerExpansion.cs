@@ -53,39 +53,45 @@ namespace WilderTrees
                 }
             }
         }
-        public static void Unfertilize(GameLocation location, IMonitor monitor, ModConfig config)
+        public static void Unfertilize(IMonitor monitor, ModConfig config)
         {
-            foreach (KeyValuePair<Vector2, TerrainFeature> pair in location.terrainFeatures.Pairs)
+            foreach (GameLocation location in Game1.locations)
             {
-                if (pair.Value is FruitTree fruitTree && fruitTree.modData.ContainsKey("Fertilized"))
+                foreach (KeyValuePair<Vector2, TerrainFeature> pair in location.terrainFeatures.Pairs)
                 {
-                    fruitTree.modData.Remove("Fertilized");
-                }
-                if (pair.Value is Tree wildTree && location.IsWinterHere() && !config.WinterGrowth)
-                {
-                    if (wildTree.modData.ContainsKey("Fertilized"))
+                    if (pair.Value is FruitTree fruitTree && fruitTree.modData.ContainsKey("Fertilized"))
                     {
-                        wildTree.modData.Remove("Fertilized");
+                        fruitTree.modData.Remove("Fertilized");
                     }
-                    if (wildTree.fertilized.Value == true)
+                    if (pair.Value is Tree wildTree && location.IsWinterHere() && !config.WinterGrowth)
                     {
-                        wildTree.fertilized.Value = false;
+                        if (wildTree.modData.ContainsKey("Fertilized"))
+                        {
+                            wildTree.modData.Remove("Fertilized");
+                        }
+                        if (wildTree.fertilized.Value == true)
+                        {
+                            wildTree.fertilized.Value = false;
+                        }
                     }
                 }
             }
         }
-        public static void GrowFruit (GameLocation location, IMonitor monitor)
+        public static void GrowFruit (IMonitor monitor)
         {
-            foreach (KeyValuePair<Vector2, TerrainFeature> pair in location.terrainFeatures.Pairs)
+            foreach (GameLocation location in Game1.locations)
             {
-                if (pair.Value is FruitTree fruitTree && fruitTree.IsInSeasonHere() && fruitTree.modData.ContainsKey("Fertilized") && fruitTree.modData["Fertilized"] == "true")
+                foreach (KeyValuePair<Vector2, TerrainFeature> pair in location.terrainFeatures.Pairs)
                 {
-                    if (Game1.random.NextDouble() < 0.7)
+                    if (pair.Value is FruitTree fruitTree && fruitTree.IsInSeasonHere() && fruitTree.modData.ContainsKey("Fertilized") && fruitTree.modData["Fertilized"] == "true")
                     {
-                        fruitTree.TryAddFruit();
-                        if (Game1.random.NextDouble() < 0.2)
+                        if (Game1.random.NextDouble() < 0.7)
                         {
                             fruitTree.TryAddFruit();
+                            if (Game1.random.NextDouble() < 0.2)
+                            {
+                                fruitTree.TryAddFruit();
+                            }
                         }
                     }
                 }

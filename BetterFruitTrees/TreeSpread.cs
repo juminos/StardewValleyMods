@@ -12,16 +12,24 @@ namespace WilderTrees
     public class TreeSpread
     {
         // Iterate through all mature trees
-        public static void SpreadTrees(GameLocation location, IMonitor monitor, ModConfig config)
+        public static void SpreadTrees(IMonitor monitor, ModConfig config)
         {
-            // Check for spreading fruit trees
-            var treesAndFruitTrees = location.terrainFeatures.Pairs
-            //    .Where(pair => pair.Value is Tree || pair.Value is FruitTree)
-                .ToArray();
-            foreach (KeyValuePair<Vector2, TerrainFeature> pair in treesAndFruitTrees)
+            foreach (GameLocation location in Game1.locations)
             {
-                if (pair.Value is FruitTree fruitTree && fruitTree.growthStage.Value >= 4 && fruitTree.IsInSeasonHere())
+                // Get all trees
+                var treesAndFruitTrees = location.terrainFeatures.Pairs
+                    .Where(pair => pair.Value is Tree || pair.Value is FruitTree)
+                    .ToArray();
+
+                // Count trees on map
+                var treeCount = treesAndFruitTrees.Length;
+
+                if (location.IsOutdoors && treeCount < config.TreeLimit)
                 {
+                    foreach (KeyValuePair<Vector2, TerrainFeature> pair in treesAndFruitTrees)
+                    {
+                        if (pair.Value is FruitTree fruitTree && fruitTree.growthStage.Value >= 4 && fruitTree.IsInSeasonHere())
+                        {
 #if LOGGING
                     // Log spread attempt on farm
                     if (location is Farm)
@@ -29,22 +37,17 @@ namespace WilderTrees
                         monitor.Log($"Attempting to spread fruit tree at position {pair.Key}.", LogLevel.Trace);
                     }
 #endif
-                    float spreadChance = config.FruitSpreadChance;
-                    //if (fruitTree.modData.ContainsKey("Fertilized"))
-                    //{
-                    //    spreadChance = 0.8f;
-                    //    fruitTree.modData.Remove("Fertilized");
-                    //}
-                    if (Game1.random.NextDouble() < spreadChance)
-                    {
+                            float spreadChance = config.FruitSpreadChance;
+                            if (Game1.random.NextDouble() < spreadChance)
+                            {
 #if LOGGING
                         monitor.Log($"Spreading fruit tree from position {pair.Key} with spread chance {spreadChance} at {location}.", LogLevel.Trace);
 #endif
-                        SpreadFruitTree(location, pair.Key, fruitTree, monitor, config);
-                    }
-                }
-                if (pair.Value is Tree wildTree && wildTree.growthStage.Value >= 5 && !location.IsWinterHere())
-                {
+                                SpreadFruitTree(location, pair.Key, fruitTree, monitor, config);
+                            }
+                        }
+                        if (pair.Value is Tree wildTree && wildTree.growthStage.Value >= 5 && !location.IsWinterHere())
+                        {
 #if LOGGING
                     // Log spread attempt on farm
                     if (location is Farm)
@@ -52,18 +55,15 @@ namespace WilderTrees
                         monitor.Log($"Attempting to spread wild tree at position {pair.Key}.", LogLevel.Trace);
                     }
 #endif
-                    float spreadChance = config.WildSpreadChance;
-                    //if (wildTree.modData.ContainsKey("Fertilized"))
-                    //{
-                    //    spreadChance = 0.8f;
-                    //    wildTree.modData.Remove("Fertilized");
-                    //}
-                    if (Game1.random.NextDouble() < spreadChance)
-                    {
+                            float spreadChance = config.WildSpreadChance;
+                            if (Game1.random.NextDouble() < spreadChance)
+                            {
 #if LOGGING
                         monitor.Log($"Spreading wild tree from position {pair.Key} with spread chance {spreadChance} at {location}.", LogLevel.Trace);
 #endif
-                        SpreadWildTree(location, pair.Key, wildTree, monitor, config);
+                                SpreadWildTree(location, pair.Key, wildTree, monitor, config);
+                            }
+                        }
                     }
                 }
             }
@@ -92,7 +92,8 @@ namespace WilderTrees
                         !location.isTileOnMap(tileLocation) ||
                         location.isWaterTile((int)tileLocation.X, (int)tileLocation.Y) ||
                         location.IsTileOccupiedBy(tileLocation) ||
-                        (!config.DenseTrees && (Math.Abs(x - treeTile.X) <= 1 && Math.Abs(y - treeTile.Y) <= 1)))
+                        (!config.DenseTrees && CheckTreeAdjacent(tileLocation, location)) ||
+                        (!config.DenserTrees && (Math.Abs(x - treeTile.X) <= 1 && Math.Abs(y - treeTile.Y) <= 1)))
                     {
                         continue;
                     }
@@ -155,7 +156,10 @@ namespace WilderTrees
                         !location.isTileLocationOpen(tileLocation) ||
                         !location.isTileOnMap(tileLocation) ||
                         location.isWaterTile((int)tileLocation.X, (int)tileLocation.Y) ||
-                        location.IsTileOccupiedBy(tileLocation))
+                        location.IsTileOccupiedBy(tileLocation) ||
+                        (!config.DenseTrees && CheckTreeAdjacent(tileLocation, location)) ||
+                        (!config.DenserTrees && (Math.Abs(x - treeTile.X) <= 1 && Math.Abs(y - treeTile.Y) <= 1)))
+
                     {
                         continue;
                     }
@@ -214,6 +218,29 @@ namespace WilderTrees
                 }
             }
             return occupiedCount;
+        }
+
+        // Check for trees in surrounding tiles
+        public static bool CheckTreeAdjacent(Vector2 treeTile, GameLocation location)
+        {
+            bool isTreeAdjacent = false;
+            Vector2[] surroundingTileLocationsArray = Utility.getSurroundingTileLocationsArray(treeTile);
+            foreach (Vector2 tileLocation in surroundingTileLocationsArray)
+            {
+                if (!location.isTileOnMap(tileLocation))
+                {
+                    continue;
+                }
+
+                if (location.terrainFeatures.TryGetValue(tileLocation, out TerrainFeature terrainFeature))
+                {
+                    if (terrainFeature is FruitTree || terrainFeature is Tree)
+                    {
+                        isTreeAdjacent = true;
+                    }
+                }
+            }
+            return isTreeAdjacent;
         }
     }
 }
