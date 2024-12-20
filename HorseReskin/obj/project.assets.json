@@ -42,11 +42,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\HorseReskin\\HorseReskin.csproj",
+      "projectUniqueName": "C:\\Users\\princ\\SV Modding\\StardewValleyMods\\HorseReskin\\HorseReskin.csproj",
       "projectName": "HorseReskin",
-      "projectPath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\HorseReskin\\HorseReskin.csproj",
+      "projectPath": "C:\\Users\\princ\\SV Modding\\StardewValleyMods\\HorseReskin\\HorseReskin.csproj",
       "packagesPath": "C:\\Users\\princ\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\princ\\SV modding\\StardewValleyMods\\HorseReskin\\obj\\",
+      "outputPath": "C:\\Users\\princ\\SV Modding\\StardewValleyMods\\HorseReskin\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\princ\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -99,15 +99,15 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.31, 6.0.31]"
+            "version": "[6.0.35, 6.0.35]"
           },
           {
             "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.31, 6.0.31]"
+            "version": "[6.0.35, 6.0.35]"
           },
           {
             "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[6.0.31, 6.0.31]"
+            "version": "[6.0.35, 6.0.35]"
           }
         ],
         "frameworkReferences": {
@@ -115,7 +115,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
