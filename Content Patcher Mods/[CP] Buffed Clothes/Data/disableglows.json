@@ -1,0 +1,30 @@
+{
+
+	"Changes": [
+
+
+//Editing GlowColor attribute	
+        {
+			"LogName": "Disable Oil of Garlic Glow",
+            "Action": "EditData",
+            "Target": "Data/Buffs",
+			"When": { "disableoilgarlic": "true"},
+			"Update": "OnTimeChange",
+            "Fields": {			
+						"23": { "GlowColor": null},
+					}			
+		},
+		{
+			"LogName": "Disable Monster Musk Glow",
+            "Action": "EditData",
+            "Target": "Data/Buffs",
+			"When": { "disablemmusk": "true"},
+			"Update": "OnTimeChange",
+            "Fields": {			
+						"24": { "GlowColor": null},  
+					}
+			
+		}//changes
+		
+]//changes
+} 

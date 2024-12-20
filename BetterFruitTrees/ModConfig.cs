@@ -7,11 +7,15 @@ namespace WilderTrees
         // Chance for fruit tree to spread to a given tile within its spread radius
         public float FruitSpreadChance { get; set; } = 0.06f;
         // Chance for wild tree to spread to a given tile within its spread radius
-        public float WildSpreadChance { get; set; } = 0.1f;
+        public float WildSpreadChance { get; set; } = 0.06f;
         // Radius for fruit tree spreading check
         public int SpreadRadius { get; set; } = 3;
-        // Whether to spread trees to adjacent tiles
+        // Max trees per map
+        public int TreeLimit { get; set; } = 100;
+        // Whether to spread trees adjacent to other trees
         public bool DenseTrees { get; set; } = false;
+        // Whether to spread trees to adjacent tiles
+        public bool DenserTrees { get; set; } = false;
         // Days until fruit trees reach maturity
         public int FruitDaysToFinalStage { get; set; } = 84;
         // Days until fruit trees reach maturity on farm or in greenhouse

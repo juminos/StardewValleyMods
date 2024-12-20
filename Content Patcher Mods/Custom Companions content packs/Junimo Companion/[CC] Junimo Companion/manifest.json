@@ -1,0 +1,12 @@
+{
+    "Name": "Junimo Companion",
+	"Author": "juminos",
+	"Version": "1.0",
+	"Description": "adds junimo companions to follow you around",
+	"UniqueID": "jumino.JC",
+	"UpdateKeys": [],
+    "ContentPackFor":{
+        "UniqueID":"PeacefulEnd.CustomCompanions",
+        "MinimumVersion":"1.6.3",
+    },
+}

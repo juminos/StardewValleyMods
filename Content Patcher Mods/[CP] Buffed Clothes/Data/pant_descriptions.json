@@ -1,0 +1,51 @@
+{
+	
+	"Changes": [
+
+			{
+            "Action": "EditData",
+            "Target": "Strings/Pants", //"Data/Pants",
+            "Fields": {
+
+			    "FarmerPants_Description": { "0": "{{i18n: pants-farmerpants-desc}}" },
+					
+				"Shorts_Description": { "0": "{{i18n: pants-shorts-desc}}" },
+
+				"Dress_Description": { "0": "{{i18n: pants-dress-desc}}" },
+
+				"Skirt_Description": { "0": "{{i18n: pants-skirt-desc}}" },
+
+				"PleatedSkirt_Description": { "0": "{{i18n: pants-pleatedskirt-desc}}" },
+
+				"DinosaurPants_Description": { "0": "{{i18n: pants-dinosaurpants-desc}}" },
+
+				"GrassSkirt_Description": { "0": "{{i18n: pants-grassskirt-desc}}" },
+
+				"LuauSkirt_Description": { "0": "{{i18n: pants-luauskirt-desc}}" },
+
+				"GeniePants_Description": { "0": "{{i18n: pants-geniepants-desc}}" },
+
+				"TightPants_Description": { "0": "{{i18n: pants-tightpants-desc}}" },
+
+				"BaggyPants_Description": { "0": "{{i18n: pants-baggypants-desc}}" },
+
+				"SimpleDress_Description": { "0": "{{i18n: pants-simpledress-desc}}" },
+
+				"RelaxedFitPants_Description": { "0": "{{i18n: pants-relaxedfitpants-desc}}" },
+
+				"RelaxedFitShorts_Description": { "0": "{{i18n: pants-relaxedfitshorts-desc}}" },
+
+				"TrimmedLuckyPurpleShorts_Description": { "0": "{{i18n: pants-trimmedluckypurpleshorts-desc}}" },
+
+				"PrismaticPants_Description": { "0": "{{i18n: pants-prismaticpants-desc}}" },
+ 
+				"PrismaticGeniePants_Description": { "0": "{{i18n: pants-prismaticgeniepants-desc}}" },
+											
+					
+			}
+			
+			
+		}
+	]
+		
+	}

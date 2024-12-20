@@ -1,0 +1,181 @@
+{
+  "$schema": "https://smapi.io/schemas/content-patcher.json",
+  "Changes": [
+    {
+      "LogName": "Junimo: Sprites",
+      "Action": "Load",
+      "Target": "Mods/{{ModId}}/junimo, Mods/{{ModId}}/junimot",
+      "FromFile": "assets/{{TargetWithoutPath}}.png"
+    },
+    {
+      "LogName": "Junimo: Trinkets",
+      "Action": "EditData",
+      "Target": "Data/Trinkets",
+      "Entries": {
+        "{{ModId}}_Junimo": {
+          "Id": "{{ModId}}_Junimo",
+          "DisplayName": "{{i18n:Junimo.DisplayName}}",
+          "Description": "{{i18n:Junimo.Description}}",
+          "Texture": "Mods/{{ModId}}/junimot",
+          "SheetIndex": 0,
+          "DropsNaturally": false,
+          "CanBeReforged": true
+        },
+      }
+    },
+    {
+      "LogName": "Junimo: Tinker",
+      "Action": "EditData",
+      "Target": "mushymato.TrinketTinker/Tinker",
+      "Entries": {
+        "{{ModId}}_Junimo": {
+          "Variants": [
+            {
+              "Texture": "Mods/{{ModId}}/junimo",
+              "Width": 16,
+              "Height": 16,
+              "ColorMask": "Prismatic",
+              "ShadowScale": 3
+            },
+          ],
+          "Motion": {
+            "MotionClass": "Lerp",
+            "DirectionMode": "DRUL",
+            "FrameLength": 8,
+            "Interval": 35,
+            "Anchors": [
+              {
+                "Mode": "Forage",
+                "Range": 320
+              },
+              {
+                "Mode": "Crop",
+                "Range": 240
+              },
+            ],
+            "AnimClips": {
+              "Idle.1": {
+                "FrameStart": 36,
+                "FrameLength": 4,
+                "Interval": 100
+              },
+              "Idle.2": {
+                "FrameStart": 44,
+                "FrameLength": 4,
+                "Interval": 100
+              },
+              "Idle.3": {
+                "FrameStart": 32,
+                "FrameLength": 4,
+                "Interval": 100
+              },
+              "Idle.4": {
+                "FrameStart": 40,
+                "FrameLength": 4,
+                "Interval": 100
+              },
+              "Wave": {
+                "FrameStart": 48,
+                "FrameLength": 4,
+                "Interval": 200
+              },
+              "Dance": {
+                "FrameStart": 56,
+                "FrameLength": 4,
+                "Interval": 200
+              }
+            },
+            "Args": {
+              "Min": 32,
+              "MoveSync": true
+            }
+          },
+          "Abilities": [
+            // level 1
+            [
+              {
+                "AbilityClass": "HarvestForage",
+                "Description": "{{i18n:Junimo.AbilityDescription.1}}",
+                "Proc": "Timer",
+                "ProcTimer": 250,
+                "ProcSound": "harvest",
+                "ProcOneShotAnim": "Dance",
+                "Args": {
+                  "Range": 1,
+                },
+              },
+              {
+                "AbilityClass": "Health",
+                "Proc": "Sync",
+                "Args": {
+                  "ValueMode": "Number",
+                  "Min": 44
+                }
+              },
+            ],
+            // level 2
+            [
+              {
+                "AbilityClass": "HarvestCrop",
+                "Description": "{{i18n:Junimo.AbilityDescription.2}}",
+                "Proc": "Timer",
+                "ProcTimer": 1000,
+                "ProcSound": "harvest",
+                "Args": {
+                  "Range": 0,
+                },
+              },
+              {
+                "AbilityClass": "Stamina",
+                "Proc": "Sync",
+                "Args": {
+                  "ValueMode": "Number",
+                  "Min": 44
+                }
+              }
+            ],
+            // level 3
+            [
+              {
+                "AbilityClass": "HarvestForage",
+                "Description": "{{i18n:Junimo.AbilityDescription.3}}",
+                "Proc": "Timer",
+                "ProcTimer": 250,
+                "ProcSound": "harvest",
+                "Args": {
+                  "Range": 1,
+                },
+              },
+              {
+                "AbilityClass": "HarvestCrop",
+                "Proc": "Timer",
+                "ProcTimer": 1000,
+                "ProcSound": "harvest",
+                "Args": {
+                  "Range": 0,
+                },
+              },
+              {
+                "AbilityClass": "Health",
+                "Proc": "Sync",
+                "Args": {
+                  "ValueMode": "Number",
+                  "Min": 44
+                }
+              },
+              {
+                "AbilityClass": "Stamina",
+                "Proc": "Sync",
+                "ProcSyncIndex": 1,
+                "Args": {
+                  "ValueMode": "Number",
+                  "Min": 44
+                }
+              }
+            ],
+          ]
+        },
+      }
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+
+{
+	"Changes": [		
+				{
+			"Action": "Load",
+			"Target": "Adalghizar.ClothingBuffs_CowboyBuff/Cowboy, Adalghizar.ClothingBuffs_SpaceEmperorBuff/SpaceEmperor, Adalghizar.ClothingBuffs_CowgalBuff/Cowgal, Adalghizar.ClothingBuffs_CowpokeBuff/Cowpoke, Adalghizar.ClothingBuffs_GreekDeityBuff/GreekDeity, Adalghizar.ClothingBuffs_LeprechaunBuff/Leprechaun, Adalghizar.ClothingBuffs_JojaFanaticBuff/JojaFanatic, Adalghizar.ClothingBuffs_Astronaut2Buff/Astronaut2, Adalghizar.ClothingBuffs_Astronaut3Buff/Astronaut3, Adalghizar.ClothingBuffs_Astronaut4Buff/Astronaut4,",
+			"FromFile": "assets/Buff_{{TargetWithoutPath}}.png"
+		}
+	]
+}
+	
+	

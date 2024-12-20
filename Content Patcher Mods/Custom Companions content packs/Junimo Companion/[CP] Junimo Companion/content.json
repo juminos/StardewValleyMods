@@ -1,0 +1,32 @@
+{
+  "Format": "2.0",
+   "Changes": [
+{
+      "Action": "Load",
+      "Target": "Mods/{{ModId}}/albinoring, Mods/{{ModId}}/blackring, Mods/{{ModId}}/bluering, Mods/{{ModId}}/lavenderring, Mods/{{ModId}}/pinkring, Mods/{{ModId}}/yellowring",
+      "FromFile": "assets/{{TargetWithoutPath}}.png"
+},
+{
+      "Action": "EditData",
+      "Target": "Data/Objects",
+      "Entries": {
+                "{{ModId}}_ColorlessJunimo_Ring": {
+          "Name": "Colorless Junimo Ring",
+          "DisplayName": "Colorless Junimo Ring",
+          "Description": "Magically summons a junimo to follow you around.",
+          "Type": "Ring",
+          "Category": -96,
+          "Price": 1000,
+          "Texture": "Mods\\{{ModId}}\\albinoring",
+          "SpriteIndex": "0",
+          "Edibility": -300,
+                  "CustomFields": {
+                    "PeacefulEnd.CustomCompanions/Companions/Variety": 1,
+                    "PeacefulEnd.CustomCompanions/Companions/0/Id": "jumino.JC.ColorlessJunimo",
+                    "PeacefulEnd.CustomCompanions/Companions/0/NumberToSummon": 1
+                  },
+       },
+      }
+    }
+  ]
+}

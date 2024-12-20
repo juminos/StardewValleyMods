@@ -1,0 +1,93 @@
+{
+	"Changes": [
+
+	// Add Shirt Buffs
+	{
+		"Action": "EditData",
+		"Target": "Data/Buffs",
+		"LogName": "Pour-Over Shirt Buff",
+		"Entries": {
+			"{{ModId}}_Pour-OverShirtBuff": {
+				"DisplayName": "{{i18n: clothing-buff-def2spd2}}",
+				"Description": "{{i18n: clothing-buff-def2spd2-desc}}",
+				"IconTexture": "{{ModId}}_BuffsIcons/MyBuffsIcons",
+				"IconSpriteIndex": 9,
+				"Effects": {"Speed": 2}
+			},
+			"{{ModId}}_IridiumBreastplateBuff": {
+				"DisplayName": "{{i18n: clothing-buff-iridiumbreastplatebuff}}",
+				"Description": "{{i18n: clothing-buff-iridiumbreastplatebuff-desc}}",
+				"IconTexture": "{{ModId}}_BuffsIcons/MyBuffsIcons",
+				"IconSpriteIndex": 10,
+				"Effects": {"Defense": 5, "Attack": 1}
+			},
+			"{{ModId}}_SailorShirtBuff": {
+				"DisplayName": "{{i18n: clothing-buff-fish1spd1}}",
+				"Description": "{{i18n: clothing-buff-fish1spd1-desc}}",
+				"IconTexture": "{{ModId}}_BuffsIcons/MyBuffsIcons",
+				"IconSpriteIndex": 1,
+				"Effects": {"FishingLevel": 1, "Speed": 1}
+			},
+			"{{ModId}}_RabbitShirtBuff": {
+				"DisplayName": "{{i18n: clothing-buff-luck1spd1}}",
+				"Description": "{{i18n: clothing-buff-luck1spd1-desc}}",
+				"IconTexture": "{{ModId}}_BuffsIcons/MyBuffsIcons",
+				"IconSpriteIndex": 5,
+				"Effects": {"LuckLevel": 1, "Speed": 1}
+			},
+			"{{ModId}}_MouseTeeBuff": {
+				"DisplayName": "{{i18n: clothing-buff-luck1spd1}}",
+				"Description": "{{i18n: clothing-buff-luck1spd1-desc}}",
+				"IconTexture": "{{ModId}}_BuffsIcons/MyBuffsIcons",
+				"IconSpriteIndex": 5,
+				"Effects": {"LuckLevel": 1, "Speed": 1}
+			},
+			"{{ModId}}_GreenVestBuff": {
+				"DisplayName": "{{i18n: clothing-buff-stam15}}",
+				"Description": "{{i18n: clothing-buff-stam15-desc}}",
+				"IconTexture": "{{ModId}}_BuffsIcons/MyBuffsIcons",
+				"IconSpriteIndex": 16,
+				"Effects": {"MaxStamina": 15}
+			},
+			"{{ModId}}_MintBlouseBuff": {
+				"DisplayName": "{{i18n: clothing-buff-stam15}}",
+				"Description": "{{i18n: clothing-buff-stam15-desc}}",
+				"IconTexture": "{{ModId}}_BuffsIcons/MyBuffsIcons",
+				"IconSpriteIndex": 16,
+				"Effects": {"MaxStamina": 15}
+			}
+
+		}
+	},
+
+	// Assign Shirt Buffs
+	{
+		"Action": "EditData",
+		"Target": "spacechase0.SpaceCore/WearableData",
+		"Entries": {
+			"(S)1269": {
+				"BuffIdToApply": "{{ModId}}_Pour-OverShirtBuff"
+			},
+			"(S)1151": {
+				"BuffIdToApply": "{{ModId}}_IridiumBreastplateBuff"
+			},
+			"(S)1259": {
+				"BuffIdToApply": "{{ModId}}_SailorShirtBuff"
+			},
+			"(S)1095": {
+				"BuffIdToApply": "{{ModId}}_RabbitShirtBuff"
+			},
+			"(S)1066": {
+				"BuffIdToApply": "{{ModId}}_MouseTeeBuff"
+			},
+			"(S)1020": {
+				"BuffIdToApply": "{{ModId}}_GreenVestBuff"
+			},
+			"(S)1002": {
+				"BuffIdToApply": "{{ModId}}_MintBlouseBuff"
+			}
+		}
+	}
+		
+	]
+}

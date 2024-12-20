@@ -206,6 +206,22 @@
         }
       }
     },
+    {
+      "Action": "EditData",
+      "Target": "Data/Shops",
+      "TargetField": [
+        "Raccoon",
+        "Items"
+      ],
+      "Entries": {
+        "{{ModId}}_Chestnut": {
+          "ItemId": "{{ModId}}_Chestnut",
+          "TradeItemId": "(O)Moss",
+          "TradeItemAmount": 20
+        }
+      }
+    },
+
     // Load assets
     {
       "Action": "Load",

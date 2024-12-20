@@ -48,12 +48,12 @@
           "BuildingType": null,
           "Builder": "Robin",
           "BuildCondition": null,
-          "BuildDays": 0,
-          "BuildCost": 1000,
+          "BuildDays": 3,
+          "BuildCost": 20000,
           "BuildMaterials": [
             {
               "ItemId": "(O)388",
-              "Amount": 5
+              "Amount": 400
             }
           ],
           "BuildingToUpgrade": null,

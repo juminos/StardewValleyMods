@@ -1,0 +1,8 @@
+{
+  "Name": "Junimo Companion",
+  "Author": "juminos",
+  "Version": "1.0",
+  "Description": "adds junimos as companions to follow you around",
+  "UniqueID": "juminos.junimocompanions",
+  "UpdateKeys": []
+}

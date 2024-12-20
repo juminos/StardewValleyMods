@@ -1,0 +1,13 @@
+
+{
+	"Changes": [		
+		{
+			"Action": "Load",
+			"Target": "Adalghizar.ClothingBuffs_SummerBuff/Summer, Adalghizar.ClothingBuffs_FallBuff/Fall, Adalghizar.ClothingBuffs_WinterBuff/Winter, Adalghizar.ClothingBuffs_HolidayStarBuff/HolidayStar, Adalghizar.ClothingBuffs_SpringBuff/Spring, Adalghizar.ClothingBuffs_RainFishingBuff/RainFishing, Adalghizar.ClothingBuffs_IslandWarriorBuff/IslandWarrior",
+			"FromFile": "assets/Buff_{{TargetWithoutPath}}.png"
+		}
+	]
+
+}
+	
+	

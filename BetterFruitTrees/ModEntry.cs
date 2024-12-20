@@ -94,52 +94,26 @@ namespace WilderTrees
         // Update trees in all locations
         private void OnDayStarted(object sender, EventArgs e)
         {
-            foreach (GameLocation location in Game1.locations)
+            TreeSpread.SpreadTrees(Monitor, Config);
+            TreeGrowth.UpdateTreeGrowth(Monitor, Config);
+            if (Game1.dayOfMonth.Equals(1))
             {
-                if (location.IsOutdoors && location.IsWinterHere() && !Config.WinterGrowth)
-                {
-                    Monitor.Log($"It's winter in {location.DisplayName}! Tree growth logic will be skipped.", LogLevel.Info);
-                    TreeSpread.SpreadTrees(location, Monitor, Config);
-                }
-                else
-                {
-                    TreeGrowth.UpdateTreeGrowth(location, Monitor, Config);
-                    if (location.IsOutdoors)
-                    {
-                        TreeSpread.SpreadTrees(location, Monitor, Config);
-                    }
-                }
-                if (Game1.dayOfMonth.Equals(1))
-                {
-                    FertilizerExpansion.Unfertilize(location, Monitor, Config);
-                }
-                FertilizerExpansion.GrowFruit(location, Monitor);
+                FertilizerExpansion.Unfertilize(Monitor, Config);
             }
+            FertilizerExpansion.GrowFruit(Monitor);
             if (Config.ResetTrees == "remove" || Config.ResetTrees == "remove (farm)")
             {
-                foreach (GameLocation location in Game1.locations)
-                {
-                    TreeReplacer.ResetTrees(location, Config, Monitor);
-                }
+                TreeReplacer.ResetTrees(Monitor, Config);
                 Config.ResetTrees = "none";
             }
             if (Config.ResetTrees == "replace")
             {
-                foreach (GameLocation location in Game1.locations)
-                {
-                    foreach (TerrainFeature feature in location.terrainFeatures.Values)
-                    {
-                        if (feature is Tree tree)
-                        {
-                            TreeReplacer.ReplaceTree(tree, location, Config, Monitor);
-                        }
-                    }
-                }
+                TreeReplacer.ReplaceTree(Config, Monitor);
                 Config.ResetTrees = "none";
             }
         }
 
-        // Hoe small fruit trees to pick up sapling
+        // Enable fruit tree fertilizing
         private void OnButtonPressed(object sender, ButtonPressedEventArgs e)
         {
             if (!Context.IsWorldReady)
@@ -161,16 +135,7 @@ namespace WilderTrees
         // Randomize trees on save creation
         private void OnSaveCreated(object sender, EventArgs e)
         {
-            foreach (GameLocation location in Game1.locations)
-            {
-                foreach (TerrainFeature feature in location.terrainFeatures.Values)
-                {
-                    if (feature is Tree tree)
-                    {
-                        TreeReplacer.ReplaceTree(tree, location, Config, Monitor);
-                    }
-                }
-            }
+            TreeReplacer.ReplaceTree(Config, Monitor);
         }
 
         // Register config fields
@@ -227,6 +192,17 @@ namespace WilderTrees
                 interval: 1
                 );
 
+            configMenu.AddNumberOption(
+                mod: this.ModManifest,
+                name: () => "Tree Limit",
+                tooltip: () => "Maximum number of trees per map before tree spreading stops (default 100)",
+                getValue: () => this.Config.TreeLimit,
+                setValue: value => this.Config.SpreadRadius = (int)value,
+                min: 0,
+                max: 1000,
+                interval: 10
+                );
+
             configMenu.AddSectionTitle(
                 mod: this.ModManifest,
                 text: () => "Tree Growth",
@@ -235,10 +211,18 @@ namespace WilderTrees
 
             configMenu.AddBoolOption(
                 mod: this.ModManifest,
-                name: () => "Dense Growth",
-                tooltip: () => "Allow trees to grow adjacent to other trees (default false)",
+                name: () => "Dense Spreading",
+                tooltip: () => "Allow trees to spread adjacent to other trees (spreading logic will always favor non-adjacent tiles; default false)",
                 getValue: () => this.Config.DenseTrees,
                 setValue: value => this.Config.DenseTrees = value
+                );
+
+            configMenu.AddBoolOption(
+                mod: this.ModManifest,
+                name: () => "Even Denser Spreading",
+                tooltip: () => "Allow trees to spread to adjacent tiles (spreading logic will always favor non-adjacent tiles; default false)",
+                getValue: () => this.Config.DenserTrees,
+                setValue: value => this.Config.DenserTrees = value
                 );
 
             configMenu.AddNumberOption(

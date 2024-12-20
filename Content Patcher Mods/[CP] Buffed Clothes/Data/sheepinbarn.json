@@ -1,0 +1,19 @@
+
+{
+
+	"Changes": [
+{
+			"LogName": "Allows Sheep for Basic Barn",
+			"Action": "EditData",
+			"Target": "Data/FarmAnimals",
+			"When": { "sheepbarn": "true"},
+			"Update": "OnTimeChange",
+			"Fields":{
+				"Sheep":{
+					"RequiredBuilding": null, //"RequiredBuilding": "Deluxe Barn",
+						}
+			}
+}
+
+]
+}

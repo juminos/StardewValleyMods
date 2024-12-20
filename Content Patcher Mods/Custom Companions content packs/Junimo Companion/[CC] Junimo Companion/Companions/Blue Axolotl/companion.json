@@ -1,0 +1,73 @@
+{
+	"Name": "BlueAxolotl",
+	"Type": "Walking",
+	"EnableFarmerCollision": true,
+	"TravelSpeed": 6,
+	"SpawnOffsetX": -60,
+	"SpawnOffsetY": 0,
+	"MaxIdleDistance": 250,
+	"MaxHaltTime": 2000,
+	"MaxDistanceBeforeTeleport": 300,
+	"IdleBehavior": "Nothing",
+	"EnableSpawnAtDayStart": true,
+	"EnableEventAppearance": true,
+	"EnableShadow": true,
+	
+	"Shadow": {
+		"OffsetX": 0,
+		"OffsetY": -16,
+		"Scale": 1,
+		"Alpha": 255
+	},
+
+	"FrameSizeWidth": 25,
+	"FrameSizeHeight": 25,
+
+	"UpAnimation": {
+		"StartingFrame": 0,
+		"NumberOfFrames": 2,
+		"Duration": 300,
+		
+	"IdleAnimation": {
+      "StartingFrame": 11,
+      "NumberOfFrames": 1,
+      "Duration": 2000
+	  }
+	},
+
+	"DownAnimation": {
+		"StartingFrame": 2,
+		"NumberOfFrames": 2,
+		"Duration": 300,
+		
+	"IdleAnimation": {
+      "StartingFrame": 11,
+      "NumberOfFrames": 1,
+      "Duration": 2000
+	  }
+	},
+
+	"LeftAnimation": {
+		"StartingFrame": 4,
+		"NumberOfFrames": 3,
+		"Duration": 205,
+		
+	"IdleAnimation": {
+      "StartingFrame": 11,
+      "NumberOfFrames": 1,
+      "Duration": 2000
+	  }
+	},
+
+	"RightAnimation": {
+		"StartingFrame": 7,
+		"NumberOfFrames": 3,
+		"Duration": 205,
+		
+		"IdleAnimation": {
+      "StartingFrame": 11,
+      "NumberOfFrames": 1,
+      "Duration": 2000
+	  }
+	}
+}

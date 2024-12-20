@@ -1,0 +1,76 @@
+{
+	"Name": "ColorlessJunimo",
+	"Type": "Walking",
+	"EnableSpawnAtDayStart": true,
+	"EnableFarmerCollision": true,
+	"EnableCharacterCollision": true,
+	"EnableShadow": true,
+	"Shadow": {
+		"OffsetX": 0,
+		"OffsetY": 0,
+		"Scale": 1,
+		"Alpha": 255
+	},
+	"EnableEventAppearance": true,
+	"TravelSpeed": 6,
+	"SpawnOffsetX": -32,
+	"SpawnOffsetY": 0,
+	"MaxIdleDistance": 480,
+	"MaxDistanceBeforeTeleport": 512,
+	"IdleBehavior": "Nothing",
+	"IsPrismatic": true,
+	"Sounds": [
+		{
+			"SoundName": "junimoMeep1",
+			"WhenToPlay": "Idle",
+			"TimeBetweenSound": 3000,
+			"ChanceOfPlaying": 0.2
+		}
+	],
+	"FrameSizeWidth": 16,
+	"FrameSizeHeight": 16,
+
+	"UpAnimation": {
+		"StartingFrame": 0,
+		"NumberOfFrames": 8,
+		"Duration": 120,
+		"IdleAnimation": {
+			"StartingFrame": 32,
+			"NumberOfFrames": 4,
+			"Duration": 240
+		}
+	},
+
+	"DownAnimation": {
+		"StartingFrame": 8,
+		"NumberOfFrames": 8,
+		"Duration": 120,
+		"IdleAnimation": {
+			"StartingFrame": 36,
+			"NumberOfFrames": 4,
+			"Duration": 240
+		}
+	},
+
+	"LeftAnimation": {
+		"StartingFrame": 16,
+		"NumberOfFrames": 8,
+		"Duration": 120,
+		"IdleAnimation": {
+			"StartingFrame": 40,
+			"NumberOfFrames": 4,
+			"Duration": 240
+		}
+	},
+
+	"RightAnimation": {
+		"StartingFrame": 24,
+		"NumberOfFrames": 8,
+		"Duration": 120,
+		"IdleAnimation": {
+			"StartingFrame": 44,
+			"NumberOfFrames": 4,
+			"Duration": 240
+		}
+	}
+}

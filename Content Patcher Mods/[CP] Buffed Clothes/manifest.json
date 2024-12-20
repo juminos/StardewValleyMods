@@ -1,0 +1,43 @@
+{
+	"Name": "Buffed Clothes",
+	"Description": "Adds buffs to clothes and alters prices",
+	"Author": "juminos",
+	"Version": "1.0.0",
+	"MinimumApiVersion": "3.15.0",
+	"UpdateKeys": [],
+	"UniqueID": "juminos.BuffedClothes",
+	"ContentPackFor": 
+	{
+		"UniqueID": "Pathoschild.ContentPatcher"
+	},
+	"Dependencies": 
+	[
+		{
+			"UniqueID": "misatse1019.HatsWontMessUpHair",
+			"IsRequired": false
+		},
+		{
+			 "UniqueID": "Goldenrevolver.ObtainableCowboyBoots",
+			 "IsRequired": false
+		},
+		{
+			"UniqueID": "Daemonia2112.DyeablePoncho",
+			"IsRequired": false
+		},
+		{
+			"UniqueID": "Adalghizar.MyCrowns",
+			"IsRequired": false
+		},
+		{
+			"UniqueID": "Adalghizar.Kisekae",
+			"IsRequired": false
+		},
+		{
+			"UniqueID": "bennoloth.PHOU",
+			"IsRequired": false
+		}
+		
+		
+	]
+}
+

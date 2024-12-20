@@ -1,0 +1,11 @@
+
+{
+	"Changes": [		
+				{
+			"Action": "Load",
+			"Target": "Adalghizar.ClothingBuffs_BikiniBuff/Bikini, Adalghizar.ClothingBuffs_AstronautBuff/Astronaut, Adalghizar.ClothingBuffs_ArchaeologistBuff/Archaeologist, Adalghizar.ClothingBuffs_CaptainBuff/Captain, Adalghizar.ClothingBuffs_CommodoreBuff/Commodore, Adalghizar.ClothingBuffs_CavemanBuff/Caveman, Adalghizar.ClothingBuffs_ChickenBuff/Chicken, Adalghizar.ClothingBuffs_DinoBuff/Dino, Adalghizar.ClothingBuffs_DjinnBuff/Djinn, Adalghizar.ClothingBuffs_ExecutiveChefBuff/ExecutiveChef, Adalghizar.ClothingBuffs_EmilyBuff/Emily, Adalghizar.ClothingBuffs_GhillieSuitBuff/GhillieSuit, Adalghizar.ClothingBuffs_GreenGiantBuff/GreenGiant, Adalghizar.ClothingBuffs_HackerBuff/Hacker, Adalghizar.ClothingBuffs_HarajukuBuff/Harajuku, Adalghizar.ClothingBuffs_JesterBuff/Jester, Adalghizar.ClothingBuffs_KingfisherBuff/Kingfisher, Adalghizar.ClothingBuffs_LegendaryPirateBuff/LegendaryPirate, Adalghizar.ClothingBuffs_LinkBuff/Link, Adalghizar.ClothingBuffs_MilkmaidBuff/Milkmaid, Adalghizar.ClothingBuffs_MonarchBuff/Monarch, Adalghizar.ClothingBuffs_MysteriousBuff/Mysterious, Adalghizar.ClothingBuffs_OfficerBuff/Officer, Adalghizar.ClothingBuffs_OscarBuff/Oscar, Adalghizar.ClothingBuffs_PilgrimBuff/Pilgrim, Adalghizar.ClothingBuffs_RangerBuff/Ranger, Adalghizar.ClothingBuffs_SerialKillerBuff/SerialKiller, Adalghizar.ClothingBuffs_SportsFanBuff/SportsFan, Adalghizar.ClothingBuffs_TigerBuff/Tiger, Adalghizar.ClothingBuffs_VarsityBuff/Varsity, Adalghizar.ClothingBuffs_WitchyBuff/Witchy, Adalghizar.ClothingBuffs_WizardBuff/Wizard",
+			"FromFile": "assets/Buff_{{TargetWithoutPath}}.png"
+		}
+	]
+}
+	

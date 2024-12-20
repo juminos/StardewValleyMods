@@ -1,0 +1,10 @@
+{
+
+	"Changes": [		
+				{
+			"Action": "Load",
+			"Target": "Adalghizar.ClothingBuffs_Unique/Unique",
+			"FromFile": "assets/Buff_{{TargetWithoutPath}}.png"
+			}
+	]
+}

@@ -1,0 +1,10 @@
+{
+  "$schema": "https://smapi.io/schemas/i18n.json",
+  // Trinkets
+  // Junimo
+  "Junimo.DisplayName": "A junimo friend",
+  "Junimo.Description": "A forest spirit. Very friendly.\n\nLv.{0}: {1}",
+  "Junimo.AbilityDescription.1": "Something 1.",
+  "Junimo.AbilityDescription.2": "Something 2.",
+  "Junimo.AbilityDescription.3": "Something 3.",
+}

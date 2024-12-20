@@ -1,0 +1,261 @@
+
+{   
+ "Changes": [
+        {
+            "Action": "EditData",
+            "Target": "Strings/Shirts",
+            "Entries": {
+
+"Earthern_Shirt_Name": {"0": "{{i18n:earthern_shirt-name}}" },
+"Earthern_Shirt_Description": {"0": "{{i18n:earthern_shirt-desc}}"},
+
+"Blue_Blazer_Name": {"0": "{{i18n:blue_blazer-name}}" },
+"Blue_Blazer_Description": {"0": "{{i18n:blue_blazer-desc}}"},
+
+"Navy_Blazer_Name": {"0": "{{i18n:navy_blazer-name}}" },
+"Navy_Blazer_Description": {"0": "{{i18n:navy_blazer-desc}}"},
+
+"Brown_Muslin_Shirt_Name": {"0": "{{i18n:brown_muslin_shirt-name}}" },
+"Brown_Muslin_Shirt_Description": {"0": "{{i18n:brown_muslin_shirt-desc}}"},
+
+"Red_Tunic_Name": {"0": "{{i18n:red_tunic-name}}" },
+"Red_Tunic_Description": {"0": "{{i18n:red_tunic-desc}}"},
+
+"Green_Shirt_Name": {"0": "{{i18n:green_shirt-name}}" },
+"Green_Shirt_Description": {"0": "{{i18n:green_shirt-desc}}"},
+
+"Coral_Shirt_Name": {"0": "{{i18n:coral_shirt-name}}" },
+"Coral_Shirt_Description": {"0": "{{i18n:coral_shirt-desc}}"},
+
+"Black_Shirt_Name": {"0": "{{i18n:black_shirt-name}}" },
+"Black_Shirt_Description": {"0": "{{i18n:black_shirt-desc}}"},
+
+"Icy_Blue_Shirt_Name": {"0": "{{i18n:icy_blue_shirt-name}}" },
+"Icy_Blue_Shirt_Description": {"0": "{{i18n:icy_blue_shirt-desc}}"},
+
+"Hardy_Tunic_Name": {"0": "{{i18n:hardy_tunic-name}}" },
+"Hardy_Tunic_Description": {"0": "{{i18n:hardy_tunic-desc}}"},
+
+"Vamp_Shirt_Name": {"0": "{{i18n:vamp_shirt-name}}" },
+"Vamp_Shirt_Description": {"0": "{{i18n:vamp_shirt-desc}}"},
+
+"Pastel_Camisole_Top_Name": {"0": "{{i18n:pastel_camisole_top-name}}" },
+"Pastel_Camisole_Top_Description": {"0": "{{i18n:pastel_camisole_top-desc}}"},
+
+"Pastel_Colorblock_Shirt_Name": {"0": "{{i18n:pastel_colorblock_shirt-name}}" },
+"Pastel_Colorblock_Shirt_Description": {"0": "{{i18n:pastel_colorblock_shirt-desc}}"},
+
+"Pride_Shirt_Name": {"0": "{{i18n:pride_shirt-name}}" },
+"Pride_Shirt_Description": {"0": "{{i18n:pride_shirt-desc}}"},
+
+"Dark_Tunic_Name": {"0": "{{i18n:dark_tunic-name}}" },
+"Dark_Tunic_Description": {"0": "{{i18n:dark_tunic-desc}}"},
+
+"Simple_Striped_Tee_Name": {"0": "{{i18n:simple_striped_tee-name}}" },
+"Simple_Striped_Tee_Description": {"0": "{{i18n:simple_striped_tee-desc}}"},
+
+"Red_Bolero_Name": {"0": "{{i18n:red_bolero-name}}" },
+"Red_Bolero_Description": {"0": "{{i18n:red_bolero-desc}}"},
+
+"Purple_Tee_Name": {"0": "{{i18n:purple_tee-name}}" },
+"Purple_Tee_Description": {"0": "{{i18n:purple_tee-desc}}"},
+
+"Mustard_Tee_Name": {"0": "{{i18n:mustard_tee-name}}" },
+"Mustard_Tee_Description": {"0": "{{i18n:mustard_tee-desc}}"},
+
+"Gluten_Tee_Name": {"0": "{{i18n:gluten_tee-name}}" },
+"Gluten_Tee_Description": {"0": "{{i18n:gluten_tee-desc}}"},
+
+"Blue_Contrast_Collar_Shirt_Name": {"0": "{{i18n:blue_contrast_collar_shirt-name}}" },
+"Blue_Contrast_Collar_Shirt_Description": {"0": "{{i18n:blue_contrast_collar_shirt-desc}}"},
+
+"Red_Contrast_Collar_Shirt_Name": {"0": "{{i18n:red_contrast_collar_shirt-name}}" },
+"Red_Contrast_Collar_Shirt_Description": {"0": "{{i18n:red_contrast_collar_shirt-desc}}"},
+
+"Crystal_Bolero_Name": {"0": "{{i18n:crystal_bolero-name}}" },
+"Crystal_Bolero_Description": {"0": "{{i18n:crystal_bolero-desc}}"},
+
+"Green_Tee_Name": {"0": "{{i18n:green_tee-name}}" },
+"Green_Tee_Description": {"0": "{{i18n:green_tee-desc}}"},
+
+"Mouse_Tee_Name": {"0": "{{i18n:mouse_tee-name}}" },
+"Mouse_Tee_Description": {"0": "{{i18n:mouse_tee-desc}}"},
+
+"Vernal_Top_Name": {"0": "{{i18n:vernal_top-name}}" },
+"Vernal_Top_Description": {"0": "{{i18n:vernal_top-desc}}"},
+
+"Chartreuse_Overalls_Name": {"0": "{{i18n:chartreuse_overalls-name}}" },
+"Chartreuse_Overalls_Description": {"0": "{{i18n:chartreuse_overalls-desc}}"},
+
+"Chlorophyll_Tunic_Name": {"0": "{{i18n:chlorophyll_tunic-name}}" },
+"Chlorophyll_Tunic_Description": {"0": "{{i18n:chlorophyll_tunic-desc}}"},
+
+"Fairy_Tunic_Name": {"0": "{{i18n:fairy_tunic-name}}" },
+"Fairy_Tunic_Description": {"0": "{{i18n:fairy_tunic-desc}}"},
+
+"Colorblock_Hoodie_Name": {"0": "{{i18n:colorblock_hoodie-name}}" },
+"Colorblock_Hoodie_Description": {"0": "{{i18n:colorblock_hoodie-desc}}"},
+
+"Purple_Colorblock_Tee_Name": {"0": "{{i18n:purple_colorblock_tee-name}}" },
+"Purple_Colorblock_Tee_Description": {"0": "{{i18n:purple_colorblock_tee-desc}}"},
+
+"Plumber's_Overalls_Name": {"0": "{{i18n:plumber's_overalls-name}}" },
+"Plumber's_Overalls_Description": {"0": "{{i18n:plumber's_overalls-desc}}"},
+
+"Alien_Tee_Name": {"0": "{{i18n:alien_tee-name}}" },
+"Alien_Tee_Description": {"0": "{{i18n:alien_tee-desc}}"},
+
+"Silly_Ghost_Tee_Name": {"0": "{{i18n:silly_ghost_tee-name}}" },
+"Silly_Ghost_Tee_Description": {"0": "{{i18n:silly_ghost_tee-desc}}"},
+
+"Purple_Contast_Collar_Shirt_Name": {"0": "{{i18n:purple_contast_collar_shirt-name}}" },
+"Purple_Contast_Collar_Shirt_Description": {"0": "{{i18n:purple_contast_collar_shirt-desc}}"},
+
+"Stylish_Blue_Shirt_and_Overalls_Name": {"0": "{{i18n:stylish_blue_shirt_and_overalls-name}}" },
+"Stylish_Blue_Shirt_and_Overalls_Description": {"0": "{{i18n:stylish_blue_shirt_and_overalls-desc}}"},
+
+"Casual_Green_Shirt_Name": {"0": "{{i18n:casual_green_shirt-name}}" },
+"Casual_Green_Shirt_Description": {"0": "{{i18n:casual_green_shirt-desc}}"},
+
+"Void_Shirt_Name": {"0": "{{i18n:void_shirt-name}}" },
+"Void_Shirt_Description": {"0": "{{i18n:void_shirt-desc}}"},
+
+"Crimson_Bandana_Shirt_Name": {"0": "{{i18n:crimson_bandana_shirt-name}}" },
+"Crimson_Bandana_Shirt_Description": {"0": "{{i18n:crimson_bandana_shirt-desc}}"},
+
+"Purple_Suspenders_Name": {"0": "{{i18n:purple_suspenders-name}}" },
+"Purple_Suspenders_Description": {"0": "{{i18n:purple_suspenders-desc}}"},
+
+"Parsnip_Shirt_Name": {"0": "{{i18n:parsnip_shirt-name}}" },
+"Parsnip_Shirt_Description": {"0": "{{i18n:parsnip_shirt-desc}}"},
+
+"Retro_Purple_Polo_Name": {"0": "{{i18n:retro_purple_polo-name}}" },
+"Retro_Purple_Polo_Description": {"0": "{{i18n:retro_purple_polo-desc}}"},
+
+"Pickled_Shirt_Name": {"0": "{{i18n:pickled_shirt-name}}" },
+"Pickled_Shirt_Description": {"0": "{{i18n:pickled_shirt-desc}}"},
+
+"Jellied_Shirt_Name": {"0": "{{i18n:jellied_shirt-name}}" },
+"Jellied_Shirt_Description": {"0": "{{i18n:jellied_shirt-desc}}"},
+
+"Feta_Shirt_Name": {"0": "{{i18n:feta_shirt-name}}" },
+"Feta_Shirt_Description": {"0": "{{i18n:feta_shirt-desc}}"},
+
+"Gaia_Shirt_Name": {"0": "{{i18n:gaia_shirt-name}}" },
+"Gaia_Shirt_Description": {"0": "{{i18n:gaia_shirt-desc}}"},
+
+"Cute_Bunny_Tee_Name": {"0": "{{i18n:cute_bunny_tee-name}}" },
+"Cute_Bunny_Tee_Description": {"0": "{{i18n:cute_bunny_tee-desc}}"},
+
+"Green_Speckled_Tee_Name": {"0": "{{i18n:green_speckled_tee-name}}" },
+"Green_Speckled_Tee_Description": {"0": "{{i18n:green_speckled_tee-desc}}"},
+
+"Gray_Sweater_Name": {"0": "{{i18n:gray_sweater-name}}" },
+"Gray_Sweater_Description": {"0": "{{i18n:gray_sweater-desc}}"},
+
+"Black_Business_Suit_Name": {"0": "{{i18n:black_business_suit-name}}" },
+"Black_Business_Suit_Description": {"0": "{{i18n:black_business_suit-desc}}"},
+
+"Stylish_Purple_Shirt_and_Overalls_Name": {"0": "{{i18n:stylish_purple_shirt_and_overalls-name}}" },
+"Stylish_Purple_Shirt_and_Overalls_Description": {"0": "{{i18n:stylish_purple_shirt_and_overalls-desc}}"},
+
+"Light_Blue_Tunic_Name": {"0": "{{i18n:light_blue_tunic-name}}" },
+"Light_Blue_Tunic_Description": {"0": "{{i18n:light_blue_tunic-desc}}"},
+
+"Black_and_White_Camisole_Name": {"0": "{{i18n:black_and_white_camisole-name}}" },
+"Black_and_White_Camisole_Description": {"0": "{{i18n:black_and_white_camisole-desc}}"},
+
+"Muslin_Tunic_Name": {"0": "{{i18n:muslin_tunic-name}}" },
+"Muslin_Tunic_Description": {"0": "{{i18n:muslin_tunic-desc}}"},
+
+"Spooky_Camisole_Name": {"0": "{{i18n:spooky_camisole-name}}" },
+"Spooky_Camisole_Description": {"0": "{{i18n:spooky_camisole-desc}}"},
+
+"Green_Striped_Tee_Name": {"0": "{{i18n:green_striped_tee-name}}" },
+"Green_Striped_Tee_Description": {"0": "{{i18n:green_striped_tee-desc}}"},
+
+"Joja_Shirt_Name": {"0": "{{i18n:joja_shirt-name}}" },
+"Joja_Shirt_Description": {"0": "{{i18n:joja_shirt-desc}}"},
+
+"Energetic_Tee_Name": {"0": "{{i18n:energetic_tee-name}}" },
+"Energetic_Tee_Description": {"0": "{{i18n:energetic_tee-desc}}"},
+
+"Pink_Sweater_Name": {"0": "{{i18n:pink_sweater-name}}" },
+"Pink_Sweater_Description": {"0": "{{i18n:pink_sweater-desc}}"},
+
+"Fisherman's_Polo_Name": {"0": "{{i18n:fisherman's_polo-name}}" },
+"Fisherman's_Polo_Description": {"0": "{{i18n:fisherman's_polo-desc}}"},
+
+"Brown_Tunic_Name": {"0": "{{i18n:brown_tunic-name}}" },
+"Brown_Tunic_Description": {"0": "{{i18n:brown_tunic-desc}}"},
+
+"Pink_Colorblock_Tee_Name": {"0": "{{i18n:pink_colorblock_tee-name}}" },
+"Pink_Colorblock_Tee_Description": {"0": "{{i18n:pink_colorblock_tee-desc}}"},
+
+"Red_Dress_Shirt_Name": {"0": "{{i18n:red_dress_shirt-name}}" },
+"Red_Dress_Shirt_Description": {"0": "{{i18n:red_dress_shirt-desc}}"},
+
+"Blue_Dress_Shirt_Name": {"0": "{{i18n:blue_dress_shirt-name}}" },
+"Blue_Dress_Shirt_Description": {"0": "{{i18n:blue_dress_shirt-desc}}"},
+
+"Pink_Dress_Shirt_Name": {"0": "{{i18n:pink_dress_shirt-name}}" },
+"Pink_Dress_Shirt_Description": {"0": "{{i18n:pink_dress_shirt-desc}}"},
+
+"Brown_Suspenders_Name": {"0": "{{i18n:brown_suspenders-name}}" },
+"Brown_Suspenders_Description": {"0": "{{i18n:brown_suspenders-desc}}"},
+
+"Basic_Blazer_Name": {"0": "{{i18n:basic_blazer-name}}" },
+"Basic_Blazer_Description": {"0": "{{i18n:basic_blazer-desc}}"},
+
+"Casual_Blue_Blazer_Name": {"0": "{{i18n:casual_blue_blazer-name}}" },
+"Casual_Blue_Blazer_Description": {"0": "{{i18n:casual_blue_blazer-desc}}"},
+
+"Orange_Graphic_Tee_Name": {"0": "{{i18n:orange_graphic_tee-name}}" },
+"Orange_Graphic_Tee_Description": {"0": "{{i18n:orange_graphic_tee-desc}}"},
+
+"Green_Graphic_Tee_Name": {"0": "{{i18n:green_graphic_tee-name}}" },
+"Green_Graphic_Tee_Description": {"0": "{{i18n:green_graphic_tee-desc}}"},
+
+"Casual_Green_Blazer_Name": {"0": "{{i18n:casual_green_blazer-name}}" },
+"Casual_Green_Blazer_Description": {"0": "{{i18n:casual_green_blazer-desc}}"},
+
+"Blue_Graphic_Tee_Name": {"0": "{{i18n:blue_graphic_tee-name}}" },
+"Blue_Graphic_Tee_Description": {"0": "{{i18n:blue_graphic_tee-desc}}"},
+
+"Yellow_Cardigan_Name": {"0": "{{i18n:yellow_cardigan-name}}" },
+"Yellow_Cardigan_Description": {"0": "{{i18n:yellow_cardigan-desc}}"},
+
+"Jade_Tunic_Name": {"0": "{{i18n:jade_tunic-name}}" },
+"Jade_Tunic_Description": {"0": "{{i18n:jade_tunic-desc}}"},
+
+"Neater_Bow_Shirt_Name": {"0": "{{i18n:neater_bow_shirt-name}}" },
+"Neater_Bow_Shirt_Description": {"0": "{{i18n:neater_bow_shirt-desc}}"},
+
+"Flashy_Dress_Shirt_Name": {"0": "{{i18n:flashy_dress_shirt-name}}" },
+"Flashy_Dress_Shirt_Description": {"0": "{{i18n:flashy_dress_shirt-desc}}"},
+
+"Yellow_Contrast_Collar_Shirt_Name": {"0": "{{i18n:yellow_contrast_collar_shirt-name}}" },
+"Yellow_Contrast_Collar_Shirt_Description": {"0": "{{i18n:yellow_contrast_collar_shirt-desc}}"},
+
+"Red_Bandana_Shirt_Name": {"0": "{{i18n:red_bandana_shirt-name}}" },
+"Red_Bandana_Shirt_Description": {"0": "{{i18n:red_bandana_shirt-desc}}"},
+
+"Blue_Bandana_Shirt_Name": {"0": "{{i18n:blue_bandana_shirt-name}}" },
+"Blue_Bandana_Shirt_Description": {"0": "{{i18n:blue_bandana_shirt-desc}}"},
+
+"Purple_Bandana_Shirt_Name": {"0": "{{i18n:purple_bandana_shirt-name}}" },
+"Purple_Bandana_Shirt_Description": {"0": "{{i18n:purple_bandana_shirt-desc}}"},
+
+"Colorful_Heart_Shirt_Name": {"0": "{{i18n:colorful_heart_shirt-name}}" },
+"Colorful_Heart_Shirt_Description": {"0": "{{i18n:colorful_heart_shirt-desc}}"},
+
+"Sailor's_Shirt_Name": {"0": "{{i18n:sailor's_shirt-name}}" },
+"Sailor's_Shirt_Description": {"0": "{{i18n:sailor's_shirt-desc}}"},
+
+"Colorful_Sailor's_Shirt_Name": {"0": "{{i18n:colorful_sailor's_shirt-name}}" },
+"Colorful_Sailor's_Shirt_Description": {"0": "{{i18n:colorful_sailor's_shirt-desc}}"},
+
+  }
+  }
+ ]
+}

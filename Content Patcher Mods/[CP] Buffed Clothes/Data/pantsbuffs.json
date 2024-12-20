@@ -1,0 +1,34 @@
+
+{
+	"Changes": [		
+			
+	// Coffee Shirt Buff
+	{
+		"Action": "EditData",
+		"Target": "Data/Buffs",
+		"LogName": "Trimmed Lucky Purple Shorts Buff",
+		"Entries": {
+			"{{ModId}}_TrimmedLuckyPurpleShortsBuff": {
+				"DisplayName": "Trimmed Lucky Purple Shorts Buff",
+				"Description": "A small luck boost",
+				"IconTexture": "{{ModId}}_BuffsIcons/MyBuffsIcons",
+				"IconSpriteIndex": 5,
+				"Effects": {"LuckLevel": 1}
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "spacechase0.SpaceCore/WearableData",
+			"Entries": {
+				"(P)15": {
+					"BuffIdToApply": "{{ModId}}_TrimmedLuckyPurpleShortsBuff"
+				}
+			}
+		}
+
+	]
+}
+	
+	

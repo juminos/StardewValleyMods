@@ -1,0 +1,215 @@
+//Hat buffs, all vanilla
+{
+	"Format": "2.3.0",
+	"ConfigSchema": {
+	"Dyeable": {
+		"AllowValues": "true, false", 
+			"Default": "false",
+	
+		},
+		"hatbuffs": {
+		"AllowValues": "true, false", 
+			"Default": "true",
+		
+		},
+		"shirtbuffs": {
+		"AllowValues": "true, false", 
+			"Default": "true",
+		
+		},
+		"bottomsbuffs": {
+		"AllowValues": "true, false", 
+			"Default": "true",
+	
+		},
+		"outfitbuffs": {
+		"AllowValues": "true, false", 
+			"Default": "true",
+		
+		},
+		"disablemmusk": {
+		"AllowValues": "true, false", 
+			"Default": "true",
+
+		},
+		"disableoilgarlic": {
+		"AllowValues": "true, false", 
+			"Default": "true",
+		
+		},
+		"sheepbarn": {
+		"AllowValues": "true, false", 
+			"Default": "true",
+		
+		}
+	},
+	"Changes": [	
+	//Sheep in Barn
+	{
+            "LogName": "Unlock Sheep for Basic Barn",
+            "Action": "Include",
+            "FromFile": "Data/sheepinbarn.json",
+				
+			
+        },
+	//Disable Glows
+	{
+            "LogName": "Disable Oil of Garlic or Monster Musk Glow",
+            "Action": "Include",
+            "FromFile": "Data/disableglows.json",	
+
+			
+        },
+		
+//Outfit buffs
+		{
+            "LogName": "Specific Buffs",
+            "Action": "Include",
+            "FromFile": "Data/SpecificOutfitBuffs.json",
+			"When": { "outfitbuffs": "true"},
+			"Update": "OnTimeChange",
+			
+        },
+		{
+            "LogName": "Mod-Specific Buffs",
+            "Action": "Include",
+            "FromFile": "Data/OptionalOutfitBuffs.json",
+			"When": { "outfitbuffs": "true"},
+			"Update": "OnTimeChange",
+			
+        },
+		{
+            "LogName": "All-Season Buffs",
+            "Action": "Include",
+            "FromFile": "Data/OutfitBuffs.json",
+			"When": { "outfitbuffs": "true"},
+			"Update": "OnTimeChange",
+			
+        },
+		{
+            "LogName": "Unique Buffs",
+            "Action": "Include",
+            "FromFile": "Data/UniqueBuffs.json",
+			"When": { "outfitbuffs": "true"},
+			"Update": "OnTimeChange",
+			
+        },
+//Buffs
+	{
+			"Action": "Load",
+			"Target": "{{ModId}}_BuffsIcons/MyBuffsIcons",
+			"FromFile": "assets/{{TargetWithoutPath}}.png"
+		},
+
+		{
+            "LogName": "Pant Buffs",
+            "Action": "Include",
+            "FromFile": "Data/pantsbuffs.json",
+			"When": { "bottomsbuffs": "true"},
+			"Update": "OnTimeChange",
+			
+        },
+		{
+            "LogName": "Pant Descriptions",
+            "Action": "Include",
+            "FromFile": "Data/pant_descriptions.json",
+			"When": { "bottomsbuffs": "true"},
+
+			
+        },
+		
+		{
+            "LogName": "Shirt Buffs",
+            "Action": "Include",
+            "FromFile": "Data/shirtbuffs.json",
+			"When": { "shirtbuffs": "true"},
+			"Update": "OnTimeChange",
+			
+        },
+		{
+            "LogName": "Shirt Descriptions",
+            "Action": "Include",
+            "FromFile": "Data/shirt_descriptions.json",
+			"When": { "shirtbuffs": "true"},
+
+			
+        },
+				{
+            "LogName": "Expanded Hat Descriptions",
+            "Action": "Include",
+            "FromFile": "Data/hats.json",
+			"When": { "hatbuffs": "true"},
+
+        },
+		{
+            "LogName": "Hat Buffs",
+            "Action": "Include",
+            "FromFile": "Data/hatbuffs.json",
+			"When": { "hatbuffs": "true"},
+			"Update": "OnTimeChange",
+        },
+		
+		{
+		"Action": "EditImage",
+		"Target": "Characters/Farmer/shirts",
+		"When": { "Dyeable": "true"},
+		"FromFile": "assets/shirts.png",
+		"Update": "OnDayStart, OnTimeChange", //this allows any pregnancy mods to do so without losing the dye ones after done with that mod
+		},
+	
+ //New Data names for tailored generic shirts and other renames 
+	  {
+            "LogName": "Vanilla Shirt Data Naming Adjustments",
+            "Action": "Include",
+            "FromFile": "Data/vanilla_shirt_newdatanames.json",
+        },
+
+		
+        //Include different shirt pricing based on whether overhaul mod is installed
+
+        {
+            "LogName": "Vanilla Shirt Pricing Adjustments",
+            "Action": "Include",
+            "FromFile": "Data/vanilla_shirt_prices.json",
+			"When":{ "HasMod |contains=Theoddon.BalanceOverhaul": "false"}
+        },
+
+        {
+            "LogName": "Overhaul Shirt Pricing Adjustments",
+            "Action": "Include",
+            "FromFile": "Data/overhaul_shirt_prices.json",
+            "When":{"HasMod |contains=Theoddon.BalanceOverhaul": "true"}
+        },
+		
+		        {
+            "LogName": "Vanilla Pant Pricing Adjustments",
+            "Action": "Include",
+            "FromFile": "Data/vanilla_pant_prices.json",
+			"When":{ "HasMod |contains=Theoddon.BalanceOverhaul": "false"}
+        },
+
+        {
+            "LogName": "Overhaul Pant Pricing Adjustments",
+            "Action": "Include",
+            "FromFile": "Data/overhaul_pant_prices.json",
+            "When":{"HasMod |contains=Theoddon.BalanceOverhaul": "true"}
+        },
+		
+		{ 
+			"LogName": "Sell Clothing at Sandy's and Traveling Cart Shop",
+			"Action": "EditData",
+			"Target": "Data/Shops",
+
+		"Fields": {
+			"Sandy": { "SalableItemTags": ["category_clothing"]	},			
+			"Traveler": { "SalableItemTags": ["category_clothing"] },
+			},
+	
+		}
+		
+	//end of entries
+	]
+
+}
+	
+	

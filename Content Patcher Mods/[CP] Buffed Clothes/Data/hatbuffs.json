@@ -1,0 +1,197 @@
+//Hat buffs, all vanilla
+{
+	"Changes": [	
+
+	// Straw Hat Buff
+	{
+		"Action": "EditData",
+		"Target": "Data/Buffs",
+		"LogName": "Straw Hat Morning Conditions",
+		"Entries": {
+			"{{ModId}}_StrawHatBuff": {
+				"DisplayName": "{{i18n: clothing-buff-strawhat}}",
+				"Description": "{{i18n: clothing-buff-strawhat-desc}}",
+				"IconTexture": "{{ModId}}_BuffsIcons/MyBuffsIcons",
+				"IconSpriteIndex": 0,
+				"Effects": {"FarmingLevel": 2}
+			}
+		},
+		"When": 
+		{
+		"Season": "Spring, Summer, Fall",
+		"Time": "{{Range: 0600, 0930}}"	
+		},
+	
+		"Update": "OnTimeChange"
+	},
+
+	// Add Hat Buffs
+	{
+		"Action":"EditData",
+		"Target": "Data/Buffs",
+		"LogName":"Hat Buffs",
+		"Entries": {
+			"{{ModId}}_CowboyHatBuff": {
+				"DisplayName": "{{i18n: clothing-buff-cowboy}}",
+				"Description": "{{i18n: clothing-buff-cowboy-desc}}",
+				"IconTexture": "{{ModId}}_BuffsIcons/MyBuffsIcons",
+				"IconSpriteIndex": 12,
+				"Effects": {"Attack": 4}
+			},
+			"{{ModId}}_BowlerHatBuff": {
+				"DisplayName": "{{i18n: clothing-buff-bowler}}",
+				"Description": "{{i18n: clothing-buff-bowler-desc}}",
+				"IconTexture": "{{ModId}}_BuffsIcons/MyBuffsIcons",
+				"IconSpriteIndex": 12,
+				"Effects": {"Attack": 2, "MagneticRadius": 32}
+			},
+			"{{ModId}}_TopHatBuff": {
+				"DisplayName": "{{i18n: clothing-buff-tophat}}",
+				"Description": "{{i18n: clothing-buff-tophat-desc}}",
+				"IconTexture": "{{ModId}}_BuffsIcons/MyBuffsIcons",
+				"IconSpriteIndex": 5,
+				"Effects": {"LuckLevel": 1}
+			},
+			"{{ModId}}_SombreroBuff": {
+				"DisplayName": "{{i18n: clothing-buff-sombrero}}",
+				"Description": "{{i18n: clothing-buff-sombrero-desc}}",
+				"IconTexture": "{{ModId}}_BuffsIcons/MyBuffsIcons",
+				"IconSpriteIndex": 9,
+				"Effects": {"Speed": 1}
+			},
+			"{{ModId}}_OfficialCapBuff": {
+				"DisplayName": "{{i18n: clothing-buff-officialcap}}",
+				"Description": "{{i18n: clothing-buff-officialcap-desc}}",
+				"IconTexture": "{{ModId}}_BuffsIcons/MyBuffsIcons",
+				"IconSpriteIndex": 10,
+				"Effects": {"Defense": 1}
+			},
+			"{{ModId}}_PaperHatBuff": {
+				"DisplayName": "{{i18n: clothing-buff-paperhat}}",
+				"Description": "{{i18n: clothing-buff-paperhat-desc}}",
+				"IconTexture": "{{ModId}}_BuffsIcons/MyBuffsIcons",
+				"IconSpriteIndex": 1,
+				"Effects": {"FishingLevel": 2}
+			},
+			"{{ModId}}_SquidHatBuff": {
+				"DisplayName": "{{i18n: clothing-buff-squidhat}}",
+				"Description": "{{i18n: clothing-buff-squidhat-desc}}",
+				"IconTexture": "{{ModId}}_BuffsIcons/MyBuffsIcons",
+				"IconSpriteIndex": 1,
+				"Effects": {"FishingLevel": 3}
+			},
+			"{{ModId}}_PartyHatBuff": {
+				"DisplayName": "{{i18n: clothing-buff-partyhat}}",
+				"Description": "{{i18n: clothing-buff-partyhat-desc}}",
+				"IconTexture": "{{ModId}}_BuffsIcons/MyBuffsIcons",
+				"IconSpriteIndex": 5,
+				"Effects": {"LuckLevel": 1}
+			},
+			"{{ModId}}_DarkVelvetBowBuff": {
+				"DisplayName": "{{i18n: clothing-buff-darkvelvetbow}}",
+				"Description": "{{i18n: clothing-buff-darkvelvetbow-desc}}",
+				"IconTexture": "{{ModId}}_BuffsIcons/MyBuffsIcons",
+				"IconSpriteIndex": 10,
+				"Effects": {"Defense": 3}
+			},
+			"{{ModId}}_DinosaurHatBuff": {
+				"DisplayName": "{{i18n: clothing-buff-dinosaurhat}}",
+				"Description": "{{i18n: clothing-buff-dinosaurhat-desc}}",
+				"IconTexture": "{{ModId}}_BuffsIcons/MyBuffsIcons",
+				"IconSpriteIndex": 10,
+				"Effects": {"Defense": 3}
+			},
+			"{{ModId}}_BlueBonnetBuff": {
+				"DisplayName": "{{i18n: clothing-buff-bluebonnet}}",
+				"Description": "{{i18n: clothing-buff-bluebonnet-desc}}",
+				"IconTexture": "{{ModId}}_BuffsIcons/MyBuffsIcons",
+				"IconSpriteIndex": 0,
+				"Effects": {"FarmingLevel": 1}
+			},
+			"{{ModId}}_PlumChapeauBuff": {
+				"DisplayName": "{{i18n: clothing-buff-plumchapeau}}",
+				"Description": "{{i18n: clothing-buff-plumchapeau-desc}}",
+				"IconTexture": "{{ModId}}_BuffsIcons/MyBuffsIcons",
+				"IconSpriteIndex": 3,
+				"Effects": {"ForagingLevel": 1}
+			},
+			"{{ModId}}_SkeletonMaskBuff": {
+				"DisplayName": "{{i18n: clothing-buff-skeletonmask}}",
+				"Description": "{{i18n: clothing-buff-skeletonmask-desc}}",
+				"IconTexture": "{{ModId}}_BuffsIcons/MyBuffsIcons",
+				"IconSpriteIndex": 2,
+				"Effects": {"MiningLevel": 1}
+			},
+			"{{ModId}}_GoblinMaskBuff": {
+				"DisplayName": "{{i18n: clothing-buff-goblinmask}}",
+				"Description": "{{i18n: clothing-buff-goblinmask-desc}}",
+				"IconTexture": "{{ModId}}_BuffsIcons/MyBuffsIcons",
+				"IconSpriteIndex": 18,
+				"CustomFields": { "spacechase0.SpaceCore/HealthRegeneration": 1}
+			},
+		}
+	},
+
+
+	// Assign Hat Buffs
+	{
+		"Action": "EditData",
+		"Target": "spacechase0.SpaceCore/WearableData",
+		"Entries": {
+			"(H)0": {
+				"BuffIdToApply": "{{ModId}}_CowboyHatBuff"
+			},
+			"(H)1": {
+				"BuffIdToApply": "{{ModId}}_BowlerHatBuff"
+			},
+			"(H)2": {
+				"BuffIdToApply": "{{ModId}}_TopHatBuff"
+			},
+			"(H)3": {
+				"BuffIdToApply": "{{ModId}}_SombreroBuff"
+			},
+			"(H)4": {
+				"BuffIdToApply": "{{ModId}}_StrawHatBuff"
+			},
+			"(H)5": {
+				"BuffIdToApply": "{{ModId}}_OfficialCapBuff"
+			},
+			"(H)PaperHat": {
+				"BuffIdToApply": "{{ModId}}_PaperHatBuff"
+			},
+			"(H)SquidHat": {
+				"BuffIdToApply": "{{ModId}}_SquidHatBuff"
+			},
+			"(H)57": {
+				"BuffIdToApply": "{{ModId}}_PartyHatBuff"
+			},
+			"(H)58": {
+				"BuffIdToApply": "{{ModId}}_PartyHatBuff"
+			},
+			"(H)59": {
+				"BuffIdToApply": "{{ModId}}_PartyHatBuff"
+			},
+			"(H)DarkVelvetBow": {
+				"BuffIdToApply": "{{ModId}}_DarkVelvetBowBuff"
+			},
+			"(H)43": {
+				"BuffIdToApply": "{{ModId}}_DinosaurHatBuff"
+			},
+			"(H)6": {
+				"BuffIdToApply": "{{ModId}}_BlueBonnetBuff"
+			},
+			"(H)7": {
+				"BuffIdToApply": "{{ModId}}_PlumChapeauBuff"
+			},
+			"(H)8": {
+				"BuffIdToApply": "{{ModId}}_SkeletonMaskBuff"
+			},
+			"(H)9": {
+				"BuffIdToApply": "{{ModId}}_GoblinMaskBuff"
+			},
+		}
+	}
+	]
+}
+	
+	

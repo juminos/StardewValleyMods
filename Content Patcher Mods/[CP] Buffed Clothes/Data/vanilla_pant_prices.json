@@ -1,0 +1,51 @@
+{   
+	"Changes": [
+		{
+         "Action": "EditData", 
+         "Target": "Data/Pants",	 
+		 "Fields": {
+//doubled prices for profitable sell to Sandy. Market Town has its own random system that gives overall profit except for 5,7,8,10,998,999
+"0":{ "Price": 1540 },
+"1":{ "Price": 1500 },
+"2":{ "Price":	1840 },
+"3":{ "Price":	1420 },
+"4":{ "Price":	1640 },
+"5":{ "Price":	3560 },
+"6":{ "Price":	1320 },
+"7":{ "Price":	15320 },
+"8":{ "Price":	3140 },
+"9":{ "Price":	200 },
+"10":{ "Price":	8320 },
+"11":{ "Price":	1600 },
+"12":{ "Price":	1620 },
+"13":{ "Price":	1660 },
+"15":{ "Price":	1400 },
+"998":{ "Price": 6920 },
+"999":{ "Price": 6920 },
+		 		 
+		 
+		 }
+	 },
+		{
+         "Action": "EditData", 
+         "Target": "Data/Pants",
+		 "When": { "HasMod": "Adalghizar.Kisekae" },
+		 "Fields": {
+//doubled prices for profitable sell to Sandy. Market Town has its own random system that gives overall profit.	
+"Adalghizar.Kisekae_PeplumSkirt":{ "Price": 1620 },
+"Adalghizar.Kisekae_RuffledSkirt":{ "Price": 1580 },
+"Adalghizar.Kisekae_SchoolgirlSkirt":{ "Price": 1480 },
+"Adalghizar.Kisekae_BubbleSkirt":{ "Price": 1940 },
+"Adalghizar.Kisekae_CircleSkirt":{ "Price": 1520 },
+"Adalghizar.Kisekae_PencilSkirt":{ "Price": 1520 },
+"Adalghizar.Kisekae_PrincessSkirt":{ "Price": 1940 },
+"Adalghizar.Kisekae_PlaidSkirt":{ "Price":	1540 },
+"Adalghizar.Kisekae_FlaredSkirt":{ "Price": 1540 },
+"Adalghizar.Kisekae_BohemianSkirt":{ "Price":	1600 },
+"Adalghizar.Kisekae_GoredSkirt":{ "Price":	1480 },
+"Adalghizar.Kisekae_PantSkirt":{ "Price":	1500 },
+		 },
+		}
+ ]
+}
+

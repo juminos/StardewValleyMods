@@ -1,0 +1,1754 @@
+{
+	//unique buffs
+"clothing-buff-unique": "Unique",
+"clothing-buff-unique": "Just for you!\n",
+
+//ConfigSchema
+		"config.Dyeable.name": "Use New Dyeable Shirts",
+		"config.Dyeable.description": "Allows alpha dyeables for Regal Mantle, Officer Uniform, Leafy Top",
+		"config.hatbuffs.name": "Enable Hat Buffs",
+		"config.hatbuffs.description": "Enable Hat Buffs and descriptions",
+		"config.shirtbuffs.name": "Enable Shirt Buffs",
+		"config.shirtbuffs.description": "Enable Shirt Buffs and descriptions",
+		"config.bottomsbuffs.name": "Enable Bottoms Buffs",
+		"config.bottomsbuffs.description": "Enable Bottoms Buffs and descriptions",
+		"config.outfitbuffs.name": "Enable Outfit Buffs",
+		"config.outfitbuffs.description": "Enable Outfit Buffs and descriptions",
+		"config.disablemmusk.name": "Disable Monster Musk Glow",
+		"config.disablemmusk.description": "Disable constant glowing of Monster Musk. Good when clothing/outfit has the constant effect.",
+		"config.disableoilgarlic.name": "Disable Oil Of Garlic Glow",
+		"config.disableoilgarlic.description": "Disable constant glowing of Oil of Garlic. Good when clothing/outfit has the constant effect.",
+		"config.sheepbarn.name": "Enable Sheep in Basic Barn",
+		"config.sheepbarn.description": "Sheep are available earlier in game. Good for tailoring-based playthroughs.",
+
+//Boot description additions
+  "boot-sneakers-desc": "A little flimsy... but fashionable! Part of Hacker, Oscar, and Varsity Outfits.",
+  "boot-rubberboots-desc": "Protection from the elements. Part of Kingfisher & Rain Fishing Outfits.",
+  "boot-leatherboots-desc": "The leather is very supple. Part of Spring Outfit.",
+  "boot-workboots-desc": "Steel-toed for extra protection. Part of Executive Chef Outfit.",
+  "boot-combatboots-desc": "Reinforced with iron mesh. Part of Summer & Tiger Outfits.",
+  "boot-tundraboots-desc": "The fuzzy lining keeps your ankles so warm. Part of Fall, Caveman, Cavewoman, Chicken, Greek God, Greek Goddess, and Ranger Outfits.",
+  "boot-thermalboots-desc": "Designed with extreme weather in mind. Part of Winter & Joja Fanatic Outfits.",
+  "boot-darkboots-desc": "Made from thick black leather. Part of Officer, Pilgrim, Serial Killer, and Witchy Outfits.",
+  "boot-firewalkerboots-desc": "It's said these can withstand the hottest magma. Part of Holiday Star & Archaeologist Outfits.",
+  "boot-genieshoes-desc": "A curious energy permeates the fabric. Part of Djinn, Harajuku, and Mysterious Outfits.",
+  "boot-spaceboots-desc": "An iridium weave gives them a purple sheen. Part of Space Emperor & Empress Outfits.",
+  "boot-cowboyboots-desc": "It's the height of country fashion. Part of Cowboy, Cowgal, and Cowpoke Outfits.",
+  "boot-emilyboots-desc": "Made with love by Emily. 100% compostable! Part of Emily's Outfit.",
+  "boot-leprechaunshoes-desc": "The buckle's made of solid gold. Part of Leprechaun, Link, and Sports Fan Outfits.",
+  "boot-cinderclownshoes-desc": "These magic shoes belonged to a famous Dwarvish jester. Part of Jester Outfit.",
+  "boot-mermaidboots-desc": "Mermaid scales gives these boots a protective aura. Part of Ship Captain, Commodore, Pirate King & Queen Outfits. ",
+  "boot-dragonscaleboots-desc": "These shimmering boots are extremely tough. Part of Wizard Outfit.",
+  "boot-crystalshoes-desc": "These sparkling shoes will keep your feet very safe. Part of Monarch Outfit.",
+
+
+//specific buffs
+"clothing-buff-summer": "Summer",
+"clothing-buff-summer-desc": "Summer Boost!\n+20% Stamina Regeneration",
+
+"clothing-buff-fall": "Fall",
+"clothing-buff-fall-desc": "Fall Boost!\n+20% Stamina Regeneration",
+
+"clothing-buff-holidaystar": "Holiday Star",
+"clothing-buff-holidaystar-desc": "Get in the Winter Star spirit!\n+20% Stamina Regeneration",
+
+"clothing-buff-winter": "Winter",
+"clothing-buff-winter-desc": "Winter Boost!\n+20% Stamina Regeneration",
+
+"clothing-buff-spring": "Spring",
+"clothing-buff-spring-desc": "Spring Boost!\n+20% Stamina Regeneration",
+
+"clothing-buff-rainfishing": "Rain Fishing",
+"clothing-buff-rainfishing-desc": "Wet Willy!\nApplied during rain or storms.\n",
+
+"clothing-buff-islandwarrior": "Island Warrior",
+"clothing-buff-islandwarrior-desc": "Powerful!\nOn Ginger Island:\nx2 Critical Chance\nx2 Critical Power\nMonster Musk",
+
+//optional extra mods needed buffs
+"clothing-buff-cowboy": "Cowboy",
+"clothing-buff-cowboy-desc": "Howdy!\n+30% Stamina Regeneration\nMonster Musk",
+
+"clothing-buff-cowgal": "Cowgal",
+"clothing-buff-cowgal-desc": "Takin' My Horse To The Old Town Road.\n+20% Stamina Regeneration\nMonster Musk",
+
+"clothing-buff-cowpoke": "Cowpoke",
+"clothing-buff-cowpoke-desc": "Takin' My Horse To The Old Town Road.\n+20% Health Regeneration\nMonster Musk",
+
+"clothing-buff-spaceemperor": "Space [GenderedText Emperor Empress]",
+"clothing-buff-spaceemperor-desc": "Avoid Robot Lions!\n+1 Combat\n+30% Health Regen\nMonster Musk",
+
+"clothing-buff-greekdeity": "Greek [GenderedText God Goddess]",
+"clothing-buff-greekdeity-desc": "Yiasas!\n+1 Combat\n+20% Health Regen",
+
+"clothing-buff-astronaut2": "Astronaut",
+"clothing-buff-astronaut2-desc": "What's out there?\n+1 Combat\nx2 Attack\nx4 Critical Chance",
+
+"clothing-buff-astronaut3": "Astronaut",
+"clothing-buff-astronaut3-desc": "What's out there?\n+1 Combat\nx2 Attack\nx4 Critical Chance",
+
+"clothing-buff-astronaut4": "Astronaut",
+"clothing-buff-astronaut4-desc": "What's out there?\n+1 Combat\nx2 Attack\nx4 Critical Chance",
+
+"clothing-buff-leprechaun": "Leprechaun",
+"clothing-buff-leprechaun-desc": "Pot of gold not included.\n",
+
+"clothing-buff-jojafanatic": "Joja Fanatic",
+"clothing-buff-jojafanatic-desc": "You love Joja. Monsters...not so much!\nMonster Musk",
+
+//all-season buffs
+
+
+"clothing-buff-bikini": "Bikini",
+"clothing-buff-bikini-desc": "Just Beachy!\n",
+
+"clothing-buff-astronaut": "Astronaut",
+"clothing-buff-astronaut-desc": "What's out there?\n+1 Combat\nx2 Attack\nx4 Critical Chance",
+
+"clothing-buff-archaeologist": "Archeologist",
+"clothing-buff-archaeologist-desc": "Can you dig it?\n",
+
+"clothing-buff-captain": "Ship Captain",
+"clothing-buff-captain-desc": "Travel the world and the seven seas! Everybody's looking for something!\n+1 Combat",
+
+"clothing-buff-commodore": "Naval Commodore",
+"clothing-buff-commodore-desc": "Let the Orinoco flow!\nx2 Attack\nx2.5 Critical Power\nMonster Musk",
+
+"clothing-buff-caveman": "Cave[GenderedText man woman]",
+"clothing-buff-caveman-desc": "Yabba Dabba Do!\nx2 Attack",
+
+"clothing-buff-chicken": "Chicken",
+"clothing-buff-chicken-desc": "Oviparity not guaranteed.\n+20% Stamina Regen",
+
+"clothing-buff-dino": "Dino",
+"clothing-buff-dino-desc": "RAWR!\nx3 Attack\nx2 Critical Chance",
+
+"clothing-buff-djinn": "Djinn",
+"clothing-buff-djinn-desc": "Be careful what you wish for!\nx3 Attack\nMonster Musk",
+
+"clothing-buff-executivechef": "Executive Chef",
+"clothing-buff-executivechef-desc": "It's RAW!\nx3 Attack\nSquid Ink Ravioli",
+
+"clothing-buff-emily": "Emily",
+"clothing-buff-emily-desc": "The Magnum Opus of Emily.\nSquid Ink Ravioli",
+
+"clothing-buff-ghilliesuit": "Ghillie Suit",
+"clothing-buff-ghilliesuit-desc": "Powerful Attack, But It Takes Its Toll On Your Body.\nx3 Critical Chance\nx3 Weapon Speed",
+
+"clothing-buff-greengiant": "Green [GenderedText Giant Goddess]",
+"clothing-buff-greengiant-desc": "The only thing better than growing plants is eating them!\n",
+
+"clothing-buff-hacker": "Hacker",
+"clothing-buff-hacker-desc": "Typing furiously gave you carpal tunnel syndrome, so you can't fight well.\nx-2 Attack\nOil of Garlic",
+
+"clothing-buff-harajuku": "Harajuku",
+"clothing-buff-harajuku-desc": "Kawaii, desu ne?\nx-2 Attack\nOil of Garlic",
+
+"clothing-buff-jester": "Jester",
+"clothing-buff-jester-desc": "Hahaha! These buffs are a joke!\nx-3 Attack\nx2 Critical Chance\nx2 Critical Power",
+
+"clothing-buff-kingfisher": "Kingfisher",
+"clothing-buff-kingfisher-desc": "Nice Day for Fishing, Ain't It? Huh-Ha!\n+20% Stamina Regen",
+
+"clothing-buff-legendarypirate": "Pirate [GenderedText King Queen]",
+"clothing-buff-legendarypirate-desc": "Mateys!\n+2 Combat\nx3 Attack",
+
+"clothing-buff-link": "Link",
+"clothing-buff-link-desc": "Is Ganondorf CEO of Joja?\n+1 Combat\nx3 Attack\nx3 Critical Chance\nx3 Critical Power\n+20% Health Regen\nMonster Musk\n",
+
+"clothing-buff-milkmaid": "Milkmaid",
+"clothing-buff-milkmaid-desc": "Great skin!\n+20% Stamina Regen\n",
+
+"clothing-buff-monarch": "Monarch",
+"clothing-buff-monarch-desc": "Your Majesty!\n",
+
+"clothing-buff-mysterious": "Mysterious",
+"clothing-buff-mysterious-desc": "Enigmatic!\n+30% Health Regen\n+30% Stamina Regen",
+
+"clothing-buff-officer": "Officer",
+"clothing-buff-officer-desc": "Law and Order!\n+2 Combat\nx2 Attack\n+20% Health Regen",
+
+"clothing-buff-oscar": "Oscar",
+"clothing-buff-oscar-desc": "Grouchy!\nOil of Garlic",
+
+"clothing-buff-pilgrim": "Pilgrim",
+"clothing-buff-pilgrim-desc": "What Do May Flowers Bring?\n+10% Stamina Regen",
+
+"clothing-buff-ranger": "Ranger",
+"clothing-buff-ranger-desc": "Protect the forests!\n+20% Stamina Regen",
+
+"clothing-buff-serialkiller": "Serial Killer",
+"clothing-buff-serialkiller-desc": "Killer outfit!\nx2 Attack\nx2 Weapon Speed\nMonster Musk",
+
+"clothing-buff-sportsfan": "Sports Fan",
+"clothing-buff-sportsfan-desc": "Smells like team spirit!\nx2 Critical Power",
+
+"clothing-buff-tiger": "Tiger",
+"clothing-buff-tiger-desc": "Eye of the Tiger!\n+1 Combat\nx3 Attack\nx2 Critical Power\nx2 Weapon Speed",
+
+"clothing-buff-varsity": "Varsity",
+"clothing-buff-varsity-desc": "Score four touchdowns in one game!\nx2 Attack\nx2 Critical Chance",
+
+"clothing-buff-witchy": "Witchy",
+"clothing-buff-witchy-desc": "Cackle Away!\n+2 Combat\nSquid Ink Ravioli",
+					
+"clothing-buff-wizard": "Wizard",
+"clothing-buff-wizard-desc": "You're a wizard!\nSquid Ink Ravioli",
+//Altered Hat Descriptions to reflect stats
+
+
+"hat-cowboy-desc": "The leather is old and cracked, but surprisingly supple. It smells musty. Part of Cowboy Outfit.\n+4 Attack",
+
+"hat-bowler-desc": "Made from smooth felt.\n+3 Attack \n+32 Magnetic Radius",
+
+"hat-tophat-desc": "A gentleman's classic.\n+1 Luck",
+
+"hat-sombrero-desc": "A festively decorated hat made from woven straw.\n+1 Speed",
+
+"hat-strawhat-desc": "Light and cool, it's a farmer's delight.\nSpring, Summer, Fall, from 6-930A\n+2 Farming",
+
+"hat-officialcap-desc": "Looks like it belonged to a postman or policeman. Either way, it's still very soft and smells okay. Part of Officer Outfit.\n+1 Defense",
+
+"hat-bluebonnet-desc": "Harken back to simpler times with this prairie bonnet.\n+1 Farming",
+
+"hat-plumchapeau-desc": "Looks alright.\n+1 Foraging",
+
+"hat-skeletonmask-desc": "The red eyes are glowing mysteriously. Part of Serial Killer Outfit.\n+1 Mining",
+
+"hat-goblinmask-desc": "Freak out the neighborhood with this creepy mask. Rubber ear joints for effect.\n+1 Health Regeneration",
+					
+"hat-chickenmask-desc": "You'll be sure to get them grinning with this one. Part of Chicken Outfit.\n+3 Farming",
+
+"hat-earmuffs-desc": "Keep your ears toasty. Lined with artisanal velvet from Castle Village. Part of Winter Outfit.\n+2 Defense",
+
+"hat-delicatebow-desc": "Little pink jewels glisten as you examine it.\n+15 Stamina",
+
+"hat-tropiclip-desc": "It's shaped like a little palm tree. Part of Bikini Outfit.\n+1 Defense",
+
+"hat-butterflybow-desc": "This one is very soft.\n+1 Defense",
+
+"hat-huntercap-desc": "The wool lining should stay warm deep into the forest.\nx5 Attack",
+
+"hat-truckerhat-desc": "Mesh in the back to keep your head cool. Part of Summer Outfit.\n+2 Defense",
+
+"hat-sailorcap-desc": "It's fresh and starchy. Part of Ship Captain Outfit.\n+2 Fishing",
+
+"hat-goodolcap-desc": "A floppy old topper with a creased bill. Looks like it's been through a lot. Part of Fall Outfit.\n+20 Stamina",
+
+"hat-fedora-desc": "A city-slicker's standard.\nx2 Weapon Speed",
+
+"hat-coolcap-desc": "It looks really faded, but it used to be a vibrant blue.\n+30% Health Regen",
+
+"hat-luckybow-desc": "The middle is made of solid gold.\n+1 Luck",
+
+"hat-polkabow-desc": "This one's sure to be turn heads.\n+1 Speed",
+
+"hat-gnomecap-desc": "This gnome had a very large head. Part of Link Outfit.\n+60% Stamina Regen",
+
+"hat-eyepatch-desc": "You can't tell if it's real or just from a costume shop. Part of Pirate King & Queen Outfits.\n+60% Health Regen",
+
+"hat-santahat-desc": "Celebrate the magical season. Part of Holiday Star Outfit.\n+64 Magnetic Radius",
+
+"hat-tiara-desc": "This one has a big amethyst encircled by gold.\n+1 Defense",
+
+"hat-hardhat-desc": "Keep your dome in one piece. Part of Archaeologist Outfit.\n+4 Defense",
+
+"hat-souwester-desc": "The shape helps to keep sailors dry during storms. Part of Rain Fishing Outfit.\n+20 Stamina",
+
+"hat-daisy-desc": "A fresh spring daisy to put in your hair. Part of Spring Outfit.\n+20 Stamina",
+
+"hat-watermelonband-desc": "The color scheme was inspired by the beloved summer melon.\n+1 Fishing",
+
+"hat-mouseears-desc": "Made from synthetic fibers.\n+1 Speed",
+					
+"hat-catears-desc": "Whiskers included.\n+3 Speed",
+
+"hat-cowgalhat-desc": "The band is studded with fake diamonds. Part of Cowgal Outfit.\nx4 Attack",
+
+"hat-cowpokehat-desc": "For dairy experts. Part of Cowpoke Outfit.\nx4 Attack",
+
+"hat-archercap-desc": "Fashionable whether you're an archer or not.\n+4 Combat",
+
+"hat-pandahat-desc": "A lovely panda hat.\n+1 Luck",
+
+"hat-bluecowboyhat-desc": "A denim cowboy hat in cool blue.\n+1 Farming",
+
+"hat-redcowboyhat-desc": "An eye-catching cowboy hat in red suede.\n+1 Farming",
+
+"hat-conehat-desc": "A curiosity from a distant land.\n+1 Luck",
+
+"hat-livinghat-desc": "It absorbs moisture from your scalp. No watering needed! Part of Ghillie Suit Outfit.\n+5 Foraging",
+
+"hat-emilyhat-desc": "Made with love by Emily. It's 100% organic! Part of Emily's Outfit.\n+96 Magnetic Radius",
+
+"hat-mushroomcap-desc": "It smells earthy.\n+2 Foraging",
+
+"hat-dinosaurhat-desc": "A hat fashioned to look like a small dinosaur. Part of Dino Outfit.\n+3 Defense",
+
+"hat-totemmask-desc": "Don't worry, it won't warp your face...\n+1 Defense",
+
+"hat-logocap-desc": "A pink cap with a sleek profile.\nx2 Critical Chance",
+
+"hat-wearabledwarfhelm-desc": "A slightly larger, human sized version of the helmets worn by dwarves.\n+1 Defense",
+
+"hat-fashionhat-desc": "A fashionable hat with a feather in the brim.\n+1 Combat",
+
+"hat-pumpkinmask-desc": "This must have been a pretty big pumpkin once...\n+1 Farming",
+
+"hat-hairbone-desc": "A prehistoric version of the hair bow. Part of Caveman & Cavewoman Outfits.\n+1 Defense",
+
+"hat-knighthelmet-desc": "It looks just like the real thing!\n+4 Combat",
+					
+"hat-squirehelmet-desc": "The face is exposed to increase air flow.\n+1 Combat",
+
+"hat-spottedheadscarf-desc": "A red polka-dot scarf tied around the head. Part of Milkmaid Outfit.\n+20 Stamina",
+
+"hat-beanie-desc": "A warm hat with a pretty tight fit.\n+1 Defense",
+					
+"hat-floppybeanie-desc": "A warm hat with a looser fit.\n+2 Defense",
+
+"hat-fishinghat-desc": "The wide brim keeps you shaded when you're fishing on the riverbank. Part of Kingfisher Outfit.\n+1 Fishing",
+
+"hat-blobfishmask-desc": "Just as spongy as the real thing!\n+1 Fishing",
+
+"hat-partyhatred-desc": "A goofy red hat that makes any celebration more fun.\n+1 Luck",
+
+"hat-partyhatblue-desc": "A goofy blue hat that makes any celebration more fun.\n+1 Luck",
+
+"hat-partyhatgreen-desc": "A goofy green hat that makes any celebration more fun.\n+1 Luck",
+
+"hat-arcanehat-desc": "The type of cowboy hat worn by a wizard. Part of Wizard Outfit.\n+60% Health Regen",
+
+"hat-chefhat-desc": "The traditional hat worn by a head chef. Part of Executive Chef Outfit.\n+60% Stamina Regen",
+
+//
+"hat-piratehat-desc": "A captain's hat with a horrible skull on the front.\nx3 Attack",
+
+"hat-flattoppedhat-desc": "An old style of hat once considered very fashionable. Part of Pilgrim Outfit.\n+1 Farming",
+
+"hat-elegantturban-desc": "A fine black silk turban with gold trim.\n+70% Health Regen",
+
+"hat-whiteturban-desc": "A fine white silk turban with blue trim.\n+2 Combat",
+
+"hat-garbagehat-desc": "It's a garbage can lid 'upcycled' into a hat... Part of Oscar Outfit.\n+3 Foraging",
+
+"hat-goldenmask-desc": "A faithful recreation of the Calico Desert relic!\n+1 Combat",
+
+"hat-propellerhat-desc": "A goofy hat with a propeller on top. Part of Harajuku Outfit.\n+32 Magnetic Radius",
+
+"hat-bridalveil-desc": "The traditional headwear for a bride.\nSquid Ink Ravioli Buff",
+					
+"hat-witchhat-desc": "A pointy hat popular with witches. Part of Witchy Outfit.\n+1 Mining",
+
+"hat-copperpan-desc": "You place the copper pan on your head...\n+20 Stamina",
+
+"hat-greenturban-desc": "A green silk turban with a gold ornament on the front.\n+2 Foraging",
+
+"hat-magiccowboyhat-desc": "It's shimmering with prismatic energy!\nx6 Attack",
+										
+"hat-magicturban-desc": "It's shimmering with prismatic energy! Part of Djinn Outfit.\nSquid Ink Ravioli Buff",
+
+"hat-goldenhelmet-desc": "It's half of a golden coconut. Part of Island Warrior Outfit.\nx4 Critical Power",
+
+"hat-dlxpirate-desc": "Only the most infamous pirate could pull off this look.\nx3.5 Attack",
+				
+"hat-pinkbow-desc": "This huge bow makes quite a statement!\n+5 Immunity",
+
+"hat-froghat-desc": "A slimy friend that lives on your dome.\n+2 Speed",
+
+"hat-smallcap-desc": "It's a more aerodynamic style of cap. Part of Varsity Outfit.\nx2 Weapon Precision",
+
+"hat-bluebirdmask-desc": "Wear this to look just like your favorite island trader.\n+1 Foraging",
+
+"hat-deluxecowboyhat-desc": "A cowboy hat with a more extreme shape.\n+1 Farming",
+
+"hat-mrqihat-desc": "A replica of Mr. Qi's iconic hat.\n+2 Luck",
+
+"hat-darkcowboyhat-desc": "A cowboy hat in fashionable black.\n+1 Farming",
+
+"hat-radioactivegoggles-desc": "Doesn't actually provide any protection from radiation. Part of Hacker Outfit.\n+3 Mining",
+
+"hat-swashbucklerhat-desc": "The classic swashbuckler look.\n+2 Combat",
+
+"hat-qimask-desc": "???\n+2 Luck",
+
+"hat-starhelmet-desc": "A red hat with stars on it.\n+2 Defense",
+
+"hat-sunglasses-desc": "These give you a relaxed look.\nx2 Critical Chance",
+					
+"hat-goggles-desc": "These will make you look very safe.\nx2 Critical Power",	
+
+"hat-foragerhat-desc": "It's a forager's delight. Part of Ranger Outfit.\n+1 Foraging",
+
+"hat-tigerhat-desc": "Makes you look like a beautiful tiger. Part of Tiger Outfit.\nx6 Critical Chance",
+										
+"hat-warriorhelmet-desc": "An Ostrich eggshell repurposed into a helmet.\nx2 Attack",
+
+"hat-ca-desc": "I am GOD here!\n+100% Health Regen\n+100% Stamina Regen",
+
+//					
+//Add 1.6 additions below:
+
+
+"hat-abigailbow-desc": "It's just like Abby's.\n+1 Combat",
+
+"hat-tricornhat-desc": "It's a traditional hat for naval officers. Part of Commodore Outfit.\n+2 Combat",
+
+"hat-jojacap-desc": "An official Joja Cap. Made from 100% polyester. Part of Joja Fanatic Outfit.\nx2.5 Knockback",
+
+"hat-laurelwreathcrown-desc": "A garland of leaves shaped into a lovely crown. Part of Green Giant & Green Goddess Outfits.\n+2 Defense",
+
+"hat-gilhat-desc": "It's the same hat that Gil wears.\n+3 Mining",
+
+"hat-bluebow-desc": "This huge bow makes quite a statement!\n+2 Defense",
+
+"hat-darkvelvetbow-desc": "A big, floppy bow made of dark velvet.\n+3 Defense",
+
+"hat-mummymask-desc": "A large mummy mask... frightening!\n+4 Defense",
+
+"hat-buckethat-desc": "A simple hat with a short brim.\n+128 Magnetic Radius",
+
+"hat-squidhat-desc": "It's your chance to wear a squid on the head.\n+3 Fishing",
+
+"hat-sportscap-desc": "The cap has a vintage team logo on it. Part of Sports Fan Outfit.\nx3 Knockback",
+
+"hat-redfez-desc": "A unique hat made popular by the famous merchant pig.\n+2 Immunity",
+
+"hat-raccoonhat-desc": "A classic hat from the old frontier days.\n+2 Speed",
+
+"hat-steelpan-desc": "You place the steel pan on your head...\n+2 Defense",
+
+"hat-goldpan-desc": "You place the gold pan on your head...\n+3 Defense",
+
+
+"hat-iridiumpan-desc": "You place the iridium pan on your head...\n+5 Defense",
+
+"hat-mysteryhat-desc": "Made from the leftovers of a Mystery Box. Part of Mysterious Outfit.\n+3 Combat",
+	
+
+"hat-darkballcap-desc": "It fits perfectly on your head.\n+3 Immunity",
+
+
+"hat-leprechaunhat-desc": "The previous owner must've had a big head for a Leprechaun. Part of Leprechaun Outfit.\n+1 Luck",
+
+
+"hat-junimohat-desc": "To honor our little buddies...\n+60% Stamina Regen",
+	
+
+"hat-paperhat-desc": "It's made out of special paper that won't disintegrate in the rain.\n+2 Fishing",				
+
+
+"hat-pageboycap-desc": "For some reason, it makes you want to sell newspapers.\n+50 Stamina",										
+					
+
+"hat-jesterhat-desc": "Put your inner clown on display. Part of Jester Outfit.\n+4 Luck",
+					
+
+"hat-blueribbon-desc": "A lovely ribbon that sits behind the head.\n+1 Defense",
+														
+
+"hat-governorhat-desc": "A replica of the Governor's iconic hat.\n+2 Defense",
+										
+
+"hat-whitebow-desc": "A bow as white as snow.\n+10% Health Regen",
+				
+
+"hat-spacehelmet-desc": "Warning: This helmet has not actually been tested in outer space. Part of Astronaut Outfit.\n+3 Defense\n+40% Stamina Regen",							
+
+"hat-infinitycrown-desc": "It's made from an exotic metal you've never seen before.\n+4 Defense\n+30% Health Regen\n+30% Stamina Regen",	
+	
+	
+	
+//Clothing Buffs	
+"clothing-buff-strawhat": "Early Morning Buff",
+"clothing-buff-strawhat-desc": "Early bird gets the boost!\nDuring Spring, Summer, and Fall, from 6-930AM:\n",
+
+"clothing-buff-cowboy": "Cowboy Hat Buff",
+"clothing-buff-cowboy-desc": "Howdy!\n+4 Attack",
+
+"clothing-buff-bowler": "Bowler Hat Buff",
+"clothing-buff-bowler-desc": "Heavens to Murgatroyd!\n+2 Attack \n+32 Magnetic Radius",
+
+"clothing-buff-tophat": "Top Hat Buff",
+"clothing-buff-tophat-desc": "A tip of the hat to you!\n+1 Luck",
+
+"clothing-buff-sombrero": "Sombrero Buff",
+"clothing-buff-sombrero-desc": "Run fast as a mouse!\n+1 Speed",
+
+"clothing-buff-officialcap": "Official Cap Buff",
+"clothing-buff-officialcap-desc": "All you need is a crew!\n",
+
+"clothing-buff-bluebonnet": "Blue Bonnet Buff",
+"clothing-buff-bluebonnet-desc": "Frontier vibes!\n",
+
+"clothing-buff-plumchapeau": "Plum Chapeau Buff",
+"clothing-buff-plumchapeau-desc": "Just plum cute!\n",
+
+"clothing-buff-skeletonmask": "Skeleton Mask",
+"clothing-buff-skeletonmask-desc": "Doot! Doot!\n",
+
+"clothing-buff-goblinmask": "Goblin Mask Buff",
+"clothing-buff-goblinmask-desc": "Scare the life out of your foes!\n+1 Health Regeneration",
+					
+"clothing-buff-chickenmask": "Chicken Mask Buff",
+"clothing-buff-chickenmask-desc": "Who feels like chicken tonight?\n",
+
+"clothing-buff-earmuffs": "Earmuffs Buff",
+"clothing-buff-earmuffs-desc": "Fuzzy!\n",
+
+"clothing-buff-delicatebow": "Delicate Bow Buff",
+"clothing-buff-delicatebow-desc": "Hand Wash Only!\n",
+
+"clothing-buff-tropiclip": "Tropiclip Buff",
+"clothing-buff-tropiclip-desc": "Packs a tropical punch!\n",
+
+"clothing-buff-butterflybow": "Butterfly Bow Buff",
+"clothing-buff-butterflybow-desc": "Adorable!\n",
+
+"clothing-buff-huntercap": "Hunter Cap Buff",
+"clothing-buff-huntercap-desc": "Duck Season! Rabbit Season!\nx5 Attack",
+
+"clothing-buff-truckerhat": "Trucker Hat",
+"clothing-buff-truckerhat-desc": "Keep on truckin'!\n",
+
+"clothing-buff-sailorcap": "Sailor's Cap Buff",
+"clothing-buff-sailorcap-desc": "All you need is a captain!\n",
+
+"clothing-buff-goodolcap": "Good Ol' Cap Buff",
+"clothing-buff-goodolcap-desc": "Comfy!\n",
+
+"clothing-buff-fedora": "Fedora Buff",
+"clothing-buff-fedora-desc": "M'Lady!\nx2 Weapon Speed",
+
+"clothing-buff-coolcap": "Cool Cap Buff",
+"clothing-buff-coolcap-desc": "True Blue!\n+30% Health Regen",
+
+"clothing-buff-luckybow": "Lucky Bow Buff",
+"clothing-buff-luckybow-desc": "Lucky!\n",
+
+"clothing-buff-polkabow": "Polka Bow Buff",
+"clothing-buff-polkabow-desc": "Do I hear an accordion?\n",
+
+"clothing-buff-gnomecap": "Gnome's Cap Buff",
+"clothing-buff-gnomecap-desc":	"Hangin' with my Gnomies!\n+60% Stamina Regen",
+
+"clothing-buff-eyepatch": "Eye Patch Buff",
+"clothing-buff-eyepatch-desc": "What's depth perception?\n+60% Health Regen",
+
+"clothing-buff-santahat": "Santa Hat Buff",
+"clothing-buff-santahat-desc": "Ho-ho-ho!\n",
+
+"clothing-buff-tiara": "Tiara Buff",
+"clothing-buff-tiara-desc": "Shiny!\n",
+
+"clothing-buff-hardhat": "Hard Hat Buff",
+"clothing-buff-hardhat-desc": "I didn't feel a thing!\n",
+
+"clothing-buff-souwester": "Sou'wester Buff",
+"clothing-buff-souwester-desc": "Stay Dry!\n",
+
+"clothing-buff-daisy": "Daisy Buff",
+"clothing-buff-daisy-desc": "Pretty flower!\n",
+
+"clothing-buff-watermelonband": "Watermelon Band",
+"clothing-buff-watermelonband-desc": "No pits!\n",
+
+"clothing-buff-mouseears": "Mouse Ears Buff",
+"clothing-buff-mouseears-desc": "1 kHz to 90 kHz\n",
+					
+"clothing-buff-catears": "Cat Ears Buff",
+"clothing-buff-catears-desc": "48 Hz to 85 kHz\n",
+
+"clothing-buff-cowgalhat": "Cowgal Hat Buff",
+"clothing-buff-cowgalhat-desc": "Not your first rodeo!\nx4 Attack",
+
+"clothing-buff-cowpokehat": "Cowpoke Hat Buff",
+"clothing-buff-cowpokehat-desc": "Not your first rodeo!\nx4 Attack",
+
+"clothing-buff-archercap": "Archer Buff",
+"clothing-buff-archercap-desc": "William Tell vibes!\n+4 Combat",
+
+"clothing-buff-pandahat": "Panda Hat Buff",
+"clothing-buff-pandahat-desc": "You used a mod to get this, didn't you?\n",
+
+"clothing-buff-bluecowboyhat": "Colorful Cowboy Hat Buff",
+"clothing-buff-bluecowboyhat-desc": "Cowboy Couture!\n",
+
+"clothing-buff-redcowboyhat": "Colorful Cowboy Hat Buff",
+"clothing-buff-redcowboyhat-desc": "Cowboy Couture!\n",
+
+"clothing-buff-conehat": "Cone Hat Buff",
+"clothing-buff-conehat-desc": "Does it come from France or Remulak?\n",
+
+"clothing-buff-livinghat": "Living Hat Buff",
+"clothing-buff-livinghat-desc": "Avoid flames!\n",
+
+"clothing-buff-emilyhat": "Emily's Hat Buff",
+"clothing-buff-emilyhat-desc": "Cultural appreciation or appropriation?\n",
+
+"clothing-buff-mushroomcap": "Mushroom Cap Buff",
+"clothing-buff-mushroomcap-desc": "You are just a 'Fun Guy'!\n",
+
+"clothing-buff-dinosaurhat": "Dino Hat Buff",
+"clothing-buff-dinosaurhat-desc": "Jurassic Fun!\n",
+
+"clothing-buff-totemmask": "Totem Mask Buff",
+"clothing-buff-totemmask-desc": "Gives off pleasant varnish fumes!\n",
+
+"clothing-buff-logocap": "Logo Cap Buff",
+"clothing-buff-logocap-desc": "I've never heard of this brand...\nx2 Critical Chance",
+
+"clothing-buff-wearabledwarfhelm": "Dwarf Helm Buff",
+"clothing-buff-wearabledwarfhelm-desc": "The Smoluanu style is distinct.\n",
+
+"clothing-buff-fashionhat": "Fashion Hat Buff",
+"clothing-buff-fashionhat-desc": "Very chic!\n+1 Combat",
+
+"clothing-buff-pumpkinmask": "Pumpkin Mask Buff",
+"clothing-buff-pumpkinmask-desc": "Scare random people in corn fields wearing this!\n",
+
+"clothing-buff-hairbone": "Hair Bone Buff",
+"clothing-buff-hairbone-desc": "Prehysterical!\n",
+
+"clothing-buff-knighthelmet": "Knight Buff",
+"clothing-buff-knighthelmet-desc": "Chivalrous!\n+4 Combat",
+					
+"clothing-buff-squirehelmet": "Squire Buff",
+"clothing-buff-squirehelmet-desc": "One day, you shall be a knight!\n+1 Combat",
+
+"clothing-buff-spottedheadscarf": "Spotted Headscarf Buff",
+"clothing-buff-spottedheadscarf-desc": "You can do it!\n",
+
+"clothing-buff-beanie": "Beanie Buff",
+"clothing-buff-beanie-desc": "Knit, purl, knit, purl...\n",
+					
+"clothing-buff-floppybeanie": "Floppy Beanie Buff",
+"clothing-buff-floppybeanie-desc": "Purl, knit, purl, knit...\n",
+
+"clothing-buff-fishinghat": "Fishing Hat Buff",
+"clothing-buff-fishinghat-desc": "Here, fishy, fishy!\n",
+
+"clothing-buff-blobfishmask": "Blobfish Buff",
+"clothing-buff-blobfishmask-desc": "Look like a violently decompressed deep-sea creature!\n",
+
+"clothing-buff-partyhat": "Party Hat Buff",
+"clothing-buff-partyhat-desc": "You have the right to party!\n",
+
+"clothing-buff-arcanehat": "Arcane Hat Buff",
+"clothing-buff-arcanehat-desc": "Look what I can do!\n+60% Health Regen",
+
+"clothing-buff-chefhat": "Chef Hat Buff",
+"clothing-buff-chefhat-desc": "Culinary school rocks!\n+60% Stamina Regen",
+
+//
+"clothing-buff-piratehat": "Pirate Hat Buff",
+"clothing-buff-piratehat-desc": "Parrot not included.\nx3 Attack",
+
+"clothing-buff-flattoppedhat": "Flat Top Hat Buff",
+"clothing-buff-flattoppedhat-desc": "Got Turkey?\n",
+
+"clothing-buff-elegantturban": "Elegant Turban",
+"clothing-buff-elegantturban-desc": "Comb the desert!\n+70% Health Regen",
+
+"clothing-buff-whiteturban": "White Turban Hat Buff",
+"clothing-buff-whiteturban-desc": "Don't get dust on it!\n+2 Combat",
+
+"clothing-buff-garbagehat": "Garbage Hat Buff",
+"clothing-buff-garbagehat-desc": "Dumpster dive in style!\n",
+
+"clothing-buff-goldenmask": "Golden Mask Buff",
+"clothing-buff-goldenmask-desc": "Hedonistic yet fun!\n+1 Combat",
+
+"clothing-buff-propellerhat": "Propeller Hat Buff",
+"clothing-buff-propellerhat-desc": "Vroom!\n",
+
+"clothing-buff-bridalveil": "Bridal Veil Buff",
+"clothing-buff-bridalveil-desc": "No cold feet here!\nSquid Ink Ravioli Buff",
+					
+"clothing-buff-witchhat": "Witch Hat Buff",
+"clothing-buff-witchhat-desc": "Warts sold separately.\n",
+
+"clothing-buff-copperpan": "Copper Pan Buff",
+"clothing-buff-copperpan-desc": "Saving an inventory space.\n",
+
+"clothing-buff-greenturban": "Green Turban Hat Buff",
+"clothing-buff-greenturban-desc": "Green like emeralds!\n",
+
+"clothing-buff-magiccowboyhat": "Magic Cowboy Buff",
+"clothing-buff-magiccowboyhat-desc": "Charismatic!\nx6 Attack",
+										
+"clothing-buff-magicturban": "Magic Turban Hat Buff",
+"clothing-buff-magicturban-desc": "Your wish is my command!\nSquid Ink Ravioli Buff",
+
+"clothing-buff-goldenhelmet": "Golden Helmet Buff",
+"clothing-buff-goldenhelmet-desc": "Fish are attracted to its shimmer.\nx4 Critical Power",
+
+"clothing-buff-dlxpirate": "Deluxe Pirate Buff",
+"clothing-buff-dlxpirate-desc": "Glamourous pirate looks!\nx3.5 Attack",
+				
+"clothing-buff-pinkbow": "Pink Bow Buff",
+"clothing-buff-pinkbow-desc": "Very pretty!\n+5 Immunity",
+
+"clothing-buff-froghat": "Frog Hat Buff",
+"clothing-buff-froghat-desc": "Don't worry, it's not Kermit...or is it?\n",
+
+"clothing-buff-smallcap": "Small Cap Buff",
+"clothing-buff-smallcap-desc": "Fear no birds flying overhead!\nx2 Weapon Precision",
+
+"clothing-buff-bluebirdmask": "Bluebird Mask Buff",
+"clothing-buff-bluebirdmask-desc": "Avian adventures await!\n",
+
+"clothing-buff-deluxecowboyhat": "Colorful Cowboy Hat Buff",
+"clothing-buff-deluxecowboyhat-desc": "Cowboy Couture\n",
+
+"clothing-buff-mrqihat": "Qi's Hat Buff",
+"clothing-buff-mrqihat-desc": "Feeling lucky?\n",
+
+"clothing-buff-darkcowboyhat": "Colorful Cowboy Hat Buff",
+"clothing-buff-darkcowboyhat-desc": "Cowboy Couture\n",
+
+"clothing-buff-radioactivegoggles": "Radioactive Goggles Buff",
+"clothing-buff-radioactivegoggles-desc": "Welcome to the New Age!\n",
+
+"clothing-buff-swashbucklerhat": "Swashbuckler Buff",
+"clothing-buff-swashbucklerhat-desc": "Adventurous!\n+2 Combat",
+
+"clothing-buff-qimask": "Qi Mask Buff",
+"clothing-buff-qimask-desc": "Look like a Qi fruit!\n",
+
+"clothing-buff-starhelmet": "Star Helmet Buff",
+"clothing-buff-starhelmet-desc": "Psilocybin-free!",
+
+"clothing-buff-sunglasses": "Sunglasses Buff",
+"clothing-buff-sunglasses-desc": "Protects your eyes from UV rays!\nx2 Critical Chance",
+					
+"clothing-buff-goggles": "Goggles Buff",
+"clothing-buff-goggles-desc": "Protects your eyes from monster goop!\nx2 Critical Power",	
+
+"clothing-buff-foragerhat": "Forager's Hat Buff",
+"clothing-buff-foragerhat-desc": "Frolic in the forest with ease!\n",
+
+"clothing-buff-tigerhat": "Tiger Buff",
+"clothing-buff-tigerhat-desc": "It's grrrreat!\nx6 Critical Chance",
+										
+"clothing-buff-warriorhelmet": "Warrior Helmet Buff",
+"clothing-buff-warriorhelmet-desc": "Also works for opera costumes.\nx2 Attack",
+
+"clothing-buff-ca": "Concerned Ape Buff",
+"clothing-buff-ca-desc": "Yoba's got nothing on Concerned Ape!\n+100% Heath Regen\n+100% Stamina Regen",
+
+//					
+//Add 1.6 additions below:
+
+
+"clothing-buff-abigailbow": "Abigail's Bow Buff",
+"clothing-buff-abigailbow-desc": "Fierce Fashion!\n+1 Combat",
+
+"clothing-buff-tricornhat": "Tricorn Hat Buff",
+"clothing-buff-tricornhat-desc": "Sing those sea shanties with pride!\n+2 Combat",
+
+"clothing-buff-jojacap": "Joja Cap Buff",
+"clothing-buff-jojacap-desc": "Displays the newest Joja logo.\nx2.5 Knockback",
+
+"clothing-buff-laurelwreathcrown": "Laurel Wreath Crown Buff",
+"clothing-buff-laurelwreathcrown-desc": "Emily was inspired by historical fashion.\n",
+
+"clothing-buff-gilhat": "Gil's Hat Buff",
+"clothing-buff-gilhat-desc": "Gil is a trendsetter!\n",
+
+"clothing-buff-bluebow": "Blue Bow Buff",
+"clothing-buff-bluebow-desc": "Beautiful fabric!\n",
+
+"clothing-buff-darkvelvetbow": "Dark Velvet Bow Buff",
+"clothing-buff-darkvelvetbow-desc": "Vampires love the look!\n+3 Defense",
+
+"clothing-buff-mummymask": "Mummy Mask Buff",
+"clothing-buff-mummymask-desc": "Sadly, mummies will still attack.\n",
+
+"clothing-buff-buckethat": "Bucket Hat Buff",
+"clothing-buff-buckethat-desc": "Casual!\n",
+
+"clothing-buff-squidhat": "Squid Hat Buff",
+"clothing-buff-squidhat-desc": "The tentacles move when you walk!\n",
+
+"clothing-buff-sportscap": "Sports Cap Buff",
+"clothing-buff-sportscap-desc": "Support your local team!\nx3 Knockback",
+
+"clothing-buff-redfez": "Red Fez Buff",
+"clothing-buff-redfez-desc": "Shriner membership not included.\n+2 Immunity",
+
+"clothing-buff-raccoonhat": "Raccoon Hat Buff",
+"clothing-buff-raccoonhat-desc": "Davy Crockett!\n",
+
+"clothing-buff-steelpan": "Steel Pan Buff",
+"clothing-buff-steelpan-desc": "Not a Faraday Cage.\n ",
+
+"clothing-buff-goldpan": "Gold Pan Buff",
+"clothing-buff-goldpan-desc": "Protects more than you'd expect.\n",
+
+"clothing-buff-iridiumpan": "Iridium Pan Buff",
+"clothing-buff-iridiumpan-desc": "Iridium makes everything better.\n",
+
+"clothing-buff-mysteryhat": "Mystery Hat Buff",
+"clothing-buff-mysteryhat-desc": "How? Why?\n+3 Combat",
+	
+"clothing-buff-darkballcap": "Dark Ballcap Buff",
+"clothing-buff-darkballcap-desc": "It's not cursed.\n+3 Immunity",
+
+"clothing-buff-leprechaunhat": "Leprechaun Hat Buff",
+"clothing-buff-leprechaunhat-desc": "So green!\n",
+
+"clothing-buff-junimohat": "Junimo Hat Buff",
+"clothing-buff-junimohat-desc": "One of us!\n+60% Stamina Regen",
+	
+"clothing-buff-paperhat": "Paper Hat Buff",
+"clothing-buff-paperhat-desc":	"Made out of the comics page!\n",				
+
+"clothing-buff-pageboycap": "Pageboy Cap Buff",
+"clothing-buff-pageboycap-desc": "Extra! Extra!\n",										
+					
+"clothing-buff-jesterhat": "Jester Hat Buff",
+"clothing-buff-jesterhat-desc": "Hyuk-hyuk!\n",
+					
+"clothing-buff-blueribbon": "Blue Ribbon Buff",
+"clothing-buff-blueribbon-desc": "You're Number One!\n",
+														
+"clothing-buff-governorhat": "Governor's Hat Buff",
+"clothing-buff-governorhat-desc": "Bureaucratic!\n",
+										
+"clothing-buff-whitebow": "White Bow Buff",
+"clothing-buff-whitebow-desc": "Pure as driven snow.\n+10% Health Regen",
+				
+"clothing-buff-spacehelmet": "Space Helmet Buff",
+"clothing-buff-spacehelmet-desc": "In space, no one can hear you scream!\n+40% Stamina Regen",							
+
+"clothing-buff-infinitycrown": "Red Infinity Crown Buff",
+"clothing-buff-infinitycrown-desc":	 "Pompous, but so what?\n30% Health Regen\n+30% Stamina Regen",			
+
+//Shirts
+"clothing-buff-stamina15": "Small Stamina Buff",
+"clothing-buff-stam15-desc": "Tiny energy boost.\n",	
+					
+"clothing-buff-stamina20": "Moderate Stamina Buff",
+"clothing-buff-stam20-desc": "Decent energy boost.\n",
+
+"clothing-buff-stamina30": "Large Stamina Buff",
+"clothing-buff-stam30-desc": "Big energy boost.\n",
+
+"clothing-buff-stamina30mg32": "Stamina & Magnetic Radius Buff",
+"clothing-buff-stam30mg32-desc": "Energy boost and better item retrieval.\n",
+
+"clothing-buff-stam5":"Tiny Shirt Stamina Buff",
+"clothing-buff-stam5-desc":"A starter boost.\n",
+
+"clothing-buff-stam6":"Small Shirt Stamina Buff",
+"clothing-buff-stam6-desc":"A starter boost.\n",
+
+"clothing-buff-def1":"Small Shirt Defense Buff",
+"clothing-buff-def1-desc":"A mote of protection.\n",
+
+"clothing-buff-def2":"Shirt Defense Buff",
+"clothing-buff-def2-desc":"Some protection.\n",
+
+"clothing-buff-speed05": "Small Shirt Speed Buff",
+"clothing-buff-speed05-desc": "A smidge more pep in your step.\n",
+
+"clothing-buff-luck05": "Small Shirt Luck Buff",
+"clothing-buff-luck05-desc": "A tiny bit of luck.\n",
+
+"clothing-buff-hr05": "Small Shirt Health Regen Buff",
+"clothing-buff-hr05-desc": "Health Regenerates a tiny bit.\n+5% Health Regen",
+
+"clothing-buff-sr05": "Small Shirt Stamina Regen Buff",
+"clothing-buff-sr05-desc": "Energy Regenerates a tiny bit.\n+5% Stamina Regen",
+
+"clothing-buff-stamina10":"Shirt Stamina Buff",
+"clothing-buff-stamina10-desc":"A stamina boost.\n",
+
+"clothing-buff-speed1":"Shirt Speed Buff",
+"clothing-buff-speed1-desc":"A speed boost.\n",
+
+"clothing-buff-fish1":"Shirt Fishing Buff",
+"clothing-buff-fish1-desc":"A fishing boost.\n",
+
+"clothing-buff-wpc3stam10":"Shirt Weapon Precision & Stamina Buff",
+"clothing-buff-wpc3stam10-desc":"A precision & stamina boost.\nx3 Weapon Precision",
+
+"clothing-buff-knk2stam10":"Shirt Knockback & Stamina Buff",
+"clothing-buff-knk2stam10-desc":"A weight & stamina boost.\nx2 Knockback",
+
+"clothing-buff-ccm25spd1":"Shirt Critical Chance & Speed Buff",
+"clothing-buff-ccm25spd1-desc":"A critical chance & speed boost.\nx2.5 Critical Chance",
+
+"clothing-buff-cpm3spd1":"Shirt Critical Power & Speed Buff",
+"clothing-buff-cpm3spd1-desc":"A critical power & speed boost.\nx3 Critical Power",
+
+"clothing-buff-luck1wpnsp2":"Shirt Luck & Weapon Speed Buff",
+"clothing-buff-luck1wpnsp2-desc":"A luck & weapon speed boost.\nx3 Critical Power",
+
+"clothing-buff-luck1spd1":"Shirt Luck & Speed Buff",
+"clothing-buff-luck1spd1-desc":"A luck & speed boost.\n",
+
+"clothing-buff-luck2spd1":"Shirt Better Luck & Speed Buff",
+"clothing-buff-luck2spd1-desc":"Better luck & speed boost.\n",
+
+"clothing-buff-fish1spd1":"Shirt Fishing & Speed Buff",
+"clothing-buff-fish1spd1-desc":"A fishing & speed boost.\n",
+
+"clothing-buff-fish1atkm2":"Shirt Fishing & Attack Buff",
+"clothing-buff-fish1atkm2-desc":"A fishing & attack boost.\nx2 Attack",
+
+"clothing-buff-fish1com1":"Shirt Fishing & Combat Buff",
+"clothing-buff-fish1com1-desc":"A fishing & combat boost.\n+1 Combat",
+
+"clothing-buff-forag1com1":"Shirt Foraging & Combat Buff",
+"clothing-buff-forag1com1-desc":"A foraging & combat boost.\n+1 Combat",
+
+"clothing-buff-def2knk2":"Shirt Knockback & Defense Buff",
+"clothing-buff-def2knk2-desc":"A weight & defense boost.\nx2 Knockback",
+
+"clothing-buff-def2knk3":"Shirt High Knockback & Defense Buff",
+"clothing-buff-def2knk3-desc":"A weight & defense boost.\nx3 Knockback",
+
+"clothing-buff-def2atk2":"Shirt Attack & Defense Buff",
+"clothing-buff-def2atk2-desc":"An attack & defense boost.\nx2 Attack",
+
+"clothing-buff-def2spd1":"Shirt Defense & Speed Buff",
+"clothing-buff-def2spd1-desc":"A defense & speed boost.\n",
+
+"clothing-buff-def2spd2":"Shirt Defense & Better Speed Buff",
+"clothing-buff-def2spd2-desc":"A defense & a better speed boost.\n",
+
+"clothing-buff-def2luck2":"Shirt Better Luck & Defense Buff",
+"clothing-buff-def2luck2-desc":"Better luck & defense boost.\n",
+
+"clothing-buff-def2luck3":"Shirt Big Luck & Defense Buff",
+"clothing-buff-def2luck3-desc":"Big luck & defense boost.\n",
+
+"clothing-buff-atk3def2":"Shirt Big Attack & Defense Buff",
+"clothing-buff-atk3def2-desc":"A big attack & defense boost.\nx3 Attack",
+
+"clothing-buff-crp2def2":"Shirt Critical Power & Defense Buff",
+"clothing-buff-crp2def2-desc":"A critical power & defense boost.\nx2 Critical Power",
+
+"clothing-buff-cch2def2":"Shirt Critical Chance & Defense Buff",
+"clothing-buff-cch2def2-desc":"A critical chance & defense boost.\nx2 Critical Chance",
+
+"clothing-buff-wpn3def2":"Shirt Big Weapon Precision & Defense Buff",
+"clothing-buff-wpn3def2-desc":"A big weapon precision & defense boost.\nx3 Weapon Precision",
+
+"clothing-buff-wpns2def2":"Shirt Weapon Speed & Defense Buff",
+"clothing-buff-wpns2def2-desc":"Weapon speed & defense boost.\nx2 Weapon Speed",
+
+"clothing-buff-hr2def2":"Shirt Health Regen & Defense Buff",
+"clothing-buff-hr2def2-desc":"Health Regen & defense boost.\n+20% Health Regen",
+
+"clothing-buff-sr2def2":"Shirt Stamina Regen & Defense Buff",
+"clothing-buff-sr2def2-desc":"Energy Regen & defense boost.\n+20% Stamina Regen",
+
+"clothing-buff-imm3def2":"Shirt Big Immunity & Defense Buff",
+"clothing-buff-imm3def2-desc":"A big immunity & defense boost.\n+3 Immunity",
+
+"clothing-buff-farm1def2":"Shirt Farming & Defense Buff",
+"clothing-buff-farm1def2-desc":"A farming & defense boost.\n",
+
+"clothing-buff-fish1def2":"Shirt Fishing & Defense Buff",
+"clothing-buff-fish1def2-desc":"A fishing & defense boost.\n",
+
+"clothing-buff-forg1def2":"Shirt Foraging & Defense Buff",
+"clothing-buff-forg1def2-desc":"A foraging & defense boost.\n",
+
+"clothing-buff-min1def2":"Shirt Mining & Defense Buff",
+"clothing-buff-min1def2-desc":"A mining & defense boost.\n",
+
+"clothing-buff-com1def2":"Shirt Combat & Defense Buff",
+"clothing-buff-com1def2-desc":"A combat & defense boost.\n+1 Combat",
+
+"clothing-buff-steelbuff":"Shirt Weapon Speed & Defense Buff",
+"clothing-buff-steelbuff-desc":"Weapon Speed & defense boost.\nx2 Weapon Speed",
+
+"clothing-buff-goldbuff":"Shirt Critical Chance & Large Defense Buff",
+"clothing-buff-goldbuff-desc":"Crtical chance & big defense boost.\n+x2 Critical Chance",
+
+"clothing-buff-iridiumbreastplatebuff":"Shirt Combat & Large Defense Buff",
+"clothing-buff-iridiumbreastplatebuff-desc":"A combat & big defense boost.\n+1 Attack \n+5 Defense",
+
+"clothing-buff-luck2def2mg32":"Prismatic Shirt Buff",
+"clothing-buff-luck2def2mg32-desc":"Boosts luck, defense, and magnetic radius.\n",
+
+"clothing-buff-ccm2def2mg32":"Magic Sprinkle Buff",
+"clothing-buff-ccm2def2mg32-desc":"Boosts critical chance, defense, and magnetic radius.\nx2 Critical Chance",
+
+"clothing-buff-spd2def1wpnsp2":"Gi Buff",
+"clothing-buff-spd2def1wpnsp2-desc":"Boosts speed, defense, and weapon speed.\nx2 Weapon Speed",
+
+
+
+
+//Pants Descriptions
+"pants-farmerpants-desc": "Comfortable and durable for long hours in the field.\n+15 Stamina",
+
+"pants-shorts-desc": "Perfect for a hot summer's day... your legs will thank you.\n+15 Stamina",
+						
+"pants-dress-desc": "A long, flowy dress.\n+15 Stamina",			
+					
+"pants-skirt-desc": "A cute skirt.\n+15 Stamina",
+
+"pants-pleatedskirt-desc": "A cute pleated skirt.\n+15 Stamina",
+														
+"pants-dinosaurpants-desc": "These pants were thought to have gone extinct a long time ago!\nPart of Dino Outfit.\n+30 Stamina",				 
+							
+"pants-grassskirt-desc": "A skirt made of dried grass.\nPart of Bikini Outfit.\n+15 Stamina",
+							
+"pants-luauskirt-desc": "A skirt destined to make you the 'luau' the party!\nPart of Island Warrior and Ghillie Suit Outfits.\n+20 Stamina",
+						
+"pants-geniepants-desc": "Pants that balloon out near the bottom. Your wish has been answered!\n+20 Stamina",	
+
+"pants-tightpants-desc": "A very tight pair of pants.\n+15 Stamina",
+							
+"pants-baggypants-desc": "A loose pair of pants. Part of Astronaut Outfit.\n+15 Stamina",	
+
+"pants-simpledress-desc": "A soft, smooth, medium length dress.\nPart of Milkmaid Outfit.\n+15 Stamina",
+							
+"pants-relaxedfitpants-desc": "These pants have a little more room for the legs.\n+15 Stamina",
+
+"pants-relaxedfitshorts-desc": "These shorts have a little more room for the legs.\n+15 Stamina",
+
+"pants-trimmedluckypurpleshorts-desc": "Purple silk shorts trimmed in luxurious gold...\n+20 Stamina",
+
+"pants-prismaticpants-desc": "Pants that shimmer with prismatic energy.\nPart of Harajuku Outfit.\n+32 Magnetic Radius\n+30 Stamina",
+
+"pants-prismaticgeniepants-desc": "Pants that shimmer with prismatic energy.\nPart of Djinn Outfit.\n+32 Magnetic Radius\n+30 Stamina",
+						
+//Shirt Descriptions
+//New Shirt Names and Descriptions without buffs for them
+"earthen_shirt-name": "Earthen Shirt",
+"earthen_shirt-desc": "Smells like clay.",
+"blue_blazer-name": "Blue Blazer",
+"blue_blazer-desc": "The color reminds you of robin eggs.",
+"navy_blazer-name": "Navy Blazer",
+"navy_blazer-desc": "Great for the office or a fancy dinner.",
+"brown_muslin_shirt-name": "Brown Muslin Shirt",
+"brown_muslin_shirt-desc": "Perfect for Ren Faires!",
+"red_tunic-name": "Red Tunic",
+"red_tunic-desc": "Not designed for stealth.",
+"green_shirt-name": "Green Shirt",
+"green_shirt-desc": "A simple green shirt.",
+"coral_shirt-name": "Coral Shirt",
+"coral_shirt-desc": "Pretty in pink!",
+"black_shirt-name": "Black Shirt",
+"black_shirt-desc": "It absorbs all light.",
+"icy_blue_shirt-name": "Icy Blue Shirt",
+"icy_blue_shirt-desc": "Warmer than actual ice.",
+"hardy_tunic-name": "Hardy Tunic",
+"hardy_tunic-desc": "Grandpa would have loved wearing this!",
+"vamp_shirt-name": "Vamp Shirt",
+"vamp_shirt-desc": "Feel like a child of the night.",
+"pastel_camisole_top-name": "Pastel Camisole Top",
+"pastel_camisole_top-desc": "A lilac tee with a pink camisole over it.",
+"pastel_colorblock_shirt-name": "Pastel Colorblock Shirt",
+"pastel_colorblock_shirt-desc": "Sporty and feminine.",
+"pride_shirt-name": "Pride Shirt",
+"pride_shirt-desc": "Be proud of who you are!",
+"dark_tunic-name": "Dark Tunic",
+"dark_tunic-desc": "It could pass for a gambeson if you cosplay.",
+"simple_striped_tee-name": "Simple Striped Tee",
+"simple_striped_tee-desc": "An orange shirt with a white horizontal stripe.",
+"red_bolero-name": "Red Bolero",
+"red_bolero-desc": "Accentuates your curves.",
+"purple_tee-name": "Purple Tee",
+"purple_tee-desc": "It's a lovely purple shade.",
+"mustard_tee-name": "Mustard Tee",
+"mustard_tee-desc": "A bold choice!",
+"gluten_tee-name": "Gluten Tee",
+"gluten_tee-desc": "Express your love for baked goods by wearing this shirt.",
+"blue_contrast_collar_shirt-name": "Blue Contrast Collar Shirt",
+"blue_contrast_collar_shirt-desc": "Modest look for school and office.",
+"red_contrast_collar_shirt-name": "Red Contrast Collar Shirt",
+"red_contrast_collar_shirt-desc": "Modest look for school and office.",
+"crystal_bolero-name": "Crystal Bolero",
+"crystal_bolero-desc": "Blue looks good on you!",
+"green_tee-name": "Green Tee",
+"green_tee-desc": "It has a small white graphic on it.",
+"mouse_tee-name": "Mouse Tee",
+"mouse_tee-desc": "No mice were harmed in the making of this shirt.",
+"vernal_top-name": "Vernal Top",
+"vernal_top-desc": "Springtime is here!",
+"chartreuse_overalls-name": "Chartreuse Overalls",
+"chartreuse_overalls-desc": "A vibrant farmer look.",
+"chlorophyll_tunic-name": "Chlorophyll Tunic",
+"chlorophyll_tunic-desc": "Guess where the color comes from?",
+"fairy_tunic-name": "Fairy Tunic",
+"fairy_tunic-desc": "A tunic right out of a fairy tale.",
+"colorblock_hoodie-name": "Colorblock Hoodie",
+"colorblock_hoodie-desc": "A stylish hoodie.",
+"purple_colorblock_tee-name": "Purple Colorblock Tee",
+"purple_colorblock_tee-desc": "Go purple or go home!",
+"plumber's_overalls-name": "Plumber's Overalls",
+"plumber's_overalls-desc": "Theme song not included.",
+"alien_tee-name": "Alien Tee",
+"alien_tee-desc": "SETI-certified.",
+"silly_ghost_tee-name": "Silly Ghost Tee",
+"silly_ghost_tee-desc": "Boo!",
+"purple_contast_collar_shirt-name": "Purple Contrast Collar Shirt",
+"purple_contast_collar_shirt-desc": "Modest look for school and office.",
+"stylish_blue_shirt_and_overalls-name": "Stylish Blue Shirt and Overalls",
+"stylish_blue_shirt_and_overalls-desc": "Farmer Chic!",
+"casual_green_shirt-name": "Casual Green Shirt",
+"casual_green_shirt-desc": "Colorful and comfortable.",
+"void_shirt-name": "Void Shirt",
+"void_shirt-desc": "Stare into the abyss wearing this!",
+"crimson_bandana_shirt-name": "Crimson Bandana Shirt",
+"crimson_bandana_shirt-desc": "Look sleek and sophisticated wearing this.",
+"purple_suspenders-name": "Purple Suspenders",
+"purple_suspenders-desc": "Fun suspenders with a blue shirt.",
+"parsnip_shirt-name": "Parsnip Shirt",
+"parsnip_shirt-desc": "A shirt with the colors of our favorite starter crop.",
+"retro_purple_polo-name": "Retro Purple Polo",
+"retro_purple_polo-desc": "Perfect for nights playing billiards at the Saloon.",
+"pickled_shirt-name": "Pickled Shirt",
+"pickled_shirt-desc": "Celebrating all the picklers out there.",
+"jellied_shirt-name": "Jellied Shirt",
+"jellied_shirt-desc": "Jelly is your jam.",
+"feta_shirt-name": "Feta Shirt",
+"feta_shirt-desc": "Opa!",
+"gaia_shirt-name": "Gaia Shirt",
+"gaia_shirt-desc": "Wear the colors of the earth crystal in style!",
+"cute_bunny_tee-name": "Cute Bunny Tee",
+"cute_bunny_tee-desc": "No bunnies were harmed in the making of this tee!",
+"green_speckled_tee-name": "Green Speckled Tee",
+"green_speckled_tee-desc": "The slime in its fibers will never wash out.",
+"gray_sweater-name": "Gray Sweater",
+"gray_sweater-desc": "A simple gray sweater.",
+"black_business_suit-name": "Black Business Suit",
+"black_business_suit-desc": "Exude corporate power wearing this.",
+"stylish_purple_shirt_and_overalls-name": "Stylish Purple Shirt and Overalls",
+"stylish_purple_shirt_and_overalls-desc": "Farmer Chic!",
+"light_blue_tunic-name": "Light Blue Tunic",
+"light_blue_tunic-desc": "The fabric resembles calm ocean waves.",
+"black_and_white_camisole-name": "Black and White Camisole",
+"black_and_white_camisole-desc": "A simple combo that looks great on anyone.",
+"muslin_tunic-name": "Muslin Tunic",
+"muslin_tunic-desc": "Feel like a medieval peasant in this shirt.",
+"spooky_camisole-name": "Spooky Camisole",
+"spooky_camisole-desc": "Slink out into the night unseen.",
+"green_striped_tee-name": "Green Striped Tee",
+"green_striped_tee-desc": "The vibrant green stripes will make you stand out.",
+"joja_shirt-name": "Joja Shirt",
+"joja_shirt-desc": "Support your favorite conglomerate!",
+"energetic_tee-name": "Energetic Tee",
+"energetic_tee-desc": "You feel like you can do anything wearing this.",
+"pink_sweater-name": "Pink Sweater",
+"pink_sweater-desc": "Warm and feminine.",
+"fisherman's_polo-name": "Fisherman's Polo",
+"fisherman's_polo-desc": "For when you want to fish in style.",
+"brown_tunic-name": "Brown Tunic",
+"brown_tunic-desc": "A light brown tunic that smells a little musty.",
+"pink_colorblock_tee-name": "Pink Colorblock Tee",
+"pink_colorblock_tee-desc": "The purple stripe makes this pink shirt pop.",
+"red_dress_shirt-name": "Red Dress Shirt",
+"red_dress_shirt-desc": "A nice, fashionable red shirt.",
+"blue_dress_shirt-name": "Blue Dress Shirt",
+"blue_dress_shirt-desc": "A nice, fashionable blue shirt.",
+"pink_dress_shirt-name": "Pink Dress Shirt",
+"pink_dress_shirt-desc": "A nice, fashionable pink shirt.",
+"brown_suspenders-name": "Brown Suspenders",
+"brown_suspenders-desc": "Workin' hard!",
+"basic_blazer-name": "Basic Blazer",
+"basic_blazer-desc": "A versatile piece of clothing.",
+"casual_blue_blazer-name": "Casual Blue Blazer",
+"casual_blue_blazer-desc": "Colorful and comfortable.",
+"orange_graphic_tee-name": "Orange Graphic Tee",
+"orange_graphic_tee-desc": "It has a yellow sine wave on it.",
+"green_graphic_tee-name": "Green Graphic Tee",
+"green_graphic_tee-desc": "It has a yellow zig-zag on it.",
+"casual_green_blazer-name": "Casual Green Blazer",
+"casual_green_blazer-desc": "Colorful and comfortable.",
+"blue_graphic_tee-name": "Blue Graphic Tee",
+"blue_graphic_tee-desc": "Look like a 90s Jazz cup wearing this.",
+"yellow_cardigan-name": "Yellow Cardigan",
+"yellow_cardigan-desc": "Bright and sunny design.",
+"jade_tunic-name": "Jade Tunic",
+"jade_tunic-desc": "A tunic in a lovely green hue.",
+"neater_bow_shirt-name": "Neater Bow Shirt",
+"neater_bow_shirt-desc": "A neat button-down shirt with a prominent bow tie.",
+"flashy_dress_shirt-name": "Flashy Dress Shirt",
+"flashy_dress_shirt-desc": "Trendsetting shirt.",
+"yellow_contrast_collar_shirt-name": "Yellow Contrast Collar Shirt",
+"yellow_contrast_collar_shirt-desc": "Modest look for school and office.",
+"red_bandana_shirt-name": "Red Bandana Shirt",
+"red_bandana_shirt-desc": "The bandana keeps your neck soft and cozy.",
+"blue_bandana_shirt-name": "Blue Bandana Shirt",
+"blue_bandana_shirt-desc": "The bandana keeps your neck soft and cozy.",
+"purple_bandana_shirt-name": "Purple Bandana Shirt",
+"purple_bandana_shirt-desc": "The bandana keeps your neck soft and cozy.",
+"colorful_heart_shirt-name": "Colorful Heart Shirt",
+"colorful_heart_shirt-desc": "Wear your heart on your sleeves with this extra soft garment.",
+"sailor's_shirt-name": "Sailor's Shirt",
+"sailor's_shirt-desc": "Reminds you of the open sea. Has a dyeable collar.",
+"colorful_sailor's_shirt-name": "Colorful Sailor's Shirt",
+"colorful_sailor's_shirt-desc": "Unlike most sailor shirts, this one has a dyeable body and a white collar.",
+
+"leprechaun_shirt-name": "Leprechaun Shirt", 
+"leprechaun_shirt-desc": "Feel Lucky in Green!",
+
+//these are the edited "Shirt" entries that can be tailored and have been expanded by the Clothing Price Adjustments mod
+"earthen_shirt-desc2": "Smells like clay.\n+6 Stamina",
+
+"blue_blazer-desc2": "The color reminds you of robin eggs.\n+1 Defense",
+
+"navy_blazer-desc2": "Great for the office or a fancy dinner.\n+0.5 Speed",
+
+"brown_muslin_shirt-desc2": "Perfect for Ren Faires!\n+1 Defense",
+
+"red_tunic-desc2": "Not designed for stealth.\n+6 Stamina",
+
+"green_shirt-desc2": "A simple green shirt.\n+0.5 Luck",
+
+"coral_shirt-desc2": "Pretty in pink!\n+0.5 Luck",
+
+"black_shirt-desc2": "It absorbs all light.\n+0.5 Speed",
+
+"icy_blue_shirt-desc2": "Warmer than actual ice.\n+1 Defense",
+
+"hardy_tunic-desc2": "Grandpa would have loved wearing this!\n+1 Defense",
+
+"vamp_shirt-desc2": "Feel like a child of the night.\n+6 Stamina",
+
+"pastel_camisole_top-desc2": "A lilac tee with a pink camisole over it.\n+6 Stamina",
+
+"pastel_colorblock_shirt-desc2": "Sporty and feminine.\n+5% Health Regen",
+
+"pride_shirt-desc2": "Be proud of who you are!\n+0.5 Luck",
+
+"dark_tunic-desc2": "It could pass for a gambeson if you cosplay.\n+5% Stamina Regen",
+
+"simple_striped_tee-desc2": "An orange shirt with a white horizontal stripe.\n+0.5 Luck",
+
+"red_bolero-desc2": "Accentuates your curves.\n+1 Defense",
+
+"purple_tee-desc2": "It's a lovely purple shade.\n+0.5 Speed",
+
+"mustard_tee-desc2": "A bold choice!\n+5% Health Regen",
+
+"gluten_tee-desc2": "Express your love for baked goods by wearing this shirt.\n+1 Defense",
+
+"blue_contrast_collar_shirt-desc2": "Modest look for school and office.\n+1 Defense",
+
+"red_contrast_collar_shirt-desc2": "Modest look for school and office.\n+5% Stamina Regen",
+
+"crystal_bolero-desc2": "Blue looks good on you!\n+6 Stamina",
+
+"green_tee-desc2": "It has a small white graphic on it.\n+0.5 Speed",
+
+"mouse_tee-desc2": "No mice were harmed in the making of this shirt.\n+1 Luck \n+1 Speed",
+
+"vernal_top-desc2": "Springtime is here!\n+6 Stamina",
+
+"chartreuse_overalls-desc2": "A vibrant farmer look.\n+0.5 Speed",
+
+"chlorophyll_tunic-desc2": "Guess where the color comes from?\n+6 Stamina",
+
+"fairy_tunic-desc2": "A tunic right out of a fairy tale.\n+5% Health Regen",
+
+"colorblock_hoodie-desc2": "A stylish hoodie.\n+5% Stamina Regen",
+
+"purple_colorblock_tee-desc2": "Go purple or go home!\n+1 Defense",
+
+"plumber's_overalls-desc2": "Theme song not included.\n+6 Stamina",
+
+"alien_tee-desc2": "SETI-certified.\n+6 Stamina",
+
+"silly_ghost_tee-desc2": "Boo!\n+0.5 Luck",
+
+"purple_contast_collar_shirt-desc2": "Modest look for school and office.\n+6 Stamina",
+
+"stylish_blue_shirt_and_overalls-desc2": "Farmer Chic!\n+5 Stamina",
+
+"casual_green_shirt-desc2": "Colorful and comfortable.\n+1 Defense",
+
+"void_shirt-desc2": "Stare into the abyss wearing this!\n+0.5 Luck",
+
+"crimson_bandana_shirt-desc2": "Look sleek and sophisticated wearing this.\n+1 Defense",
+
+"purple_suspenders-desc2": "Fun suspenders with a blue shirt.\n+1 Defense",
+
+"parsnip_shirt-desc2": "A shirt with the colors of our favorite starter crop.\n+1 Defense",
+
+"retro_purple_polo-desc2": "Perfect for nights playing billiards at the Saloon.\n+1 Defense",
+
+"pickled_shirt-desc2": "Celebrating all the picklers out there.\n+5% Health Regen",
+
+"jellied_shirt-desc2": "Jelly is your jam.\n+5% Stamina Regen",
+
+"feta_shirt-desc2": "Opa!\n+1 Defense",
+
+"gaia_shirt-desc2": "Wear the colors of the earth crystal in style!\n+6 Stamina",
+
+"cute_bunny_tee-desc2": "No bunnies were harmed in the making of this tee!\n+1 Luck \n+1 Speed",
+
+"green_speckled_tee-desc2": "The slime in its fibers will never wash out.\n+5 Stamina",
+
+"gray_sweater-desc2": "A simple gray sweater.\n+1 Defense",
+
+"black_business_suit-desc2": "Exude corporate power wearing this.\n+5% Stamina Regen",
+
+"stylish_purple_shirt_and_overalls-desc2": "Farmer Chic!\n+0.5 Luck",
+
+"light_blue_tunic-desc2": "The fabric resembles calm ocean waves.\n+1 Defense",
+
+"black_and_white_camisole-desc2": "A simple combo that looks great on anyone.\n+0.5 Speed",
+
+"muslin_tunic-desc2": "Feel like a medieval peasant in this shirt.\n+5 Stamina",
+
+"spooky_camisole-desc2": "Slink out into the night unseen.\n+0.5 Luck",
+
+"green_striped_tee-desc2": "The vibrant green stripes will make you stand out.\n+1 Defense",
+
+"joja_shirt-desc2": "Support your favorite conglomerate! Part of Joja Fanatic Outfit.\n+6 Stamina",
+
+"energetic_tee-desc2": "You feel like you can do anything wearing this.\n+5% Stamina Regen",
+
+"pink_sweater-desc2": "Warm and feminine.\n+5% Health Regen",
+
+"fisherman's_polo-desc2": "For when you want to fish in style.\n+0.5 Speed",
+
+//Edited Shirt Data not available at character select start menu
+
+"brown_tunic-desc2": "A light brown tunic that smells a little musty.\n+2 Defense\nx2 Attack",
+
+"pink_colorblock_tee-desc2": "The purple stripe makes this pink shirt pop.\n+2 Defense\nx2 Weapon Speed",
+
+"red_dress_shirt-desc2": "A nice, fashionable red shirt.\n+2 Defense",
+
+"blue_dress_shirt-desc2": "A nice, fashionable blue shirt.\n+1 Speed\nx2.5 Critical Chance",
+
+"pink_dress_shirt-desc2": "A nice, fashionable pink shirt.\n+1 Fishing\n+1 Speed",
+
+"brown_suspenders-desc2": "Workin' hard!\n+10 Stamina\nx2 Knockback",
+
+"basic_blazer-desc2": "A versatile piece of clothing.\n+10 Stamina",
+
+"casual_blue_blazer-desc2": "Colorful and comfortable.\n+1 Fishing\nx2 Attack",
+
+"orange_graphic_tee-desc2": "It has a yellow sine wave on it.\n+1 Fishing\n+1 Speed",
+
+"green_graphic_tee-desc2": "It has a yellow zig-zag on it.\n+1 Farming\n+2 Defense",
+
+"casual_green_blazer-desc2": "Colorful and comfortable.\n+1 Foraging\n+2 Defense",
+
+"blue_graphic_tee-desc2": "Look like a 90s Jazz cup wearing this.\n+1 Fishing\n+2 Defense",
+
+"yellow_cardigan-desc2": "Bright and sunny design.\n+1 Farming\n+2 Defense",
+
+"jade_tunic-desc2": "A tunic in a lovely green hue.\n+1 Mining\n+2 Defense",
+
+"neater_bow_shirt-desc2": "A neat button-down shirt with a prominent bow tie.\n+2 Defense\n+2 Luck",
+
+"flashy_dress_shirt-desc2": "Trendsetting shirt.\n+10 Stamina",
+
+"yellow_contrast_collar_shirt-desc2": "Modest look for school and office.\n+1 Speed",
+
+"red_bandana_shirt-desc2": "The bandana keeps your neck soft and cozy.\n+2 Defense\nx2 Attack",
+
+"blue_bandana_shirt-desc2": "The bandana keeps your neck soft and cozy.\n+2 Defense\nx2 Critical Power",
+
+"purple_bandana_shirt-desc2": "The bandana keeps your neck soft and cozy.\n+2 Defense\nx2 Critical Chance",
+
+"colorful_heart_shirt-desc2": "Wear your heart on your sleeves with this extra soft garment.\n+2 Defense\n+20% Health Regen",
+
+"sailor's_shirt-desc2": "Reminds you of the open sea. Has a dyeable collar.\n+1 Fishing\n+2 Defense",
+
+"colorful_sailor's_shirt-desc2": "Unlike most sailor shirts, this one has a dyeable body and a white collar.\n+1 Fishing\n+2 Defense",
+
+"leprechaun_shirt-desc2": "Feel Lucky in Green! Part of Leprechaun Outfit.\n+2 Defense\n+2 Luck",
+
+//Additional Vanilla Shirts with OG Names and Descriptions
+
+"shirt-buff-desc": "A wearable shirt.\n+5 Stamina",
+
+"classicoveralls-buff-desc": "A farming classic.\n+6 Stamina",
+
+"mintblouse-buff-desc": "A cute, light green blouse.\n+15 Stamina",
+
+"darkshirt-buff-desc": "A dark colored shirt.\n+5 Stamina",
+
+"skullshirt-buff-desc": "A shirt with a menacing skull printed on it.\n+1 Defense",
+
+"lightblueshirt-buff-desc": "A light blue shirt.\n+5 Stamina",
+
+"tanstripedshirt-buff-desc": "A tan shirt with a white stripe going through the middle of it.\n+6 Stamina",
+
+"greenoveralls-buff-desc": "A slightly less popular farming classic.\n+6 Stamina",
+
+"goodgriefshirt-buff-desc": "A good ol' shirt...\n+6 Stamina",
+
+"aquamarineshirt-buff-desc": "An aquamarine shirt.\n+5 Stamina",
+
+"suittop-buff-desc": "A formal top for fancy events and celebrations.\n+6 Stamina",
+
+"greenbeltedshirt-buff-desc": "A green, belted shirt.\n+1 Defense",
+
+"limegreenstripedshirt-buff-desc": "A lime green shirt with white stripes.\n+6 Stamina",
+
+"redstripedshirt-buff-desc": "A red shirt with white stripes. Part of Dino Outfit.\n+6 Stamina",
+
+"skeletonshirt-buff-desc": "A shirt with a skeletal rib cage printed on it.\n+1 Defense",
+
+"orangeshirt-buff-desc": "An orange shirt.\n+5 Stamina",
+
+"nightskyshirt-buff-desc": "A shirt that reminds you of the night sky.\n+6 Stamina",
+
+"mayoralsuspenders-buff-desc": "A pair of suspenders that looks awfully familiar...\n+6 Stamina",
+
+"brownjacket-buff-desc": "A nice, sturdy jacket made of brown material.\n+1 Defense",
+
+"sailorshirt-buff-desc": "Reminds you of the open sea.\n+1 Fishing \n+1 Speed",
+
+"greenvest-buff-desc": "A neat green vest over a shirt.\n+15 Stamina",
+
+"yellowandgreenshirt-buff-desc": "A yellow shirt with a green stripe.\n+5 Stamina",
+
+"lightbluestripedshirt-buff-desc": "A light blue shirt with a white stripe.\n+6 Stamina",
+
+"pinkstripedshirt-buff-desc": "A pink shirt with stripes.\n+6 Stamina",
+
+"workshirt-buff-desc": "For long days in the fields.\n+6 Stamina",
+
+"storeownersjacket-buff-desc": "A jacket that looks like it'd be worn by a small town merchant.\n+1 Defense",
+
+"greentunic-buff-desc": "A shirt fit for an adventurer. Part of Link Outfit.\n+1 Defense",
+
+"fancyredblouse-buff-desc": "A bright red blouse adorned with shiny yellow buttons.\n+5 Stamina",
+
+"plainshirt-buff-desc": "A simple shirt.\n+5 Stamina",
+
+"retrorainbowshirt-buff-desc": "A simple shirt with a faded rainbow pattern.\n+6 Stamina",
+
+"limegreentunic-buff-desc": "A bright green tunic with a belt.\n+1 Defense",
+
+"neatbowshirt-buff-desc": "A neat button down shirt with a prominent bow tie.\n+5 Stamina",
+
+"shirtandtie-buff-desc": "A white dress shirt and a tie.\n+1 Farming\n+2 Defense",
+
+"emilysmagicshirt-buff-desc": "Made with love by Emily. Colored with all-natural dye! Part of Emily's Outfit.\n+1 Speed\nx3 Critical Chance",
+
+"stripedshirt-buff-desc": "It's a shirt with faint stripes on it.\n+2 Defense",
+
+"tanktop-buff-desc": "A sleeveless shirt.\n+10 Stamina",
+
+"cowboyponcho-buff-desc": "A legendary outfit from the old west. Part of Cowboy, Cowgal, and Cowpoke Outfits.\n+2 Defense\nx2 Attack",
+
+"croptanktop-buff-desc": "A sleeveless shirt cut extra short on the bottom.\n+10 Stamina",
+
+"bikinitop-buff-desc": "A summer staple. Part of Bikini Outfit.\n+1 Fishing",
+
+"wumbusshirt-buff-desc": "A shirt featuring a strange green guy.\n+1 Combat\n+2 Defense",
+
+"80sshirt-buff-desc": "A gnarly t-shirt that sits off the shoulder.\n+1 Luck\nx2 Weapon Speed",
+
+"lettermanjacket-buff-desc": "A jacket that's oozing with team spirit. Part of Varsity Outfit.\n+2 Defense\n+1 Speed",
+
+"blackleatherjacket-buff-desc": "A cool jacket made of dark black leather.\n+1 Combat\n+2 Defense",
+
+"strappedtop-buff-desc": "A top with a thin strap.\n+10 Stamina",
+
+"buttondownshirt-buff-desc": "A simple, clean shirt.\n+2 Defense",
+
+"croptopshirt-buff-desc": "A shirt cut extra short on the bottom.\n+2 Defense",
+
+"tubetop-buff-desc": "A strapless top that wraps around the body.\n+1 Speed\n+1 Luck",
+
+"tiedyeshirt-buff-desc": "A shirt that was tied up and then dipped into multiple colored dyes.\n+1 Luck\n+1 Speed",
+
+"steelbreastplate-buff-desc": "Decorative armor made from steel.\n+3 Defense\nx2 Weapon Speed",
+
+"copperbreastplate-buff-desc": "Decorative armor made from copper.\n+2 Defense",
+
+"goldbreastplate-buff-desc": "Decorative armor made from solid gold.\n+4 Defense\nx2 Critical Chance",
+
+"iridiumbreastplate-buff-desc": "Decorative armor made from pure iridium. Part of Space Emperor & Empress Outfits.\n+1 Combat\n+5 Defense",
+
+"fakemusclesshirt-buff-desc": "You could hit the gym, or you could just wear this instead.\n+2 Defense\nx3 Attack",
+
+"flannelshirt-buff-desc": "A nice thick button down shirt with a cross-hatch pattern. Perfect for cold winters.\n+1 Combat\n+2 Defense",
+
+"bomberjacket-buff-desc": "A thick, sturdy jacket worn by fighter pilots long ago.\n+1 Mining\n+2 Defense",
+
+"cavemanshirt-buff-desc": "A stone-age classic! Part of Caveman and Cavewoman Outfits.\n+2 Defense\nx2 Attack",
+
+"fishingvest-buff-desc": "Lots of pockets to store your tackle. Part of Kingfisher Outfit.\n+1 Fishing\n+2 Defense",
+
+"fishshirt-buff-desc": "A shirt with a fish logo.\n+1 Fishing\n+2 Defense",
+
+"shirtandbelt-buff-desc": "A plain shirt with a brown belt.\n+2 Defense",
+
+"grayhoodie-buff-desc": "A sporty gray pullover with a hood.\n+2 Defense\nx2 Knockback",
+
+"bluehoodie-buff-desc": "A sporty blue pullover with a hood. Part of Winter Outfit.\n+2 Defense\nx2 Critical Chance",
+
+"redhoodie-buff-desc": "A sporty red pullover with a hood.\n+2 Defense\nx2 Critical Power",
+
+"denimjacket-buff-desc": "A rugged jacket made from denim.\n+2 Defense\nx2 Weapon Speed",
+
+"trackjacket-buff-desc": "A light jacket made from elastic material.\n+2 Defense\nx2 Weapon Speed",
+
+"whitegi-buff-desc": "A loose garment typically worn by martial artists.\n+1 Defense\n+2 Speed\nx2 Weapon Speed",
+
+"orangegi-buff-desc": "A loose garment typically worn by martial artists. Part of Tiger Outfit.\n+1 Defense\n+2 Speed\nx2 Weapon Speed",
+
+"grayvest-buff-desc": "A gray vest over a white shirt.\n+2 Defense\nx2 Knockback",
+
+"kelpshirt-buff-desc": "It looks like you just washed up on the beach. Smells like it, too. Part of Ghillie Suit Outfit.\n+10 Stamina",
+
+"studdedvest-buff-desc": "A black vest studded with metal spikes.\n+2 Defense\nx2 Attack",
+
+"gaudyshirt-buff-desc": "It's a therapeutic blue...\n+1 Foraging\n+2 Defense",
+
+"oasisgown-buff-desc": "The jewel of the desert.\n+1 Foraging\n+1 Combat",
+
+"blacksmithapron-buff-desc": "Handed down from one generation to the next. Part of Serial Killer Outfit.\n+1 Mining\n+2 Defense",
+
+"highwaistedshirtdyebottom-buff-desc": "The high-waisted pants look, with a dyeable bottom.\n+1 Farming\n+2 Defense",
+
+"highwaistedshirtdyetop-buff-desc": "The high-waisted jeans look, with a dyeable top.\n+1 Farming\n+2 Defense",
+
+"basicpullover-buff-desc": "It's a plain pullover.\n+2 Defense",
+
+"turtlenecksweater-buff-desc": "Keep that neck piping hot.\n+2 Defense",
+
+"iridiumenergyshirt-buff-desc": "Show off your iridium energy.\n+2 Defense\nx3 Attack",
+
+"tunnelersjersey-buff-desc": "It's a jersey for the Zuzu City Tunnelers. Part of Sports Fan Outfit.\n+2 Defense\n+2 Speed",
+
+"graysuit-buff-desc": "It's a custom-tailored gray suit.\n+1 Mining\n+2 Defense",
+
+"redtuxedo-buff-desc": "An elegant top for formal events.\n+1 Combat\n+2 Defense",
+
+"navytuxedo-buff-desc": "An elegant top for formal events.\n+1 Fishing\n+2 Defense",
+
+"holidayshirt-buff-desc": "Celebrate the Feast of the Winter Star. Part of Holiday Star Outfit.\n+2 Defense\n+2 Luck",
+
+"leafytop-buff-desc": "Real leaves adorn this garment. Part of Green Giant & Goddess Outfits.\n+1 Foraging\n+2 Defense",
+
+"goodnightshirt-buff-desc": "A big baggy nightshirt with a detailed moon graphic. Part of Witchy Outfit.\n+1 Mining\n+2 Defense",
+
+
+"happyshirt-buff-desc": "It's the happiest shirt.\n+2 Defense\nx3 Weapon Precision",
+
+"shirtwithbow-buff-desc": "This shirt comes with a little bow around the neck.\n+2 Defense\nx2 Knockback",
+
+"jestershirt-buff-desc": "Put your inner clown on display. Part of Jester Outfit.\n+2 Defense\n+2 Luck",
+
+"oceanshirt-buff-desc": "The shirt looks like underwater ripples.\n+1 Fishing\n+2 Defense",
+
+"darkstripedshirt-buff-desc": "A dark shirt with colorful stripes.\n+1 Combat\n+2 Defense",
+
+"backpackshirt-buff-desc": "A plain shirt with a canvas backpack. Part of Astronaut Outfit.\n+1 Foraging\n+2 Defense",
+
+"purpleblouse-buff-desc": "A stunning purple blouse.\n+2 Defense",
+
+"vintagepolo-buff-desc": "It's faded from age and smells like old closet.\n+1 Fishing\n+2 Defense",
+
+"togashirt-buff-desc": "It's an old design, but the airflow is really nice! Part of Greek God & Goddess Outfits.\n+1 Speed\nx2.5 Critical Chance",
+
+"starshirt-buff-desc": "The star is supposed to glow in the dark, but it doesn't.\n+1 Mining\n+2 Defense",
+
+"classytop-buff-desc": "It feels like the softest velvet.\n+1 Mining\n+2 Defense",
+
+
+"vacationshirt-buff-desc": "It's a tourist shirt from the Fern Islands.\n+1 Fishing\n+2 Defense",
+
+"greenthumbshirt-buff-desc": "It comes pre-rubbed with potting soil. Part of Spring Outfit.\n+1 Farming\n+2 Defense",
+
+
+"slimeshirt-buff-desc": "A shirt that looks like a big slime.\n+1 Combat\n+2 Defense",
+
+"excavatorshirt-buff-desc": "Look sharp while digging for fossils. Part of Archaeologist Outfit.\n+1 Mining\n+2 Defense",
+
+"sportsshirt-buff-desc": "Knock it out of the park with this classic look.\n+1 Speed",
+
+"heartshirt-buff-desc": "Wear your heart on your sleeves with this extra soft garment.\n+1 Defense",
+
+"darkjacket-buff-desc": "A dark denim jacket lined with fleece.\n+2 Defense\nx2 Weapon Speed",
+
+"sunsetshirt-buff-desc": "A shirt inspired by the most evocative time of day.\n+1 Foraging\n+2 Defense",
+
+"chefcoat-buff-desc": "The traditional uniform of a head chef. Part of Executive Chef Outfit.\n+1 Farming\n+2 Defense",
+
+"shirtothesea-buff-desc": "It smells like the brine of the sea.\n+1 Fishing\n+2 Defense",
+
+"arcaneshirt-buff-desc": "You can feel a certain power from this garment. Part of Wizard Outfit.\n+2 Defense\nx3 Attack",
+
+"plainoveralls-buff-desc": "Classic overalls with a shirt that can be dyed.\n+10 Stamina",
+
+"sleevelessoveralls-buff-desc": "Classic overalls with a sleeveless shirt that can be dyed. Part of Summer Outfit.\n+10 Stamina",
+
+"whiteoverallsshirt-buff-desc": "Classic overalls with a white shirt and belt.\n+6 Stamina",
+
+"cardigan-buff-desc": "A soft button-up cardigan sweater.\n+2 Defense\nx2 Weapon Speed",
+
+"yobashirt-buff-desc": "A shirt featuring a prominent 'sign of the vessel'.\n+2 Defense\n+20% Health Regen",
+
+"necklaceshirt-buff-desc": "A shirt with a gold necklace.\n+2 Defense",
+
+"beltedcoat-buff-desc": "A velvety black coat with a prominent belt. Part of Pilgrim Outfit.\n+2 Defense\n+3 Immunity",
+
+"goldtrimmedshirt-buff-desc": "A shirt with a gold trim.\n+1 Mining\n+2 Defense",
+
+"prismaticshirt-buff-desc": "It's shimmering with prismatic energy. Part of Djinn Outfit.\n+2 Defense\n+2 Luck\n+32 Magnetic Radius",
+
+"pendantshirt-buff-desc": "A shirt with a big pendant. Part of Pirate King & Queen Outfits.\n+1 Farming\n+2 Defense",
+
+"highheatshirt-buff-desc": "The shirt almost looks like it's on fire!\n+1 Farming\n+2 Defense",
+
+"flamesshirt-buff-desc": "Look cool with hot flames.\n+1 Combat\n+2 Defense",
+
+"antiquityshirt-buff-desc": "A shirt with an ancient pattern.\n+1 Mining\n+2 Defense",
+
+"softarrowshirt-buff-desc": "A soft-colored shirt with an upward arrow pattern.\n+2 Defense\nx2 Critical Power",
+
+"dollshirt-buff-desc": "A shirt featuring a strange ancient doll face.\n+2 Defense\nx2 Critical Power",
+
+"jewelryshirt-buff-desc": "A shirt with a simple golden chain.\n+1 Mining\n+2 Defense",
+
+"canvasjacket-buff-desc": "A brown jacket with a fleece lining.\n+2 Defense\nx2 Weapon Speed",
+
+"trashcanshirt-buff-desc": "You're wearing a trash can. Part of Oscar Outfit.\n+2 Defense\nx2 Knockback",
+
+"rustyshirt-buff-desc": "It's made to look like the shirt is full of rust.\n+1 Farming\n+2 Defense",
+
+"circuitboardshirt-buff-desc": "The shirt looks like an electronics circuitboard. Part of Hacker Outfit.\n+1 Mining\n+2 Defense",
+
+"fluffyshirt-buff-desc": "It's fuzzy. Part of Chicken Outfit.\n+1 Farming\n+2 Defense",
+
+"saucestainedshirt-buff-desc": "It's already covered in spaghetti sauce so you don't have to feel guilty about it!\n+10 Stamina\nx3 Weapon Precision",
+
+"brownsuit-buff-desc": "It's a standard brown business suit.\n+1 Foraging\n+2 Defense",
+
+"goldenshirt-buff-desc": "It's a shiny golden shirt.\n+2 Defense\nx2 Weapon Speed",
+
+"captainsuniform-buff-desc": "The classic uniform of a ship's captain. Part of Ship Captain and Commodore Outfits.\n+1 Fishing\n+2 Defense",
+
+"officeruniform-buff-desc": "The classic uniform for an officer of the law. Part of Officer Outfit.\n+1 Combat\n+2 Defense",
+
+"rangeruniform-buff-desc": "The classic uniform for a park ranger. Part of Ranger Outfit.\n+1 Foraging\n+2 Defense",
+
+"bluelongvest-buff-desc": "A long blue vest above a grey shirt.\n+1 Combat\n+2 Defense",
+
+"regalmantle-buff-desc": "A regal purple garment. Part of Monarch Outfit.\n+2 Defense\nx2 Critical Power",
+
+"relicshirt-buff-desc": "I found a golden relic and I've got the shirt to prove it!\n+2 Defense\n+20% Stamina Regen",
+
+"boboshirt-buff-desc": "A pink shirt featuring a strange-looking guy.\n+2 Defense\nx3 Knockback",
+
+"friedeggshirt-buff-desc": "Wake up, it's time for eggs.\n+10 Stamina",
+
+"burgershirt-buff-desc": "Wear what you eat!\n+2 Defense\nx2 Critical Chance",
+
+"collaredshirt-buff-desc": "A shirt with a starchy white collar.\n+10 Stamina",
+
+"toastedshirt-buff-desc": "It looks lightly toasted.\n+2 Defense\nx2 Knockback",
+
+"carpshirt-buff-desc": "A big carp head adorns the front.\n+1 Fishing\n+2 Defense",
+
+"redflannelshirt-buff-desc": "A flannel shirt with a red and blue pattern.\n+1 Mining\n+2 Defense",
+
+"tortillashirt-buff-desc": "A shirt that looks like the surface of a tortilla.\n+2 Defense\n+3 Immunity",
+
+"warmflannelshirt-buff-desc": "A flannel shirt with a warm brown and rose color.\n+1 Foraging\n+2 Defense",
+
+"sugarshirt-buff-desc": "It's bursting with 'sweet energy'.\n+2 Defense\nx2 Weapon Speed",
+
+"greenflannelshirt-buff-desc": "A flannel shirt with a green and brown pattern.\n+1 Farming\n+2 Defense",
+
+"oilstainedshirt-buff-desc": "It's already stained with oil for that greasy look.\n+10 Stamina\nx3 Weapon Precision",
+
+"morelshirt-buff-desc": "This shirt features the iconic spring mushroom.\n+1 Foraging\n+2 Defense",
+
+"springshirt-buff-desc": "It's light, it's fresh, and it features the colors of spring.\n+10 Stamina\nx2 Knockback",
+
+"raincoat-buff-desc": "The classic yellow rain coat. Part of Rain Fishing Outfit.\n+1 Fishing",
+
+"darkbandanashirt-buff-desc": "A dark shirt with a colorful bandana.\n+1 Combat\n+2 Defense",
+
+"darkhighlightshirt-buff-desc": "A dark shirt with bright highlights.\n+1 Fishing\n+2 Defense",
+
+"omnishirt-buff-desc": "It's speckled with rainbow flecks! Part of Harajuku Outfit.\n+1 Mining\n+2 Defense",
+
+"bridalshirt-buff-desc": "A beautiful white top, perfect for a bride.\n+2 Luck\n+1 Speed",
+
+"brownoveralls-buff-desc": "It's hard to see the dirt stains on this one. Part of Fall Outfit.\n+2 Defense",
+
+"orangebowshirt-buff-desc": "A striped orange shirt with a big white bow.\n+10 Stamina",
+
+"whiteoveralls-buff-desc": "A nice clean variant of the classic farmer look.\n+10 Stamina",
+
+"pourovershirt-buff-desc": "A familiar zig-zag pattern adorns this shirt. Ahhh... that smell.\n+2 Defense\n+2 Speed",
+
+"greenjacketshirt-buff-desc": "Inspired by the mallard's coat. The shirt can be dyed.\n+1 Farming\n+2 Defense",
+
+"shortjacket-buff-desc": "A short dyeable jacket over a shirt.\n+1 Foraging\n+2 Defense",
+
+"polkadotshirt-buff-desc": "A dark shirt with dyeable polka dots.\n+1 Fishing\n+2 Defense",
+
+"whitedotshirt-buff-desc": "A dyeable shirt with white polka dots.\n+1 Farming\n+2 Defense",
+
+"camoshirt-buff-desc": "Helps you blend in with the surroundings.\n+1 Combat\n+2 Defense",
+
+"dirtshirt-buff-desc": "You'll fit right in on the farm!\n+1 Farming\n+2 Defense",
+
+"crabcakeshirt-buff-desc": "Pre-slathered with aioli for your enjoyment. Bon Appetit!\n+1 Fishing\n+2 Defense",
+
+"silkyshirt-buff-desc": "It's made from a smooth silky substance.\n+1 Farming\n+2 Defense",
+
+"bluebuttonedvest-buff-desc": "It's a blue shirt with dyeable sleeves.\n+1 Fishing\nx2 Attack",
+
+"fadeddenimshirt-buff-desc": "It's a denim shirt with a dusty, faded look.\n+2 Defense\nx2 Critical Chance",
+
+"redbuttonedvest-buff-desc": "It's a red shirt with dyeable sleeves.\n+2 Defense",
+
+"greenbuttonedvest-buff-desc": "It's a green shirt with dyeable sleeves.\n+2 Defense\nx2 Knockback",
+
+"tomatoshirt-buff-desc": "A shirt that answers the big question: 'Tomatoes are'... (but the rest is smudged).\n+1 Farming\n+2 Defense",
+
+"fringedvest-buff-desc": "A fringed brown vest over a sleeveless shirt.\n+2 Defense\nx2 Knockback",
+
+"globbyshirt-buff-desc": "It's got an indistinguishable glob pattern.\n+1 Fishing\n+2 Defense",
+
+"midnightdogjacket-buff-desc": "It's dyed a deep midnight blue from squid ink.\n+1 Fishing\n+2 Defense",
+
+"shrimpenthusiastshirt-buff-desc": "For those whose appetites demand a steady supply of shrimp.\n+1 Fishing\n+2 Defense",
+
+"teashirt-buff-desc": "A shirt inspired by the popular beverage.\n+2 Defense\n+1 Speed",
+
+"trinketshirt-buff-desc": "A shirt with large colored glass orbs attached to it.\n+1 Foraging\n+2 Defense",
+
+"darknesssuit-buff-desc": "A black suit top with a faded red pocket square.\n+1 Combat\n+2 Defense",
+
+"mineraldogjacket-buff-desc": "It's infused with trace minerals from the ocean.\n+1 Fishing\n+1 Combat",
+
+"magentashirt-buff-desc": "This particular shade is unique to the magma cap mushroom.\n+2 Defense",
+
+"gingeroveralls-buff-desc": "The color scheme is inspired by ginger ale.\n+1 Farming\n+2 Defense",
+
+"bananashirt-buff-desc": "Consider this shirt, if you happen to love bananas.\n+2 Defense\nx2 Critical Power",
+
+"yellowsuit-buff-desc": "It's a bold statement to wear this suit.\n+1 Farming\n+2 Defense",
+
+"hotpinkshirt-buff-desc": "A silky shirt in tropical pink.\n+1 Speed",
+
+"tropicalsunriseshirt-buff-desc": "This shirt smells like coconut.\n+1 Foraging\n+2 Defense",
+
+"islandbikini-buff-desc": "A Fern Islands classic. Part of Island Warrior Outfit.\n+1 Fishing\n+1 Speed",
+
+"magicsprinkleshirt-buff-desc": "A shirt with prismatic sprinkles.\n+2 Defense\nx2 Critical Chance\n+32 Magnetic Radius",
+
+"prismaticshirt_darksleeves-buff-desc":"It's shimmering with prismatic energy. Has dark sleeves. Part of Djinn Outfit.\n+2 Defense\n+2 Luck\n+32 Magnetic Radius",
+
+"prismaticshirt_lightsleeves-buff-desc":"It's shimmering with prismatic energy. Has white sleeves. Part of Djinn Outfit.\n+2 Defense\n+2 Luck\n+32 Magnetic Radius",
+
+"mysteryshirt-buff-desc": "Made from the leftovers of a Mystery Box. Part of Mysterious Outfit.\n+2 Defense\n+3 Luck"
+
+
+
+}

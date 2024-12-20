@@ -1,0 +1,12 @@
+{
+
+  "Name": "Junimo Companion",
+  "Author": "jumino",
+  "Description": "",
+  "Version": "1.0",
+  "UniqueID": "jumino.JC.CP",
+  "UpdateKeys": [],
+  "ContentPackFor": {
+    "UniqueID": "Pathoschild.ContentPatcher"
+  },
+}

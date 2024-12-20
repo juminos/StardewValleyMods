@@ -141,46 +141,74 @@
       "Priority": "Late",
       "Fields": {
         "American Green Tree Frog": {
-          "OutsideForager": true
+          "OutsideForager": true,
+          "IgnoreRain": true,
+          "FeedItemId": "(O)684"
         },
         "Red-Eyed Tree Frog": {
-          "OutsideForager": true
+          "OutsideForager": true,
+          "IgnoreRain": true,
+          "FeedItemId": "(O)684"
         },
         "Clown Tree Frog": {
-          "OutsideForager": true
+          "OutsideForager": true,
+          "IgnoreRain": true,
+          "FeedItemId": "(O)684"
         },
         "Blue Poison Dart Frog": {
-          "OutsideForager": true
+          "OutsideForager": true,
+          "IgnoreRain": true,
+          "FeedItemId": "(O)684"
         },
         "Golden Poison Dart Frog": {
-          "OutsideForager": true
+          "OutsideForager": true,
+          "IgnoreRain": true,
+          "FeedItemId": "(O)684"
         },
         "Strawberry Poison Dart Frog": {
-          "OutsideForager": true
+          "OutsideForager": true,
+          "IgnoreRain": true,
+          "FeedItemId": "(O)684"
         },
         "Amazonian Poison Dart Frog": {
-          "OutsideForager": true
+          "OutsideForager": true,
+          "IgnoreRain": true,
+          "FeedItemId": "(O)684"
         },
         "Purple Fluorescent Frog": {
-          "OutsideForager": true
+          "OutsideForager": true,
+          "IgnoreRain": true,
+          "FeedItemId": "(O)684"
         },
         "Fire-Bellied Toad": {
-          "OutsideForager": true
+          "OutsideForager": true,
+          "IgnoreRain": true,
+          "FeedItemId": "(O)684"
         },
         "Pale Frog": {
-          "OutsideForager": true
+          "OutsideForager": true,
+          "IgnoreRain": true,
+          "FeedItemId": "(O)684"
         },
         "Northern Glass Frog": {
-          "OutsideForager": true
+          "OutsideForager": true,
+          "IgnoreRain": true,
+          "FeedItemId": "(O)684"
         },
         "Desert Rain Frog": {
-          "OutsideForager": true
+          "OutsideForager": true,
+          "IgnoreRain": true,
+          "FeedItemId": "(O)684"
         },
         "Vietnamese Mossy Frog": {
-          "OutsideForager": true
+          "OutsideForager": true,
+          "IgnoreRain": true,
+          "FeedItemId": "(O)684"
         },
         "Amazon Milk Frog": {
-          "OutsideForager": true
+          "OutsideForager": true,
+          "IgnoreRain": true,
+          "FeedItemId": "(O)684"
         }
       }
     },
