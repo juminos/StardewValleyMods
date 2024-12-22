@@ -50,6 +50,144 @@
             "ring_item"
           ],
           "CustomFields": {}
+        },
+        "{{ModId}}_Dust": {
+          "DisplayName": "Dust Sprite Ring",
+          "Description": "Wearing it makes you feel a little dirty but you don't mind.",
+          "Type": "Ring",
+          "Category": -96,
+          "Price": 1500,
+          "Texture": "Mods/{{ModId}}/MoreRings",
+          "SpriteIndex": 2,
+          "Edibility": -300,
+          "IsDrink": false,
+          "Buff": null,
+          "GeodeDropsDefaultItems": false,
+          "GeodeDrops": null,
+          "ArtifactSpotChances": null,
+          "ExcludeFromFishingCollection": false,
+          "ExcludeFromShippingCollection": false,
+          "ExcludeFromRandomSale": true,
+          "ContextTags": [
+            "color_black",
+            "ring_item"
+          ],
+          "CustomFields": {}
+        },
+        "{{ModId}}_Bunny": {
+          "DisplayName": "{{i18n:bunny-ring.name}}",
+          "Description": "{{i18n:bunny-ring.description}}",
+          "Type": "Ring",
+          "Category": -96,
+          "Price": 1000,
+          "Texture": "Mods/{{ModId}}/Rings",
+          "SpriteIndex": 4,
+          "Edibility": -300,
+          "IsDrink": false,
+          "Buff": null,
+          "GeodeDropsDefaultItems": false,
+          "GeodeDrops": null,
+          "ArtifactSpotChances": null,
+          "ExcludeFromFishingCollection": false,
+          "ExcludeFromShippingCollection": false,
+          "ExcludeFromRandomSale": true,
+          "ContextTags": [
+            "color_black",
+            "ring_item"
+          ],
+          "CustomFields": {}
+        },
+        "{{ModId}}_Butterfly": {
+          "DisplayName": "{{i18n:butterfly-ring.name}}",
+          "Description": "{{i18n:butterfly-ring.description}}",
+          "Type": "Ring",
+          "Category": -96,
+          "Price": 1000,
+          "Texture": "Mods/{{ModId}}/Rings",
+          "SpriteIndex": 0,
+          "Edibility": -300,
+          "IsDrink": false,
+          "Buff": null,
+          "GeodeDropsDefaultItems": false,
+          "GeodeDrops": null,
+          "ArtifactSpotChances": null,
+          "ExcludeFromFishingCollection": false,
+          "ExcludeFromShippingCollection": false,
+          "ExcludeFromRandomSale": true,
+          "ContextTags": [
+            "color_blue",
+            "ring_item"
+          ],
+          "CustomFields": {}
+        },
+        "{{ModId}}_Firefly": {
+          "DisplayName": "{{i18n:firefly-ring.name}}",
+          "Description": "{{i18n:firefly-ring.description}}",
+          "Type": "Ring",
+          "Category": -96,
+          "Price": 1000,
+          "Texture": "Mods/{{ModId}}/Rings",
+          "SpriteIndex": 1,
+          "Edibility": -300,
+          "IsDrink": false,
+          "Buff": null,
+          "GeodeDropsDefaultItems": false,
+          "GeodeDrops": null,
+          "ArtifactSpotChances": null,
+          "ExcludeFromFishingCollection": false,
+          "ExcludeFromShippingCollection": false,
+          "ExcludeFromRandomSale": true,
+          "ContextTags": [
+            "color_orange",
+            "ring_item"
+          ],
+          "CustomFields": {}
+        },
+        "{{ModId}}_Frog": {
+          "DisplayName": "{{i18n:frog-ring.name}}",
+          "Description": "{{i18n:frog-ring.description}}",
+          "Type": "Ring",
+          "Category": -96,
+          "Price": 1000,
+          "Texture": "Mods/{{ModId}}/Rings",
+          "SpriteIndex": 3,
+          "Edibility": -300,
+          "IsDrink": false,
+          "Buff": null,
+          "GeodeDropsDefaultItems": false,
+          "GeodeDrops": null,
+          "ArtifactSpotChances": null,
+          "ExcludeFromFishingCollection": false,
+          "ExcludeFromShippingCollection": false,
+          "ExcludeFromRandomSale": true,
+          "ContextTags": [
+            "color_green",
+            "ring_item"
+          ],
+          "CustomFields": {}
+        },
+        "{{ModId}}_Owl": {
+          "DisplayName": "{{i18n:owl-ring.name}}",
+          "Description": "{{i18n:owl-ring.description}}",
+          "Type": "Ring",
+          "Category": -96,
+          "Price": 1000,
+          "Texture": "Mods/{{ModId}}/Rings",
+          "SpriteIndex": 5,
+          "Edibility": -300,
+          "IsDrink": false,
+          "Buff": null,
+          "GeodeDropsDefaultItems": false,
+          "GeodeDrops": null,
+          "ArtifactSpotChances": null,
+          "ExcludeFromFishingCollection": false,
+          "ExcludeFromShippingCollection": false,
+          "ExcludeFromRandomSale": true,
+          "ContextTags": [
+            "color_brown",
+            "ring_item"
+          ],
+          "CustomFields": {}
         }
       }
     },
@@ -81,7 +219,7 @@
     },
     {
       "Action": "Load",
-      "Target": "Mods/{{ModId}}/MoreRings",
+      "Target": "Mods/{{ModId}}/Rings, Mods/{{ModId}}/MoreRings",
       "FromFile": "assets/{{TargetWithoutPath}}.png"
     }
   ]

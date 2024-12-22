@@ -1,16 +1,44 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+	  <EnableHarmony>True</EnableHarmony>
+	  <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+	<PropertyGroup>
+		<BundleExtraAssemblies>System,ThirdParty</BundleExtraAssemblies>
+		<IgnoreModFilePatterns>
+			\.xcf$, <!-- GIMP files-->
+			System.*.dll$, <!-- System would bundle these.-->
+			^Microsoft.(?!.*(Toolkit.Diagnostics.dll)), <!-- Everyone but MS.Toolkit.Diagnostics-->
+			^runtimes[/\\].*,
+			.*[/\\]Microsoft.*, <!-- CodeDiagnostics in a bunch of languages?-->
+			^JetBrains,<!-- Should never be bundled.-->
+			^Skia <!-- Skiasharp is included with the game-->
+		</IgnoreModFilePatterns>
+	</PropertyGroup>
+	
   <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Diagnostics" Version="8.4.0" />
+    <PackageReference Include="FastExpressionCompiler.LightExpression" Version="5.0.0" />
+    <PackageReference Include="JetBrains.Annotations" Version="2024.3.0" />
     <PackageReference Include="Pathoschild.Stardew.ModBuildConfig" Version="4.3.2" />
+    <PackageReference Include="Pathoschild.Stardew.ModTranslationClassBuilder" Version="2.2.0" />
   </ItemGroup>
 
-  <ItemGroup>
+	<ItemGroup>
+		<Using Include="StardewValley" />
+		<Using Include="StardewModdingAPI" />
+		<Using Include="System.Diagnostics.CodeAnalysis" />
+		<Using Include="JetBrains.Annotations" />
+		<Using Alias="NotNullAttribute" Include="System.Diagnostics.CodeAnalysis.NotNullAttribute" />
+		<Using Alias="Object" Include="System.Object" />
+		<Using Alias="SObject" Include="StardewValley.Object" />
+	</ItemGroup>
+
+	<ItemGroup>
     <None Update="manifest.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
