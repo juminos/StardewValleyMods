@@ -7,5 +7,11 @@
     "UpdateKeys": [], // when you release the mod, see https://stardewvalleywiki.com/Modding:Modder_Guide/APIs/Update_checks
     "ContentPackFor": {
         "UniqueID": "Pathoschild.ContentPatcher"
-    }
+    },
+    "Dependencies": [
+        {
+            "UniqueID": "spacechase0.SpaceCore",
+            "IsRequired": true
+        }
+    ]
 }

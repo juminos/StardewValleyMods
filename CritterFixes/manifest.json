@@ -1,6 +1,6 @@
 {
   "Name": "Critter Fixes",
-  "Version": "2.1.0",
+  "Version": "2.1.1",
   "MinimumApiVersion": "4.0.0",
   "Description": "Fixes errors in the game code for various critter animations.",
   "UniqueID": "juminos.CritterFixes",

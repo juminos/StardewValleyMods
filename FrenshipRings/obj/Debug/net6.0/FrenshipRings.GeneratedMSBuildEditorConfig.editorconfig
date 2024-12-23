@@ -1,4 +1,5 @@
 is_global = true
+build_property.EnableEnumGeneratorInterceptor = 
 build_property.RootNamespace = FrenshipRings
 build_property.RootNamespace = FrenshipRings
 build_property.TranslationClassBuilder_AddKeyMap = 

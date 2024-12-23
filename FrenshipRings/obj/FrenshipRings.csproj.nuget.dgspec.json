@@ -51,11 +51,15 @@
             },
             "FastExpressionCompiler.LightExpression": {
               "target": "Package",
-              "version": "[5.0.0, )"
+              "version": "[5.0.1, )"
             },
             "JetBrains.Annotations": {
               "target": "Package",
               "version": "[2024.3.0, )"
+            },
+            "NetEscapades.EnumGenerators": {
+              "target": "Package",
+              "version": "[1.0.0-beta11, )"
             },
             "Pathoschild.Stardew.ModBuildConfig": {
               "target": "Package",

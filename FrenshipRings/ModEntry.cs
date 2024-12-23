@@ -16,6 +16,7 @@ using StardewValley.Locations;
 using FrenshipRings.Framework.Managers;
 using FrenshipRings.Utilities;
 using FrenshipRings.MigrationManager;
+using StardewValley.GameData.Buffs;
 
 namespace FrenshipRings
 {
@@ -27,6 +28,11 @@ namespace FrenshipRings
         private static readonly PerScreen<BunnySpawnManager?> BunnyManagers = new(() => null);
 
         private static readonly PerScreen<JumpManager?> JumpManagers = new(() => null);
+
+        /// <summary>
+        /// Gets a reference to the current jumpManager, if applicable.
+        /// </summary>
+        internal static JumpManager? CurrentJumper => JumpManagers.Value;
 
         private FrenshipRings.MigrationManager.MigrationManager? migrator;
 
@@ -51,7 +57,6 @@ namespace FrenshipRings
             helper.Events.GameLoop.SaveLoaded += OnSaveLoaded;
             helper.Events.GameLoop.ReturnedToTitle += OnReturnedToTitle;
             helper.Events.Input.ButtonsChanged += OnButtonsChanged;
-
         }
 
         private void OnButtonsChanged(object? sender, ButtonsChangedEventArgs e)
@@ -95,20 +100,8 @@ namespace FrenshipRings
             {
                 if (Game1.player.Stamina >= Config.BunnyRingStamina && !Game1.player.exhausted.Value)
                 {
-                    Buff buff = new Buff(
-                        id: "juminos.FrenshipRings_BunnyBuff",
-                        displayName: I18n.BunnyRing_Name(),
-                        description: I18n.BunnyBuff_Description(Config.BunnyRingBoost),
-                        iconTexture: this.Helper.ModContent.Load<Texture2D>("assets/bunnies_fast.png"),
-                        iconSheetIndex: 1,
-                        duration: 10000,
-                        effects: new StardewValley.Buffs.BuffEffects()
-                        {
-                            Speed = { Config.BunnyRingBoost }
-                        });
-
-                    Game1.player.applyBuff(buff);
-                    // Game1.buffsDisplay..addOtherBuff(buff); /// not needed?
+                    Game1.player.applyBuff("juminos.FrenshipRings.CP_BunnyBuff");
+                    // Game1.buffsDisplay..addOtherBuff(buff); /// applyBuff method already does this?
                     Game1.player.Stamina -= Config.BunnyRingStamina;
                 }
                 else
@@ -357,16 +350,16 @@ namespace FrenshipRings
 
             configMenu.AddBoolOption(
                 mod: this.ModManifest,
-                name: () => "Play Audio Effects",
-                tooltip: () => "Whether or not audio effects should be played",
+                name: I18n.PlayAudioEffects_Title,
+                tooltip: I18n.PlayAudioEffects_Description,
                 getValue: () => Config.PlayAudioEffects,
                 setValue: value => Config.PlayAudioEffects = value
                 );
 
             configMenu.AddNumberOption(
                 mod: this.ModManifest,
-                name: () => "Critter Spawn Multiplier",
-                tooltip: () => "Multiplicative factor which determines the number of critters to spawn",
+                name: I18n.CritterSpawnMultiplier_Title,
+                tooltip: I18n.CritterSpawnMultiplier_Description,
                 getValue: () => Config.CritterSpawnMultiplier,
                 setValue: value => Config.CritterSpawnMultiplier = (int)value,
                 min: 0,
@@ -376,18 +369,23 @@ namespace FrenshipRings
 
             // Frog ring category
 
+            configMenu.AddSectionTitle(
+                mod: this.ModManifest,
+                text: I18n.FrogRing_Title
+                );
+
             configMenu.AddKeybindList(
                 mod: this.ModManifest,
-                name: () => "Frog Ring Button",
-                tooltip: () => "Which button should be used for the frog ring's jump",
+                name: I18n.FrogRingButton_Title,
+                tooltip: I18n.FrogRingButton_Description,
                 getValue: () => Config.FrogRingButton,
                 setValue: value => Config.FrogRingButton = value
                 );
 
             configMenu.AddNumberOption(
                 mod: this.ModManifest,
-                name: () => "Max Frog Jump Distance",
-                tooltip: () => "Maximum distance you can jump with the Frog Ring",
+                name: I18n.MaxFrogJumpDistance_Title,
+                tooltip: I18n.MaxFrogJumpDistance_Description,
                 getValue: () => Config.MaxFrogJumpDistance,
                 setValue: value => Config.MaxFrogJumpDistance = (int)value,
                 min: 0,
@@ -397,8 +395,8 @@ namespace FrenshipRings
 
             configMenu.AddNumberOption(
                 mod: this.ModManifest,
-                name: () => "Jump Charge Speed",
-                tooltip: () => "How fast jumping distance charges with the Frog Ring",
+                name: I18n.JumpChargeSpeed_Title,
+                tooltip: I18n.JumpChargeSpeed_Description,
                 getValue: () => Config.JumpChargeSpeed,
                 setValue: value => Config.JumpChargeSpeed = (int)value,
                 min: 1,
@@ -408,86 +406,101 @@ namespace FrenshipRings
 
             configMenu.AddBoolOption(
                 mod: this.ModManifest,
-                name: () => "Jump Costs Stamina",
-                tooltip: () => "Whether or not the jump costs stamina",
+                name: I18n.JumpCostsStamina_Title,
+                tooltip: I18n.JumpCostsStamina_Description,
                 getValue: () => Config.JumpCostsStamina,
                 setValue: value => Config.JumpCostsStamina = value
                 );
 
             configMenu.AddBoolOption(
                 mod: this.ModManifest,
-                name: () => "Frogs Spawn In Heat",
-                tooltip: () => "Whether or not the frogs should spawn in a very hot location \nsuch as the volcano or desert",
+                name: I18n.FrogsSpawnInHeat_Title,
+                tooltip: I18n.FrogsSpawnInHeat_Description,
                 getValue: () => Config.FrogsSpawnInHeat,
                 setValue: value => Config.FrogsSpawnInHeat = value
                 );
 
             configMenu.AddBoolOption(
                 mod: this.ModManifest,
-                name: () => "Frogs Spawn In Cold",
-                tooltip: () => "Whether or not frogs should spawn in a very cold location",
+                name: I18n.FrogsSpawnInCold_Title,
+                tooltip: I18n.FrogsSpawnInCold_Description,
                 getValue: () => Config.FrogsSpawnInCold,
                 setValue: value => Config.FrogsSpawnInCold = value
                 );
 
             configMenu.AddBoolOption(
                 mod: this.ModManifest,
-                name: () => "Frogs Spawn Only In Rain",
-                tooltip: () => "Whether or not frogs can only spawn outdoors in rain",
+                name: I18n.FrogsSpawnOnlyInRain_Title,
+                tooltip: I18n.FrogsSpawnOnlyInRain_Description,
                 getValue: () => Config.FrogsSpawnOnlyInRain,
                 setValue: value => Config.FrogsSpawnOnlyInRain = value
                 );
 
             configMenu.AddBoolOption(
                 mod: this.ModManifest,
-                name: () => "Saltwater Frogs",
-                tooltip: () => "Whether or not frogs can spawn in areas that are saltwater",
+                name: I18n.SaltwaterFrogs_Title,
+                tooltip: I18n.SaltwaterFrogs_Description,
                 getValue: () => Config.SaltwaterFrogs,
                 setValue: value => Config.SaltwaterFrogs = value
                 );
 
             configMenu.AddBoolOption(
                 mod: this.ModManifest,
-                name: () => "Indoor Frogs",
-                tooltip: () => "Whether or not frogs can spawn indoors",
+                name: I18n.IndoorFrogs_Title,
+                tooltip: I18n.IndoorFrogs_Description,
                 getValue: () => Config.IndoorFrogs,
                 setValue: value => Config.IndoorFrogs = value
                 );
 
             // Butterfly ring category
 
+            configMenu.AddSectionTitle(
+                mod: this.ModManifest,
+                text: I18n.ButterflyRing_Title
+                );
+
             configMenu.AddBoolOption(
                 mod: this.ModManifest,
-                name: () => "Butterflies Spawn In Rain",
-                tooltip: () => "Whether or not butterflies should spawn if it's rainy out",
+                name: I18n.ButterfliesSpawnInRain_Title,
+                tooltip: I18n.ButterfliesSpawnInRain_Description,
                 getValue: () => Config.ButterfliesSpawnInRain,
                 setValue: value => Config.ButterfliesSpawnInRain = value
                 );
 
             // Owl ring category
 
+            configMenu.AddSectionTitle(
+                mod: this.ModManifest,
+                text: I18n.OwlRing_Title
+                );
+
             configMenu.AddBoolOption(
                 mod: this.ModManifest,
-                name: () => "Owls Spawn Indoors",
-                tooltip: () => "Whether or not owls should spawn indoors",
+                name: I18n.OwlsSpawnIndoors_Title,
+                tooltip: I18n.OwlsSpawnIndoors_Description,
                 getValue: () => Config.OwlsSpawnIndoors,
                 setValue: value => Config.OwlsSpawnIndoors = value
                 );
 
             configMenu.AddBoolOption(
                 mod: this.ModManifest,
-                name: () => "Owls Spawn During Day",
-                tooltip: () => "Whether or not owls should spawn during the day",
+                name: I18n.OwlsSpawnDuringDay_Title,
+                tooltip: I18n.OwlsSpawnDuringDay_Description,
                 getValue: () => Config.OwlsSpawnDuringDay,
                 setValue: value => Config.OwlsSpawnDuringDay = value
                 );
 
             // Bunny ring category
 
+            configMenu.AddSectionTitle(
+                mod: this.ModManifest,
+                text: I18n.BunnyRing_Title
+                );
+
             configMenu.AddNumberOption(
                 mod: this.ModManifest,
-                name: () => "Bunny Ring Stamina",
-                tooltip: () => "How expensive the bunny ring's dash should be",
+                name: I18n.BunnyRingStamina_Title,
+                tooltip: I18n.BunnyRingStamina_Description,
                 getValue: () => Config.BunnyRingStamina,
                 setValue: value => Config.BunnyRingStamina = (int)value,
                 min: 0,
@@ -497,8 +510,8 @@ namespace FrenshipRings
 
             configMenu.AddNumberOption(
                 mod: this.ModManifest,
-                name: () => "Bunny Ring Boost",
-                tooltip: () => "How big of a speed boost the bunny ring's dash should be",
+                name: I18n.BunnyRingBoost_Title,
+                tooltip: I18n.BunnyRingBoost_Description,
                 getValue: () => Config.BunnyRingBoost,
                 setValue: value => Config.BunnyRingBoost = (int)value,
                 min: 0,
@@ -508,8 +521,8 @@ namespace FrenshipRings
 
             configMenu.AddKeybindList(
                 mod: this.ModManifest,
-                name: () => "Bunny Ring Button",
-                tooltip: () => "Which button should be used for the bunny ring's stamina-sprint",
+                name: I18n.BunnyRingButton_Title,
+                tooltip: I18n.BunnyRingButton_Description,
                 getValue: () => Config.BunnyRingButton,
                 setValue: value => Config.BunnyRingButton = value
                 );

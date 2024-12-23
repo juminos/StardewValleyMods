@@ -12,9 +12,9 @@ using FrenshipRings.Toolkit.Reflection;
 
 namespace FrenshipRings.ReflectionManager;
 
-    /// <summary>
-    /// A class for cached reflection.
-    /// </summary>
+/// <summary>
+/// A class for cached reflection.
+/// </summary>
 [SuppressMessage("StyleCop.CSharp.OrderingRules", "SA1201:Elements should appear in the correct order", Justification = "Records break stylecop :(.")]
 public static class ReflectionCache
 {
@@ -232,4 +232,44 @@ public static class ReflectionCache
         }
         return ReflectionThrowHelper.ThrowMethodNotFoundException<FieldInfo>(type.FullName + "::" + fieldName);
     }
+
+    #region niceties
+
+    /// <inheritdoc cref="GetCachedMethod(Type, string, FlagTypes, Type[])"/>
+    /// <remarks>For a method with a signature that takes one param.</remarks>
+    /// <typeparam name="T">type signature.</typeparam>
+    public static MethodInfo GetCachedMethod<T>(this Type type, string fieldName, FlagTypes flags)
+        => type.GetCachedMethod(fieldName, flags, new[] { typeof(T) });
+
+    public static MethodInfo GetCachedMethod<T1, T2>(this Type type, string fieldName, FlagTypes flags)
+        => type.GetCachedMethod(fieldName, flags, new[] { typeof(T1), typeof(T2) });
+
+    public static MethodInfo GetCachedMethod<T1, T2, T3>(this Type type, string fieldName, FlagTypes flags)
+        => type.GetCachedMethod(fieldName, flags, new[] { typeof(T1), typeof(T2), typeof(T3) });
+
+    public static MethodInfo GetCachedMethod<T1, T2, T3, T4>(this Type type, string fieldName, FlagTypes flags)
+        => type.GetCachedMethod(fieldName, flags, new[] { typeof(T1), typeof(T2), typeof(T3), typeof(T4) });
+
+    public static ConstructorInfo GetCachedConstructor<T>(this Type type, FlagTypes flags)
+        => type.GetCachedConstructor(flags, new[] { typeof(T) });
+
+    public static ConstructorInfo GetCachedConstructor<T1, T2>(this Type type, FlagTypes flags)
+        => type.GetCachedConstructor(flags, new[] { typeof(T1), typeof(T2) });
+
+    public static ConstructorInfo GetCachedConstructor<T1, T2, T3>(this Type type, FlagTypes flags)
+        => type.GetCachedConstructor(flags, new[] { typeof(T1), typeof(T2), typeof(T3) });
+
+    public static ConstructorInfo GetCachedConstructor<T1, T2, T3, T4>(this Type type, FlagTypes flags)
+        => type.GetCachedConstructor(flags, new[] { typeof(T1), typeof(T2), typeof(T3), typeof(T4) });
+    #endregion
+
+    /// <summary>
+    /// Clears the reflection cache.
+    /// </summary>
+    internal static void Clear() => Cache.Clear();
+
+    /// <summary>
+    /// Swaps the hot cache to stale, clears the stale cache.
+    /// </summary>
+    internal static void Swap() => Cache.Swap();
 }

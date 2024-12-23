@@ -31,6 +31,8 @@ namespace CritterFixes
             harmony.PatchAll();
         }
 
+        // Fix rabbit critter running animation
+
         [HarmonyPatch(typeof(Rabbit), nameof(Rabbit.update))]
         public static class Rabbit_Update_Patch
         {
@@ -52,12 +54,18 @@ namespace CritterFixes
                 }
             }
         }
+
+        // Fix butterflies
+
         [HarmonyPatch(typeof(Butterfly))]
         [HarmonyPatch(MethodType.Constructor, typeof(GameLocation), typeof(Vector2), typeof(bool), typeof(bool), typeof(int), typeof(bool))]
         public static class Butterfly_Constructor_Patch
         {
             public static void Postfix(Butterfly __instance, GameLocation location, Vector2 position, bool islandButterfly, bool forceSummerButterfly, int baseFrameOverride, bool prismatic)
             {
+
+                // Fix butterfly sprite reference
+
                 if (__instance.baseFrame == 169)
                 {
                     __instance.baseFrame = 428;
@@ -71,11 +79,13 @@ namespace CritterFixes
                     __instance.sprite.loop = false;
                 }
 
-                if (baseFrameOverride == 160 || baseFrameOverride == 180 || baseFrameOverride == 163 || baseFrameOverride == 183 || baseFrameOverride == 166 || baseFrameOverride == 186 || baseFrameOverride == 397)
-                {
-                    FieldInfo summerButterflyField = typeof(Butterfly).GetField("summerButterfly", BindingFlags.NonPublic | BindingFlags.Instance);
-                    summerButterflyField.SetValue(__instance, false);
-                }
+                // Fix butterfly animation **officially fixed in update 1.6.15
+
+                //if (baseFrameOverride == 160 || baseFrameOverride == 180 || baseFrameOverride == 163 || baseFrameOverride == 183 || baseFrameOverride == 166 || baseFrameOverride == 186 || baseFrameOverride == 397)
+                //{
+                //    FieldInfo summerButterflyField = typeof(Butterfly).GetField("summerButterfly", BindingFlags.NonPublic | BindingFlags.Instance);
+                //    summerButterflyField.SetValue(__instance, false);
+                //}
             }
         }
     }

@@ -1,13 +1,15 @@
 {
   "Format": "2.0",
   "Changes": [
+
+// Add rings
     {
       "Action": "EditData",
       "Target": "Data/Objects",
       "Entries": {
         "{{ModId}}_Shadow": {
-          "DisplayName": "Shadow Ring",
-          "Description": "Surrounds you with a strange aura.",
+          "DisplayName": "{{i18n:shadow-ring.name}}",
+          "Description": "{{i18n:shadow-ring.description}}",
           "Type": "Ring",
           "Category": -96,
           "Price": 1500,
@@ -29,8 +31,8 @@
           "CustomFields": {}
         },
         "{{ModId}}_Spider": {
-          "DisplayName": "Spider Ring",
-          "Description": "Wearing it gives you a spring in your step.",
+          "DisplayName": "{{i18n:spider-ring.name}}",
+          "Description": "{{i18n:spider-ring.description}}",
           "Type": "Ring",
           "Category": -96,
           "Price": 1500,
@@ -52,8 +54,8 @@
           "CustomFields": {}
         },
         "{{ModId}}_Dust": {
-          "DisplayName": "Dust Sprite Ring",
-          "Description": "Wearing it makes you feel a little dirty but you don't mind.",
+          "DisplayName": "{{i18n:dustsprite-ring.name}}",
+          "Description": "{{i18n:dustsprite-ring.description}}",
           "Type": "Ring",
           "Category": -96,
           "Price": 1500,
@@ -79,7 +81,7 @@
           "Description": "{{i18n:bunny-ring.description}}",
           "Type": "Ring",
           "Category": -96,
-          "Price": 1000,
+          "Price": 5000,
           "Texture": "Mods/{{ModId}}/Rings",
           "SpriteIndex": 4,
           "Edibility": -300,
@@ -102,7 +104,7 @@
           "Description": "{{i18n:butterfly-ring.description}}",
           "Type": "Ring",
           "Category": -96,
-          "Price": 1000,
+          "Price": 2500,
           "Texture": "Mods/{{ModId}}/Rings",
           "SpriteIndex": 0,
           "Edibility": -300,
@@ -125,7 +127,7 @@
           "Description": "{{i18n:firefly-ring.description}}",
           "Type": "Ring",
           "Category": -96,
-          "Price": 1000,
+          "Price": 25000,
           "Texture": "Mods/{{ModId}}/Rings",
           "SpriteIndex": 1,
           "Edibility": -300,
@@ -148,7 +150,7 @@
           "Description": "{{i18n:frog-ring.description}}",
           "Type": "Ring",
           "Category": -96,
-          "Price": 1000,
+          "Price": 5000,
           "Texture": "Mods/{{ModId}}/Rings",
           "SpriteIndex": 3,
           "Edibility": -300,
@@ -171,7 +173,7 @@
           "Description": "{{i18n:owl-ring.description}}",
           "Type": "Ring",
           "Category": -96,
-          "Price": 1000,
+          "Price": 5000,
           "Texture": "Mods/{{ModId}}/Rings",
           "SpriteIndex": 5,
           "Edibility": -300,
@@ -191,15 +193,80 @@
         }
       }
     },
+
+// Add buffs
+    {
+        "Action": "EditData",
+        "Target": "Data/Buffs",
+        "Entries": {
+            "{{ModId}}_ButterflyBuff": {
+                "DisplayName": "{{i18n:butterfly-ring.name}}",
+                "Description": "{{i18n:butterfly-buff.description}}",
+                "Duration": -2,
+                "IconTexture": "TileSheets\\BuffsIcons",
+                "IconSpriteIndex": 8,
+                "Effects": { "MagneticRadius": 128 }
+            },
+            "{{ModId}}_BunnyBuff": {
+                "DisplayName": "{{i18n:bunny-ring.name}}",
+                "Description": "{{i18n:bunny-buff.description}}",
+                "Duration": 10000,
+                "IconTexture": "Mods/{{ModId}}/bunnies-fast",
+                "IconSpriteIndex": 1,
+                "Effects": { "Speed": 3 }
+            },
+            "{{ModId}}_FireflyBuff": {
+                "DisplayName": "{{i18n:firefly-ring.name}}",
+                "Duration": -2,
+                "Effects": {}
+            },
+            "{{ModId}}_FrogBuff": {
+                "DisplayName": "{{i18n:frog-ring.name}}",
+                "Duration": -2,
+                "Effects": {}
+            },
+            "{{ModId}}_OwlBuff": {
+                "DisplayName": "{{i18n:owl-ring.name}}",
+                "Duration": -2,
+                "Effects": {}
+            }
+        }
+    },
+
+// Assign buffs to rings
+    {
+        "Action": "EditData",
+        "Target": "spacechase0.SpaceCore/WearableData",
+        "Entries": {
+            "{{ModId}}_ButterflyRing": {
+                "BuffIdToApply": "{{ModId}}_ButterflyBuff"
+            },
+            "{{ModId}}_FireflyRing": {
+                "BuffIdToApply": "{{ModId}}_FireflyBuff"
+            },
+            "{{ModId}}_FrogRing": {
+                "BuffIdToApply": "{{ModId}}_FrogBuff"
+            },
+            "{{ModId}}_OwlRing": {
+                "BuffIdToApply": "{{ModId}}_OwlBuff"
+            }
+        }
+    },
+
+
+// Add mail
     {
       "Action": "EditData",
       "Target": "Data/Mail",
       "Entries": {
-        "{{ModId}}_Shadow": "@,^If you truly wish to be a friend to the Shadow People, you should have this.  ^   -Krobus %item object {{ModId}}_Shadow 1 %%[#]A Gift From Krobus",
-        "{{ModId}}_Spider": "@,^I found this in my pocket. Maybe it will be of some use to you.   ^   -Krobus %item object {{ModId}}_Spider 1 %%[#]A Gift From Krobus",
-        "{{ModId}}_SebFrogRing": "@,^I was walking through the woods in the rain yesterday, and a frog hopped out of that old abandoned house! I wonder what it was doing in there?   ^   -Seb[#]Seb's Frog Observation"
+        "{{ModId}}_Shadow": "{{i18n:shadow-ring.letter}}",
+        "{{ModId}}_Spider": "{{i18n:spider-ring.letter}}",
+        "{{ModId}}_SebFrogRing": "{{i18n:frog-ring.letter}}",
+        "{{ModId}}_DustSprite": "{{i18n:dustsprite-ring.letter}}"
       }
     },
+
+// Add trigger actions
     {
       "Action": "EditData",
       "Target": "Data/TriggerActions",
@@ -221,9 +288,17 @@
           "Trigger": "DayEnding",
           "Condition": "PLAYER_HEARTS Current Sebastian 4, WEATHER Forest Rain",
           "Action": "AddMail Current {{ModId}}_SebFrogRing"
-        }
+        },
+        "{{ModId}}_JasDust": {
+          "Id": "{{ModId}}_JasDust",
+          "Trigger": "DayEnding",
+          "Condition": "PLAYER_HEARTS Current Jas 8, PLAYER_KILLED_MONSTERS Current \"Dust Spirit\" 500",
+          "Action": "AddMail Current {{ModId}}_DustSprite"
+        },
       }
     },
+
+// Add rings to shops
     {
       "Action": "EditData",
       "Target": "Data/Shops",
@@ -231,6 +306,7 @@
       "Entries": {
         "{{ModId}}_BunnyRing": {
           "Id": "{{ModId}}_BunnyRing",
+          "Price": 5000,
           "TradeItemId": "(O)446"
         },
         "{{ModId}}_ButterflyRing": {
@@ -247,16 +323,18 @@
         },
         "{{ModId}}_OwlRing": {
           "Id": "{{ModId}}_OwlRing",
-          "Price": "2000",
+          "Price": 5000,
           "TradeItemId": "(O)424",
           "TradeItemAmount": 2,
           "Condition": "TIME 2100"
         }
       }
     },
+
+// Load textures
     {
       "Action": "Load",
-      "Target": "Mods/{{ModId}}/Rings, Mods/{{ModId}}/MoreRings",
+      "Target": "Mods/{{ModId}}/Rings, Mods/{{ModId}}/MoreRings, Mods/{{ModId}}/bunnies-fast",
       "FromFile": "assets/{{TargetWithoutPath}}.png"
     }
   ]

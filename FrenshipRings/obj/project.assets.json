@@ -18,7 +18,7 @@
           }
         }
       },
-      "FastExpressionCompiler.LightExpression/5.0.0": {
+      "FastExpressionCompiler.LightExpression/5.0.1": {
         "type": "package",
         "compile": {
           "lib/net6.0/FastExpressionCompiler.LightExpression.dll": {
@@ -179,6 +179,23 @@
           "lib/netstandard1.0/_._": {}
         }
       },
+      "NetEscapades.EnumGenerators/1.0.0-beta11": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/NetEscapades.EnumGenerators.Attributes.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/NetEscapades.EnumGenerators.Attributes.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "build/NetEscapades.EnumGenerators.props": {},
+          "build/NetEscapades.EnumGenerators.targets": {}
+        }
+      },
       "Pathoschild.Stardew.ModBuildConfig/4.3.2": {
         "type": "package",
         "build": {
@@ -299,16 +316,16 @@
         "lib/netstandard2.1/CommunityToolkit.Diagnostics.xml"
       ]
     },
-    "FastExpressionCompiler.LightExpression/5.0.0": {
-      "sha512": "ImYmWwTwMr2t9AwM1xsZ3xLi1eFx4BTZnI/G/kcMZyCzm25LP7H4ZpfzVobm1K70bo4IBsVXCaksSiRe31u/cA==",
+    "FastExpressionCompiler.LightExpression/5.0.1": {
+      "sha512": "xadJjMpWUdWGhROkxk36NHnN4krvY3y+WGBsjSR8ZtN+tY2gmkF8GgPXuF/plT0BPhVh20edvbCAn6FsqZzgNA==",
       "type": "package",
-      "path": "fastexpressioncompiler.lightexpression/5.0.0",
+      "path": "fastexpressioncompiler.lightexpression/5.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "FastExpressionCompiler.snk",
         "LICENSE/LICENSE",
-        "fastexpressioncompiler.lightexpression.5.0.0.nupkg.sha512",
+        "fastexpressioncompiler.lightexpression.5.0.1.nupkg.sha512",
         "fastexpressioncompiler.lightexpression.nuspec",
         "lib/net472/FastExpressionCompiler.LightExpression.dll",
         "lib/net472/FastExpressionCompiler.LightExpression.xml",
@@ -566,6 +583,28 @@
         "version.txt"
       ]
     },
+    "NetEscapades.EnumGenerators/1.0.0-beta11": {
+      "sha512": "37btDZQX5OzwUmF6xvqxDb0mRTXi3O/h3nVKjvri2XEwyUnHsY5g43jbPJo8Sp2gxbfJd2lto7fLLQujw5aT5Q==",
+      "type": "package",
+      "path": "netescapades.enumgenerators/1.0.0-beta11",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "analyzers/dotnet/roslyn4.11/cs/NetEscapades.EnumGenerators.Attributes.dll",
+        "analyzers/dotnet/roslyn4.11/cs/NetEscapades.EnumGenerators.dll",
+        "analyzers/dotnet/roslyn4.4/cs/NetEscapades.EnumGenerators.Attributes.dll",
+        "analyzers/dotnet/roslyn4.4/cs/NetEscapades.EnumGenerators.dll",
+        "build/NetEscapades.EnumGenerators.props",
+        "build/NetEscapades.EnumGenerators.targets",
+        "lib/net451/NetEscapades.EnumGenerators.Attributes.dll",
+        "lib/net451/NetEscapades.EnumGenerators.Attributes.xml",
+        "lib/netstandard2.0/NetEscapades.EnumGenerators.Attributes.dll",
+        "lib/netstandard2.0/NetEscapades.EnumGenerators.Attributes.xml",
+        "netescapades.enumgenerators.1.0.0-beta11.nupkg.sha512",
+        "netescapades.enumgenerators.nuspec"
+      ]
+    },
     "Pathoschild.Stardew.ModBuildConfig/4.3.2": {
       "sha512": "wRnRRTgB84YPyNIGFpI12Gdjfwery/JTgRbTboG0uJK5VJsuQ2VWT4fS4bcvPgOKMK8lqYyqxV7sEq7zgd60gQ==",
       "type": "package",
@@ -773,8 +812,9 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "CommunityToolkit.Diagnostics >= 8.4.0",
-      "FastExpressionCompiler.LightExpression >= 5.0.0",
+      "FastExpressionCompiler.LightExpression >= 5.0.1",
       "JetBrains.Annotations >= 2024.3.0",
+      "NetEscapades.EnumGenerators >= 1.0.0-beta11",
       "Pathoschild.Stardew.ModBuildConfig >= 4.3.2",
       "Pathoschild.Stardew.ModTranslationClassBuilder >= 2.2.0"
     ]
@@ -829,11 +869,15 @@
           },
           "FastExpressionCompiler.LightExpression": {
             "target": "Package",
-            "version": "[5.0.0, )"
+            "version": "[5.0.1, )"
           },
           "JetBrains.Annotations": {
             "target": "Package",
             "version": "[2024.3.0, )"
+          },
+          "NetEscapades.EnumGenerators": {
+            "target": "Package",
+            "version": "[1.0.0-beta11, )"
           },
           "Pathoschild.Stardew.ModBuildConfig": {
             "target": "Package",
