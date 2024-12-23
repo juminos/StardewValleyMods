@@ -196,7 +196,8 @@
       "Target": "Data/Mail",
       "Entries": {
         "{{ModId}}_Shadow": "@,^If you truly wish to be a friend to the Shadow People, you should have this.  ^   -Krobus %item object {{ModId}}_Shadow 1 %%[#]A Gift From Krobus",
-        "{{ModId}}_Spider": "@,^I found this in my pocket. Maybe it will be of some use to you.   ^   -Krobus %item object {{ModId}}_Spider 1 %%[#]A Gift From Krobus"
+        "{{ModId}}_Spider": "@,^I found this in my pocket. Maybe it will be of some use to you.   ^   -Krobus %item object {{ModId}}_Spider 1 %%[#]A Gift From Krobus",
+        "{{ModId}}_SebFrogRing": "@,^I was walking through the woods in the rain yesterday, and a frog hopped out of that old abandoned house! I wonder what it was doing in there?   ^   -Seb[#]Seb's Frog Observation"
       }
     },
     {
@@ -214,6 +215,42 @@
           "Trigger": "DayEnding",
           "Condition": "PLAYER_HEARTS Current Krobus 8",
           "Action": "AddMail Current {{ModId}}_Spider"
+        },
+        "{{ModId}}_SebFrogRing": {
+          "Id": "{{ModId}}_SebFrogRing",
+          "Trigger": "DayEnding",
+          "Condition": "PLAYER_HEARTS Current Sebastian 4, WEATHER Forest Rain",
+          "Action": "AddMail Current {{ModId}}_SebFrogRing"
+        }
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Shops",
+      "TargetField": [ "HatMouse", "Items" ],
+      "Entries": {
+        "{{ModId}}_BunnyRing": {
+          "Id": "{{ModId}}_BunnyRing",
+          "TradeItemId": "(O)446"
+        },
+        "{{ModId}}_ButterflyRing": {
+          "Id": "{{ModId}}_ButterflyRing",
+          "Condition": "SEASON Spring Summer Fall, WEATHER Here Sun"
+        },
+        "{{ModId}}_FrogRing": {
+          "Id": "{{ModId}}_FrogRing",
+          "Condition": "PLAYER_HAS_MAIL Current {{ModId}}_SebFrogRing Received, WEATHER Here Rain"
+        },
+        "{{ModId}}_FireflyRing": {
+          "Id": "{{ModId}}_FireflyRing",
+          "Condition": "SEASON Summer, TIME 1900"
+        },
+        "{{ModId}}_OwlRing": {
+          "Id": "{{ModId}}_OwlRing",
+          "Price": "2000",
+          "TradeItemId": "(O)424",
+          "TradeItemAmount": 2,
+          "Condition": "TIME 2100"
         }
       }
     },
