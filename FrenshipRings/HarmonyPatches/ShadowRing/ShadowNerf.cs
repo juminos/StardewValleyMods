@@ -41,8 +41,7 @@ internal class ShadowNerf
         if (Game1.player.isWearingRing("juminos.FrenshipRings.CP_Shadow"))
         {
             threshold = -1;
-            ModEntry.SMonitor.Log("Shadow person found. Setting player threshold.", LogLevel.Trace);
-            __instance.moveTowardPlayerThreshold.Value = threshold;
+            //__instance.moveTowardPlayerThreshold.Value = threshold;
         }
     }
 

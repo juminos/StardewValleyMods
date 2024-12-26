@@ -19,6 +19,9 @@ using FrenshipRings.MigrationManager;
 using StardewValley.GameData.Buffs;
 using HarmonyLib;
 using FrenshipRings.HarmonyPatches.ShadowRing;
+using FrenshipRings.HarmonyPatches.OwlRing;
+using FrenshipRings.ConstantsAndEnums;
+using FrenshipRings.Toolkit.Extensions;
 
 namespace FrenshipRings
 {
@@ -49,12 +52,14 @@ namespace FrenshipRings
             I18n.Init(helper.Translation);
             SMonitor = Monitor;
             SHelper = helper;
-            
+
             try
             {
                 var harmony = new Harmony(this.ModManifest.UniqueID);
 
                 new ShadowNerf(SMonitor, SHelper).ApplyPatch(harmony);
+                new BaseSightPatch(SMonitor, SHelper).ApplyPatch(harmony);
+
             }
             catch (Exception e)
             {
