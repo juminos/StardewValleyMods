@@ -17,6 +17,8 @@ using FrenshipRings.Framework.Managers;
 using FrenshipRings.Utilities;
 using FrenshipRings.MigrationManager;
 using StardewValley.GameData.Buffs;
+using HarmonyLib;
+using FrenshipRings.HarmonyPatches.ShadowRing;
 
 namespace FrenshipRings
 {
@@ -41,12 +43,24 @@ namespace FrenshipRings
         internal static bool shadowDisabled = false;
         internal static bool spiderDisabled = false;
         internal static bool dustDisabled = false;
-
+        
         public override void Entry(IModHelper helper)
         {
             I18n.Init(helper.Translation);
             SMonitor = Monitor;
             SHelper = helper;
+            
+            try
+            {
+                var harmony = new Harmony(this.ModManifest.UniqueID);
+
+                new ShadowNerf(SMonitor, SHelper).ApplyPatch(harmony);
+            }
+            catch (Exception e)
+            {
+                Monitor.Log($"Issue with Harmony patching: {e}", LogLevel.Error);
+                return;
+            }
 
             Config = helper.ReadConfig<ModConfig>();
 

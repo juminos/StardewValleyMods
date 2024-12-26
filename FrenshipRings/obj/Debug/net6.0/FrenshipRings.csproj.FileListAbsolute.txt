@@ -41,3 +41,4 @@ C:\Users\princ\SV Modding\StardewValleyMods\FrenshipRings\bin\Debug\net6.0\tr\Mi
 C:\Users\princ\SV Modding\StardewValleyMods\FrenshipRings\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\princ\SV Modding\StardewValleyMods\FrenshipRings\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\princ\SV Modding\StardewValleyMods\FrenshipRings\obj\Debug\net6.0\Frenship.4120D4CB.Up2Date
+C:\Users\princ\SV Modding\StardewValleyMods\FrenshipRings\bin\Debug\net6.0\NetEscapades.EnumGenerators.Attributes.dll

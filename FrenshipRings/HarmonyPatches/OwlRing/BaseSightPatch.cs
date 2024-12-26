@@ -30,6 +30,7 @@ internal static class BaseSightPatch
         {
             threshold /= 2;
             threshold += threshold / 2;
+            __instance.moveTowardPlayerThreshold.Value = threshold;
         }
     }
 }

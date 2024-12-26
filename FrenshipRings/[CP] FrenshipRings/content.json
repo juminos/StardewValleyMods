@@ -8,6 +8,7 @@
       "Target": "Data/Objects",
       "Entries": {
         "{{ModId}}_Shadow": {
+          "Name": "Shadow Ring",
           "DisplayName": "{{i18n:shadow-ring.name}}",
           "Description": "{{i18n:shadow-ring.description}}",
           "Type": "Ring",
@@ -31,6 +32,7 @@
           "CustomFields": {}
         },
         "{{ModId}}_Spider": {
+          "Name": "Spider Ring",
           "DisplayName": "{{i18n:spider-ring.name}}",
           "Description": "{{i18n:spider-ring.description}}",
           "Type": "Ring",
@@ -54,6 +56,7 @@
           "CustomFields": {}
         },
         "{{ModId}}_Dust": {
+          "Name": "Dust Sprite Ring",
           "DisplayName": "{{i18n:dustsprite-ring.name}}",
           "Description": "{{i18n:dustsprite-ring.description}}",
           "Type": "Ring",
@@ -77,6 +80,7 @@
           "CustomFields": {}
         },
         "{{ModId}}_Bunny": {
+          "Name": "Bunny Ring",
           "DisplayName": "{{i18n:bunny-ring.name}}",
           "Description": "{{i18n:bunny-ring.description}}",
           "Type": "Ring",
@@ -100,6 +104,7 @@
           "CustomFields": {}
         },
         "{{ModId}}_Butterfly": {
+          "Name": "Butterfly Ring",
           "DisplayName": "{{i18n:butterfly-ring.name}}",
           "Description": "{{i18n:butterfly-ring.description}}",
           "Type": "Ring",
@@ -123,6 +128,7 @@
           "CustomFields": {}
         },
         "{{ModId}}_Firefly": {
+          "Name": "Firefly Ring",
           "DisplayName": "{{i18n:firefly-ring.name}}",
           "Description": "{{i18n:firefly-ring.description}}",
           "Type": "Ring",
@@ -146,6 +152,7 @@
           "CustomFields": {}
         },
         "{{ModId}}_Frog": {
+          "Name": "Frog Ring",
           "DisplayName": "{{i18n:frog-ring.name}}",
           "Description": "{{i18n:frog-ring.description}}",
           "Type": "Ring",
@@ -169,6 +176,7 @@
           "CustomFields": {}
         },
         "{{ModId}}_Owl": {
+          "Name": "Owl Ring",
           "DisplayName": "{{i18n:owl-ring.name}}",
           "Description": "{{i18n:owl-ring.description}}",
           "Type": "Ring",
@@ -211,25 +219,16 @@
                 "DisplayName": "{{i18n:bunny-ring.name}}",
                 "Description": "{{i18n:bunny-buff.description}}",
                 "Duration": 10000,
-                "IconTexture": "Mods/{{ModId}}/bunnies-fast",
+                "IconTexture": "Mods/{{ModId}}/bunnies_fast",
                 "IconSpriteIndex": 1,
                 "Effects": { "Speed": 3 }
             },
-            "{{ModId}}_FireflyBuff": {
-                "DisplayName": "{{i18n:firefly-ring.name}}",
-                "Duration": -2,
-                "Effects": {}
-            },
-            "{{ModId}}_FrogBuff": {
-                "DisplayName": "{{i18n:frog-ring.name}}",
-                "Duration": -2,
-                "Effects": {}
-            },
-            "{{ModId}}_OwlBuff": {
-                "DisplayName": "{{i18n:owl-ring.name}}",
-                "Duration": -2,
-                "Effects": {}
-            }
+            //"{{ModId}}_SpiderBuff": {
+            //    "DisplayName": "{{i18n:spider-ring.name}}",
+            //    "Duration": -2,
+            //    "Effects": {},
+            //    "CustomFields": { "spacechase0.SpaceCore/StaminaRegeneration": 1 }
+            //}
         }
     },
 
@@ -238,18 +237,12 @@
         "Action": "EditData",
         "Target": "spacechase0.SpaceCore/WearableData",
         "Entries": {
-            "{{ModId}}_ButterflyRing": {
+            "(O){{ModId}}_Butterfly": {
                 "BuffIdToApply": "{{ModId}}_ButterflyBuff"
             },
-            "{{ModId}}_FireflyRing": {
-                "BuffIdToApply": "{{ModId}}_FireflyBuff"
-            },
-            "{{ModId}}_FrogRing": {
-                "BuffIdToApply": "{{ModId}}_FrogBuff"
-            },
-            "{{ModId}}_OwlRing": {
-                "BuffIdToApply": "{{ModId}}_OwlBuff"
-            }
+            //"(O){{ModId}}_Spider": {
+            //    "BuffIdToApply": "{{ModId}}_SpiderBuff"
+            //}
         }
     },
 
@@ -334,7 +327,7 @@
 // Load textures
     {
       "Action": "Load",
-      "Target": "Mods/{{ModId}}/Rings, Mods/{{ModId}}/MoreRings, Mods/{{ModId}}/bunnies-fast",
+      "Target": "Mods/{{ModId}}/Rings, Mods/{{ModId}}/MoreRings, Mods/{{ModId}}/bunnies_fast",
       "FromFile": "assets/{{TargetWithoutPath}}.png"
     }
   ]

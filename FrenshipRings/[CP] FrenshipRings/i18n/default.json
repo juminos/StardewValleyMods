@@ -73,7 +73,7 @@
 
     "butterfly-ring.name": "Butterfly Ring",
     "butterfly-ring.description": "During the day, summons butterflies to you. Also, increases magnetism.",
-    "butterfly-buff.description": "+128 Magnetism",
+    "butterfly-buff.description": "Helpful butterflies surround you.",
 
     "firefly-ring.name": "Firefly Ring",
     "firefly-ring.description": "During the night, summons fireflies to you, and brings you light.",
@@ -90,7 +90,7 @@
     "shadow-ring.description": "Surrounds you with a strange aura.",
 
     "spider-ring.name": "Spider Ring",
-    "spider-ring.description": "Wearing it makes you feel a little creepy.",
+    "spider-ring.description": "Wearing it puts a bounce in your step.",
 
     "dustsprite-ring.name": "Dust Sprite Ring",
     "dustsprite-ring.description": "It looks a little dirty but you don't mind.",
