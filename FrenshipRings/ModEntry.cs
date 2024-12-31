@@ -192,11 +192,6 @@ namespace FrenshipRings
             {
                 CRUtils.SpawnOwls(e.NewLocation, critters, 1);
             }
-            // testing junimo companion spawn
-            if (Game1.player.isWearingRing("juminos.FrenshipRings.CP_Junimo"))
-            {
-                CRUtils.SpawnJunimo(e.NewLocation, 1);
-            }
         }
 
         /// <inheritdoc cref="IGameLoopEvents.TimeChanged"/>
@@ -241,12 +236,6 @@ namespace FrenshipRings
                 }
                 BunnyManagers.Value ??= new(this.Monitor, Game1.player, this.Helper.Events.Player);
                 CRUtils.AddBunnies(critters, Game1.player.GetEffectsOfRingMultiplier("juminos.FrenshipRings.CP_Bunny"), BunnyManagers.Value.GetTrackedBushes());
-            }
-            // testing junimo companion spawn
-            if (Game1.player.isWearingRing("juminos.FrenshipRings.CP_Junimo") && junimoCount < 1)
-            {
-                junimoCount++;
-                CRUtils.SpawnJunimo(Game1.currentLocation, 1);
             }
         }
 

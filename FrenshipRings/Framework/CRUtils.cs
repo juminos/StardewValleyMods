@@ -266,50 +266,6 @@ internal static class CRUtils
         }
     }
 
-    // junimo spawn test
-    internal static void SpawnJunimo(GameLocation loc, int count)
-    {
-        if (count > 0)
-        {
-            //count *= ModEntry.Config.JunimoSpawnMultiplier; // not implemented
-            for (int i = 0; i < count; i++)
-            {
-                bool foundSpawnTile = false;
-                Vector2 playerPos = Game1.player.Tile;
-                Vector2 junimoPos = new Vector2();
-                Vector2[] surroundingTiles = Utility.getSurroundingTileLocationsArray(playerPos);
-                foreach (Vector2 tileLocation in surroundingTiles)
-                {
-                    if (!loc.isTileOnMap(tileLocation))
-                    {
-                        continue;
-                    }
-
-                    if (loc.IsTileOccupiedBy(tileLocation))
-                    {
-                        continue;
-                    }
-                    if (loc.isTilePassable(tileLocation))
-                    {
-                        foundSpawnTile = true;
-                        junimoPos = tileLocation;
-                        break;
-                    }
-                }
-                if (!foundSpawnTile)
-                {
-                    ModEntry.SMonitor.Log("Valid spawn tile not found.", LogLevel.Trace);
-                }
-                if (foundSpawnTile)
-                {
-                    Junimo junimo = new(junimoPos, 1, false);
-                    junimo.friendly.Value = true;
-                    loc.addCharacter(junimo);
-                }
-            }
-        }
-    }
-
     /// <summary>
     /// Add bunnies to a location.
     /// </summary>
