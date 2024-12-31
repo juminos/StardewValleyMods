@@ -2,7 +2,7 @@
     "Name": "[CP] Frenship Rings",
     "Author": "juminos",
     "Version": "1.0.0",
-    "Description": "Adds more rings.",
+    "Description": "Adds rings used in Frenship Rings mod.",
     "UniqueID": "juminos.FrenshipRings.CP",
     "UpdateKeys": [], // when you release the mod, see https://stardewvalleywiki.com/Modding:Modder_Guide/APIs/Update_checks
     "ContentPackFor": {
