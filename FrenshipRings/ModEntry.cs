@@ -50,7 +50,7 @@ namespace FrenshipRings
         internal static bool spiderDisabled = false;
         internal static bool dustDisabled = false;
         internal static int junimoCount = 0;
-        
+
         public override void Entry(IModHelper helper)
         {
             I18n.Init(helper.Translation);
@@ -117,9 +117,9 @@ namespace FrenshipRings
 
             }
 
-            if (Config.BunnyRingBoost > 0 && 
+            if (Config.BunnyRingBoost > 0 &&
                 Config.BunnyRingButton.JustPressed() &&
-                Game1.player.isWearingRing("juminos.FrenshipRings.CP_Bunny") && 
+                Game1.player.isWearingRing("juminos.FrenshipRings.CP_Bunny") &&
                 !Game1.player.hasBuff("juminos.FrenshipRings.CP_BunnyBuff"))
             {
                 if (Game1.player.Stamina >= Config.BunnyRingStamina && !Game1.player.exhausted.Value)
@@ -168,7 +168,7 @@ namespace FrenshipRings
                     CRUtils.SpawnFirefly(critters, 5);
                 }
             }
-            else if (e.NewLocation.ShouldSpawnButterflies() && 
+            else if (e.NewLocation.ShouldSpawnButterflies() &&
                 Game1.player.isWearingRing("juminos.FrenshipRings.CP_Butterfly"))
             {
                 SMonitor.Log("butterfly spawning check passed", LogLevel.Trace);
@@ -191,6 +191,11 @@ namespace FrenshipRings
             if (Game1.player.isWearingRing("juminos.FrenshipRings.CP_Owl") && e.NewLocation.ShouldSpawnOwls())
             {
                 CRUtils.SpawnOwls(e.NewLocation, critters, 1);
+            }
+            // testing junimo companion spawn
+            if (Game1.player.isWearingRing("juminos.FrenshipRings.CP_Junimo"))
+            {
+                CRUtils.SpawnJunimo(e.NewLocation, 1);
             }
         }
 
@@ -236,6 +241,12 @@ namespace FrenshipRings
                 }
                 BunnyManagers.Value ??= new(this.Monitor, Game1.player, this.Helper.Events.Player);
                 CRUtils.AddBunnies(critters, Game1.player.GetEffectsOfRingMultiplier("juminos.FrenshipRings.CP_Bunny"), BunnyManagers.Value.GetTrackedBushes());
+            }
+            // testing junimo companion spawn
+            if (Game1.player.isWearingRing("juminos.FrenshipRings.CP_Junimo") && junimoCount < 1)
+            {
+                junimoCount++;
+                CRUtils.SpawnJunimo(Game1.currentLocation, 1);
             }
         }
 
