@@ -24,39 +24,75 @@ internal class ShadowNerf
     }
     internal void ApplyPatch(Harmony harmony)
     {
-        harmony.Patch(AccessTools.Method(typeof(NPC), nameof(NPC.withinPlayerThreshold), new[] { typeof(int) }), prefix: new HarmonyMethod(GetType(), nameof(ShadowSightPatch_Prefix)));
-        harmony.Patch(AccessTools.Constructor(typeof(Character),new[] { typeof(AnimatedSprite), typeof(Vector2), typeof(int), typeof(string) }), postfix: new HarmonyMethod(GetType(), nameof(ShadowCollisionPatch_Postfix)));
+        harmony.Patch(AccessTools.Method(typeof(Monster), nameof(Monster.OverlapsFarmerForDamage), null), postfix: new HarmonyMethod(GetType(), nameof(ShadowOverlapFarmer_Postfix)));
+        harmony.Patch(AccessTools.Method(typeof(ShadowShaman), nameof(ShadowShaman.behaviorAtGameTick), new[] { typeof(GameTime) }), prefix: new HarmonyMethod(GetType(), nameof(ShadowShamanCastPatch_Prefix)));
+        harmony.Patch(AccessTools.Method(typeof(Monster), nameof(Monster.isInvincible), null), postfix: new HarmonyMethod(GetType(), nameof(ShadowInvinciblePatch_Postfix)));
+        harmony.Patch(AccessTools.Method(typeof(Shooter), nameof(Shooter.behaviorAtGameTick), new[] { typeof(GameTime) }), prefix: new HarmonyMethod(GetType(), nameof(ShadowShooterPatch_Prefix)));
+
+
+        // breaks monster behavior
+        //harmony.Patch(AccessTools.Method(typeof(NPC), nameof(NPC.withinPlayerThreshold), new[] { typeof(int) }), prefix: new HarmonyMethod(GetType(), nameof(ShadowSightPatch_Prefix)));
     }
 
-    internal static void ShadowSightPatch_Prefix(NPC __instance, ref int threshold)
+
+
+    internal static void ShadowInvinciblePatch_Postfix(Monster __instance, ref bool __result)
     {
-        if (__instance is not ShadowBrute ||
-            __instance is not ShadowGirl ||
-            __instance is not ShadowGuy ||
-            __instance is not ShadowShaman)
+        if ((__instance is ShadowBrute ||
+            __instance is ShadowGirl ||
+            __instance is ShadowGuy ||
+            __instance is Shooter ||
+            __instance is ShadowShaman) &&
+            Game1.player.isWearingRing("juminos.FrenshipRings.CP_Shadow"))
         {
+            __result = true;
             return;
         }
-
-        if (Game1.player.isWearingRing("juminos.FrenshipRings.CP_Shadow"))
-        {
-            threshold = -1;
-            //__instance.moveTowardPlayerThreshold.Value = threshold;
-        }
     }
-
-    public static void ShadowCollisionPatch_Postfix(Character __instance, AnimatedSprite sprite, Vector2 position, int speed, string name)
+    internal static void ShadowOverlapFarmer_Postfix(Monster __instance, Farmer who, ref bool __result)
     {
-        if (__instance is not ShadowBrute ||
-            __instance is not ShadowGirl ||
-            __instance is not ShadowGuy ||
-            __instance is not ShadowShaman)
+        if ((__instance is ShadowBrute ||
+            __instance is ShadowGirl ||
+            __instance is ShadowGuy ||
+            __instance is Shooter ||
+            __instance is ShadowShaman) &&
+            who.isWearingRing("juminos.FrenshipRings.CP_Shadow"))
         {
+            __result = false;
             return;
         }
-        if (Game1.player.isWearingRing("juminos.FrenshipRings.CP_Shadow"))
+    }
+    internal static void ShadowShamanCastPatch_Prefix(ShadowShaman __instance, GameTime time)
+    {
+        if (__instance.coolDown <= 1500 && Game1.player.isWearingRing("juminos.FrenshipRings.CP_Shadow"))
         {
-            __instance.farmerPassesThrough = true;
+            __instance.coolDown = 1500;
         }
     }
+    internal static void ShadowShooterPatch_Prefix(Shooter __instance, GameTime time)
+    {
+        if (Game1.player.isWearingRing("juminos.FrenshipRings.CP_Shadow") && (__instance.shooting.Value == true || (__instance.shooting.Value == false && __instance.nextShot <= 0f)))
+        {
+            __instance.shooting.Value = false;
+            __instance.nextShot = 2f;
+        }
+    }
+
+    // breaks monster behavior
+
+    //internal static void ShadowSightPatch_Prefix(NPC __instance, ref int threshold)
+    //{
+    //    if (__instance is not Monster monster)
+    //    {
+    //        return;
+    //    }
+    //    if (monster.Name.ToLower().Contains("shadow"))
+    //    {
+    //        if (Game1.player.isWearingRing("juminos.FrenshipRings.CP_Shadow"))
+    //        {
+    //            _monitor.Log("removing shadow threshold", LogLevel.Trace);
+    //            threshold = 0;
+    //        }
+    //    }
+    //}
 }

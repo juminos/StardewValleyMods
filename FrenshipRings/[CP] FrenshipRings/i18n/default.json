@@ -98,6 +98,6 @@
     // Letters
     "shadow-ring.letter": "@,^If you truly wish to be a friend to the Shadow People, you should have this.  ^   -Krobus %item object {{ModId}}_Shadow 1 %%[#]A Gift From Krobus",
     "spider-ring.letter": "@,^I found this ring in a cave. Maybe it will be of some use to you.   ^   -Krobus %item object {{ModId}}_Spider 1 %%[#]A Gift From Krobus",
-    "frog-ring.letter": "@,^I was walking through the woods in the rain yesterday, and a frog hopped out of that old abandoned house! I wonder what it was doing in there?   ^   -Seb[#]Seb's Frog Observation",
+    "frog-ring.letter": "Hi @,^Have you ever gone walking in Cindersap Forest in the rain? The other day I saw several frogs hop out of that old abandoned house! I wonder what tney were all doing in there?   ^   -Seb[#]Seb's Frog Observation",
     "dustsprite-ring.letter": "@,^I was helping Aunt Marnie clean out the attic and thought I saw lots of dirty little gremlins run and hide, but when I got closer all I found was this ring! Mr. Marlon told me you would know what to do with it.   ^   -Jas %item object {{ModId}}_Dust 1 %%[#]A Gift from Jas"
 }

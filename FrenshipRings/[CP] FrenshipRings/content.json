@@ -17,19 +17,11 @@
           "Texture": "Mods/{{ModId}}/MoreRings",
           "SpriteIndex": 0,
           "Edibility": -300,
-          "IsDrink": false,
-          "Buff": null,
-          "GeodeDropsDefaultItems": false,
-          "GeodeDrops": null,
-          "ArtifactSpotChances": null,
-          "ExcludeFromFishingCollection": false,
-          "ExcludeFromShippingCollection": false,
           "ExcludeFromRandomSale": true,
           "ContextTags": [
             "color_black",
             "ring_item"
           ],
-          "CustomFields": {}
         },
         "{{ModId}}_Spider": {
           "Name": "Spider Ring",
@@ -41,19 +33,11 @@
           "Texture": "Mods/{{ModId}}/MoreRings",
           "SpriteIndex": 1,
           "Edibility": -300,
-          "IsDrink": false,
-          "Buff": null,
-          "GeodeDropsDefaultItems": false,
-          "GeodeDrops": null,
-          "ArtifactSpotChances": null,
-          "ExcludeFromFishingCollection": false,
-          "ExcludeFromShippingCollection": false,
           "ExcludeFromRandomSale": true,
           "ContextTags": [
             "color_blue",
             "ring_item"
           ],
-          "CustomFields": {}
         },
         "{{ModId}}_Dust": {
           "Name": "Dust Sprite Ring",
@@ -65,19 +49,11 @@
           "Texture": "Mods/{{ModId}}/MoreRings",
           "SpriteIndex": 2,
           "Edibility": -300,
-          "IsDrink": false,
-          "Buff": null,
-          "GeodeDropsDefaultItems": false,
-          "GeodeDrops": null,
-          "ArtifactSpotChances": null,
-          "ExcludeFromFishingCollection": false,
-          "ExcludeFromShippingCollection": false,
           "ExcludeFromRandomSale": true,
           "ContextTags": [
             "color_black",
             "ring_item"
           ],
-          "CustomFields": {}
         },
         "{{ModId}}_Bunny": {
           "Name": "Bunny Ring",
@@ -89,19 +65,11 @@
           "Texture": "Mods/{{ModId}}/Rings",
           "SpriteIndex": 4,
           "Edibility": -300,
-          "IsDrink": false,
-          "Buff": null,
-          "GeodeDropsDefaultItems": false,
-          "GeodeDrops": null,
-          "ArtifactSpotChances": null,
-          "ExcludeFromFishingCollection": false,
-          "ExcludeFromShippingCollection": false,
           "ExcludeFromRandomSale": true,
           "ContextTags": [
             "color_black",
             "ring_item"
           ],
-          "CustomFields": {}
         },
         "{{ModId}}_Butterfly": {
           "Name": "Butterfly Ring",
@@ -113,19 +81,11 @@
           "Texture": "Mods/{{ModId}}/Rings",
           "SpriteIndex": 0,
           "Edibility": -300,
-          "IsDrink": false,
-          "Buff": null,
-          "GeodeDropsDefaultItems": false,
-          "GeodeDrops": null,
-          "ArtifactSpotChances": null,
-          "ExcludeFromFishingCollection": false,
-          "ExcludeFromShippingCollection": false,
           "ExcludeFromRandomSale": true,
           "ContextTags": [
             "color_blue",
             "ring_item"
           ],
-          "CustomFields": {}
         },
         "{{ModId}}_Firefly": {
           "Name": "Firefly Ring",
@@ -137,19 +97,11 @@
           "Texture": "Mods/{{ModId}}/Rings",
           "SpriteIndex": 1,
           "Edibility": -300,
-          "IsDrink": false,
-          "Buff": null,
-          "GeodeDropsDefaultItems": false,
-          "GeodeDrops": null,
-          "ArtifactSpotChances": null,
-          "ExcludeFromFishingCollection": false,
-          "ExcludeFromShippingCollection": false,
           "ExcludeFromRandomSale": true,
           "ContextTags": [
             "color_orange",
             "ring_item"
           ],
-          "CustomFields": {}
         },
         "{{ModId}}_Frog": {
           "Name": "Frog Ring",
@@ -161,19 +113,11 @@
           "Texture": "Mods/{{ModId}}/Rings",
           "SpriteIndex": 3,
           "Edibility": -300,
-          "IsDrink": false,
-          "Buff": null,
-          "GeodeDropsDefaultItems": false,
-          "GeodeDrops": null,
-          "ArtifactSpotChances": null,
-          "ExcludeFromFishingCollection": false,
-          "ExcludeFromShippingCollection": false,
           "ExcludeFromRandomSale": true,
           "ContextTags": [
             "color_green",
             "ring_item"
           ],
-          "CustomFields": {}
         },
         "{{ModId}}_Owl": {
           "Name": "Owl Ring",
@@ -185,19 +129,27 @@
           "Texture": "Mods/{{ModId}}/Rings",
           "SpriteIndex": 5,
           "Edibility": -300,
-          "IsDrink": false,
-          "Buff": null,
-          "GeodeDropsDefaultItems": false,
-          "GeodeDrops": null,
-          "ArtifactSpotChances": null,
-          "ExcludeFromFishingCollection": false,
-          "ExcludeFromShippingCollection": false,
           "ExcludeFromRandomSale": true,
           "ContextTags": [
             "color_brown",
             "ring_item"
           ],
-          "CustomFields": {}
+        },
+        "{{ModId}}_Junimo": {
+          "Name": "Junimo Ring",
+          "DisplayName": "Junimo Ring test",
+          "Description": "test",
+          "Type": "Ring",
+          "Category": -96,
+          "Price": 5000,
+          "Texture": "Mods/{{ModId}}/Rings",
+          "SpriteIndex": 5,
+          "Edibility": -300,
+          "ExcludeFromRandomSale": true,
+          "ContextTags": [
+            "color_brown",
+            "ring_item"
+          ],
         }
       }
     },
@@ -279,7 +231,7 @@
         "{{ModId}}_SebFrogRing": {
           "Id": "{{ModId}}_SebFrogRing",
           "Trigger": "DayEnding",
-          "Condition": "PLAYER_HEARTS Current Sebastian 4, WEATHER Forest Rain",
+          "Condition": "PLAYER_HEARTS Current Sebastian 4, WEATHER Forest Rain Storm",
           "Action": "AddMail Current {{ModId}}_SebFrogRing"
         },
         "{{ModId}}_JasDust": {
@@ -297,24 +249,24 @@
       "Target": "Data/Shops",
       "TargetField": [ "HatMouse", "Items" ],
       "Entries": {
-        "{{ModId}}_BunnyRing": {
+        "{{ModId}}_Bunny": {
           "Id": "{{ModId}}_BunnyRing",
           "Price": 5000,
           "TradeItemId": "(O)446"
         },
-        "{{ModId}}_ButterflyRing": {
+        "{{ModId}}_Butterfly": {
           "Id": "{{ModId}}_ButterflyRing",
-          "Condition": "SEASON Spring Summer Fall, WEATHER Here Sun"
+          "Condition": "SEASON Spring Summer Fall, WEATHER Forest Sun"
         },
-        "{{ModId}}_FrogRing": {
+        "{{ModId}}_Frog": {
           "Id": "{{ModId}}_FrogRing",
-          "Condition": "PLAYER_HAS_MAIL Current {{ModId}}_SebFrogRing Received, WEATHER Here Rain"
+          "Condition": "PLAYER_HAS_MAIL Current {{ModId}}_SebFrogRing Received, WEATHER Forest Rain Storm"
         },
-        "{{ModId}}_FireflyRing": {
+        "{{ModId}}_Firefly": {
           "Id": "{{ModId}}_FireflyRing",
           "Condition": "SEASON Summer, TIME 1900"
         },
-        "{{ModId}}_OwlRing": {
+        "{{ModId}}_Owl": {
           "Id": "{{ModId}}_OwlRing",
           "Price": 5000,
           "TradeItemId": "(O)424",

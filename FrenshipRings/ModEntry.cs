@@ -22,6 +22,9 @@ using FrenshipRings.HarmonyPatches.ShadowRing;
 using FrenshipRings.HarmonyPatches.OwlRing;
 using FrenshipRings.ConstantsAndEnums;
 using FrenshipRings.Toolkit.Extensions;
+using StardewValley.Characters;
+using FrenshipRings.HarmonyPatches.SpiderRing;
+using FrenshipRings.HarmonyPatches.DustRing;
 
 namespace FrenshipRings
 {
@@ -46,6 +49,7 @@ namespace FrenshipRings
         internal static bool shadowDisabled = false;
         internal static bool spiderDisabled = false;
         internal static bool dustDisabled = false;
+        internal static int junimoCount = 0;
         
         public override void Entry(IModHelper helper)
         {
@@ -58,6 +62,8 @@ namespace FrenshipRings
                 var harmony = new Harmony(this.ModManifest.UniqueID);
 
                 new ShadowNerf(SMonitor, SHelper).ApplyPatch(harmony);
+                new DustNerf(SMonitor, SHelper).ApplyPatch(harmony);
+                new SpiderNerf(SMonitor, SHelper).ApplyPatch(harmony);
                 new BaseSightPatch(SMonitor, SHelper).ApplyPatch(harmony);
 
             }
@@ -70,7 +76,6 @@ namespace FrenshipRings
             Config = helper.ReadConfig<ModConfig>();
 
             helper.Events.GameLoop.GameLaunched += OnGameLaunched;
-            helper.Events.GameLoop.UpdateTicked += OnUpdateTicked;
             helper.Events.Player.Warped += OnWarp;
             helper.Events.GameLoop.TimeChanged += OnTimeChanged;
             helper.Events.GameLoop.SaveLoaded += OnSaveLoaded;
@@ -183,10 +188,14 @@ namespace FrenshipRings
             {
                 CRUtils.SpawnFrogs(e.NewLocation, critters, 5);
             }
-
             if (Game1.player.isWearingRing("juminos.FrenshipRings.CP_Owl") && e.NewLocation.ShouldSpawnOwls())
             {
                 CRUtils.SpawnOwls(e.NewLocation, critters, 1);
+            }
+            // testing junimo companion spawn
+            if (Game1.player.isWearingRing("juminos.FrenshipRings.CP_Junimo"))
+            {
+                CRUtils.SpawnJunimo(e.NewLocation, 1);
             }
         }
 
@@ -233,6 +242,12 @@ namespace FrenshipRings
                 BunnyManagers.Value ??= new(this.Monitor, Game1.player, this.Helper.Events.Player);
                 CRUtils.AddBunnies(critters, Game1.player.GetEffectsOfRingMultiplier("juminos.FrenshipRings.CP_Bunny"), BunnyManagers.Value.GetTrackedBushes());
             }
+            // testing junimo companion spawn
+            if (Game1.player.isWearingRing("juminos.FrenshipRings.CP_Junimo") && junimoCount < 1)
+            {
+                junimoCount++;
+                CRUtils.SpawnJunimo(Game1.currentLocation, 1);
+            }
         }
 
         /// <inheritdoc cref="IGameLoopEvents.SaveLoaded"/>
@@ -278,81 +293,6 @@ namespace FrenshipRings
             }
             BunnyManagers.ResetAllScreens();
         }
-
-        private void OnUpdateTicked(object? sender, UpdateTickedEventArgs e)
-        {
-            if (!e.IsMultipleOf(20) || !Context.IsWorldReady || Game1.player == null)
-                return;
-
-            var currentLocation = Game1.player.currentLocation;
-
-            // Check for shadow people in current location
-            var anyShadowPeople = currentLocation.characters.Any(c => c is ShadowShaman || c is ShadowBrute || c is ShadowGuy || c is ShadowGirl);
-
-            if (anyShadowPeople)
-            {
-                // Check for players wearing shadow ring
-                var anyShadowRing = currentLocation.farmers.Any(farmer => farmer.isWearingRing("juminos.FrenshipRings.CP_Shadow"));
-
-                if (anyShadowRing && !shadowDisabled)
-                {
-                    Monitor.Log($"Attempting to disable shadow aggression at {currentLocation}.");
-                    Shadow.DisableShadow(currentLocation);
-                    shadowDisabled = true;
-                }
-                else if (!anyShadowRing && shadowDisabled)
-                {
-                    Monitor.Log($"Attempting to enable shadow aggression at {currentLocation}.");
-                    Shadow.EnableShadow(currentLocation);
-                    shadowDisabled = false;
-                }
-            }
-
-            // Check for spiders in current location
-            var anySpiders = currentLocation.characters.Any(c => c is Leaper);
-
-            if (anySpiders)
-            {
-                // Check for players wearing spider ring
-                var anySpiderRing = currentLocation.farmers.Any(farmer => farmer.isWearingRing("juminos.FrenshipRings.CP_Spider"));
-
-                if (anySpiderRing && !spiderDisabled)
-                {
-                    Monitor.Log($"Attempting to disable spider aggression at {currentLocation}.");
-                    Spider.DisableSpider(currentLocation);
-                    spiderDisabled = true;
-                }
-                else if (!anySpiderRing && spiderDisabled)
-                {
-                    Monitor.Log($"Attempting to enable spider aggression at {currentLocation}.");
-                    Spider.EnableSpider(currentLocation);
-                    spiderDisabled = false;
-                }
-            }
-
-            // Check for dust spirit in current location
-            var anyDust = currentLocation.characters.Any(c => c is DustSpirit);
-
-            if (anyDust)
-            {
-                // Check for players wearing dust ring
-                var anyDustRing = currentLocation.farmers.Any(farmer => farmer.isWearingRing("juminos.FrenshipRings.CP_Dust"));
-
-                if (anyDustRing && !dustDisabled)
-                {
-                    Monitor.Log($"Attempting to disable dust spirit aggression at {currentLocation}.");
-                    Dust.DisableDust(currentLocation);
-                    dustDisabled = true;
-                }
-                else if (!anyDustRing && dustDisabled)
-                {
-                    Monitor.Log($"Attempting to enable dust spirit aggression at {currentLocation}.");
-                    Dust.EnableDust(currentLocation);
-                    dustDisabled = false;
-                }
-            }
-        }
-
         private void OnGameLaunched(object? sender, EventArgs e)
         {
             // get Generic Mod Config Menu's API (if it's installed)
