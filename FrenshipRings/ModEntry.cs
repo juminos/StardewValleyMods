@@ -1,30 +1,14 @@
-﻿using System;
-using Microsoft.Xna.Framework;
-using StardewModdingAPI;
-using StardewModdingAPI.Events;
+﻿using StardewModdingAPI.Events;
 using StardewModdingAPI.Utilities;
-using StardewValley;
-using StardewValley.Extensions;
-using StardewValley.Monsters;
-using StardewValley.Objects;
-using StardewValley.TerrainFeatures;
-using StardewValley.Tools;
-using Microsoft.Xna.Framework.Graphics;
 using FrenshipRings.Framework;
 using StardewValley.BellsAndWhistles;
 using StardewValley.Locations;
 using FrenshipRings.Framework.Managers;
 using FrenshipRings.Utilities;
-using FrenshipRings.MigrationManager;
-using StardewValley.GameData.Buffs;
 using HarmonyLib;
-using FrenshipRings.HarmonyPatches.ShadowRing;
 using FrenshipRings.HarmonyPatches.OwlRing;
-using FrenshipRings.ConstantsAndEnums;
-using FrenshipRings.Toolkit.Extensions;
-using StardewValley.Characters;
-using FrenshipRings.HarmonyPatches.SpiderRing;
-using FrenshipRings.HarmonyPatches.DustRing;
+using FrenshipRings.HarmonyPatches;
+using FrenshipRings.HarmonyPatches.ShadowRing;
 
 namespace FrenshipRings
 {
@@ -61,11 +45,11 @@ namespace FrenshipRings
             {
                 var harmony = new Harmony(this.ModManifest.UniqueID);
 
-                new ShadowNerf(SMonitor, SHelper).ApplyPatch(harmony);
-                new DustNerf(SMonitor, SHelper).ApplyPatch(harmony);
-                new SpiderNerf(SMonitor, SHelper).ApplyPatch(harmony);
                 new BaseSightPatch(SMonitor, SHelper).ApplyPatch(harmony);
-
+                new IsInvinciblePatch(SMonitor, SHelper).ApplyPatch(harmony);
+                new OverlapFarmerDamagePatch(SMonitor, SHelper).ApplyPatch(harmony);
+                new ShooterBehaviorPatch(SMonitor, SHelper).ApplyPatch(harmony);
+                new ShamanBehaviorPatch(SMonitor, SHelper).ApplyPatch(harmony);
             }
             catch (Exception e)
             {
