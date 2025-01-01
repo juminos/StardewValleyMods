@@ -93,7 +93,7 @@
           "Description": "{{i18n:firefly-ring.description}}",
           "Type": "Ring",
           "Category": -96,
-          "Price": 25000,
+          "Price": 2500,
           "Texture": "Mods/{{ModId}}/Rings",
           "SpriteIndex": 1,
           "Edibility": -300,
@@ -250,24 +250,24 @@
       "TargetField": [ "HatMouse", "Items" ],
       "Entries": {
         "{{ModId}}_Bunny": {
-          "Id": "{{ModId}}_BunnyRing",
+          "Id": "{{ModId}}_Bunny",
           "Price": 5000,
           "TradeItemId": "(O)446"
         },
         "{{ModId}}_Butterfly": {
-          "Id": "{{ModId}}_ButterflyRing",
+          "Id": "{{ModId}}_Butterfly",
           "Condition": "SEASON Spring Summer Fall, WEATHER Forest Sun"
         },
         "{{ModId}}_Frog": {
-          "Id": "{{ModId}}_FrogRing",
+          "Id": "{{ModId}}_Frog",
           "Condition": "PLAYER_HAS_MAIL Current {{ModId}}_SebFrogRing Received, WEATHER Forest Rain Storm"
         },
         "{{ModId}}_Firefly": {
-          "Id": "{{ModId}}_FireflyRing",
+          "Id": "{{ModId}}_Firefly",
           "Condition": "SEASON Summer, TIME 1900"
         },
         "{{ModId}}_Owl": {
-          "Id": "{{ModId}}_OwlRing",
+          "Id": "{{ModId}}_Owl",
           "Price": 5000,
           "TradeItemId": "(O)424",
           "TradeItemAmount": 2,
