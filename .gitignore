@@ -13,3 +13,5 @@ node_modules/
 **/Debug/
 ContentPatcherMods/
 /Content Patcher Mods
+/FrenshipRings/obj/Debug/net6.0/FrenshipRings.csproj.CoreCompileInputs.cache
+/FrenshipRings/bin/Debug/net6.0/manifest.json

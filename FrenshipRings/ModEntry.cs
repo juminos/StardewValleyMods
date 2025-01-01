@@ -1,30 +1,14 @@
-﻿using System;
-using Microsoft.Xna.Framework;
-using StardewModdingAPI;
-using StardewModdingAPI.Events;
+﻿using StardewModdingAPI.Events;
 using StardewModdingAPI.Utilities;
-using StardewValley;
-using StardewValley.Extensions;
-using StardewValley.Monsters;
-using StardewValley.Objects;
-using StardewValley.TerrainFeatures;
-using StardewValley.Tools;
-using Microsoft.Xna.Framework.Graphics;
 using FrenshipRings.Framework;
 using StardewValley.BellsAndWhistles;
 using StardewValley.Locations;
 using FrenshipRings.Framework.Managers;
 using FrenshipRings.Utilities;
-using FrenshipRings.MigrationManager;
-using StardewValley.GameData.Buffs;
 using HarmonyLib;
-using FrenshipRings.HarmonyPatches.ShadowRing;
 using FrenshipRings.HarmonyPatches.OwlRing;
-using FrenshipRings.ConstantsAndEnums;
-using FrenshipRings.Toolkit.Extensions;
-using StardewValley.Characters;
-using FrenshipRings.HarmonyPatches.SpiderRing;
-using FrenshipRings.HarmonyPatches.DustRing;
+using FrenshipRings.HarmonyPatches;
+using FrenshipRings.HarmonyPatches.ShadowRing;
 
 namespace FrenshipRings
 {
@@ -50,7 +34,7 @@ namespace FrenshipRings
         internal static bool spiderDisabled = false;
         internal static bool dustDisabled = false;
         internal static int junimoCount = 0;
-        
+
         public override void Entry(IModHelper helper)
         {
             I18n.Init(helper.Translation);
@@ -61,11 +45,11 @@ namespace FrenshipRings
             {
                 var harmony = new Harmony(this.ModManifest.UniqueID);
 
-                new ShadowNerf(SMonitor, SHelper).ApplyPatch(harmony);
-                new DustNerf(SMonitor, SHelper).ApplyPatch(harmony);
-                new SpiderNerf(SMonitor, SHelper).ApplyPatch(harmony);
                 new BaseSightPatch(SMonitor, SHelper).ApplyPatch(harmony);
-
+                new IsInvinciblePatch(SMonitor, SHelper).ApplyPatch(harmony);
+                new OverlapFarmerDamagePatch(SMonitor, SHelper).ApplyPatch(harmony);
+                new ShooterBehaviorPatch(SMonitor, SHelper).ApplyPatch(harmony);
+                new ShamanBehaviorPatch(SMonitor, SHelper).ApplyPatch(harmony);
             }
             catch (Exception e)
             {
@@ -117,9 +101,9 @@ namespace FrenshipRings
 
             }
 
-            if (Config.BunnyRingBoost > 0 && 
+            if (Config.BunnyRingBoost > 0 &&
                 Config.BunnyRingButton.JustPressed() &&
-                Game1.player.isWearingRing("juminos.FrenshipRings.CP_Bunny") && 
+                Game1.player.isWearingRing("juminos.FrenshipRings.CP_Bunny") &&
                 !Game1.player.hasBuff("juminos.FrenshipRings.CP_BunnyBuff"))
             {
                 if (Game1.player.Stamina >= Config.BunnyRingStamina && !Game1.player.exhausted.Value)
@@ -168,7 +152,7 @@ namespace FrenshipRings
                     CRUtils.SpawnFirefly(critters, 5);
                 }
             }
-            else if (e.NewLocation.ShouldSpawnButterflies() && 
+            else if (e.NewLocation.ShouldSpawnButterflies() &&
                 Game1.player.isWearingRing("juminos.FrenshipRings.CP_Butterfly"))
             {
                 SMonitor.Log("butterfly spawning check passed", LogLevel.Trace);
@@ -191,6 +175,11 @@ namespace FrenshipRings
             if (Game1.player.isWearingRing("juminos.FrenshipRings.CP_Owl") && e.NewLocation.ShouldSpawnOwls())
             {
                 CRUtils.SpawnOwls(e.NewLocation, critters, 1);
+            }
+            // testing junimo companion spawn
+            if (Game1.player.isWearingRing("juminos.FrenshipRings.CP_Junimo"))
+            {
+                CRUtils.SpawnJunimo(e.NewLocation, 1);
             }
         }
 
@@ -236,6 +225,12 @@ namespace FrenshipRings
                 }
                 BunnyManagers.Value ??= new(this.Monitor, Game1.player, this.Helper.Events.Player);
                 CRUtils.AddBunnies(critters, Game1.player.GetEffectsOfRingMultiplier("juminos.FrenshipRings.CP_Bunny"), BunnyManagers.Value.GetTrackedBushes());
+            }
+            // testing junimo companion spawn
+            if (Game1.player.isWearingRing("juminos.FrenshipRings.CP_Junimo") && junimoCount < 1)
+            {
+                junimoCount++;
+                CRUtils.SpawnJunimo(Game1.currentLocation, 1);
             }
         }
 
