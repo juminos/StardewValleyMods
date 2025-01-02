@@ -5,11 +5,14 @@
 
   "CritterSpawnMultiplier.title": "Critter Spawn Multiplier",
   "CritterSpawnMultiplier.description": "Set higher to have more critters spawn",
+  "JunimoSpawnMultiplier.title": "Junimo Spawn Count",
+  "JunimoSpawnMultiplier.description": "Set number of junimos to spawn",
 
   "ButterflyRing.title": "Butterfly Ring Options",
   "BunnyRing.title": "Bunny Ring Options",
   "FrogRing.title": "Frog Ring Options",
   "OwlRing.title": "Owl Ring Options",
+  "JunimoRing.title": "Junimo Ring Options",
 
   "ButterfliesSpawnInRain.title": "Butterflies Spawn In Rain",
   "ButterfliesSpawnInRain.description": "If enabled, butterflies spawn in rain. If disabled, they'll only spawn in sunny weather.",

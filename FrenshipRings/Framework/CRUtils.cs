@@ -266,49 +266,60 @@ internal static class CRUtils
         }
     }
 
-    // junimo spawn test
+
+    /// <summary>
+    /// Add jumino at player position.
+    /// </summary>
+    /// <param name="loc">The current player location.</param>
+    /// <param name="count">Number of junimos to spawn.</param>
     internal static void SpawnJunimo(GameLocation loc, int count)
     {
-        if (count > 0)
-        {
-            //count *= ModEntry.Config.JunimoSpawnMultiplier; // not implemented
-            for (int i = 0; i < count; i++)
-            {
-                bool foundSpawnTile = false;
-                Vector2 playerPos = Game1.player.Tile;
-                Vector2 junimoPos = new Vector2();
-                Vector2[] surroundingTiles = Utility.getSurroundingTileLocationsArray(playerPos);
-                foreach (Vector2 tileLocation in surroundingTiles)
-                {
-                    if (!loc.isTileOnMap(tileLocation))
-                    {
-                        continue;
-                    }
+        ModEntry.junimoCount++;
+        Vector2 playerPos = Game1.player.Position;
+        ModEntry.SMonitor.Log($"Attempting to spawn junimo at {playerPos}", LogLevel.Trace);
 
-                    if (loc.IsTileOccupiedBy(tileLocation))
-                    {
-                        continue;
-                    }
-                    if (loc.isTilePassable(tileLocation))
-                    {
-                        foundSpawnTile = true;
-                        junimoPos = tileLocation;
-                        break;
-                    }
-                }
-                if (!foundSpawnTile)
-                {
-                    ModEntry.SMonitor.Log("Valid spawn tile not found.", LogLevel.Trace);
-                }
-                if (foundSpawnTile)
-                {
-                    Junimo junimo = new(junimoPos, 1, false);
-                    junimo.friendly.Value = true;
-                    loc.addCharacter(junimo);
-                }
+        var junimo = new Junimo(playerPos, 1, true);
+        junimo.friendly.Value = true;
+        junimo.temporaryJunimo.Value = false;
+        junimo.currentLocation = loc;
+        junimo.Position = playerPos;
+        loc.characters.Add(junimo);
+        junimo.modData["RingJunimo"] = "true";
+    }
+    /// <summary>
+    /// Remove junimos.
+    /// </summary>
+    /// <param name="loc">The current player location.</param>
+    internal static void RemoveJunimos(GameLocation loc)
+    {
+        foreach (Junimo junimo in loc.characters)
+        {
+            if (junimo.modData.ContainsKey("RingJunimo"))
+            {
+                loc.characters.Remove(junimo);
+            }
+        }
+        ModEntry.junimoCount = 0;
+    }
+    /// <summary>
+    /// Warp junimos to player on location change.
+    /// </summary>
+    /// <param name="oldLoc">The player location before warp.</param>
+    /// <param name="newLoc">The player location after warp.</param>
+    internal static void WarpJunimos(GameLocation oldLoc, GameLocation newLoc)
+    {
+        Vector2 playerPos = Game1.player.Position;
+        foreach (Junimo junimo in oldLoc.characters)
+        {
+            // check for custom junimo tag
+            if (junimo.modData.ContainsKey("RingJunimo"))
+            {
+                junimo.currentLocation = newLoc;
+                junimo.Position = playerPos;
             }
         }
     }
+
 
     /// <summary>
     /// Add bunnies to a location.

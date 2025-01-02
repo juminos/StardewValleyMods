@@ -13,5 +13,23 @@ node_modules/
 **/Debug/
 ContentPatcherMods/
 /Content Patcher Mods
-/FrenshipRings/obj/Debug/net6.0/FrenshipRings.csproj.CoreCompileInputs.cache
-/FrenshipRings/bin/Debug/net6.0/manifest.json
+/FrenshipRings/obj/Debug/
+/DeepSea/bin/Debug/net6.0/DeepSea 1.0.0.zip
+/FrenshipRings/obj/Debug/
+/FrenshipRings/bin/
+/DeepSea/bin/
+/DeepSea/obj/Debug/
+/DeepSea/obj/Debug/net6.0/
+/DeepSea/bin/Debug/net6.0/DeepSea.dll
+/DeepSea/obj/Debug/net6.0/DeepSea.csproj.CoreCompileInputs.cache
+/DeepSea/obj/Debug/net6.0/DeepSea.dll
+/DeepSea/obj/Debug/net6.0/DeepSea.sourcelink.json
+/HorseReskin/bin/Debug/net6.0/HorseReskin 1.0.0.zip
+/HorseReskin/bin/Debug/net6.0/HorseReskin.dll
+/HorseReskin/obj/Debug/net6.0/HorseReskin.csproj.CoreCompileInputs.cache
+/HorseReskin/obj/Debug/net6.0/HorseReskin.dll
+/HorseReskin/obj/Debug/net6.0/HorseReskin.sourcelink.json
+/WalkToTheDesert/bin/Debug/net6.0/WalkToTheDesert.dll
+/WalkToTheDesert/obj/Debug/net6.0/WalkToTheDesert.csproj.CoreCompileInputs.cache
+/WalkToTheDesert/obj/Debug/net6.0/WalkToTheDesert.dll
+/WalkToTheDesert/obj/Debug/net6.0/WalkToTheDesert.sourcelink.json
