@@ -19,12 +19,19 @@ internal class IsInvinciblePatch
     internal static void InvinciblePatch_Postfix(Monster __instance, ref bool __result)
     {
         if (
-            (__instance is ShadowBrute || __instance is ShadowGirl || __instance is ShadowGuy || __instance is Shooter || __instance is ShadowShaman) &&
-            Game1.player.isWearingRing("juminos.FrenshipRings.CP_Shadow") ||
-            __instance is Leaper &&
-            Game1.player.isWearingRing("juminos.FrenshipRings.CP_Spider") ||
-            __instance is DustSpirit &&
-            Game1.player.isWearingRing("juminos.FrenshipRings.CP_Dust")
+            ((__instance is ShadowBrute || __instance is ShadowGirl || __instance is ShadowGuy || __instance is Shooter || __instance is ShadowShaman) &&
+            Game1.player.isWearingRing("juminos.FrenshipRings.CP_Shadow")) ||
+            (__instance is Leaper &&
+            Game1.player.isWearingRing("juminos.FrenshipRings.CP_Spider")) ||
+            (__instance is Bat bat && !bat.magmaSprite.Value &&
+            Game1.player.isWearingRing("juminos.FrenshipRings.CP_Bat")) ||
+            (__instance is Bat magmaSprite && magmaSprite.magmaSprite.Value &&
+            Game1.player.isWearingRing("juminos.FrenshipRings.CP_Magma")) ||
+            ((__instance is GreenSlime || __instance is BigSlime) &&
+            ModEntry.Config.FriendlySlimeRing &&
+            Game1.player.isWearingRing("520")) ||
+            (__instance is DustSpirit &&
+            Game1.player.isWearingRing("juminos.FrenshipRings.CP_Dust"))
             )
         {
             __result = true;

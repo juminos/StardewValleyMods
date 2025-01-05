@@ -26,6 +26,11 @@ namespace FrenshipRings
         public bool PlayAudioEffects { get; set; } = true;
 
         /// <summary>
+        /// Gets or sets a value indicating whether or not slime charmer ring should be modified.
+        /// </summary>
+        public bool FriendlySlimeRing { get; set; } = true;
+
+        /// <summary>
         /// Gets or sets a value indicating which button should be used for the frog ring's jump.
         /// </summary>
         public KeybindList FrogRingButton { get; set; } = new KeybindList(new(SButton.Space), new(SButton.RightStick));

@@ -142,8 +142,8 @@
           "Type": "Ring",
           "Category": -96,
           "Price": 5000,
-          "Texture": "Mods/{{ModId}}/Rings",
-          "SpriteIndex": 5,
+          "Texture": "Mods/{{ModId}}/MoreRings",
+          "SpriteIndex": 3,
           "Edibility": -300,
           "ExcludeFromRandomSale": true,
           "ContextTags": [
@@ -251,15 +251,18 @@
       "Entries": {
         "{{ModId}}_Bunny": {
           "Id": "{{ModId}}_Bunny",
+          "ItemId": "{{ModId}}_Bunny",
           "Price": 5000,
           "TradeItemId": "(O)446"
         },
         "{{ModId}}_Butterfly": {
           "Id": "{{ModId}}_Butterfly",
+          "ItemId": "{{ModId}}_Butterfly",
           "Condition": "SEASON Spring Summer Fall, WEATHER Forest Sun"
         },
         "{{ModId}}_Frog": {
           "Id": "{{ModId}}_Frog",
+          "ItemId": "{{ModId}}_Frog",
           "Condition": "PLAYER_HAS_MAIL Current {{ModId}}_SebFrogRing Received, WEATHER Forest Rain Storm"
         },
         "{{ModId}}_Firefly": {
@@ -267,6 +270,7 @@
           "Condition": "SEASON Summer, TIME 1900"
         },
         "{{ModId}}_Owl": {
+          "ItemId": "{{ModId}}_Owl",
           "Id": "{{ModId}}_Owl",
           "Price": 5000,
           "TradeItemId": "(O)424",

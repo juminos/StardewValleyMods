@@ -274,17 +274,21 @@ internal static class CRUtils
     /// <param name="count">Number of junimos to spawn.</param>
     internal static void SpawnJunimo(GameLocation loc, int count)
     {
-        ModEntry.junimoCount++;
         Vector2 playerPos = Game1.player.Position;
-        ModEntry.SMonitor.Log($"Attempting to spawn junimo at {playerPos}", LogLevel.Trace);
+        ModEntry.SMonitor.Log($"Attempting to spawn junimos at {playerPos}", LogLevel.Trace);
 
-        var junimo = new Junimo(playerPos, 1, true);
-        junimo.friendly.Value = true;
-        junimo.temporaryJunimo.Value = false;
-        junimo.currentLocation = loc;
-        junimo.Position = playerPos;
-        loc.characters.Add(junimo);
-        junimo.modData["RingJunimo"] = "true";
+        for (int i = 0; i < count; i++)
+        {
+            var junimo = new Junimo(playerPos, 1, true);
+            junimo.friendly.Value = true;
+            junimo.temporaryJunimo.Value = false;
+            junimo.currentLocation = loc;
+            junimo.Position = playerPos;
+            junimo.speed = Game1.player.speed;
+            junimo.modData["RingJunimo"] = "true";
+            loc.characters.Add(junimo);
+            ModEntry.junimoCount++;
+        }
     }
     /// <summary>
     /// Remove junimos.
@@ -292,11 +296,15 @@ internal static class CRUtils
     /// <param name="loc">The current player location.</param>
     internal static void RemoveJunimos(GameLocation loc)
     {
-        foreach (Junimo junimo in loc.characters)
+        foreach (var character in Utility.getAllCharacters())
         {
-            if (junimo.modData.ContainsKey("RingJunimo"))
+            if (character is not Junimo)
             {
-                loc.characters.Remove(junimo);
+                continue;
+            }
+            if (character.modData.ContainsKey("RingJunimo"))
+            {
+                loc.characters.Remove(character);
             }
         }
         ModEntry.junimoCount = 0;
@@ -309,13 +317,15 @@ internal static class CRUtils
     internal static void WarpJunimos(GameLocation oldLoc, GameLocation newLoc)
     {
         Vector2 playerPos = Game1.player.Position;
-        foreach (Junimo junimo in oldLoc.characters)
+        foreach (var character in Utility.getAllCharacters())
         {
-            // check for custom junimo tag
-            if (junimo.modData.ContainsKey("RingJunimo"))
+            if (character is not Junimo)
             {
-                junimo.currentLocation = newLoc;
-                junimo.Position = playerPos;
+                continue;
+            }
+            if (character.modData.ContainsKey("RingJunimo"))
+            {
+                Game1.warpCharacter(character, newLoc, playerPos);
             }
         }
     }
