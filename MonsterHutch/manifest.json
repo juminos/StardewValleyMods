@@ -1,0 +1,16 @@
+{
+    "Name": "Monster Hutch",
+    "Author": "juminos",
+    "Version": "1.0.0",
+    "Description": "Raise more than just slimes in your hutch.",
+    "UniqueID": "juminos.MonsterHutch",
+    "EntryDll": "MonsterHutch.dll",
+    "MinimumApiVersion": "4.0.0",
+    "UpdateKeys": [],
+    "Dependencies": [
+        {
+            "IsRequired": true,
+            "UniqueId":  "juminos.MonsterHutch.CP"
+        }
+    ]
+}
