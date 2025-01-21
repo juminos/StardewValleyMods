@@ -1,0 +1,13 @@
+{
+    "Name": "[CP] Monster Hutch",
+    "Author": "juminos",
+    "Version": "1.0.0",
+    "Description": "Adds monster incubator data.",
+    "UniqueID": "juminos.MonsterHutch.CP",
+    "MinimumApiVersion": "4.0.0",
+    "UpdateKeys": [],
+    "ContentPackFor": {
+        "UniqueID": "Pathoschild.ContentPatcher"
+    },
+    "Dependencies": []
+}

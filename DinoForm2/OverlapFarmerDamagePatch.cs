@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using HarmonyLib;
+using StardewModdingAPI;
 using StardewValley.Monsters;
+using StardewValley;
 
-namespace FrenshipRings.HarmonyPatches;
+namespace DinoForm2;
 
 internal class OverlapFarmerDamagePatch
 {
@@ -24,16 +26,8 @@ internal class OverlapFarmerDamagePatch
     internal static void OverlapFarmerDamage_Postfix(Monster __instance, Farmer who, ref bool __result)
     {
         if (
-            ((__instance is ShadowBrute || __instance is ShadowGirl || __instance is ShadowGuy || __instance is Shooter || __instance is ShadowShaman) &&
-            Game1.player.isWearingRing("juminos.FrenshipRings.CP_Shadow")) ||
-            (__instance is Leaper &&
-            Game1.player.isWearingRing("juminos.FrenshipRings.CP_Spider")) ||
-            (__instance is Bat bat && !bat.magmaSprite.Value && !bat.hauntedSkull.Value &&
-            Game1.player.isWearingRing("juminos.FrenshipRings.CP_Bat")) ||
-            (__instance is Bat magmaSprite && magmaSprite.magmaSprite.Value &&
-            Game1.player.isWearingRing("juminos.FrenshipRings.CP_MagmaSprite")) ||
-            (__instance is DustSpirit dust && !dust.isHardModeMonster.Value &&
-            Game1.player.isWearingRing("juminos.FrenshipRings.CP_Dust"))
+            __instance is DinoMonster &&
+            Game1.player.hasBuff("juminos.DinoForm2_DinoForm")
             )
         {
             __result = false;

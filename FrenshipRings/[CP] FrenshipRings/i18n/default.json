@@ -68,7 +68,7 @@
     // Rings
     "bunny-ring.name": "Bunny Ring",
     "bunny-ring.description": "Encourages bunnies to come near you. You learn from their speed.",
-    "bunny-buff.description": "The energy of the local wildlife encourages you. +{{amount}} speed.",
+    "bunny-buff.description": "The energy of the local wildlife encourages you.",
     "bunny-buff.tired": "Too tired for that!",
 
     "butterfly-ring.name": "Butterfly Ring",
@@ -94,6 +94,12 @@
 
     "dustsprite-ring.name": "Dust Sprite Ring",
     "dustsprite-ring.description": "It looks a little dirty but you don't mind.",
+
+    "magmasprite-ring.name": "Magma Ring",
+    "magmasprite-ring.description": "Quite cool to the touch despite its appearance.",
+
+    "bat-ring.name": "Bat Ring",
+    "bat-ring.description": "Wearing it gives you a strange craving...",
 
     // Letters
     "shadow-ring.letter": "@,^If you truly wish to be a friend to the Shadow People, you should have this.  ^   -Krobus %item object {{ModId}}_Shadow 1 %%[#]A Gift From Krobus",

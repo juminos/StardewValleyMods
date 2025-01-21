@@ -30,9 +30,6 @@ namespace FrenshipRings
 
         public static ModConfig Config;
 
-        internal static bool shadowDisabled = false;
-        internal static bool spiderDisabled = false;
-        internal static bool dustDisabled = false;
         internal static int junimoCount = 0;
 
         public override void Entry(IModHelper helper)
@@ -62,11 +59,27 @@ namespace FrenshipRings
             helper.Events.GameLoop.GameLaunched += OnGameLaunched;
             helper.Events.Player.Warped += OnWarp;
             helper.Events.GameLoop.TimeChanged += OnTimeChanged;
+            //helper.Events.GameLoop.UpdateTicked += OnUpdateTicked;
             helper.Events.GameLoop.SaveLoaded += OnSaveLoaded;
             helper.Events.GameLoop.ReturnedToTitle += OnReturnedToTitle;
             helper.Events.Input.ButtonsChanged += OnButtonsChanged;
         }
 
+        //private void OnUpdateTicked(object? sender, UpdateTickedEventArgs e)
+        //{
+        //    if (!Context.IsPlayerFree)
+        //    {
+        //        return;
+        //    }
+        //    if (Game1.player.isMoving() &&
+        //        Game1.player.isWearingRing("juminos.FrenshipRings.CP_Junimo"))
+        //    {
+                
+        //    }
+        //    //warp junimo if distance from player greater than x
+        //    //increase junimo speed +1 if distance from player greater than x
+        //    //reset junimo speed to match player (+1?) if distance from player less than x
+        //}
         private void OnButtonsChanged(object? sender, ButtonsChangedEventArgs e)
         {
             if (!Context.IsPlayerFree)
@@ -109,7 +122,6 @@ namespace FrenshipRings
                 if (Game1.player.Stamina >= Config.BunnyRingStamina && !Game1.player.exhausted.Value)
                 {
                     Game1.player.applyBuff("juminos.FrenshipRings.CP_BunnyBuff");
-                    // Game1.buffsDisplay..addOtherBuff(buff); /// applyBuff method already does this?
                     Game1.player.Stamina -= Config.BunnyRingStamina;
                 }
                 else
@@ -117,6 +129,14 @@ namespace FrenshipRings
                     Game1.showRedMessage(I18n.BunnyBuff_Tired());
                 }
             }
+            //if (Game1.player.isWearingRing("juminos.FrenshipRings.CP_Junimo"))
+            //{
+            //    CRUtils.SpawnJunimo(Game1.currentLocation, Config.JunimoSpawnMultiplier);
+            //}
+            //if (!Game1.player.isWearingRing("juminos.FrenshipRings.CP_Junimo") && junimoCount > 0)
+            //{
+            //    CRUtils.RemoveJunimos(Game1.currentLocation);
+            //}
         }
 
         /// <inheritdoc cref="IPlayerEvents.Warped"/>
@@ -176,11 +196,10 @@ namespace FrenshipRings
             {
                 CRUtils.SpawnOwls(e.NewLocation, critters, 1);
             }
-            // testing junimo companion spawn
-            if (Game1.player.isWearingRing("juminos.FrenshipRings.CP_Junimo"))
-            {
-                CRUtils.SpawnJunimo(e.NewLocation, 1);
-            }
+            //if (Game1.player.isWearingRing("juminos.FrenshipRings.CP_Junimo"))
+            //{
+            //    CRUtils.WarpJunimos(e.OldLocation, e.NewLocation);
+            //}
         }
 
         /// <inheritdoc cref="IGameLoopEvents.TimeChanged"/>
@@ -225,12 +244,6 @@ namespace FrenshipRings
                 }
                 BunnyManagers.Value ??= new(this.Monitor, Game1.player, this.Helper.Events.Player);
                 CRUtils.AddBunnies(critters, Game1.player.GetEffectsOfRingMultiplier("juminos.FrenshipRings.CP_Bunny"), BunnyManagers.Value.GetTrackedBushes());
-            }
-            // testing junimo companion spawn
-            if (Game1.player.isWearingRing("juminos.FrenshipRings.CP_Junimo") && junimoCount < 1)
-            {
-                junimoCount++;
-                CRUtils.SpawnJunimo(Game1.currentLocation, 1);
             }
         }
 
@@ -308,6 +321,22 @@ namespace FrenshipRings
                 min: 0,
                 max: 5,
                 interval: 1
+                );
+
+            configMenu.AddBoolOption(
+                mod: this.ModManifest,
+                name: I18n.FriendlySlimeRing_Title,
+                tooltip: I18n.FriendlySlimeRing_Description,
+                getValue: () => Config.FriendlySlimeRing,
+                setValue: value => Config.FriendlySlimeRing = value
+                );
+
+            configMenu.AddBoolOption(
+                mod: this.ModManifest,
+                name: I18n.LethalRings_Title,
+                tooltip: I18n.LethalRings_Description,
+                getValue: () => Config.LethalRings,
+                setValue: value => Config.LethalRings = value
                 );
 
             // Frog ring category
@@ -469,6 +498,25 @@ namespace FrenshipRings
                 getValue: () => Config.BunnyRingButton,
                 setValue: value => Config.BunnyRingButton = value
                 );
+
+            // Junimo ring category
+
+            //configMenu.AddSectionTitle(
+            //    mod: this.ModManifest,
+            //    text: I18n.JunimoRing_Title
+            //    );
+
+
+            //configMenu.AddNumberOption(
+            //    mod: this.ModManifest,
+            //    name: I18n.JunimoSpawnMultiplier_Title,
+            //    tooltip: I18n.JunimoSpawnMultiplier_Description,
+            //    getValue: () => Config.JunimoSpawnMultiplier,
+            //    setValue: value => Config.JunimoSpawnMultiplier = (int)value,
+            //    min: 1,
+            //    max: 5,
+            //    interval: 1
+            //    );
         }
 
         #region migration

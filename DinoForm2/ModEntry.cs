@@ -10,6 +10,7 @@ using StardewValley.Network;
 using StardewValley.Projectiles;
 using System;
 using System.Collections.Generic;
+using DinoForm2;
 
 namespace DinoForm
 {
@@ -49,6 +50,21 @@ namespace DinoForm
             SMonitor = Monitor;
             SHelper = helper;
 
+            try
+            {
+                var harmony = new Harmony(this.ModManifest.UniqueID);
+
+                new IsInvinciblePatch(SMonitor, SHelper).ApplyPatch(harmony);
+                new OverlapFarmerDamagePatch(SMonitor, SHelper).ApplyPatch(harmony);
+                harmony.PatchAll();
+            }
+            catch (Exception e)
+            {
+                Monitor.Log($"Issue with Harmony patching: {e}", LogLevel.Error);
+                return;
+            }
+
+
             helper.Events.GameLoop.GameLaunched += GameLoop_GameLaunched;
             helper.Events.GameLoop.UpdateTicked += GameLoop_UpdateTicked;
             helper.Events.GameLoop.UpdateTicking += GameLoop_UpdateTicking;
@@ -61,10 +77,6 @@ namespace DinoForm
             helper.Events.Player.Warped += Player_Warped;
 
             helper.Events.Input.ButtonsChanged += Input_ButtonsChanged;
-
-            var harmony = new Harmony(ModManifest.UniqueID);
-            harmony.PatchAll();
-
         }
 
         private void OnAssetRequested(object? sender, AssetRequestedEventArgs e)

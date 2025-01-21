@@ -62,6 +62,10 @@
               "target": "Package",
               "version": "[2024.3.0, )"
             },
+            "Lib.Harmony": {
+              "target": "Package",
+              "version": "[2.3.3, )"
+            },
             "NetEscapades.EnumGenerators": {
               "target": "Package",
               "version": "[1.0.0-beta11, )"

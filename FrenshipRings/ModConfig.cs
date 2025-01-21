@@ -16,9 +16,24 @@ namespace FrenshipRings
         public int CritterSpawnMultiplier { get; set; } = 1;
 
         /// <summary>
+        /// Gets or sets a multiplicative factor which determines the number of critters to spawn.
+        /// </summary>
+        //public int JunimoSpawnMultiplier { get; set; } = 1;
+
+        /// <summary>
         /// Gets or sets a value indicating whether or not audio effects should be played.
         /// </summary>
         public bool PlayAudioEffects { get; set; } = true;
+
+        /// <summary>
+        /// Gets or sets a value indicating whether or not slime charmer ring should be modified.
+        /// </summary>
+        public bool FriendlySlimeRing { get; set; } = true;
+
+        /// <summary>
+        /// Gets or sets a value indicating whether or not monster rings allow the player to damage the relevant monster.
+        /// </summary>
+        public bool LethalRings { get; set; } = false;
 
         /// <summary>
         /// Gets or sets a value indicating which button should be used for the frog ring's jump.
