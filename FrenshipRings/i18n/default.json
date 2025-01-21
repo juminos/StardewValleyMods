@@ -9,6 +9,8 @@
   "JunimoSpawnMultiplier.description": "Set number of junimos to spawn",
   "FriendlySlimeRing.title": "Friendly Slime Charmer Ring",
   "FriendlySlimeRing.description": "Whether or not slime charmer ring should make slimes unkillable.",
+  "LethalRings.title": "Lethal Rings",
+  "LethalRings.description": "Whether or not monster rings allow you to damage the relevant monster (doesn't affect slime charmer ring).",
 
   "ButterflyRing.title": "Butterfly Ring Options",
   "BunnyRing.title": "Bunny Ring Options",
@@ -73,7 +75,7 @@
   // Rings
   "bunny-ring.name": "Bunny Ring",
   "bunny-ring.description": "Encourages bunnies to come near you. You learn from their speed.",
-  "bunny-buff.description": "The energy of the local wildlife encourages you. +3 speed.",
+  "bunny-buff.description": "The energy of the local wildlife encourages you.",
   "bunny-buff.tired": "Too tired for that!",
 
   "butterfly-ring.name": "Butterfly Ring",

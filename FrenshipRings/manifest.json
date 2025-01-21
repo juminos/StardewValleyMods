@@ -1,7 +1,7 @@
 {
     "Name": "Frenship Rings",
     "Author": "juminos",
-    "Version": "1.0.1",
+    "Version": "1.0.5",
     "Description": "New rings to befriend creatures.",
     "UniqueID": "juminos.FrenshipRings",
     "EntryDll": "FrenshipRings.dll",

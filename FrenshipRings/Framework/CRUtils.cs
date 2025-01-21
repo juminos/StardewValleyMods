@@ -284,10 +284,9 @@ internal static class CRUtils
             junimo.temporaryJunimo.Value = false;
             junimo.currentLocation = loc;
             junimo.Position = playerPos;
-            junimo.speed = Game1.player.speed;
-            junimo.modData["RingJunimo"] = "true";
+            junimo.speed = Game1.player.speed + 1;
+            junimo.modData["RingJunimo"] = Game1.player.UniqueMultiplayerID.ToString();
             loc.characters.Add(junimo);
-            ModEntry.junimoCount++;
         }
     }
     /// <summary>
@@ -302,12 +301,12 @@ internal static class CRUtils
             {
                 continue;
             }
-            if (character.modData.ContainsKey("RingJunimo"))
+            if (character.modData.ContainsKey("RingJunimo") && character.modData["RingJunimo"] == Game1.player.UniqueMultiplayerID.ToString())
             {
                 loc.characters.Remove(character);
+                ModEntry.SMonitor.Log($"Attempting to remove junimos.", LogLevel.Trace);
             }
         }
-        ModEntry.junimoCount = 0;
     }
     /// <summary>
     /// Warp junimos to player on location change.
@@ -326,6 +325,7 @@ internal static class CRUtils
             if (character.modData.ContainsKey("RingJunimo"))
             {
                 Game1.warpCharacter(character, newLoc, playerPos);
+                ModEntry.SMonitor.Log($"Attempting to warp junimos to {playerPos}", LogLevel.Trace);
             }
         }
     }

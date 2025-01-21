@@ -28,11 +28,11 @@ internal class OverlapFarmerDamagePatch
             Game1.player.isWearingRing("juminos.FrenshipRings.CP_Shadow")) ||
             (__instance is Leaper &&
             Game1.player.isWearingRing("juminos.FrenshipRings.CP_Spider")) ||
-            (__instance is Bat bat && !bat.magmaSprite.Value &&
+            (__instance is Bat bat && !bat.magmaSprite.Value && !bat.hauntedSkull.Value &&
             Game1.player.isWearingRing("juminos.FrenshipRings.CP_Bat")) ||
             (__instance is Bat magmaSprite && magmaSprite.magmaSprite.Value &&
-            Game1.player.isWearingRing("juminos.FrenshipRings.CP_Magma")) ||
-            (__instance is DustSpirit &&
+            Game1.player.isWearingRing("juminos.FrenshipRings.CP_MagmaSprite")) ||
+            (__instance is DustSpirit dust && !dust.isHardModeMonster.Value &&
             Game1.player.isWearingRing("juminos.FrenshipRings.CP_Dust"))
             )
         {

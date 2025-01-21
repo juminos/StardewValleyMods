@@ -59,11 +59,27 @@ namespace FrenshipRings
             helper.Events.GameLoop.GameLaunched += OnGameLaunched;
             helper.Events.Player.Warped += OnWarp;
             helper.Events.GameLoop.TimeChanged += OnTimeChanged;
+            //helper.Events.GameLoop.UpdateTicked += OnUpdateTicked;
             helper.Events.GameLoop.SaveLoaded += OnSaveLoaded;
             helper.Events.GameLoop.ReturnedToTitle += OnReturnedToTitle;
             helper.Events.Input.ButtonsChanged += OnButtonsChanged;
         }
 
+        //private void OnUpdateTicked(object? sender, UpdateTickedEventArgs e)
+        //{
+        //    if (!Context.IsPlayerFree)
+        //    {
+        //        return;
+        //    }
+        //    if (Game1.player.isMoving() &&
+        //        Game1.player.isWearingRing("juminos.FrenshipRings.CP_Junimo"))
+        //    {
+                
+        //    }
+        //    //warp junimo if distance from player greater than x
+        //    //increase junimo speed +1 if distance from player greater than x
+        //    //reset junimo speed to match player (+1?) if distance from player less than x
+        //}
         private void OnButtonsChanged(object? sender, ButtonsChangedEventArgs e)
         {
             if (!Context.IsPlayerFree)
@@ -113,14 +129,14 @@ namespace FrenshipRings
                     Game1.showRedMessage(I18n.BunnyBuff_Tired());
                 }
             }
-            if (Game1.player.isWearingRing("juminos.FrenshipRings.CP_Junimo") && junimoCount < Config.JunimoSpawnMultiplier)
-            {
-                CRUtils.SpawnJunimo(Game1.currentLocation, Config.JunimoSpawnMultiplier);
-            }
-            if (!Game1.player.isWearingRing("juminos.FrenshipRings.CP_Junimo") && junimoCount > 0)
-            {
-                CRUtils.RemoveJunimos(Game1.currentLocation);
-            }
+            //if (Game1.player.isWearingRing("juminos.FrenshipRings.CP_Junimo"))
+            //{
+            //    CRUtils.SpawnJunimo(Game1.currentLocation, Config.JunimoSpawnMultiplier);
+            //}
+            //if (!Game1.player.isWearingRing("juminos.FrenshipRings.CP_Junimo") && junimoCount > 0)
+            //{
+            //    CRUtils.RemoveJunimos(Game1.currentLocation);
+            //}
         }
 
         /// <inheritdoc cref="IPlayerEvents.Warped"/>
@@ -180,15 +196,10 @@ namespace FrenshipRings
             {
                 CRUtils.SpawnOwls(e.NewLocation, critters, 1);
             }
-            if (Game1.player.isWearingRing("juminos.FrenshipRings.CP_Junimo"))
-            {
-                // check for junimos in oldLoc before calling warp method
-                CRUtils.WarpJunimos(e.OldLocation, e.NewLocation);
-            }
-            if (!Game1.player.isWearingRing("juminos.FrenshipRings.CP_Junimo") && junimoCount > 0)
-            {
-                CRUtils.RemoveJunimos(e.OldLocation);
-            }
+            //if (Game1.player.isWearingRing("juminos.FrenshipRings.CP_Junimo"))
+            //{
+            //    CRUtils.WarpJunimos(e.OldLocation, e.NewLocation);
+            //}
         }
 
         /// <inheritdoc cref="IGameLoopEvents.TimeChanged"/>
@@ -318,6 +329,14 @@ namespace FrenshipRings
                 tooltip: I18n.FriendlySlimeRing_Description,
                 getValue: () => Config.FriendlySlimeRing,
                 setValue: value => Config.FriendlySlimeRing = value
+                );
+
+            configMenu.AddBoolOption(
+                mod: this.ModManifest,
+                name: I18n.LethalRings_Title,
+                tooltip: I18n.LethalRings_Description,
+                getValue: () => Config.LethalRings,
+                setValue: value => Config.LethalRings = value
                 );
 
             // Frog ring category
@@ -482,22 +501,22 @@ namespace FrenshipRings
 
             // Junimo ring category
 
-            configMenu.AddSectionTitle(
-                mod: this.ModManifest,
-                text: I18n.JunimoRing_Title
-                );
+            //configMenu.AddSectionTitle(
+            //    mod: this.ModManifest,
+            //    text: I18n.JunimoRing_Title
+            //    );
 
 
-            configMenu.AddNumberOption(
-                mod: this.ModManifest,
-                name: I18n.JunimoSpawnMultiplier_Title,
-                tooltip: I18n.JunimoSpawnMultiplier_Description,
-                getValue: () => Config.JunimoSpawnMultiplier,
-                setValue: value => Config.JunimoSpawnMultiplier = (int)value,
-                min: 1,
-                max: 5,
-                interval: 1
-                );
+            //configMenu.AddNumberOption(
+            //    mod: this.ModManifest,
+            //    name: I18n.JunimoSpawnMultiplier_Title,
+            //    tooltip: I18n.JunimoSpawnMultiplier_Description,
+            //    getValue: () => Config.JunimoSpawnMultiplier,
+            //    setValue: value => Config.JunimoSpawnMultiplier = (int)value,
+            //    min: 1,
+            //    max: 5,
+            //    interval: 1
+            //    );
         }
 
         #region migration

@@ -1,290 +1,351 @@
 {
-  "Format": "2.0",
-  "Changes": [
+    "Format": "2.4.0",
+    "$schema": "https://smapi.io/schemas/content-patcher.json",
+    "Changes": [
 
-// Add rings
-    {
-      "Action": "EditData",
-      "Target": "Data/Objects",
-      "Entries": {
-        "{{ModId}}_Shadow": {
-          "Name": "Shadow Ring",
-          "DisplayName": "{{i18n:shadow-ring.name}}",
-          "Description": "{{i18n:shadow-ring.description}}",
-          "Type": "Ring",
-          "Category": -96,
-          "Price": 1500,
-          "Texture": "Mods/{{ModId}}/MoreRings",
-          "SpriteIndex": 0,
-          "Edibility": -300,
-          "ExcludeFromRandomSale": true,
-          "ContextTags": [
-            "color_black",
-            "ring_item"
-          ],
+        // Add rings
+        {
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "Entries": {
+                "{{ModId}}_Shadow": {
+                    "Name": "Shadow Ring",
+                    "DisplayName": "{{i18n:shadow-ring.name}}",
+                    "Description": "{{i18n:shadow-ring.description}}",
+                    "Type": "Ring",
+                    "Category": -96,
+                    "Price": 1500,
+                    "Texture": "Mods/{{ModId}}/MoreRings",
+                    "SpriteIndex": 0,
+                    "Edibility": -300,
+                    "ExcludeFromRandomSale": true,
+                    "ContextTags": [
+                        "color_black",
+                        "ring_item"
+                    ]
+                },
+                "{{ModId}}_Spider": {
+                    "Name": "Spider Ring",
+                    "DisplayName": "{{i18n:spider-ring.name}}",
+                    "Description": "{{i18n:spider-ring.description}}",
+                    "Type": "Ring",
+                    "Category": -96,
+                    "Price": 1500,
+                    "Texture": "Mods/{{ModId}}/MoreRings",
+                    "SpriteIndex": 1,
+                    "Edibility": -300,
+                    "ExcludeFromRandomSale": true,
+                    "ContextTags": [
+                        "color_blue",
+                        "ring_item"
+                    ]
+                },
+                "{{ModId}}_Dust": {
+                    "Name": "Dust Sprite Ring",
+                    "DisplayName": "{{i18n:dustsprite-ring.name}}",
+                    "Description": "{{i18n:dustsprite-ring.description}}",
+                    "Type": "Ring",
+                    "Category": -96,
+                    "Price": 1500,
+                    "Texture": "Mods/{{ModId}}/MoreRings",
+                    "SpriteIndex": 2,
+                    "Edibility": -300,
+                    "ExcludeFromRandomSale": true,
+                    "ContextTags": [
+                        "color_black",
+                        "ring_item"
+                    ]
+                },
+                "{{ModId}}_Bat": {
+                    "Name": "Bat Ring",
+                    "DisplayName": "{{i18n:bat-ring.name}}",
+                    "Description": "{{i18n:bat-ring.description}}",
+                    "Type": "Ring",
+                    "Category": -96,
+                    "Price": 1500,
+                    "Texture": "Mods/{{ModId}}/MoreRings",
+                    "SpriteIndex": 4,
+                    "Edibility": -300,
+                    "ExcludeFromRandomSale": true,
+                    "ContextTags": [
+                        "color_black",
+                        "ring_item"
+                    ]
+                },
+                "{{ModId}}_MagmaSprite": {
+                    "Name": "Magma Ring",
+                    "DisplayName": "{{i18n:magmasprite-ring.name}}",
+                    "Description": "{{i18n:magmasprite-ring.description}}",
+                    "Type": "Ring",
+                    "Category": -96,
+                    "Price": 1500,
+                    "Texture": "Mods/{{ModId}}/MoreRings",
+                    "SpriteIndex": 5,
+                    "Edibility": -300,
+                    "ExcludeFromRandomSale": true,
+                    "ContextTags": [
+                        "color_orange",
+                        "ring_item"
+                    ]
+                },
+                "{{ModId}}_Bunny": {
+                    "Name": "Bunny Ring",
+                    "DisplayName": "{{i18n:bunny-ring.name}}",
+                    "Description": "{{i18n:bunny-ring.description}}",
+                    "Type": "Ring",
+                    "Category": -96,
+                    "Price": 5000,
+                    "Texture": "Mods/{{ModId}}/Rings",
+                    "SpriteIndex": 4,
+                    "Edibility": -300,
+                    "ExcludeFromRandomSale": true,
+                    "ContextTags": [
+                        "color_black",
+                        "ring_item"
+                    ]
+                },
+                "{{ModId}}_Butterfly": {
+                    "Name": "Butterfly Ring",
+                    "DisplayName": "{{i18n:butterfly-ring.name}}",
+                    "Description": "{{i18n:butterfly-ring.description}}",
+                    "Type": "Ring",
+                    "Category": -96,
+                    "Price": 2500,
+                    "Texture": "Mods/{{ModId}}/Rings",
+                    "SpriteIndex": 0,
+                    "Edibility": -300,
+                    "ExcludeFromRandomSale": true,
+                    "ContextTags": [
+                        "color_blue",
+                        "ring_item"
+                    ]
+                },
+                "{{ModId}}_Firefly": {
+                    "Name": "Firefly Ring",
+                    "DisplayName": "{{i18n:firefly-ring.name}}",
+                    "Description": "{{i18n:firefly-ring.description}}",
+                    "Type": "Ring",
+                    "Category": -96,
+                    "Price": 2500,
+                    "Texture": "Mods/{{ModId}}/Rings",
+                    "SpriteIndex": 1,
+                    "Edibility": -300,
+                    "ExcludeFromRandomSale": true,
+                    "ContextTags": [
+                        "color_orange",
+                        "ring_item"
+                    ]
+                },
+                "{{ModId}}_Frog": {
+                    "Name": "Frog Ring",
+                    "DisplayName": "{{i18n:frog-ring.name}}",
+                    "Description": "{{i18n:frog-ring.description}}",
+                    "Type": "Ring",
+                    "Category": -96,
+                    "Price": 5000,
+                    "Texture": "Mods/{{ModId}}/Rings",
+                    "SpriteIndex": 3,
+                    "Edibility": -300,
+                    "ExcludeFromRandomSale": true,
+                    "ContextTags": [
+                        "color_green",
+                        "ring_item"
+                    ]
+                },
+                "{{ModId}}_Owl": {
+                    "Name": "Owl Ring",
+                    "DisplayName": "{{i18n:owl-ring.name}}",
+                    "Description": "{{i18n:owl-ring.description}}",
+                    "Type": "Ring",
+                    "Category": -96,
+                    "Price": 5000,
+                    "Texture": "Mods/{{ModId}}/Rings",
+                    "SpriteIndex": 5,
+                    "Edibility": -300,
+                    "ExcludeFromRandomSale": true,
+                    "ContextTags": [
+                        "color_brown",
+                        "ring_item"
+                    ]
+                },
+                "{{ModId}}_Junimo": {
+                    "Name": "Junimo Ring",
+                    "DisplayName": "Junimo Ring test",
+                    "Description": "test",
+                    "Type": "Ring",
+                    "Category": -96,
+                    "Price": 5000,
+                    "Texture": "Mods/{{ModId}}/MoreRings",
+                    "SpriteIndex": 3,
+                    "Edibility": -300,
+                    "ExcludeFromRandomSale": true,
+                    "ContextTags": [
+                        "color_brown",
+                        "ring_item"
+                    ]
+                }
+            }
         },
-        "{{ModId}}_Spider": {
-          "Name": "Spider Ring",
-          "DisplayName": "{{i18n:spider-ring.name}}",
-          "Description": "{{i18n:spider-ring.description}}",
-          "Type": "Ring",
-          "Category": -96,
-          "Price": 1500,
-          "Texture": "Mods/{{ModId}}/MoreRings",
-          "SpriteIndex": 1,
-          "Edibility": -300,
-          "ExcludeFromRandomSale": true,
-          "ContextTags": [
-            "color_blue",
-            "ring_item"
-          ],
+
+        // Add buffs
+        {
+            "Action": "EditData",
+            "Target": "Data/Buffs",
+            "Entries": {
+                "{{ModId}}_ButterflyBuff": {
+                    "DisplayName": "{{i18n:butterfly-ring.name}}",
+                    "Description": "{{i18n:butterfly-buff.description}}",
+                    "Duration": -2,
+                    "IconTexture": "TileSheets\\BuffsIcons",
+                    "IconSpriteIndex": 8,
+                    "Effects": { "MagneticRadius": 128 }
+                },
+                "{{ModId}}_BunnyBuff": {
+                    "DisplayName": "{{i18n:bunny-ring.name}}",
+                    "Description": "{{i18n:bunny-buff.description}}",
+                    "Duration": 10000,
+                    "IconTexture": "Mods/{{ModId}}/bunnies_fast",
+                    "IconSpriteIndex": 1,
+                    "Effects": { "Speed": 3 }
+                }
+                //"{{ModId}}_SpiderBuff": {
+                //    "DisplayName": "{{i18n:spider-ring.name}}",
+                //    "Duration": -2,
+                //    "Effects": {},
+                //    "CustomFields": { "spacechase0.SpaceCore/StaminaRegeneration": 1 }
+                //}
+            }
         },
-        "{{ModId}}_Dust": {
-          "Name": "Dust Sprite Ring",
-          "DisplayName": "{{i18n:dustsprite-ring.name}}",
-          "Description": "{{i18n:dustsprite-ring.description}}",
-          "Type": "Ring",
-          "Category": -96,
-          "Price": 1500,
-          "Texture": "Mods/{{ModId}}/MoreRings",
-          "SpriteIndex": 2,
-          "Edibility": -300,
-          "ExcludeFromRandomSale": true,
-          "ContextTags": [
-            "color_black",
-            "ring_item"
-          ],
+
+        // Assign buffs to rings
+        {
+            "Action": "EditData",
+            "Target": "spacechase0.SpaceCore/WearableData",
+            "Entries": {
+                "(O){{ModId}}_Butterfly": {
+                    "BuffIdToApply": "{{ModId}}_ButterflyBuff"
+                }
+                //"(O){{ModId}}_Spider": {
+                //    "BuffIdToApply": "{{ModId}}_SpiderBuff"
+                //}
+            }
         },
-        "{{ModId}}_Bunny": {
-          "Name": "Bunny Ring",
-          "DisplayName": "{{i18n:bunny-ring.name}}",
-          "Description": "{{i18n:bunny-ring.description}}",
-          "Type": "Ring",
-          "Category": -96,
-          "Price": 5000,
-          "Texture": "Mods/{{ModId}}/Rings",
-          "SpriteIndex": 4,
-          "Edibility": -300,
-          "ExcludeFromRandomSale": true,
-          "ContextTags": [
-            "color_black",
-            "ring_item"
-          ],
+
+
+        // Add mail
+        {
+            "Action": "EditData",
+            "Target": "Data/Mail",
+            "Entries": {
+                "{{ModId}}_Shadow": "{{i18n:shadow-ring.letter}}",
+                "{{ModId}}_SebFrogRing": "{{i18n:frog-ring.letter}}",
+                "{{ModId}}_DustSprite": "{{i18n:dustsprite-ring.letter}}"
+            }
         },
-        "{{ModId}}_Butterfly": {
-          "Name": "Butterfly Ring",
-          "DisplayName": "{{i18n:butterfly-ring.name}}",
-          "Description": "{{i18n:butterfly-ring.description}}",
-          "Type": "Ring",
-          "Category": -96,
-          "Price": 2500,
-          "Texture": "Mods/{{ModId}}/Rings",
-          "SpriteIndex": 0,
-          "Edibility": -300,
-          "ExcludeFromRandomSale": true,
-          "ContextTags": [
-            "color_blue",
-            "ring_item"
-          ],
+
+        // Add trigger actions
+        {
+            "Action": "EditData",
+            "Target": "Data/TriggerActions",
+            "Entries": {
+                "{{ModId}}_Krobus10Heart": {
+                    "Id": "{{ModId}}_Krobus10Heart",
+                    "Trigger": "DayEnding",
+                    "Condition": "PLAYER_HEARTS Current Krobus 10",
+                    "Action": "AddMail Current {{ModId}}_Shadow"
+                },
+                "{{ModId}}_SebFrogRing": {
+                    "Id": "{{ModId}}_SebFrogRing",
+                    "Trigger": "DayEnding",
+                    "Condition": "PLAYER_HEARTS Current Sebastian 4, WEATHER Forest Rain Storm",
+                    "Action": "AddMail Current {{ModId}}_SebFrogRing"
+                },
+                "{{ModId}}_JasDust": {
+                    "Id": "{{ModId}}_JasDust",
+                    "Trigger": "DayEnding",
+                    "Condition": "PLAYER_HEARTS Current Jas 6, PLAYER_KILLED_MONSTERS Current \"Dust Spirit\" 500",
+                    "Action": "AddMail Current {{ModId}}_DustSprite"
+                }
+            }
         },
-        "{{ModId}}_Firefly": {
-          "Name": "Firefly Ring",
-          "DisplayName": "{{i18n:firefly-ring.name}}",
-          "Description": "{{i18n:firefly-ring.description}}",
-          "Type": "Ring",
-          "Category": -96,
-          "Price": 2500,
-          "Texture": "Mods/{{ModId}}/Rings",
-          "SpriteIndex": 1,
-          "Edibility": -300,
-          "ExcludeFromRandomSale": true,
-          "ContextTags": [
-            "color_orange",
-            "ring_item"
-          ],
+
+        // Add rings to shops
+        {
+            "Action": "EditData",
+            "Target": "Data/Shops",
+            "TargetField": [ "HatMouse", "Items" ],
+            "Entries": {
+                "{{ModId}}_Bunny": {
+                    "Id": "{{ModId}}_Bunny",
+                    "ItemId": "{{ModId}}_Bunny",
+                    "Price": 5000,
+                    "TradeItemId": "(O)446"
+                },
+                "{{ModId}}_Butterfly": {
+                    "Id": "{{ModId}}_Butterfly",
+                    "ItemId": "{{ModId}}_Butterfly",
+                    "Condition": "SEASON Spring Summer Fall, WEATHER Forest Sun"
+                },
+                "{{ModId}}_Frog": {
+                    "Id": "{{ModId}}_Frog",
+                    "ItemId": "{{ModId}}_Frog",
+                    "Condition": "PLAYER_HAS_MAIL Current {{ModId}}_SebFrogRing Received, WEATHER Forest Rain Storm"
+                },
+                "{{ModId}}_Firefly": {
+                    "Id": "{{ModId}}_Firefly",
+                    "Condition": "SEASON Summer, TIME 1900"
+                },
+                "{{ModId}}_Owl": {
+                    "ItemId": "{{ModId}}_Owl",
+                    "Id": "{{ModId}}_Owl",
+                    "Price": 5000,
+                    "TradeItemId": "(O)424",
+                    "TradeItemAmount": 2,
+                    "Condition": "TIME 2100"
+                }
+            }
         },
-        "{{ModId}}_Frog": {
-          "Name": "Frog Ring",
-          "DisplayName": "{{i18n:frog-ring.name}}",
-          "Description": "{{i18n:frog-ring.description}}",
-          "Type": "Ring",
-          "Category": -96,
-          "Price": 5000,
-          "Texture": "Mods/{{ModId}}/Rings",
-          "SpriteIndex": 3,
-          "Edibility": -300,
-          "ExcludeFromRandomSale": true,
-          "ContextTags": [
-            "color_green",
-            "ring_item"
-          ],
+        {
+            "Action": "EditData",
+            "Target": "Data/Shops",
+            "TargetField": [ "VolcanoShop", "Items" ],
+            "Entries": {
+                "{{ModId}}_MagmaSprite": {
+                    "Id": "{{ModId}}_MagmaSprite",
+                    "ItemId": "{{ModId}}_MagmaSprite",
+                    "Price": 15000,
+                    "TradeItemId": "(O)848",
+                    "TradeItemAmount": 50
+                }
+            }
         },
-        "{{ModId}}_Owl": {
-          "Name": "Owl Ring",
-          "DisplayName": "{{i18n:owl-ring.name}}",
-          "Description": "{{i18n:owl-ring.description}}",
-          "Type": "Ring",
-          "Category": -96,
-          "Price": 5000,
-          "Texture": "Mods/{{ModId}}/Rings",
-          "SpriteIndex": 5,
-          "Edibility": -300,
-          "ExcludeFromRandomSale": true,
-          "ContextTags": [
-            "color_brown",
-            "ring_item"
-          ],
+        {
+            "Action": "EditData",
+            "Target": "Data/Shops",
+            "TargetField": [ "Dwarf", "Items" ],
+            "Entries": {
+                "{{ModId}}_Spider": {
+                    "Id": "{{ModId}}_Spider",
+                    "ItemId": "{{ModId}}_Spider",
+                    "Condition": "PLAYER_HAS_ACHIEVEMENT Current 41",
+                    "TradeItemId": "(O)122",
+                    "TradeItemAmount": 10
+                },
+                "{{ModId}}_Bat": {
+                    "Id": "{{ModId}}_Bat",
+                    "ItemId": "{{ModId}}_Bat",
+                    "Condition": "MINE_LOWEST_LEVEL_REACHED 120",
+                    "TradeItemId": "(O)749",
+                    "TradeItemAmount": 20
+                }
+            }
         },
-        "{{ModId}}_Junimo": {
-          "Name": "Junimo Ring",
-          "DisplayName": "Junimo Ring test",
-          "Description": "test",
-          "Type": "Ring",
-          "Category": -96,
-          "Price": 5000,
-          "Texture": "Mods/{{ModId}}/MoreRings",
-          "SpriteIndex": 3,
-          "Edibility": -300,
-          "ExcludeFromRandomSale": true,
-          "ContextTags": [
-            "color_brown",
-            "ring_item"
-          ],
+
+        // Load textures
+        {
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/Rings, Mods/{{ModId}}/MoreRings, Mods/{{ModId}}/bunnies_fast",
+            "FromFile": "assets/{{TargetWithoutPath}}.png"
         }
-      }
-    },
-
-// Add buffs
-    {
-        "Action": "EditData",
-        "Target": "Data/Buffs",
-        "Entries": {
-            "{{ModId}}_ButterflyBuff": {
-                "DisplayName": "{{i18n:butterfly-ring.name}}",
-                "Description": "{{i18n:butterfly-buff.description}}",
-                "Duration": -2,
-                "IconTexture": "TileSheets\\BuffsIcons",
-                "IconSpriteIndex": 8,
-                "Effects": { "MagneticRadius": 128 }
-            },
-            "{{ModId}}_BunnyBuff": {
-                "DisplayName": "{{i18n:bunny-ring.name}}",
-                "Description": "{{i18n:bunny-buff.description}}",
-                "Duration": 10000,
-                "IconTexture": "Mods/{{ModId}}/bunnies_fast",
-                "IconSpriteIndex": 1,
-                "Effects": { "Speed": 3 }
-            },
-            //"{{ModId}}_SpiderBuff": {
-            //    "DisplayName": "{{i18n:spider-ring.name}}",
-            //    "Duration": -2,
-            //    "Effects": {},
-            //    "CustomFields": { "spacechase0.SpaceCore/StaminaRegeneration": 1 }
-            //}
-        }
-    },
-
-// Assign buffs to rings
-    {
-        "Action": "EditData",
-        "Target": "spacechase0.SpaceCore/WearableData",
-        "Entries": {
-            "(O){{ModId}}_Butterfly": {
-                "BuffIdToApply": "{{ModId}}_ButterflyBuff"
-            },
-            //"(O){{ModId}}_Spider": {
-            //    "BuffIdToApply": "{{ModId}}_SpiderBuff"
-            //}
-        }
-    },
-
-
-// Add mail
-    {
-      "Action": "EditData",
-      "Target": "Data/Mail",
-      "Entries": {
-        "{{ModId}}_Shadow": "{{i18n:shadow-ring.letter}}",
-        "{{ModId}}_Spider": "{{i18n:spider-ring.letter}}",
-        "{{ModId}}_SebFrogRing": "{{i18n:frog-ring.letter}}",
-        "{{ModId}}_DustSprite": "{{i18n:dustsprite-ring.letter}}"
-      }
-    },
-
-// Add trigger actions
-    {
-      "Action": "EditData",
-      "Target": "Data/TriggerActions",
-      "Entries": {
-        "{{ModId}}_Krobus10Heart": {
-          "Id": "{{ModId}}_Krobus10Heart",
-          "Trigger": "DayEnding",
-          "Condition": "PLAYER_HEARTS Current Krobus 10",
-          "Action": "AddMail Current {{ModId}}_Shadow"
-        },
-        "{{ModId}}_Krobus8Heart": {
-          "Id": "{{ModId}}_Krobus8Heart",
-          "Trigger": "DayEnding",
-          "Condition": "PLAYER_HEARTS Current Krobus 8",
-          "Action": "AddMail Current {{ModId}}_Spider"
-        },
-        "{{ModId}}_SebFrogRing": {
-          "Id": "{{ModId}}_SebFrogRing",
-          "Trigger": "DayEnding",
-          "Condition": "PLAYER_HEARTS Current Sebastian 4, WEATHER Forest Rain Storm",
-          "Action": "AddMail Current {{ModId}}_SebFrogRing"
-        },
-        "{{ModId}}_JasDust": {
-          "Id": "{{ModId}}_JasDust",
-          "Trigger": "DayEnding",
-          "Condition": "PLAYER_HEARTS Current Jas 8, PLAYER_KILLED_MONSTERS Current \"Dust Spirit\" 500",
-          "Action": "AddMail Current {{ModId}}_DustSprite"
-        },
-      }
-    },
-
-// Add rings to shops
-    {
-      "Action": "EditData",
-      "Target": "Data/Shops",
-      "TargetField": [ "HatMouse", "Items" ],
-      "Entries": {
-        "{{ModId}}_Bunny": {
-          "Id": "{{ModId}}_Bunny",
-          "ItemId": "{{ModId}}_Bunny",
-          "Price": 5000,
-          "TradeItemId": "(O)446"
-        },
-        "{{ModId}}_Butterfly": {
-          "Id": "{{ModId}}_Butterfly",
-          "ItemId": "{{ModId}}_Butterfly",
-          "Condition": "SEASON Spring Summer Fall, WEATHER Forest Sun"
-        },
-        "{{ModId}}_Frog": {
-          "Id": "{{ModId}}_Frog",
-          "ItemId": "{{ModId}}_Frog",
-          "Condition": "PLAYER_HAS_MAIL Current {{ModId}}_SebFrogRing Received, WEATHER Forest Rain Storm"
-        },
-        "{{ModId}}_Firefly": {
-          "Id": "{{ModId}}_Firefly",
-          "Condition": "SEASON Summer, TIME 1900"
-        },
-        "{{ModId}}_Owl": {
-          "ItemId": "{{ModId}}_Owl",
-          "Id": "{{ModId}}_Owl",
-          "Price": 5000,
-          "TradeItemId": "(O)424",
-          "TradeItemAmount": 2,
-          "Condition": "TIME 2100"
-        }
-      }
-    },
-
-// Load textures
-    {
-      "Action": "Load",
-      "Target": "Mods/{{ModId}}/Rings, Mods/{{ModId}}/MoreRings, Mods/{{ModId}}/bunnies_fast",
-      "FromFile": "assets/{{TargetWithoutPath}}.png"
-    }
-  ]
+    ]
 }
