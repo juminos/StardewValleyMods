@@ -183,7 +183,7 @@ namespace MonsterHutch
                         else if (hutch.characters[i] is Bat magmaSprite && magmaSprite.magmaSprite.Value)
                         {
                             var pos = hutch.characters[i].Position;
-                            hutch.characters[i] = CreateBat(pos);
+                            hutch.characters[i] = CreateMagmaSprite(pos);
                         }
                     }
                 }
