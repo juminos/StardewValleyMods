@@ -1,0 +1,10 @@
+{
+    "Name": "Pause Event Time",
+    "Author": "juminos",
+    "Version": "1.0.0",
+    "Description": "Pause time during events in multiplayer.",
+    "UniqueID": "juminos.PauseEventTime",
+    "EntryDll": "PauseEventTime.dll",
+    "UpdateKeys": [],
+    "Dependencies": []
+}

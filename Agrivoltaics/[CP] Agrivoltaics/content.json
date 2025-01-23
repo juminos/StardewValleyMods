@@ -1,0 +1,101 @@
+{
+    "Format": "2.4.0",
+    "$schema": "https://smapi.io/schemas/content-patcher.json",
+    "Changes": [
+        {
+            "Action": "EditData",
+            "Target": "Data/Buildings",
+            "Entries": {
+                "juminos.SolarPanel": {
+                    "Name": "Large Solar Panel",
+                    "Description": "A large solar panel which produces energy and provides shade for crops and livestock.",
+                    "Texture": "Mods/{{ModId}}/SolarPanel",
+                    "Skins": [],
+                    "DrawShadow": false,
+                    "Size": {
+                        "X": 4,
+                        "Y": 1
+                    },
+                    "FadeWhenBehind": true,
+                    "SourceRect": {
+                        "X": 0,
+                        "Y": 0,
+                        "Width": 64,
+                        "Height": 64
+                    },
+                    "DrawOffset": "0, 0",
+                    "SortTileOffset": 0.0,
+                    "CollisionMap": "XOOX",
+                    "AdditionalPlacementTiles": [
+                        {
+                            "TileArea": {
+                                "X": 0,
+                                "Y": -3,
+                                "Width": 4,
+                                "Height": 3
+                            },
+                            "OnlyNeedsToBePassable": true
+                        }
+                    ],
+                    "Builder": "Robin",
+                    "BuildingType": null,
+                    "BuildCondition": null,
+                    "BuildDays": 1,
+                    "BuildCost": 100000,
+                    "BuildMaterials": [
+                        {
+                            "ItemId": "(O)338",
+                            "Amount": 60
+                        },
+                        {
+                            "ItemId": "(O)335",
+                            "Amount": 30
+                        },
+                        {
+                            "ItemId": "(O)336",
+                            "Amount": 30
+                        }
+                    ],
+                    "BuildingToUpgrade": null,
+                    "MagicalConstruction": false,
+                    "BuildMenuDrawOffset": {
+                        "X": 0,
+                        "Y": 0
+                    },
+                    "NonInstancedIndoorLocation": null,
+                    "IndoorMap": null,
+                    "IndoorMapType": null,
+                    "MaxOccupants": 20,
+                    "ValidOccupantTypes": [],
+                    "IndoorItemMoves": null,
+                    "IndoorItems": null,
+                    "AddMailOnBuild": null,
+                    "Metadata": {},
+                    "ModData": {},
+                    "HayCapacity": 0,
+                    "Chests": [
+                        {
+                            "Id": "Output",
+                            "Type": "Collect",
+                            "DisplayTile": "1, 3",
+                            "DisplayHeight": 1.5
+                        }
+                    ],
+                    "DefaultAction": null,
+                    "AdditionalTilePropertyRadius": 0,
+                    "ActionTiles": [],
+                    "TileProperties": [],
+                    "ItemConversions": null,
+                    "DrawLayers": null,
+                    "CustomFields": {}
+                }
+            }
+        },
+
+        {
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/SolarPanel",
+            "FromFile": "assets/{{TargetWithoutPath}}.png"
+        }
+    ]
+}

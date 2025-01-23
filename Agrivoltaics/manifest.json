@@ -1,0 +1,14 @@
+{
+  "Name": "Agrivoltaics",
+  "Author": "juminos",
+  "Version": "1.0.0",
+  "Description": "Practice agrivoltaic farming.",
+  "UniqueID": "juminos.Agrivoltaics",
+  "UpdateKeys": [],
+  "Dependencies": [
+    {
+        "UniqueID": "juminos.Agrivoltaics.CP",
+        "IsRequired": true
+    }
+  ]
+}
