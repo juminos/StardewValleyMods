@@ -223,10 +223,22 @@ namespace MonsterHutch
 
                 if (tries > 0)
                 {
-                    var tripleShot = ItemRegistry.Create<StardewObject>(ModEntry.tripleShotId);
-                    tripleShot.IsSpawnedObject = true;
+                    if (Game1.random.NextDouble() < (0.32 + Game1.player.DailyLuck))
+                    {
+                        var tripleShot = ItemRegistry.Create<StardewObject>(ModEntry.tripleShotId);
+                        tripleShot.IsSpawnedObject = true;
+                        tripleShot.CanBeGrabbed = true;
 
-                    __instance.Objects.Add(tile, tripleShot);
+                        __instance.Objects.Add(tile, tripleShot);
+                    }
+                    else
+                    {
+                        var coffee = ItemRegistry.Create<StardewObject>(ModEntry.coffeeId);
+                        coffee.IsSpawnedObject = true;
+                        coffee.CanBeGrabbed = true;
+
+                        __instance.Objects.Add(tile, coffee);
+                    }
                 }
             }
 
@@ -288,6 +300,8 @@ namespace MonsterHutch
                 {
                     var shard = ItemRegistry.Create<StardewObject>(ModEntry.cinderShardId);
                     shard.IsSpawnedObject = true;
+                    //shard.CanBeGrabbed = false;
+                    //shard.Fragility = 0;
 
                     __instance.Objects.Add(tile, shard);
                 }

@@ -5,6 +5,7 @@ using StardewModdingAPI.Events;
 using StardewValley;
 using StardewValley.Buildings;
 using StardewValley.GameData.Characters;
+using StardewValley.Mods;
 using StardewValley.Monsters;
 using System;
 using System.Collections;
@@ -27,6 +28,8 @@ namespace MonsterHutch
         internal const string mummifiedBatId = "(O)827";
         internal const string batWingId = "(O)767";
         internal const string cinderShardId = "(O)848";
+        internal const string cinderStone1Id = "(O)843";
+        internal const string cinderStone2Id = "(O)844";
 
         internal static ModEntry Mod { get; private set; }
         internal static ModConfig Config { get; private set; }
@@ -135,43 +138,19 @@ namespace MonsterHutch
                 e.Button.IsActionButton())
             {
                 var playerTile = Game1.player.Tile;
-                if (Game1.player.isWearingRing("juminos.FrenshipRings.CP_Dust"))
+                foreach (Monster monster in hutch.characters)
                 {
-                    foreach (DustSpirit dust in hutch.characters)
+                    if (Math.Abs(monster.Tile.X - playerTile.X) <= 1 && Math.Abs(monster.Tile.Y - playerTile.Y) <= 1)
                     {
-                        if (!dust.isHardModeMonster.Value && Math.Abs(dust.Tile.X - playerTile.X) <= 1 && Math.Abs(dust.Tile.Y - playerTile.Y) <= 1)
+                        if (
+                            (monster is DustSpirit dust && !dust.isHardModeMonster.Value && Game1.player.isWearingRing("juminos.FrenshipRings.CP_Dust")) ||
+                            (monster is Leaper && Game1.player.isWearingRing("juminos.FrenshipRings.CP_Spider")) ||
+                            (monster is Bat bat && !bat.magmaSprite.Value && !bat.hauntedSkull.Value && Game1.player.isWearingRing("juminos.FrenshipRings.CP_Bat")) ||
+                            (monster is GreenSlime && Game1.player.isWearingRing("520")) ||
+                            (monster is Bat magmaSprite && magmaSprite.magmaSprite.Value && Game1.player.isWearingRing("juminos.FrenshipRings.CP_MagmaSprite"))
+                            )
                         {
-                            dust.showTextAboveHead("<", null, 2, 2000, 0);
-                        }
-                    }
-                }
-                if (Game1.player.isWearingRing("juminos.FrenshipRings.CP_Spider"))
-                {
-                    foreach (Leaper leaper in hutch.characters)
-                    {
-                        if (Math.Abs(leaper.Tile.X - playerTile.X) <= 1 && Math.Abs(leaper.Tile.Y - playerTile.Y) <= 1)
-                        {
-                            leaper.showTextAboveHead("<", null, 2, 2000, 0);
-                        }
-                    }
-                }
-                if (Game1.player.isWearingRing("juminos.FrenshipRings.CP_Bat"))
-                {
-                    foreach (Bat bat in hutch.characters)
-                    {
-                        if (!bat.magmaSprite.Value && !bat.hauntedSkull.Value && Math.Abs(bat.Tile.X - playerTile.X) <= 1 && Math.Abs(bat.Tile.Y - playerTile.Y) <= 1)
-                        {
-                            bat.showTextAboveHead("<", null, 2, 2000, 0);
-                        }
-                    }
-                }
-                if (Game1.player.isWearingRing("juminos.FrenshipRings.CP_MagmaSprite"))
-                {
-                    foreach (Bat magmaSprite in hutch.characters)
-                    {
-                        if (magmaSprite.magmaSprite.Value && Math.Abs(magmaSprite.Tile.X - playerTile.X) <= 1 && Math.Abs(magmaSprite.Tile.Y - playerTile.Y) <= 1)
-                        {
-                            magmaSprite.showTextAboveHead("<", null, 2, 2000, 0);
+                            monster.showTextAboveHead("<", null, 2, 2000, 0);
                         }
                     }
                 }
