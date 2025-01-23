@@ -60,7 +60,7 @@ namespace FrenshipRings
             helper.Events.Player.Warped += OnWarp;
             helper.Events.GameLoop.TimeChanged += OnTimeChanged;
             //helper.Events.GameLoop.UpdateTicked += OnUpdateTicked;
-            helper.Events.GameLoop.SaveLoaded += OnSaveLoaded;
+            //helper.Events.GameLoop.SaveLoaded += OnSaveLoaded;
             helper.Events.GameLoop.ReturnedToTitle += OnReturnedToTitle;
             helper.Events.Input.ButtonsChanged += OnButtonsChanged;
         }
@@ -248,27 +248,27 @@ namespace FrenshipRings
         }
 
         /// <inheritdoc cref="IGameLoopEvents.SaveLoaded"/>
-        private void OnSaveLoaded(object? sender, SaveLoadedEventArgs e)
-        {
-            MultiplayerHelpers.AssertMultiplayerVersions(this.Helper.Multiplayer, this.ModManifest, this.Monitor, this.Helper.Translation);
+        //private void OnSaveLoaded(object? sender, SaveLoadedEventArgs e)
+        //{
+        //    MultiplayerHelpers.AssertMultiplayerVersions(this.Helper.Multiplayer, this.ModManifest, this.Monitor, this.Helper.Translation);
 
-            this.migrator = new(this.ModManifest, this.Helper, this.Monitor);
-            if (!this.migrator.CheckVersionInfo())
-            {
-                this.Helper.Events.GameLoop.Saved += this.WriteMigrationData;
-            }
-            else
-            {
-                this.migrator = null;
-            }
+        //    this.migrator = new(this.ModManifest, this.Helper, this.Monitor);
+        //    if (!this.migrator.CheckVersionInfo())
+        //    {
+        //        this.Helper.Events.GameLoop.Saved += this.WriteMigrationData;
+        //    }
+        //    else
+        //    {
+        //        this.migrator = null;
+        //    }
 
-            if (Context.IsMainPlayer)
-            {
-                // hook event to save Ids so future migrations are possible.
-                // this.Helper.Events.GameLoop.Saving -= this.OnSaving; /// not needed?
-                // this.Helper.Events.GameLoop.Saving += this.OnSaving; /// not needed?
-            }
-        }
+        //    if (Context.IsMainPlayer)
+        //    {
+        //        // hook event to save Ids so future migrations are possible.
+        //        // this.Helper.Events.GameLoop.Saving -= this.OnSaving; /// not needed?
+        //        // this.Helper.Events.GameLoop.Saving += this.OnSaving; /// not needed?
+        //    }
+        //}
 
         /// <summary>
         /// Resets the managers when returning to the title.
