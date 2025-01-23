@@ -329,7 +329,7 @@
                     "ItemId": "{{ModId}}_Spider",
                     "Condition": "PLAYER_HAS_ACHIEVEMENT Current 41",
                     "TradeItemId": "(O)122",
-                    "TradeItemAmount": 10
+                    "TradeItemAmount": 2
                 },
                 "{{ModId}}_Bat": {
                     "Id": "{{ModId}}_Bat",
