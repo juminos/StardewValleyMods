@@ -17,11 +17,11 @@ namespace PauseEventTime
             // Check if an event (cutscene) is active
             if (Game1.eventUp)
             {
-                Game1.isTimePaused = true; // Freeze time during events
+                Game1.paused = true; // Freeze time during events
             }
             else
             {
-                Game1.isTimePaused = false; // Unfreeze time when no event is active
+                Game1.paused = false; // Unfreeze time when no event is active
             }
         }
     }

@@ -14,6 +14,11 @@
             "FromFile": "assets/MonsterHutchExpanded.tmx"
         },
         {
+            "Action": "Load",
+            "Target": "Characters/Monsters/Rock Crab_iron, Characters/Monsters/Rock Crab_copper",
+            "FromFile": "assets/{{TargetWithoutPath}}.png"
+        },
+        {
             "Action": "EditData",
             "Target": "Data/Buildings",
             "Fields": {

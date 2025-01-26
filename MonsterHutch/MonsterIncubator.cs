@@ -167,35 +167,73 @@ namespace MonsterHutch
                     var bugMeatDisplayName = ItemRegistry.Create(ModEntry.bugMeatId).DisplayName;
                     var mummifiedBatDisplayName = ItemRegistry.Create(ModEntry.mummifiedBatId).DisplayName;
                     var cinderShardDisplayName = ItemRegistry.Create(ModEntry.cinderShardId).DisplayName;
+                    var iridiumOreDisplayName = ItemRegistry.Create(ModEntry.iridiumOreId).DisplayName;
+                    var goldOreDisplayName = ItemRegistry.Create(ModEntry.goldOreId).DisplayName;
+                    var ironOreDisplayName = ItemRegistry.Create(ModEntry.ironOreId).DisplayName;
+                    var copperOreDisplayName = ItemRegistry.Create(ModEntry.copperOreId).DisplayName;
+                    var truffleDisplayName = ItemRegistry.Create(ModEntry.truffleId).DisplayName;
+                    var gingerDisplayName = ItemRegistry.Create(ModEntry.gingerId).DisplayName;
 
                     defaultOutput.InvalidCountMessage = ModEntry.Mod.Helper.Translation.Get("MonsterIncubator.InputWarning"
                         , new { coalName = coalDisplayName, 
                             bugMeatName = bugMeatDisplayName, 
                             mummifiedBatName = mummifiedBatDisplayName, 
-                            cinderShardName = cinderShardDisplayName
+                            cinderShardName = cinderShardDisplayName,
+                            iridiumOreName = iridiumOreDisplayName,
+                            goldOreName = goldOreDisplayName,
+                            ironOreName = ironOreDisplayName,
+                            copperOreName = copperOreDisplayName,
+                            truffleName = truffleDisplayName,
+                            gingerDisplayName = gingerDisplayName,
                         });
 
                     var coalTrigger = CreateMachineOutputTriggerRule(ModEntry.coalId);
                     var bugMeatTrigger = CreateMachineOutputTriggerRule(ModEntry.bugMeatId);
                     var mummifiedBatTrigger = CreateMachineOutputTriggerRule(ModEntry.mummifiedBatId);
                     var cinderShardTrigger = CreateMachineOutputTriggerRule(ModEntry.cinderShardId);
+                    var iridiumOreTrigger = CreateMachineOutputTriggerRule(ModEntry.iridiumOreId);
+                    var goldOreTrigger = CreateMachineOutputTriggerRule(ModEntry.goldOreId);
+                    var ironOreTrigger = CreateMachineOutputTriggerRule(ModEntry.ironOreId);
+                    var copperOreTrigger = CreateMachineOutputTriggerRule(ModEntry.copperOreId);
+                    var truffleTrigger = CreateMachineOutputTriggerRule(ModEntry.truffleId);
+                    var gingerTrigger = CreateMachineOutputTriggerRule(ModEntry.gingerId);
 
                     defaultOutput.Triggers = new List<MachineOutputTriggerRule> { 
                         coalTrigger, 
                         bugMeatTrigger, 
                         mummifiedBatTrigger, 
-                        cinderShardTrigger };
+                        cinderShardTrigger,
+                        iridiumOreTrigger,
+                        goldOreTrigger,
+                        ironOreTrigger,
+                        copperOreTrigger,
+                        truffleTrigger,
+                        gingerTrigger,                    
+                    };
 
                     var coalOutputItem = CreateMachineItemOutput("Coal");
                     var bugMeatOutputItem = CreateMachineItemOutput("BugMeat");
                     var mummifiedBatOutputItem = CreateMachineItemOutput("MummifiedBat");
                     var cinderShardOutputItem = CreateMachineItemOutput("CinderShard");
+                    var iridiumOreOutputItem = CreateMachineItemOutput("IridiumOre");
+                    var goldOreOutputItem = CreateMachineItemOutput("GoldOre");
+                    var ironOreOutputItem = CreateMachineItemOutput("IronOre");
+                    var copperOreOutputItem = CreateMachineItemOutput("CopperOre");
+                    var truffleOutputItem = CreateMachineItemOutput("Truffle");
+                    var gingerOutputItem = CreateMachineItemOutput("Ginger");
 
                     defaultOutput.OutputItem = new List<MachineItemOutput>() { 
                         coalOutputItem, 
                         bugMeatOutputItem, 
                         mummifiedBatOutputItem, 
-                        cinderShardOutputItem };
+                        cinderShardOutputItem,
+                        iridiumOreOutputItem,
+                        goldOreOutputItem,
+                        ironOreOutputItem,
+                        copperOreOutputItem,
+                        truffleOutputItem,
+                        gingerOutputItem,
+                    };
 
                     monsterIncubator.OutputRules = new List<MachineOutputRule>() { defaultOutput };
 
@@ -238,7 +276,7 @@ namespace MonsterHutch
         }
         private static MachineOutputTriggerRule CreateMachineOutputTriggerRule(string requiredItemId)
         {
-            if (requiredItemId == ModEntry.mummifiedBatId)
+            if (requiredItemId == ModEntry.mummifiedBatId || requiredItemId == ModEntry.truffleId || requiredItemId == ModEntry.gingerId)
             {
                 return new MachineOutputTriggerRule
                 {
@@ -288,6 +326,36 @@ namespace MonsterHutch
                 case "CinderShard":
                     condition = $"ITEM_ID Input {ModEntry.cinderShardId}";
                     index = 8;
+                    break;
+
+                case "IridiumOre":
+                    condition = $"ITEM_ID Input {ModEntry.iridiumOreId}";
+                    index = 10;
+                    break;
+
+                case "GoldOre":
+                    condition = $"ITEM_ID Input {ModEntry.goldOreId}";
+                    index = 11;
+                    break;
+
+                case "IronOre":
+                    condition = $"ITEM_ID Input {ModEntry.ironOreId}";
+                    index = 12;
+                    break;
+
+                case "CopperOre":
+                    condition = $"ITEM_ID Input {ModEntry.copperOreId}";
+                    index = 13;
+                    break;
+
+                case "Truffle":
+                    condition = $"ITEM_ID Input {ModEntry.truffleId}";
+                    index = 2;
+                    break;
+
+                case "Ginger":
+                    condition = $"ITEM_ID Input {ModEntry.gingerId}";
+                    index = 1;
                     break;
             }
             return new MachineItemOutput

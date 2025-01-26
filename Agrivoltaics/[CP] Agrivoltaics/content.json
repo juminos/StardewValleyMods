@@ -13,7 +13,7 @@
                     "Skins": [],
                     "DrawShadow": false,
                     "Size": {
-                        "X": 4,
+                        "X": 3,
                         "Y": 1
                     },
                     "FadeWhenBehind": true,
@@ -23,16 +23,34 @@
                         "Width": 64,
                         "Height": 64
                     },
-                    "DrawOffset": "0, 0",
+                    "DrawOffset": "-8, 0",
                     "SortTileOffset": 0.0,
-                    "CollisionMap": "XOOX",
+                    "CollisionMap": "XOX",
                     "AdditionalPlacementTiles": [
                         {
                             "TileArea": {
-                                "X": 0,
+                                "X": -1,
                                 "Y": -3,
-                                "Width": 4,
+                                "Width": 5,
                                 "Height": 3
+                            },
+                            "OnlyNeedsToBePassable": true
+                        },
+                        {
+                            "TileArea": {
+                                "X": -1,
+                                "Y": 0,
+                                "Width": 1,
+                                "Height": 1
+                            },
+                            "OnlyNeedsToBePassable": true
+                        },
+                        {
+                            "TileArea": {
+                                "X": 3,
+                                "Y": 0,
+                                "Width": 1,
+                                "Height": 1
                             },
                             "OnlyNeedsToBePassable": true
                         }

@@ -36,7 +36,10 @@ internal class IsInvinciblePatch
             Game1.player.isWearingRing("520")) ||
             (__instance is DustSpirit dust && !dust.isHardModeMonster.Value &&
             !ModEntry.Config.LethalRings &&
-            Game1.player.isWearingRing("juminos.FrenshipRings.CP_Dust"))
+            Game1.player.isWearingRing("juminos.FrenshipRings.CP_Dust")) ||
+            (__instance is RockCrab crab &&
+            !ModEntry.Config.LethalRings &&
+            Game1.player.isWearingRing("810"))
             )
         {
             __result = true;

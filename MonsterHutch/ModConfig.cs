@@ -25,7 +25,7 @@ namespace MonsterHutch
 
         public bool RandomizeOnlyModMonsterPositions { get; set; } = true;
 
-        public int IncubatorDuration { get; set; } = 2;
+        public int IncubatorDuration { get; set; } = 3;
 
         public bool IncubatorDurationIsInDaysInsteadOfMinutes { get; set; } = true;
 

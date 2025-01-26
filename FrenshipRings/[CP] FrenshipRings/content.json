@@ -207,13 +207,14 @@
                     "IconTexture": "Mods/{{ModId}}/bunnies_fast",
                     "IconSpriteIndex": 1,
                     "Effects": { "Speed": 3 }
+                },
+                "{{ModId}}_SpiderBuff": {
+                    "DisplayName": "{{i18n:spider-ring.name}}",
+                    "Duration": -2,
+                    "IconTexture": "TileSheets\\BuffsIcons",
+                    "IconSpriteIndex": 8,
+                    "Effects": { "Attack": 3 }
                 }
-                //"{{ModId}}_SpiderBuff": {
-                //    "DisplayName": "{{i18n:spider-ring.name}}",
-                //    "Duration": -2,
-                //    "Effects": {},
-                //    "CustomFields": { "spacechase0.SpaceCore/StaminaRegeneration": 1 }
-                //}
             }
         },
 
@@ -224,10 +225,10 @@
             "Entries": {
                 "(O){{ModId}}_Butterfly": {
                     "BuffIdToApply": "{{ModId}}_ButterflyBuff"
+                },
+                "(O){{ModId}}_Spider": {
+                    "BuffIdToApply": "{{ModId}}_SpiderBuff"
                 }
-                //"(O){{ModId}}_Spider": {
-                //    "BuffIdToApply": "{{ModId}}_SpiderBuff"
-                //}
             }
         },
 

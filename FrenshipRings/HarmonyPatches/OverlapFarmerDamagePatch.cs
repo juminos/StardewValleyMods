@@ -33,7 +33,9 @@ internal class OverlapFarmerDamagePatch
             (__instance is Bat magmaSprite && magmaSprite.magmaSprite.Value &&
             Game1.player.isWearingRing("juminos.FrenshipRings.CP_MagmaSprite")) ||
             (__instance is DustSpirit dust && !dust.isHardModeMonster.Value &&
-            Game1.player.isWearingRing("juminos.FrenshipRings.CP_Dust"))
+            Game1.player.isWearingRing("juminos.FrenshipRings.CP_Dust")) ||
+            (__instance is RockCrab crab &&
+            Game1.player.isWearingRing("810"))
             )
         {
             __result = false;
