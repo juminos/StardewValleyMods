@@ -12,6 +12,7 @@ namespace MonsterHutch
     {
         public static readonly string monsterIncubatorNonQID = $"{ModEntry.Mod?.ModManifest?.UniqueID}.MonsterIncubator";
         public static readonly string monsterIncubatorQID = $"(BC){monsterIncubatorNonQID}";
+        public static readonly string monsterIncubatorMailNonQID = $"{ModEntry.Mod?.ModManifest?.UniqueID}.MonsterIncubatorMail";
 
         internal static void AddIncubatorAssetChanges(AssetRequestedEventArgs e)
         {
@@ -42,6 +43,16 @@ namespace MonsterHutch
                     }
 
                     data[monsterIncubatorNonQID] = $"{recipeConfig}/Home/{monsterIncubatorNonQID}/true/{recipeConfigUnlock}/";
+                });
+            }
+
+            if (e.NameWithoutLocale.IsEquivalentTo("Data/Mail") && string.IsNullOrWhiteSpace(ModEntry.Config.IncubatorRecipeUnlock))
+            {
+                e.Edit((asset) =>
+                {
+                    IDictionary<string, string> data = asset.AsDictionary<string, string>().Data;
+
+                    data[monsterIncubatorMailNonQID] = $"My latest invention can reanimate various monsters using the arcane energy of void essence. Robin can construct a building to contain them. You will find more detailed instructions in my basement library.^^   -M. Rasmodius, Wizard%item craftingRecipe {monsterIncubatorNonQID} %%[#]A letter from Wizard";
                 });
             }
 

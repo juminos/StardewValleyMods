@@ -10,6 +10,8 @@ using System.Reflection;
 using System.Reflection.Emit;
 using System.Xml.Linq;
 using StardewObject = StardewValley.Object;
+using xTile.Dimensions;
+using StardewValley.Objects;
 
 namespace MonsterHutch
 {
@@ -358,17 +360,55 @@ namespace MonsterHutch
                 {
                     if (Game1.random.NextDouble() < (0.32 + Game1.player.DailyLuck))
                     {
+                        bool spawn_object = true;
                         var tripleShot = ItemRegistry.Create<StardewObject>(ModEntry.tripleShotId);
-                        tripleShot.IsSpawnedObject = true;
+                        tripleShot.CanBeSetDown = false;
+                        foreach (StardewValley.Object location_object in __instance.objects.Values)
+                        {
+                            if (location_object.QualifiedItemId == "(BC)165" && location_object.heldObject.Value is Chest chest && chest.addItem(tripleShot) == null)
+                            {
+                                location_object.showNextIndex.Value = true;
+                                spawn_object = false;
+                                break;
+                            }
+                        }
+                        if (spawn_object)
+                        {
+                            tripleShot.Stack = 1;
+                            __instance.Objects.Add(tile, tripleShot);
+                        }
 
-                        __instance.Objects.Add(tile, tripleShot);
+                        //var tripleShot = ItemRegistry.Create<StardewObject>(ModEntry.tripleShotId);
+                        //tripleShot.IsSpawnedObject = true;
+
+                        //__instance.Objects.Add(tile, tripleShot);
                     }
                     else
                     {
+                        bool spawn_object = true;
                         var coffee = ItemRegistry.Create<StardewObject>(ModEntry.coffeeId);
-                        coffee.IsSpawnedObject = true;
+                        coffee.CanBeSetDown = false;
+                        foreach (StardewValley.Object location_object in __instance.objects.Values)
+                        {
+                            if (location_object.QualifiedItemId == "(BC)165" && location_object.heldObject.Value is Chest chest && chest.addItem(coffee) == null)
+                            {
+                                location_object.showNextIndex.Value = true;
+                                spawn_object = false;
+                                break;
+                            }
+                        }
+                        if (spawn_object)
+                        {
+                            coffee.Stack = 1;
+                            __instance.Objects.Add(tile, coffee);
+                        }
 
-                        __instance.Objects.Add(tile, coffee);
+                        //var coffee = ItemRegistry.Create<StardewObject>(ModEntry.coffeeId);
+                        //coffee.IsSpawnedObject = true;
+                        //coffee.CanBeSetDown = false;
+                        //coffee.Stack = 1;
+
+                        //__instance.Objects.Add(tile, coffee);
                     }
                 }
             }
@@ -387,10 +427,43 @@ namespace MonsterHutch
 
                 if (tries > 0)
                 {
+                    bool spawn_object = true;
                     var meat = ItemRegistry.Create<StardewObject>(ModEntry.bugMeatId);
-                    meat.IsSpawnedObject = true;
+                    meat.CanBeSetDown = false;
+                    foreach (StardewValley.Object location_object in __instance.objects.Values)
+                    {
+                        if (location_object.QualifiedItemId == "(BC)165" && location_object.heldObject.Value is Chest chest && chest.addItem(meat) == null)
+                        {
+                            location_object.showNextIndex.Value = true;
+                            spawn_object = false;
+                            break;
+                        }
+                    }
+                    if (spawn_object)
+                    {
+                        meat.Stack = 1;
+                        __instance.Objects.Add(tile, meat);
+                        if (Game1.random.NextDouble() < 0.7)
+                        {
+                            var extraMeat = (StardewValley.Object)meat.getOne();
+                            Utility.spawnObjectAround(tile, extraMeat, __instance);
+                        }
+                    }
 
-                    __instance.Objects.Add(tile, meat);
+                    //var meat = ItemRegistry.Create<StardewObject>(ModEntry.bugMeatId);
+                    //meat.IsSpawnedObject = true;
+
+                    //__instance.Objects.Add(tile, meat);
+
+                    //__instance.debris.Add(new Debris(ModEntry.bugMeatId, new Vector2(tile.X * 64, tile.Y * 64), new Vector2(tile.X * 64, tile.Y * 64)));
+                    //if (Game1.random.NextDouble() < 0.7)
+                    //{
+                    //    __instance.debris.Add(new Debris(ModEntry.bugMeatId, new Vector2(tile.X * 64, tile.Y * 64), new Vector2(tile.X * 64, tile.Y * 64)));
+                    //    if (Game1.random.NextDouble() < 0.7)
+                    //    {
+                    //        __instance.debris.Add(new Debris(ModEntry.bugMeatId, new Vector2(tile.X * 64, tile.Y * 64), new Vector2(tile.X * 64, tile.Y * 64)));
+                    //    }
+                    //}
                 }
             }
 
@@ -408,11 +481,33 @@ namespace MonsterHutch
 
                 if (tries > 0)
                 {
+                    bool spawn_object = true;
                     var wing = ItemRegistry.Create<StardewObject>(ModEntry.batWingId);
+                    wing.CanBeSetDown = false;
+                    foreach (StardewValley.Object location_object in __instance.objects.Values)
+                    {
+                        if (location_object.QualifiedItemId == "(BC)165" && location_object.heldObject.Value is Chest chest && chest.addItem(wing) == null)
+                        {
+                            location_object.showNextIndex.Value = true;
+                            spawn_object = false;
+                            break;
+                        }
+                    }
+                    if (spawn_object)
+                    {
+                        wing.Stack = 1;
+                        __instance.Objects.Add(tile, wing);
+                    }
+
+                    //var wing = ItemRegistry.Create<StardewObject>(ModEntry.batWingId);
                     //wing.IsSpawnedObject = true;
+                    //wing.CanBeSetDown = false;
+                    //wing.Stack = 1;
 
                     //__instance.Objects.Add(tile, wing);
-                    __instance.debris.Add(new Debris(ModEntry.batWingId, new Vector2(tile.X * 64, tile.Y * 64), new Vector2(tile.X * 64, tile.Y * 64)));
+
+                    //__instance.debris.Add(new Debris(ModEntry.batWingId, new Vector2(tile.X * 64, tile.Y * 64), new Vector2(tile.X * 64, tile.Y * 64)));
+                    //__instance.debris.Add(new Debris(ModEntry.batWingId, new Vector2(tile.X * 64, tile.Y * 64), new Vector2(tile.X * 64, tile.Y * 64)));
                 }
             }
 
@@ -430,10 +525,33 @@ namespace MonsterHutch
 
                 if (tries > 0)
                 {
-                    var cinderNode = ItemRegistry.Create<StardewObject>(ModEntry.cinderStone1Id);
-                    //shard.Fragility = 0;
-                    cinderNode.MinutesUntilReady = 0;
-                    __instance.objects.TryAdd(tile, cinderNode);
+                    if (Game1.random.NextDouble() < 0.5)
+                    {
+                        var cinderNode = ItemRegistry.Create<StardewObject>(ModEntry.cinderStone1Id);
+                        //shard.Fragility = 0;
+                        cinderNode.MinutesUntilReady = 0;
+                        __instance.Objects.Add(tile, cinderNode);
+                    }
+                    if (Game1.random.NextDouble() < 0.05)
+                    {
+                        bool spawn_object = true;
+                        var obsidian = ItemRegistry.Create<StardewObject>(ModEntry.obsidianId);
+                        obsidian.CanBeSetDown = false;
+                        foreach (StardewValley.Object location_object in __instance.objects.Values)
+                        {
+                            if (location_object.QualifiedItemId == "(BC)165" && location_object.heldObject.Value is Chest chest && chest.addItem(obsidian) == null)
+                            {
+                                location_object.showNextIndex.Value = true;
+                                spawn_object = false;
+                                break;
+                            }
+                        }
+                        if (spawn_object)
+                        {
+                            obsidian.Stack = 1;
+                            __instance.Objects.Add(tile, obsidian);
+                        }
+                    }
                 }
             }
             for (int numIridiumNode = Math.Min(iridiumCrabCount, iridiumWaters); numIridiumNode > 0; numIridiumNode--)
@@ -526,9 +644,27 @@ namespace MonsterHutch
 
                 if (tries > 0 && Game1.random.NextDouble() < 0.5)
                 {
+                    bool spawn_object = true;
                     var truffle = ItemRegistry.Create<StardewObject>(ModEntry.truffleId);
-                    truffle.IsSpawnedObject = true;
-                    __instance.Objects.Add(tile, truffle);
+                    truffle.CanBeSetDown = false;
+                    foreach (StardewValley.Object location_object in __instance.objects.Values)
+                    {
+                        if (location_object.QualifiedItemId == "(BC)165" && location_object.heldObject.Value is Chest chest && chest.addItem(truffle) == null)
+                        {
+                            location_object.showNextIndex.Value = true;
+                            spawn_object = false;
+                            break;
+                        }
+                    }
+                    if (spawn_object)
+                    {
+                        truffle.Stack = 1;
+                        __instance.Objects.Add(tile, truffle);
+                    }
+
+                    //var truffle = ItemRegistry.Create<StardewObject>(ModEntry.truffleId);
+                    //truffle.IsSpawnedObject = true;
+                    //__instance.Objects.Add(tile, truffle);
                 }
             }
             for (int numGinger = Math.Min(stickBugCount, stickWaters); numGinger > 0; numGinger--)
@@ -545,9 +681,27 @@ namespace MonsterHutch
 
                 if (tries > 0)
                 {
+                    bool spawn_object = true;
                     var ginger = ItemRegistry.Create<StardewObject>(ModEntry.gingerId);
-                    ginger.IsSpawnedObject = true;
-                    __instance.Objects.Add(tile, ginger);
+                    ginger.CanBeSetDown = false;
+                    foreach (StardewValley.Object location_object in __instance.objects.Values)
+                    {
+                        if (location_object.QualifiedItemId == "(BC)165" && location_object.heldObject.Value is Chest chest && chest.addItem(ginger) == null)
+                        {
+                            location_object.showNextIndex.Value = true;
+                            spawn_object = false;
+                            break;
+                        }
+                    }
+                    if (spawn_object)
+                    {
+                        ginger.Stack = 1;
+                        __instance.Objects.Add(tile, ginger);
+                    }
+
+                    //var ginger = ItemRegistry.Create<StardewObject>(ModEntry.gingerId);
+                    //ginger.IsSpawnedObject = true;
+                    //__instance.Objects.Add(tile, ginger);
                 }
             }
         }
@@ -577,7 +731,13 @@ namespace MonsterHutch
             // there is no AddRange for NetCollections
             foreach (var item in __state)
             {
-                __instance.characters.Add(item);
+                Vector2 v = Utility.recursiveFindOpenTileForCharacter(item, __instance, item.Tile, 50, allowOffMap: false);
+                if (v != Vector2.Zero)
+                {
+                    item.setTileLocation(v);
+                    __instance.addCharacter(item);
+                }
+                //__instance.characters.Add(item);
             }
         }
 

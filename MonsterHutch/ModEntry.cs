@@ -45,6 +45,7 @@ namespace MonsterHutch
         internal const string copperNodeId = "(O)849";
         internal const string crabId = "(O)390";
         internal const string gingerId = "(O)829";
+        internal const string obsidianId = "(O)575";
 
         internal static ModEntry Mod { get; private set; }
         internal static ModConfig Config { get; private set; }
@@ -340,9 +341,7 @@ namespace MonsterHutch
             var monster = new RockCrab(vector, "Truffle Crab");
             monster.objectsToDrop.Clear();
             monster.objectsToDrop.Add(ModEntry.crabId);
-            monster.waiter = false;
             monster.farmerPassesThrough = true;
-            monster.moveTowardPlayerThreshold.Value = 2;
 
             return monster;
         }
@@ -350,7 +349,6 @@ namespace MonsterHutch
         {
             var monster = new RockCrab(vector);
             monster.makeStickBug();
-            monster.reloadSprite();
             monster.objectsToDrop.Clear();
             monster.objectsToDrop.Add(ModEntry.gingerId);
             monster.waiter = false;
@@ -451,7 +449,7 @@ namespace MonsterHutch
                             {
                                 hutch.characters[i] = CreateTruffleCrab(pos);
                             }
-                            else if (crab.isStickBug.Value)
+                            else if (crab.isStickBug.Value || crab.Name == "Stick Bug")
                             {
                                 hutch.characters[i] = CreateStickBug(pos);
                             }

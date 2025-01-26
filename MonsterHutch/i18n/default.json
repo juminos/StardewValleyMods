@@ -30,6 +30,6 @@
     "ConfigIncubatorSection": "Monster Incubator",
     "MonsterIncubator.name": "Monster Incubator",
     "MonsterIncubator.description": "Grows a variety of monsters based on the input item. Does not work outside a hutch!",
-    "MonsterIncubator.InputWarning": "Requires 10 {{coalName}}, 10 {{bugMeatName}}, 1 {{mummifiedBatName}}, or 10 {{cinderShardName}} to start incubation",
+    "MonsterIncubator.InputWarning": "Requires 10: {{coalName}}, {{bugMeatName}}, {{cinderShardName}}, {{copperOreName}}, {{ironOreName}}, {{goldOreName}}, or {{iridiumOreName}} \nor 1: {{mummifiedBatName}}, {{truffleName}}, or {{gingerName}} \nto start incubation",
     "MonsterIncubator.additionalItemWarning": "Requires {{additionalItemCount}} {{additionalItemName}} to start incubation"
 }

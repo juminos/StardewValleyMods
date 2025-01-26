@@ -42,7 +42,7 @@ namespace MonsterHutch
 
         public string IncubatorRecipe { get; set; } = DefaultIncubatorRecipe;
 
-        internal const string DefaultIncubatorRecipeUnlock = "Combat 8";
+        internal const string DefaultIncubatorRecipeUnlock = "f Wizard 6";
 
         public string IncubatorRecipeUnlock { get; set; } = DefaultIncubatorRecipeUnlock;
 
