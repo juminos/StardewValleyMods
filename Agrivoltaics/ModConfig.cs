@@ -8,8 +8,10 @@ namespace Agrivoltaics
 {
     public class ModConfig
     {
-        public int MinBatteryCount { get; set; } = 1;
-        public int MaxBatteryCount { get; set; } = 3;
+        public int SpringBatteryCount { get; set; } = 2;
+        public int SummerBatteryCount { get; set; } = 3;
+        public int FallBatteryCount { get; set; } = 2;
+        public int WinterBatteryCount { get; set; } = 1;
         public int BatteryRate { get; set; } = 1;
         public bool GrowGrass { get; set; } = true;
         public float GrowRate { get; set; } = 0.15f;

@@ -56,6 +56,8 @@ namespace Agrivoltaics
                     //SMonitor.Log($"skipping location: {location.Name}", LogLevel.Debug);
                     continue;
                 }
+                var newGrass = new Dictionary<Vector2, Grass>();
+
                 foreach (Building building in location.buildings)
                 {
                     if (building.buildingType.Value != "juminos.Agrivoltaics.CP_SolarPanel")
@@ -63,7 +65,6 @@ namespace Agrivoltaics
                         //SMonitor.Log($"skipping building type: {building.buildingType.Value}", LogLevel.Debug);
                         continue;
                     }
-
                     //define shaded area
                     var footprint = building.GetBoundingBox();
                     var shadeRect = new Microsoft.Xna.Framework.Rectangle(footprint.X - (footprint.Width / 3), footprint.Y - (footprint.Height * 3), footprint.Width * 5 / 3, footprint.Height * 4);
@@ -73,11 +74,11 @@ namespace Agrivoltaics
                     //spread existing grass
                     if (Config.SpreadGrass)
                     {
-                        var newGrass = new Dictionary<Vector2, Grass>();
                         foreach (TerrainFeature feature in location.terrainFeatures.Values)
                         {
                             if (!(feature is Grass grass) || !(Game1.random.NextDouble() < Config.SpreadRate) || !(feature.getBoundingBox().Intersects(shadeRect)))
                                 continue;
+                            //add more clumps to existing grass
                             if (grass.numberOfWeeds.Value < 4)
                             {
                                 grass.numberOfWeeds.Value = Math.Max(0, Math.Min(4, grass.numberOfWeeds.Value + Game1.random.Next(3)));
@@ -86,6 +87,7 @@ namespace Agrivoltaics
                             {
                                 if (grass.numberOfWeeds.Value < 4)
                                     continue;
+                                //expand to adjacent tiles
                                 Vector2[] adjacentTileLocationsArray = Utility.getAdjacentTileLocationsArray(grass.Tile);
                                 for (int k = 0; k < adjacentTileLocationsArray.Length; k++)
                                 {
@@ -102,13 +104,10 @@ namespace Agrivoltaics
                                 }
                             }
                         }
-                        foreach (KeyValuePair<Vector2, Grass> pair in newGrass)
-                        {
-                            location.terrainFeatures.Add(pair.Key, pair.Value);
-                        }
                     }
 
-                    //add new grass under panels
+
+                    //grow new grass under panels
                     if (Config.GrowGrass)
                     {
                         for (int i = startingTileX; i < startingTileX + 5; i++)
@@ -118,49 +117,77 @@ namespace Agrivoltaics
                                 var grassTile = new Vector2(i, j);
 
                                 location.objects.TryGetValue(grassTile, out var o);
-                                if (o == null && location.doesTileHaveProperty(i, j, "Diggable", "Back") != null && !location.IsNoSpawnTile(grassTile) && location.isTileLocationOpen(new Location(i, j)) && !location.IsTileOccupiedBy(grassTile) && !location.isWaterTile(i, j) && location.GetSeason() != Season.Winter && Game1.random.NextDouble() < Config.GrowRate)
+                                if (o == null && 
+                                    location.doesTileHaveProperty(i, j, "Diggable", "Back") != null && 
+                                    !location.IsNoSpawnTile(grassTile) && 
+                                    location.isTileLocationOpen(new Location(i, j)) && 
+                                    !location.IsTileOccupiedBy(grassTile) && 
+                                    !location.isWaterTile(i, j) && 
+                                    location.GetSeason() != Season.Winter && 
+                                    Game1.random.NextDouble() < Config.GrowRate &&
+                                    !newGrass.ContainsKey(grassTile))
                                 {
-                                    location.terrainFeatures.Add(grassTile, new Grass((Game1.random.NextDouble() < 0.5) ? 1 : 7, Game1.random.Next(1, 3)));
+                                    newGrass.Add(grassTile, new Grass((Game1.random.NextDouble() < 0.5) ? 1 : 7, Game1.random.Next(1, 3)));
                                 }
                             }
                         }
                     }
+                }
+                foreach (KeyValuePair<Vector2, Grass> pair in newGrass)
+                {
+                    location.terrainFeatures.Add(pair.Key, pair.Value);
                 }
             }
         }
 
         private void OnDayEnding(object? sender, DayEndingEventArgs e)
         {
-            if (Config.MinBatteryCount > 0)
-            {
-                foreach (GameLocation location in Game1.locations)
+            foreach (GameLocation location in Game1.locations)
                 {
-                    if (!location.HasMinBuildings("juminos.Agrivoltaics.CP_SolarPanel", 1))
+                if (!location.HasMinBuildings("juminos.Agrivoltaics.CP_SolarPanel", 1))
+                {
+                    //SMonitor.Log($"skipping location: {location.Name}", LogLevel.Debug);
+                    continue;
+                }
+                if ((Config.SpringBatteryCount <= 0 && location.GetSeason() == Season.Spring) ||
+                (Config.SummerBatteryCount <= 0 && location.GetSeason() == Season.Summer) ||
+                (Config.FallBatteryCount <= 0 && location.GetSeason() == Season.Fall) ||
+                (Config.WinterBatteryCount <= 0 && location.GetSeason() == Season.Winter))
+                {
+                    continue;
+                }
+                foreach (Building building in location.buildings)
+                {
+                    if (building.buildingType.Value != "juminos.Agrivoltaics.CP_SolarPanel")
                     {
-                        //SMonitor.Log($"skipping location: {location.Name}", LogLevel.Debug);
+                        //SMonitor.Log($"skipping building type: {building.buildingType.Value}", LogLevel.Debug);
                         continue;
                     }
-                    foreach (Building building in location.buildings)
+
+                    //add batteries to building output
+                    if (!location.IsRainingHere() && !location.IsSnowingHere() && !location.IsLightningHere() && !location.IsGreenRainingHere())
                     {
-                        if (building.buildingType.Value != "juminos.Agrivoltaics.CP_SolarPanel")
+                        var battery = ItemRegistry.Create<StardewValley.Object>("(O)787");
+                        int count = 1;
+                        switch(location.GetSeasonIndex())
                         {
-                            //SMonitor.Log($"skipping building type: {building.buildingType.Value}", LogLevel.Debug);
-                            continue;
+                            case 0:
+                                count = Config.SpringBatteryCount;
+                                break;
+                            case 1:
+                                count = Config.SummerBatteryCount;
+                                break;
+                            case 2:
+                                count = Config.FallBatteryCount;
+                                break;
+                            case 3:
+                                count = Config.WinterBatteryCount;
+                                break;
                         }
 
-                        //add batteries to building output
-                        if (!location.IsRainingHere() && !location.IsSnowingHere() && !location.IsLightningHere() && !location.IsGreenRainingHere())
-                        {
-                            var battery = ItemRegistry.Create<StardewValley.Object>("(O)787");
-                            int min = Config.MinBatteryCount;
-                            int max = Config.MaxBatteryCount + 1;
-                            if (Config.MinBatteryCount > Config.MaxBatteryCount)
-                                min = Config.MaxBatteryCount;
-                            battery.Stack = Game1.random.Next(min, max);
-
-                            var chest = building.GetBuildingChest("Output");
-                            chest.addItem(battery);
-                        }
+                        battery.Stack = count;
+                        var chest = building.GetBuildingChest("Output");
+                        chest.addItem(battery);
                     }
                 }
             }
@@ -182,19 +209,36 @@ namespace Agrivoltaics
 
             configMenu.AddNumberOption(
                 mod: this.ModManifest,
-                name: I18n.MaxBatteryCount_Title,
-                tooltip: I18n.MaxBatteryCount_Description,
-                getValue: () => Config.MaxBatteryCount,
-                setValue: value => Config.MaxBatteryCount = (int)value
+                name: I18n.SpringBatteryCount_Title,
+                tooltip: I18n.SpringBatteryCount_Description,
+                getValue: () => Config.SpringBatteryCount,
+                setValue: value => Config.SpringBatteryCount = (int)value
                 );
 
             configMenu.AddNumberOption(
                 mod: this.ModManifest,
-                name: I18n.MinBatteryCount_Title,
-                tooltip: I18n.MinBatteryCount_Description,
-                getValue: () => Config.MinBatteryCount,
-                setValue: value => Config.MinBatteryCount = (int)value
+                name: I18n.SummerBatteryCount_Title,
+                tooltip: I18n.SummerBatteryCount_Description,
+                getValue: () => Config.SummerBatteryCount,
+                setValue: value => Config.SummerBatteryCount = (int)value
                 );
+
+            configMenu.AddNumberOption(
+                mod: this.ModManifest,
+                name: I18n.FallBatteryCount_Title,
+                tooltip: I18n.FallBatteryCount_Description,
+                getValue: () => Config.FallBatteryCount,
+                setValue: value => Config.FallBatteryCount = (int)value
+                );
+
+            configMenu.AddNumberOption(
+                mod: this.ModManifest,
+                name: I18n.WinterBatteryCount_Title,
+                tooltip: I18n.WinterBatteryCount_Description,
+                getValue: () => Config.WinterBatteryCount,
+                setValue: value => Config.WinterBatteryCount = (int)value
+                );
+
             //configMenu.AddNumberOption(
             //    mod: this.ModManifest,
             //    name: I18n.BatteryRate_Title,
