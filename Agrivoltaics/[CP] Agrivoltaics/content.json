@@ -6,9 +6,9 @@
             "Action": "EditData",
             "Target": "Data/Buildings",
             "Entries": {
-                "juminos.SolarPanel": {
-                    "Name": "Large Solar Panel",
-                    "Description": "A large solar panel which produces energy and provides shade for crops and livestock.",
+                "{{ModId}}_SolarPanel": {
+                    "Name": "{{i18n:SolarPanel.name}}",
+                    "Description": "{{i18n:SolarPanel.description}}",
                     "Texture": "Mods/{{ModId}}/SolarPanel",
                     "Skins": [],
                     "DrawShadow": false,
@@ -95,13 +95,30 @@
                         {
                             "Id": "Output",
                             "Type": "Collect",
-                            "DisplayTile": "1, 3",
+                            "DisplayTile": "1, 0",
                             "DisplayHeight": 1.5
                         }
                     ],
                     "DefaultAction": null,
                     "AdditionalTilePropertyRadius": 0,
-                    "ActionTiles": [],
+                    "ActionTiles": [
+                        {
+                            "Id": "Default_OpenOutputChest",
+                            "Tile": {
+                                "X": 0,
+                                "Y": 0
+                            },
+                            "Action": "BuildingChest Output"
+                        },
+                        {
+                            "Id": "Default_OpenOutputChest2",
+                            "Tile": {
+                                "X": 2,
+                                "Y": 0
+                            },
+                            "Action": "BuildingChest Output"
+                        }
+                    ],
                     "TileProperties": [],
                     "ItemConversions": null,
                     "DrawLayers": null,
