@@ -1,12 +1,12 @@
 {
-  "Name": "[CP] Agrivoltaics",
-  "Author": "juminos",
-  "Version": "1.0.0",
-  "Description": "Adds solar panel building for Agrivoltaics.",
-  "UniqueID": "juminos.Agrivoltaics.CP",
-  "UpdateKeys": [],
-  "Dependencies": [],
-  "ContentPackFor": {
-    "UniqueID": "Pathoschild.ContentPatcher"
-  }
+    "Name": "[CP] Agrivoltaics",
+    "Author": "juminos",
+    "Version": "1.0.0",
+    "Description": "Adds solar panel building for Agrivoltaics.",
+    "UniqueID": "juminos.Agrivoltaics.CP",
+    "UpdateKeys": [],
+    "Dependencies": [],
+    "ContentPackFor": {
+        "UniqueID": "Pathoschild.ContentPatcher"
+    }
 }

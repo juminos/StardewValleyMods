@@ -1,0 +1,14 @@
+﻿{
+    "BatteryCount.title": "Battery Count",
+    "BatteryCount.description": "Number of batteries the Solar Panel produces on sunny days",
+    "GrowGrass.title": "New Grass Growth",
+    "GrowGrass.description": "Whether tiles under the Solar Panel has an increased chance of growing new grass",
+    "GrassRate.title": "New Grass Growth Rate",
+    "GrassRate.description": "The chance a tile under the Solar Panel will grow new grass each day (in addition to the usual grass growth chance)",
+    "SpreadGrass.title": "Grass Spreading",
+    "SpreadGrass.description": "Whether grass under the Solar Panel has an increased spreading rate",
+    "SpreadRate.title": "Grass Spread Rate",
+    "SpreadRate.description": "The chance grass under the Solar Panel has to spread each day (in addition to the usual grass spreading chance)",
+    "RetentionIncrease.title": "Water Retention Increase",
+    "RetentionIncrease.description": "The increased chance a watered tilled soil tile under the Solar Panel will retain water the next day (this is in addition to any fertilizers or other modifications to water retention chances)"
+}
