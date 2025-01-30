@@ -131,7 +131,7 @@ namespace Agrivoltaics
 
         private void OnDayEnding(object? sender, DayEndingEventArgs e)
         {
-            if (Config.BatteryCount > 0)
+            if (Config.MinBatteryCount > 0)
             {
                 foreach (GameLocation location in Game1.locations)
                 {
@@ -152,7 +152,11 @@ namespace Agrivoltaics
                         if (!location.IsRainingHere() && !location.IsSnowingHere() && !location.IsLightningHere() && !location.IsGreenRainingHere())
                         {
                             var battery = ItemRegistry.Create<StardewValley.Object>("(O)787");
-                            battery.Stack = Config.BatteryCount;
+                            int min = Config.MinBatteryCount;
+                            int max = Config.MaxBatteryCount + 1;
+                            if (Config.MinBatteryCount > Config.MaxBatteryCount)
+                                min = Config.MaxBatteryCount;
+                            battery.Stack = Game1.random.Next(min, max);
 
                             var chest = building.GetBuildingChest("Output");
                             chest.addItem(battery);
@@ -178,12 +182,19 @@ namespace Agrivoltaics
 
             configMenu.AddNumberOption(
                 mod: this.ModManifest,
-                name: I18n.BatteryCount_Title,
-                tooltip: I18n.BatteryCount_Description,
-                getValue: () => Config.BatteryCount,
-                setValue: value => Config.BatteryCount = (int)value
+                name: I18n.MaxBatteryCount_Title,
+                tooltip: I18n.MaxBatteryCount_Description,
+                getValue: () => Config.MaxBatteryCount,
+                setValue: value => Config.MaxBatteryCount = (int)value
                 );
 
+            configMenu.AddNumberOption(
+                mod: this.ModManifest,
+                name: I18n.MinBatteryCount_Title,
+                tooltip: I18n.MinBatteryCount_Description,
+                getValue: () => Config.MinBatteryCount,
+                setValue: value => Config.MinBatteryCount = (int)value
+                );
             //configMenu.AddNumberOption(
             //    mod: this.ModManifest,
             //    name: I18n.BatteryRate_Title,

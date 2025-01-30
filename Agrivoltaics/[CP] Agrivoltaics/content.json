@@ -63,15 +63,15 @@
                     "BuildMaterials": [
                         {
                             "ItemId": "(O)338",
-                            "Amount": 60
+                            "Amount": 40
                         },
                         {
                             "ItemId": "(O)335",
-                            "Amount": 30
+                            "Amount": 20
                         },
                         {
                             "ItemId": "(O)336",
-                            "Amount": 30
+                            "Amount": 20
                         }
                     ],
                     "BuildingToUpgrade": null,

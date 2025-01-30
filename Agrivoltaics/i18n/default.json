@@ -1,6 +1,8 @@
 ﻿{
-    "BatteryCount.title": "Battery Count",
-    "BatteryCount.description": "Number of batteries the Solar Panel produces on sunny days",
+    "MinBatteryCount.title": "Minimum Battery Count",
+    "MinBatteryCount.description": "Minimum number of batteries the Solar Panel produces on sunny days",
+    "MaxBatteryCount.title": "Maximum Battery Count",
+    "MaxBatteryCount.description": "Maximum number of batteries the Solar Panel produces on sunny days",
     "GrowGrass.title": "New Grass Growth",
     "GrowGrass.description": "Whether tiles under the Solar Panel has an increased chance of growing new grass",
     "GrassRate.title": "New Grass Growth Rate",
