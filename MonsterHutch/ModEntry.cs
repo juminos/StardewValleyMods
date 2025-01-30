@@ -193,6 +193,7 @@ namespace MonsterHutch
                 {
                     SMonitor.Log($"Failed loading '{newAssetName}' texture for dangerous {monster.Name}.", LogLevel.Error);
                 }
+            monster.Name = "Dangerous Bat";
             monster.Speed = 1;
             monster.farmerPassesThrough = true;
             monster.objectsToDrop.Clear();
@@ -204,7 +205,6 @@ namespace MonsterHutch
         public static Bat CreateDangerousFrostBat(Vector2 vector)
         {
             var monster = new Bat(vector);
-            monster.Name = "Frost Bat";
             monster.reloadSprite();
                 string newAssetName = monster.Sprite.textureName.Value + "_dangerous";
                 try
@@ -215,6 +215,7 @@ namespace MonsterHutch
                 {
                     SMonitor.Log($"Failed loading '{newAssetName}' texture for dangerous {monster.Name}.", LogLevel.Error);
                 }
+            monster.Name = "Dangerous Frost Bat";
             monster.Speed = 1;
             monster.farmerPassesThrough = true;
             monster.objectsToDrop.Clear();
@@ -234,11 +235,26 @@ namespace MonsterHutch
 
             return monster;
         }
-
         public static Bat CreateMagmaSprite(Vector2 vector)
         {
             var monster = new Bat(vector, -555);
             monster.Name = "Magma Sprite";
+            monster.magmaSprite.Value = true;
+            monster.reloadSprite();
+            monster.Speed = 1;
+            monster.addedSpeed = 0;
+            monster.lungeSpeed = 0;
+            monster.farmerPassesThrough = true;
+            monster.objectsToDrop.Clear();
+            monster.objectsToDrop.Add(ModEntry.cinderShardId);
+            monster.moveTowardPlayerThreshold.Value = 2;
+
+            return monster;
+        }
+        public static Bat CreateMagmaSparker(Vector2 vector)
+        {
+            var monster = new Bat(vector, -556);
+            monster.Name = "Magma Sparker";
             monster.magmaSprite.Value = true;
             monster.reloadSprite();
             monster.Speed = 1;
@@ -382,7 +398,7 @@ namespace MonsterHutch
                             (monster is Bat bat && !bat.magmaSprite.Value && !bat.hauntedSkull.Value && Game1.player.isWearingRing("juminos.FrenshipRings.CP_Bat")) ||
                             (monster is GreenSlime && Game1.player.isWearingRing("520")) ||
                             (monster is Bat magmaSprite && magmaSprite.magmaSprite.Value && Game1.player.isWearingRing("juminos.FrenshipRings.CP_MagmaSprite")) ||
-                            (monster is RockCrab && Game1.player.isWearingRing("810"))
+                            ((monster is RockCrab || monster.Name == "Truffle Crab") && Game1.player.isWearingRing("810"))
                             )
                         {
                             monster.showTextAboveHead("<", null, 2, 1500, 0);
@@ -410,8 +426,16 @@ namespace MonsterHutch
                         {
                             if (bat.magmaSprite.Value)
                             {
-                                hutch.characters[i] = CreateMagmaSprite(pos);
+                                if (bat.Name == "Magma Sparker")
+                                {
+                                    hutch.characters[i] = CreateMagmaSparker(pos);
+                                }
+                                else
+                                {
+                                    hutch.characters[i] = CreateMagmaSprite(pos);
+                                }
                             }
+
                             else if (bat.Name == "Lava Bat")
                             {
                                 hutch.characters[i] = CreateLavaBat(pos);

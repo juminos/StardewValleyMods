@@ -12,6 +12,7 @@ using System.Xml.Linq;
 using StardewObject = StardewValley.Object;
 using xTile.Dimensions;
 using StardewValley.Objects;
+using StardewValley.Internal;
 
 namespace MonsterHutch
 {
@@ -26,9 +27,19 @@ namespace MonsterHutch
             var harmony = new Harmony(mod.ModManifest.UniqueID);
 
             harmony.Patch(
-                original: AccessTools.Method(typeof(Game1), nameof(Game1.createObjectDebris), new Type[]
-                { typeof(string), typeof(int), typeof(int), typeof(long), typeof(GameLocation) }),
-                postfix: new HarmonyMethod(typeof(HarmonyPatches), nameof(CreateObjectDebris_Post)));
+                original: AccessTools.Method(typeof(Game1), nameof(Game1.createMultipleObjectDebris), new Type[]
+                { typeof(string), typeof(int), typeof(int), typeof(int), typeof(long), typeof(GameLocation) }),
+                prefix: new HarmonyMethod(typeof(HarmonyPatches), nameof(CreateMultipleObjectDebris_Pre)));
+
+            harmony.Patch(
+                original: AccessTools.Method(typeof(Game1), nameof(Game1.createMultipleObjectDebris), new Type[]
+                { typeof(string), typeof(int), typeof(int), typeof(int), typeof(GameLocation) }),
+                prefix: new HarmonyMethod(typeof(HarmonyPatches), nameof(CreateMultipleObjectDebris2_Pre)));
+
+            //harmony.Patch(
+            //    original: AccessTools.Method(typeof(Game1), nameof(Game1.createObjectDebris), new Type[]
+            //    { typeof(string), typeof(int), typeof(int), typeof(long), typeof(GameLocation) }),
+            //    postfix: new HarmonyMethod(typeof(HarmonyPatches), nameof(CreateObjectDebris_Post)));
 
             harmony.Patch(
                original: AccessTools.Method(typeof(StardewObject), nameof(StardewObject.DayUpdate)),
@@ -67,6 +78,40 @@ namespace MonsterHutch
             //   prefix: new HarmonyMethod(typeof(HarmonyPatches), nameof(BehaviorAtGameTick_DustSprite)));
         }
 
+        public static void CreateMultipleObjectDebris_Pre(string id, int xTile, int yTile, int number, long who, GameLocation location)
+        {
+            if (location is SlimeHutch &&
+                (id == ModEntry.cinderShardId ||
+                id == ModEntry.iridiumOreId ||
+                id == ModEntry.goldOreId ||
+                id == ModEntry.iridiumOreId ||
+                id == ModEntry.copperOreId)
+                )
+            {
+                for (int i = 0; i < (ModEntry.Config.OreBonus); i++)
+                {
+                    Game1.createObjectDebris(id, xTile, yTile);
+                }
+            }
+            return;
+        }
+        public static void CreateMultipleObjectDebris2_Pre(string id, int xTile, int yTile, int number, GameLocation location)
+        {
+            if (location is SlimeHutch &&
+                (id == ModEntry.cinderShardId ||
+                id == ModEntry.iridiumOreId ||
+                id == ModEntry.goldOreId ||
+                id == ModEntry.iridiumOreId ||
+                id == ModEntry.copperOreId)
+                )
+            {
+                for (int i = 0; i < (ModEntry.Config.OreBonus); i++)
+                {
+                    Game1.createObjectDebris(id, xTile, yTile);
+                }
+            }
+            return;
+        }
         public static void CreateObjectDebris_Post(string id, int xTile, int yTile, long whichPlayer, GameLocation location)
         {
             ModEntry.SMonitor.Log("ore drop postfix triggered", StardewModdingAPI.LogLevel.Trace);
@@ -125,7 +170,14 @@ namespace MonsterHutch
                         break;
 
                     case ModEntry.cinderShardId:
-                        monster = ModEntry.CreateMagmaSprite(v);
+                        if (Game1.random.NextDouble() < 0.5)
+                        {
+                            monster = ModEntry.CreateMagmaSparker(v);
+                        }
+                        else
+                        {
+                            monster = ModEntry.CreateMagmaSprite(v);
+                        }
                         break;
 
                     case ModEntry.iridiumOreId:
@@ -358,7 +410,8 @@ namespace MonsterHutch
 
                 if (tries > 0)
                 {
-                    if (Game1.random.NextDouble() < (0.32 + Game1.player.DailyLuck))
+                    var tripleShotChance = Math.Clamp(ModEntry.Config.DustTripleShotRatio + Game1.player.DailyLuck, 0, 1);
+                    if (Game1.random.NextDouble() < tripleShotChance)
                     {
                         bool spawn_object = true;
                         var tripleShot = ItemRegistry.Create<StardewObject>(ModEntry.tripleShotId);
@@ -375,6 +428,7 @@ namespace MonsterHutch
                         if (spawn_object)
                         {
                             tripleShot.Stack = 1;
+                            tripleShot.IsSpawnedObject = true;
                             __instance.Objects.Add(tile, tripleShot);
                         }
 
@@ -400,6 +454,7 @@ namespace MonsterHutch
                         if (spawn_object)
                         {
                             coffee.Stack = 1;
+                            coffee.IsSpawnedObject = true;
                             __instance.Objects.Add(tile, coffee);
                         }
 
@@ -427,26 +482,47 @@ namespace MonsterHutch
 
                 if (tries > 0)
                 {
-                    bool spawn_object = true;
-                    var meat = ItemRegistry.Create<StardewObject>(ModEntry.bugMeatId);
-                    meat.CanBeSetDown = false;
-                    foreach (StardewValley.Object location_object in __instance.objects.Values)
+                    if (Game1.random.NextDouble() < ModEntry.Config.SpiderBugMeatRatio)
                     {
-                        if (location_object.QualifiedItemId == "(BC)165" && location_object.heldObject.Value is Chest chest && chest.addItem(meat) == null)
+                        bool spawn_meat = true;
+                        var meat = ItemRegistry.Create<StardewObject>(ModEntry.bugMeatId);
+                        meat.CanBeSetDown = false;
+
+                        foreach (StardewValley.Object location_object in __instance.objects.Values)
                         {
-                            location_object.showNextIndex.Value = true;
-                            spawn_object = false;
-                            break;
+                            if (location_object.QualifiedItemId == "(BC)165" && location_object.heldObject.Value is Chest chest && chest.addItem(meat) == null)
+                            {
+                                location_object.showNextIndex.Value = true;
+                                spawn_meat = false;
+                                break;
+                            }
+                        }
+                        if (spawn_meat)
+                        {
+                            meat.Stack = 1;
+                            meat.IsSpawnedObject = true;
+                            __instance.Objects.Add(tile, meat);
                         }
                     }
-                    if (spawn_object)
+                    else
                     {
-                        meat.Stack = 1;
-                        __instance.Objects.Add(tile, meat);
-                        if (Game1.random.NextDouble() < 0.7)
+                        bool spawn_vessence = true;
+                        var vessence = ItemRegistry.Create<StardewObject>(ModEntry.voidEssenceId);
+                        vessence.CanBeSetDown = false;
+                        foreach (StardewValley.Object location_object in __instance.objects.Values)
                         {
-                            var extraMeat = (StardewValley.Object)meat.getOne();
-                            Utility.spawnObjectAround(tile, extraMeat, __instance);
+                            if (location_object.QualifiedItemId == "(BC)165" && location_object.heldObject.Value is Chest chest && chest.addItem(vessence) == null)
+                            {
+                                location_object.showNextIndex.Value = true;
+                                spawn_vessence = false;
+                                break;
+                            }
+                        }
+                        if (spawn_vessence)
+                        {
+                            vessence.Stack = 1;
+                            vessence.IsSpawnedObject= true;
+                            __instance.Objects.Add(tile, vessence);
                         }
                     }
 
@@ -481,22 +557,57 @@ namespace MonsterHutch
 
                 if (tries > 0)
                 {
-                    bool spawn_object = true;
-                    var wing = ItemRegistry.Create<StardewObject>(ModEntry.batWingId);
-                    wing.CanBeSetDown = false;
-                    foreach (StardewValley.Object location_object in __instance.objects.Values)
+                    if (Game1.random.NextDouble() < ModEntry.Config.BatFruitRatio)
                     {
-                        if (location_object.QualifiedItemId == "(BC)165" && location_object.heldObject.Value is Chest chest && chest.addItem(wing) == null)
+                        bool spawn_fruit = true;
+                        string fruitId = Game1.random.Next(5) switch
                         {
-                            location_object.showNextIndex.Value = true;
-                            spawn_object = false;
-                            break;
+                            0 => "296",
+                            1 => "396",
+                            2 => "406",
+                            3 => "410",
+                            _ => (Game1.random.NextDouble() < 0.1) ? "613" : Game1.random.Next(634, 639).ToString(),
+                        };
+                        var fruit = ItemRegistry.Create<StardewObject>("(O)" + fruitId);
+                        fruit.CanBeSetDown = false;
+
+                        foreach (StardewValley.Object location_object in __instance.objects.Values)
+                        {
+                            if (location_object.QualifiedItemId == "(BC)165" && location_object.heldObject.Value is Chest chest && chest.addItem(fruit) == null)
+                            {
+                                location_object.showNextIndex.Value = true;
+                                spawn_fruit = false;
+                                break;
+                            }
+                        }
+                        if (spawn_fruit)
+                        {
+                            fruit.Stack = 1;
+                            fruit.IsSpawnedObject = true;
+                            __instance.Objects.Add(tile, fruit);
                         }
                     }
-                    if (spawn_object)
+                    else
                     {
-                        wing.Stack = 1;
-                        __instance.Objects.Add(tile, wing);
+                        bool spawn_wing = true;
+                        var wing = ItemRegistry.Create<StardewObject>(ModEntry.batWingId);
+                        wing.CanBeSetDown = false;
+
+                        foreach (StardewValley.Object location_object in __instance.objects.Values)
+                        {
+                            if (location_object.QualifiedItemId == "(BC)165" && location_object.heldObject.Value is Chest chest && chest.addItem(wing) == null)
+                            {
+                                location_object.showNextIndex.Value = true;
+                                spawn_wing = false;
+                                break;
+                            }
+                        }
+                        if (spawn_wing)
+                        {
+                            wing.Stack = 1;
+                            wing.IsSpawnedObject = true;
+                            __instance.Objects.Add(tile, wing);
+                        }
                     }
 
                     //var wing = ItemRegistry.Create<StardewObject>(ModEntry.batWingId);
@@ -525,14 +636,16 @@ namespace MonsterHutch
 
                 if (tries > 0)
                 {
-                    if (Game1.random.NextDouble() < 0.5)
+                    var cinderChance = Math.Clamp(ModEntry.Config.CinderChance + Game1.player.DailyLuck, 0, 1);
+                    var obsidianChance = Math.Clamp((ModEntry.Config.ObsidianChance / ModEntry.Config.CinderChance) + Game1.player.DailyLuck, 0, 1);
+                    if (Game1.random.NextDouble() < cinderChance)
                     {
                         var cinderNode = ItemRegistry.Create<StardewObject>(ModEntry.cinderStone1Id);
                         //shard.Fragility = 0;
                         cinderNode.MinutesUntilReady = 0;
                         __instance.Objects.Add(tile, cinderNode);
                     }
-                    if (Game1.random.NextDouble() < 0.05)
+                    else if (Game1.random.NextDouble() < obsidianChance)
                     {
                         bool spawn_object = true;
                         var obsidian = ItemRegistry.Create<StardewObject>(ModEntry.obsidianId);
@@ -549,11 +662,13 @@ namespace MonsterHutch
                         if (spawn_object)
                         {
                             obsidian.Stack = 1;
+                            obsidian.IsSpawnedObject = true;
                             __instance.Objects.Add(tile, obsidian);
                         }
                     }
                 }
             }
+
             for (int numIridiumNode = Math.Min(iridiumCrabCount, iridiumWaters); numIridiumNode > 0; numIridiumNode--)
             {
                 iridiumWaters--;
@@ -566,7 +681,8 @@ namespace MonsterHutch
                     tries--;
                 }
 
-                if (tries > 0 && Game1.random.NextDouble() < 0.5)
+                var oreChance = Math.Clamp(ModEntry.Config.CrabOreChance + Game1.player.DailyLuck, 0, 1);
+                if (tries > 0 && Game1.random.NextDouble() < oreChance)
                 {
                     var iridiumNode = ItemRegistry.Create<StardewObject>(ModEntry.iridiumNodeId);
                     iridiumNode.MinutesUntilReady = 0;
@@ -585,7 +701,8 @@ namespace MonsterHutch
                     tries--;
                 }
 
-                if (tries > 0 && Game1.random.NextDouble() < 0.5)
+                var oreChance = Math.Clamp(ModEntry.Config.CrabOreChance + Game1.player.DailyLuck, 0, 1);
+                if (tries > 0 && Game1.random.NextDouble() < oreChance)
                 {
                     var goldNode = ItemRegistry.Create<StardewObject>(ModEntry.goldNodeId);
                     goldNode.MinutesUntilReady = 0;
@@ -604,7 +721,8 @@ namespace MonsterHutch
                     tries--;
                 }
 
-                if (tries > 0 && Game1.random.NextDouble() < 0.5)
+                var oreChance = Math.Clamp(ModEntry.Config.CrabOreChance + Game1.player.DailyLuck, 0, 1);
+                if (tries > 0 && Game1.random.NextDouble() < oreChance)
                 {
                     var ironNode = ItemRegistry.Create<StardewObject>(ModEntry.ironNodeId);
                     ironNode.MinutesUntilReady = 0;
@@ -623,7 +741,8 @@ namespace MonsterHutch
                     tries--;
                 }
 
-                if (tries > 0 && Game1.random.NextDouble() < 0.5)
+                var oreChance = Math.Clamp(ModEntry.Config.CrabOreChance + Game1.player.DailyLuck, 0, 1);
+                if (tries > 0 && Game1.random.NextDouble() < oreChance)
                 {
                     var copperNode = ItemRegistry.Create<StardewObject>(ModEntry.copperNodeId);
                     copperNode.MinutesUntilReady = 0;
@@ -642,7 +761,8 @@ namespace MonsterHutch
                     tries--;
                 }
 
-                if (tries > 0 && Game1.random.NextDouble() < 0.5)
+                var truffleChance = Math.Clamp(ModEntry.Config.CrabTruffleChance + Game1.player.DailyLuck, 0, 1);
+                if (tries > 0 && Game1.random.NextDouble() < truffleChance)
                 {
                     bool spawn_object = true;
                     var truffle = ItemRegistry.Create<StardewObject>(ModEntry.truffleId);
@@ -659,6 +779,7 @@ namespace MonsterHutch
                     if (spawn_object)
                     {
                         truffle.Stack = 1;
+                        truffle.IsSpawnedObject = true;
                         __instance.Objects.Add(tile, truffle);
                     }
 
@@ -678,8 +799,8 @@ namespace MonsterHutch
                     tile = __instance.getRandomTile();
                     tries--;
                 }
-
-                if (tries > 0)
+                var gingerChance = Math.Clamp(ModEntry.Config.StickGingerChance + Game1.player.DailyLuck, 0, 1);
+                if (tries > 0 && Game1.random.NextDouble() < gingerChance)
                 {
                     bool spawn_object = true;
                     var ginger = ItemRegistry.Create<StardewObject>(ModEntry.gingerId);
@@ -696,6 +817,7 @@ namespace MonsterHutch
                     if (spawn_object)
                     {
                         ginger.Stack = 1;
+                        ginger.IsSpawnedObject = true;
                         __instance.Objects.Add(tile, ginger);
                     }
 

@@ -47,6 +47,15 @@ namespace MonsterHutch
         public string IncubatorRecipeUnlock { get; set; } = DefaultIncubatorRecipeUnlock;
 
         internal static string[] IncubatorDurationIsInChoices { get; set; } = new string[] { "Minutes", "Days" };
+        public float BatFruitRatio { get; set; } = 0.3f;
+        public float SpiderBugMeatRatio { get; set; } = 0.7f;
+        public float DustTripleShotRatio { get; set; } = 0.3f;
+        public float CinderChance { get; set; } = 0.5f;
+        public float ObsidianChance { get; set; } = 0.08f;
+        public float CrabOreChance { get; set; } = 0.5f;
+        public float CrabTruffleChance { get; set; } = 0.5f;
+        public float StickGingerChance { get; set; } = 1f;
+        public int OreBonus { get; set; } = 4;
 
         public static void VerifyConfigValues(ModConfig config, ModEntry mod)
         {
@@ -63,6 +72,54 @@ namespace MonsterHutch
             {
                 config.IncubatorAdditionalRequiredItemCount = 0;
                 minorInvalidConfig = true;
+            }
+
+            if (config.BatFruitRatio < 0f || config.BatFruitRatio > 1f)
+            {
+                config.BatFruitRatio = 0.3f;
+                invalidConfig = true;
+            }
+
+            if (config.SpiderBugMeatRatio < 0f || config.SpiderBugMeatRatio > 1f)
+            {
+                config.SpiderBugMeatRatio = 0.7f;
+                invalidConfig = true;
+            }
+
+            if (config.DustTripleShotRatio < 0f || config.DustTripleShotRatio > 1f)
+            {
+                config.DustTripleShotRatio = 0.3f;
+                invalidConfig = true;
+            }
+
+            if (config.CinderChance < 0f || config.CinderChance > 1f)
+            {
+                config.CinderChance = 0.5f;
+                invalidConfig = true;
+            }
+
+            if (config.ObsidianChance < 0f || config.ObsidianChance > 1f)
+            {
+                config.ObsidianChance = 0.08f;
+                invalidConfig = true;
+            }
+
+            if (config.CrabOreChance < 0f || config.CrabOreChance > 1f)
+            {
+                config.CrabOreChance = 0.5f;
+                invalidConfig = true;
+            }
+
+            if (config.CrabTruffleChance < 0f || config.CrabTruffleChance > 1f)
+            {
+                config.CrabTruffleChance = 0.5f;
+                invalidConfig = true;
+            }
+
+            if (config.StickGingerChance < 0f || config.StickGingerChance > 1f)
+            {
+                config.StickGingerChance = 1f;
+                invalidConfig = true;
             }
 
             if (minorInvalidConfig || invalidConfig)
@@ -138,6 +195,27 @@ namespace MonsterHutch
                 GetConfigName(mod, "IncubatorRecipe"), GetConfigDescription(mod, "IncubatorRecipe"));
             api.AddTextOption(manifest, () => config.IncubatorRecipeUnlock, (string val) => config.IncubatorRecipeUnlock = val,
                 GetConfigName(mod, "IncubatorRecipeUnlock"), GetConfigDescription(mod, "IncubatorRecipeUnlock"));
+
+            api.AddSectionTitle(manifest, GetConfigName(mod, "MonsterDropsSection"));
+
+            api.AddNumberOption(manifest, () => config.BatFruitRatio, (float val) => config.BatFruitRatio = val,
+                GetConfigName(mod, "BatFruitRatio"), GetConfigDescription(mod, "BatFruitRatio"), 0f, 1f, 0.01f);
+            api.AddNumberOption(manifest, () => config.SpiderBugMeatRatio, (float val) => config.SpiderBugMeatRatio = val,
+                GetConfigName(mod, "SpiderBugMeatRatio"), GetConfigDescription(mod, "SpiderBugMeatRatio"), 0f, 1f, 0.01f);
+            api.AddNumberOption(manifest, () => config.DustTripleShotRatio, (float val) => config.DustTripleShotRatio = val,
+                GetConfigName(mod, "DustTripleShotRatio"), GetConfigDescription(mod, "DustTripleShotRatio"), 0f, 1f, 0.01f);
+            api.AddNumberOption(manifest, () => config.CinderChance, (float val) => config.CinderChance = val,
+                GetConfigName(mod, "CinderChance"), GetConfigDescription(mod, "CinderChance"), 0f, 1f, 0.01f);
+            api.AddNumberOption(manifest, () => config.ObsidianChance, (float val) => config.ObsidianChance = val,
+                GetConfigName(mod, "ObsidianChance"), GetConfigDescription(mod, "ObsidianChance"), 0f, 1f, 0.01f);
+            api.AddNumberOption(manifest, () => config.CrabOreChance, (float val) => config.CrabOreChance = val,
+                GetConfigName(mod, "CrabOreChance"), GetConfigDescription(mod, "CrabOreChance"), 0f, 1f, 0.01f);
+            api.AddNumberOption(manifest, () => config.CrabTruffleChance, (float val) => config.CrabTruffleChance = val,
+                GetConfigName(mod, "CrabTruffleChance"), GetConfigDescription(mod, "CrabTruffleChance"), 0f, 1f , 0.01f);
+            api.AddNumberOption(manifest, () => config.StickGingerChance, (float val) => config.StickGingerChance = val,
+                GetConfigName(mod, "StickGingerChance"), GetConfigDescription(mod, "StickGingerChance"), 0f, 1f, 0.01f);
+            api.AddNumberOption(manifest, () => config.OreBonus, (int val) => config.OreBonus = val,
+                GetConfigName(mod, "OreBonus"), GetConfigDescription(mod, "OreBonus"), 0);
         }
 
         private static Func<string, string> GetConfigDropdownChoice(ModEntry mod, string key)

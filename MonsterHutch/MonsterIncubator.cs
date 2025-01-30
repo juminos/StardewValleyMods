@@ -1,10 +1,14 @@
-﻿using StardewModdingAPI.Events;
+﻿using StardewModdingAPI;
+using StardewModdingAPI.Events;
 using StardewValley;
 using StardewValley.GameData;
 using StardewValley.GameData.BigCraftables;
 using StardewValley.GameData.Machines;
 using System;
 using System.Collections.Generic;
+using xTile;
+using xTile.ObjectModel;
+using xTile.Tiles;
 
 namespace MonsterHutch
 {
@@ -12,7 +16,9 @@ namespace MonsterHutch
     {
         public static readonly string monsterIncubatorNonQID = $"{ModEntry.Mod?.ModManifest?.UniqueID}.MonsterIncubator";
         public static readonly string monsterIncubatorQID = $"(BC){monsterIncubatorNonQID}";
-        public static readonly string monsterIncubatorMailNonQID = $"{ModEntry.Mod?.ModManifest?.UniqueID}.MonsterIncubatorMail";
+        public static readonly string monsterIncubatorMailID = $"{ModEntry.Mod?.ModManifest?.UniqueID}.MonsterIncubatorMail";
+        public static readonly string monsterIncubatorMailTriggerId = $"{ModEntry.Mod?.ModManifest?.UniqueID}.MonsterIncubatorTrigger";
+        //public static readonly int monsterIncubatorNoteID = 5557726;
 
         internal static void AddIncubatorAssetChanges(AssetRequestedEventArgs e)
         {
@@ -20,7 +26,7 @@ namespace MonsterHutch
             {
                 e.Edit((asset) =>
                 {
-                    IDictionary<string, string> data = asset.AsDictionary<string, string>().Data;
+                    var data = asset.AsDictionary<string, string>().Data;
 
                     var recipeConfig = ModEntry.Config.IncubatorRecipe;
                     var recipeConfigUnlock = ModEntry.Config.IncubatorRecipeUnlock;
@@ -46,15 +52,44 @@ namespace MonsterHutch
                 });
             }
 
-            if (e.NameWithoutLocale.IsEquivalentTo("Data/Mail") && string.IsNullOrWhiteSpace(ModEntry.Config.IncubatorRecipeUnlock))
+            if (e.NameWithoutLocale.IsEquivalentTo("Data/Mail") && (string.IsNullOrWhiteSpace(ModEntry.Config.IncubatorRecipeUnlock) || ModEntry.Config.IncubatorRecipeUnlock.Contains("f Wizard")))
             {
                 e.Edit((asset) =>
                 {
-                    IDictionary<string, string> data = asset.AsDictionary<string, string>().Data;
+                    var data = asset.AsDictionary<string, string>().Data;
 
-                    data[monsterIncubatorMailNonQID] = $"My latest invention can reanimate various monsters using the arcane energy of void essence. Robin can construct a building to contain them. You will find more detailed instructions in my basement library.^^   -M. Rasmodius, Wizard%item craftingRecipe {monsterIncubatorNonQID} %%[#]A letter from Wizard";
+                    data[monsterIncubatorMailID] = $"[letterbg 2]{ModEntry.Mod.Helper.Translation.Get("WizardLetter.content")}%item craftingRecipe {monsterIncubatorNonQID} %%[#]{ModEntry.Mod.Helper.Translation.Get("WizardLetter.description")}";
                 });
             }
+
+            if (e.NameWithoutLocale.IsEquivalentTo("Data/TriggerActions") && (string.IsNullOrWhiteSpace(ModEntry.Config.IncubatorRecipeUnlock) || ModEntry.Config.IncubatorRecipeUnlock.Contains("f Wizard")))
+            {
+                e.Edit((asset) =>
+                {
+                    var data = asset.GetData<List<TriggerActionData>>();
+
+                    if (data != null)
+                    {
+                        data.Add(new()
+                        {
+                            Id = monsterIncubatorMailTriggerId,
+                            Trigger = "DayEnding",
+                            Condition = "PLAYER_HEARTS Current Wizard 6",
+                            Action = $"AddMail Current {monsterIncubatorMailID}",
+                        });
+                    }
+                });
+            }
+
+            //if (e.NameWithoutLocale.IsEquivalentTo("Data/Notes") && (Game1.player.knowsRecipe(monsterIncubatorNonQID) || Game1.player.knowsRecipe(monsterIncubatorQID)))
+            //{
+            //    e.Edit((asset) =>
+            //    {
+            //        var data = asset.AsDictionary<int, string>().Data;
+
+            //        data[monsterIncubatorNoteID] = $"[letterbg 2]{ModEntry.Mod.Helper.Translation.Get("MonsterIncubator.instructions")}";
+            //    });
+            //}
 
             if (e.NameWithoutLocale.IsEquivalentTo("Data/BigCraftables"))
             {

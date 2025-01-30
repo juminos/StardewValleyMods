@@ -123,6 +123,46 @@
                     "CustomFields": null
                 }
             }
-        }
+        },
+
+        //{
+        //    "Action": "EditMap",
+        //    "Target": "Maps/WizardHouse",
+        //    "When": {
+        //        "HasMod |contains=FlashShifter.StardewValleyExpandedCP": false
+        //    },
+        //    "MapTiles": [
+        //        {
+        //            "Position": {
+        //                "X": 9,
+        //                "Y": 4
+        //            },
+        //            "Layer": "Buildings",
+        //            "SetProperties": {
+        //                "Action": "Notes 5557726"
+        //            }
+        //        }
+        //    ]
+        //},
+        //{
+        //    "Action": "EditMap",
+        //    "Target": "Maps/WizardBasement",
+        //    "When": {
+        //        "HasMod |contains=FlashShifter.StardewValleyExpandedCP": true
+        //    },
+        //    "MapTiles": [
+        //        {
+        //            "Position": {
+        //                "X": 9,
+        //                "Y": 4
+        //            },
+        //            "Layer": "Buildings",
+        //            "SetProperties": {
+        //                "Action": "Notes 5557726"
+        //            }
+        //        }
+        //    ]
+        //}
+
     ]
 }
