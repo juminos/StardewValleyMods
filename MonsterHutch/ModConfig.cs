@@ -55,7 +55,7 @@ namespace MonsterHutch
         public float CrabOreChance { get; set; } = 0.5f;
         public float CrabTruffleChance { get; set; } = 0.5f;
         public float StickGingerChance { get; set; } = 1f;
-        public int OreBonus { get; set; } = 4;
+        public int OreBonus { get; set; } = 1;
 
         public static void VerifyConfigValues(ModConfig config, ModEntry mod)
         {
