@@ -15,9 +15,9 @@ namespace Agrivoltaics
     {
         private static ModEntry mod;
 
-        public static void PatchAll(ModEntry monsterHutch)
+        public static void PatchAll(ModEntry agrivoltaics)
         {
-            mod = monsterHutch;
+            mod = agrivoltaics;
 
             var harmony = new Harmony(mod.ModManifest.UniqueID);
 
@@ -36,7 +36,10 @@ namespace Agrivoltaics
         public static void DayUpdate_Post(HoeDirt __instance, int __state)
         {
             bool isShaded = CheckShadedTiles(__instance);
-            if (__state != 0 && isShaded && Game1.random.NextDouble() < ModEntry.Config.RetentionIncrease)
+            if (__state != 0 && 
+                isShaded && 
+                Game1.random.NextDouble() < ModEntry.Config.RetentionIncrease && 
+                (Game1.dayOfMonth != 1 || !ModEntry.Config.SeasonReset))
             {
                 __instance.state.Value = __state;
                 ModEntry.SMonitor.Log($"patching water retention for {__instance.Tile.X.ToString()}, {__instance.Tile.Y.ToString()} with state: {__state.ToString()}", StardewModdingAPI.LogLevel.Trace);
@@ -67,7 +70,7 @@ namespace Agrivoltaics
                     continue;
 
                 var footprint = building.GetBoundingBox();
-                var shadeRect = new Rectangle(footprint.X - (footprint.Width / 3), footprint.Y - (footprint.Height * 3), footprint.Width * 5 / 3, footprint.Height * 4);
+                var shadeRect = new Rectangle(footprint.X - (footprint.Width / 3), footprint.Y - (footprint.Height * 4), footprint.Width * 5 / 3, footprint.Height * 4);
                 var tileRect = new Rectangle((int)dirt.Tile.X * 64, (int)dirt.Tile.Y * 64, 64, 64);
 
                 if (tileRect.Intersects(shadeRect))

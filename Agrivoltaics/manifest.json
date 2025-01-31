@@ -1,12 +1,12 @@
 {
     "Name": "Agrivoltaics",
     "Author": "juminos",
-    "Version": "1.0.0",
+    "Version": "1.0.2",
     "Description": "Practice agrivoltaic farming.",
     "UniqueID": "juminos.Agrivoltaics",
     "EntryDll": "Agrivoltaics.dll",
     "MinimumApiVersion": "4.0.0",
-    "UpdateKeys": [],
+    "UpdateKeys": [ "Nexus:31330" ],
     "Dependencies": [
         {
             "UniqueID": "juminos.Agrivoltaics.CP",
