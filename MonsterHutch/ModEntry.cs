@@ -43,7 +43,7 @@ namespace MonsterHutch
         internal const string ironNodeId = "(O)850";
         internal const string copperOreId = "(O)378";
         internal const string copperNodeId = "(O)849";
-        internal const string crabId = "(O)390";
+        internal const string crabId = "(O)717";
         internal const string gingerId = "(O)829";
         internal const string obsidianId = "(O)575";
 

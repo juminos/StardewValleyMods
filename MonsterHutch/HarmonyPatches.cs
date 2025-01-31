@@ -27,19 +27,9 @@ namespace MonsterHutch
             var harmony = new Harmony(mod.ModManifest.UniqueID);
 
             harmony.Patch(
-                original: AccessTools.Method(typeof(Game1), nameof(Game1.createMultipleObjectDebris), new Type[]
-                { typeof(string), typeof(int), typeof(int), typeof(int), typeof(long), typeof(GameLocation) }),
-                prefix: new HarmonyMethod(typeof(HarmonyPatches), nameof(CreateMultipleObjectDebris_Pre)));
-
-            harmony.Patch(
-                original: AccessTools.Method(typeof(Game1), nameof(Game1.createMultipleObjectDebris), new Type[]
-                { typeof(string), typeof(int), typeof(int), typeof(int), typeof(GameLocation) }),
-                prefix: new HarmonyMethod(typeof(HarmonyPatches), nameof(CreateMultipleObjectDebris2_Pre)));
-
-            //harmony.Patch(
-            //    original: AccessTools.Method(typeof(Game1), nameof(Game1.createObjectDebris), new Type[]
-            //    { typeof(string), typeof(int), typeof(int), typeof(long), typeof(GameLocation) }),
-            //    postfix: new HarmonyMethod(typeof(HarmonyPatches), nameof(CreateObjectDebris_Post)));
+                original: AccessTools.Method(typeof(Game1), nameof(Game1.createObjectDebris), new Type[]
+                { typeof(string), typeof(int), typeof(int), typeof(long), typeof(GameLocation) }),
+                postfix: new HarmonyMethod(typeof(HarmonyPatches), nameof(CreateObjectDebris_Post)));
 
             harmony.Patch(
                original: AccessTools.Method(typeof(StardewObject), nameof(StardewObject.DayUpdate)),
@@ -79,23 +69,6 @@ namespace MonsterHutch
         }
 
         public static void CreateMultipleObjectDebris_Pre(string id, int xTile, int yTile, int number, long who, GameLocation location)
-        {
-            if (location is SlimeHutch &&
-                (id == ModEntry.cinderShardId ||
-                id == ModEntry.iridiumOreId ||
-                id == ModEntry.goldOreId ||
-                id == ModEntry.iridiumOreId ||
-                id == ModEntry.copperOreId)
-                )
-            {
-                for (int i = 0; i < (ModEntry.Config.OreBonus); i++)
-                {
-                    Game1.createObjectDebris(id, xTile, yTile);
-                }
-            }
-            return;
-        }
-        public static void CreateMultipleObjectDebris2_Pre(string id, int xTile, int yTile, int number, GameLocation location)
         {
             if (location is SlimeHutch &&
                 (id == ModEntry.cinderShardId ||
@@ -428,14 +401,8 @@ namespace MonsterHutch
                         if (spawn_object)
                         {
                             tripleShot.Stack = 1;
-                            tripleShot.IsSpawnedObject = true;
-                            __instance.Objects.Add(tile, tripleShot);
+                            Utility.spawnObjectAround(tile, tripleShot, __instance);
                         }
-
-                        //var tripleShot = ItemRegistry.Create<StardewObject>(ModEntry.tripleShotId);
-                        //tripleShot.IsSpawnedObject = true;
-
-                        //__instance.Objects.Add(tile, tripleShot);
                     }
                     else
                     {
@@ -453,17 +420,10 @@ namespace MonsterHutch
                         }
                         if (spawn_object)
                         {
+                            coffee.Type = "Basic";
                             coffee.Stack = 1;
-                            coffee.IsSpawnedObject = true;
-                            __instance.Objects.Add(tile, coffee);
+                            Utility.spawnObjectAround(tile, coffee, __instance);
                         }
-
-                        //var coffee = ItemRegistry.Create<StardewObject>(ModEntry.coffeeId);
-                        //coffee.IsSpawnedObject = true;
-                        //coffee.CanBeSetDown = false;
-                        //coffee.Stack = 1;
-
-                        //__instance.Objects.Add(tile, coffee);
                     }
                 }
             }
@@ -526,11 +486,6 @@ namespace MonsterHutch
                         }
                     }
 
-                    //var meat = ItemRegistry.Create<StardewObject>(ModEntry.bugMeatId);
-                    //meat.IsSpawnedObject = true;
-
-                    //__instance.Objects.Add(tile, meat);
-
                     //__instance.debris.Add(new Debris(ModEntry.bugMeatId, new Vector2(tile.X * 64, tile.Y * 64), new Vector2(tile.X * 64, tile.Y * 64)));
                     //if (Game1.random.NextDouble() < 0.7)
                     //{
@@ -583,8 +538,7 @@ namespace MonsterHutch
                         if (spawn_fruit)
                         {
                             fruit.Stack = 1;
-                            fruit.IsSpawnedObject = true;
-                            __instance.Objects.Add(tile, fruit);
+                            Utility.spawnObjectAround(tile, fruit, __instance);
                         }
                     }
                     else
@@ -605,17 +559,9 @@ namespace MonsterHutch
                         if (spawn_wing)
                         {
                             wing.Stack = 1;
-                            wing.IsSpawnedObject = true;
-                            __instance.Objects.Add(tile, wing);
+                            Utility.spawnObjectAround(tile, wing, __instance);
                         }
                     }
-
-                    //var wing = ItemRegistry.Create<StardewObject>(ModEntry.batWingId);
-                    //wing.IsSpawnedObject = true;
-                    //wing.CanBeSetDown = false;
-                    //wing.Stack = 1;
-
-                    //__instance.Objects.Add(tile, wing);
 
                     //__instance.debris.Add(new Debris(ModEntry.batWingId, new Vector2(tile.X * 64, tile.Y * 64), new Vector2(tile.X * 64, tile.Y * 64)));
                     //__instance.debris.Add(new Debris(ModEntry.batWingId, new Vector2(tile.X * 64, tile.Y * 64), new Vector2(tile.X * 64, tile.Y * 64)));

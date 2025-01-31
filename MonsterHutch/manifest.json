@@ -6,7 +6,7 @@
     "UniqueID": "juminos.MonsterHutch",
     "EntryDll": "MonsterHutch.dll",
     "MinimumApiVersion": "4.0.0",
-    "UpdateKeys": [],
+    "UpdateKeys": [ "Nexus:" ],
     "Dependencies": [
         {
             "IsRequired": true,
