@@ -4,12 +4,19 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+	  <LangVersion>13.0</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Lib.Harmony" Version="2.3.3" />
     <PackageReference Include="Pathoschild.Stardew.ModBuildConfig" Version="4.3.2" />
     <PackageReference Include="Pathoschild.Stardew.ModTranslationClassBuilder" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="MonsterHutchFramework\Harmony Patches\" />
+    <Folder Include="MonsterHutchFramework\assets\" />
+    <Folder Include="[CP] Monster Hutch Starter Pack\" />
   </ItemGroup>
 
 </Project>
