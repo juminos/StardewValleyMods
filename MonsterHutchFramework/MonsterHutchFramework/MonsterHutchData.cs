@@ -16,13 +16,26 @@ public class MonsterHutchData
     public bool FarmerCollision = true;
     public int MoveTowardPlayerThresholdOverride = 2;
     public string? TexturePath = null;
-    public Dictionary<string, ProduceData> ProduceData = new Dictionary<string, ProduceData>();
-    public List<string> DeluxeProduce = [];
+    public float DeluxeChance;
+    public List<ProduceData> ProduceData = new List<ProduceData>();
+    public List<DeluxeProduceData> DeluxeProduce = new List<DeluxeProduceData>();
+    public string? InputItemId = null;
+    public int InputItemCount = 0;
+    public int IncubationTime = 0;
 }
 public class ProduceData
 {
     public string? Id;
     public string? ItemId;
     public int? Count;
-    public bool Dropped = false;
+    public bool IsDropped = false;
+    public int Weight = 0;
+}
+public class DeluxeProduceData
+{
+    public string? Id;
+    public string? ItemId;
+    public int? Count;
+    public bool IsDropped = false;
+    public int Weight = 0;
 }
