@@ -86,7 +86,7 @@ namespace Agrivoltaics
                     };
                     solarPanelData.ActionTiles = new List<BuildingActionTile> { actionTile };
 
-                    data.Add("juminos.Agrivoltaics_SolarPanel", solarPanelData);
+                    data.Add($"{ModEntry.Mod.ModManifest.UniqueID}_SolarPanel", solarPanelData);
                 });
             }
         }
