@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using StardewModdingAPI.Events;
+using StardewValley;
 using StardewValley.GameData.Buildings;
 using xTile;
 
@@ -26,12 +27,18 @@ namespace MonsterHutchFramework.MonsterHutchFramework
             {
                 e.Edit(asset =>
                 {
-                    var editor = asset.AsDictionary<string, BuildingData>;
+                    var editor = asset.AsDictionary<string, BuildingData>().Data;
 
+                    var expandedHutch = editor["Slime Hutch"];
 
+                    expandedHutch.Name = I18n.MonsterHutchExpanded_Name();
+                    expandedHutch.Description = I18n.MonsterHutchExpanded_Description();
+                    expandedHutch.BuildingToUpgrade = "SlimeHutch";
+                    expandedHutch.IndoorMap = "MonsterHutchExpanded";
+
+                    editor.Add($"{ModEntry.Mod.ModManifest.UniqueID}_MonsterHutchExpanded", expandedHutch);
                 });
             }
-                
         }
     }
 }
