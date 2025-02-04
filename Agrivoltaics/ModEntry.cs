@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using StardewModdingAPI;
 using StardewModdingAPI.Events;
 using StardewValley;
@@ -22,7 +23,7 @@ namespace Agrivoltaics
 
         internal static ModEntry Mod { get; private set; }
         internal static ModConfig Config { get; private set; }
-
+        internal string SolarPanelAssetPath { get; private set; }
 
         public override void Entry(IModHelper helper)
         {
@@ -46,6 +47,7 @@ namespace Agrivoltaics
                 Monitor.Log($"Issue with Harmony patching: {e}", LogLevel.Error);
                 return;
             }
+            SolarPanelAssetPath = Game1.content.Load<Texture2D>("assets/SolarPanel.png").Name;
         }
         private void OnAssetRequested(object? sender, AssetRequestedEventArgs e)
         {
