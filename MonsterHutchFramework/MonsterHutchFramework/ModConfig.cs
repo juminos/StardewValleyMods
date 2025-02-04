@@ -23,6 +23,8 @@ namespace MonsterHutchFramework.MonsterHutchFramework
     }
     public class ModConfig
     {
+        public bool ReplaceHutchInterior { get; set; } = true;
+        public bool HutchExpansion { get; set; } = true;
         public bool RandomizeMonsterPositions { get; set; } = true;
         public bool RandomizeOnlyModMonsterPositions { get; set; } = true;
         public bool IncubatorIsAffectedByCoopmaster { get; set; } = true;
