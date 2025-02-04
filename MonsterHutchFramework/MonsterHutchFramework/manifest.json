@@ -1,0 +1,11 @@
+{
+    "Name": "Monster Hutch Framework",
+    "Author": "juminos",
+    "Version": "1.0.0",
+    "Description": "A framework for adding more types of monsters to raise in the slime hutch",
+    "UniqueID": "juminos.MonsterHutchFramework",
+    "EntryDll": "MonsterHutchFramework.dll",
+    "MinimumApiVersion": "4.0.0",
+    "UpdateKeys": [  ],
+    "Dependencies": []
+}

@@ -86,6 +86,7 @@ namespace MonsterHutch
             monster.objectsToDrop.Clear();
             monster.objectsToDrop.Add(ModEntry.coalId);
             monster.objectsToDrop.Add(ModEntry.coffeeId);
+            monster.moveTowardPlayerThreshold.Value = 2;
 
             return monster;
         }
