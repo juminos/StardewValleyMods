@@ -14,7 +14,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="MonsterHutchFramework\Harmony Patches\" />
     <Folder Include="MonsterHutchFramework\assets\" />
     <Folder Include="[CP] Monster Hutch Starter Pack\" />
   </ItemGroup>
