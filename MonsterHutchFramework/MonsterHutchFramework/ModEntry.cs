@@ -16,6 +16,7 @@ using Microsoft.Xna.Framework.Graphics;
 using System.Text.RegularExpressions;
 using System.Threading;
 using StardewValley.GameData.Machines;
+using xTile;
 
 namespace MonsterHutchFramework.MonsterHutchFramework
 {
@@ -45,6 +46,7 @@ namespace MonsterHutchFramework.MonsterHutchFramework
             try
             {
                 HarmonyPatches.HutchPatches.PatchAll(this);
+                HarmonyPatches.RingPatches.PatchAll(this);
             }
             catch (Exception e)
             {
@@ -125,7 +127,7 @@ namespace MonsterHutchFramework.MonsterHutchFramework
         }
         private void OnAssetRequested(object? sender, AssetRequestedEventArgs e)
         {
-            //ApplyHutchInteriorChanges(e);
+            MonsterHutch.ExpandMonsterHutchInterior(e);
             MonsterIncubator.AddIncubatorAssetChanges(e);
             AssetHandler.OnAssetRequested(sender, e);
         }

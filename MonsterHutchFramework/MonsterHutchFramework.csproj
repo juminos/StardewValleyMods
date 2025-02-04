@@ -15,7 +15,6 @@
 
   <ItemGroup>
     <Folder Include="MonsterHutchFramework\assets\" />
-    <Folder Include="[CP] Monster Hutch Starter Pack\" />
   </ItemGroup>
 
 </Project>

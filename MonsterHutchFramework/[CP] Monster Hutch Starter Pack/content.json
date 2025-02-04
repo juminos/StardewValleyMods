@@ -1,0 +1,157 @@
+{
+    "Format": "2.4.0",
+    "$schema": "https://smapi.io/schemas/content-patcher.json",
+    "Changes": [
+        {
+            "Action": "Load",
+            "Target": "Characters/Monsters/Rock Crab_iron, Characters/Monsters/Rock Crab_copper",
+            "FromFile": "assets/{{TargetWithoutPath}}.png"
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Buildings",
+            "Fields": {
+                "Slime Hutch": {
+                    "Name": "Monster Hutch",
+                    "Description": "Raise up to 20 slimes and any number of other monsters. Fill water troughs and monsters will leave gifts."
+                }
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Buildings",
+            "Entries": {
+                "{{ModId}}_MonsterHutchExpanded": {
+                    "Name": "Monster Hutch Expansion",
+                    "Description": "Adds an open basement to your Monster Hutch.",
+                    "Texture": "Buildings\\Slime Hutch",
+                    "Skins": [],
+                    "DrawShadow": true,
+                    "UpgradeSignTile": "2.5, 5",
+                    "UpgradeSignHeight": 12.0,
+                    "Size": {
+                        "X": 7,
+                        "Y": 4
+                    },
+                    "FadeWhenBehind": true,
+                    "SourceRect": {
+                        "X": 0,
+                        "Y": 0,
+                        "Width": 112,
+                        "Height": 112
+                    },
+                    "SeasonOffset": {
+                        "X": 0,
+                        "Y": 0
+                    },
+                    "DrawOffset": "0, 0",
+                    "SortTileOffset": 0.0,
+                    "CollisionMap": null,
+                    "AdditionalPlacementTiles": null,
+                    "BuildingType": null,
+                    "Builder": "Robin",
+                    "BuildCondition": null,
+                    "BuildDays": 2,
+                    "BuildCost": 10000,
+                    "BuildMaterials": [
+                        {
+                            "ItemId": "(O)390",
+                            "Amount": 500
+                        },
+                        {
+                            "ItemId": "(O)338",
+                            "Amount": 10
+                        },
+                        {
+                            "ItemId": "(O)337",
+                            "Amount": 1
+                        }
+                    ],
+                    "BuildingToUpgrade": "Slime Hutch",
+                    "MagicalConstruction": false,
+                    "BuildMenuDrawOffset": {
+                        "X": 0,
+                        "Y": 0
+                    },
+                    "HumanDoor": {
+                        "X": 3,
+                        "Y": 3
+                    },
+                    "AnimalDoor": {
+                        "X": -1,
+                        "Y": -1,
+                        "Width": 0,
+                        "Height": 0
+                    },
+                    "AnimalDoorOpenDuration": 0.0,
+                    "AnimalDoorOpenSound": null,
+                    "AnimalDoorCloseDuration": 0.0,
+                    "AnimalDoorCloseSound": null,
+                    "NonInstancedIndoorLocation": null,
+                    "IndoorMap": "MonsterHutchExpanded",
+                    "IndoorMapType": "StardewValley.SlimeHutch",
+                    "MaxOccupants": 20,
+                    "ValidOccupantTypes": [
+                        "Slime"
+                    ],
+                    "AllowAnimalPregnancy": false,
+                    "IndoorItemMoves": null,
+                    "IndoorItems": [],
+                    "AddMailOnBuild": null,
+                    "Metadata": {},
+                    "ModData": {},
+                    "HayCapacity": 0,
+                    "Chests": null,
+                    "DefaultAction": null,
+                    "AdditionalTilePropertyRadius": 0,
+                    "AllowsFlooringUnderneath": true,
+                    "ActionTiles": [],
+                    "TileProperties": [],
+                    "ItemConversions": null,
+                    "DrawLayers": null,
+                    "CustomFields": null
+                }
+            }
+        },
+
+        //{
+        //    "Action": "EditMap",
+        //    "Target": "Maps/WizardHouse",
+        //    "When": {
+        //        "HasMod |contains=FlashShifter.StardewValleyExpandedCP": false
+        //    },
+        //    "MapTiles": [
+        //        {
+        //            "Position": {
+        //                "X": 9,
+        //                "Y": 4
+        //            },
+        //            "Layer": "Buildings",
+        //            "SetProperties": {
+        //                "Action": "Notes 5557726"
+        //            }
+        //        }
+        //    ]
+        //},
+        //{
+        //    "Action": "EditMap",
+        //    "Target": "Maps/WizardBasement",
+        //    "When": {
+        //        "HasMod |contains=FlashShifter.StardewValleyExpandedCP": true
+        //    },
+        //    "MapTiles": [
+        //        {
+        //            "Position": {
+        //                "X": 9,
+        //                "Y": 4
+        //            },
+        //            "Layer": "Buildings",
+        //            "SetProperties": {
+        //                "Action": "Notes 5557726"
+        //            }
+        //        }
+        //    ]
+        //}
+
+    ]
+}

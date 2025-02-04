@@ -172,6 +172,21 @@ namespace MonsterHutchFramework.MonsterHutchFramework
                         monsterIncubator.ReadyTimeModifiers = null;
                     }
 
+                    var bubblesSound = new MachineSoundData
+                    {
+                        Id = "bubbles",
+                        Delay = 0
+                    };
+
+                    var workingEffect = new MachineEffects
+                    {
+                        ShakeDuration = 400,
+                        Sounds = new List<MachineSoundData>() { bubblesSound },
+                        Frames = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 },
+                        Interval = 100
+                    };
+                    monsterIncubator.WorkingEffects = new List<MachineEffects> { workingEffect };
+
                     var coinSound = new MachineSoundData
                     {
                         Id = "coin",
