@@ -2,7 +2,7 @@
     "Name": "[CP] Monster Hutch Starter Pack",
     "Author": "juminos",
     "Version": "1.0.0",
-    "Description": "Adds several vanilla game monsters and variants for the Monster Hutch Framework mod",
+    "Description": "{{i18n:mod.description}}",
     "UniqueID": "juminos.MonsterHutchStarter",
     "MinimumApiVersion": "4.0.0",
     "UpdateKeys": [  ],

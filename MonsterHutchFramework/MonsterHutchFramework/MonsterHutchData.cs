@@ -14,7 +14,7 @@ public class MonsterHutchData
     public string? Sound;
     public List<string> Drops = [];
     public int SpeedOverride = 1;
-    public bool FarmerCollision = true;
+    public bool FarmerCollision = false;
     public int MoveTowardPlayerThresholdOverride = 2;
     public string? TexturePath = null;
     public int NumberWatered = 1;
@@ -33,7 +33,7 @@ public class ProduceData
     public string? ItemId;
     public int Count;
     public bool IsDropped = false;
-    public int Weight = 0;
+    public int Weight = 1;
 }
 public class DeluxeProduceData
 {
@@ -41,5 +41,5 @@ public class DeluxeProduceData
     public string? ItemId;
     public int Count;
     public bool IsDropped = false;
-    public int Weight = 0;
+    public int Weight = 1;
 }

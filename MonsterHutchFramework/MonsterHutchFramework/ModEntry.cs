@@ -181,15 +181,18 @@ namespace MonsterHutchFramework.MonsterHutchFramework
             var name = data.MonsterType;
             var monster = new Monster(name, vector);
             monster.reloadSprite();
-            var texture = Game1.content.Load<Texture2D>($"{data.TexturePath}"); 
-            // var textureName = SHelper.ModContent.GetInternalAssetName($"{data.TexturePath}").BaseName;
-            try
+            if (data.TexturePath != null)
             {
-                monster.Sprite.LoadTexture(texture.Name);
-            }
-            catch
-            {
-                SMonitor.Log($"Failed loading '{texture}' texture for {monster.Name}.", LogLevel.Error);
+                var texture = Game1.content.Load<Texture2D>($"{data.TexturePath}");
+                // var textureName = SHelper.ModContent.GetInternalAssetName($"{data.TexturePath}").BaseName;
+                try
+                {
+                    monster.Sprite.LoadTexture(texture.Name);
+                }
+                catch
+                {
+                    SMonitor.Log($"Failed loading '{texture}' texture for {monster.Name}.", LogLevel.Error);
+                }
             }
             monster.Name = data.Name;
             monster.Speed = 1;

@@ -1,0 +1,24 @@
+﻿{
+    "mod.description": "Adds vanilla monsters and variants for Monster Hutch Framework.",
+
+    // Rings
+    "shadow-ring.name": "Shadow Ring",
+    "shadow-ring.description": "Surrounds you with a strange aura.",
+
+    "spider-ring.name": "Spider Ring",
+    "spider-ring.description": "Wearing it puts a bounce in your step.",
+
+    "dustsprite-ring.name": "Dust Sprite Ring",
+    "dustsprite-ring.description": "It looks a little dirty but you don't mind.",
+
+    "magmasprite-ring.name": "Magma Ring",
+    "magmasprite-ring.description": "Quite cool to the touch despite its appearance.",
+
+    "bat-ring.name": "Bat Ring",
+    "bat-ring.description": "Wearing it gives you a strange craving...",
+
+    // Letters
+    "shadow-ring.letter": "@,^If you truly wish to be a friend to the Shadow People, you should have this.  ^   -Krobus %item object {{ModId}}_Shadow 1 %%[#]A Gift From Krobus",
+    "spider-ring.letter": "@,^I found this ring in a cave. Maybe it will be of some use to you.   ^   -Krobus %item object {{ModId}}_Spider 1 %%[#]A Gift From Krobus",
+    "dustsprite-ring.letter": "@,^I was helping Aunt Marnie clean out the attic and thought I saw lots of dirty little gremlins run and hide, but when I got closer all I found was this ring! Mr. Marlon told me you would know what to do with it.   ^   -Jas %item object {{ModId}}_Dust 1 %%[#]A Gift from Jas"
+}
