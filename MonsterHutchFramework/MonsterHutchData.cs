@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using StardewValley.GameData;
 
-namespace MonsterHutchFramework.MonsterHutchFramework;
+namespace MonsterHutchFramework;
 
 public class MonsterHutchData
 {
@@ -16,6 +16,9 @@ public class MonsterHutchData
     public int SpeedOverride = 1;
     public bool FarmerCollision = false;
     public int MoveTowardPlayerThresholdOverride = 2;
+    public bool HideShadow = true; // most monsters seem to hide shadow
+    public int ScaleMin = 100;
+    public int ScaleMax = 100; // e.g. used by dust spirit for size randomization (base.Scale = (float)Game1.random.Next(75, 101) / 100f)
     public string? TexturePath = null;
     public int NumberWatered = 1;
     public float ProduceChance;
@@ -25,7 +28,6 @@ public class MonsterHutchData
     public string? InputItemId = null;
     public int InputItemCount = 0;
     public int IncubationTime = 0;
-    public string? CharmerRingId;
 }
 public class ProduceData
 {

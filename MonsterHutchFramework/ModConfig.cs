@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using StardewModdingAPI;
 
-namespace MonsterHutchFramework.MonsterHutchFramework
+namespace MonsterHutchFramework
 {
     public interface IGenericModConfigMenuApi
     {
@@ -36,7 +36,7 @@ namespace MonsterHutchFramework.MonsterHutchFramework
         public string IncubatorRecipe { get; set; } = DefaultIncubatorRecipe;
         internal const string DefaultIncubatorRecipeUnlock = "f Wizard 6";
         public string IncubatorRecipeUnlock { get; set; } = DefaultIncubatorRecipeUnlock;
-        public bool LethalRings {  get; set; } = false;
+        public bool LethalRings { get; set; } = false;
 
         public static void VerifyConfigValues(ModConfig config, ModEntry mod)
         {
@@ -91,32 +91,34 @@ namespace MonsterHutchFramework.MonsterHutchFramework
 
             api.AddSectionTitle(manifest, GetConfigName(mod, "HutchSection"));
 
-            api.AddBoolOption(manifest, () => config.RandomizeMonsterPositions, (bool val) => config.RandomizeMonsterPositions = val,
+            api.AddBoolOption(manifest, () => config.HutchExpansion, (val) => config.HutchExpansion = val,
+                GetConfigName(mod, "HutchExpansion"), GetConfigDescription(mod, "HutchExpansion"));
+            api.AddBoolOption(manifest, () => config.RandomizeMonsterPositions, (val) => config.RandomizeMonsterPositions = val,
                 GetConfigName(mod, "RandomizeMonsterPositions"), GetConfigDescription(mod, "RandomizeMonsterPositions"));
-            api.AddBoolOption(manifest, () => config.RandomizeOnlyModMonsterPositions, (bool val) => config.RandomizeOnlyModMonsterPositions = val,
+            api.AddBoolOption(manifest, () => config.RandomizeOnlyModMonsterPositions, (val) => config.RandomizeOnlyModMonsterPositions = val,
                 GetConfigName(mod, "RandomizeOnlyModMonsterPositions"), null);
 
             api.AddSectionTitle(manifest, GetConfigName(mod, "IncubatorSection"));
 
-            api.AddBoolOption(manifest, () => config.IncubatorIsAffectedByCoopmaster, (bool val) => config.IncubatorIsAffectedByCoopmaster = val,
+            api.AddBoolOption(manifest, () => config.IncubatorIsAffectedByCoopmaster, (val) => config.IncubatorIsAffectedByCoopmaster = val,
                 GetConfigName(mod, "IncubatorIsAffectedByCoopmaster"), GetConfigDescription(mod, "IncubatorIsAffectedByCoopmaster"));
 
-            api.AddBoolOption(manifest, () => config.IncubatorWobblesWhileIncubating, (bool val) => config.IncubatorWobblesWhileIncubating = val,
+            api.AddBoolOption(manifest, () => config.IncubatorWobblesWhileIncubating, (val) => config.IncubatorWobblesWhileIncubating = val,
                 GetConfigName(mod, "IncubatorWobblesWhileIncubating"));
 
-            api.AddTextOption(manifest, () => config.IncubatorAdditionalRequiredItemID, (string val) => config.IncubatorAdditionalRequiredItemID = val,
+            api.AddTextOption(manifest, () => config.IncubatorAdditionalRequiredItemID, (val) => config.IncubatorAdditionalRequiredItemID = val,
                 GetConfigName(mod, "IncubatorAdditionalRequiredItemID"), GetConfigDescription(mod, "IncubatorAdditionalRequiredItemID"));
-            api.AddNumberOption(manifest, () => config.IncubatorAdditionalRequiredItemCount, (int val) => config.IncubatorAdditionalRequiredItemCount = val,
+            api.AddNumberOption(manifest, () => config.IncubatorAdditionalRequiredItemCount, (val) => config.IncubatorAdditionalRequiredItemCount = val,
                 GetConfigName(mod, "IncubatorAdditionalRequiredItemCount"), GetConfigDescription(mod, "IncubatorAdditionalRequiredItemCount"), 0);
 
-            api.AddTextOption(manifest, () => config.IncubatorRecipe, (string val) => config.IncubatorRecipe = val,
+            api.AddTextOption(manifest, () => config.IncubatorRecipe, (val) => config.IncubatorRecipe = val,
                 GetConfigName(mod, "IncubatorRecipe"), GetConfigDescription(mod, "IncubatorRecipe"));
-            api.AddTextOption(manifest, () => config.IncubatorRecipeUnlock, (string val) => config.IncubatorRecipeUnlock = val,
+            api.AddTextOption(manifest, () => config.IncubatorRecipeUnlock, (val) => config.IncubatorRecipeUnlock = val,
                 GetConfigName(mod, "IncubatorRecipeUnlock"), GetConfigDescription(mod, "IncubatorRecipeUnlock"));
 
             api.AddSectionTitle(manifest, GetConfigName(mod, "RingSection"));
 
-            api.AddBoolOption(manifest, () => config.LethalRings, (bool val) => config.LethalRings = val,
+            api.AddBoolOption(manifest, () => config.LethalRings, (val) => config.LethalRings = val,
                 GetConfigName(mod, "LethalRings"), GetConfigDescription(mod, "LethalRings"));
         }
 

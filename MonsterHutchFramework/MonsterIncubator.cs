@@ -10,7 +10,7 @@ using StardewValley.GameData.BigCraftables;
 using StardewValley.GameData.Machines;
 
 
-namespace MonsterHutchFramework.MonsterHutchFramework
+namespace MonsterHutchFramework
 {
     internal class MonsterIncubator
     {
@@ -79,16 +79,6 @@ namespace MonsterHutchFramework.MonsterHutchFramework
                     }
                 });
             }
-
-            //if (e.NameWithoutLocale.IsEquivalentTo("Data/Notes") && (Game1.player.knowsRecipe(monsterIncubatorNonQID) || Game1.player.knowsRecipe(monsterIncubatorQID)))
-            //{
-            //    e.Edit((asset) =>
-            //    {
-            //        var data = asset.AsDictionary<int, string>().Data;
-
-            //        data[monsterIncubatorNoteID] = $"[letterbg 2]{ModEntry.Mod.Helper.Translation.Get("MonsterIncubator.instructions")}";
-            //    });
-            //}
 
             if (e.NameWithoutLocale.IsEquivalentTo("Data/BigCraftables"))
             {
@@ -209,7 +199,9 @@ namespace MonsterHutchFramework.MonsterHutchFramework
                         defaultMachineSpriteEffect
                     };
 
-                    foreach(var monsterData in AssetHandler.data)
+                    monsterIncubator.OutputRules = new List<MachineOutputRule>();
+
+                    foreach (var monsterData in AssetHandler.monsterHutchData)
                     {
                         int incubatorDuration = Math.Max(1, monsterData.Value.IncubationTime);
 
@@ -232,8 +224,7 @@ namespace MonsterHutchFramework.MonsterHutchFramework
 
                         defaultOutput.OutputItem = new List<MachineItemOutput>() { itemOutputItem };
 
-                        monsterIncubator.OutputRules = new List<MachineOutputRule>() { defaultOutput };
-
+                        monsterIncubator.OutputRules.Add(defaultOutput);
                     }
 
                     if (ModEntry.Config.IncubatorAdditionalRequiredItemCount > 0)

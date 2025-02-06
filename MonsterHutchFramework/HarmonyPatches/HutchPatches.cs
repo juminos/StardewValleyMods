@@ -9,7 +9,7 @@ using StardewValley;
 using StardewValley.Monsters;
 using StardewValley.Objects;
 
-namespace MonsterHutchFramework.MonsterHutchFramework.HarmonyPatches
+namespace MonsterHutchFramework.HarmonyPatches
 {
     internal class HutchPatches
     {
@@ -57,11 +57,11 @@ namespace MonsterHutchFramework.MonsterHutchFramework.HarmonyPatches
                 Monster monster = null;
                 Vector2 v = new Vector2((int)__instance.TileLocation.X, (int)__instance.TileLocation.Y + 1) * 64f;
 
-                foreach (var monsterData in AssetHandler.data)
+                foreach (var monsterData in AssetHandler.monsterHutchData)
                 {
                     if (__instance.heldObject.Value.QualifiedItemId == monsterData.Value.InputItemId)
                     {
-                        monster = ModEntry.CreateMonster(v, monsterData.Value);
+                        monster = MonsterBuilder.CreateMonster(v, monsterData.Value);
                         break;
                     }
                 }
@@ -88,7 +88,7 @@ namespace MonsterHutchFramework.MonsterHutchFramework.HarmonyPatches
             __state = new List<Monster>();
             for (int i = __instance.characters.Count - 1; i >= 0; i--)
             {
-                if (__instance.characters[i] is Monster monster)
+                if (__instance.characters[i] is Monster monster && monster is not GreenSlime)
                 {
                     __state.Add(monster);
                     __instance.characters.RemoveAt(i);
@@ -96,7 +96,7 @@ namespace MonsterHutchFramework.MonsterHutchFramework.HarmonyPatches
             }
             int startIndex = Game1.random.Next(__instance.waterSpots.Length);
             float usedWater = 0f;
-            foreach (var monsterType in AssetHandler.data)
+            foreach (var monsterType in AssetHandler.monsterHutchData)
             {
                 int monsterCount = 0;
                 foreach (var monster in __state)
@@ -120,7 +120,7 @@ namespace MonsterHutchFramework.MonsterHutchFramework.HarmonyPatches
                             }
                         }
                     }
-                    usedWater += (float)monstersWatered / (float)monsterType.Value.NumberWatered;
+                    usedWater += monstersWatered / (float)monsterType.Value.NumberWatered;
 
                     for (int j = 0; j < monstersWatered; j++)
                     {
@@ -186,11 +186,11 @@ namespace MonsterHutchFramework.MonsterHutchFramework.HarmonyPatches
             for (int i = 0; i < __instance.waterSpots.Length; i++)
             {
                 if (
-                    (roundUsedWater > 4) ||
-                    (roundUsedWater == 4 && Game1.random.NextDouble() < 0.8) ||
-                    (roundUsedWater == 3 && Game1.random.NextDouble() < 0.6) ||
-                    (roundUsedWater == 2 && Game1.random.NextDouble() < 0.4) ||
-                    (roundUsedWater == 1 && Game1.random.NextDouble() < 0.2)
+                    roundUsedWater > 4 ||
+                    roundUsedWater == 4 && Game1.random.NextDouble() < 0.8 ||
+                    roundUsedWater == 3 && Game1.random.NextDouble() < 0.6 ||
+                    roundUsedWater == 2 && Game1.random.NextDouble() < 0.4 ||
+                    roundUsedWater == 1 && Game1.random.NextDouble() < 0.2
                     )
                 {
                     __instance.waterSpots[(i + startIndex) % __instance.waterSpots.Length] = false;

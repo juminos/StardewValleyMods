@@ -1,8 +1,10 @@
 {
     "MonsterHutch.name": "Monster Hutch",
     "MonsterHutch.description": "A secure building for raising dangerous monsters.",
-    "MonsterHutchExpanded.name": "Monster Hutch Expansion",
-    "MonsterHutchExpanded.description": "Add a basement to your monster hutch. Kegs can be used there.",
+    "MonsterHutchExpanded.name": "Monster Hutch Basement",
+    "MonsterHutchExpanded.description": "Adds a basement to your monster hutch. Monsters cannot use it but kegs will work there.",
+    "ConfigHutchExpansion": "Monster Hutch Expansion",
+    "ConfigHutchExpansionDescription": "Whether to add a Monster Hutch upgrade that adds a basement (mainly for casks).",
     "ConfigHutchInterior": "Hutch Interior Change",
     "ConfigHutchInteriorDisabled": "Disabled",
     "ConfigRandomizeMonsterPositions": "Randomize Monster Position\nIn Hutch Daily",
@@ -10,6 +12,7 @@
     "ConfigRandomizeOnlyModMonsterPositions": "Randomize Monster Position Does\nNot Affect Slimes",
     "ConfigIncubatorIsAffectedByCoopmaster": "Is Affected By Coopmaster",
     "ConfigIncubatorIsAffectedByCoopmasterDescription": "Whether Coopmaster should half the incubation duration (This is the case for base game slime incubator)",
+    "ConfigIncubatorWobblesWhileIncubating": "Wobbles While Incubating",
     "ConfigIncubatorAdditionalRequiredItemID": "Additional Required Item ID",
     "ConfigIncubatorAdditionalRequiredItemIDDescription": "An item ID that also gets consumed by the incubator in addition to the monster item (by default: life elixir)",
     "ConfigIncubatorAdditionalRequiredItemCount": "Additional Required Item Count",
@@ -27,5 +30,8 @@
     "MonsterIncubator.additionalItemWarning": "Requires {{additionalItemCount}} {{additionalItemName}} to start incubation",
     "WizardLetter.content": "@,^^   I know I can trust you with the blueprints for my latest invention, the 'Monster Incubator'. It reanimates monsters from their component parts. ^The transformation consumes 10 Void Essence and takes two days. As a safety measure, it only works in a 'Monster Hutch'.^^ Known reanimation subjects:^   *1 Mummified Bat > Living Bat^   *10 Coal > Dust Sprite^   *10 Bug Meat > Spider^   *10 Cinder Shard > Magma Sprite^   *10 Ore > Rock Crab^   *1 Truffle > Truffle Crab^   *1 Ginger > Stick Bug^^   -M. Rasmodius, Wizard",
     "WizardLetter.description": "Wizard's Invention",
-    "MonsterIncubator.instructions": "-~-Monster Incubator Guide-~-\n\n    The Monster Incubator reanimates monsters from one of their component parts. It consumes 10 Void Essence to power a transformation which will be complete after approximately two days. As a safety measure, it is designed to function only when placed within an appropriately secure location. Robin can construct a 'Monster Hutch' which can be used for breeding slimes as well as any monsters produced by the machine.\n\n Successful reanimation subjects:\n *1 Mummified Bat -> Living Bat\n *10 Coal -> Dust Sprite\n 10 Bug Meat -> Spider\n *10 Cinder Shard -> Magma Sprite\n *10 Ore -> Rock Crab\n *1 Truffle -> Truffle Crab\n *1 Ginger -> Stick Bug"
+    "MonsterIncubator.instructions": "-~-Monster Incubator Guide-~-\n\n    The Monster Incubator reanimates monsters from one of their component parts, consuming 10 Void Essence to power the transformation. As a safety measure, I designed it to only function within a 'Monster Hutch'.\n\n Successful reanimation subjects:\n *1 Mummified Bat -> Living Bat\n *10 Coal -> Dust Sprite\n 10 Bug Meat -> Spider\n *10 Cinder Shard -> Magma Sprite\n *10 Ore -> Rock Crab\n *1 Truffle -> Truffle Crab\n *1 Ginger -> Stick Bug",
+    "ConfigRingSection": "Charmer Rings",
+    "ConfigLethalRings": "Lethal Rings",
+    "ConfigLethalRingsDescription": "Whether wearing a charmer ring still allows you to deal damage to the associated monster"
 }

@@ -17,20 +17,24 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using StardewValley.GameData.Machines;
 using xTile;
+using static StardewValley.Minigames.CraneGame;
+using StardewValley.Extensions;
+using System.Drawing;
 
-namespace MonsterHutchFramework.MonsterHutchFramework
+namespace MonsterHutchFramework
 {
     public class ModEntry : Mod
     {
         internal static IMonitor SMonitor;
         internal static IModHelper SHelper;
-        internal static ModEntry Mod {  get; private set; }
+        internal static ModEntry Mod { get; private set; }
         internal static ModConfig Config { get; private set; }
         internal string MonsterIncubatorAssetPath { get; private set; }
-        public override void Entry (IModHelper helper)
+        public override void Entry(IModHelper helper)
         {
             Mod = this;
-            Config = Helper.ReadConfig<ModConfig> ();
+            Config = Helper.ReadConfig<ModConfig>();
+            I18n.Init(helper.Translation);
             SMonitor = Monitor;
             SHelper = helper;
 
@@ -54,8 +58,8 @@ namespace MonsterHutchFramework.MonsterHutchFramework
                 return;
             }
 
-            // MonsterIncubatorAssetPath = Helper.ModContent.GetInternalAssetName("assets/monsterIncubator.png").BaseName;
-            MonsterIncubatorAssetPath = Game1.content.Load<Texture2D>("assets/monsterIncubator.png").Name;
+            SHelper.ModContent.Load<Texture2D>("assets/monsterIncubator.png");
+            MonsterIncubatorAssetPath = SHelper.ModContent.GetInternalAssetName("assets/monsterIncubator.png").BaseName; 
         }
         private void OnSaveLoaded(object? sender, SaveLoadedEventArgs e)
         {
@@ -70,11 +74,11 @@ namespace MonsterHutchFramework.MonsterHutchFramework
                         var name = hutch.characters[i].Name;
 
                         bool foundMonster = false;
-                        foreach (var monsterData in AssetHandler.data)
+                        foreach (var monsterData in AssetHandler.monsterHutchData)
                         {
                             if (monsterData.Value.Name == name)
                             {
-                                CreateMonster(pos, monsterData.Value);
+                                MonsterBuilder.CreateMonster(pos, monsterData.Value);
                                 foundMonster = true;
                                 break;
                             }
@@ -154,58 +158,22 @@ namespace MonsterHutchFramework.MonsterHutchFramework
                     var monsterPos = new Vector2(monster.Tile.X, monster.Tile.Y);
                     if (Math.Abs(monsterPos.X - playerTile.X) <= 1 && Math.Abs(monsterPos.Y - playerTile.Y) <= 1)
                     {
-                        bool foundMonster = false;
-                        foreach (var monsterData in AssetHandler.data)
+                        if (Game1.player.leftRing != null && Game1.player.rightRing != null)
                         {
-                            if (monsterData.Value.Name == monster.Name && Game1.player.isWearingRing($"{monsterData.Value.CharmerRingId}"))
+                            string leftRingId = Game1.player.leftRing.Value.ItemId;
+                            string rightRingId = Game1.player.rightRing.Value.ItemId;
+
+                            if (AssetHandler.charmerRingData.ContainsKey(leftRingId) || AssetHandler.charmerRingData.ContainsKey(rightRingId))
                             {
-                                monster.showTextAboveHead("<", null, 2, 1500, Game1.random.Next(500));
-                                if (monsterData.Value.Sound != null)
+                                if (AssetHandler.charmerRingData[leftRingId].CharmedMonsters.Contains(monster.Name) || AssetHandler.charmerRingData[rightRingId].CharmedMonsters.Contains(monster.Name))
                                 {
-                                    DelayedAction.playSoundAfterDelay($"{monsterData.Value.Sound}", Game1.random.Next(500), hutch, monsterPos);
+                                    monster.showTextAboveHead("<", null, 2, 1500, Game1.random.Next(500));
                                 }
-                                foundMonster = true;
-                                break;
                             }
-                        }
-                        if (!foundMonster)
-                        {
-                            SMonitor.Log($"monster name {monster.Name} not found in monster data", LogLevel.Error);
                         }
                     }
                 }
             }
-        }
-        public static Monster CreateMonster(Vector2 vector, MonsterHutchData data)
-        {
-            var name = data.MonsterType;
-            var monster = new Monster(name, vector);
-            monster.reloadSprite();
-            if (data.TexturePath != null)
-            {
-                var texture = Game1.content.Load<Texture2D>($"{data.TexturePath}");
-                // var textureName = SHelper.ModContent.GetInternalAssetName($"{data.TexturePath}").BaseName;
-                try
-                {
-                    monster.Sprite.LoadTexture(texture.Name);
-                }
-                catch
-                {
-                    SMonitor.Log($"Failed loading '{texture}' texture for {monster.Name}.", LogLevel.Error);
-                }
-            }
-            monster.Name = data.Name;
-            monster.Speed = 1;
-            monster.addedSpeed = 0;
-            monster.farmerPassesThrough = true;
-            monster.objectsToDrop.Clear();
-            for (int i = 0; i < data.Drops.Count; i++)
-            {
-                monster.objectsToDrop.Add(data.Drops[i]);
-            }
-            monster.moveTowardPlayerThreshold.Value = 2;
-
-            return monster;
         }
     }
     public static class GameContentHelperExtensions
