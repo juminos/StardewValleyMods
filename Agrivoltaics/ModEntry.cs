@@ -47,7 +47,8 @@ namespace Agrivoltaics
                 Monitor.Log($"Issue with Harmony patching: {e}", LogLevel.Error);
                 return;
             }
-            SolarPanelAssetPath = Game1.content.Load<Texture2D>("assets/SolarPanel.png").Name;
+            SHelper.ModContent.Load<Texture2D>("assets/SolarPanel.png");
+            SolarPanelAssetPath = SHelper.ModContent.GetInternalAssetName("assets/SolarPanel.png").BaseName;
         }
         private void OnAssetRequested(object? sender, AssetRequestedEventArgs e)
         {
