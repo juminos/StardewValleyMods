@@ -20,6 +20,7 @@ using xTile;
 using static StardewValley.Minigames.CraneGame;
 using StardewValley.Extensions;
 using System.Drawing;
+using MonsterHutchFramework.HarmonyPatches;
 
 namespace MonsterHutchFramework
 {
@@ -158,18 +159,10 @@ namespace MonsterHutchFramework
                     var monsterPos = new Vector2(monster.Tile.X, monster.Tile.Y);
                     if (Math.Abs(monsterPos.X - playerTile.X) <= 1 && Math.Abs(monsterPos.Y - playerTile.Y) <= 1)
                     {
-                        if (Game1.player.leftRing != null && Game1.player.rightRing != null)
+                        if (RingPatches.MonsterIsCharmed(monster, Game1.player))
                         {
-                            string leftRingId = Game1.player.leftRing.Value.ItemId;
-                            string rightRingId = Game1.player.rightRing.Value.ItemId;
-
-                            if (AssetHandler.charmerRingData.ContainsKey(leftRingId) || AssetHandler.charmerRingData.ContainsKey(rightRingId))
-                            {
-                                if (AssetHandler.charmerRingData[leftRingId].CharmedMonsters.Contains(monster.Name) || AssetHandler.charmerRingData[rightRingId].CharmedMonsters.Contains(monster.Name))
-                                {
-                                    monster.showTextAboveHead("<", null, 2, 1500, Game1.random.Next(500));
-                                }
-                            }
+                            monster.showTextAboveHead("<", null, 2, 1500, Game1.random.Next(500));
+                            //monster.playNearbySoundAll(monsterData.Sound);
                         }
                     }
                 }
