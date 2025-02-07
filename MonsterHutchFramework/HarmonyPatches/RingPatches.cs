@@ -39,96 +39,54 @@ namespace MonsterHutchFramework.HarmonyPatches
         }
         internal static void InvinciblePatch_Postfix(Monster __instance, ref bool __result)
         {
-            if (Game1.player.leftRing != null && Game1.player.rightRing != null && !ModEntry.Config.LethalRings)
+            var who = Game1.player;
+            if (MonsterIsCharmed(__instance, who))
             {
-                string leftRingId = Game1.player.leftRing.Value.ItemId;
-                string rightRingId = Game1.player.rightRing.Value.ItemId;
-
-                ModEntry.SMonitor.Log($"player wearing a ring", LogLevel.Trace);
-
-                if (AssetHandler.charmerRingData.ContainsKey(leftRingId) || AssetHandler.charmerRingData.ContainsKey(rightRingId))
-                {
-                    ModEntry.SMonitor.Log($"found {leftRingId} or {rightRingId}", LogLevel.Trace);
-
-                    if (AssetHandler.charmerRingData[leftRingId].CharmedMonsters.Contains(__instance.Name) || AssetHandler.charmerRingData[rightRingId].CharmedMonsters.Contains(__instance.Name))
-                    {
-                        ModEntry.SMonitor.Log($"found {__instance.Name} in ring monster list", LogLevel.Trace);
-
-                        __result = true;
-                        return;
-                    }
-                }
+                __result = true;
+                return;
             }
         }
         internal static void OverlapFarmerDamage_Postfix(Monster __instance, Farmer who, ref bool __result)
         {
-            if (Game1.player.leftRing != null && Game1.player.rightRing != null)
+            if (MonsterIsCharmed(__instance, who))
             {
-                string leftRingId = Game1.player.leftRing.Value.ItemId;
-                string rightRingId = Game1.player.rightRing.Value.ItemId;
-
-                ModEntry.SMonitor.Log($"player wearing a ring", LogLevel.Trace);
-
-                if (AssetHandler.charmerRingData.ContainsKey(leftRingId) || AssetHandler.charmerRingData.ContainsKey(rightRingId))
-                {
-                    ModEntry.SMonitor.Log($"found {leftRingId} or {rightRingId}", LogLevel.Trace);
-
-                    if (AssetHandler.charmerRingData[leftRingId].CharmedMonsters.Contains(__instance.Name) || AssetHandler.charmerRingData[rightRingId].CharmedMonsters.Contains(__instance.Name))
-                    {
-                        ModEntry.SMonitor.Log($"found {__instance.Name} in ring monster list", LogLevel.Trace);
-
-                        __result = true;
-                        return;
-                    }
-                }
+                __result = true;
+                return;
             }
         }
         internal static void ShadowShamanCastPatch_Prefix(ShadowShaman __instance, GameTime time)
         {
-            if (Game1.player.leftRing != null && Game1.player.rightRing != null)
+            var who = Game1.player;
+            if (MonsterIsCharmed(__instance, who))
             {
-                string leftRingId = Game1.player.leftRing.Value.ItemId;
-                string rightRingId = Game1.player.rightRing.Value.ItemId;
-
-                ModEntry.SMonitor.Log($"player wearing a ring", LogLevel.Trace);
-
-                if (AssetHandler.charmerRingData.ContainsKey(leftRingId) || AssetHandler.charmerRingData.ContainsKey(rightRingId))
-                {
-                    ModEntry.SMonitor.Log($"found {leftRingId} or {rightRingId}", LogLevel.Trace);
-
-                    if (AssetHandler.charmerRingData[leftRingId].CharmedMonsters.Contains(__instance.Name) || AssetHandler.charmerRingData[rightRingId].CharmedMonsters.Contains(__instance.Name))
-                    {
-                        ModEntry.SMonitor.Log($"found {__instance.Name} in ring monster list", LogLevel.Trace);
-
-                        __instance.coolDown = 1500;
-                        return;
-                    }
-                }
+                __instance.coolDown = 1500;
+                return;
             }
         }
         internal static void ShadowShooterPatch_Prefix(Shooter __instance, GameTime time)
         {
-            if (Game1.player.leftRing != null && Game1.player.rightRing != null)
+            var who = Game1.player;
+            if (MonsterIsCharmed(__instance, who))
             {
-                string leftRingId = Game1.player.leftRing.Value.ItemId;
-                string rightRingId = Game1.player.rightRing.Value.ItemId;
-
-                ModEntry.SMonitor.Log($"player wearing a ring", LogLevel.Trace);
-
-                if (AssetHandler.charmerRingData.ContainsKey(leftRingId) || AssetHandler.charmerRingData.ContainsKey(rightRingId))
-                {
-                    ModEntry.SMonitor.Log($"found {leftRingId} or {rightRingId}", LogLevel.Trace);
-
-                    if (AssetHandler.charmerRingData[leftRingId].CharmedMonsters.Contains(__instance.Name) || AssetHandler.charmerRingData[rightRingId].CharmedMonsters.Contains(__instance.Name))
-                    {
-                        ModEntry.SMonitor.Log($"found {__instance.Name} in ring monster list", LogLevel.Trace);
-
-                        __instance.shooting.Value = false;
-                        __instance.nextShot = 2f;
-                        return;
-                    }
-                }
+                __instance.shooting.Value = false;
+                __instance.nextShot = 2f;
+                return;
             }
+        }
+        public static bool MonsterIsCharmed(Monster monster, Farmer who)
+        {
+            if (who.rightRing.Value == null && who.leftRing.Value == null)
+            {
+                return false;
+            }
+            if ((who.leftRing.Value != null && AssetHandler.charmerRingData.ContainsKey(who.leftRing.Value.ItemId) && AssetHandler.charmerRingData[who.leftRing.Value.ItemId].CharmedMonsters.Contains(monster.Name)) ||
+                (who.rightRing.Value != null && AssetHandler.charmerRingData.ContainsKey(who.rightRing.Value.ItemId) && AssetHandler.charmerRingData[who.rightRing.Value.ItemId].CharmedMonsters.Contains(monster.Name)))
+            {
+                ModEntry.SMonitor.Log($"found {monster.Name} in ring monster list", LogLevel.Trace);
+
+                return true;
+            }
+            return false;
         }
     }
 }
