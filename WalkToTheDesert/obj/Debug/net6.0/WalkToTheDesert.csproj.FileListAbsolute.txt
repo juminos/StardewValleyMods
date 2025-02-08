@@ -1,9 +1,0 @@
-C:\Users\princ\SV modding\StardewValleyMods\WalkToTheDesert\bin\Debug\net6.0\WalkToTheDesert.deps.json
-C:\Users\princ\SV modding\StardewValleyMods\WalkToTheDesert\bin\Debug\net6.0\WalkToTheDesert.dll
-C:\Users\princ\SV modding\StardewValleyMods\WalkToTheDesert\obj\Debug\net6.0\WalkToTheDesert.csproj.AssemblyReference.cache
-C:\Users\princ\SV modding\StardewValleyMods\WalkToTheDesert\obj\Debug\net6.0\WalkToTheDesert.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\princ\SV modding\StardewValleyMods\WalkToTheDesert\obj\Debug\net6.0\WalkToTheDesert.AssemblyInfoInputs.cache
-C:\Users\princ\SV modding\StardewValleyMods\WalkToTheDesert\obj\Debug\net6.0\WalkToTheDesert.AssemblyInfo.cs
-C:\Users\princ\SV modding\StardewValleyMods\WalkToTheDesert\obj\Debug\net6.0\WalkToTheDesert.csproj.CoreCompileInputs.cache
-C:\Users\princ\SV modding\StardewValleyMods\WalkToTheDesert\obj\Debug\net6.0\WalkToTheDesert.sourcelink.json
-C:\Users\princ\SV modding\StardewValleyMods\WalkToTheDesert\obj\Debug\net6.0\WalkToTheDesert.dll

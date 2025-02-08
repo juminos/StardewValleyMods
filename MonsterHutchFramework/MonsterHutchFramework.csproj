@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="MonsterHutchFramework\assets\" />
+    <Folder Include="assets\" />
   </ItemGroup>
 
 </Project>

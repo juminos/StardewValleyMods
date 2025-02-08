@@ -1,0 +1,429 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Reflection;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Graphics;
+using StardewModdingAPI;
+using StardewValley;
+using StardewValley.BellsAndWhistles;
+using StardewValley.Extensions;
+using StardewValley.Monsters;
+using StardewValley.Projectiles;
+using static StardewValley.Minigames.CraneGame;
+using static StardewValley.Monsters.DinoMonster;
+
+namespace MonsterHutchFramework
+{
+    internal class MonsterBuilder
+    {
+        public static Monster CreateMonster(Vector2 vector, MonsterHutchData data, string skinTexture = null)
+        {
+            var type = data.MonsterType;
+
+            // AngryRoger class (probably broken)
+            if (type == "Angry Roger")
+            {
+                var monster = new AngryRoger(vector);
+                UpdateMonsterStats(monster, data, skinTexture);
+
+                return monster;
+            }
+
+            // Bat class
+            if (type == "Bat" || 
+                type == "Frost Bat" || 
+                type == "Lava Bat" || 
+                type == "Iridium Bat" || 
+                type == "Haunted Skull" || 
+                type == "Magma Sprite" || 
+                type == "Magma Sparker")
+            {
+                var monster = new Bat(vector);
+                if (type == "Frost Bat")
+                {
+                    monster.Name = "Frost Bat";
+                    monster.reloadSprite();
+                }
+                if (type == "Lava Bat")
+                {
+                    monster.Name = "Lava Bat";
+                    monster.reloadSprite();
+                }
+                if (type == "Iridium Bat")
+                {
+                    monster.Name = "Iridium Bat";
+                    monster.reloadSprite();
+                    monster.cursedDoll.Value = true;
+                    monster.shakeTimer = 100;
+                }
+                if (type == "Haunted Skull")
+                {
+                    monster.Name = "Haunted Skull";
+                    monster.reloadSprite();
+                    monster.hauntedSkull.Value = true;
+                    monster.cursedDoll.Value = true;
+                    monster.shakeTimer = 100;
+                }
+                if (type == "Magma Sprite")
+                {
+                    monster.Name = "Magma Sprite";
+                    monster.reloadSprite();
+                    monster.magmaSprite.Value = true;
+                    monster.cursedDoll.Value = true;
+                    monster.shakeTimer = 100;
+                }
+                if (type == "Magma Sparker")
+                {
+                    monster.Name = "Magma Sparker";
+                    monster.reloadSprite();
+                    monster.magmaSprite.Value = true;
+                    monster.cursedDoll.Value = true;
+                    monster.shakeTimer = 100;
+                    monster.canLunge.Value = true;
+                }
+                UpdateMonsterStats(monster, data, skinTexture);
+
+                return monster;
+            }
+
+            // BigSlime class
+            if (type == "Big Slime")
+            {
+                var monster = new BigSlime(vector, 0);
+                UpdateMonsterStats(monster, data, skinTexture);
+
+                return monster;
+            }
+
+            // BlueSquid class
+            if (type == "Blue Squid")
+            {
+                var monster = new BlueSquid(vector);
+                UpdateMonsterStats(monster, data, skinTexture);
+
+                return monster;
+            }
+
+            // Bug class
+            if (type == "Bug")
+            {
+                var monster = new Bug(vector, 1);
+                UpdateMonsterStats(monster, data, skinTexture);
+
+                return monster;
+            }
+
+            // DinoMonster class
+            if (type == "Pepper Rex")
+            {
+                var monster = new DinoMonster(vector);
+                UpdateMonsterStats(monster, data, skinTexture);
+
+                return monster;
+            }
+
+            // Duggy class
+            if (type == "Duggy" || type == "Magma Duggy")
+            {
+                var monster = new Duggy(vector);
+                UpdateMonsterStats(monster, data, skinTexture);
+
+                return monster;
+            }
+
+            // DustSpirit class
+            if (type == "Dust Spirit")
+            {
+                var monster = new DustSpirit(vector);
+                UpdateMonsterStats(monster, data, skinTexture);
+
+                return monster;
+            }
+
+            // DwarvishSentry class
+            if (type == "Dwarvish Sentry")
+            {
+                var monster = new DwarvishSentry(vector);
+                UpdateMonsterStats(monster, data, skinTexture);
+
+                return monster;
+            }
+
+            //Fly class
+            if (type == "Fly")
+            {
+                var monster = new Fly(vector);
+                UpdateMonsterStats(monster, data, skinTexture);
+
+                return monster;
+            }
+
+            // Ghost class
+            if (type == "Ghost" ||
+                //type == "Carbon Ghost" ||  // uses name field for animation update
+                type == "Putrid Ghost")
+            {
+                var monster = new Ghost(vector, type);
+                UpdateMonsterStats(monster, data, skinTexture);
+
+                return monster;
+            }
+
+            // Grub class
+            if (type == "Grub")
+            {
+                var monster = new Grub(vector);
+                UpdateMonsterStats(monster, data, skinTexture);
+
+                return monster;
+            }
+
+            // HotHead class
+            if (type == "Hot Head")
+            {
+                var monster = new HotHead(vector);
+                UpdateMonsterStats(monster, data, skinTexture);
+
+                return monster;
+            }
+
+            // LavaLurk class
+            if (type == "Lava Lurk")
+            {
+                var monster = new LavaLurk(vector);
+                UpdateMonsterStats(monster, data, skinTexture);
+
+                return monster;
+            }
+
+            // Leaper class
+            if (type == "Spider")
+            {
+                var monster = new Leaper(vector);
+                UpdateMonsterStats(monster, data, skinTexture);
+
+                return monster;
+            }
+
+            // MetalHead class
+            if (type == "Metal Head")
+            {
+                var monster = new MetalHead("Metal Head", vector);
+                UpdateMonsterStats(monster, data, skinTexture);
+
+                return monster;
+            }
+
+            // Mummy class
+            if (type == "Mummy")
+            {
+                var monster = new Mummy(vector);
+                UpdateMonsterStats(monster, data, skinTexture);
+
+                return monster;
+            }
+
+            // RockCrab class
+            if (type == "Rock Crab" || type == "Lava Crab" || type == "Iridium Crab" || type == "False Magma Cap" || type == "Stick Bug")
+            {
+                var monster = new RockCrab(vector);
+
+                // isStickBug property evades bomb/tool interaction
+                if (type == "Stick Bug")
+                {
+                    monster.isStickBug.Value = true;
+                }
+                monster.waiter = false;
+                UpdateMonsterStats(monster, data, skinTexture);
+
+                return monster;
+            }
+
+            //RockGolem class
+            if (type == "Stone Golem" || type == "Wilderness Golem")
+            {
+                var monster = new RockGolem(vector);
+                UpdateMonsterStats(monster, data, skinTexture);
+
+                return monster;
+            }
+
+            // Serpent class
+            if (type == "Serpent" || type == "Royal Serpent")
+            {
+                var monster = new Serpent(vector, type);
+                UpdateMonsterStats(monster, data, skinTexture);
+
+                return monster;
+            }
+
+            // ShadowGirl class (probably broken)
+            if (type == "Shadow Girl")
+            {
+                var monster = new ShadowGirl(vector);
+                UpdateMonsterStats(monster, data, skinTexture);
+
+                return monster;
+            }
+
+            // ShadowGuy class (probably broken)
+            if (type == "Shadow Guy")
+            {
+                var monster = new ShadowGuy(vector);
+                UpdateMonsterStats(monster, data, skinTexture);
+
+                return monster;
+            }
+
+            // ShadowBrute class
+            if (type == "Shadow Brute")
+            {
+                var monster = new ShadowBrute(vector);
+                UpdateMonsterStats(monster, data, skinTexture);
+
+                return monster;
+            }
+
+            // ShadowShaman class
+            if (type == "Shadow Shaman")
+            {
+                var monster = new ShadowShaman(vector);
+                UpdateMonsterStats(monster, data, skinTexture);
+
+                return monster;
+            }
+
+            // Shooter class
+            if (type == "Shadow Sniper")
+            {
+                var monster = new Shooter(vector);
+                UpdateMonsterStats(monster, data, skinTexture);
+
+                return monster;
+            }
+
+            // Skeleton class
+            if (type == "Skeleton" || 
+                //type == "Skeleton Warrior" || // can't find this variant in game code
+                type == "Skeleton Mage")
+            {
+                bool isMage = false;
+                if (type == "Skeleton Mage")
+                {
+                    isMage = true;
+                }
+                var monster = new Skeleton(vector, isMage);
+                UpdateMonsterStats(monster, data, skinTexture);
+
+                return monster;
+            }
+
+            // SquidKid class
+            if (type == "Squid Kid")
+            {
+                var monster = new SquidKid(vector);
+                UpdateMonsterStats(monster, data, skinTexture);
+
+                return monster;
+            }
+
+            else
+            {
+                ModEntry.SMonitor.Log($"Monster type {type} not found. Attempting to create generic monster.", LogLevel.Warn);
+
+                var monster = new Monster(type, vector);
+                UpdateMonsterStats(monster, data, skinTexture);
+
+                return monster;
+            }
+
+            //if (type == "Fireball")           // Probably unused DinoMonster code
+            //if (type == "Crow")               // Crow is not a valid monster type
+            //if (type == "Frog")               // Frog is not a valid monster type
+            //if (type == "Cat")                // Cat is not a valid monster type
+            //if (type == "Spiker)              // wouldn't make sense in hutch
+
+            // GreenSlime based monsters would likely complicate slime hutch behavior
+            //if (type == "Green Slime")
+            //if (type == "Frost Jelly")
+            //if (type == "Sludge")
+            //if (type == "Tiger Slime")
+        }
+        public static void UpdateMonsterStats (Monster monster, MonsterHutchData data, string skinTexture)
+        {
+            monster.HideShadow = data.HideShadow;
+            monster.IsWalkingTowardPlayer = false;
+            if (data.ScaleMin < data.ScaleMax)
+            {
+                monster.Scale = (float)Game1.random.Next(data.ScaleMin, data.ScaleMax) / 100f;
+            }
+            if (skinTexture != null)
+            {
+                var texture = Game1.content.Load<Texture2D>(skinTexture);
+                try
+                {
+                    monster.Sprite.LoadTexture(texture.Name);
+                }
+                catch
+                {
+                    ModEntry.SMonitor.Log($"Failed loading '{texture}' texture for {monster.Name}.", LogLevel.Error);
+                }
+            }
+            else if (data.Skins.Count > 0)
+            {
+                var weightedList = new List<string>();
+                foreach (var weighted in data.Skins)
+                {
+                    if (weighted.Texture != null)
+                    {
+                        for (int i = 0; i < weighted.Weight; i++)
+                        {
+                            weightedList.Add(weighted.Texture);
+                        }
+                    }
+                }
+                var random = new Random();
+                int index = random.Next(weightedList.Count);
+                var texture = Game1.content.Load<Texture2D>($"{weightedList[index]}");
+                try
+                {
+                    monster.Sprite.LoadTexture(texture.Name);
+                    monster.modData.Add("skinTexture", weightedList[index]);
+                }
+                catch
+                {
+                    ModEntry.SMonitor.Log($"Failed loading '{texture}' texture for {monster.Name}.", LogLevel.Error);
+                }
+            }
+            else if (data.TexturePath != null)
+            {
+                var texture = Game1.content.Load<Texture2D>($"{data.TexturePath}");
+                try
+                {
+                    monster.Sprite.LoadTexture(texture.Name);
+                    monster.modData.Add("skinTexture", data.TexturePath);
+                }
+                catch
+                {
+                    ModEntry.SMonitor.Log($"Failed loading '{texture}' texture for {monster.Name}.", LogLevel.Error);
+                }
+            }
+            monster.objectsToDrop.Clear();
+            for (int i = 0; i < data.Drops.Count; i++)
+            {
+                monster.objectsToDrop.Add(data.Drops[i]);
+            }
+            monster.Speed = data.SpeedOverride;
+            monster.addedSpeed = 0;
+            monster.farmerPassesThrough = !data.FarmerCollision;
+            monster.moveTowardPlayerThreshold.Value = data.MoveTowardPlayerThresholdOverride;
+            monster.Name = data.Name;
+        }
+    }
+}
