@@ -194,10 +194,7 @@ namespace MonsterHutchFramework
                         Sounds = new List<MachineSoundData>() { coinSound }
                     };
 
-                    monsterIncubator.LoadEffects = new List<MachineEffects>()
-                    {
-                        defaultMachineSpriteEffect
-                    };
+                    monsterIncubator.LoadEffects = new List<MachineEffects>() { defaultMachineSpriteEffect };
 
                     monsterIncubator.OutputRules = new List<MachineOutputRule>();
 

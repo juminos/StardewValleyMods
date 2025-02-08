@@ -123,7 +123,7 @@ namespace MonsterHutchFramework
                 {
                     foreach (var monster in hutch.characters)
                     {
-                        if (Config.RandomizeOnlyModMonsterPositions && monster is GreenSlime)
+                        if (Config.SkipRandomizeSlimePositions && monster is GreenSlime)
                         {
                             continue;
                         }
