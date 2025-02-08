@@ -56,7 +56,7 @@ namespace MonsterHutchFramework.HarmonyPatches
 
             if (location is SlimeHutch && location.canSlimeHatchHere() && location.characters.Count < 40)
             {
-                Monster monster = null;
+                Monster? monster = null;
                 Vector2 v = new Vector2((int)__instance.TileLocation.X, (int)__instance.TileLocation.Y + 1) * 64f;
 
                 foreach (var monsterData in AssetHandler.monsterHutchData)
@@ -97,7 +97,7 @@ namespace MonsterHutchFramework.HarmonyPatches
                 }
             }
             int startIndex = Game1.random.Next(__instance.waterSpots.Length);
-            int usedWater = 0;
+            float usedWater = 0;
             foreach (var monsterType in AssetHandler.monsterHutchData)
             {
                 int monsterCount = 0;
@@ -124,7 +124,7 @@ namespace MonsterHutchFramework.HarmonyPatches
                         }
                     }
 
-                    usedWater += (int)((float)monstersWatered / monsterType.Value.NumberWatered);
+                    usedWater += ((float)monstersWatered / monsterType.Value.NumberWatered);
 
                     ModEntry.SMonitor.Log($"{monsterCount} {monsterType.Value.Name} found, {monstersWatered} watered, {usedWater} water used.", StardewModdingAPI.LogLevel.Trace);
 
@@ -243,14 +243,17 @@ namespace MonsterHutchFramework.HarmonyPatches
                     }
                 }
             }
+
+            ModEntry.SMonitor.Log($"used water count {usedWater} cast to int {(int)usedWater}", LogLevel.Trace);
+
             for (int i = 0; i < __instance.waterSpots.Length; i++)
             {
                 if (
-                    usedWater > 4 ||
-                    usedWater == 4 && Game1.random.NextDouble() < 0.8 ||
-                    usedWater == 3 && Game1.random.NextDouble() < 0.6 ||
-                    usedWater == 2 && Game1.random.NextDouble() < 0.4 ||
-                    usedWater == 1 && Game1.random.NextDouble() < 0.2
+                    (int)usedWater > 4 ||
+                    (int)usedWater == 4 && Game1.random.NextDouble() < 0.8 ||
+                    (int)usedWater == 3 && Game1.random.NextDouble() < 0.6 ||
+                    (int)usedWater == 2 && Game1.random.NextDouble() < 0.4 ||
+                    (int)usedWater == 1 && Game1.random.NextDouble() < 0.2
                     )
                 {
                     __instance.waterSpots[(i + startIndex) % __instance.waterSpots.Length] = false;

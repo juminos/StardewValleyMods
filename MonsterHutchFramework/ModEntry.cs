@@ -71,15 +71,32 @@ namespace MonsterHutchFramework
                     var monsterList = new List<Monster>();
                     for (int i = 0; i < hutch.characters.Count; i++)
                     {
-                        var pos = hutch.characters[i].Position;
-                        var name = hutch.characters[i].Name;
-
+                        if (hutch.characters[i] is Monster monster && monster is not GreenSlime)
+                        {
+                            monsterList.Add(monster);
+                        }
+                    }
+                    foreach (Monster monster in monsterList)
+                    {
+                        var pos = monster.Position;
+                        var name = monster.Name;
+                        var skin = monster.modData.ContainsKey("skinTexture") ? monster.modData["skinTexture"] : null;
                         bool foundMonster = false;
                         foreach (var monsterData in AssetHandler.monsterHutchData)
                         {
                             if (monsterData.Value.Name == name)
                             {
-                                MonsterBuilder.CreateMonster(pos, monsterData.Value);
+                                Monster? newMonster = null;
+                                if (skin != null)
+                                {
+                                    newMonster = MonsterBuilder.CreateMonster(pos, monsterData.Value, skin);
+                                }
+                                else
+                                {
+                                    newMonster = MonsterBuilder.CreateMonster(pos, monsterData.Value);
+                                }
+                                hutch.characters.Remove(monster);
+                                hutch.characters.Add(newMonster);
                                 foundMonster = true;
                                 break;
                             }

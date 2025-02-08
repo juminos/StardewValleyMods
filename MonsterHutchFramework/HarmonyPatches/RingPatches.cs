@@ -82,7 +82,7 @@ namespace MonsterHutchFramework.HarmonyPatches
             if ((who.leftRing.Value != null && AssetHandler.charmerRingData.ContainsKey(who.leftRing.Value.ItemId) && AssetHandler.charmerRingData[who.leftRing.Value.ItemId].CharmedMonsters.Contains(monster.Name)) ||
                 (who.rightRing.Value != null && AssetHandler.charmerRingData.ContainsKey(who.rightRing.Value.ItemId) && AssetHandler.charmerRingData[who.rightRing.Value.ItemId].CharmedMonsters.Contains(monster.Name)))
             {
-                ModEntry.SMonitor.Log($"found {monster.Name} in ring monster list", LogLevel.Trace);
+                //ModEntry.SMonitor.Log($"found {monster.Name} in ring monster list", LogLevel.Trace);
 
                 return true;
             }
