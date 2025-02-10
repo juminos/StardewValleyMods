@@ -66,7 +66,7 @@ namespace Agrivoltaics
             bool isShaded = false;
             foreach(Building building in dirt.Location.buildings)
             {
-                if (building.buildingType.Value != "juminos.Agrivoltaics.CP_SolarPanel")
+                if (building.buildingType.Value != "juminos.Agrivoltaics_SolarPanel")
                     continue;
 
                 var footprint = building.GetBoundingBox();
