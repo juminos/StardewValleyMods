@@ -40,6 +40,7 @@ namespace Agrivoltaics
                         DrawOffset = new Microsoft.Xna.Framework.Vector2(-8, -4),
                         CollisionMap = "OXO",
                         Builder = "Robin",
+                        DrawShadow = false,
                         BuildCondition = condBuild,
                         BuildDays = 1,
                         BuildCost = buildCost
