@@ -20,7 +20,10 @@ internal class ShooterBehaviorPatch
     }
     internal void ApplyPatch(Harmony harmony)
     {
-        harmony.Patch(AccessTools.Method(typeof(Shooter), nameof(Shooter.behaviorAtGameTick), new[] { typeof(GameTime) }), prefix: new HarmonyMethod(GetType(), nameof(ShadowShooterPatch_Prefix)));
+        if (!ModEntry.SHelper.ModRegistry.IsLoaded("juminos.MonsterHutchStarter"))
+        {
+            harmony.Patch(AccessTools.Method(typeof(Shooter), nameof(Shooter.behaviorAtGameTick), new[] { typeof(GameTime) }), prefix: new HarmonyMethod(GetType(), nameof(ShadowShooterPatch_Prefix)));
+        }
     }
     internal static void ShadowShooterPatch_Prefix(Shooter __instance, GameTime time)
     {

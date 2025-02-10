@@ -42,11 +42,14 @@ namespace FrenshipRings
             {
                 var harmony = new Harmony(this.ModManifest.UniqueID);
 
-                new BaseSightPatch(SMonitor, SHelper).ApplyPatch(harmony);
-                new IsInvinciblePatch(SMonitor, SHelper).ApplyPatch(harmony);
-                new OverlapFarmerDamagePatch(SMonitor, SHelper).ApplyPatch(harmony);
-                new ShooterBehaviorPatch(SMonitor, SHelper).ApplyPatch(harmony);
-                new ShamanBehaviorPatch(SMonitor, SHelper).ApplyPatch(harmony);
+                if (!this.Helper.ModRegistry.IsLoaded("juminos.MonsterHutchStarter"))
+                {
+                    new BaseSightPatch(SMonitor, SHelper).ApplyPatch(harmony);
+                    new IsInvinciblePatch(SMonitor, SHelper).ApplyPatch(harmony);
+                    new OverlapFarmerDamagePatch(SMonitor, SHelper).ApplyPatch(harmony);
+                    new ShooterBehaviorPatch(SMonitor, SHelper).ApplyPatch(harmony);
+                    new ShamanBehaviorPatch(SMonitor, SHelper).ApplyPatch(harmony);
+                }
             }
             catch (Exception e)
             {
@@ -323,21 +326,24 @@ namespace FrenshipRings
                 interval: 1
                 );
 
-            configMenu.AddBoolOption(
-                mod: this.ModManifest,
-                name: I18n.FriendlySlimeRing_Title,
-                tooltip: I18n.FriendlySlimeRing_Description,
-                getValue: () => Config.FriendlySlimeRing,
-                setValue: value => Config.FriendlySlimeRing = value
-                );
+            if (!this.Helper.ModRegistry.IsLoaded("juminos.MonsterHutchStarter"))
+            {
+                configMenu.AddBoolOption(
+                    mod: this.ModManifest,
+                    name: I18n.FriendlySlimeRing_Title,
+                    tooltip: I18n.FriendlySlimeRing_Description,
+                    getValue: () => Config.FriendlySlimeRing,
+                    setValue: value => Config.FriendlySlimeRing = value
+                    );
 
-            configMenu.AddBoolOption(
-                mod: this.ModManifest,
-                name: I18n.LethalRings_Title,
-                tooltip: I18n.LethalRings_Description,
-                getValue: () => Config.LethalRings,
-                setValue: value => Config.LethalRings = value
-                );
+                configMenu.AddBoolOption(
+                    mod: this.ModManifest,
+                    name: I18n.LethalRings_Title,
+                    tooltip: I18n.LethalRings_Description,
+                    getValue: () => Config.LethalRings,
+                    setValue: value => Config.LethalRings = value
+                    );
+            }
 
             // Frog ring category
 

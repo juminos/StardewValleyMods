@@ -3,10 +3,11 @@
     "$schema": "https://smapi.io/schemas/content-patcher.json",
     "Changes": [
 
-        // Add rings
+        // Add charmer rings
         {
             "Action": "EditData",
             "Target": "Data/Objects",
+            "When": { "HasMod: |contains=juminos.MonsterHutchStarter": false },
             "Entries": {
                 "{{ModId}}_Shadow": {
                     "Name": "Shadow Ring",
@@ -87,7 +88,14 @@
                         "color_orange",
                         "ring_item"
                     ]
-                },
+                }
+            }
+        },
+        // Add critter rings
+        {
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "Entries": {
                 "{{ModId}}_Bunny": {
                     "Name": "Bunny Ring",
                     "DisplayName": "{{i18n:bunny-ring.name}}",
@@ -187,7 +195,23 @@
             }
         },
 
-        // Add buffs
+
+        // Add charmer ring buffs
+        {
+            "Action": "EditData",
+            "Target": "Data/Buffs",
+            "When": { "HasMod: |contains=juminos.MonsterHutchStarter": false },
+            "Entries": {
+                "{{ModId}}_SpiderBuff": {
+                    "DisplayName": "{{i18n:spider-ring.name}}",
+                    "Duration": -2,
+                    "IconTexture": "TileSheets\\BuffsIcons",
+                    "IconSpriteIndex": 8,
+                    "Effects": { "Attack": 3 }
+                }
+            }
+        },
+        // Add critter ring buffs
         {
             "Action": "EditData",
             "Target": "Data/Buffs",
@@ -207,59 +231,64 @@
                     "IconTexture": "Mods/{{ModId}}/bunnies_fast",
                     "IconSpriteIndex": 1,
                     "Effects": { "Speed": 3 }
-                },
-                "{{ModId}}_SpiderBuff": {
-                    "DisplayName": "{{i18n:spider-ring.name}}",
-                    "Duration": -2,
-                    "IconTexture": "TileSheets\\BuffsIcons",
-                    "IconSpriteIndex": 8,
-                    "Effects": { "Attack": 3 }
                 }
             }
         },
 
-        // Assign buffs to rings
+
+        // Assign buffs to charmer rings
+        {
+            "Action": "EditData",
+            "Target": "spacechase0.SpaceCore/WearableData",
+            "When": { "HasMod: |contains=juminos.MonsterHutchStarter": false },
+            "Entries": {
+                "(O){{ModId}}_Spider": {
+                    "BuffIdToApply": "{{ModId}}_SpiderBuff"
+                }
+            }
+        },
+        // Assign buffs to critter rings
         {
             "Action": "EditData",
             "Target": "spacechase0.SpaceCore/WearableData",
             "Entries": {
                 "(O){{ModId}}_Butterfly": {
                     "BuffIdToApply": "{{ModId}}_ButterflyBuff"
-                },
-                "(O){{ModId}}_Spider": {
-                    "BuffIdToApply": "{{ModId}}_SpiderBuff"
                 }
             }
         },
 
 
-        // Add mail
+        // Add mail for charmer rings
+        {
+            "Action": "EditData",
+            "Target": "Data/Mail",
+            "When": { "HasMod: |contains=juminos.MonsterHutchStarter": false },
+            "Entries": {
+                "{{ModId}}_Shadow": "{{i18n:shadow-ring.letter}}",
+                "{{ModId}}_DustSprite": "{{i18n:dustsprite-ring.letter}}"
+            }
+        },
+        // Add mail for critter rings
         {
             "Action": "EditData",
             "Target": "Data/Mail",
             "Entries": {
-                "{{ModId}}_Shadow": "{{i18n:shadow-ring.letter}}",
-                "{{ModId}}_SebFrogRing": "{{i18n:frog-ring.letter}}",
-                "{{ModId}}_DustSprite": "{{i18n:dustsprite-ring.letter}}"
+                "{{ModId}}_SebFrogRing": "{{i18n:frog-ring.letter}}"
             }
         },
 
-        // Add trigger actions
+        // Add trigger actions for charmer rings
         {
             "Action": "EditData",
             "Target": "Data/TriggerActions",
+            "When": { "HasMod: |contains=juminos.MonsterHutchStarter": false },
             "Entries": {
                 "{{ModId}}_Krobus10Heart": {
                     "Id": "{{ModId}}_Krobus10Heart",
                     "Trigger": "DayEnding",
                     "Condition": "PLAYER_HEARTS Current Krobus 10",
                     "Action": "AddMail Current {{ModId}}_Shadow"
-                },
-                "{{ModId}}_SebFrogRing": {
-                    "Id": "{{ModId}}_SebFrogRing",
-                    "Trigger": "DayEnding",
-                    "Condition": "PLAYER_HEARTS Current Sebastian 4, WEATHER Forest Rain Storm",
-                    "Action": "AddMail Current {{ModId}}_SebFrogRing"
                 },
                 "{{ModId}}_JasDust": {
                     "Id": "{{ModId}}_JasDust",
@@ -269,8 +298,59 @@
                 }
             }
         },
+        // Add trigger actions for critter rings
+        {
+            "Action": "EditData",
+            "Target": "Data/TriggerActions",
+            "Entries": {
+                "{{ModId}}_SebFrogRing": {
+                    "Id": "{{ModId}}_SebFrogRing",
+                    "Trigger": "DayEnding",
+                    "Condition": "PLAYER_HEARTS Current Sebastian 4, WEATHER Forest Rain Storm",
+                    "Action": "AddMail Current {{ModId}}_SebFrogRing"
+                }
+            }
+        },
 
-        // Add rings to shops
+        // Add charmer rings to shops
+        {
+            "Action": "EditData",
+            "Target": "Data/Shops",
+            "When": { "HasMod: |contains=juminos.MonsterHutchStarter": false },
+            "TargetField": [ "VolcanoShop", "Items" ],
+            "Entries": {
+                "{{ModId}}_MagmaSprite": {
+                    "Id": "{{ModId}}_MagmaSprite",
+                    "ItemId": "{{ModId}}_MagmaSprite",
+                    "Price": 15000,
+                    "TradeItemId": "(O)848",
+                    "TradeItemAmount": 50
+                }
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Shops",
+            "When": { "HasMod: |contains=juminos.MonsterHutchStarter": false },
+            "TargetField": [ "Dwarf", "Items" ],
+            "Entries": {
+                "{{ModId}}_Spider": {
+                    "Id": "{{ModId}}_Spider",
+                    "ItemId": "{{ModId}}_Spider",
+                    "Condition": "PLAYER_HAS_ACHIEVEMENT Current 41",
+                    "TradeItemId": "(O)122",
+                    "TradeItemAmount": 2
+                },
+                "{{ModId}}_Bat": {
+                    "Id": "{{ModId}}_Bat",
+                    "ItemId": "{{ModId}}_Bat",
+                    "Condition": "MINE_LOWEST_LEVEL_REACHED 120",
+                    "TradeItemId": "(O)749",
+                    "TradeItemAmount": 20
+                }
+            }
+        },
+        // Add critter rings to shops
         {
             "Action": "EditData",
             "Target": "Data/Shops",
@@ -303,41 +383,6 @@
                     "TradeItemId": "(O)424",
                     "TradeItemAmount": 2,
                     "Condition": "TIME 2100"
-                }
-            }
-        },
-        {
-            "Action": "EditData",
-            "Target": "Data/Shops",
-            "TargetField": [ "VolcanoShop", "Items" ],
-            "Entries": {
-                "{{ModId}}_MagmaSprite": {
-                    "Id": "{{ModId}}_MagmaSprite",
-                    "ItemId": "{{ModId}}_MagmaSprite",
-                    "Price": 15000,
-                    "TradeItemId": "(O)848",
-                    "TradeItemAmount": 50
-                }
-            }
-        },
-        {
-            "Action": "EditData",
-            "Target": "Data/Shops",
-            "TargetField": [ "Dwarf", "Items" ],
-            "Entries": {
-                "{{ModId}}_Spider": {
-                    "Id": "{{ModId}}_Spider",
-                    "ItemId": "{{ModId}}_Spider",
-                    "Condition": "PLAYER_HAS_ACHIEVEMENT Current 41",
-                    "TradeItemId": "(O)122",
-                    "TradeItemAmount": 2
-                },
-                "{{ModId}}_Bat": {
-                    "Id": "{{ModId}}_Bat",
-                    "ItemId": "{{ModId}}_Bat",
-                    "Condition": "MINE_LOWEST_LEVEL_REACHED 120",
-                    "TradeItemId": "(O)749",
-                    "TradeItemAmount": 20
                 }
             }
         },

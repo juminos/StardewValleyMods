@@ -20,7 +20,10 @@ internal class ShamanBehaviorPatch
     }
     internal void ApplyPatch(Harmony harmony)
     {
-        harmony.Patch(AccessTools.Method(typeof(ShadowShaman), nameof(ShadowShaman.behaviorAtGameTick), new[] { typeof(GameTime) }), prefix: new HarmonyMethod(GetType(), nameof(ShadowShamanCastPatch_Prefix)));
+        if (!ModEntry.SHelper.ModRegistry.IsLoaded("juminos.MonsterHutchStarter"))
+        {
+            harmony.Patch(AccessTools.Method(typeof(ShadowShaman), nameof(ShadowShaman.behaviorAtGameTick), new[] { typeof(GameTime) }), prefix: new HarmonyMethod(GetType(), nameof(ShadowShamanCastPatch_Prefix)));
+        }
     }
     internal static void ShadowShamanCastPatch_Prefix(ShadowShaman __instance, GameTime time)
     {

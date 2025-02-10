@@ -19,7 +19,10 @@ internal class OverlapFarmerDamagePatch
     }
     internal void ApplyPatch(Harmony harmony)
     {
-        harmony.Patch(AccessTools.Method(typeof(Monster), nameof(Monster.OverlapsFarmerForDamage), null), postfix: new HarmonyMethod(GetType(), nameof(OverlapFarmerDamage_Postfix)));
+        if (!ModEntry.SHelper.ModRegistry.IsLoaded("juminos.MonsterHutchStarter"))
+        {
+            harmony.Patch(AccessTools.Method(typeof(Monster), nameof(Monster.OverlapsFarmerForDamage), null), postfix: new HarmonyMethod(GetType(), nameof(OverlapFarmerDamage_Postfix)));
+        }
     }
     internal static void OverlapFarmerDamage_Postfix(Monster __instance, Farmer who, ref bool __result)
     {

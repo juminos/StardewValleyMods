@@ -14,7 +14,10 @@ internal class IsInvinciblePatch
     }
     internal void ApplyPatch(Harmony harmony)
     {
-        harmony.Patch(AccessTools.Method(typeof(Monster), nameof(Monster.isInvincible), null), postfix: new HarmonyMethod(GetType(), nameof(InvinciblePatch_Postfix)));
+        if (!ModEntry.SHelper.ModRegistry.IsLoaded("juminos.MonsterHutchStarter"))
+        {
+            harmony.Patch(AccessTools.Method(typeof(Monster), nameof(Monster.isInvincible), null), postfix: new HarmonyMethod(GetType(), nameof(InvinciblePatch_Postfix)));
+        }
     }
     internal static void InvinciblePatch_Postfix(Monster __instance, ref bool __result)
     {
