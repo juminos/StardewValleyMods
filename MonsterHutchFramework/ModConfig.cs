@@ -26,7 +26,7 @@ namespace MonsterHutchFramework
         public bool ReplaceHutchInterior { get; set; } = true;
         public bool HutchExpansion { get; set; } = true;
         public bool RandomizeMonsterPositions { get; set; } = true;
-        public bool RandomizeOnlyModMonsterPositions { get; set; } = true;
+        public bool SkipRandomizeSlimePositions { get; set; } = true;
         public bool IncubatorIsAffectedByCoopmaster { get; set; } = true;
         public bool IncubatorWobblesWhileIncubating { get; set; } = true;
         internal const string DefaultIncubatorAdditionalRequiredItemID = "(O)769";
@@ -91,12 +91,14 @@ namespace MonsterHutchFramework
 
             api.AddSectionTitle(manifest, GetConfigName(mod, "HutchSection"));
 
+            api.AddBoolOption(manifest, () => config.ReplaceHutchInterior, (val) => config.ReplaceHutchInterior = val,
+                GetConfigName(mod, "ReplaceHutchInterior"), GetConfigDescription(mod, "ReplaceHutchInterior"));
             api.AddBoolOption(manifest, () => config.HutchExpansion, (val) => config.HutchExpansion = val,
                 GetConfigName(mod, "HutchExpansion"), GetConfigDescription(mod, "HutchExpansion"));
             api.AddBoolOption(manifest, () => config.RandomizeMonsterPositions, (val) => config.RandomizeMonsterPositions = val,
                 GetConfigName(mod, "RandomizeMonsterPositions"), GetConfigDescription(mod, "RandomizeMonsterPositions"));
-            api.AddBoolOption(manifest, () => config.RandomizeOnlyModMonsterPositions, (val) => config.RandomizeOnlyModMonsterPositions = val,
-                GetConfigName(mod, "RandomizeOnlyModMonsterPositions"), null);
+            api.AddBoolOption(manifest, () => config.SkipRandomizeSlimePositions, (val) => config.SkipRandomizeSlimePositions = val,
+                GetConfigName(mod, "SkipRandomizeSlimePositions"), null);
 
             api.AddSectionTitle(manifest, GetConfigName(mod, "IncubatorSection"));
 

@@ -47,6 +47,7 @@ namespace Agrivoltaics
                 Monitor.Log($"Issue with Harmony patching: {e}", LogLevel.Error);
                 return;
             }
+
             SHelper.ModContent.Load<Texture2D>("assets/SolarPanel.png");
             SolarPanelAssetPath = SHelper.ModContent.GetInternalAssetName("assets/SolarPanel.png").BaseName;
         }
@@ -58,7 +59,7 @@ namespace Agrivoltaics
         {
             foreach (GameLocation location in Game1.locations)
             {
-                if (!location.HasMinBuildings("juminos.Agrivoltaics.CP_SolarPanel", 1))
+                if (!location.HasMinBuildings("juminos.Agrivoltaics_SolarPanel", 1))
                 {
                     //SMonitor.Log($"skipping location: {location.Name}", LogLevel.Debug);
                     continue;
@@ -68,7 +69,7 @@ namespace Agrivoltaics
 
                 foreach (Building building in location.buildings)
                 {
-                    if (building.buildingType.Value != "juminos.Agrivoltaics.CP_SolarPanel")
+                    if (building.buildingType.Value != "juminos.Agrivoltaics_SolarPanel")
                     {
                         //SMonitor.Log($"skipping building type: {building.buildingType.Value}", LogLevel.Debug);
                         continue;
@@ -160,7 +161,7 @@ namespace Agrivoltaics
         {
             foreach (GameLocation location in Game1.locations)
                 {
-                if (!location.HasMinBuildings("juminos.Agrivoltaics.CP_SolarPanel", 1))
+                if (!location.HasMinBuildings("juminos.Agrivoltaics_SolarPanel", 1))
                 {
                     //SMonitor.Log($"skipping location: {location.Name}", LogLevel.Debug);
                     continue;
@@ -174,7 +175,7 @@ namespace Agrivoltaics
                 }
                 foreach (Building building in location.buildings)
                 {
-                    if (building.buildingType.Value != "juminos.Agrivoltaics.CP_SolarPanel")
+                    if (building.buildingType.Value != "juminos.Agrivoltaics_SolarPanel")
                     {
                         //SMonitor.Log($"skipping building type: {building.buildingType.Value}", LogLevel.Debug);
                         continue;

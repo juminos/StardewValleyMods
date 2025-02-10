@@ -80,21 +80,12 @@ namespace MonsterHutchFramework
                     {
                         var pos = monster.Position;
                         var name = monster.Name;
-                        var skin = monster.modData.ContainsKey("skinTexture") ? monster.modData["skinTexture"] : null;
                         bool foundMonster = false;
                         foreach (var monsterData in AssetHandler.monsterHutchData)
                         {
                             if (monsterData.Value.Name == name)
                             {
-                                Monster? newMonster = null;
-                                if (skin != null)
-                                {
-                                    newMonster = MonsterBuilder.CreateMonster(pos, monsterData.Value, skin);
-                                }
-                                else
-                                {
-                                    newMonster = MonsterBuilder.CreateMonster(pos, monsterData.Value);
-                                }
+                                Monster newMonster = MonsterBuilder.CreateMonster(pos, monsterData.Value);
                                 hutch.characters.Remove(monster);
                                 hutch.characters.Add(newMonster);
                                 foundMonster = true;
@@ -123,7 +114,8 @@ namespace MonsterHutchFramework
                 {
                     foreach (var monster in hutch.characters)
                     {
-                        if (Config.RandomizeOnlyModMonsterPositions && monster is GreenSlime)
+                        monster.modData.Remove($"{this.ModManifest.UniqueID}_monsterPetted");
+                        if (Config.SkipRandomizeSlimePositions && monster is GreenSlime)
                         {
                             continue;
                         }
@@ -176,10 +168,19 @@ namespace MonsterHutchFramework
                     var monsterPos = new Vector2(monster.Tile.X, monster.Tile.Y);
                     if (Math.Abs(monsterPos.X - playerTile.X) <= 1 && Math.Abs(monsterPos.Y - playerTile.Y) <= 1)
                     {
-                        if (RingPatches.MonsterIsCharmed(monster, Game1.player))
+                        if (RingPatches.MonsterIsCharmed(monster, Game1.player) && !monster.modData.ContainsKey($"{this.ModManifest.UniqueID}_monsterPetted"))
                         {
-                            monster.showTextAboveHead("<", null, 2, 1500, Game1.random.Next(500));
-                            //monster.playNearbySoundAll(monsterData.Sound);
+                            DelayedAction.textAboveHeadAfterDelay("<", monster, Game1.random.Next(600));
+                            monster.modData.Add($"{this.ModManifest.UniqueID}_monsterPetted", "true");
+                            //monster.showTextAboveHead("<", null, 2, 1500, Game1.random.Next(500));
+                            foreach(var monsterData in AssetHandler.monsterHutchData)
+                            {
+                                if (monsterData.Value.Name == monster.Name)
+                                {
+                                    DelayedAction.playSoundAfterDelay(monsterData.Value.Sound, Game1.random.Next(600), hutch);
+                                    //monster.playNearbySoundAll(monsterData.Value.Sound);
+                                }
+                            }    
                         }
                     }
                 }
