@@ -57,9 +57,10 @@ namespace Agrivoltaics
         {
             Utility.ForEachBuilding(delegate (Building building)
             {
-                SMonitor.Log($"found building {building.buildingType.Name}", LogLevel.Trace);
                 if (building.buildingType.Value.Contains("juminos.Agrivoltaics") && !building.buildingType.Value.Equals($"{Mod.ModManifest.UniqueID}_SolarPanel"))
                 {
+                    SMonitor.Log($"Attempting to update {building.buildingType.Value}", LogLevel.Trace);
+
                     building.buildingType.Value = $"{Mod.ModManifest.UniqueID}_SolarPanel";
                     building.ReloadBuildingData();
                     building.resetTexture();
