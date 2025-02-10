@@ -7,13 +7,13 @@ Monster Hutch Framework is a framework mod which expands the Slime Hutch into a 
 
 ## Table of Contents
 - [Monster Hutch Framework](#monster-hutch-framework)
-	[Table of Contents](#table-of-contents)
-	[Data Models](#data-models)
-		[Monster Hutch Data](#monster-hutch-data)
-			[Monster Example](#monster-example)
-		[Charmer Ring Data](#charmer-ring-data)
-			[Ring Example](#ring-example)
-	[Configuration Options](#configuration-options)
+	- [Table of Contents](#table-of-contents)
+	- [Data Models](#data-models)
+		- [Monster Hutch Data](#monster-hutch-data)
+			- [Monster Example](#monster-example)
+		- [Charmer Ring Data](#charmer-ring-data)
+			- [Ring Example](#ring-example)
+	- [Configuration Options](#configuration-options)
 
 
 ## Data Models
