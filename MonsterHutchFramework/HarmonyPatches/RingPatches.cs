@@ -77,16 +77,26 @@ namespace MonsterHutchFramework.HarmonyPatches
         {
             if (who.rightRing.Value == null && who.leftRing.Value == null)
             {
+                //ModEntry.SMonitor.Log($"No rings found on {who.Name}", LogLevel.Trace);
                 return false;
             }
-            if ((who.leftRing.Value != null && AssetHandler.charmerRingData.ContainsKey(who.leftRing.Value.ItemId) && AssetHandler.charmerRingData[who.leftRing.Value.ItemId].CharmedMonsters.Contains(monster.Name)) ||
-                (who.rightRing.Value != null && AssetHandler.charmerRingData.ContainsKey(who.rightRing.Value.ItemId) && AssetHandler.charmerRingData[who.rightRing.Value.ItemId].CharmedMonsters.Contains(monster.Name)))
+            else if (who.leftRing.Value != null && AssetHandler.charmerRingData.ContainsKey(who.leftRing.Value.ItemId) && AssetHandler.charmerRingData[who.leftRing.Value.ItemId].CharmedMonsters.Contains(monster.Name))
             {
-                //ModEntry.SMonitor.Log($"found {monster.Name} in ring monster list", LogLevel.Trace);
+                //ModEntry.SMonitor.Log($"{who.Name} wearing {who.leftRing.Value.ItemId} ring for {monster.Name}", LogLevel.Trace);
 
                 return true;
             }
-            return false;
+            else if (who.rightRing.Value != null && AssetHandler.charmerRingData.ContainsKey(who.rightRing.Value.ItemId) && AssetHandler.charmerRingData[who.rightRing.Value.ItemId].CharmedMonsters.Contains(monster.Name))
+            {
+                //ModEntry.SMonitor.Log($"{who.Name} wearing {who.rightRing.Value.ItemId} ring for {monster.Name}", LogLevel.Trace);
+
+                return true;
+            }
+            else
+            {
+                //ModEntry.SMonitor.Log($"{who.Name} not wearing matching ring for {monster.Name}", LogLevel.Trace);
+                return false;
+            }
         }
     }
 }

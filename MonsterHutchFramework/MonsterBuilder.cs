@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
@@ -22,7 +23,7 @@ namespace MonsterHutchFramework
 {
     internal class MonsterBuilder
     {
-        public static Monster CreateMonster(Vector2 vector, MonsterHutchData data, string skinTexture = null)
+        public static Monster CreateMonster(Vector2 vector, MonsterHutchData data)
         {
             var type = data.MonsterType;
 
@@ -30,7 +31,7 @@ namespace MonsterHutchFramework
             if (type == "Angry Roger")
             {
                 var monster = new AngryRoger(vector);
-                UpdateMonsterStats(monster, data, skinTexture);
+                UpdateMonsterStats(monster, data);
 
                 return monster;
             }
@@ -87,7 +88,7 @@ namespace MonsterHutchFramework
                     monster.shakeTimer = 100;
                     monster.canLunge.Value = true;
                 }
-                UpdateMonsterStats(monster, data, skinTexture);
+                UpdateMonsterStats(monster, data);
 
                 return monster;
             }
@@ -96,7 +97,7 @@ namespace MonsterHutchFramework
             if (type == "Big Slime")
             {
                 var monster = new BigSlime(vector, 0);
-                UpdateMonsterStats(monster, data, skinTexture);
+                UpdateMonsterStats(monster, data);
 
                 return monster;
             }
@@ -105,7 +106,7 @@ namespace MonsterHutchFramework
             if (type == "Blue Squid")
             {
                 var monster = new BlueSquid(vector);
-                UpdateMonsterStats(monster, data, skinTexture);
+                UpdateMonsterStats(monster, data);
 
                 return monster;
             }
@@ -114,7 +115,7 @@ namespace MonsterHutchFramework
             if (type == "Bug")
             {
                 var monster = new Bug(vector, 1);
-                UpdateMonsterStats(monster, data, skinTexture);
+                UpdateMonsterStats(monster, data);
 
                 return monster;
             }
@@ -123,7 +124,7 @@ namespace MonsterHutchFramework
             if (type == "Pepper Rex")
             {
                 var monster = new DinoMonster(vector);
-                UpdateMonsterStats(monster, data, skinTexture);
+                UpdateMonsterStats(monster, data);
 
                 return monster;
             }
@@ -132,7 +133,7 @@ namespace MonsterHutchFramework
             if (type == "Duggy" || type == "Magma Duggy")
             {
                 var monster = new Duggy(vector);
-                UpdateMonsterStats(monster, data, skinTexture);
+                UpdateMonsterStats(monster, data);
 
                 return monster;
             }
@@ -141,7 +142,7 @@ namespace MonsterHutchFramework
             if (type == "Dust Spirit")
             {
                 var monster = new DustSpirit(vector);
-                UpdateMonsterStats(monster, data, skinTexture);
+                UpdateMonsterStats(monster, data);
 
                 return monster;
             }
@@ -150,7 +151,7 @@ namespace MonsterHutchFramework
             if (type == "Dwarvish Sentry")
             {
                 var monster = new DwarvishSentry(vector);
-                UpdateMonsterStats(monster, data, skinTexture);
+                UpdateMonsterStats(monster, data);
 
                 return monster;
             }
@@ -159,7 +160,7 @@ namespace MonsterHutchFramework
             if (type == "Fly")
             {
                 var monster = new Fly(vector);
-                UpdateMonsterStats(monster, data, skinTexture);
+                UpdateMonsterStats(monster, data);
 
                 return monster;
             }
@@ -170,7 +171,7 @@ namespace MonsterHutchFramework
                 type == "Putrid Ghost")
             {
                 var monster = new Ghost(vector, type);
-                UpdateMonsterStats(monster, data, skinTexture);
+                UpdateMonsterStats(monster, data);
 
                 return monster;
             }
@@ -179,7 +180,7 @@ namespace MonsterHutchFramework
             if (type == "Grub")
             {
                 var monster = new Grub(vector);
-                UpdateMonsterStats(monster, data, skinTexture);
+                UpdateMonsterStats(monster, data);
 
                 return monster;
             }
@@ -188,7 +189,7 @@ namespace MonsterHutchFramework
             if (type == "Hot Head")
             {
                 var monster = new HotHead(vector);
-                UpdateMonsterStats(monster, data, skinTexture);
+                UpdateMonsterStats(monster, data);
 
                 return monster;
             }
@@ -197,7 +198,7 @@ namespace MonsterHutchFramework
             if (type == "Lava Lurk")
             {
                 var monster = new LavaLurk(vector);
-                UpdateMonsterStats(monster, data, skinTexture);
+                UpdateMonsterStats(monster, data);
 
                 return monster;
             }
@@ -206,7 +207,7 @@ namespace MonsterHutchFramework
             if (type == "Spider")
             {
                 var monster = new Leaper(vector);
-                UpdateMonsterStats(monster, data, skinTexture);
+                UpdateMonsterStats(monster, data);
 
                 return monster;
             }
@@ -215,7 +216,7 @@ namespace MonsterHutchFramework
             if (type == "Metal Head")
             {
                 var monster = new MetalHead("Metal Head", vector);
-                UpdateMonsterStats(monster, data, skinTexture);
+                UpdateMonsterStats(monster, data);
 
                 return monster;
             }
@@ -224,7 +225,7 @@ namespace MonsterHutchFramework
             if (type == "Mummy")
             {
                 var monster = new Mummy(vector);
-                UpdateMonsterStats(monster, data, skinTexture);
+                UpdateMonsterStats(monster, data);
 
                 return monster;
             }
@@ -240,7 +241,7 @@ namespace MonsterHutchFramework
                     monster.isStickBug.Value = true;
                 }
                 monster.waiter = false;
-                UpdateMonsterStats(monster, data, skinTexture);
+                UpdateMonsterStats(monster, data);
 
                 return monster;
             }
@@ -249,7 +250,7 @@ namespace MonsterHutchFramework
             if (type == "Stone Golem" || type == "Wilderness Golem")
             {
                 var monster = new RockGolem(vector);
-                UpdateMonsterStats(monster, data, skinTexture);
+                UpdateMonsterStats(monster, data);
 
                 return monster;
             }
@@ -258,7 +259,7 @@ namespace MonsterHutchFramework
             if (type == "Serpent" || type == "Royal Serpent")
             {
                 var monster = new Serpent(vector, type);
-                UpdateMonsterStats(monster, data, skinTexture);
+                UpdateMonsterStats(monster, data);
 
                 return monster;
             }
@@ -267,7 +268,7 @@ namespace MonsterHutchFramework
             if (type == "Shadow Girl")
             {
                 var monster = new ShadowGirl(vector);
-                UpdateMonsterStats(monster, data, skinTexture);
+                UpdateMonsterStats(monster, data);
 
                 return monster;
             }
@@ -276,7 +277,7 @@ namespace MonsterHutchFramework
             if (type == "Shadow Guy")
             {
                 var monster = new ShadowGuy(vector);
-                UpdateMonsterStats(monster, data, skinTexture);
+                UpdateMonsterStats(monster, data);
 
                 return monster;
             }
@@ -285,7 +286,7 @@ namespace MonsterHutchFramework
             if (type == "Shadow Brute")
             {
                 var monster = new ShadowBrute(vector);
-                UpdateMonsterStats(monster, data, skinTexture);
+                UpdateMonsterStats(monster, data);
 
                 return monster;
             }
@@ -294,7 +295,7 @@ namespace MonsterHutchFramework
             if (type == "Shadow Shaman")
             {
                 var monster = new ShadowShaman(vector);
-                UpdateMonsterStats(monster, data, skinTexture);
+                UpdateMonsterStats(monster, data);
 
                 return monster;
             }
@@ -303,7 +304,7 @@ namespace MonsterHutchFramework
             if (type == "Shadow Sniper")
             {
                 var monster = new Shooter(vector);
-                UpdateMonsterStats(monster, data, skinTexture);
+                UpdateMonsterStats(monster, data);
 
                 return monster;
             }
@@ -319,7 +320,7 @@ namespace MonsterHutchFramework
                     isMage = true;
                 }
                 var monster = new Skeleton(vector, isMage);
-                UpdateMonsterStats(monster, data, skinTexture);
+                UpdateMonsterStats(monster, data);
 
                 return monster;
             }
@@ -328,7 +329,7 @@ namespace MonsterHutchFramework
             if (type == "Squid Kid")
             {
                 var monster = new SquidKid(vector);
-                UpdateMonsterStats(monster, data, skinTexture);
+                UpdateMonsterStats(monster, data);
 
                 return monster;
             }
@@ -338,7 +339,7 @@ namespace MonsterHutchFramework
                 ModEntry.SMonitor.Log($"Monster type {type} not found. Attempting to create generic monster.", LogLevel.Warn);
 
                 var monster = new Monster(type, vector);
-                UpdateMonsterStats(monster, data, skinTexture);
+                UpdateMonsterStats(monster, data);
 
                 return monster;
             }
@@ -355,72 +356,85 @@ namespace MonsterHutchFramework
             //if (type == "Sludge")
             //if (type == "Tiger Slime")
         }
-        public static void UpdateMonsterStats (Monster monster, MonsterHutchData data, string skinTexture)
+        public static void UpdateMonsterStats (Monster monster, MonsterHutchData data)
         {
             monster.HideShadow = data.HideShadow;
-            monster.IsWalkingTowardPlayer = false;
+            //monster.IsWalkingTowardPlayer = false;
             if (data.ScaleMin < data.ScaleMax)
             {
                 monster.Scale = (float)Game1.random.Next(data.ScaleMin, data.ScaleMax) / 100f;
             }
-            if (skinTexture != null)
+            //if (data.Skins.Count > 0)
+            //{
+            //    var weightedList = new List<string>();
+            //    foreach (var weighted in data.Skins)
+            //    {
+            //        if (weighted.Texture != null)
+            //        {
+            //            for (int i = 0; i < weighted.Weight; i++)
+            //            {
+            //                weightedList.Add(weighted.Texture);
+            //            }
+            //        }
+            //    }
+            //    var random = new Random();
+            //    int index = random.Next(weightedList.Count);
+            //    try
+            //    {
+            //        monster.Sprite.LoadTexture(weightedList[index]);
+            //        monster.modData.Add("skinTexture", weightedList[index]);
+
+            //        ModEntry.SMonitor.Log($"saving {weightedList[index]} skin for {monster.Name}", LogLevel.Trace);
+            //    }
+            //    catch
+            //    {
+            //        ModEntry.SMonitor.Log($"Failed loading '{weightedList[index]}' texture for {monster.Name}.", LogLevel.Error);
+            //    }
+
+            //    //var texture = Game1.content.Load<Texture2D>($"{weightedList[index]}");
+            //    //try
+            //    //{
+            //    //    monster.Sprite.LoadTexture(texture.Name);
+            //    //    monster.modData.Add("skinTexture", weightedList[index]);
+            //    //}
+            //    //catch
+            //    //{
+            //    //    ModEntry.SMonitor.Log($"Failed loading '{texture}' texture for {monster.Name}.", LogLevel.Error);
+            //    //}
+            //}
+            if (data.TexturePath != null)
             {
-                var texture = Game1.content.Load<Texture2D>(skinTexture);
+                //var texture = Game1.content.Load<Texture2D>($"{data.TexturePath}");
                 try
                 {
-                    monster.Sprite.LoadTexture(texture.Name);
+                    monster.Sprite.LoadTexture(data.TexturePath);
                 }
                 catch
                 {
-                    ModEntry.SMonitor.Log($"Failed loading '{texture}' texture for {monster.Name}.", LogLevel.Error);
+                    ModEntry.SMonitor.Log($"Failed loading '{data.TexturePath}' texture for {monster.Name}.", LogLevel.Error);
                 }
-            }
-            else if (data.Skins.Count > 0)
-            {
-                var weightedList = new List<string>();
-                foreach (var weighted in data.Skins)
-                {
-                    if (weighted.Texture != null)
-                    {
-                        for (int i = 0; i < weighted.Weight; i++)
-                        {
-                            weightedList.Add(weighted.Texture);
-                        }
-                    }
-                }
-                var random = new Random();
-                int index = random.Next(weightedList.Count);
-                var texture = Game1.content.Load<Texture2D>($"{weightedList[index]}");
-                try
-                {
-                    monster.Sprite.LoadTexture(texture.Name);
-                    monster.modData.Add("skinTexture", weightedList[index]);
-                }
-                catch
-                {
-                    ModEntry.SMonitor.Log($"Failed loading '{texture}' texture for {monster.Name}.", LogLevel.Error);
-                }
-            }
-            else if (data.TexturePath != null)
-            {
-                var texture = Game1.content.Load<Texture2D>($"{data.TexturePath}");
-                try
-                {
-                    monster.Sprite.LoadTexture(texture.Name);
-                    monster.modData.Add("skinTexture", data.TexturePath);
-                }
-                catch
-                {
-                    ModEntry.SMonitor.Log($"Failed loading '{texture}' texture for {monster.Name}.", LogLevel.Error);
-                }
+                //var texture = Game1.content.Load<Texture2D>($"{data.TexturePath}");
+                //try
+                //{
+                //    monster.Sprite.LoadTexture(texture.Name);
+                //    monster.modData.Add("skinTexture", data.TexturePath);
+                //}
+                //catch
+                //{
+                //    ModEntry.SMonitor.Log($"Failed loading '{texture}' texture for {monster.Name}.", LogLevel.Error);
+                //}
             }
             monster.objectsToDrop.Clear();
             for (int i = 0; i < data.Drops.Count; i++)
             {
                 monster.objectsToDrop.Add(data.Drops[i]);
             }
-            monster.Speed = data.SpeedOverride;
-            monster.addedSpeed = 0;
+            if (data.SpeedOverride > 0)
+                monster.Speed = data.SpeedOverride;
+            if (data.DamageToFarmerOverride > 0)
+                monster.DamageToFarmer = data.DamageToFarmerOverride;
+            if (data.MaxHealthOverride > 0)
+                monster.MaxHealth = data.MaxHealthOverride;
             monster.farmerPassesThrough = !data.FarmerCollision;
             monster.moveTowardPlayerThreshold.Value = data.MoveTowardPlayerThresholdOverride;
             monster.Name = data.Name;
