@@ -11,7 +11,7 @@ public class MonsterHutchData
 {
     public string? MonsterType; // must match valid monster type (most types in Data/Monsters work)
     public string? Name; // should be unique
-    public string? Sound; // not implemented yet
+    public string? Sound; // petting monster sound
     public List<Drops> Drops = new List<Drops>(); // replaces drop on kill list
     public int SpeedOverride; // set monster speed after creation
     public bool FarmerCollision = false; // probably want to keep false, collision will make navigation in hutch difficult
