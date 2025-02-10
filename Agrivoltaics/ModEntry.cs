@@ -10,6 +10,7 @@ using StardewModdingAPI;
 using StardewModdingAPI.Events;
 using StardewValley;
 using StardewValley.Buildings;
+using StardewValley.GameData.Buildings;
 using StardewValley.TerrainFeatures;
 using xTile.Dimensions;
 using xTile.Tiles;
@@ -37,6 +38,7 @@ namespace Agrivoltaics
             Helper.Events.GameLoop.DayEnding += OnDayEnding;
             Helper.Events.GameLoop.GameLaunched += OnGameLaunched;
             Helper.Events.Content.AssetRequested += OnAssetRequested;
+            Helper.Events.GameLoop.SaveLoaded += OnSaveLoaded;
 
             try
             {
@@ -50,6 +52,20 @@ namespace Agrivoltaics
 
             SHelper.ModContent.Load<Texture2D>("assets/SolarPanel.png");
             SolarPanelAssetPath = SHelper.ModContent.GetInternalAssetName("assets/SolarPanel.png").BaseName;
+        }
+        private void OnSaveLoaded(object? sender, SaveLoadedEventArgs e)
+        {
+            Utility.ForEachBuilding(delegate (Building building)
+            {
+                SMonitor.Log($"found building {building.buildingType.Name}", LogLevel.Trace);
+                if (building.buildingType.Value.Contains("juminos.Agrivoltaics") && !building.buildingType.Value.Equals($"{Mod.ModManifest.UniqueID}_SolarPanel"))
+                {
+                    building.buildingType.Value = $"{Mod.ModManifest.UniqueID}_SolarPanel";
+                    building.ReloadBuildingData();
+                    building.resetTexture();
+                }
+                return true;
+            });
         }
         private void OnAssetRequested(object? sender, AssetRequestedEventArgs e)
         {
