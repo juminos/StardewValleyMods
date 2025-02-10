@@ -161,7 +161,7 @@ namespace MonsterHutchFramework.HarmonyPatches
                             if (tries > 0)
                             {
                                 //var produceChance = Math.Clamp(monsterType.Value.ProduceChance + Game1.player.DailyLuck, 0, 1);
-                                if (Game1.random.NextDouble() < monsterType.Value.ProduceChance)
+                                if (Game1.random.NextDouble() < ((double)monsterType.Value.ProduceChance / 100.0))
                                 {
                                     bool spawn_object = true;
                                     bool dropDeluxe = false;
@@ -187,7 +187,7 @@ namespace MonsterHutchFramework.HarmonyPatches
                                     }
                                     if (monsterType.Value.DeluxeChance > 0 && monsterType.Value.DeluxeProduceData.Count > 0)
                                     {
-                                        var deluxeChance = Math.Clamp(monsterType.Value.DeluxeChance + Game1.player.DailyLuck, 0, 1);
+                                        var deluxeChance = Math.Clamp(((double)monsterType.Value.DeluxeChance / 100.0) + Game1.player.DailyLuck, 0, 1);
                                         if (Game1.random.NextDouble() < deluxeChance && monsterType.Value.DeluxeProduceData.Count > 0)
                                         {
                                             ModEntry.SMonitor.Log($"Deluxe chance {deluxeChance} check passed", LogLevel.Trace);

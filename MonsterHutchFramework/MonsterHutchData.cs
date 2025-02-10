@@ -12,7 +12,7 @@ public class MonsterHutchData
     public string? MonsterType; // must match valid monster type (most types in Data/Monsters work)
     public string? Name; // should be unique
     public string? Sound; // not implemented yet
-    public List<string> Drops = []; // replaces drop on kill list
+    public List<Drops> Drops = new List<Drops>(); // replaces drop on kill list
     public int SpeedOverride; // set monster speed after creation
     public bool FarmerCollision = false; // probably want to keep false, collision will make navigation in hutch difficult
     public int MoveTowardPlayerThresholdOverride = 2; // keep this low if you don't want to be swarmed
@@ -25,8 +25,8 @@ public class MonsterHutchData
     //public List<SkinData> Skins = new List<SkinData>(); // haven't figured out how to save and load skin texture on save loaded event
     public int NumberWatered = 1; // number that 1 full water trough will water
     public int NumberToProduce = 1; // number of watered monsters needed to produce
-    public float ProduceChance = 1; // chance that monster produce is dropped if water condition is met
-    public float DeluxeChance = 0.33f; // chance that produce is replaced with deluxe produce
+    public int ProduceChance = 100; // chance that monster produce is dropped if water condition is met
+    public int DeluxeChance = 33; // chance that produce is replaced with deluxe produce
     public List<ProduceData> ProduceData = new List<ProduceData>(); // weighted list of valid produce items
     public List<DeluxeProduceData> DeluxeProduceData = new List<DeluxeProduceData>(); // weighted list of valid deluxe produce items
     public string? InputItemId = null; // item placed in incubator to create this monster
@@ -34,10 +34,16 @@ public class MonsterHutchData
     public int IncubationTime = 2; // days until incubation is done
     public int OutputWeight = 1; // weighted value used to determine which monster to create if multiple monsters have the same input item
 }
+public class Drops
+{
+    public string? Id; // id for this entry in list
+    public string? ItemId; // item id
+    public int Chance = 100; // percent chance this item drops
+}
 public class ProduceData
 {
     public string? Id; // id for this entry in list
-    public string? ItemId; // unqualified item id
+    public string? ItemId; // item id
     public int Count = 1; // number to produce
     public bool IsDropped = false; // whether is dropped as debris (rather than spawned like forage)
     public int Weight = 1; // weighted value for determining which item to select
@@ -45,7 +51,7 @@ public class ProduceData
 public class DeluxeProduceData
 {
     public string? Id; // id for this entry in list
-    public string? ItemId; // unqualified item id
+    public string? ItemId; // item id
     public int Count =1; // number to produce
     public bool IsDropped = false; // whether is dropped as debris (rather than spawned like forage)
     public int Weight = 1; // weighted value for determining which item to select

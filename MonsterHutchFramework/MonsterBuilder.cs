@@ -425,9 +425,15 @@ namespace MonsterHutchFramework
                 //}
             }
             monster.objectsToDrop.Clear();
-            for (int i = 0; i < data.Drops.Count; i++)
+            if (data.Drops.Count > 0)
             {
-                monster.objectsToDrop.Add(data.Drops[i]);
+                for (int i = 0; i < data.Drops.Count; i++)
+                {
+                    if (Game1.random.NextDouble() < ((double)data.Drops[i].Chance / 100.0))
+                    {
+                        monster.objectsToDrop.Add(data.Drops[i].ItemId);
+                    }
+                }
             }
             if (data.SpeedOverride > 0)
                 monster.Speed = data.SpeedOverride;
