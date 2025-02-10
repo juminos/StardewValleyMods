@@ -26,7 +26,7 @@ namespace MonsterHutchFramework
         public bool ReplaceHutchInterior { get; set; } = true;
         public bool HutchExpansion { get; set; } = true;
         public bool RandomizeMonsterPositions { get; set; } = true;
-        public bool SkipRandomizeSlimePositions { get; set; } = true;
+        public bool SkipRandomizeSlimePositions { get; set; } = false;
         public bool IncubatorIsAffectedByCoopmaster { get; set; } = true;
         public bool IncubatorWobblesWhileIncubating { get; set; } = true;
         internal const string DefaultIncubatorAdditionalRequiredItemID = "(O)769";

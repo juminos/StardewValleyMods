@@ -8,13 +8,26 @@ Monster Hutch Framework is a framework mod which expands the Slime Hutch into a 
 ## Table of Contents
 - [Monster Hutch Framework](#monster-hutch-framework)
 	- [Table of Contents](#table-of-contents)
+	- [Configuration Options](#configuration-options)
 	- [Data Models](#data-models)
 		- [Monster Hutch Data](#monster-hutch-data)
 			- [Monster Example](#monster-example)
 		- [Charmer Ring Data](#charmer-ring-data)
 			- [Ring Example](#ring-example)
-	- [Configuration Options](#configuration-options)
 
+## Configuration Options
+
+- ReplaceHutchInterior: Whether to expand the interior of the slime hutch and rename it 'Monster Hutch' to accomodate up to 40 monsteres. Default: true
+- HutchExpansion: Whether to add basement expansion upgrade for the Monster Hutch to Robin's build menu (the basement cannot be used by monsters, but casks will work there). Default: true
+- RandomizeMonsterPositions: Whether to randomize monster positions in the hutch every day (to prevent them from clumping up). Default: true
+- SkipRandomizeSlimePositions: Whether the above setting should leave slime positions alone. Default: false
+- IncubatorIsAffectedByCoopmaster: Whether incubation time is affected by coopmaster profession. Default: true
+- IncubatorWobblesWhileIncubating: Whether monster incubator should wobble while it's working. Default: true
+- DefaultIncubatorAdditionalRequiredItemID: The item ID for the additional required item to start incubation in the monster incubator. Default: "(O)769"
+- IncubatorAdditionalRequiredItemCount: The amount of the above required to start incubation. Default: 10
+- DefaultIncubatorRecipe: The crafting recipe for the monster incubator. Default: "337 2 769 50"
+- DefaultIncubatorRecipeUnlock: The condition for unlocking the monster incubator recipe. Default: "f Wizard 6"
+- LethalRings: Whether the rings defined in CharmerRingData still allow the player to damage the associated monster(s). Default: false
 
 ## Data Models
 
@@ -35,24 +48,24 @@ This consists of a string -> model lookup where...
 | Sound | (_Optional_) The name of the sound used by this mod (currently only used when 'petting' the monster). | string |
 | Drops | (_Optional_) The items to drop on monster death. This consists of a list of models defined below. | List\<Drops\> |
 | SpeedOverride | (_Optional_) The value to set as the monster's default speed (overriding the base monster speed). | int |
-| FarmerCollision | (_Optional_) Whether the monster has collision with the farmer. <br>Default: false | bool |
-| MoveTowardPlayerThresholdOverride | (_Optional_) The distance (in tiles) before the monster sees the player. <br>Default: 2 | int |
+| FarmerCollision | (_Optional_) Whether the monster has collision with the farmer. Default: false | bool |
+| MoveTowardPlayerThresholdOverride | (_Optional_) The distance (in tiles) before the monster sees the player. Default: 2 | int |
 | DamageToFarmerOverride | (_Optional_) The amount of damage the monster deals when it attacks (overriding the base monster damage). | int |
 | MaxHealthOverride | (_Optional_) The amount of health the monster has (overriding the base monster health) | int |
-| HideShadow | (_Optional_) Whether to hide the monster's shadow (most monsters in the game seem to have this set to 'true') <br>Default: true | bool |
+| HideShadow | (_Optional_) Whether to hide the monster's shadow (most monsters in the game seem to have this set to 'true'). Default: true | bool |
 | ScaleMin | (_Optional_) The minimum scale percentage to randomize size (random value chosen between ScaleMin and ScaleMax on monster creation) <br>Example: The game uses this to randomize Dust Sprite size with ScaleMin = 75 and ScaleMax = 101 | int |
 | ScaleMax | (_Optional_) The maximum scale percentage to randomize size | int |
 | TexturePath | The texture to use for this monster (if not defined will use base monster texture) | string |
 | NumberWatered | (_Optional_) The number of this monster type that 1 filled water trough will water (only watered monsters will produce items). <br>Default: 1 | int |
-| NumberToProduce | (_Optional_) How many watered monsters are required to produce overnight <br>e.g. in the vanilla game it takes 5 watered slimes to produce a slime ball <br>Default: 1 | int |
-| ProduceChance | (_Optional_) The percent chance the monster will produce overnight if watered conditions are met. <br>Default: 100 | int |
-| DeluxeChance | (_Optional_) The percent chance that the produce is is replaced by deluxe produce. <br>Default: 33 | int |
+| NumberToProduce | (_Optional_) How many watered monsters are required to produce overnight. Default: 1 <br>e.g. In the vanilla game it takes 5 watered slimes to produce a slime ball. | int |
+| ProduceChance | (_Optional_) The percent chance the monster will produce overnight if watered conditions are met. Default: 100 | int |
+| DeluxeChance | (_Optional_) The percent chance that the produce is is replaced by deluxe produce. Default: 33 | int |
 | ProduceData | (_Optional_) The item(s) produced by this monsters. This consists of a list of models defined below (same as DeluxeProduceData). | List\<ProduceData\> |
 | DeluxeProduceData | (_Optional_) The deluxe item(s) produced by this monster. This consists of a list of models defined below (same as ProduceData). | List\<DeluxeProduceData\> |
 | InputItemId | The item id to place in the Monster Incubator to create this monsters. | string |
-| InputItemCount | (_Optional_) The number of the input item required to start incubation. <br>Default: 1 | int |
-| IncubationTime | (_Optional_) The number of days until incubation is complete. <br>Default: 2 | int |
-| OutputWeight | (_Optional_) Only used if more than one monster has the same input item id. <br>The weighted chance this monster is selected when incubation is complete. <br>Default: 1 | int |
+| InputItemCount | (_Optional_) The number of the input item required to start incubation. Default: 1 | int |
+| IncubationTime | (_Optional_) The number of days until incubation is complete. Default: 2 | int |
+| OutputWeight | (_Optional_) The weighted chance this monster is selected when incubation is complete (if more than 1 monster is found with the same input item Id). Default: 1 | int |
 
 #### Drops
 
@@ -60,7 +73,7 @@ This consists of a string -> model lookup where...
 | :----------- | :----------- | :----: |
 | Id | The ID for this entry in the list (unique to the list). | string |
 | ItemId | The item ID. | string |
-| Chance | (_Optional_) The percent chance this item drops. <br>Default: 100 | int |
+| Chance | (_Optional_) The percent chance this item drops. Default: 100 | int |
 
 #### Produce Data / Deluxe Produce Data
 
@@ -68,9 +81,9 @@ This consists of a string -> model lookup where...
 | :----------- | :----------- | :----: |
 | Id | The ID for this entry in the list (unique to the list). | string |
 | ItemId | The item ID. | string |
-| Count | (_Optional_) The number of this item to produce. <br>Default: 1 | int |
-| IsDropped | (_Optional_) Whether this item get dropped as debris (rather than spawn like forage). <br>Default: false | bool |
-| Weight | (_Optional_) The weighted value for this item in the list when choosing which item to produce. <br>Default: 1 | int |
+| Count | (_Optional_) The number of this item to produce. Default: 1 | int |
+| IsDropped | (_Optional_) Whether this item gets dropped as debris (rather than spawn like forage). Default: false | bool |
+| Weight | (_Optional_) The weighted value for this item in the list when choosing which item to produce. Default: 1 | int |
 
 Example:
 ```
@@ -200,6 +213,3 @@ Example:
     ]
 }
 ```
-
-## Configuration Options
-
