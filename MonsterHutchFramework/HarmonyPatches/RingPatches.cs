@@ -40,7 +40,12 @@ namespace MonsterHutchFramework.HarmonyPatches
         internal static void InvinciblePatch_Postfix(Monster __instance, ref bool __result)
         {
             var who = Game1.player;
-            if (MonsterIsCharmed(__instance, who))
+            if (__instance is not GreenSlime && __instance is not BigSlime && MonsterIsCharmed(__instance, who) && !ModEntry.Config.LethalRings)
+            {
+                __result = true;
+                return;
+            }
+            if ((__instance is GreenSlime || __instance is BigSlime) && who.isWearingRing("520") && !ModEntry.Config.VanillaSlimeRing)
             {
                 __result = true;
                 return;

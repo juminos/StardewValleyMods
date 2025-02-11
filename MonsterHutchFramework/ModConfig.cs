@@ -37,6 +37,7 @@ namespace MonsterHutchFramework
         internal const string DefaultIncubatorRecipeUnlock = "f Wizard 6";
         public string IncubatorRecipeUnlock { get; set; } = DefaultIncubatorRecipeUnlock;
         public bool LethalRings { get; set; } = false;
+        public bool VanillaSlimeRing { get; set; } = false;
 
         public static void VerifyConfigValues(ModConfig config, ModEntry mod)
         {
@@ -122,6 +123,8 @@ namespace MonsterHutchFramework
 
             api.AddBoolOption(manifest, () => config.LethalRings, (val) => config.LethalRings = val,
                 GetConfigName(mod, "LethalRings"), GetConfigDescription(mod, "LethalRings"));
+            api.AddBoolOption(manifest, () => config.VanillaSlimeRing, (val) => config.VanillaSlimeRing = val,
+                GetConfigName(mod, "VanillaSlimeRing"), GetConfigDescription(mod, "VanillaSlimeRing"));
         }
 
         private static Func<string> GetConfigName(ModEntry mod, string key)

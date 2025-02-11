@@ -56,7 +56,8 @@ Monster Hutch Framework is a framework mod which expands the Slime Hutch into a 
 - IncubatorAdditionalRequiredItemCount: The amount of the above required to start incubation. Default: 10
 - DefaultIncubatorRecipe: The crafting recipe for the monster incubator. Default: "337 2 769 50"
 - DefaultIncubatorRecipeUnlock: The condition for unlocking the monster incubator recipe. Default: "f Wizard 6"
-- LethalRings: Whether the rings defined in CharmerRingData still allow the player to damage the associated monster(s). Default: false
+- LethalRings: Whether the rings defined in CharmerRingData allow the player to deal damage to the associated monster(s). Default: false
+- VanillaSlimeRing: Whether the Slime Charmer Ring retains its vanilla properties of allowing the player to damage slimes while worn. Default: false
 
 ## Data Models
 
