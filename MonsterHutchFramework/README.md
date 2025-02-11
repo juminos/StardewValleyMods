@@ -99,6 +99,8 @@ This consists of a string -> model lookup where...
 
 #### Drops
 
+Each entry in the drops list is a model consisting of the fields listed below:
+
 |    Field    | Description | Type |
 | :----------- | :----------- | :----: |
 | Id | The ID for this entry in the list (unique to the list). | string |
@@ -106,6 +108,8 @@ This consists of a string -> model lookup where...
 | Chance | (_Optional_) The percent chance this item drops. Default: 100 | int |
 
 #### Produce Data / Deluxe Produce Data
+
+Each entry in the ProduceData and DeluxeProduceData lists is a model consisting of the fields listed below:
 
 |    Field    | Description | Type |
 | :----------- | :----------- | :----: |
