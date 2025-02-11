@@ -289,7 +289,7 @@ namespace MonsterHutchFramework.HarmonyPatches
             for (int i = 0; i < __instance.waterSpots.Length; i++)
             {
                 if (__instance.waterSpots[i] &&
-                    Game1.random.NextDouble() < ((double)usedWater) / 2)
+                    Game1.random.NextDouble() < (((double)usedWater) / 2) - Game1.player.DailyLuck)
                 {
                     __instance.waterSpots[(i + startIndex) % __instance.waterSpots.Length] = false;
                     usedWater -= 2;
