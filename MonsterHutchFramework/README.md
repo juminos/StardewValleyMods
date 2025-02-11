@@ -14,7 +14,7 @@ Monster Hutch Framework is a framework mod which expands the Slime Hutch into a 
         - [Monsters](#monsters)
         - [Charmer Rings](#charmer-rings)
 	- [Configuration Options](#configuration-options)
-	- [Data Models](#data-models)
+	- [Modder Guide](#modder-guide)
 		- [Monster Hutch Data](#monster-hutch-data)
 			- [Monster Example](#monster-example)
 		- [Charmer Ring Data](#charmer-ring-data)
@@ -57,11 +57,11 @@ Monster Hutch Framework is a framework mod which expands the Slime Hutch into a 
 - DefaultIncubatorRecipe: The crafting recipe for the monster incubator. Default: "337 2 769 50"
 - DefaultIncubatorRecipeUnlock: The condition for unlocking the monster incubator recipe. Default: "f Wizard 6"
 - LethalRings: Whether the rings defined in CharmerRingData allow the player to deal damage to the associated monster(s). Default: false
-- VanillaSlimeRing: Whether the Slime Charmer Ring retains its vanilla properties of allowing the player to damage slimes while worn. Default: false
+- VanillaSlimeRing: Whether the Slime Charmer Ring retains its vanilla properties allowing the player to damage slimes while worn. Default: false
 
-## Data Models
+## Modder Guide
 
-This framework defines two data models: MonsterHutchData for adding custom monsters to the hutch and CharmerRingData for applying slime charmer ring qualities to other rings and monsters.
+This framework defines two data models: MonsterHutchData for adding monsters to the hutch, and CharmerRingData for applying slime charmer ring qualities to other rings and monsters.
 
 ### Monster Hutch Data
 
