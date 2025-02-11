@@ -50,6 +50,8 @@ Monster Hutch Framework is a framework mod which expands the Slime Hutch into a 
 - HutchExpansion: Whether to add basement expansion upgrade for the Monster Hutch to Robin's build menu (the basement cannot be used by monsters, but casks will work there). Default: false
 - RandomizeMonsterPositions: Whether to randomize monster positions in the hutch every day (to prevent them from clumping up). Default: true
 - SkipRandomizeSlimePositions: Whether the above setting should leave slime positions alone. Default: false
+- HutchSlimeCapacity: The maximum slime capacity for the Monster Hutch. Default: 20
+- HutchMonsterCapacity: The total monster capacity (including slimes) for the Monster Hutch. Default: 40
 - IncubatorIsAffectedByCoopmaster: Whether incubation time is affected by coopmaster profession. Default: true
 - IncubatorWobblesWhileIncubating: Whether monster incubator should wobble while it's working. Default: true
 - DefaultIncubatorAdditionalRequiredItemID: The item ID for the additional required item to start incubation in the monster incubator. Default: "(O)769"

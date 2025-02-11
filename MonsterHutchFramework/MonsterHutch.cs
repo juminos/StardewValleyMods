@@ -31,7 +31,7 @@ namespace MonsterHutchFramework
 
                     editor["Slime Hutch"].Name = I18n.MonsterHutch_Name();
                     editor["Slime Hutch"].Description = I18n.MonsterHutch_Description();
-                    editor["Slime Hutch"].MaxOccupants = 40;
+                    editor["Slime Hutch"].MaxOccupants = ModEntry.Config.HutchSlimeCapacity;
 
                     if (ModEntry.Config.HutchExpansion)
                     {
@@ -54,7 +54,7 @@ namespace MonsterHutchFramework
                             HumanDoor = new Microsoft.Xna.Framework.Point(3, 3),
                             IndoorMap = "MonsterHutchExpanded",
                             IndoorMapType = "StardewValley.SlimeHutch",
-                            MaxOccupants = 40,
+                            MaxOccupants = ModEntry.Config.HutchSlimeCapacity,
                             ValidOccupantTypes = new List<string>() { "Slime" },
                         };
 

@@ -60,7 +60,7 @@ namespace MonsterHutchFramework.HarmonyPatches
 
             GameLocation location = __instance.Location;
 
-            if (location is SlimeHutch && location.canSlimeHatchHere() && location.characters.Count < 40)
+            if (location is SlimeHutch && location.canSlimeHatchHere() && location.characters.Count < ModEntry.Config.HutchMonsterCapacity)
             {
                 Monster? monster = null;
                 Vector2 v = new Vector2((int)__instance.TileLocation.X, (int)__instance.TileLocation.Y + 1) * 64f;
