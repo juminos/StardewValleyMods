@@ -171,40 +171,16 @@ Example:
 {
     "Format": "2.5.0",
     "Changes": [
-
-// Define custom ring
-        {
-            "Action": "EditData",
-            "Target": "Data/Objects",
-            "Entries": {
-                "{{ModId}}_Magma": {
-                    "Name": "Magma Sprite Ring",
-                    "DisplayName": "{{i18n:magmasprite-ring.name}}",
-                    "Description": "{{i18n:magmasprite-ring.description}}",
-                    "Type": "Ring",
-                    "Category": -96,
-                    "Price": 1500,
-                    "Texture": "Mods/{{ModId}}/MoreRings",
-                    "SpriteIndex": 2,
-                    "Edibility": -300,
-                    "ExcludeFromRandomSale": true,
-                    "ContextTags": []
-                },
-            }
-        },
-
-// Assign monsters to rings in CharmerRingData
         {
             "Action": "EditData",
             "Target": "juminos.MonsterHutchFramework/CharmerRingData",
             "Entries": {
-
-    // Add monsters to custom ring
+    // Assign monsters to custom ring
                 "{{ModId}}_Magma": {
                     "CharmedMonsters": [ "Magma Sprite", "Magma Sparker" , "{{ModId}}_MagmaSprite", "{{ModId}}_MagmaSparker" ]
                 },
 
-    // Add monsters to vanilla game ring (810 is ID for the Crabshell Ring)
+    // Assign monsters to vanilla game ring (810 is ID for the Crabshell Ring)
                 "810": {
                     "CharmedMonsters": [ "Rock Crab", "Lava Crab", "{{ModId}}_CopperCrab", "{{ModId}}_GoldCrab" ]
                 }
