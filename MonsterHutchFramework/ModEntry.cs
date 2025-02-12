@@ -229,7 +229,7 @@ namespace MonsterHutchFramework
 
                                 //DelayedAction.textAboveHeadAfterDelay("<", monster, Game1.random.Next(600));
                                 monster.modData.Add($"{this.ModManifest.UniqueID}_monsterPetted", "true");
-                                monster.showTextAboveHead("<", null, 2, 1500, Game1.random.Next(600));
+                                monster.showTextAboveHead("Greetings, {0}!", null, 2, 1500, Game1.random.Next(600));
                             }
                         }
 
