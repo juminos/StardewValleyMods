@@ -44,6 +44,7 @@ namespace MonsterHutchFramework
             Helper.Events.GameLoop.GameLaunched += delegate { ModConfig.SetUpModConfigMenu(Config, this); };
             Helper.Events.GameLoop.SaveLoaded += OnSaveLoaded;
             Helper.Events.GameLoop.DayStarted += OnDayStarted;
+            Helper.Events.Player.Warped += OnPlayerWarped;
             Helper.Events.Content.AssetRequested += OnAssetRequested;
             Helper.Events.Input.ButtonPressed += OnButtonPressed;
             Helper.Events.Content.AssetsInvalidated += OnAssetsInvalidated;
@@ -114,7 +115,6 @@ namespace MonsterHutchFramework
                 {
                     foreach (var monster in hutch.characters)
                     {
-                        monster.modData.Remove($"{this.ModManifest.UniqueID}_monsterPetted");
                         if (Config.SkipRandomizeSlimePositions && monster is GreenSlime)
                         {
                             continue;
@@ -139,6 +139,31 @@ namespace MonsterHutchFramework
                 return true;
             });
         }
+        private void OnDayEnding(object? sender, DayEndingEventArgs e)
+        {
+            Utility.ForEachBuilding(delegate (Building building)
+            {
+                if (building?.indoors?.Value is SlimeHutch hutch)
+                {
+                    foreach (var monster in hutch.characters)
+                    {
+                        monster.modData.Remove($"{this.ModManifest.UniqueID}_monsterPetted");
+                    }
+                }
+                return true;
+            });
+        }
+        private void OnPlayerWarped(object? sender, WarpedEventArgs e)
+        {
+            foreach(Monster monster in e.OldLocation.characters)
+            {
+                if ((monster is ShadowBrute || monster is Shooter || monster is ShadowShaman || monster is ShadowGirl || monster is ShadowGuy) &&
+                    monster.modData.ContainsKey($"{this.ModManifest.UniqueID}_monsterPetted"))
+                {
+                    monster.modData.Remove($"{this.ModManifest.UniqueID}_monsterPetted");
+                }
+            }
+        }
         private void OnAssetRequested(object? sender, AssetRequestedEventArgs e)
         {
             MonsterHutch.ExpandMonsterHutchInterior(e);
@@ -159,6 +184,7 @@ namespace MonsterHutchFramework
                 return;
             if (!Game1.player.UsingTool &&
                 !Game1.player.isEating &&
+                !Game1.player.IsBusyDoingSomething() &&
                 Game1.currentLocation is SlimeHutch hutch &&
                 e.Button.IsActionButton())
             {
@@ -170,9 +196,9 @@ namespace MonsterHutchFramework
                     {
                         if (RingPatches.MonsterIsCharmed(monster, Game1.player) && !monster.modData.ContainsKey($"{this.ModManifest.UniqueID}_monsterPetted"))
                         {
-                            DelayedAction.textAboveHeadAfterDelay("<", monster, Game1.random.Next(600));
+                            //DelayedAction.textAboveHeadAfterDelay("<", monster, Game1.random.Next(600));
                             monster.modData.Add($"{this.ModManifest.UniqueID}_monsterPetted", "true");
-                            //monster.showTextAboveHead("<", null, 2, 1500, Game1.random.Next(500));
+                            monster.showTextAboveHead("<", null, 2, 1500, Game1.random.Next(600));
                             foreach(var monsterData in AssetHandler.monsterHutchData)
                             {
                                 if (monsterData.Value.Name == monster.Name)
@@ -180,8 +206,33 @@ namespace MonsterHutchFramework
                                     DelayedAction.playSoundAfterDelay(monsterData.Value.Sound, Game1.random.Next(600), hutch);
                                     //monster.playNearbySoundAll(monsterData.Value.Sound);
                                 }
-                            }    
+                            }
                         }
+                    }
+                }
+            }
+            if (!Game1.player.UsingTool &&
+                !Game1.player.isEating &&
+                !Game1.player.IsBusyDoingSomething() &&
+                e.Button.IsActionButton())
+            {
+                foreach (Monster monster in Game1.player.currentLocation.characters)
+                {
+                    if (monster is ShadowBrute || monster is Shooter || monster is ShadowShaman || monster is ShadowGirl || monster is ShadowGuy)
+                    {
+                        var playerTile = Game1.player.Tile;
+                        var monsterPos = new Vector2(monster.Tile.X, monster.Tile.Y);
+                        if (Math.Abs(monsterPos.X - playerTile.X) <= 1 && Math.Abs(monsterPos.Y - playerTile.Y) <= 1)
+                        {
+                            if (RingPatches.MonsterIsCharmed(monster, Game1.player) && !monster.modData.ContainsKey($"{this.ModManifest.UniqueID}_monsterPetted"))
+                            {
+
+                                //DelayedAction.textAboveHeadAfterDelay("<", monster, Game1.random.Next(600));
+                                monster.modData.Add($"{this.ModManifest.UniqueID}_monsterPetted", "true");
+                                monster.showTextAboveHead("<", null, 2, 1500, Game1.random.Next(600));
+                            }
+                        }
+
                     }
                 }
             }

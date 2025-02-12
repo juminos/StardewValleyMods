@@ -128,8 +128,7 @@ namespace MonsterHutchFramework
                         InvalidItemMessage = null,
                         InvalidItemMessageCondition = null,
                         InvalidCountMessage = null,
-                        WorkingEffects = null,
-                        WorkingEffectChance = 0.33f,
+                        WorkingEffectChance = 1,
                         AllowLoadWhenFull = false,
                         WobbleWhileWorking = ModEntry.Config.IncubatorWobblesWhileIncubating,
                         LightWhileWorking = null,
@@ -162,21 +161,6 @@ namespace MonsterHutchFramework
                         monsterIncubator.ReadyTimeModifiers = null;
                     }
 
-                    var bubblesSound = new MachineSoundData
-                    {
-                        Id = "bubbles",
-                        Delay = 0
-                    };
-
-                    var workingEffect = new MachineEffects
-                    {
-                        ShakeDuration = 400,
-                        Sounds = new List<MachineSoundData>() { bubblesSound },
-                        Frames = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 },
-                        Interval = 100
-                    };
-                    monsterIncubator.WorkingEffects = new List<MachineEffects> { workingEffect };
-
                     var coinSound = new MachineSoundData
                     {
                         Id = "coin",
@@ -187,14 +171,31 @@ namespace MonsterHutchFramework
                     {
                         Id = "Default",
                         Condition = null,
-                        Interval = -1,
-                        Frames = null,
-                        ShakeDuration = -1,
-                        TemporarySprites = null,
+                        Interval = 100,
+                        Frames = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 },
+                        ShakeDuration = 400,
                         Sounds = new List<MachineSoundData>() { coinSound }
                     };
 
                     monsterIncubator.LoadEffects = new List<MachineEffects>() { defaultMachineSpriteEffect };
+
+                    var bubblesSound = new MachineSoundData
+                    {
+                        Id = "bubbles",
+                        Delay = 0
+                    };
+
+                    var workingEffect = new MachineEffects
+                    {
+                        Id = "Default",
+                        Condition = null,
+                        Interval = 100,
+                        Frames = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 },
+                        ShakeDuration = 400,
+                        Sounds = new List<MachineSoundData>() { bubblesSound },
+                    };
+
+                    monsterIncubator.WorkingEffects = new List<MachineEffects>() { workingEffect };
 
                     monsterIncubator.OutputRules = new List<MachineOutputRule>();
 
