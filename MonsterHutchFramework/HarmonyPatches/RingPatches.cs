@@ -40,7 +40,7 @@ namespace MonsterHutchFramework.HarmonyPatches
         internal static void InvinciblePatch_Postfix(Monster __instance, ref bool __result)
         {
             var who = Game1.player;
-            if (__instance is not GreenSlime && __instance is not BigSlime && MonsterIsCharmed(__instance, who) && !ModEntry.Config.LethalRings)
+            if (__instance is not GreenSlime && __instance is not BigSlime && MonsterIsCharmed(__instance, who, out string? matchedRingId, out int matchIndex) && !ModEntry.Config.LethalRings)
             {
                 __result = true;
                 return;
@@ -53,7 +53,7 @@ namespace MonsterHutchFramework.HarmonyPatches
         }
         internal static void OverlapFarmerDamage_Postfix(Monster __instance, Farmer who, ref bool __result)
         {
-            if (MonsterIsCharmed(__instance, who))
+            if (MonsterIsCharmed(__instance, who, out string? matchedRingId, out int matchIndex))
             {
                 __result = true;
                 return;
@@ -62,7 +62,7 @@ namespace MonsterHutchFramework.HarmonyPatches
         internal static void ShadowShamanCastPatch_Prefix(ShadowShaman __instance, GameTime time)
         {
             var who = Game1.player;
-            if (MonsterIsCharmed(__instance, who))
+            if (MonsterIsCharmed(__instance, who, out string? matchedRingId, out int matchIndex))
             {
                 __instance.coolDown = 1500;
                 return;
@@ -71,37 +71,52 @@ namespace MonsterHutchFramework.HarmonyPatches
         internal static void ShadowShooterPatch_Prefix(Shooter __instance, GameTime time)
         {
             var who = Game1.player;
-            if (MonsterIsCharmed(__instance, who))
+            if (MonsterIsCharmed(__instance, who, out string? matchedRingId, out int matchIndex))
             {
                 __instance.shooting.Value = false;
                 __instance.nextShot = 2f;
                 return;
             }
         }
-        public static bool MonsterIsCharmed(Monster monster, Farmer who)
+        public static bool MonsterIsCharmed(Monster monster, Farmer who, out string? matchRingKey, out int matchMonsterIndex)
         {
+            var ringData = AssetHandler.charmerRingData;
             if (who.rightRing.Value == null && who.leftRing.Value == null)
             {
-                //ModEntry.SMonitor.Log($"No rings found on {who.Name}", LogLevel.Trace);
+                matchRingKey = null;
+                matchMonsterIndex = -1;
                 return false;
             }
-            else if (who.leftRing.Value != null && AssetHandler.charmerRingData.ContainsKey(who.leftRing.Value.ItemId) && AssetHandler.charmerRingData[who.leftRing.Value.ItemId].CharmedMonsters.Contains(monster.Name))
+            foreach(var item in ringData)
             {
-                //ModEntry.SMonitor.Log($"{who.Name} wearing {who.leftRing.Value.ItemId} ring for {monster.Name}", LogLevel.Trace);
-
-                return true;
+                if (who.leftRing.Value != null && item.Value.RingId == who.leftRing.Value.ItemId)
+                {
+                    for (int i = 0; i < ringData[item.Key].CharmedMonsters.Count; i++)
+                    {
+                        if (ringData[item.Key].CharmedMonsters[i].MonsterName == monster.Name)
+                        {
+                            matchRingKey = item.Key;
+                            matchMonsterIndex = i;
+                            return true;
+                        }
+                    }
+                }
+                if (who.rightRing.Value != null && item.Value.RingId == who.rightRing.Value.ItemId)
+                {
+                    for (int i = 0; i < ringData[item.Key].CharmedMonsters.Count; i++)
+                    {
+                        if (ringData[item.Key].CharmedMonsters[i].MonsterName == monster.Name)
+                        {
+                            matchRingKey = item.Key;
+                            matchMonsterIndex = i;
+                            return true;
+                        }
+                    }
+                }
             }
-            else if (who.rightRing.Value != null && AssetHandler.charmerRingData.ContainsKey(who.rightRing.Value.ItemId) && AssetHandler.charmerRingData[who.rightRing.Value.ItemId].CharmedMonsters.Contains(monster.Name))
-            {
-                //ModEntry.SMonitor.Log($"{who.Name} wearing {who.rightRing.Value.ItemId} ring for {monster.Name}", LogLevel.Trace);
-
-                return true;
-            }
-            else
-            {
-                //ModEntry.SMonitor.Log($"{who.Name} not wearing matching ring for {monster.Name}", LogLevel.Trace);
-                return false;
-            }
+            matchRingKey = null;
+            matchMonsterIndex = -1;
+            return false;
         }
     }
 }

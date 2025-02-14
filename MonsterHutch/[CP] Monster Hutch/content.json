@@ -6,7 +6,7 @@
         {
             "Action": "Load",
             "Target": "Maps/SlimeHutch",
-            "FromFile": "assets/MonsterHutch.tmx"
+            "FromFile": "assets/LargeMonsterHutch.tmx"
         },
         {
             "Action": "Load",

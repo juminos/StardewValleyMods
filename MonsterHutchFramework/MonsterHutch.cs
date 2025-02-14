@@ -20,7 +20,7 @@ namespace MonsterHutchFramework
                 {
                     var editor = asset.AsMap();
 
-                    editor.ReplaceWith(ModEntry.SHelper.ModContent.Load<Map>("assets/MonsterHutch.tmx"));
+                    editor.ReplaceWith(ModEntry.SHelper.ModContent.Load<Map>("assets/LargeMonsterHutch.tmx"));
                 });
             }
             if (e.NameWithoutLocale.IsEquivalentTo("Data/Buildings"))
@@ -52,7 +52,7 @@ namespace MonsterHutchFramework
                             BuildMaterials = null,
                             BuildingToUpgrade = "Slime Hutch",
                             HumanDoor = new Microsoft.Xna.Framework.Point(3, 3),
-                            IndoorMap = "MonsterHutchExpanded",
+                            IndoorMap = "LargeMonsterHutchExpanded",
                             IndoorMapType = "StardewValley.SlimeHutch",
                             MaxOccupants = ModEntry.Config.HutchSlimeCapacity,
                             ValidOccupantTypes = new List<string>() { "Slime" },
@@ -82,7 +82,7 @@ namespace MonsterHutchFramework
             }
             if (e.NameWithoutLocale.IsEquivalentTo("Maps/MonsterHutchExpanded"))
             {
-                e.LoadFromModFile<Map>("assets/MonsterHutchExpanded.tmx", AssetLoadPriority.Medium);
+                e.LoadFromModFile<Map>("assets/LargeMonsterHutchExpanded.tmx", AssetLoadPriority.Medium);
             }
         }
     }

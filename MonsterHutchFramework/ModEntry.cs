@@ -21,6 +21,10 @@ using static StardewValley.Minigames.CraneGame;
 using StardewValley.Extensions;
 using System.Drawing;
 using MonsterHutchFramework.HarmonyPatches;
+using StardewValley.Objects;
+using System.Reflection;
+using xTile.Dimensions;
+using StardewValley.BellsAndWhistles;
 
 namespace MonsterHutchFramework
 {
@@ -139,25 +143,12 @@ namespace MonsterHutchFramework
                 return true;
             });
         }
-        private void OnDayEnding(object? sender, DayEndingEventArgs e)
-        {
-            Utility.ForEachBuilding(delegate (Building building)
-            {
-                if (building?.indoors?.Value is SlimeHutch hutch)
-                {
-                    foreach (var monster in hutch.characters)
-                    {
-                        monster.modData.Remove($"{this.ModManifest.UniqueID}_monsterPetted");
-                    }
-                }
-                return true;
-            });
-        }
         private void OnPlayerWarped(object? sender, WarpedEventArgs e)
         {
-            foreach(Monster monster in e.OldLocation.characters)
+            foreach(var character in e.OldLocation.characters)
             {
-                if ((monster is ShadowBrute || monster is Shooter || monster is ShadowShaman || monster is ShadowGirl || monster is ShadowGuy) &&
+                if (character is Monster monster &&
+                    //(monster is ShadowBrute || monster is Shooter || monster is ShadowShaman || monster is ShadowGirl || monster is ShadowGuy) &&
                     monster.modData.ContainsKey($"{this.ModManifest.UniqueID}_monsterPetted"))
                 {
                     monster.modData.Remove($"{this.ModManifest.UniqueID}_monsterPetted");
@@ -185,56 +176,77 @@ namespace MonsterHutchFramework
             if (!Game1.player.UsingTool &&
                 !Game1.player.isEating &&
                 !Game1.player.IsBusyDoingSomething() &&
-                Game1.currentLocation is SlimeHutch hutch &&
                 e.Button.IsActionButton())
             {
-                var playerTile = Game1.player.Tile;
-                foreach (Monster monster in hutch.characters)
+                foreach (var character in Game1.player.currentLocation.characters)
                 {
-                    var monsterPos = new Vector2(monster.Tile.X, monster.Tile.Y);
-                    if (Math.Abs(monsterPos.X - playerTile.X) <= 1 && Math.Abs(monsterPos.Y - playerTile.Y) <= 1)
+                    if (character is Monster monster)
+                    //if (monster is ShadowBrute || monster is Shooter || monster is ShadowShaman || monster is ShadowGirl || monster is ShadowGuy)
                     {
-                        if (RingPatches.MonsterIsCharmed(monster, Game1.player) && !monster.modData.ContainsKey($"{this.ModManifest.UniqueID}_monsterPetted"))
+                        var playerTile = Game1.player.Tile;
+                        var tileRect = new Microsoft.Xna.Framework.Rectangle((int)playerTile.X * 64, (int)playerTile.Y * 64, 64, 64);
+                        var monsterPos = new Vector2(monster.Tile.X, monster.Tile.Y);
+                        if (monster.GetBoundingBox().Intersects(tileRect) &&
+                            //Math.Abs(monsterPos.X - playerTile.X) <= 1 && 
+                            //Math.Abs(monsterPos.Y - playerTile.Y) <= 1 &&
+                            RingPatches.MonsterIsCharmed(monster, Game1.player, out string? matchRingKey, out int matchMonsterIndex) &&
+                            matchRingKey != null &&
+                            !monster.modData.ContainsKey($"{this.ModManifest.UniqueID}_monsterPetted"))
                         {
+                            GetCharmedSpeech(monster, matchRingKey, matchMonsterIndex, out string text, out Microsoft.Xna.Framework.Color? color, out int style, out int duration, out int preTimer);
+
+                            monster.showTextAboveHead(text, color, style, duration > 0 ? duration : 1500, preTimer > -1 ? preTimer : 0);
+
+                            if (AssetHandler.charmerRingData[matchRingKey].CharmedMonsters[matchMonsterIndex].Sound != null)
+                            {
+                                DelayedAction.playSoundAfterDelay(AssetHandler.charmerRingData[matchRingKey].CharmedMonsters[matchMonsterIndex].Sound, preTimer, Game1.player.currentLocation, monsterPos);
+                                //monster.playNearbySoundAll(AssetHandler.charmerRingData[matchRingKey].CharmedMonsters[matchMonsterIndex].Sound);
+                            }
                             //DelayedAction.textAboveHeadAfterDelay("<", monster, Game1.random.Next(600));
                             monster.modData.Add($"{this.ModManifest.UniqueID}_monsterPetted", "true");
-                            monster.showTextAboveHead("<", null, 2, 1500, Game1.random.Next(600));
-                            foreach(var monsterData in AssetHandler.monsterHutchData)
-                            {
-                                if (monsterData.Value.Name == monster.Name)
-                                {
-                                    DelayedAction.playSoundAfterDelay(monsterData.Value.Sound, Game1.random.Next(600), hutch);
-                                    //monster.playNearbySoundAll(monsterData.Value.Sound);
-                                }
-                            }
                         }
                     }
                 }
             }
-            if (!Game1.player.UsingTool &&
-                !Game1.player.isEating &&
-                !Game1.player.IsBusyDoingSomething() &&
-                e.Button.IsActionButton())
+        }
+        public static void GetCharmedSpeech(Monster monster, string ringKey, int monsterIndex, out string text, out Microsoft.Xna.Framework.Color? color, out int style, out int duration, out int preTimer)
+        {
+            var speechList = new List<int>();
+            var ringData = AssetHandler.charmerRingData;
+            if (ringData[ringKey].CharmedMonsters[monsterIndex].SpeechBubbles.Count == 1)
             {
-                foreach (Monster monster in Game1.player.currentLocation.characters)
+                text = ringData[ringKey].CharmedMonsters[monsterIndex].SpeechBubbles[0].Text ?? "<";
+                color = SpriteText.getColorFromIndex(ringData[ringKey].CharmedMonsters[monsterIndex].SpeechBubbles[0].Color);
+                style = ringData[ringKey].CharmedMonsters[monsterIndex].SpeechBubbles[0].Style;
+                duration = ringData[ringKey].CharmedMonsters[monsterIndex].SpeechBubbles[0].Duration;
+                preTimer = ringData[ringKey].CharmedMonsters[monsterIndex].SpeechBubbles[0].Pretimer;
+                return;
+            }
+            else if (ringData[ringKey].CharmedMonsters[monsterIndex].SpeechBubbles.Count > 1)
+            {
+                for (int i = 0; i < ringData[ringKey].CharmedMonsters[monsterIndex].SpeechBubbles.Count; i++)
                 {
-                    if (monster is ShadowBrute || monster is Shooter || monster is ShadowShaman || monster is ShadowGirl || monster is ShadowGuy)
+                    for (int j = 0; j < ringData[ringKey].CharmedMonsters[monsterIndex].SpeechBubbles[i].Weight; j++)
                     {
-                        var playerTile = Game1.player.Tile;
-                        var monsterPos = new Vector2(monster.Tile.X, monster.Tile.Y);
-                        if (Math.Abs(monsterPos.X - playerTile.X) <= 1 && Math.Abs(monsterPos.Y - playerTile.Y) <= 1)
-                        {
-                            if (RingPatches.MonsterIsCharmed(monster, Game1.player) && !monster.modData.ContainsKey($"{this.ModManifest.UniqueID}_monsterPetted"))
-                            {
-
-                                //DelayedAction.textAboveHeadAfterDelay("<", monster, Game1.random.Next(600));
-                                monster.modData.Add($"{this.ModManifest.UniqueID}_monsterPetted", "true");
-                                monster.showTextAboveHead("Greetings, {0}!", null, 2, 1500, Game1.random.Next(600));
-                            }
-                        }
-
+                        speechList.Add(i);
                     }
                 }
+                var speechIndex = Game1.random.Next(speechList.Count);
+                text = ringData[ringKey].CharmedMonsters[monsterIndex].SpeechBubbles[speechList[speechIndex]].Text ?? "<";
+                color = SpriteText.getColorFromIndex(ringData[ringKey].CharmedMonsters[monsterIndex].SpeechBubbles[speechList[speechIndex]].Color);
+                style = ringData[ringKey].CharmedMonsters[monsterIndex].SpeechBubbles[speechList[speechIndex]].Style;
+                duration = ringData[ringKey].CharmedMonsters[monsterIndex].SpeechBubbles[speechList[speechIndex]].Duration;
+                preTimer = ringData[ringKey].CharmedMonsters[monsterIndex].SpeechBubbles[speechList[speechIndex]].Pretimer;
+                return;
+            }
+            else
+            {
+                text = "<";
+                color = SpriteText.color_Default;
+                style = 2;
+                duration = 1500;
+                preTimer = -1;
+                return;
             }
         }
     }

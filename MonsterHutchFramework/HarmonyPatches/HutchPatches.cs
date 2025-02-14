@@ -108,73 +108,102 @@ namespace MonsterHutchFramework.HarmonyPatches
             __state = new List<Monster>();
             for (int i = __instance.characters.Count - 1; i >= 0; i--)
             {
-                if (__instance.characters[i] is Monster monster && monster is not GreenSlime)
+                if (__instance.characters[i] is Monster monster &&
+                    monster is not GreenSlime)
                 {
                     __state.Add(monster);
                     __instance.characters.RemoveAt(i);
                 }
             }
+
             int startIndex = Game1.random.Next(__instance.waterSpots.Length);
-            float usedWater = 0;
+            int waters = 0;
+            for (int i = 0; i < __instance.waterSpots.Length; i++)
+            {
+                if (__instance.waterSpots[(i + startIndex) % __instance.waterSpots.Length] && waters * 5 < __state.Count)
+                {
+                    waters++;
+                    __instance.waterSpots[(i + startIndex) % __instance.waterSpots.Length] = false;
+                }
+            }
+
+            int usedWater = 0;
             foreach (var monsterType in AssetHandler.monsterHutchData)
             {
+                if (waters < 1)
+                    break;
                 int monsterCount = 0;
                 foreach (var monster in __state)
                 {
-                    if (monsterType.Value.Name == monster.Name)
+                    ModEntry.SMonitor.Log($"tyring to water {monster.Name}", LogLevel.Trace);
+
+                    if (monsterType.Value.Name == monster.Name && waters > 0)
                     {
                         monsterCount++;
+                        usedWater++;
+                        if (usedWater > 4)
+                        {
+                            waters--;
+                            usedWater = 0;
+                        }
+                    }
+                    else if (waters < 1)
+                    {
+                        ModEntry.SMonitor.Log($"no water left", LogLevel.Trace);
+                        break;
                     }
                 }
 
-                if (monsterCount > 0)
+                if (monsterCount > 0 && monsterType.Value.ProduceData.Count > 0)
                 {
-                    int monstersWatered = 0;
-
-                    for (int i = 0; i < __instance.waterSpots.Length; i++)
+                    for (int j = 0; j < (int)((float)monsterCount / monsterType.Value.NumberToProduce); j++)
                     {
-                        if (__instance.waterSpots[(i + startIndex) % __instance.waterSpots.Length])
+                        int tries = 50;
+                        Vector2 tile = __instance.getRandomTile();
+                        while ((!__instance.CanItemBePlacedHere(tile, false, CollisionMask.All, ~CollisionMask.Objects, false, false) || __instance.doesTileHaveProperty((int)tile.X, (int)tile.Y, "NPCBarrier", "Back") != null || tile.Y >= 16f) && tries > 0)
                         {
-                            if (monstersWatered < monsterCount)
-                            {
-                                monstersWatered += Math.Min(monsterType.Value.NumberWatered, monsterCount - monstersWatered);
-                            }
+                            tile = __instance.getRandomTile();
+                            tries--;
                         }
-                    }
-
-                    usedWater += ((float)monstersWatered / monsterType.Value.NumberWatered);
-
-                    ModEntry.SMonitor.Log($"{monsterCount} {monsterType.Value.Name} found, {monstersWatered} watered, {usedWater} water used.", StardewModdingAPI.LogLevel.Trace);
-
-                    if (monsterType.Value.ProduceData.Count > 0)
-                    {
-                        for (int j = 0; j < (int)((float)monstersWatered / monsterType.Value.NumberToProduce); j++)
+                        if (tries > 0)
                         {
-                            int tries = 50;
-                            Vector2 tile = __instance.getRandomTile();
-                            while ((!__instance.CanItemBePlacedHere(tile, false, CollisionMask.All, ~CollisionMask.Objects, false, false) || __instance.doesTileHaveProperty((int)tile.X, (int)tile.Y, "NPCBarrier", "Back") != null || tile.Y >= 16f) && tries > 0)
+                            if (Game1.random.NextDouble() < ((double)monsterType.Value.ProduceChance / 100.0))
                             {
-                                tile = __instance.getRandomTile();
-                                tries--;
-                            }
-
-                            if (tries > 0)
-                            {
-                                //var produceChance = Math.Clamp(monsterType.Value.ProduceChance + Game1.player.DailyLuck, 0, 1);
-                                if (Game1.random.NextDouble() < ((double)monsterType.Value.ProduceChance / 100.0))
+                                bool spawn_object = true;
+                                bool dropDeluxe = false;
+                                var produceIndex = 0;
+                                var produceId = monsterType.Value.ProduceData[produceIndex].ItemId;
+                                if (monsterType.Value.ProduceData.Count > 1)
                                 {
-                                    bool spawn_object = true;
-                                    bool dropDeluxe = false;
-                                    var produceIndex = 0;
-                                    var produceId = monsterType.Value.ProduceData[produceIndex].ItemId;
-                                    if (monsterType.Value.ProduceData.Count > 1)
+                                    var weightedList = new List<int>();
+                                    for (int i = 0; i < monsterType.Value.ProduceData.Count; i++)
                                     {
-                                        var weightedList = new List<int>();
-                                        for (int i = 0; i < monsterType.Value.ProduceData.Count; i++)
+                                        if (monsterType.Value.ProduceData[i].ItemId != null)
                                         {
-                                            if (monsterType.Value.ProduceData[i].ItemId != null)
+                                            for (int k = 0; k < monsterType.Value.ProduceData[i].Weight; k++)
                                             {
-                                                for (int k = 0; k < monsterType.Value.ProduceData[i].Weight; k++)
+                                                weightedList.Add(i);
+                                            }
+                                        }
+                                    }
+                                    var random = new Random();
+                                    int index = random.Next(weightedList.Count);
+                                    produceIndex = weightedList[index];
+                                    produceId = monsterType.Value.ProduceData[produceIndex].ItemId;
+                                }
+                                if (monsterType.Value.DeluxeChance > 0 && monsterType.Value.DeluxeProduceData.Count > 0)
+                                {
+                                    var deluxeChance = Math.Clamp(((double)monsterType.Value.DeluxeChance / 100.0) + Game1.player.DailyLuck, 0, 1);
+                                    if (Game1.random.NextDouble() < deluxeChance && monsterType.Value.DeluxeProduceData.Count > 0)
+                                    {
+                                        ModEntry.SMonitor.Log($"Deluxe chance {deluxeChance} check passed", LogLevel.Trace);
+
+                                        var weightedList = new List<int>();
+                                        for (int i = 0; i < monsterType.Value.DeluxeProduceData.Count; i++)
+                                        {
+                                            if (monsterType.Value.DeluxeProduceData[i].ItemId != null)
+                                            {
+                                                for (int k = 0; k < monsterType.Value.DeluxeProduceData[i].Weight; k++)
                                                 {
                                                     weightedList.Add(i);
                                                 }
@@ -183,96 +212,71 @@ namespace MonsterHutchFramework.HarmonyPatches
                                         var random = new Random();
                                         int index = random.Next(weightedList.Count);
                                         produceIndex = weightedList[index];
-                                        produceId = monsterType.Value.ProduceData[produceIndex].ItemId;
+                                        produceId = monsterType.Value.DeluxeProduceData[produceIndex].ItemId;
+                                        dropDeluxe = true;
                                     }
-                                    if (monsterType.Value.DeluxeChance > 0 && monsterType.Value.DeluxeProduceData.Count > 0)
+                                }
+                                var produce = ItemRegistry.Create<StardewValley.Object>(produceId);
+                                produce.CanBeSetDown = false;
+                                ModEntry.SMonitor.Log($"{produce.Name} is type {produce.Type}, category {produce.Category}");
+                                if (produce.ItemId == "395")
+                                {
+                                    produce.Type = "Cooking";
+                                    produce.Category = -7;
+                                }
+                                if (produce.Type != "Litter")
+                                {
+                                    ModEntry.SMonitor.Log($"{produce.Name} is {produce.Type}, not litter");
+                                    foreach (StardewValley.Object location_object in __instance.objects.Values)
                                     {
-                                        var deluxeChance = Math.Clamp(((double)monsterType.Value.DeluxeChance / 100.0) + Game1.player.DailyLuck, 0, 1);
-                                        if (Game1.random.NextDouble() < deluxeChance && monsterType.Value.DeluxeProduceData.Count > 0)
+                                        if (location_object.QualifiedItemId == "(BC)165" && location_object.heldObject.Value is Chest chest && chest.addItem(produce) == null)
                                         {
-                                            ModEntry.SMonitor.Log($"Deluxe chance {deluxeChance} check passed", LogLevel.Trace);
-
-                                            var weightedList = new List<int>();
-                                            for (int i = 0; i < monsterType.Value.DeluxeProduceData.Count; i++)
-                                            {
-                                                if (monsterType.Value.DeluxeProduceData[i].ItemId != null)
-                                                {
-                                                    for (int k = 0; k < monsterType.Value.DeluxeProduceData[i].Weight; k++)
-                                                    {
-                                                        weightedList.Add(i);
-                                                    }
-                                                }
-                                            }
-                                            var random = new Random();
-                                            int index = random.Next(weightedList.Count);
-                                            produceIndex = weightedList[index];
-                                            produceId = monsterType.Value.DeluxeProduceData[produceIndex].ItemId;
-                                            dropDeluxe = true;
+                                            location_object.showNextIndex.Value = true;
+                                            spawn_object = false;
+                                            break;
                                         }
                                     }
-                                    var produce = ItemRegistry.Create<StardewValley.Object>(produceId);
-                                    produce.CanBeSetDown = false;
-                                    if (produce.ItemId == "395")
+                                }
+                                if (spawn_object)
+                                {
+                                    if (dropDeluxe)
                                     {
-                                        produce.Type = "Basic";
-                                        produce.IsSpawnedObject = true;
-                                        produce.CanBeGrabbed = true;
-                                        produce.Category = -28;
-                                    }
-                                    if (produce.Type != "Litter")
-                                    {
-                                        ModEntry.SMonitor.Log($"{produce.Name} is {produce.Type}, not litter");
-                                        foreach (StardewValley.Object location_object in __instance.objects.Values)
+                                        for (int i = 0; i < monsterType.Value.DeluxeProduceData[produceIndex].Count; i++)
                                         {
-                                            if (location_object.QualifiedItemId == "(BC)165" && location_object.heldObject.Value is Chest chest && chest.addItem(produce) == null)
+                                            if (monsterType.Value.DeluxeProduceData[produceIndex].IsDropped)
                                             {
-                                                location_object.showNextIndex.Value = true;
-                                                spawn_object = false;
-                                                break;
+                                                var drop = produce.getOne();
+                                                __instance.debris.Add(new Debris(drop, new Vector2(tile.X * 64, tile.Y * 64), new Vector2(tile.X * 64, tile.Y * 64)));
                                             }
-                                        }
-                                    }
-                                    if (spawn_object)
-                                    {
-                                        if (dropDeluxe)
-                                        {
-                                            for (int i = 0; i < monsterType.Value.DeluxeProduceData[produceIndex].Count; i++)
+                                            else
                                             {
-                                                if (monsterType.Value.DeluxeProduceData[produceIndex].IsDropped)
+                                                var item = (StardewValley.Object)produce.getOne();
+                                                Utility.spawnObjectAround(tile, item, __instance);
+                                                if (item.Type == "Litter")
                                                 {
-                                                    var drop = produce.getOne();
-                                                    __instance.debris.Add(new Debris(drop, new Vector2(tile.X * 64, tile.Y * 64), new Vector2(tile.X * 64, tile.Y * 64)));
-                                                }
-                                                else
-                                                {
-                                                    var item = (StardewValley.Object)produce.getOne();
-                                                    Utility.spawnObjectAround(tile, item, __instance);
-                                                    if (item.Type == "Litter")
-                                                    {
-                                                        item.IsSpawnedObject = false;
-                                                        item.CanBeGrabbed = false;
-                                                    }
+                                                    item.IsSpawnedObject = false;
+                                                    item.CanBeGrabbed = false;
                                                 }
                                             }
                                         }
-                                        else
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < monsterType.Value.ProduceData[produceIndex].Count; i++)
                                         {
-                                            for (int i = 0; i < monsterType.Value.ProduceData[produceIndex].Count; i++)
+                                            if (monsterType.Value.ProduceData[produceIndex].IsDropped)
                                             {
-                                                if (monsterType.Value.ProduceData[produceIndex].IsDropped)
+                                                var drop = produce.getOne();
+                                                __instance.debris.Add(new Debris(drop, new Vector2(tile.X * 64, tile.Y * 64), new Vector2(tile.X * 64, tile.Y * 64)));
+                                            }
+                                            else
+                                            {
+                                                var item = (StardewValley.Object)produce.getOne();
+                                                Utility.spawnObjectAround(tile, item, __instance);
+                                                if (item.Type == "Litter")
                                                 {
-                                                    var drop = produce.getOne();
-                                                    __instance.debris.Add(new Debris(drop, new Vector2(tile.X * 64, tile.Y * 64), new Vector2(tile.X * 64, tile.Y * 64)));
-                                                }
-                                                else
-                                                {
-                                                    var item = (StardewValley.Object)produce.getOne();
-                                                    Utility.spawnObjectAround(tile, item, __instance);
-                                                    if (item.Type == "Litter")
-                                                    {
-                                                        item.IsSpawnedObject = false;
-                                                        item.CanBeGrabbed = false;
-                                                    }
+                                                    item.IsSpawnedObject = false;
+                                                    item.CanBeGrabbed = false;
                                                 }
                                             }
                                         }
@@ -281,18 +285,6 @@ namespace MonsterHutchFramework.HarmonyPatches
                             }
                         }
                     }
-                }
-            }
-
-            ModEntry.SMonitor.Log($"used water count {usedWater} cast to double {(double)usedWater}", LogLevel.Trace);
-
-            for (int i = 0; i < __instance.waterSpots.Length; i++)
-            {
-                if (__instance.waterSpots[i] &&
-                    Game1.random.NextDouble() < (((double)usedWater) / 2) - Game1.player.DailyLuck)
-                {
-                    __instance.waterSpots[(i + startIndex) % __instance.waterSpots.Length] = false;
-                    usedWater -= 2;
                 }
             }
         }
@@ -309,8 +301,9 @@ namespace MonsterHutchFramework.HarmonyPatches
                 }
             }
         }
-        public static void MultipleObjectDebris_Pre(string id, ref int number)
+        public static void MultipleObjectDebris_Pre(string id, int xTile, int yTile, ref int number, long who, GameLocation location)
         {
+
             if (Game1.currentLocation is SlimeHutch && 
                 (id == "(O)909" ||
                 id == "(O)848" ||
@@ -324,10 +317,9 @@ namespace MonsterHutchFramework.HarmonyPatches
                 id == "(O)384" ||
                 id == "(O)386"))
             {
-                number *= 2;
-                //Game1.random.Next(6, 10) + (Game1.random.NextDouble() < (double)((float)Game1.player.LuckLevel / 100f) ? 1 : 0) + (Game1.random.NextDouble() < (double)((float)Game1.player.DailyLuck / 100f) ? 1 : 0);
+                var newNumber = number < 4 ? 3: number;
+                Game1.createMultipleObjectDebris(id, xTile, yTile, newNumber, location);
             }
-            ModEntry.SMonitor.Log($"{id} multidrop triggered, modified count to {number}", LogLevel.Trace);
         }
     }
 }

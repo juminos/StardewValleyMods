@@ -116,7 +116,6 @@ namespace MonsterHutchFramework
                     IDictionary<string, MachineData> data = asset.AsDictionary<string, MachineData>().Data;
 
                     // most of the values of the monster incubator were set to be identical to the slime incubator
-                    // in case the default values of these constructors change in the future, all values were defined
 
                     var monsterIncubator = new MachineData
                     {
@@ -135,7 +134,7 @@ namespace MonsterHutchFramework
                         ShowNextIndexWhileWorking = false,
                         ShowNextIndexWhenReady = false,
                         AllowFairyDust = false,
-                        IsIncubator = false, // this is not a bug, slime incubators are also not "incubators"
+                        IsIncubator = false,
                         OnlyCompleteOvernight = true,
                         ClearContentsOvernightCondition = null,
                         StatsToIncrementWhenLoaded = null,
@@ -172,7 +171,7 @@ namespace MonsterHutchFramework
                         Id = "Default",
                         Condition = null,
                         Interval = 100,
-                        Frames = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 },
+                        Frames = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 },
                         ShakeDuration = 400,
                         Sounds = new List<MachineSoundData>() { coinSound }
                     };
@@ -190,7 +189,7 @@ namespace MonsterHutchFramework
                         Id = "Default",
                         Condition = null,
                         Interval = 100,
-                        Frames = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 },
+                        Frames = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 },
                         ShakeDuration = 400,
                         Sounds = new List<MachineSoundData>() { bubblesSound },
                     };
@@ -207,7 +206,7 @@ namespace MonsterHutchFramework
                         {
                             Id = monsterData.Key,
                             UseFirstValidOutput = true,
-                            DaysUntilReady = monsterData.Value.IncubationTime,
+                            MinutesUntilReady = monsterData.Value.IncubationTime,
                             RecalculateOnCollect = false
                         };
 
