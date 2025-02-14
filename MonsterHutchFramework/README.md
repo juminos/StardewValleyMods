@@ -242,7 +242,7 @@ Example:
                             "Sound": "magma_sprite_spot",
                             "SpeechBubbles": [
                                 {
-                                    "Id": "Default",
+                                    "Id": "hello",
                                     "Text": "Hello there",
                                     "Weight": 2,
                                     "Pretimer": -1,
@@ -250,7 +250,7 @@ Example:
                                     "Style": 2,
                                 },
                                 {
-                                    "Id": "Default",
+                                    "Id": "heart",
                                     "Text": "<", // this character is displayed as a heart
                                     "Weight": 1,
                                     "Pretimer": -1,
