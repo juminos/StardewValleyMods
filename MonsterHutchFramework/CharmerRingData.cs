@@ -20,9 +20,9 @@ public class CharmedMonsterData
     public string? MonsterName;
     // Sound used for "petting" monster
     public string? Sound;
-    public List<SpeechBubbles> SpeechBubbles = new List<SpeechBubbles>();
+    public List<SpeechBubbleData> SpeechBubbles = new List<SpeechBubbleData>();
 }
-public class SpeechBubbles
+public class SpeechBubbleData
 {
     // Id for entry in this list
     public string? Id;
