@@ -61,9 +61,8 @@ namespace MonsterHutchFramework.HarmonyPatches
 
             GameLocation location = __instance.Location;
 
-            if (location is SlimeHutch hutch && location.canSlimeHatchHere() && location.characters.Count < ModEntry.Config.HutchMonsterCapacity)
+            if (location is SlimeHutch hutch && hutch.Name.Contains("MonsterHutchFramework") && location.canSlimeHatchHere() && location.characters.Count < ModEntry.Config.HutchMonsterCapacity)
             {
-                ModEntry.SMonitor.Log($"map id: {hutch.map.Id}, path: {hutch.map.assetPath}, hutch name: {hutch.Name}", LogLevel.Trace);
                 Monster? monster = null;
                 Vector2 v = new Vector2((int)__instance.TileLocation.X, (int)__instance.TileLocation.Y + 1) * 64f;
 
@@ -107,7 +106,7 @@ namespace MonsterHutchFramework.HarmonyPatches
         public static void SlimeHutchDayUpdate_Pre(SlimeHutch __instance, ref List<Monster> __state)
         {
             // Collect and remove non slimes to avoid interference with slime behavior
-            if (__instance.map.Id.Contains("MonsterHutch"))
+            if (__instance.Name.Contains("MonsterHutchFramework"))
             {
                 __state = new List<Monster>();
                 for (int i = __instance.characters.Count - 1; i >= 0; i--)
@@ -295,7 +294,7 @@ namespace MonsterHutchFramework.HarmonyPatches
         }
         public static void SlimeHutchDayUpdate_Post(SlimeHutch __instance, ref List<Monster> __state)
         {
-            if (__instance.map.Id.Contains("MonsterHutch"))
+            if (__instance.Name.Contains("MonsterHutchFramework"))
             {
                 foreach (var item in __state)
                 {
@@ -311,7 +310,7 @@ namespace MonsterHutchFramework.HarmonyPatches
         public static void MultipleObjectDebris_Pre(string id, int xTile, int yTile, ref int number, long who, GameLocation location)
         {
 
-            if (location is SlimeHutch hutch && hutch.map.Id.Contains("MonsterHutch") &&
+            if (location is SlimeHutch hutch && hutch.Name.Contains("MonsterHutchFramework") &&
                 (id == "(O)909" ||
                 id == "(O)848" ||
                 id == "(O)881" ||

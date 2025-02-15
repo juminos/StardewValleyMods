@@ -74,7 +74,7 @@ namespace MonsterHutchFramework
         {
             Utility.ForEachBuilding(delegate (Building building)
             {
-                if (building?.indoors?.Value is SlimeHutch hutch && hutch.map.Id.Contains("MonsterHutch"))
+                if (building?.indoors?.Value is SlimeHutch hutch && hutch.Name.Contains("MonsterHutchFramework"))
                 {
                     var monsterList = new List<Monster>();
                     for (int i = 0; i < hutch.characters.Count; i++)
@@ -118,7 +118,7 @@ namespace MonsterHutchFramework
 
             Utility.ForEachBuilding(delegate (Building building)
             {
-                if (building?.indoors?.Value is SlimeHutch hutch && hutch.map.Id.Contains("MonsterHutch"))
+                if (building?.indoors?.Value is SlimeHutch hutch && hutch.Name.Contains("MonsterHutchFramework"))
                 {
                     foreach (var monster in hutch.characters)
                     {
