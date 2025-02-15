@@ -23,23 +23,23 @@ internal class ObjectPatches
 
         harmony.Patch(
            original: AccessTools.Method(typeof(Game1), nameof(Game1.createMultipleObjectDebris), [typeof(string), typeof(int), typeof(int), typeof(int)]),
-           postfix: new HarmonyMethod(typeof(HutchPatches), nameof(MultipleObjectDebris_Pre1)));
+           postfix: new HarmonyMethod(typeof(ObjectPatches), nameof(MultipleObjectDebris_Pre1)));
 
         harmony.Patch(
            original: AccessTools.Method(typeof(Game1), nameof(Game1.createMultipleObjectDebris), [typeof(string), typeof(int), typeof(int), typeof(int), typeof(GameLocation)]),
-           postfix: new HarmonyMethod(typeof(HutchPatches), nameof(MultipleObjectDebris_Pre2)));
+           postfix: new HarmonyMethod(typeof(ObjectPatches), nameof(MultipleObjectDebris_Pre2)));
 
         harmony.Patch(
            original: AccessTools.Method(typeof(Game1), nameof(Game1.createMultipleObjectDebris), [typeof(string), typeof(int), typeof(int), typeof(int), typeof(float)]),
-           postfix: new HarmonyMethod(typeof(HutchPatches), nameof(MultipleObjectDebris_Pre3)));
+           postfix: new HarmonyMethod(typeof(ObjectPatches), nameof(MultipleObjectDebris_Pre3)));
 
         harmony.Patch(
            original: AccessTools.Method(typeof(Game1), nameof(Game1.createMultipleObjectDebris), [typeof(string), typeof(int), typeof(int), typeof(int), typeof(long)]),
-           postfix: new HarmonyMethod(typeof(HutchPatches), nameof(MultipleObjectDebris_Pre4)));
+           postfix: new HarmonyMethod(typeof(ObjectPatches), nameof(MultipleObjectDebris_Pre4)));
 
         harmony.Patch(
            original: AccessTools.Method(typeof(Game1), nameof(Game1.createMultipleObjectDebris), [typeof(string), typeof(int), typeof(int), typeof(int), typeof(long), typeof(GameLocation)]),
-           postfix: new HarmonyMethod(typeof(HutchPatches), nameof(MultipleObjectDebris_Pre5)));
+           postfix: new HarmonyMethod(typeof(ObjectPatches), nameof(MultipleObjectDebris_Pre5)));
     }
     public static bool MultipleObjectDebris_Pre1(string id, int xTile, int yTile, ref int number)
     {
