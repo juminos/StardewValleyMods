@@ -14,6 +14,15 @@ namespace MonsterHutchFramework
     {
         public static void ExpandMonsterHutchInterior(AssetRequestedEventArgs e)
         {
+            if (e.NameWithoutLocale.IsEquivalentTo("Maps/SlimeHutch") && ModEntry.Config.ReplaceHutchInterior)
+            {
+                e.Edit(asset =>
+                {
+                    var editor = asset.AsMap();
+
+                    editor.ReplaceWith(ModEntry.SHelper.ModContent.Load<Map>("assets/MonsterSlimeHutch.tmx"));
+                });
+            }
             if (e.NameWithoutLocale.IsEquivalentTo("Data/Buildings"))
             {
                 e.Edit(asset =>
