@@ -58,6 +58,7 @@ namespace MonsterHutchFramework
             {
                 HarmonyPatches.HutchPatches.PatchAll(this);
                 HarmonyPatches.RingPatches.PatchAll(this);
+                HarmonyPatches.ObjectPatches.PatchAll(this);
             }
             catch (Exception e)
             {

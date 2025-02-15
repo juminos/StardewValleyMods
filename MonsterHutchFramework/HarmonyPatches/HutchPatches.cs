@@ -37,10 +37,6 @@ namespace MonsterHutchFramework.HarmonyPatches
             harmony.Patch(
                original: AccessTools.Method(typeof(SlimeHutch), nameof(SlimeHutch.DayUpdate)),
                postfix: new HarmonyMethod(typeof(HutchPatches), nameof(SlimeHutchDayUpdate_Post)));
-
-            harmony.Patch(
-               original: AccessTools.Method(typeof(Game1), nameof(Game1.createMultipleObjectDebris), [typeof(string), typeof(int), typeof(int), typeof(int), typeof(long), typeof(GameLocation)]),
-               postfix: new HarmonyMethod(typeof(HutchPatches), nameof(MultipleObjectDebris_Pre)));
         }
         public static void MonsterIncubatorUpdate_Post(StardewValley.Object __instance)
         {
@@ -305,26 +301,6 @@ namespace MonsterHutchFramework.HarmonyPatches
                         __instance.addCharacter(item);
                     }
                 }
-            }
-        }
-        public static void MultipleObjectDebris_Pre(string id, int xTile, int yTile, ref int number, long who, GameLocation location)
-        {
-
-            if (location is SlimeHutch hutch && hutch.Name.Contains("MonsterHutchFramework") &&
-                (id == "(O)909" ||
-                id == "(O)848" ||
-                id == "(O)881" ||
-                id == "(O)330" ||
-                id == "(O)390" ||
-                id == "(O)382" ||
-                id == "(O)378" ||
-                id == "(O)380" ||
-                id == "(O)382" ||
-                id == "(O)384" ||
-                id == "(O)386"))
-            {
-                var newNumber = number < 4 ? 3: number;
-                Game1.createMultipleObjectDebris(id, xTile, yTile, newNumber, location);
             }
         }
     }
