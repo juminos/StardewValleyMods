@@ -14,15 +14,6 @@ namespace MonsterHutchFramework
     {
         public static void ExpandMonsterHutchInterior(AssetRequestedEventArgs e)
         {
-            if (e.NameWithoutLocale.IsEquivalentTo("Maps/SlimeHutch") && ModEntry.Config.ReplaceHutchInterior)
-            {
-                e.Edit(asset =>
-                {
-                    var editor = asset.AsMap();
-
-                    editor.ReplaceWith(ModEntry.SHelper.ModContent.Load<Map>("assets/MonsterSlimeHutch.tmx"));
-                });
-            }
             if (e.NameWithoutLocale.IsEquivalentTo("Data/Buildings"))
             {
                 e.Edit(asset =>
@@ -35,7 +26,7 @@ namespace MonsterHutchFramework
                         Description = I18n.MonsterHutch_Description(),
                         Texture = ModEntry.Mod.MonsterHutchExteriorPath,
                         DrawShadow = true,
-                        UpgradeSignTile = new Microsoft.Xna.Framework.Vector2((float)2.5, 5),
+                        UpgradeSignTile = new Microsoft.Xna.Framework.Vector2((float)3.5, 5),
                         UpgradeSignHeight = 12.0f,
                         Size = new Microsoft.Xna.Framework.Point(11, 6),
                         FadeWhenBehind = true,
@@ -43,7 +34,6 @@ namespace MonsterHutchFramework
                         BuildDays = 2,
                         BuildCost = 20000,
                         BuildMaterials = null,
-                        BuildingToUpgrade = "Slime Hutch",
                         HumanDoor = new Microsoft.Xna.Framework.Point(5, 5),
                         IndoorMap = "LargeMonsterHutch",
                         IndoorMapType = "StardewValley.SlimeHutch",
@@ -54,17 +44,17 @@ namespace MonsterHutchFramework
                     var monsterHutchBuildMat1 = new BuildingMaterial
                     {
                         ItemId = "(O)390",
-                        Amount = 500
+                        Amount = 750
                     };
                     var monsterHutchBuildMat2 = new BuildingMaterial
                     {
                         ItemId = "(O)338",
-                        Amount = 10
+                        Amount = 15
                     };
                     var monsterHutchBuildMat3 = new BuildingMaterial
                     {
                         ItemId = "(O)337",
-                        Amount = 1
+                        Amount = 2
                     };
 
                     monsterHutch.BuildMaterials = new List<BuildingMaterial>() { monsterHutchBuildMat1, monsterHutchBuildMat2, monsterHutchBuildMat3 };
@@ -80,7 +70,7 @@ namespace MonsterHutchFramework
                             Description = I18n.MonsterHutchExpanded_Description(),
                             Texture = ModEntry.Mod.MonsterHutchExteriorPath,
                             DrawShadow = true,
-                            UpgradeSignTile = new Microsoft.Xna.Framework.Vector2((float)2.5, 5),
+                            UpgradeSignTile = new Microsoft.Xna.Framework.Vector2((float)3.5, 5),
                             UpgradeSignHeight = 12.0f,
                             Size = new Microsoft.Xna.Framework.Point(11, 6),
                             FadeWhenBehind = true,

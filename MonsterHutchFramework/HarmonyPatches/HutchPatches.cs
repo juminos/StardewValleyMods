@@ -61,8 +61,9 @@ namespace MonsterHutchFramework.HarmonyPatches
 
             GameLocation location = __instance.Location;
 
-            if (location is SlimeHutch hutch && hutch.map.Id.Contains("MonsterHutch") && location.canSlimeHatchHere() && location.characters.Count < ModEntry.Config.HutchMonsterCapacity)
+            if (location is SlimeHutch hutch && location.canSlimeHatchHere() && location.characters.Count < ModEntry.Config.HutchMonsterCapacity)
             {
+                ModEntry.SMonitor.Log($"map id: {hutch.map.Id}, path: {hutch.map.assetPath}, hutch name: {hutch.Name}", LogLevel.Trace);
                 Monster? monster = null;
                 Vector2 v = new Vector2((int)__instance.TileLocation.X, (int)__instance.TileLocation.Y + 1) * 64f;
 
