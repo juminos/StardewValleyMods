@@ -186,6 +186,7 @@ namespace MonsterHutchFramework
                     if (character is Monster monster)
                     //if (monster is ShadowBrute || monster is Shooter || monster is ShadowShaman || monster is ShadowGirl || monster is ShadowGuy)
                     {
+                        SMonitor.Log($"left ring name: {Game1.player.leftRing.Name}, basename: {Game1.player.leftRing.Value.BaseName}, itemid: {Game1.player.leftRing.Value.ItemId}, name {Game1.player.leftRing.Value.Name}", LogLevel.Trace);
                         var playerTile = Game1.player.Tile;
                         var tileRect = new Microsoft.Xna.Framework.Rectangle((int)playerTile.X * 64, (int)playerTile.Y * 64, 64, 64);
                         var monsterPos = new Vector2(monster.Tile.X, monster.Tile.Y);

@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework;
 using StardewModdingAPI;
 using StardewValley;
 using StardewValley.Monsters;
+using StardewValley.Objects;
 
 namespace MonsterHutchFramework.HarmonyPatches
 {
@@ -89,29 +90,73 @@ namespace MonsterHutchFramework.HarmonyPatches
             }
             foreach(var item in ringData)
             {
-                if (who.leftRing.Value != null && item.Value.RingId == who.leftRing.Value.ItemId)
+                if (who.leftRing.Value != null)
                 {
-                    for (int i = 0; i < ringData[item.Key].CharmedMonsters.Count; i++)
+                    if (item.Value.RingId == who.leftRing.Value.ItemId)
                     {
-                        if (ringData[item.Key].CharmedMonsters[i].MonsterName == monster.Name)
+                        for (int i = 0; i < ringData[item.Key].CharmedMonsters.Count; i++)
                         {
-                            matchRingKey = item.Key;
-                            matchMonsterIndex = i;
-                            return true;
+                            if (ringData[item.Key].CharmedMonsters[i].MonsterName == monster.Name)
+                            {
+                                matchRingKey = item.Key;
+                                matchMonsterIndex = i;
+                                return true;
+                            }
                         }
                     }
+                    else if (who.leftRing.Value is CombinedRing ring)
+                    {
+                        foreach (Ring combinedRing in ring.combinedRings)
+                        {
+                            if (item.Value.RingId == combinedRing.ItemId)
+                            {
+                                for (int i = 0; i < ringData[item.Key].CharmedMonsters.Count; i++)
+                                {
+                                    if (ringData[item.Key].CharmedMonsters[i].MonsterName == monster.Name)
+                                    {
+                                        matchRingKey = item.Key;
+                                        matchMonsterIndex = i;
+                                        return true;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
                 }
-                if (who.rightRing.Value != null && item.Value.RingId == who.rightRing.Value.ItemId)
+                if (who.rightRing.Value != null)
                 {
-                    for (int i = 0; i < ringData[item.Key].CharmedMonsters.Count; i++)
+                    if (item.Value.RingId == who.rightRing.Value.ItemId)
                     {
-                        if (ringData[item.Key].CharmedMonsters[i].MonsterName == monster.Name)
+                        for (int i = 0; i < ringData[item.Key].CharmedMonsters.Count; i++)
                         {
-                            matchRingKey = item.Key;
-                            matchMonsterIndex = i;
-                            return true;
+                            if (ringData[item.Key].CharmedMonsters[i].MonsterName == monster.Name)
+                            {
+                                matchRingKey = item.Key;
+                                matchMonsterIndex = i;
+                                return true;
+                            }
                         }
                     }
+                    else if (who.rightRing.Value is CombinedRing ring)
+                    {
+                        foreach (Ring combinedRing in ring.combinedRings)
+                        {
+                            if (item.Value.RingId == combinedRing.ItemId)
+                            {
+                                for (int i = 0; i < ringData[item.Key].CharmedMonsters.Count; i++)
+                                {
+                                    if (ringData[item.Key].CharmedMonsters[i].MonsterName == monster.Name)
+                                    {
+                                        matchRingKey = item.Key;
+                                        matchMonsterIndex = i;
+                                        return true;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
                 }
             }
             matchRingKey = null;
