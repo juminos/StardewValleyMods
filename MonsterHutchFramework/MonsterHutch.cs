@@ -14,24 +14,54 @@ namespace MonsterHutchFramework
     {
         public static void ExpandMonsterHutchInterior(AssetRequestedEventArgs e)
         {
-            if (e.NameWithoutLocale.IsEquivalentTo("Maps/SlimeHutch") && ModEntry.Config.ReplaceHutchInterior)
-            {
-                e.Edit(asset =>
-                {
-                    var editor = asset.AsMap();
-
-                    editor.ReplaceWith(ModEntry.SHelper.ModContent.Load<Map>("assets/LargeMonsterHutch.tmx"));
-                });
-            }
             if (e.NameWithoutLocale.IsEquivalentTo("Data/Buildings"))
             {
                 e.Edit(asset =>
                 {
                     var editor = asset.AsDictionary<string, BuildingData>().Data;
 
-                    editor["Slime Hutch"].Name = I18n.MonsterHutch_Name();
-                    editor["Slime Hutch"].Description = I18n.MonsterHutch_Description();
-                    editor["Slime Hutch"].MaxOccupants = ModEntry.Config.HutchSlimeCapacity;
+                    var monsterHutch = new BuildingData
+                    {
+                        Name = I18n.MonsterHutch_Name(),
+                        Description = I18n.MonsterHutch_Description(),
+                        Texture = ModEntry.Mod.MonsterHutchExteriorPath,
+                        DrawShadow = true,
+                        UpgradeSignTile = new Microsoft.Xna.Framework.Vector2((float)4.5, 7),
+                        UpgradeSignHeight = 12.0f,
+                        Size = new Microsoft.Xna.Framework.Point(11, 6),
+                        FadeWhenBehind = true,
+                        Builder = "Robin",
+                        BuildDays = 2,
+                        BuildCost = 20000,
+                        BuildMaterials = null,
+                        BuildingToUpgrade = "Slime Hutch",
+                        HumanDoor = new Microsoft.Xna.Framework.Point(5, 5),
+                        IndoorMap = "LargeMonsterHutch",
+                        IndoorMapType = "StardewValley.SlimeHutch",
+                        MaxOccupants = ModEntry.Config.HutchSlimeCapacity,
+                        ValidOccupantTypes = new List<string>() { "Slime" },
+                    };
+
+                    var monsterHutchBuildMat1 = new BuildingMaterial
+                    {
+                        ItemId = "(O)390",
+                        Amount = 500
+                    };
+                    var monsterHutchBuildMat2 = new BuildingMaterial
+                    {
+                        ItemId = "(O)338",
+                        Amount = 10
+                    };
+                    var monsterHutchBuildMat3 = new BuildingMaterial
+                    {
+                        ItemId = "(O)337",
+                        Amount = 1
+                    };
+
+                    monsterHutch.BuildMaterials = new List<BuildingMaterial>() { monsterHutchBuildMat1, monsterHutchBuildMat2, monsterHutchBuildMat3 };
+
+                    editor.Add($"{ModEntry.Mod.ModManifest.UniqueID}_MonsterHutch", monsterHutch);
+
 
                     if (ModEntry.Config.HutchExpansion)
                     {
@@ -39,50 +69,53 @@ namespace MonsterHutchFramework
                         {
                             Name = I18n.MonsterHutchExpanded_Name(),
                             Description = I18n.MonsterHutchExpanded_Description(),
-                            Texture = "Buildings\\Slime Hutch",
+                            Texture = ModEntry.Mod.MonsterHutchExteriorPath,
                             DrawShadow = true,
-                            UpgradeSignTile = new Microsoft.Xna.Framework.Vector2((float)2.5, 5),
+                            UpgradeSignTile = new Microsoft.Xna.Framework.Vector2((float)4.5, 7),
                             UpgradeSignHeight = 12.0f,
-                            Size = new Microsoft.Xna.Framework.Point(7, 4),
+                            Size = new Microsoft.Xna.Framework.Point(11, 6),
                             FadeWhenBehind = true,
-                            SourceRect = new Microsoft.Xna.Framework.Rectangle(0, 0, 112, 112),
                             Builder = "Robin",
                             BuildDays = 2,
-                            BuildCost = 10000,
+                            BuildCost = 100000,
                             BuildMaterials = null,
-                            BuildingToUpgrade = "Slime Hutch",
-                            HumanDoor = new Microsoft.Xna.Framework.Point(3, 3),
+                            BuildingToUpgrade = $"{ModEntry.Mod.ModManifest.UniqueID}_MonsterHutch",
+                            HumanDoor = new Microsoft.Xna.Framework.Point(5, 5),
                             IndoorMap = "LargeMonsterHutchExpanded",
                             IndoorMapType = "StardewValley.SlimeHutch",
                             MaxOccupants = ModEntry.Config.HutchSlimeCapacity,
                             ValidOccupantTypes = new List<string>() { "Slime" },
                         };
 
-                        var bigHutchBuildMat1 = new BuildingMaterial
+                        var expandedHutchBuildMat1 = new BuildingMaterial
                         {
                             ItemId = "(O)390",
                             Amount = 500
                         };
-                        var bigHutchBuildMat2 = new BuildingMaterial
+                        var expandedHutchBuildMat2 = new BuildingMaterial
                         {
                             ItemId = "(O)338",
                             Amount = 10
                         };
-                        var bigHutchBuildMat3 = new BuildingMaterial
+                        var expandedHutchBuildMat3 = new BuildingMaterial
                         {
                             ItemId = "(O)337",
                             Amount = 1
                         };
 
-                        expandedHutch.BuildMaterials = new List<BuildingMaterial>() { bigHutchBuildMat1, bigHutchBuildMat2, bigHutchBuildMat3 };
+                        expandedHutch.BuildMaterials = new List<BuildingMaterial>() { expandedHutchBuildMat1, expandedHutchBuildMat2, expandedHutchBuildMat3 };
 
                         editor.Add($"{ModEntry.Mod.ModManifest.UniqueID}_MonsterHutchExpanded", expandedHutch);
                     }
                 });
             }
-            if (e.NameWithoutLocale.IsEquivalentTo("Maps/MonsterHutchExpanded"))
+            if (e.NameWithoutLocale.IsEquivalentTo("Maps/LargeMonsterHutchExpanded"))
             {
                 e.LoadFromModFile<Map>("assets/LargeMonsterHutchExpanded.tmx", AssetLoadPriority.Medium);
+            }
+            if (e.NameWithoutLocale.IsEquivalentTo("Maps/LargeMonsterHutch"))
+            {
+                e.LoadFromModFile<Map>("assets/LargeMonsterHutch.tmx", AssetLoadPriority.Medium);
             }
         }
     }

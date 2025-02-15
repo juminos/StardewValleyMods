@@ -37,5 +37,5 @@ public class SpeechBubbleData
     // not sure what this does but game code seems to use 0 or 2
     public int Style = 2;
     // text color (-1 = Default, 1 = Blue, 2 = Red, 3 = Purple, 4 = White, 5 = Orange, 6 = Green, 7 = Cyan, 8 = Gray, 9 = JojaBlue, _ = Black)
-    public int Color = -1;
+    public int Color;
 }

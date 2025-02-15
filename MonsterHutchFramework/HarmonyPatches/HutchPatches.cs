@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -60,7 +61,7 @@ namespace MonsterHutchFramework.HarmonyPatches
 
             GameLocation location = __instance.Location;
 
-            if (location is SlimeHutch && location.canSlimeHatchHere() && location.characters.Count < ModEntry.Config.HutchMonsterCapacity)
+            if (location is SlimeHutch hutch && hutch.map.Id.Contains("MonsterHutch") && location.canSlimeHatchHere() && location.characters.Count < ModEntry.Config.HutchMonsterCapacity)
             {
                 Monster? monster = null;
                 Vector2 v = new Vector2((int)__instance.TileLocation.X, (int)__instance.TileLocation.Y + 1) * 64f;
@@ -104,15 +105,18 @@ namespace MonsterHutchFramework.HarmonyPatches
         }
         public static void SlimeHutchDayUpdate_Pre(SlimeHutch __instance, ref List<Monster> __state)
         {
-            // we collect and remove the non slimes, so we can run the base implementation for the slimes
-            __state = new List<Monster>();
-            for (int i = __instance.characters.Count - 1; i >= 0; i--)
+            // Collect and remove non slimes to avoid interference with slime behavior
+            if (__instance.map.Id.Contains("MonsterHutch"))
             {
-                if (__instance.characters[i] is Monster monster &&
-                    monster is not GreenSlime)
+                __state = new List<Monster>();
+                for (int i = __instance.characters.Count - 1; i >= 0; i--)
                 {
-                    __state.Add(monster);
-                    __instance.characters.RemoveAt(i);
+                    if (__instance.characters[i] is Monster monster &&
+                        monster is not GreenSlime)
+                    {
+                        __state.Add(monster);
+                        __instance.characters.RemoveAt(i);
+                    }
                 }
             }
 
@@ -290,21 +294,23 @@ namespace MonsterHutchFramework.HarmonyPatches
         }
         public static void SlimeHutchDayUpdate_Post(SlimeHutch __instance, ref List<Monster> __state)
         {
-            // there is no AddRange for NetCollections
-            foreach (var item in __state)
+            if (__instance.map.Id.Contains("MonsterHutch"))
             {
-                Vector2 v = Utility.recursiveFindOpenTileForCharacter(item, __instance, item.Tile, 50, allowOffMap: false);
-                if (v != Vector2.Zero)
+                foreach (var item in __state)
                 {
-                    item.setTileLocation(v);
-                    __instance.addCharacter(item);
+                    Vector2 v = Utility.recursiveFindOpenTileForCharacter(item, __instance, item.Tile, 50, allowOffMap: false);
+                    if (v != Vector2.Zero)
+                    {
+                        item.setTileLocation(v);
+                        __instance.addCharacter(item);
+                    }
                 }
             }
         }
         public static void MultipleObjectDebris_Pre(string id, int xTile, int yTile, ref int number, long who, GameLocation location)
         {
 
-            if (Game1.currentLocation is SlimeHutch && 
+            if (location is SlimeHutch hutch && hutch.map.Id.Contains("MonsterHutch") &&
                 (id == "(O)909" ||
                 id == "(O)848" ||
                 id == "(O)881" ||

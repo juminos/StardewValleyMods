@@ -35,6 +35,7 @@ namespace MonsterHutchFramework
         internal static ModEntry Mod { get; private set; }
         internal static ModConfig Config { get; private set; }
         internal string MonsterIncubatorAssetPath { get; private set; }
+        internal string MonsterHutchExteriorPath { get; private set; }
         public override void Entry(IModHelper helper)
         {
             Mod = this;
@@ -65,13 +66,15 @@ namespace MonsterHutchFramework
             }
 
             SHelper.ModContent.Load<Texture2D>("assets/monsterIncubator.png");
-            MonsterIncubatorAssetPath = SHelper.ModContent.GetInternalAssetName("assets/monsterIncubator.png").BaseName; 
+            MonsterIncubatorAssetPath = SHelper.ModContent.GetInternalAssetName("assets/monsterIncubator.png").BaseName;
+            SHelper.ModContent.Load<Texture2D>("assets/MonsterHutch.png");
+            MonsterHutchExteriorPath = SHelper.ModContent.GetInternalAssetName("assets/MonsterHutch.png").BaseName;
         }
         private void OnSaveLoaded(object? sender, SaveLoadedEventArgs e)
         {
             Utility.ForEachBuilding(delegate (Building building)
             {
-                if (building?.indoors?.Value is SlimeHutch hutch)
+                if (building?.indoors?.Value is SlimeHutch hutch && hutch.map.Id.Contains("MonsterHutch"))
                 {
                     var monsterList = new List<Monster>();
                     for (int i = 0; i < hutch.characters.Count; i++)
@@ -115,7 +118,7 @@ namespace MonsterHutchFramework
 
             Utility.ForEachBuilding(delegate (Building building)
             {
-                if (building?.indoors?.Value is SlimeHutch hutch)
+                if (building?.indoors?.Value is SlimeHutch hutch && hutch.map.Id.Contains("MonsterHutch"))
                 {
                     foreach (var monster in hutch.characters)
                     {
