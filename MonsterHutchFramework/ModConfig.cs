@@ -23,12 +23,12 @@ namespace MonsterHutchFramework
     }
     public class ModConfig
     {
-        public bool ReplaceHutchInterior { get; set; } = true;
         public bool HutchExpansion { get; set; } = false;
         public bool RandomizeMonsterPositions { get; set; } = true;
         public bool SkipRandomizeSlimePositions { get; set; } = false;
         public int HutchSlimeCapacity { get; set; } = 20;
         public int HutchMonsterCapacity { get; set; } = 40;
+        public bool DoubleNodeDrops { get; set; } = true;
         public bool IncubatorIsAffectedByCoopmaster { get; set; } = true;
         public bool IncubatorWobblesWhileIncubating { get; set; } = true;
         internal const string DefaultIncubatorAdditionalRequiredItemID = "(O)769";
@@ -94,8 +94,6 @@ namespace MonsterHutchFramework
 
             api.AddSectionTitle(manifest, GetConfigName(mod, "HutchSection"));
 
-            api.AddBoolOption(manifest, () => config.ReplaceHutchInterior, (val) => config.ReplaceHutchInterior = val,
-                GetConfigName(mod, "ReplaceHutchInterior"), GetConfigDescription(mod, "ReplaceHutchInterior"));
             api.AddBoolOption(manifest, () => config.HutchExpansion, (val) => config.HutchExpansion = val,
                 GetConfigName(mod, "HutchExpansion"), GetConfigDescription(mod, "HutchExpansion"));
             api.AddBoolOption(manifest, () => config.RandomizeMonsterPositions, (val) => config.RandomizeMonsterPositions = val,
@@ -106,6 +104,8 @@ namespace MonsterHutchFramework
                 GetConfigName(mod, "HutchSlimeCapacity"), GetConfigDescription(mod, "HutchSlimeCapacity"), 0);
             api.AddNumberOption(manifest, () => config.HutchMonsterCapacity, (val) => config.HutchMonsterCapacity = val,
                 GetConfigName(mod, "HutchMonsterCapacity"), GetConfigDescription(mod, "HutchMonsterCapacity"), 0);
+            api.AddBoolOption(manifest, () => config.DoubleNodeDrops, (val) => config.DoubleNodeDrops = val,
+                GetConfigName(mod, "DoubleNodeDrops"), GetConfigDescription(mod, "DoubleNodeDrops"));
 
             api.AddSectionTitle(manifest, GetConfigName(mod, "IncubatorSection"));
 
