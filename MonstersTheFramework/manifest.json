@@ -1,0 +1,11 @@
+{
+    "Name": "Monsters The Framework",
+    "Author": "spacechase0",
+    "Version": "1.0.0-unofficial-1.6",
+    "Description": "Lets you make custom monsters with custom behavior.",
+    "UniqueID": "spacechase0.MonstersTheFramework",
+    "EntryDll": "MonstersTheFramework.dll",
+    "MinimumApiVersion": "4.0.0",
+    "UpdateKeys": [],
+    "Dependencies": []
+}
