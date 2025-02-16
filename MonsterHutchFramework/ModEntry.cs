@@ -103,7 +103,8 @@ namespace MonsterHutchFramework
             Utility.ForEachBuilding(delegate (Building building)
             {
                 if (building?.indoors?.Value is SlimeHutch hutch && 
-                (hutch.Name.Contains("MonsterHutchFramework") || hutch.Name.Contains("Winery")))
+                (hutch.Name.Contains("MonsterHutchFramework") || hutch.Name.Contains("Winery")) &&
+                hutch.characters.Count > 0)
                 {
                     foreach (var monster in hutch.characters)
                     {

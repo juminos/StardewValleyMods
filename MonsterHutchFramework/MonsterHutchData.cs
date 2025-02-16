@@ -10,79 +10,79 @@ namespace MonsterHutchFramework;
 public class MonsterHutchData
 {
     // MonsterType must match valid monster type (most types in Data/Monsters work)
-    public string? MonsterType;
+    public string? MonsterType { get; set; }
     // Name should match entry key
-    public string? Name;
+    public string? Name { get; set; }
     // Drops replaces monster drop on kill list
-    public List<Drops> Drops = new List<Drops>();
+    public List<Drops> Drops { get; set; } = new List<Drops>();
     // Will set monster speed after creation
-    public int SpeedOverride;
+    public int SpeedOverride { get; set; }
     // probably want to keep false, collision will make navigation in hutch difficult
-    public bool FarmerCollision = false;
+    public bool FarmerCollision { get; set; } = false;
     // keep this low if you don't want to be swarmed
-    public int MoveTowardPlayerThresholdOverride = 2;
+    public int MoveTowardPlayerThresholdOverride { get; set; } = 2;
     // useful for nerfing strong monsters
-    public int DamageToFarmerOverride;
+    public int DamageToFarmerOverride { get; set; }
     // same as above
-    public int MaxHealthOverride;
+    public int MaxHealthOverride { get; set; }
     // most (all?) monsters seem to hide shadow
-    public bool HideShadow = true;
+    public bool HideShadow { get; set; } = true;
     // Scale is used by dust spirit for size randomization (base.Scale = (float)Game1.random.Next(75, 101) / 100f)
-    public int ScaleMin; 
-    public int ScaleMax;
+    public int ScaleMin { get; set; }
+    public int ScaleMax { get; set; }
     // can be vanilla texture path or mod loaded texture
-    public string? TexturePath = null;
+    public string? TexturePath { get; set; } = null;
     // number of watered monsters needed to produce
-    public int NumberToProduce = 1;
+    public int NumberToProduce { get; set; } = 1;
     // chance that monster produce is dropped if water condition is met
-    public int ProduceChance = 100;
+    public int ProduceChance { get; set; } = 100;
     // chance that produce is replaced with deluxe produce
-    public int DeluxeChance = 33;
+    public int DeluxeChance { get; set; } = 33;
     // weighted list of valid produce items
-    public List<ProduceData> ProduceData = new List<ProduceData>();
+    public List<ProduceData> ProduceData { get; set; } = new List<ProduceData>();
     // weighted list of valid deluxe produce items
-    public List<DeluxeProduceData> DeluxeProduceData = new List<DeluxeProduceData>();
+    public List<DeluxeProduceData> DeluxeProduceData { get; set; } = new List<DeluxeProduceData>();
     // item placed in incubator to create this monster
-    public string? InputItemId = null;
+    public string? InputItemId { get; set; } = null;
     // number required
-    public int InputItemCount = 1;
+    public int InputItemCount { get; set; } = 1;
     // number of in-game minutes until incubation is done
-    public int IncubationTime = 4000;
+    public int IncubationTime { get; set; } = 4000;
     // weighted value used to determine which monster to create if multiple monsters have the same input item
-    public int OutputWeight = 1; 
+    public int OutputWeight { get; set; } = 1; 
 }
 public class Drops
 {
     // ID for this entry in the list
-    public string? Id;
+    public string? Id { get; set; }
     // unqualified or qualified item id should work
-    public string? ItemId;
+    public string? ItemId { get; set; }
     // percent chance this item drops
-    public int Chance = 100; 
+    public int Chance { get; set; } = 100; 
 }
 public class ProduceData
 {
     // id for this entry in list
-    public string? Id;
+    public string? Id { get; set; }
     // unqualified or qualified item id should work
-    public string? ItemId;
+    public string? ItemId { get; set; }
     // number to produce
-    public int Count = 1;
+    public int Count { get; set; } = 1;
     // whether is dropped as debris (rather than spawned like forage)
-    public bool IsDropped = false;
+    public bool IsDropped { get; set; } = false;
     // weighted value for determining which item to select
-    public int Weight = 1; 
+    public int Weight { get; set; } = 1; 
 }
 public class DeluxeProduceData
 {
     // id for this entry in list
-    public string? Id;
+    public string? Id { get; set; }
     // unqualified or qualified item id should work
-    public string? ItemId;
+    public string? ItemId { get; set; }
     // number to produce
-    public int Count = 1;
+    public int Count { get; set; } = 1;
     // whether is dropped as debris (rather than spawned like forage)
-    public bool IsDropped = false;
+    public bool IsDropped { get; set; } = false;
     // weighted value for determining which item to select
-    public int Weight = 1;
+    public int Weight { get; set; } = 1;
 }

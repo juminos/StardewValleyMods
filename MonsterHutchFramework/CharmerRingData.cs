@@ -15,27 +15,27 @@ public class CharmerRingData
 public class CharmedMonsterData
 {
     // Id for entry in this list
-    public string? Id;
+    public string? Id { get; set; }
     // should match a game monster name or one added through this framework
-    public string? MonsterName;
+    public string? MonsterName { get; set; }
     // Sound used for "petting" monster
-    public string? Sound;
-    public List<SpeechBubbleData> SpeechBubbles = new List<SpeechBubbleData>();
+    public string? Sound { get; set; }
+    public List<SpeechBubbleData> SpeechBubbles { get; set; } = new List<SpeechBubbleData>();
 }
 public class SpeechBubbleData
 {
     // Id for entry in this list
-    public string? Id;
+    public string? Id { get; set; }
     // text to display in the speech bubble
-    public string? Text;
+    public string? Text { get; set; }
     // weight for choosing which speech text to use
-    public int Weight = 1;
+    public int Weight { get; set; } = 1;
     // time delay in milliseconds before speech bubble appears after triggered
-    public int Pretimer = 0;
+    public int Pretimer { get; set; } = 0;
     // time in milliseconds the speech bubble is displayed
-    public int Duration = 1500;
+    public int Duration { get; set; } = 1500;
     // not sure what this does but game code seems to use 0 or 2
-    public int Style = 2;
+    public int Style { get; set; } = 2;
     // text color (-1 = Default, 1 = Blue, 2 = Red, 3 = Purple, 4 = White, 5 = Orange, 6 = Green, 7 = Cyan, 8 = Gray, 9 = JojaBlue, _ = Black)
-    public int Color;
+    public int Color { get; set; }
 }
