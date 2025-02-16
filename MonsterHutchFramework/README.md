@@ -186,7 +186,7 @@ Example:
 }
 ```
 
-### Ring Charmer Data
+### Charmer Ring Data
 
 You can define monsters to be 'charmed' (cannot deal damage or collide with player) by a ring by editing the juminos.MonsterHutchFramework/CharmerRingData asset.
 

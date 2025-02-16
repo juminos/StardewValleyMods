@@ -44,61 +44,71 @@ internal class ObjectPatches
     public static bool MultipleObjectDebris_Pre1(string id, int xTile, int yTile, ref int number)
     {
 
-        if (Game1.player.currentLocation is SlimeHutch hutch && hutch.Name.Contains("MonsterHutchFramework") && ModEntry.Config.DoubleNodeDrops)
+        if (Game1.player.currentLocation is SlimeHutch hutch && 
+            (hutch.Name.Contains("MonsterHutchFramework") || hutch.Name.Contains("Winery")) && 
+            ModEntry.Config.DoubleNodeDrops)
         {
             for (int i = 0; i < number; i++)
             {
                 Game1.createObjectDebris(id, xTile, yTile);
             }
         }
-        return false;
+        return true;
     }
     public static bool MultipleObjectDebris_Pre2(string id, int xTile, int yTile, ref int number, GameLocation location)
     {
 
-        if (location is SlimeHutch hutch && hutch.Name.Contains("MonsterHutchFramework") && ModEntry.Config.DoubleNodeDrops)
+        if (location is SlimeHutch hutch && 
+            (hutch.Name.Contains("MonsterHutchFramework") || hutch.Name.Contains("Winery")) && 
+            ModEntry.Config.DoubleNodeDrops)
         {
             for (int i = 0; i < number; i++)
             {
                 Game1.createObjectDebris(id, xTile, yTile);
             }
         }
-        return false;
+        return true;
     }
     public static bool MultipleObjectDebris_Pre3(string id, int xTile, int yTile, ref int number, float velocityMultiplier)
     {
 
-        if (Game1.player.currentLocation is SlimeHutch hutch && hutch.Name.Contains("MonsterHutchFramework") && ModEntry.Config.DoubleNodeDrops)
+        if (Game1.player.currentLocation is SlimeHutch hutch && 
+            (hutch.Name.Contains("MonsterHutchFramework") || hutch.Name.Contains("Winery")) && 
+            ModEntry.Config.DoubleNodeDrops)
         {
             for (int i = 0; i < number; i++)
             {
                 Game1.createObjectDebris(id, xTile, yTile);
             }
         }
-        return false;
+        return true;
     }
     public static bool MultipleObjectDebris_Pre4(string id, int xTile, int yTile, ref int number, long who)
     {
 
-        if (Game1.player.currentLocation is SlimeHutch hutch && hutch.Name.Contains("MonsterHutchFramework") && ModEntry.Config.DoubleNodeDrops)
+        if (Game1.player.currentLocation is SlimeHutch hutch && 
+            (hutch.Name.Contains("MonsterHutchFramework") || hutch.Name.Contains("Winery")) && 
+            ModEntry.Config.DoubleNodeDrops)
         {
             for (int i = 0; i < number; i++)
             {
                 Game1.createObjectDebris(id, xTile, yTile);
             }
         }
-        return false;
+        return true;
     }
     public static bool MultipleObjectDebris_Pre5(string id, int xTile, int yTile, ref int number, long who, GameLocation location)
     {
 
-        if (location is SlimeHutch hutch && hutch.Name.Contains("MonsterHutchFramework") && ModEntry.Config.DoubleNodeDrops)
+        if (location is SlimeHutch hutch && 
+            (hutch.Name.Contains("MonsterHutchFramework") || 
+            hutch.Name.Contains("Winery")) && ModEntry.Config.DoubleNodeDrops)
         {
             for (int i = 0; i < number; i++)
             {
                 Game1.createObjectDebris(id, xTile, yTile);
             }
         }
-        return false;
+        return true;
     }
 }
