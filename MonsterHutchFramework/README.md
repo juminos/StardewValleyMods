@@ -87,12 +87,14 @@ This consists of a string -> model lookup where...
 | `ScaleMin` | (_Optional_) The minimum scale percentage to randomize size (random value chosen between ScaleMin and ScaleMax on monster creation) <br>Example: The game uses this to randomize Dust Sprite size with ScaleMin = 75 and ScaleMax = 101 | `int` |
 | `ScaleMax` | (_Optional_) The maximum scale percentage to randomize size | `int` |
 | `TexturePath` | The texture to use for this monster (if not defined will use base monster texture) | `string` |
-| `NumberToProduce` | (_Optional_) How many watered monsters are required to produce overnight. Default: 1 <br>e.g. In the vanilla game it takes 5 watered slimes to produce a slime ball. | `int` |
-| `ProduceChance` | (_Optional_) The percent chance the monster will produce overnight if watered conditions are met. Default: 100 | `int` |
-| `DeluxeChance` | (_Optional_) The percent chance that the produce is is replaced by deluxe produce. Default: 33 | `int` |
-| `ProduceData` | (_Optional_) The item(s) produced by this monsters. This consists of a list of models defined below (same as DeluxeProduceData). | `List<ProduceData>` |
-| `DeluxeProduceData` | (_Optional_) The deluxe item(s) produced by this monster. This consists of a list of models defined below (same as ProduceData). | `List<DeluxeProduceData>` |
-| `InputItemId` | The item id to place in the Monster Incubator to create this monsters. | `string` |
+| `NumberRequiredToProduce` | (_Optional_) How many watered monsters of this type are required for each overnight produce chance. Default: 1 <br>e.g. In the vanilla game it takes 5 watered slimes to produce a slime ball. | `int` |
+| `ProduceChance` | (_Optional_) The percent chance this monster will produce overnight if watered conditions are met. Default: 100 | `int` |
+| `ProduceCondition` | (_Optional_) An additional condition (game state query) that must pass for this moster to produce overnight. | `string` |
+| `DeluxeChance` | (_Optional_) If ProduceChance passes, the percent chance the produce item is selected from the deluxe produce list instead (i.e. both ProduceChance and DeluxeChance must pass for deluxe produce to drop). Default: 33 | `int` |
+| `DeluxeCondition` | (_Optional_) An additional condition (game state query) that must pass for this monster to drop a deluxe itme overnight. | `string` |
+| `ProduceData` | (_Optional_) The item(s) produced by this monster. This consists of a list of models defined below. | `List<ProduceData>` |
+| `DeluxeProduceData` | (_Optional_) The deluxe item(s) produced by this monster. This consists of a list of models defined below. | `List<DeluxeProduceData>` |
+| `InputItemId` | The item id to place in the Monster Incubator to create this monster. | `string` |
 | `InputItemCount` | (_Optional_) The number of the input item required to start incubation. Default: 1 | `int` |
 | `IncubationTime` | (_Optional_) The number of days until incubation is complete. Default: 2 | `int` |
 | `OutputWeight` | (_Optional_) The weighted chance this monster is selected when incubation is complete (if more than 1 monster is found with the same input item Id). Default: 1 | `int` |
@@ -106,6 +108,7 @@ Each entry in the drops list is a model consisting of the fields listed below:
 | `Id` | The ID for this entry in the list (unique to the list). | `string` |
 | `ItemId` | The item ID. | `string` |
 | `Chance` | (_Optional_) The percent chance this item drops. Default: 100 | `int` |
+| `Quantity` | (_Optional_) The amount of this item to drop. Default: 1 | `int` |
 
 #### ProduceData / DeluxeProduceData
 
@@ -135,7 +138,8 @@ Example:
                         {
                             "Id": "CinderShard",
                             "ItemId": "(O)848",
-                            "Chance": 100
+                            "Chance": 100,
+                            "Quantity": 2
                         }
                     ],
                     "SpeedOverride": 1,
@@ -147,7 +151,7 @@ Example:
                     "ScaleMin": 100,
                     "ScaleMax": 100,
                     "TexturePath": "Characters\\Monsters\\Magma Sprite",
-                    "NumberToProduce": 2,
+                    "NumberRequiredToProduce": 2,
                     "ProduceChance": 100,
                     "DeluxeChance": 10,
                     "ProduceData": [
@@ -206,8 +210,9 @@ Each entry in the CharmedMonsters list is a model consisting of the fields liste
 | :----------- | :----------- | :----: |
 | `Id` | The ID for this entry in the list (unique to the list). | `string` |
 | `MonsterName` | The name of monster (either the name of a vanilla monster as found in Data/Monsters or defined by this mod in juminos.MonsterHutchFramework/MonsterHutchData). | `string` |
-| `Sound` | (_Optional_) The percent chance this item drops. Default: 100 | `string` |
-| `SpeechBubbles` | (_Optional_) The content and appearance of speech bubbles when 'petting' charmed monsters. This consists of a list of models defined below. | `List<SpeechBubbles>` |
+| `Sound` | (_Optional_) The sound this monster makes when 'petted'. | `string` |
+| `SpeechCondition` | (_Optional_) A condition (game state query) to check for this monster to display a speech bubble when 'petted'. | `string` |
+| `SpeechBubbles` | (_Optional_) The content and appearance of speech bubbles when 'petting' this monster. This consists of a list of models defined below. If no entries are found in this list, it will default to a heart. | `List<SpeechBubbles>` |
 
 #### SpeechBubbleData
 
