@@ -364,47 +364,8 @@ namespace MonsterHutchFramework
             {
                 monster.Scale = (float)Game1.random.Next(data.ScaleMin, data.ScaleMax) / 100f;
             }
-            //if (data.Skins.Count > 0)
-            //{
-            //    var weightedList = new List<string>();
-            //    foreach (var weighted in data.Skins)
-            //    {
-            //        if (weighted.Texture != null)
-            //        {
-            //            for (int i = 0; i < weighted.Weight; i++)
-            //            {
-            //                weightedList.Add(weighted.Texture);
-            //            }
-            //        }
-            //    }
-            //    var random = new Random();
-            //    int index = random.Next(weightedList.Count);
-            //    try
-            //    {
-            //        monster.Sprite.LoadTexture(weightedList[index]);
-            //        monster.modData.Add("skinTexture", weightedList[index]);
-
-            //        ModEntry.SMonitor.Log($"saving {weightedList[index]} skin for {monster.Name}", LogLevel.Trace);
-            //    }
-            //    catch
-            //    {
-            //        ModEntry.SMonitor.Log($"Failed loading '{weightedList[index]}' texture for {monster.Name}.", LogLevel.Error);
-            //    }
-
-            //    //var texture = Game1.content.Load<Texture2D>($"{weightedList[index]}");
-            //    //try
-            //    //{
-            //    //    monster.Sprite.LoadTexture(texture.Name);
-            //    //    monster.modData.Add("skinTexture", weightedList[index]);
-            //    //}
-            //    //catch
-            //    //{
-            //    //    ModEntry.SMonitor.Log($"Failed loading '{texture}' texture for {monster.Name}.", LogLevel.Error);
-            //    //}
-            //}
             if (data.TexturePath != null)
             {
-                //var texture = Game1.content.Load<Texture2D>($"{data.TexturePath}");
                 try
                 {
                     monster.Sprite.LoadTexture(data.TexturePath);
@@ -413,16 +374,6 @@ namespace MonsterHutchFramework
                 {
                     ModEntry.SMonitor.Log($"Failed loading '{data.TexturePath}' texture for {monster.Name}.", LogLevel.Error);
                 }
-                //var texture = Game1.content.Load<Texture2D>($"{data.TexturePath}");
-                //try
-                //{
-                //    monster.Sprite.LoadTexture(texture.Name);
-                //    monster.modData.Add("skinTexture", data.TexturePath);
-                //}
-                //catch
-                //{
-                //    ModEntry.SMonitor.Log($"Failed loading '{texture}' texture for {monster.Name}.", LogLevel.Error);
-                //}
             }
             monster.objectsToDrop.Clear();
             if (data.Drops.Count > 0)
@@ -431,7 +382,8 @@ namespace MonsterHutchFramework
                 {
                     if (Game1.random.NextDouble() < ((double)data.Drops[i].Chance / 100.0))
                     {
-                        monster.objectsToDrop.Add(data.Drops[i].ItemId);
+                        for (int j = 0; j < data.Drops[i].Quantity; j++)
+                            monster.objectsToDrop.Add(data.Drops[i].ItemId);
                     }
                 }
             }

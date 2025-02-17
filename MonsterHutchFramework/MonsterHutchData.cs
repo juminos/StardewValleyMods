@@ -32,12 +32,16 @@ public class MonsterHutchData
     public int ScaleMax { get; set; }
     // can be vanilla texture path or mod loaded texture
     public string? TexturePath { get; set; } = null;
-    // number of watered monsters needed to produce
-    public int NumberToProduce { get; set; } = 1;
+    // number of watered monsters required to produce
+    public int NumberRequiredToProduce { get; set; } = 1;
     // chance that monster produce is dropped if water condition is met
     public int ProduceChance { get; set; } = 100;
+    // Conditional check for deluxe produce
+    public string? ProduceCondition { get; set; }
     // chance that produce is replaced with deluxe produce
     public int DeluxeChance { get; set; } = 33;
+    // Conditional check for deluxe produce
+    public string? DeluxeCondition { get; set; }
     // weighted list of valid produce items
     public List<ProduceData> ProduceData { get; set; } = new List<ProduceData>();
     // weighted list of valid deluxe produce items
@@ -58,7 +62,9 @@ public class Drops
     // unqualified or qualified item id should work
     public string? ItemId { get; set; }
     // percent chance this item drops
-    public int Chance { get; set; } = 100; 
+    public int Chance { get; set; } = 100;
+    // Quantity to drop
+    public int Quantity { get; set; }
 }
 public class ProduceData
 {

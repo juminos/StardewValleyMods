@@ -18,6 +18,7 @@ namespace MonsterHutchFramework
         internal static ModConfig Config { get; private set; }
         internal string MonsterIncubatorAssetPath { get; private set; }
         internal string MonsterHutchExteriorPath { get; private set; }
+        public static bool accelerating;
         public override void Entry(IModHelper helper)
         {
             Mod = this;
@@ -38,9 +39,10 @@ namespace MonsterHutchFramework
 
             try
             {
-                HarmonyPatches.HutchPatches.PatchAll(this);
-                HarmonyPatches.RingPatches.PatchAll(this);
-                HarmonyPatches.ObjectPatches.PatchAll(this);
+                HutchPatches.PatchAll(this);
+                RingPatches.PatchAll(this);
+                ObjectPatches.PatchAll(this);
+                IncubatorPatches.PatchAll(this);
             }
             catch (Exception e)
             {
@@ -181,7 +183,9 @@ namespace MonsterHutchFramework
                             //Math.Abs(monsterPos.Y - playerTile.Y) <= 1 &&
                             RingPatches.MonsterIsCharmed(monster, Game1.player, out string? matchRingKey, out int matchMonsterIndex) &&
                             matchRingKey != null &&
-                            !monster.modData.ContainsKey($"{this.ModManifest.UniqueID}_monsterPetted"))
+                            !monster.modData.ContainsKey($"{this.ModManifest.UniqueID}_monsterPetted") &&
+                            (AssetHandler.charmerRingData[matchRingKey].CharmedMonsters[matchMonsterIndex].SpeechCondition == null ||
+                            GameStateQuery.CheckConditions(AssetHandler.charmerRingData[matchRingKey].CharmedMonsters[matchMonsterIndex].SpeechCondition)))
                         {
                             GetCharmedSpeech(monster, matchRingKey, matchMonsterIndex, out string text, out Microsoft.Xna.Framework.Color? color, out int style, out int duration, out int preTimer);
 

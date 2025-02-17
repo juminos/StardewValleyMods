@@ -20,6 +20,8 @@ public class CharmedMonsterData
     public string? MonsterName { get; set; }
     // Sound used for "petting" monster
     public string? Sound { get; set; }
+    // Conditional speech bubble
+    public string? SpeechCondition { get; set; }
     public List<SpeechBubbleData> SpeechBubbles { get; set; } = new List<SpeechBubbleData>();
 }
 public class SpeechBubbleData
