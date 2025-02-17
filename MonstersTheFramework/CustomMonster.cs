@@ -3,6 +3,7 @@ using System.Xml.Serialization;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Netcode;
+using StardewModdingAPI;
 using StardewValley;
 using StardewValley.Monsters;
 using StardewValley.Network;
@@ -41,6 +42,9 @@ namespace MonstersTheFramework
                 var state = (MonsterType.StateData)type.States[currentState.Value].Clone();
                 if (!string.IsNullOrEmpty(state.InheritsFrom))
                     state = state.InheritFrom(type.States[state.InheritsFrom], type.States);
+
+                Mod.SMonitor.Log($"{Type.Name} current state is {currentState.Value}", LogLevel.Trace);
+
                 return state;
             }
         }
@@ -74,6 +78,8 @@ namespace MonstersTheFramework
 
         public override int takeDamage(int damage, int xTrajectory, int yTrajectory, bool isBomb, double addedPrecision, Farmer who)
         {
+            Mod.SMonitor.Log($"custom monster taking damage", LogLevel.Trace);
+
             var state = CurrentState;
             if (isBomb && state.CanReceiveDamageFromBomb == false)
                 return -1;
@@ -152,6 +158,8 @@ namespace MonstersTheFramework
 
         public override void updateMovement(GameLocation location, GameTime time)
         {
+            Mod.SMonitor.Log($"custom monster updating movement", LogLevel.Trace);
+
             var state = CurrentState;
             if (state.Movement == null)
             {
@@ -219,8 +227,12 @@ namespace MonstersTheFramework
 
         private void UpdateState(string newState)
         {
+            Mod.SMonitor.Log($"current state is {currentState.Value}, attempt setting to {newState}", LogLevel.Trace);
+
             currentState.Value = newState;
             var state = CurrentState;
+
+            Mod.SMonitor.Log($"updated state is {currentState.Value}", LogLevel.Trace);
 
             this.resilience.Value = state.Defense ?? 0;
             this.isGlider.Value = state.IsGlider ?? false;
@@ -232,8 +244,13 @@ namespace MonstersTheFramework
 
             if (state.Animation != null)
             {
-                var texture = Mod.instance.Helper.ModContent.Load<Texture2D>(state.Animation.SpriteSheet);
-                var texturePath = Mod.instance.Helper.ModContent.GetInternalAssetName(state.Animation.SpriteSheet).BaseName;
+                // juminos-changed loading textures can be done in CP
+                //var texture = Mod.instance.Helper.ModContent.Load<Texture2D>(state.Animation.SpriteSheet);
+                //var texturePath = Mod.instance.Helper.ModContent.GetInternalAssetName(state.Animation.SpriteSheet).BaseName;
+                var texturePath = state.Animation.SpriteSheet;
+
+                Mod.SMonitor.Log($"updating spritesheet to {state.Animation.SpriteSheet}", LogLevel.Trace);
+
                 Sprite = new AnimatedSprite(texturePath, state.Animation.StartingIndex, (int)state.Animation.FrameSize.X, (int)state.Animation.FrameSize.Y);
                 Sprite.interval = state.Animation.TicksPerFrame / 60f;
                 Sprite.loop = state.Animation.Loops;
@@ -251,7 +268,11 @@ namespace MonstersTheFramework
             //if ( evtName != "OnTick" )
             ;// Log.Debug( "triggering event " + evtName );
 
+            Mod.SMonitor.Log($"{evtName} event triggered", LogLevel.Trace);
+
             var state = CurrentState;
+
+            Mod.SMonitor.Log($"current state is {currentState.Value}", LogLevel.Trace);
 
             using DataTable dt = new();
 
@@ -263,6 +284,8 @@ namespace MonstersTheFramework
 
                 if (evt.When == null || (bool)dt.Compute(DoConditionReplacements(evt.When), string.Empty))
                 {
+                    Mod.SMonitor.Log($"found state match {evt.Event} with {evt.Actions.Count} actions", LogLevel.Trace);
+
                     string oldState = currentState.Value;
                     foreach (var action in evt.Actions)
                     {

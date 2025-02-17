@@ -5,6 +5,8 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
+using StardewModdingAPI;
+using static StardewValley.Minigames.MineCart.Whale;
 
 namespace MonstersTheFramework
 {
@@ -88,8 +90,16 @@ namespace MonstersTheFramework
                 {
                     var ret = (EventData)this.MemberwiseClone();
                     ret.Actions = new();
-                    foreach (var action in Actions)
-                        ret.Actions.Add(action.Key, action.Value);
+
+                    // juminos-added null check
+                    if (Actions != null)
+                    {
+                        foreach (var action in Actions)
+                            ret.Actions.Add(action.Key, action.Value);
+                    }
+                    else
+                        Mod.SMonitor.Log($"actions is null", LogLevel.Warn);
+
                     return ret;
                 }
             }
@@ -121,6 +131,10 @@ namespace MonstersTheFramework
                 ret.Movement = (MovementData)Movement?.Clone();
                 ret.Animation = (AnimationData)Animation?.Clone();
                 ret.Events = new();
+                if (Events == null)
+                {
+                    Mod.SMonitor.Log("events is null", LogLevel.Trace);
+                }
                 foreach (var evt in Events)
                     ret.Events.Add((EventData)evt.Clone());
                 return ret;
