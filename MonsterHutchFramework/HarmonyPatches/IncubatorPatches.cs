@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using HarmonyLib;
+﻿using HarmonyLib;
 using StardewModdingAPI;
 using StardewValley.Monsters;
-using StardewValley.Objects;
 using StardewValley;
 using Microsoft.Xna.Framework;
 

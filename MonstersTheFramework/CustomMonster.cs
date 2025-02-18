@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Xml.Serialization;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -163,6 +164,8 @@ namespace MonstersTheFramework
             var state = CurrentState;
             if (state.Movement == null)
             {
+                Mod.SMonitor.Log($"movement is null", LogLevel.Trace);
+
                 return;
             }
 
@@ -289,6 +292,8 @@ namespace MonstersTheFramework
                     string oldState = currentState.Value;
                     foreach (var action in evt.Actions)
                     {
+                        Mod.SMonitor.Log($"doing action {action.Key}, {action.Value.ToString()}", LogLevel.Trace);
+
                         DoAction(action.Key, action.Value.ToString());
                     }
                     if (currentState.Value != oldState)
@@ -350,6 +355,8 @@ namespace MonstersTheFramework
 
         private string DoConditionReplacements(string cond)
         {
+            Mod.SMonitor.Log($"checking event condition: {cond}", LogLevel.Warn);
+
             cond = cond.Replace("$HEALTH", health.Value.ToString());
             cond = cond.Replace("$STATE_TIMER", stateTimer.Value.ToString());
             if (cond.Contains("$CLOSEST_PLAYER"))
@@ -360,6 +367,9 @@ namespace MonstersTheFramework
             {
                 cond = cond.Replace("$$" + v.Key, v.Value.ToString());
             }
+
+            Mod.SMonitor.Log($"returning event condition: {cond}", LogLevel.Warn);
+
             return cond;
         }
     }

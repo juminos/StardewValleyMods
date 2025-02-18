@@ -1,23 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Xml.Linq;
+﻿
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
-using Microsoft.Xna.Framework.Graphics;
 using StardewModdingAPI;
 using StardewValley;
-using StardewValley.BellsAndWhistles;
-using StardewValley.Extensions;
 using StardewValley.Monsters;
-using StardewValley.Projectiles;
-using static StardewValley.Minigames.CraneGame;
-using static StardewValley.Monsters.DinoMonster;
 
 namespace MonsterHutchFramework
 {
@@ -334,13 +319,22 @@ namespace MonsterHutchFramework
                 return monster;
             }
 
+            // **figure out how to access MonstersTheFramework**
+
+            //else if (type == "CustomMonster")
+            //{
+            //    ModEntry.SMonitor.Log($"Monster type {type} not found in data.", LogLevel.Warn);
+
+            //    var monster = new MonstersTheFramework.CustomMonster.CustomMonster(data.Name);
+            //    UpdateMonsterStats(monster, data);
+            //    monster.Position = vector;
+
+            //    return monster;
+            //}
+
             else
             {
-                ModEntry.SMonitor.Log($"Monster type {type} not found. Attempting to create generic monster.", LogLevel.Warn);
-
-                var monster = new Monster(type, vector);
-                UpdateMonsterStats(monster, data);
-
+                Monster monster = null;
                 return monster;
             }
 

@@ -80,8 +80,13 @@ namespace MonsterHutchFramework
                             if (monsterData.Value.Name == name)
                             {
                                 Monster newMonster = MonsterBuilder.CreateMonster(pos, monsterData.Value);
+                                if (newMonster != null)
+                                {
                                 hutch.characters.Remove(monster);
                                 hutch.characters.Add(newMonster);
+                                }
+                                else
+                                    ModEntry.SMonitor.Log($"Unable to create monster {monsterData.Value.Name}", LogLevel.Error);
                                 foundMonster = true;
                                 break;
                             }
@@ -179,8 +184,6 @@ namespace MonsterHutchFramework
                         var tileRect = new Microsoft.Xna.Framework.Rectangle((int)playerTile.X * 64, (int)playerTile.Y * 64, 64, 64);
                         var monsterPos = new Vector2(monster.Tile.X, monster.Tile.Y);
                         if (monster.GetBoundingBox().Intersects(tileRect) &&
-                            //Math.Abs(monsterPos.X - playerTile.X) <= 1 && 
-                            //Math.Abs(monsterPos.Y - playerTile.Y) <= 1 &&
                             RingPatches.MonsterIsCharmed(monster, Game1.player, out string? matchRingKey, out int matchMonsterIndex) &&
                             matchRingKey != null &&
                             !monster.modData.ContainsKey($"{this.ModManifest.UniqueID}_monsterPetted") &&
@@ -196,7 +199,6 @@ namespace MonsterHutchFramework
                                 DelayedAction.playSoundAfterDelay(AssetHandler.charmerRingData[matchRingKey].CharmedMonsters[matchMonsterIndex].Sound, preTimer, Game1.player.currentLocation, monsterPos);
                                 //monster.playNearbySoundAll(AssetHandler.charmerRingData[matchRingKey].CharmedMonsters[matchMonsterIndex].Sound);
                             }
-                            //DelayedAction.textAboveHeadAfterDelay("<", monster, Game1.random.Next(600));
                             monster.modData.Add($"{this.ModManifest.UniqueID}_monsterPetted", "true");
                         }
                     }

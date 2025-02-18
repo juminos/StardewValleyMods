@@ -11,7 +11,7 @@ public class MonsterHutchData
 {
     // MonsterType must match valid monster type (most types in Data/Monsters work)
     public string? MonsterType { get; set; }
-    // Name should match entry key
+    // Name for this monster
     public string? Name { get; set; }
     // Drops replaces monster drop on kill list
     public List<Drops> Drops { get; set; } = new List<Drops>();
