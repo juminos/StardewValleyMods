@@ -45,7 +45,7 @@ internal class ObjectPatches
     {
 
         if (Game1.player.currentLocation is SlimeHutch hutch && 
-            (hutch.Name.Contains("MonsterHutchFramework") || hutch.Name.Contains("Winery")) && 
+            (hutch.Name.Contains("MonsterHutchFramework") || hutch.Name.Contains("juminos.SeasonalBuildings_Winery")) && 
             ModEntry.Config.DoubleNodeDrops)
         {
             for (int i = 0; i < number; i++)
@@ -59,7 +59,7 @@ internal class ObjectPatches
     {
 
         if (location is SlimeHutch hutch && 
-            (hutch.Name.Contains("MonsterHutchFramework") || hutch.Name.Contains("Winery")) && 
+            (hutch.Name.Contains("MonsterHutchFramework") || hutch.Name.Contains("juminos.SeasonalBuildings_Winery")) && 
             ModEntry.Config.DoubleNodeDrops)
         {
             for (int i = 0; i < number; i++)
@@ -73,7 +73,7 @@ internal class ObjectPatches
     {
 
         if (Game1.player.currentLocation is SlimeHutch hutch && 
-            (hutch.Name.Contains("MonsterHutchFramework") || hutch.Name.Contains("Winery")) && 
+            (hutch.Name.Contains("MonsterHutchFramework") || hutch.Name.Contains("juminos.SeasonalBuildings_Winery")) && 
             ModEntry.Config.DoubleNodeDrops)
         {
             for (int i = 0; i < number; i++)
@@ -87,7 +87,7 @@ internal class ObjectPatches
     {
 
         if (Game1.player.currentLocation is SlimeHutch hutch && 
-            (hutch.Name.Contains("MonsterHutchFramework") || hutch.Name.Contains("Winery")) && 
+            (hutch.Name.Contains("MonsterHutchFramework") || hutch.Name.Contains("juminos.SeasonalBuildings_Winery")) && 
             ModEntry.Config.DoubleNodeDrops)
         {
             for (int i = 0; i < number; i++)
@@ -102,7 +102,7 @@ internal class ObjectPatches
 
         if (location is SlimeHutch hutch && 
             (hutch.Name.Contains("MonsterHutchFramework") || 
-            hutch.Name.Contains("Winery")) && ModEntry.Config.DoubleNodeDrops)
+            hutch.Name.Contains("juminos.SeasonalBuildings_Winery")) && ModEntry.Config.DoubleNodeDrops)
         {
             for (int i = 0; i < number; i++)
             {

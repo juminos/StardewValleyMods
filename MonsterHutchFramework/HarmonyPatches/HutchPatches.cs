@@ -60,7 +60,7 @@ internal class HutchPatches
     public static void SlimeHutchDayUpdate_Pre(SlimeHutch __instance, ref List<Monster> __state)
     {
         // Collect and remove non slimes to avoid interference with slime behavior
-        if (__instance.Name.Contains("MonsterHutchFramework") || __instance.Name.Contains("Winery"))
+        if (__instance.Name.Contains("MonsterHutchFramework") || __instance.Name.Contains("juminos.SeasonalBuildings_Winery"))
         {
             __state = new List<Monster>();
             for (int i = __instance.characters.Count - 1; i >= 0; i--)
@@ -175,15 +175,9 @@ internal class HutchPatches
                                 }
                                 var produce = ItemRegistry.Create<StardewValley.Object>(produceId);
                                 produce.CanBeSetDown = false;
-                                ModEntry.SMonitor.Log($"{produce.Name} is type {produce.Type}, category {produce.Category}");
-                                if (produce.ItemId == "395")
-                                {
-                                    produce.Type = "Cooking";
-                                    produce.Category = -7;
-                                }
+                                ModEntry.SMonitor.Log($"{produce.Name} is type {produce.Type}, category {produce.Category}", LogLevel.Trace);
                                 if (produce.Type != "Litter")
                                 {
-                                    ModEntry.SMonitor.Log($"{produce.Name} is {produce.Type}, not litter");
                                     foreach (StardewValley.Object location_object in __instance.objects.Values)
                                     {
                                         if (location_object.QualifiedItemId == "(BC)165" && location_object.heldObject.Value is Chest chest && chest.addItem(produce) == null)
@@ -213,7 +207,10 @@ internal class HutchPatches
                                                 {
                                                     item.IsSpawnedObject = false;
                                                     item.CanBeGrabbed = false;
+                                                    item.MinutesUntilReady = 1;
                                                 }
+                                                if (produce.ItemId == "395")
+                                                    ModEntry.SMonitor.Log("Coffee cannot be picked up, change IsDropped to true", LogLevel.Info);
                                             }
                                         }
                                     }
@@ -234,7 +231,10 @@ internal class HutchPatches
                                                 {
                                                     item.IsSpawnedObject = false;
                                                     item.CanBeGrabbed = false;
+                                                    item.MinutesUntilReady = 1;
                                                 }
+                                                if (produce.ItemId == "395")
+                                                    ModEntry.SMonitor.Log("Coffee cannot be picked up, change IsDropped to true", LogLevel.Info);
                                             }
                                         }
                                     }
@@ -248,7 +248,7 @@ internal class HutchPatches
     }
     public static void SlimeHutchDayUpdate_Post(SlimeHutch __instance, ref List<Monster> __state)
     {
-        if (__instance.Name.Contains("MonsterHutchFramework") || __instance.Name.Contains("Winery"))
+        if (__instance.Name.Contains("MonsterHutchFramework") || __instance.Name.Contains("juminos.SeasonalBuildings_Winery"))
         {
             foreach (var item in __state)
             {

@@ -83,9 +83,8 @@ This consists of a string -> model lookup where...
 | `MoveTowardPlayerThresholdOverride` | (_Optional_) The distance (in tiles) before the monster sees the player. Default: 2 | `int` |
 | `DamageToFarmerOverride` | (_Optional_) The amount of damage the monster deals when it attacks (overriding the base monster damage). | `int` |
 | `MaxHealthOverride` | (_Optional_) The amount of health the monster has (overriding the base monster health) | `int` |
-| `HideShadow` | (_Optional_) Whether to hide the monster's shadow (most monsters in the game seem to have this set to 'true'). Default: true | `bool` |
-| `ScaleMin` | (_Optional_) The minimum scale percentage to randomize size (random value chosen between ScaleMin and ScaleMax on monster creation) <br>Example: The game uses this to randomize Dust Sprite size with ScaleMin = 75 and ScaleMax = 101 | `int` |
-| `ScaleMax` | (_Optional_) The maximum scale percentage to randomize size | `int` |
+| `ScaleMin` | (_Optional_) The minimum size scale percentage (random value chosen between ScaleMin and ScaleMax when monster is created/reloaded). <br>Example: The game uses this to randomize Dust Sprite size with ScaleMin = 75 and ScaleMax = 101 | `int` |
+| `ScaleMax` | (_Optional_) The maximum size scale percentage (ScaleMin and ScaleMax can be set to the same value for fixed scaling). | `int` |
 | `TexturePath` | The texture to use for this monster (if not defined will use base monster texture) | `string` |
 | `NumberRequiredToProduce` | (_Optional_) How many watered monsters of this type are required for each overnight produce chance. Default: 1 <br>e.g. In the vanilla game it takes 5 watered slimes to produce a slime ball. | `int` |
 | `ProduceChance` | (_Optional_) The percent chance this monster will produce overnight if watered conditions are met. Default: 100 | `int` |
@@ -147,7 +146,6 @@ Example:
                     "MoveTowardPlayerThresholdOverride": 2,
                     "DamageToFarmerOverride": 6,
                     "MaxHealthOverride": 25,
-                    "HideShadow": true,
                     "ScaleMin": 100,
                     "ScaleMax": 100,
                     "TexturePath": "Characters\\Monsters\\Magma Sprite",

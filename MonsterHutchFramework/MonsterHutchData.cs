@@ -25,11 +25,11 @@ public class MonsterHutchData
     public int DamageToFarmerOverride { get; set; }
     // same as above
     public int MaxHealthOverride { get; set; }
-    // most (all?) monsters seem to hide shadow
-    public bool HideShadow { get; set; } = true;
+    // Usually set to true but is never used (only for events?) and ignored by drawAboveAllLayers method
+    //public bool HideShadow { get; set; } = true;
     // Scale is used by dust spirit for size randomization (base.Scale = (float)Game1.random.Next(75, 101) / 100f)
-    public int ScaleMin { get; set; }
-    public int ScaleMax { get; set; }
+    public int ScaleMin { get; set; } = 100;
+    public int ScaleMax { get; set; } = 100;
     // can be vanilla texture path or mod loaded texture
     public string? TexturePath { get; set; } = null;
     // number of watered monsters required to produce
@@ -64,7 +64,7 @@ public class Drops
     // percent chance this item drops
     public int Chance { get; set; } = 100;
     // Quantity to drop
-    public int Quantity { get; set; }
+    public int Quantity { get; set; } = 1;
 }
 public class ProduceData
 {

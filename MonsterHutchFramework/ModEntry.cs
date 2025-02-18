@@ -60,15 +60,14 @@ namespace MonsterHutchFramework
             Utility.ForEachBuilding(delegate (Building building)
             {
                 if (building?.indoors?.Value is SlimeHutch hutch && 
-                (hutch.Name.Contains("MonsterHutchFramework") || hutch.Name.Contains("Winery")))
+                (hutch.Name.Contains("MonsterHutchFramework") || hutch.Name.Contains("juminos.SeasonalBuildings_Winery")) &&
+                hutch.characters.Count > 0)
                 {
                     var monsterList = new List<Monster>();
                     for (int i = 0; i < hutch.characters.Count; i++)
                     {
-                        if (hutch.characters[i] is Monster monster && monster is not GreenSlime)
-                        {
+                        if (hutch.characters[i] is Monster monster && monster is not null && monster is not GreenSlime)
                             monsterList.Add(monster);
-                        }
                     }
                     foreach (Monster monster in monsterList)
                     {
@@ -82,8 +81,8 @@ namespace MonsterHutchFramework
                                 Monster newMonster = MonsterBuilder.CreateMonster(pos, monsterData.Value);
                                 if (newMonster != null)
                                 {
-                                hutch.characters.Remove(monster);
-                                hutch.characters.Add(newMonster);
+                                    hutch.characters.Remove(monster);
+                                    hutch.characters.Add(newMonster);
                                 }
                                 else
                                     ModEntry.SMonitor.Log($"Unable to create monster {monsterData.Value.Name}", LogLevel.Error);
@@ -92,9 +91,7 @@ namespace MonsterHutchFramework
                             }
                         }
                         if (!foundMonster)
-                        {
                             SMonitor.Log($"monster name {name} not found in monster data", LogLevel.Error);
-                        }
                     }
                 }
                 return true;
@@ -103,23 +100,20 @@ namespace MonsterHutchFramework
         private void OnDayStarted(object? sender, DayStartedEventArgs e)
         {
             if (!Config.RandomizeMonsterPositions)
-            {
                 return;
-            }
 
             Utility.ForEachBuilding(delegate (Building building)
             {
                 if (building?.indoors?.Value is SlimeHutch hutch && 
-                (hutch.Name.Contains("MonsterHutchFramework") || hutch.Name.Contains("Winery")) &&
+                (hutch.Name.Contains("MonsterHutchFramework") || hutch.Name.Contains("juminos.SeasonalBuildings_Winery")) &&
                 hutch.characters.Count > 0)
                 {
                     foreach (var monster in hutch.characters)
                     {
-                        if (Config.SkipRandomizeSlimePositions && monster is GreenSlime)
-                        {
+                        if (monster is null)
                             continue;
-                        }
-
+                        if (Config.SkipRandomizeSlimePositions && monster is GreenSlime)
+                            continue;
                         int tries = 50;
                         Vector2 tile = hutch.getRandomTile();
                         while ((!hutch.CanItemBePlacedHere(tile, false, CollisionMask.All, ~CollisionMask.Objects, false, false) || tile.Y >= 12f) && tries > 0)
@@ -131,9 +125,7 @@ namespace MonsterHutchFramework
                         tile *= 64;
 
                         if (tries > 0)
-                        {
                             monster.Position = tile;
-                        }
                     }
                 }
                 return true;
@@ -143,12 +135,8 @@ namespace MonsterHutchFramework
         {
             foreach(var character in e.OldLocation.characters)
             {
-                if (character is Monster monster &&
-                    //(monster is ShadowBrute || monster is Shooter || monster is ShadowShaman || monster is ShadowGirl || monster is ShadowGuy) &&
-                    monster.modData.ContainsKey($"{this.ModManifest.UniqueID}_monsterPetted"))
-                {
+                if (character is Monster monster && monster.modData.ContainsKey($"{this.ModManifest.UniqueID}_monsterPetted"))
                     monster.modData.Remove($"{this.ModManifest.UniqueID}_monsterPetted");
-                }
             }
         }
         private void OnAssetRequested(object? sender, AssetRequestedEventArgs e)
@@ -177,9 +165,7 @@ namespace MonsterHutchFramework
                 foreach (var character in Game1.player.currentLocation.characters)
                 {
                     if (character is Monster monster)
-                    //if (monster is ShadowBrute || monster is Shooter || monster is ShadowShaman || monster is ShadowGirl || monster is ShadowGuy)
                     {
-                        SMonitor.Log($"left ring name: {Game1.player.leftRing.Name}, basename: {Game1.player.leftRing.Value.BaseName}, itemid: {Game1.player.leftRing.Value.ItemId}, name {Game1.player.leftRing.Value.Name}", LogLevel.Trace);
                         var playerTile = Game1.player.Tile;
                         var tileRect = new Microsoft.Xna.Framework.Rectangle((int)playerTile.X * 64, (int)playerTile.Y * 64, 64, 64);
                         var monsterPos = new Vector2(monster.Tile.X, monster.Tile.Y);
@@ -195,10 +181,8 @@ namespace MonsterHutchFramework
                             monster.showTextAboveHead(text, color, style, duration > 0 ? duration : 1500, preTimer > -1 ? preTimer : 0);
 
                             if (AssetHandler.charmerRingData[matchRingKey].CharmedMonsters[matchMonsterIndex].Sound != null)
-                            {
                                 DelayedAction.playSoundAfterDelay(AssetHandler.charmerRingData[matchRingKey].CharmedMonsters[matchMonsterIndex].Sound, preTimer, Game1.player.currentLocation, monsterPos);
-                                //monster.playNearbySoundAll(AssetHandler.charmerRingData[matchRingKey].CharmedMonsters[matchMonsterIndex].Sound);
-                            }
+                            
                             monster.modData.Add($"{this.ModManifest.UniqueID}_monsterPetted", "true");
                         }
                     }
