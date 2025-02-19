@@ -76,7 +76,7 @@ This consists of a string -> model lookup where...
 |    Field    | Description | Type |
 | :----------- | :----------- | :----: |
 | `MonsterType` | The name of the monster this hutch monster will be based on. <br>Most monsters found in the game's monster data will work. <br>(Known to work: Bat, Frost Bat, Lava Bat, Iridium Bat, Magma Sprite, Magma Sparker, Dust Spirit, Spider, Rock Crab, Stick Bug) | `string` |
-| `Name` | The name for this monster. | `string` |
+| `Name` | The name for this monster (should be unique). | `string` |
 | `Drops` | (_Optional_) The items to drop on monster death. This consists of a list of models defined below. | `List<Drops>` |
 | `SpeedOverride` | (_Optional_) The value to set as the monster's default speed (overriding the base monster speed). | `int` |
 | `FarmerCollision` | (_Optional_) Whether the monster has collision with the farmer. Default: false | `bool` |
@@ -207,7 +207,7 @@ Each entry in the CharmedMonsters list is a model consisting of the fields liste
 |    Field    | Description | Type |
 | :----------- | :----------- | :----: |
 | `Id` | The ID for this entry in the list (unique to the list). | `string` |
-| `MonsterName` | The name of monster (either the name of a vanilla monster as found in Data/Monsters or defined by this mod in juminos.MonsterHutchFramework/MonsterHutchData). | `string` |
+| `MonsterName` | The name of monster (must be exact match to either the name of a vanilla monster as found in Data/Monsters or the `Name` field for a monster in MonsterHutchData). | `string` |
 | `Sound` | (_Optional_) The sound this monster makes when 'petted'. | `string` |
 | `SpeechCondition` | (_Optional_) A condition (game state query) to check for this monster to display a speech bubble when 'petted'. | `string` |
 | `SpeechBubbles` | (_Optional_) The content and appearance of speech bubbles when 'petting' this monster. This consists of a list of models defined below. If no entries are found in this list, it will default to a heart. | `List<SpeechBubbles>` |
