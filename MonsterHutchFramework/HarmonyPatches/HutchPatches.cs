@@ -138,9 +138,7 @@ internal class HutchPatches
                                         if (!string.IsNullOrEmpty(monsterType.Value.ProduceData[i].ItemId))
                                         {
                                             for (int k = 0; k < monsterType.Value.ProduceData[i].Weight; k++)
-                                            {
                                                 weightedList.Add(i);
-                                            }
                                         }
                                     }
                                     var random = new Random();
@@ -161,9 +159,7 @@ internal class HutchPatches
                                             if (!string.IsNullOrEmpty(monsterType.Value.DeluxeProduceData[i].ItemId))
                                             {
                                                 for (int k = 0; k < monsterType.Value.DeluxeProduceData[i].Weight; k++)
-                                                {
                                                     weightedList.Add(i);
-                                                }
                                             }
                                         }
                                         var random = new Random();
@@ -275,13 +271,9 @@ internal class HutchPatches
                 int idx = y * size.Width + x;
                 int tile = __instance.getTileIndexAt(p, "Buildings");
                 if (tile == 2134 && __instance.waterSpots[idx])
-                {
                     __instance.setMapTile(x, y, 2135, "Buildings", "untitled tile sheet");
-                }
                 else if (tile == 2135 && !__instance.waterSpots[idx])
-                {
                     __instance.setMapTile(x, y, 2134, "Buildings", "untitled tile sheet");
-                }
             }
         }
         return false;
@@ -297,9 +289,7 @@ internal class HutchPatches
     public static bool PerformToolAction_Pre(SlimeHutch __instance, Tool t, int tileX, int tileY)
     {
         if (t is WateringCan)
-        {
             __instance.waterSpots[tileY * __instance.Map.GetLayer("Buildings").LayerWidth + tileX] = true;
-        }
         return false;
     }
     public static void DayUpdate_Pre(SlimeHutch __instance)

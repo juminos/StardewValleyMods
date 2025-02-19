@@ -23,19 +23,13 @@ internal class IncubatorPatches
     public static void MonsterIncubatorUpdate_Post(StardewValley.Object __instance)
     {
         if (__instance.QualifiedItemId == null)
-        {
             return;
-        }
 
         if (__instance.QualifiedItemId != MonsterIncubator.monsterIncubatorQID)
-        {
             return;
-        }
 
         if (__instance.MinutesUntilReady > 0 || __instance.heldObject.Value == null)
-        {
             return;
-        }
 
         GameLocation location = __instance.Location;
 
@@ -74,9 +68,7 @@ internal class IncubatorPatches
                 __instance.MinutesUntilReady = -1;
             }
             else
-            {
                 ModEntry.SMonitor.Log($"No valid output found for {__instance.heldObject.Value.QualifiedItemId} in monster data", LogLevel.Error);
-            }
         }
         else
         {

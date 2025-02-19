@@ -31,42 +31,30 @@ namespace MonsterHutchFramework
                     var recipeConfigUnlock = ModEntry.Config.IncubatorRecipeUnlock;
 
                     if (string.IsNullOrWhiteSpace(recipeConfig))
-                    {
                         recipeConfig = ModConfig.DefaultIncubatorRecipe;
-                    }
                     else
-                    {
                         recipeConfig = recipeConfig.Trim();
-                    }
                     if (string.IsNullOrWhiteSpace(recipeConfigUnlock))
-                    {
                         recipeConfigUnlock = ModConfig.DefaultIncubatorRecipeUnlock;
-                    }
                     else
-                    {
                         recipeConfigUnlock = recipeConfigUnlock.Trim();
-                    }
 
                     data[monsterIncubatorNonQID] = $"{recipeConfig}/Home/{monsterIncubatorNonQID}/true/{recipeConfigUnlock}/";
                 });
             }
-
             if (e.NameWithoutLocale.IsEquivalentTo("Data/Mail") && (string.IsNullOrWhiteSpace(ModEntry.Config.IncubatorRecipeUnlock) || ModEntry.Config.IncubatorRecipeUnlock.Contains("f Wizard")))
             {
                 e.Edit((asset) =>
                 {
                     var data = asset.AsDictionary<string, string>().Data;
-
                     data[monsterIncubatorMailID] = $"[letterbg 2]{ModEntry.Mod.Helper.Translation.Get("WizardLetter.content")}%item craftingRecipe {monsterIncubatorNonQID} %%[#]{ModEntry.Mod.Helper.Translation.Get("WizardLetter.description")}";
                 });
             }
-
             if (e.NameWithoutLocale.IsEquivalentTo("Data/TriggerActions") && (string.IsNullOrWhiteSpace(ModEntry.Config.IncubatorRecipeUnlock) || ModEntry.Config.IncubatorRecipeUnlock.Contains("f Wizard")))
             {
                 e.Edit((asset) =>
                 {
                     var data = asset.GetData<List<TriggerActionData>>();
-
                     if (data != null)
                     {
                         data.Add(new()
@@ -79,13 +67,11 @@ namespace MonsterHutchFramework
                     }
                 });
             }
-
             if (e.NameWithoutLocale.IsEquivalentTo("Data/BigCraftables"))
             {
                 e.Edit(asset =>
                 {
                     var data = asset.AsDictionary<string, BigCraftableData>().Data;
-
                     if (data != null)
                     {
                         var monsterIncubator = new BigCraftableData
@@ -103,19 +89,15 @@ namespace MonsterHutchFramework
                             ContextTags = null,
                             CustomFields = null
                         };
-
                         data[monsterIncubatorNonQID] = monsterIncubator;
                     }
                 });
             }
-
             if (e.NameWithoutLocale.IsEquivalentTo("Data/Machines"))
             {
                 e.Edit((asset) =>
                 {
                     IDictionary<string, MachineData> data = asset.AsDictionary<string, MachineData>().Data;
-
-                    // most of the values of the monster incubator were set to be identical to the slime incubator
 
                     var monsterIncubator = new MachineData
                     {
@@ -141,7 +123,6 @@ namespace MonsterHutchFramework
                         StatsToIncrementWhenHarvested = null,
                         CustomFields = null
                     };
-
                     if (ModEntry.Config.IncubatorIsAffectedByCoopmaster)
                     {
                         var coopmaster = new QuantityModifier
@@ -152,20 +133,16 @@ namespace MonsterHutchFramework
                             Amount = 0.45f,
                             RandomAmount = null
                         };
-
                         monsterIncubator.ReadyTimeModifiers = new List<QuantityModifier>() { coopmaster };
                     }
                     else
-                    {
                         monsterIncubator.ReadyTimeModifiers = null;
-                    }
 
                     var coinSound = new MachineSoundData
                     {
                         Id = "coin",
                         Delay = 0
                     };
-
                     var defaultMachineSpriteEffect = new MachineEffects
                     {
                         Id = "Default",
@@ -175,7 +152,6 @@ namespace MonsterHutchFramework
                         ShakeDuration = 400,
                         Sounds = new List<MachineSoundData>() { coinSound }
                     };
-
                     monsterIncubator.LoadEffects = new List<MachineEffects>() { defaultMachineSpriteEffect };
 
                     var bubblesSound = new MachineSoundData
@@ -183,7 +159,6 @@ namespace MonsterHutchFramework
                         Id = "bubbles",
                         Delay = 0
                     };
-
                     var workingEffect = new MachineEffects
                     {
                         Id = "Default",
@@ -193,51 +168,39 @@ namespace MonsterHutchFramework
                         ShakeDuration = 400,
                         Sounds = new List<MachineSoundData>() { bubblesSound },
                     };
-
                     monsterIncubator.WorkingEffects = new List<MachineEffects>() { workingEffect };
 
                     monsterIncubator.OutputRules = new List<MachineOutputRule>();
-
                     foreach (var monsterData in AssetHandler.monsterHutchData)
                     {
                         int incubatorDuration = Math.Max(1, monsterData.Value.IncubationTime);
-
                         var defaultOutput = new MachineOutputRule
                         {
                             Id = monsterData.Key,
                             UseFirstValidOutput = true,
-                            MinutesUntilReady = monsterData.Value.IncubationTime,
+                            MinutesUntilReady = incubatorDuration,
                             RecalculateOnCollect = false
                         };
-
                         var itemDisplayName = ItemRegistry.Create(monsterData.Value.InputItemId).DisplayName;
                         defaultOutput.InvalidCountMessage = ModEntry.Mod.Helper.Translation.Get("MonsterIncubator.InputWarning", new { itemName = itemDisplayName });
 
                         var itemTrigger = CreateMachineOutputTriggerRule(monsterData.Key, monsterData.Value);
-
                         defaultOutput.Triggers = new List<MachineOutputTriggerRule> { itemTrigger };
 
                         var itemOutputItem = CreateMachineItemOutput(monsterData.Key, monsterData.Value);
-
                         defaultOutput.OutputItem = new List<MachineItemOutput>() { itemOutputItem };
 
                         monsterIncubator.OutputRules.Add(defaultOutput);
                     }
-
                     if (ModEntry.Config.IncubatorAdditionalRequiredItemCount > 0)
                     {
                         int additionalItemCount = ModEntry.Config.IncubatorAdditionalRequiredItemCount;
                         string additionalItemID = ModEntry.Config.IncubatorAdditionalRequiredItemID ?? ModConfig.DefaultIncubatorAdditionalRequiredItemID;
-
                         Item additionalItem = ItemRegistry.Create(additionalItemID, allowNull: true);
                         if (additionalItem == null)
-                        {
                             additionalItemID = ModConfig.DefaultIncubatorAdditionalRequiredItemID;
-                        }
                         else
-                        {
                             additionalItemID = additionalItem.QualifiedItemId;
-                        }
 
                         var machineAdditionalConsumedItem = new MachineItemAdditionalConsumedItems
                         {
@@ -246,16 +209,13 @@ namespace MonsterHutchFramework
                         };
 
                         var additionalItemDisplayName = ItemRegistry.Create(machineAdditionalConsumedItem.ItemId).DisplayName;
-
                         machineAdditionalConsumedItem.InvalidCountMessage = ModEntry.Mod.Helper.Translation.Get("MonsterIncubator.additionalItemWarning"
                             , new { additionalItemName = additionalItemDisplayName, additionalItemCount = machineAdditionalConsumedItem.RequiredCount.ToString() });
 
                         monsterIncubator.AdditionalConsumedItems = new List<MachineItemAdditionalConsumedItems>() { machineAdditionalConsumedItem };
                     }
                     else
-                    {
                         monsterIncubator.AdditionalConsumedItems = null;
-                    }
 
                     data[monsterIncubatorQID] = monsterIncubator;
                 });

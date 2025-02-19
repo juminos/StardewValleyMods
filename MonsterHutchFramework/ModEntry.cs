@@ -18,7 +18,6 @@ namespace MonsterHutchFramework
         internal static ModConfig Config { get; private set; }
         internal string MonsterIncubatorAssetPath { get; private set; }
         internal string MonsterHutchExteriorPath { get; private set; }
-        public static bool accelerating;
         public override void Entry(IModHelper helper)
         {
             Mod = this;
@@ -59,8 +58,7 @@ namespace MonsterHutchFramework
         {
             Utility.ForEachBuilding(delegate (Building building)
             {
-                if (building?.indoors?.Value is SlimeHutch hutch && 
-                (hutch.Name.Contains("MonsterHutchFramework") || hutch.Name.Contains("juminos.SeasonalBuildings_Winery")) &&
+                if (building?.indoors?.Value is SlimeHutch hutch &&
                 hutch.characters.Count > 0)
                 {
                     var monsterList = new List<Monster>();
@@ -69,29 +67,32 @@ namespace MonsterHutchFramework
                         if (hutch.characters[i] is Monster monster && monster is not null && monster is not GreenSlime)
                             monsterList.Add(monster);
                     }
-                    foreach (Monster monster in monsterList)
+                    if (monsterList.Count < 0)
                     {
-                        var pos = monster.Position;
-                        var name = monster.Name;
-                        bool foundMonster = false;
-                        foreach (var monsterData in AssetHandler.monsterHutchData)
+                        foreach (Monster monster in monsterList)
                         {
-                            if (monsterData.Value.Name == name)
+                            var pos = monster.Position;
+                            var name = monster.Name;
+                            bool foundMonster = false;
+                            foreach (var monsterData in AssetHandler.monsterHutchData)
                             {
-                                Monster newMonster = MonsterBuilder.CreateMonster(pos, monsterData.Value);
-                                if (newMonster != null)
+                                if (monsterData.Value.Name == name)
                                 {
-                                    hutch.characters.Remove(monster);
-                                    hutch.characters.Add(newMonster);
+                                    Monster newMonster = MonsterBuilder.CreateMonster(pos, monsterData.Value);
+                                    if (newMonster != null)
+                                    {
+                                        hutch.characters.Remove(monster);
+                                        hutch.characters.Add(newMonster);
+                                    }
+                                    else
+                                        SMonitor.Log($"Unable to create monster {monsterData.Value.Name}", LogLevel.Error);
+                                    foundMonster = true;
+                                    break;
                                 }
-                                else
-                                    ModEntry.SMonitor.Log($"Unable to create monster {monsterData.Value.Name}", LogLevel.Error);
-                                foundMonster = true;
-                                break;
                             }
+                            if (!foundMonster)
+                                SMonitor.Log($"monster name {name} not found in monster data", LogLevel.Error);
                         }
-                        if (!foundMonster)
-                            SMonitor.Log($"monster name {name} not found in monster data", LogLevel.Error);
                     }
                 }
                 return true;
@@ -104,8 +105,7 @@ namespace MonsterHutchFramework
 
             Utility.ForEachBuilding(delegate (Building building)
             {
-                if (building?.indoors?.Value is SlimeHutch hutch && 
-                (hutch.Name.Contains("MonsterHutchFramework") || hutch.Name.Contains("juminos.SeasonalBuildings_Winery")) &&
+                if (building?.indoors?.Value is SlimeHutch hutch &&
                 hutch.characters.Count > 0)
                 {
                     foreach (var monster in hutch.characters)
@@ -231,17 +231,5 @@ namespace MonsterHutchFramework
                 return;
             }
         }
-    }
-    public static class GameContentHelperExtensions
-    {
-        /// <summary>
-        /// Invalidates both an asset and the locale-specific version of an asset.
-        /// </summary>
-        /// <param name="helper">The game content helper.</param>
-        /// <param name="assetName">The (string) asset to invalidate.</param>
-        /// <returns>if something was invalidated.</returns>
-        public static bool InvalidateCacheAndLocalized(this IGameContentHelper helper, string assetName)
-            => helper.InvalidateCache(assetName)
-                | (helper.CurrentLocaleConstant != LocalizedContentManager.LanguageCode.en && helper.InvalidateCache(assetName + "." + helper.CurrentLocale));
     }
 }

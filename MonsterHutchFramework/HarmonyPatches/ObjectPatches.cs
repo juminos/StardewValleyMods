@@ -49,9 +49,7 @@ internal class ObjectPatches
             ModEntry.Config.DoubleNodeDrops)
         {
             for (int i = 0; i < number; i++)
-            {
                 Game1.createObjectDebris(id, xTile, yTile);
-            }
         }
         return true;
     }
@@ -63,9 +61,7 @@ internal class ObjectPatches
             ModEntry.Config.DoubleNodeDrops)
         {
             for (int i = 0; i < number; i++)
-            {
                 Game1.createObjectDebris(id, xTile, yTile);
-            }
         }
         return true;
     }
@@ -77,9 +73,7 @@ internal class ObjectPatches
             ModEntry.Config.DoubleNodeDrops)
         {
             for (int i = 0; i < number; i++)
-            {
                 Game1.createObjectDebris(id, xTile, yTile);
-            }
         }
         return true;
     }
@@ -91,9 +85,7 @@ internal class ObjectPatches
             ModEntry.Config.DoubleNodeDrops)
         {
             for (int i = 0; i < number; i++)
-            {
                 Game1.createObjectDebris(id, xTile, yTile);
-            }
         }
         return true;
     }
@@ -105,9 +97,7 @@ internal class ObjectPatches
             hutch.Name.Contains("juminos.SeasonalBuildings_Winery")) && ModEntry.Config.DoubleNodeDrops)
         {
             for (int i = 0; i < number; i++)
-            {
                 Game1.createObjectDebris(id, xTile, yTile);
-            }
         }
         return true;
     }
