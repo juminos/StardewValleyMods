@@ -1,7 +1,7 @@
 ﻿# Monster Hutch Framework
 
 Monster Hutch Framework is a framework that allows monsters to be raised and produce in a new 'Monster Hutch' building using a new 'Monster Incubator' machine, along with custom 'charmer' rings.
-- new building 'Monster Hutch' can accomodate up to 40 monsters
+- new building 'Monster Hutch' can accommodate up to 40 monsters
 - new craftable 'Monster Incubator' produces custom monsters based on input
 - custom monsters that are 'watered' can produce items overnight
 - new 'charmer' rings can be defined to prevent damage from (and to) monsters
@@ -24,8 +24,8 @@ Monster Hutch Framework is a framework that allows monsters to be raised and pro
 ## Features
 
 ### Monster Hutch
-- The Monster Hutch is a new building that has the pre-1.6 Slime Hutch building exterior (basically just a bigger version of the current slime hutch)
-- The interior is considered a slime hutch, so slime breeding will still function there (default 20 slime capacity limit), but can hold up to 40 total monsters
+- The Monster Hutch is a new building that can be found in Robin's menu and uses the pre-1.6 Slime Hutch building exterior (basically just a bigger version of the current slime hutch)
+- The interior is considered a slime hutch, so slime breeding will still function there (default 20 slime capacity limit), and it can accommodate up to 40 total monsters
 - Monsters added by this mod do not multiply on their own like slimes do and must be incubated in the new 'Monster Incubator'
 - An optional basement expansion can be turned on in the configuration options which adds a slightly smaller 'basement' area that monsters cannot visit, but casks will work.
 

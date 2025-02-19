@@ -243,6 +243,8 @@ namespace MonsterHutchFramework
                 monster.MaxHealth = data.MaxHealthOverride;
             monster.farmerPassesThrough = !data.FarmerCollision;
             monster.moveTowardPlayerThreshold.Value = data.MoveTowardPlayerThresholdOverride;
+
+            // change this to use modData entry instead
             monster.Name = data.Name;
         }
     }
