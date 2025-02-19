@@ -151,6 +151,7 @@ namespace MonsterHutchFramework
         }
         private void OnButtonPressed(object? sender, ButtonPressedEventArgs e)
         {
+            var ringData = AssetHandler.charmerRingData;
             if (!Context.IsPlayerFree)
                 return;
             if (!Context.IsWorldReady)
@@ -173,15 +174,15 @@ namespace MonsterHutchFramework
                             RingPatches.MonsterIsCharmed(monster, Game1.player, out string? matchRingKey, out int matchMonsterIndex) &&
                             matchRingKey != null &&
                             !monster.modData.ContainsKey($"{this.ModManifest.UniqueID}_monsterPetted") &&
-                            (AssetHandler.charmerRingData[matchRingKey].CharmedMonsters[matchMonsterIndex].SpeechCondition == null ||
-                            GameStateQuery.CheckConditions(AssetHandler.charmerRingData[matchRingKey].CharmedMonsters[matchMonsterIndex].SpeechCondition)))
+                            (string.IsNullOrEmpty(ringData[matchRingKey].CharmedMonsters[matchMonsterIndex].SpeechCondition) ||
+                            GameStateQuery.CheckConditions(ringData[matchRingKey].CharmedMonsters[matchMonsterIndex].SpeechCondition)))
                         {
-                            GetCharmedSpeech(monster, matchRingKey, matchMonsterIndex, out string text, out Microsoft.Xna.Framework.Color? color, out int style, out int duration, out int preTimer);
+                            GetCharmedSpeech(monster, matchRingKey, matchMonsterIndex, out string text, out Color? color, out int style, out int duration, out int preTimer);
 
                             monster.showTextAboveHead(text, color, style, duration > 0 ? duration : 1500, preTimer > -1 ? preTimer : 0);
 
-                            if (AssetHandler.charmerRingData[matchRingKey].CharmedMonsters[matchMonsterIndex].Sound != null)
-                                DelayedAction.playSoundAfterDelay(AssetHandler.charmerRingData[matchRingKey].CharmedMonsters[matchMonsterIndex].Sound, preTimer, Game1.player.currentLocation, monsterPos);
+                            if (!string.IsNullOrEmpty(ringData[matchRingKey].CharmedMonsters[matchMonsterIndex].Sound))
+                                DelayedAction.playSoundAfterDelay(ringData[matchRingKey].CharmedMonsters[matchMonsterIndex].Sound, preTimer, Game1.player.currentLocation, monsterPos);
                             
                             monster.modData.Add($"{this.ModManifest.UniqueID}_monsterPetted", "true");
                         }
@@ -189,34 +190,35 @@ namespace MonsterHutchFramework
                 }
             }
         }
-        public static void GetCharmedSpeech(Monster monster, string ringKey, int monsterIndex, out string text, out Microsoft.Xna.Framework.Color? color, out int style, out int duration, out int preTimer)
+        public static void GetCharmedSpeech(Monster monster, string ringKey, int monsterIndex, out string text, out Color? color, out int style, out int duration, out int preTimer)
         {
             var speechList = new List<int>();
-            var ringData = AssetHandler.charmerRingData;
-            if (ringData[ringKey].CharmedMonsters[monsterIndex].SpeechBubbles.Count == 1)
+            var speechData = AssetHandler.charmerRingData[ringKey].CharmedMonsters[monsterIndex];
+            if (speechData.SpeechBubbles.Count == 1)
             {
-                text = ringData[ringKey].CharmedMonsters[monsterIndex].SpeechBubbles[0].Text ?? "<";
-                color = SpriteText.getColorFromIndex(ringData[ringKey].CharmedMonsters[monsterIndex].SpeechBubbles[0].Color);
-                style = ringData[ringKey].CharmedMonsters[monsterIndex].SpeechBubbles[0].Style;
-                duration = ringData[ringKey].CharmedMonsters[monsterIndex].SpeechBubbles[0].Duration;
-                preTimer = ringData[ringKey].CharmedMonsters[monsterIndex].SpeechBubbles[0].Pretimer;
+                text = speechData.SpeechBubbles[0].Text ?? "<";
+                color = SpriteText.getColorFromIndex(speechData.SpeechBubbles[0].Color);
+                style = speechData.SpeechBubbles[0].Style;
+                duration = speechData.SpeechBubbles[0].Duration;
+                preTimer = speechData.SpeechBubbles[0].Pretimer;
                 return;
             }
-            else if (ringData[ringKey].CharmedMonsters[monsterIndex].SpeechBubbles.Count > 1)
+            else if (speechData.SpeechBubbles.Count > 1)
             {
-                for (int i = 0; i < ringData[ringKey].CharmedMonsters[monsterIndex].SpeechBubbles.Count; i++)
+                for (int i = 0; i < speechData.SpeechBubbles.Count; i++)
                 {
-                    for (int j = 0; j < ringData[ringKey].CharmedMonsters[monsterIndex].SpeechBubbles[i].Weight; j++)
+                    for (int j = 0; j < speechData.SpeechBubbles[i].Weight; j++)
                     {
                         speechList.Add(i);
                     }
                 }
                 var speechIndex = Game1.random.Next(speechList.Count);
-                text = ringData[ringKey].CharmedMonsters[monsterIndex].SpeechBubbles[speechList[speechIndex]].Text ?? "<";
-                color = SpriteText.getColorFromIndex(ringData[ringKey].CharmedMonsters[monsterIndex].SpeechBubbles[speechList[speechIndex]].Color);
-                style = ringData[ringKey].CharmedMonsters[monsterIndex].SpeechBubbles[speechList[speechIndex]].Style;
-                duration = ringData[ringKey].CharmedMonsters[monsterIndex].SpeechBubbles[speechList[speechIndex]].Duration;
-                preTimer = ringData[ringKey].CharmedMonsters[monsterIndex].SpeechBubbles[speechList[speechIndex]].Pretimer;
+                var speechEntry = speechData.SpeechBubbles[speechList[speechIndex]];
+                text = speechEntry.Text ?? "<";
+                color = SpriteText.getColorFromIndex(speechEntry.Color);
+                style = speechEntry.Style;
+                duration = speechEntry.Duration;
+                preTimer = speechEntry.Pretimer;
                 return;
             }
             else

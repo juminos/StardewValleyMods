@@ -1,6 +1,7 @@
 ﻿# Monster Hutch Framework
 
-Monster Hutch Framework is a framework mod which expands the Slime Hutch into a Monster Hutch allowing custom monsters to be added to the game that function like slime hutch slimes.
+Monster Hutch Framework is a framework that allows monsters to be raised and produce in a new 'Monster Hutch' building using a new 'Monster Incubator' machine, along with custom 'charmer' rings.
+- new building 'Monster Hutch' can accomodate up to 40 monsters
 - new craftable 'Monster Incubator' produces custom monsters based on input
 - custom monsters that are 'watered' can produce items overnight
 - new 'charmer' rings can be defined to prevent damage from (and to) monsters

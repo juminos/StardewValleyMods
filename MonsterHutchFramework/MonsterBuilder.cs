@@ -212,7 +212,7 @@ namespace MonsterHutchFramework
                 monster.Scale = (float)Game1.random.Next(data.ScaleMin, data.ScaleMax) / 100f;
             else if (data.ScaleMin != 100 && data.ScaleMin > 0 && data.ScaleMin == data.ScaleMax)
                 monster.Scale = data.ScaleMax;
-            if (data.TexturePath != null)
+            if (!string.IsNullOrEmpty(data.TexturePath))
             {
                 try
                 {

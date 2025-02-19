@@ -111,7 +111,7 @@ internal class HutchPatches
                     }
                 }
 
-                if (monsterCount > 0 && monsterType.Value.ProduceData.Count > 0 && (monsterType.Value.ProduceCondition == null || GameStateQuery.CheckConditions(monsterType.Value.ProduceCondition)))
+                if (monsterCount > 0 && monsterType.Value.ProduceData.Count > 0 && (string.IsNullOrEmpty(monsterType.Value.ProduceCondition) || GameStateQuery.CheckConditions(monsterType.Value.ProduceCondition)))
                 {
                     for (int j = 0; j < (int)((float)monsterCount / monsterType.Value.NumberRequiredToProduce); j++)
                     {
@@ -135,7 +135,7 @@ internal class HutchPatches
                                     var weightedList = new List<int>();
                                     for (int i = 0; i < monsterType.Value.ProduceData.Count; i++)
                                     {
-                                        if (monsterType.Value.ProduceData[i].ItemId != null)
+                                        if (!string.IsNullOrEmpty(monsterType.Value.ProduceData[i].ItemId))
                                         {
                                             for (int k = 0; k < monsterType.Value.ProduceData[i].Weight; k++)
                                             {
@@ -148,7 +148,7 @@ internal class HutchPatches
                                     produceIndex = weightedList[index];
                                     produceId = monsterType.Value.ProduceData[produceIndex].ItemId;
                                 }
-                                if (monsterType.Value.DeluxeChance > 0 && monsterType.Value.DeluxeProduceData.Count > 0 && (monsterType.Value.DeluxeCondition == null || GameStateQuery.CheckConditions(monsterType.Value.DeluxeCondition)))
+                                if (monsterType.Value.DeluxeChance > 0 && monsterType.Value.DeluxeProduceData.Count > 0 && (string.IsNullOrEmpty(monsterType.Value.DeluxeCondition) || GameStateQuery.CheckConditions(monsterType.Value.DeluxeCondition)))
                                 {
                                     var deluxeChance = Math.Clamp(((double)monsterType.Value.DeluxeChance / 100.0) + Game1.player.DailyLuck, 0, 1);
                                     if (Game1.random.NextDouble() < deluxeChance && monsterType.Value.DeluxeProduceData.Count > 0)
@@ -158,7 +158,7 @@ internal class HutchPatches
                                         var weightedList = new List<int>();
                                         for (int i = 0; i < monsterType.Value.DeluxeProduceData.Count; i++)
                                         {
-                                            if (monsterType.Value.DeluxeProduceData[i].ItemId != null)
+                                            if (!string.IsNullOrEmpty(monsterType.Value.DeluxeProduceData[i].ItemId))
                                             {
                                                 for (int k = 0; k < monsterType.Value.DeluxeProduceData[i].Weight; k++)
                                                 {
