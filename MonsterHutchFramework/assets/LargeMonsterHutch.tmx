@@ -4,7 +4,7 @@
   <property name="AmbientLight" value="110 90 90"/>
   <property name="AmbientNightLight" value="150 120 100"/>
   <property name="FloorIDs" value="Floor 1"/>
-  <property name="Warp" value="17 20 Farm 14 19"/>
+  <property name="Warp" value="14 18 Farm 14 19"/>
  </properties>
  <tileset firstgid="1" name="paths" tilewidth="16" tileheight="16" tilecount="64" columns="4">
   <image source="paths" width="64" height="256"/>
