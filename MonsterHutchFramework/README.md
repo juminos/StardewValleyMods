@@ -23,31 +23,31 @@ Monster Hutch Framework is a framework mod which expands the Slime Hutch into a 
 ## Features
 
 ### Monster Hutch
-- The Slime Hutch is replaced by the Monster Hutch which has the same appearance as the Slime Hutch
-- The interior is over double the size of a Slime Hutch and allows up to 40 monsters (including slimes)
-- Monsters added by this mod do not multiply on their own like slimes do, but any slimes in the hutch will continue to multiply until total monster count has reached 20
-- The optional basement expansion can be turned on in the configuration options and allows the basement area to be used for casks, but monsters will not use it.
+- The Monster Hutch is a new building that has the pre-1.6 Slime Hutch building exterior (basically just a bigger version of the current slime hutch)
+- The interior is considered a slime hutch, so slime breeding will still function there (default 20 slime capacity limit), but can hold up to 40 total monsters
+- Monsters added by this mod do not multiply on their own like slimes do and must be incubated in the new 'Monster Incubator'
+- An optional basement expansion can be turned on in the configuration options which adds a slightly smaller 'basement' area that monsters cannot visit, but casks will work.
 
 ### Monster Incubator
-- The Monster Incubator has a similar appearance to the Slime Incubator but is only used to incubate monsters added by content packs for this framework
-- The recipe is acquired upon receiving a letter from the wizard after reaching 6 hearts
+- The Monster Incubator has a similar appearance to the Slime Incubator and is used to incubate monsters added by content packs for this framework
+- The recipe is acquired upon receiving a letter from the wizard upon reaching 6 hearts
 - Crafting it requires 2 Iridium Bars and 50 Void Essence
-- Input items are defined by content packs, and 10 Void Essence is also consumed to start incubation
+- Valid input items are defined by content packs, and 10 Void Essence is also consumed as 'fuel' to start incubation
 
 ### Monsters
-- The monsters created by this mod are based on a subset of the vanilla game monsters, so their behavior will be similar
-- These monsters will take and inflict damage to the player like their wild counterparts (unless the right monster charmer ring is worn)
-- The water troughs are used by both slimes and this mod's monsters with the same ratio (1 trough waters 5 monsters)
+- The monsters created by this mod are based on a subset of the vanilla game monsters, so their behavior will replicate the base type used
+- These monsters will target and inflict damage to the player like their wild counterparts (unless the right monster charmer ring is worn)
+- The water troughs are used by both slimes and this mod's monsters with the same ratio (1 trough 'waters' up to 5 monsters)
 - If a monster has been 'watered', it can produce items overnight similar to coop animals (Auto-Grabber will work depending on the item type)
 
 ### Charmer Rings
-- Vanilla or modded rings can be defined as 'charmer' rings similar to the Slime Charmer Ring
-- In addition to preventing damage to the player, these charmer rings (and the slime charmer ring) will also prevent the player from dealing damage to the relevant monster.
+- Vanilla or mod-added rings can be defined as 'charmer' rings for these new monsters, similar to the Slime Charmer Ring
+- In addition to preventing damage to the player, these charmer rings (as well as the Slime Charmer Ring) will also prevent the player from dealing damage to the relevant monster.
 
 ## Configuration Options
 
-- HutchExpansion: Whether to add basement expansion upgrade for the Monster Hutch to Robin's build menu (the basement cannot be used by monsters, but casks will work there). Default: false
-- RandomizeMonsterPositions: Whether to randomize monster positions in the hutch every day (to prevent them from clumping up). Default: true
+- HutchExpansion: Whether to add a basement expansion upgrade for the Monster Hutch to Robin's build menu (the basement cannot be used by monsters, but casks will work there). Default: false
+- RandomizeMonsterPositions: Whether to randomize monster positions in the hutch every day (to prevent them from clumping up on one tile). Default: true
 - SkipRandomizeSlimePositions: Whether the above setting should leave slime positions alone. Default: false
 - HutchSlimeCapacity: The maximum slime capacity for the Monster Hutch. Default: 20
 - HutchMonsterCapacity: The total monster capacity (including slimes) for the Monster Hutch. Default: 40

@@ -111,15 +111,12 @@ namespace MonsterHutchFramework
 
             api.AddBoolOption(manifest, () => config.IncubatorIsAffectedByCoopmaster, (val) => config.IncubatorIsAffectedByCoopmaster = val,
                 GetConfigName(mod, "IncubatorIsAffectedByCoopmaster"), GetConfigDescription(mod, "IncubatorIsAffectedByCoopmaster"));
-
             api.AddBoolOption(manifest, () => config.IncubatorWobblesWhileIncubating, (val) => config.IncubatorWobblesWhileIncubating = val,
                 GetConfigName(mod, "IncubatorWobblesWhileIncubating"));
-
             api.AddTextOption(manifest, () => config.IncubatorAdditionalRequiredItemID, (val) => config.IncubatorAdditionalRequiredItemID = val,
                 GetConfigName(mod, "IncubatorAdditionalRequiredItemID"), GetConfigDescription(mod, "IncubatorAdditionalRequiredItemID"));
             api.AddNumberOption(manifest, () => config.IncubatorAdditionalRequiredItemCount, (val) => config.IncubatorAdditionalRequiredItemCount = val,
                 GetConfigName(mod, "IncubatorAdditionalRequiredItemCount"), GetConfigDescription(mod, "IncubatorAdditionalRequiredItemCount"), 0);
-
             api.AddTextOption(manifest, () => config.IncubatorRecipe, (val) => config.IncubatorRecipe = val,
                 GetConfigName(mod, "IncubatorRecipe"), GetConfigDescription(mod, "IncubatorRecipe"));
             api.AddTextOption(manifest, () => config.IncubatorRecipeUnlock, (val) => config.IncubatorRecipeUnlock = val,
