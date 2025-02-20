@@ -116,7 +116,7 @@ namespace MonsterHutchFramework
                             continue;
                         int tries = 50;
                         Vector2 tile = hutch.getRandomTile();
-                        while ((!hutch.CanItemBePlacedHere(tile, false, CollisionMask.All, ~CollisionMask.Objects, false, false) || tile.Y >= 12f) && tries > 0)
+                        while ((!hutch.CanItemBePlacedHere(tile, false, CollisionMask.All, ~CollisionMask.Objects, false, false) || tile.Y >= 17f) && tries > 0)
                         {
                             tile = hutch.getRandomTile();
                             tries--;
