@@ -64,15 +64,15 @@ namespace MonsterHutchFramework
                     var monsterList = new List<Monster>();
                     for (int i = 0; i < hutch.characters.Count; i++)
                     {
-                        if (hutch.characters[i] is Monster monster && monster is not null && monster is not GreenSlime)
+                        if (hutch.characters[i] is Monster monster && monster is not null && monster.modData.ContainsKey("{{ModId}}_Name"))
                             monsterList.Add(monster);
                     }
-                    if (monsterList.Count < 0)
+                    if (monsterList.Count > 0)
                     {
                         foreach (Monster monster in monsterList)
                         {
                             var pos = monster.Position;
-                            var name = monster.Name;
+                            var name = monster.modData["{{ModId}}_Name"];
                             bool foundMonster = false;
                             foreach (var monsterData in AssetHandler.monsterHutchData)
                             {

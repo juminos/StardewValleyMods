@@ -244,8 +244,8 @@ namespace MonsterHutchFramework
             monster.farmerPassesThrough = !data.FarmerCollision;
             monster.moveTowardPlayerThreshold.Value = data.MoveTowardPlayerThresholdOverride;
 
-            // change this to use modData entry instead
-            monster.Name = data.Name;
+            monster.modData.Add("{{ModId}}_Name", data.Name);
+            //monster.Name = data.Name;
         }
     }
 }

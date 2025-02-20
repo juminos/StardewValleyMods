@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using HarmonyLib;
 using Microsoft.Xna.Framework;
@@ -81,30 +82,21 @@ namespace MonsterHutchFramework.HarmonyPatches
         }
         public static bool MonsterIsCharmed(Monster monster, Farmer who, out string? matchRingKey, out int matchMonsterIndex)
         {
+            bool isModded = monster.modData.ContainsKey("{{ModId}}_Name");
             var ringData = AssetHandler.charmerRingData;
-            if (who.rightRing.Value == null && who.leftRing.Value == null)
+
+            if (who.leftRing.Value == null && who.rightRing.Value == null)
             {
                 matchRingKey = null;
                 matchMonsterIndex = -1;
                 return false;
             }
-            foreach(var item in ringData)
+            foreach (var item in ringData)
             {
+                var charmedData = ringData[item.Key].CharmedMonsters;
                 if (who.leftRing.Value != null)
                 {
-                    if (item.Value.RingId == who.leftRing.Value.ItemId)
-                    {
-                        for (int i = 0; i < ringData[item.Key].CharmedMonsters.Count; i++)
-                        {
-                            if (ringData[item.Key].CharmedMonsters[i].MonsterName == monster.Name)
-                            {
-                                matchRingKey = item.Key;
-                                matchMonsterIndex = i;
-                                return true;
-                            }
-                        }
-                    }
-                    else if (who.leftRing.Value is CombinedRing ring)
+                    if (who.leftRing.Value is CombinedRing ring)
                     {
                         foreach (Ring combinedRing in ring.combinedRings)
                         {
@@ -112,13 +104,27 @@ namespace MonsterHutchFramework.HarmonyPatches
                             {
                                 for (int i = 0; i < ringData[item.Key].CharmedMonsters.Count; i++)
                                 {
-                                    if (ringData[item.Key].CharmedMonsters[i].MonsterName == monster.Name)
+                                    if (isModded && charmedData[i].MonsterName == monster.modData["{{ModId}}_Name"] ||
+                                        (!isModded && charmedData[i].MonsterName == monster.Name))
                                     {
                                         matchRingKey = item.Key;
                                         matchMonsterIndex = i;
                                         return true;
                                     }
                                 }
+                            }
+                        }
+                    }
+                    else if (item.Value.RingId == who.leftRing.Value.ItemId)
+                    {
+                        for (int i = 0; i < ringData[item.Key].CharmedMonsters.Count; i++)
+                        {
+                            if (isModded && charmedData[i].MonsterName == monster.modData["{{ModId}}_Name"] ||
+                                (!isModded && charmedData[i].MonsterName == monster.Name))
+                            {
+                                matchRingKey = item.Key;
+                                matchMonsterIndex = i;
+                                return true;
                             }
                         }
                     }
@@ -126,19 +132,7 @@ namespace MonsterHutchFramework.HarmonyPatches
                 }
                 if (who.rightRing.Value != null)
                 {
-                    if (item.Value.RingId == who.rightRing.Value.ItemId)
-                    {
-                        for (int i = 0; i < ringData[item.Key].CharmedMonsters.Count; i++)
-                        {
-                            if (ringData[item.Key].CharmedMonsters[i].MonsterName == monster.Name)
-                            {
-                                matchRingKey = item.Key;
-                                matchMonsterIndex = i;
-                                return true;
-                            }
-                        }
-                    }
-                    else if (who.rightRing.Value is CombinedRing ring)
+                    if (who.rightRing.Value is CombinedRing ring)
                     {
                         foreach (Ring combinedRing in ring.combinedRings)
                         {
@@ -146,13 +140,27 @@ namespace MonsterHutchFramework.HarmonyPatches
                             {
                                 for (int i = 0; i < ringData[item.Key].CharmedMonsters.Count; i++)
                                 {
-                                    if (ringData[item.Key].CharmedMonsters[i].MonsterName == monster.Name)
+                                    if (isModded && charmedData[i].MonsterName == monster.modData["{{ModId}}_Name"] ||
+                                        (!isModded && charmedData[i].MonsterName == monster.Name))
                                     {
                                         matchRingKey = item.Key;
                                         matchMonsterIndex = i;
                                         return true;
                                     }
                                 }
+                            }
+                        }
+                    }
+                    else if (item.Value.RingId == who.rightRing.Value.ItemId)
+                    {
+                        for (int i = 0; i < ringData[item.Key].CharmedMonsters.Count; i++)
+                        {
+                            if (isModded && charmedData[i].MonsterName == monster.modData["{{ModId}}_Name"] ||
+                                (!isModded && charmedData[i].MonsterName == monster.Name))
+                            {
+                                matchRingKey = item.Key;
+                                matchMonsterIndex = i;
+                                return true;
                             }
                         }
                     }
