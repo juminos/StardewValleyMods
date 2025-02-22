@@ -26,7 +26,11 @@ namespace MonstersTheFramework
             Helper.Events.Player.Warped += (e, a) => DoSpawning(SpawnTryTime.OnLocationChange, a.NewLocation.NameOrUniqueName);
 
             helper.Events.Content.AssetRequested += this.OnAssetRequested;
+        }
 
+        public override object? GetApi()
+        {
+            return new MonstersTheFrameworkAPI();
         }
 
         private void OnAssetRequested(object sender, AssetRequestedEventArgs e)
