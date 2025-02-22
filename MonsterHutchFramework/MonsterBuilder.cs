@@ -1,10 +1,7 @@
-﻿
-using System.Threading;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using StardewModdingAPI;
 using StardewValley;
 using StardewValley.Monsters;
-using static StardewValley.Minigames.CraneGame;
 
 namespace MonsterHutchFramework
 {

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace MonstersTheFramework
+﻿namespace MonstersTheFramework
 {
     public class Weighted<T>// : ICloneable where T : ICloneable
     {
