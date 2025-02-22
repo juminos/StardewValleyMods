@@ -30,7 +30,7 @@ namespace MonsterHutchFramework
         public int HutchMonsterCapacity { get; set; } = 40;
         public bool DoubleNodeDrops { get; set; } = true;
         public bool IncubatorIsAffectedByCoopmaster { get; set; } = true;
-        public bool IncubatorWobblesWhileIncubating { get; set; } = true;
+        public bool IncubatorWobblesWhileIncubating { get; set; } = false;
         internal const string DefaultIncubatorAdditionalRequiredItemID = "(O)769";
         public string IncubatorAdditionalRequiredItemID { get; set; } = DefaultIncubatorAdditionalRequiredItemID;
         public int IncubatorAdditionalRequiredItemCount { get; set; } = 10;

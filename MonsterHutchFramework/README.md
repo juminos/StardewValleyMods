@@ -86,7 +86,7 @@ This consists of a string -> model lookup where...
 | `MaxHealthOverride` | (_Optional_) The amount of health the monster has (overriding the base monster health) | `int` |
 | `ScaleMin` | (_Optional_) The minimum size scale percentage (random value chosen between ScaleMin and ScaleMax when monster is created/reloaded). <br>Example: The game uses this to randomize Dust Sprite size with ScaleMin = 75 and ScaleMax = 101 | `int` |
 | `ScaleMax` | (_Optional_) The maximum size scale percentage (ScaleMin and ScaleMax can be set to the same value for fixed scaling). | `int` |
-| `TexturePath` | The texture to use for this monster (if not defined will use base monster texture) | `string` |
+| `TexturePath` | (_Optional_) The texture to use for this monster (if not defined will use base monster texture) | `string` |
 | `NumberRequiredToProduce` | (_Optional_) How many watered monsters of this type are required for each overnight produce chance. Default: 1 <br>e.g. In the vanilla game it takes 5 watered slimes to produce a slime ball. | `int` |
 | `ProduceChance` | (_Optional_) The percent chance this monster will produce overnight if watered conditions are met. Default: 100 | `int` |
 | `ProduceCondition` | (_Optional_) An additional condition (game state query) that must pass for this moster to produce overnight. | `string` |

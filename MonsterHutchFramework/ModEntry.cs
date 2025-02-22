@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using MonsterHutchFramework.HarmonyPatches;
 using StardewValley.BellsAndWhistles;
+using StardewModdingAPI.Utilities;
 
 namespace MonsterHutchFramework
 {
@@ -91,7 +92,10 @@ namespace MonsterHutchFramework
                                 }
                             }
                             if (!foundMonster)
-                                SMonitor.Log($"monster name {name} not found in monster data", LogLevel.Error);
+                            {
+                                SMonitor.Log($"monster name {name} not found in monster data, removing monster", LogLevel.Error);
+                                hutch.characters.Remove(monster);
+                            }
                         }
                     }
                 }
@@ -178,11 +182,18 @@ namespace MonsterHutchFramework
                             GameStateQuery.CheckConditions(ringData[matchRingKey].CharmedMonsters[matchMonsterIndex].SpeechCondition)))
                         {
                             GetCharmedSpeech(monster, matchRingKey, matchMonsterIndex, out string text, out Color? color, out int style, out int duration, out int preTimer);
-
+                            var playSound = ringData[matchRingKey].CharmedMonsters[matchMonsterIndex].Sound;
+                            var date = SDate.Now();
+                            if ((monster is ShadowBrute || monster is ShadowGirl || monster is ShadowGuy || monster is ShadowShaman || monster is Shooter) &&
+                                date.DayOfWeek == DayOfWeek.Friday)
+                            {
+                                text = "...";
+                                playSound = "";
+                            }
                             monster.showTextAboveHead(text, color, style, duration > 0 ? duration : 1500, preTimer > -1 ? preTimer : 0);
 
-                            if (!string.IsNullOrEmpty(ringData[matchRingKey].CharmedMonsters[matchMonsterIndex].Sound))
-                                DelayedAction.playSoundAfterDelay(ringData[matchRingKey].CharmedMonsters[matchMonsterIndex].Sound, preTimer, Game1.player.currentLocation, monsterPos);
+                            if (!string.IsNullOrEmpty(playSound))
+                                DelayedAction.playSoundAfterDelay(playSound, preTimer, Game1.player.currentLocation, monsterPos);
                             
                             monster.modData.Add($"{this.ModManifest.UniqueID}_monsterPetted", "true");
                         }
