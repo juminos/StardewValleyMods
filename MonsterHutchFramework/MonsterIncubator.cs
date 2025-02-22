@@ -143,6 +143,7 @@ namespace MonsterHutchFramework
                         Id = "coin",
                         Delay = 0
                     };
+
                     var defaultMachineSpriteEffect = new MachineEffects
                     {
                         Id = "Default",

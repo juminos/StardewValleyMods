@@ -12,6 +12,12 @@ namespace MonsterHutchFramework
     {
         public static Monster CreateMonster(Vector2 vector, MonsterHutchData data)
         {
+            if (string.IsNullOrEmpty(data.Name) || string.IsNullOrEmpty(data.MonsterType))
+            {
+                var monster = new Monster();
+                ModEntry.SMonitor.Log($"MonsterType and/or Name fields are missing.", LogLevel.Error);
+                return monster;
+            }
             var type = data.MonsterType;
             switch (type)
             {
@@ -88,12 +94,14 @@ namespace MonsterHutchFramework
                 case "Pepper Rex":
                     var rex = new DinoMonster(vector);
                     UpdateMonsterStats(rex, data);
+                    rex.timeUntilNextAttack = 99999999;
                     return rex;
-                case "Duggy":
-                case "Magma Duggy":
-                    var duggy = new Duggy(vector);
-                    UpdateMonsterStats(duggy, data);
-                    return duggy;
+                // Duggy can only appear in tillable tiles 
+                //case "Duggy":
+                //case "Magma Duggy":
+                //    var duggy = new Duggy(vector);
+                //    UpdateMonsterStats(duggy, data);
+                //    return duggy;
                 case "Dust Spirit":
                     var dust = new DustSpirit(vector);
                     UpdateMonsterStats(dust, data);
@@ -107,18 +115,20 @@ namespace MonsterHutchFramework
                     UpdateMonsterStats(fly, data);
                     return fly;
                 case "Ghost":
-                //case "Carbon Ghost": // uses name field for animation update
+                case "Carbon Ghost":
                 case "Putrid Ghost":
                     var ghost = new Ghost(vector, type);
                     UpdateMonsterStats(ghost, data);
                     return ghost;
-                case "Grub":
-                    var grub = new Grub(vector);
-                    UpdateMonsterStats(grub, data);
-                    return grub;
+                // Don't really do anything after spawning
+                //case "Grub":
+                //    var grub = new Grub(vector);
+                //    UpdateMonsterStats(grub, data);
+                //    return grub;
                 case "Hot Head":
                     var hothead = new HotHead(vector);
                     UpdateMonsterStats(hothead, data);
+                    hothead.timeUntilExplode.Value = 99999999.0f;
                     return hothead;
                 case "Lava Lurk":
                     var lurk = new LavaLurk(vector);
@@ -132,14 +142,13 @@ namespace MonsterHutchFramework
                     var metalhead = new MetalHead("Metal Head", vector);
                     UpdateMonsterStats(metalhead, data);
                     return metalhead;
+                // Warning: damage to farmer resets to default after reassembling
                 case "Mummy":
                     var mummy = new Mummy(vector);
                         UpdateMonsterStats(mummy, data);
                         return mummy;
                 case "Rock Crab":
                 case "Lava Crab":
-                case "Iridium Crab":
-                case "False Magma Cap":
                 case "Stick Bug":
                     var crab = new RockCrab(vector);
                     if (type == "Stick Bug")
@@ -147,7 +156,14 @@ namespace MonsterHutchFramework
                     crab.waiter = false;
                     UpdateMonsterStats(crab, data);
                     return crab;
-
+                case "Iridium Crab":
+                // truffle crab behavior doesn't really work in hutch
+                //case "Truffle Crab":
+                case "False Magma Cap":
+                    var namedCrab = new RockCrab(vector, type);
+                    namedCrab.waiter = false;
+                    UpdateMonsterStats(namedCrab, data);
+                    return namedCrab;
                 case "Stone Golem":
                 case "Wilderness Golem":
                     var golem = new RockGolem(vector);
@@ -158,14 +174,15 @@ namespace MonsterHutchFramework
                     var serpent = new Serpent(vector, type);
                     UpdateMonsterStats(serpent, data);
                     return serpent;
-                case "Shadow Girl":
-                    var girl = new ShadowGirl(vector);
-                    UpdateMonsterStats(girl, data);
-                    return girl;
-                case "Shadow Guy":
-                    var guy = new ShadowGuy(vector);
-                    UpdateMonsterStats(guy, data);
-                    return guy;
+                // Incomplete code
+                //case "Shadow Girl":
+                //    var girl = new ShadowGirl(vector);
+                //    UpdateMonsterStats(girl, data);
+                //    return girl;
+                //case "Shadow Guy":
+                //    var guy = new ShadowGuy(vector);
+                //    UpdateMonsterStats(guy, data);
+                //    return guy;
                 case "Shadow Brute":
                     var brute = new ShadowBrute(vector);
                     UpdateMonsterStats(brute, data);
@@ -191,11 +208,18 @@ namespace MonsterHutchFramework
                     var kid = new SquidKid(vector);
                     UpdateMonsterStats(kid, data);
                     return kid;
-                //case "CustomMonster":
-                //    var custom = new MonstersTheFramework.CustomMonster.CustomMonster(data.Name);
-                //    UpdateMonsterStats(custom, data);
-                //    custom.Position = vector;
-                //    return custom;
+                case "CustomMonster":
+                    var api = ModEntry.Mod.Helper.ModRegistry.GetApi<IMonstersTheFrameworkApi>("juminos.MonstersTheFramework1.6");
+                    if (api is null)
+                    {
+                        var errorApi = new Monster();
+                        ModEntry.SMonitor.Log($"MonstersTheFrameworkApi is null.", LogLevel.Error);
+                        return errorApi;
+                    }
+                    Monster customMonster = api.GetCustomMonster(data.Name);
+                    UpdateMonsterStats(customMonster, data);
+                    customMonster.Position = vector;
+                    return customMonster;
                 default:
                     var monster = new Monster();
                     ModEntry.SMonitor.Log($"Monster type {type} not found in data.", LogLevel.Error);
@@ -240,7 +264,10 @@ namespace MonsterHutchFramework
             if (data.DamageToFarmerOverride > 0)
                 monster.DamageToFarmer = data.DamageToFarmerOverride;
             if (data.MaxHealthOverride > 0)
+            {
                 monster.MaxHealth = data.MaxHealthOverride;
+                monster.Health = monster.MaxHealth;
+            }
             monster.farmerPassesThrough = !data.FarmerCollision;
             monster.moveTowardPlayerThreshold.Value = data.MoveTowardPlayerThresholdOverride;
 
