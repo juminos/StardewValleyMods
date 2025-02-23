@@ -205,18 +205,18 @@ namespace MonsterHutchFramework
                     var kid = new SquidKid(vector);
                     UpdateMonsterStats(kid, data);
                     return kid;
-                case "CustomMonster":
-                    var api = ModEntry.Mod.Helper.ModRegistry.GetApi<IMonstersTheFrameworkApi>("juminos.MonstersTheFramework1.6");
-                    if (api is null)
-                    {
-                        var errorApi = new Monster();
-                        ModEntry.SMonitor.Log($"MonstersTheFrameworkApi is null.", LogLevel.Error);
-                        return errorApi;
-                    }
-                    Monster customMonster = api.GetCustomMonster(data.Name);
-                    UpdateMonsterStats(customMonster, data);
-                    customMonster.Position = vector;
-                    return customMonster;
+                //case "CustomMonster":
+                //    var api = ModEntry.Mod.Helper.ModRegistry.GetApi<IMonstersTheFrameworkApi>("juminos.MonstersTheFramework1.6");
+                //    if (api is null)
+                //    {
+                //        var errorApi = new Monster();
+                //        ModEntry.SMonitor.Log($"MonstersTheFrameworkApi is null.", LogLevel.Error);
+                //        return errorApi;
+                //    }
+                //    Monster customMonster = api.GetCustomMonster(data.Name);
+                //    UpdateMonsterStats(customMonster, data);
+                //    customMonster.Position = vector;
+                //    return customMonster;
                 default:
                     var monster = new Monster();
                     ModEntry.SMonitor.Log($"Monster type {type} not found in data.", LogLevel.Error);
