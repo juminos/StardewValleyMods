@@ -43,8 +43,6 @@ namespace MonstersTheFramework
                 if (!string.IsNullOrEmpty(state.InheritsFrom))
                     state = state.InheritFrom(type.States[state.InheritsFrom], type.States);
 
-                Mod.SMonitor.Log($"{Type.Name} current state is {currentState.Value}", LogLevel.Trace);
-
                 return state;
             }
         }
@@ -59,6 +57,7 @@ namespace MonstersTheFramework
             displayName = Type.Name;
             Name = Type.CorrespondingMonsterGoal;
             UpdateState(Type.StartingState);
+            modData.Add("MonstersTheFramework.ID", key);
         }
 
         protected override void initNetFields()
@@ -78,7 +77,7 @@ namespace MonstersTheFramework
 
         public override int takeDamage(int damage, int xTrajectory, int yTrajectory, bool isBomb, double addedPrecision, Farmer who)
         {
-            Mod.SMonitor.Log($"custom monster taking damage", LogLevel.Trace);
+            ModEntry.SMonitor.Log($"custom monster taking damage", LogLevel.Trace);
 
             var state = CurrentState;
             if (isBomb && state.CanReceiveDamageFromBomb == false)
@@ -108,7 +107,6 @@ namespace MonstersTheFramework
                     actualDrop = new StardewValley.Object(chosenDrop.Drop, chosenDrop.Quantity);
 
                     ret.Add(actualDrop);
-
                 }
             }
 
@@ -124,7 +122,7 @@ namespace MonstersTheFramework
             if (debuff == null)
                 return;
 
-            //if ( int.TryParse( debuff, out int debuffId ) )
+            if ( int.TryParse( debuff, out int debuffId ) )
             {
                 if (who == Game1.player)
                     Game1.player.applyBuff(debuff);
@@ -149,21 +147,17 @@ namespace MonstersTheFramework
 
             var state = CurrentState;
             if (this.Sprite.Animate(time, state.Animation.StartingIndex, state.Animation.AnimationLength, state.Animation.TicksPerFrame / 60f * 1000))
-            {
                 Sprite.endOfAnimationFunction?.Invoke(null);
-            }
 
             TriggerEvent("OnTick");
         }
 
         public override void updateMovement(GameLocation location, GameTime time)
         {
-            Mod.SMonitor.Log($"custom monster updating movement", LogLevel.Trace);
-
             var state = CurrentState;
             if (state.Movement == null)
             {
-                Mod.SMonitor.Log($"movement is null", LogLevel.Trace);
+                ModEntry.SMonitor.Log($"movement is null", LogLevel.Trace);
 
                 return;
             }
@@ -229,12 +223,8 @@ namespace MonstersTheFramework
 
         private void UpdateState(string newState)
         {
-            Mod.SMonitor.Log($"current state is {currentState.Value}, attempt setting to {newState}", LogLevel.Trace);
-
             currentState.Value = newState;
             var state = CurrentState;
-
-            Mod.SMonitor.Log($"updated state is {currentState.Value}", LogLevel.Trace);
 
             this.resilience.Value = state.Defense ?? 0;
             this.isGlider.Value = state.IsGlider ?? false;
@@ -246,13 +236,7 @@ namespace MonstersTheFramework
 
             if (state.Animation != null)
             {
-                // juminos-changed loading textures can be done in CP
-                //var texture = Mod.instance.Helper.ModContent.Load<Texture2D>(state.Animation.SpriteSheet);
-                //var texturePath = Mod.instance.Helper.ModContent.GetInternalAssetName(state.Animation.SpriteSheet).BaseName;
                 var texturePath = state.Animation.SpriteSheet;
-
-                Mod.SMonitor.Log($"updating spritesheet to {state.Animation.SpriteSheet}", LogLevel.Trace);
-
                 Sprite = new AnimatedSprite(texturePath, state.Animation.StartingIndex, (int)state.Animation.FrameSize.X, (int)state.Animation.FrameSize.Y);
                 Sprite.interval = state.Animation.TicksPerFrame / 60f;
                 Sprite.loop = state.Animation.Loops;
@@ -267,17 +251,11 @@ namespace MonstersTheFramework
 
         private void TriggerEvent(string evtName)
         {
-            //if ( evtName != "OnTick" )
-            ;// Log.Debug( "triggering event " + evtName );
-
-            Mod.SMonitor.Log($"{evtName} event triggered", LogLevel.Trace);
+            //if (evtName != "OnTick")
+            //    Mod.SMonitor.Log( "triggering event " + evtName, LogLevel.Debug);
 
             var state = CurrentState;
-
-            Mod.SMonitor.Log($"current state is {currentState.Value}", LogLevel.Trace);
-
             using DataTable dt = new();
-
             for (int i = 0; i < state.Events.Count; ++i)
             {
                 var evt = state.Events[i];
@@ -286,15 +264,9 @@ namespace MonstersTheFramework
 
                 if (evt.When == null || (bool)dt.Compute(DoConditionReplacements(evt.When), string.Empty))
                 {
-                    Mod.SMonitor.Log($"found state match {evt.Event} with {evt.Actions.Count} actions", LogLevel.Trace);
-
                     string oldState = currentState.Value;
                     foreach (var action in evt.Actions)
-                    {
-                        Mod.SMonitor.Log($"doing action {action.Key}, {action.Value.ToString()}", LogLevel.Trace);
-
                         DoAction(action.Key, action.Value.ToString());
-                    }
                     if (currentState.Value != oldState)
                         break;
                 }
@@ -306,7 +278,7 @@ namespace MonstersTheFramework
             switch (action.ToLower())
             {
                 case "shoot":
-                    Mod.SMonitor.Log("TODO", StardewModdingAPI.LogLevel.Warn);
+                    ModEntry.SMonitor.Log("TODO", StardewModdingAPI.LogLevel.Warn);
                     return;
                 case "state":
                     UpdateState(args);
@@ -342,7 +314,7 @@ namespace MonstersTheFramework
                     val = (float)val_;
                 else
                 {
-                    Mod.SMonitor.Log("Variable result for " + action + " in " + currentState.Value + " resulted in something not a number", StardewModdingAPI.LogLevel.Warn);
+                    ModEntry.SMonitor.Log("Variable result for " + action + " in " + currentState.Value + " resulted in something not a number", StardewModdingAPI.LogLevel.Warn);
                     return;
                 }
                 if (!vars.ContainsKey(v.Trim()))
@@ -354,8 +326,6 @@ namespace MonstersTheFramework
 
         private string DoConditionReplacements(string cond)
         {
-            Mod.SMonitor.Log($"checking event condition: {cond}", LogLevel.Warn);
-
             cond = cond.Replace("$HEALTH", health.Value.ToString());
             cond = cond.Replace("$STATE_TIMER", stateTimer.Value.ToString());
             if (cond.Contains("$CLOSEST_PLAYER"))
@@ -363,11 +333,7 @@ namespace MonstersTheFramework
             if (cond.Contains("$RANDOM"))
                 cond = cond.Replace("$RANDOM", Game1.random.NextDouble().ToString());
             foreach (var v in vars.Pairs)
-            {
                 cond = cond.Replace("$$" + v.Key, v.Value.ToString());
-            }
-
-            Mod.SMonitor.Log($"returning event condition: {cond}", LogLevel.Warn);
 
             return cond;
         }

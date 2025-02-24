@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System.Diagnostics.CodeAnalysis;
+using Microsoft.Xna.Framework;
 using StardewModdingAPI;
 using StardewValley;
 using StardewValley.Monsters;
@@ -117,11 +118,10 @@ namespace MonsterHutchFramework
                     var ghost = new Ghost(vector, type);
                     UpdateMonsterStats(ghost, data);
                     return ghost;
-                // Don't really do anything after spawning
-                //case "Grub":
-                //    var grub = new Grub(vector);
-                //    UpdateMonsterStats(grub, data);
-                //    return grub;
+                case "Grub": // Don't really do anything after spawning
+                    var grub = new Grub(vector);
+                    UpdateMonsterStats(grub, data);
+                    return grub;
                 case "Hot Head":
                     var hothead = new HotHead(vector);
                     UpdateMonsterStats(hothead, data);
@@ -139,8 +139,7 @@ namespace MonsterHutchFramework
                     var metalhead = new MetalHead("Metal Head", vector);
                     UpdateMonsterStats(metalhead, data);
                     return metalhead;
-                // Warning: damage to farmer resets to default after reassembling
-                case "Mummy":
+                case "Mummy": // Warning: damage to farmer resets to default after reassembling
                     var mummy = new Mummy(vector);
                         UpdateMonsterStats(mummy, data);
                         return mummy;
@@ -154,8 +153,7 @@ namespace MonsterHutchFramework
                     UpdateMonsterStats(crab, data);
                     return crab;
                 case "Iridium Crab":
-                // truffle crab behavior doesn't really work in hutch
-                //case "Truffle Crab":
+                case "Truffle Crab":  // not recommended, strange behavior
                 case "False Magma Cap":
                     var namedCrab = new RockCrab(vector, type);
                     namedCrab.waiter = false;
@@ -223,6 +221,14 @@ namespace MonsterHutchFramework
                     return monster;
             }
         }
+        private bool TryGetCustomMonster(string key, [NotNullWhen(true)] out ICustomMonster? customMonster)
+        {
+            customMonster = null;
+            return
+                this.GameHelper.CustomMonster.IsLoaded
+                && this.GameHelper.CustomMonster.ModApi.TryGetCustomMonster(monster, out customMonster);
+        }
+
         public static void UpdateMonsterStats (Monster monster, MonsterHutchData data)
         {
             // HideShadow does nothing, the monster's drawAboveAllLayers method ignores it
@@ -269,7 +275,6 @@ namespace MonsterHutchFramework
             monster.moveTowardPlayerThreshold.Value = data.MoveTowardPlayerThresholdOverride;
 
             monster.modData.Add("{{ModId}}_Name", data.Name);
-            //monster.Name = data.Name;
         }
     }
 }

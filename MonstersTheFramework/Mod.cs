@@ -6,15 +6,17 @@ using StardewValley;
 namespace MonstersTheFramework
 {
     // TODO: Chunks
-    public class Mod : StardewModdingAPI.Mod
+    public class ModEntry : Mod
     {
         public static Mod instance;
         internal static IMonitor SMonitor;
+        internal static IModHelper SHelper;
 
         public override void Entry(IModHelper helper)
         {
             instance = this;
             SMonitor = Monitor;
+            SHelper = Helper;
 
             Helper.ConsoleCommands.Add("world_spawnmonster", "Spawn a (custom) monster.", OnSpawnCommand);
 
@@ -27,7 +29,7 @@ namespace MonstersTheFramework
 
         public override object? GetApi()
         {
-            return new MonstersTheFrameworkAPI();
+            return new MonstersTheFrameworkAPI(Helper);
         }
 
         private void OnAssetRequested(object sender, AssetRequestedEventArgs e)
