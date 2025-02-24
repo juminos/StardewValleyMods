@@ -6,6 +6,6 @@
     "UniqueID": "juminos.MonsterHutchFramework",
     "EntryDll": "MonsterHutchFramework.dll",
     "MinimumApiVersion": "4.0.0",
-    "UpdateKeys": [  ],
+    "UpdateKeys": [ "Nexus:31782" ],
     "Dependencies": []
 }
