@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using StardewValley;
 using StardewValley.Monsters;
 using StardewValley.Objects;
+using static StardewValley.Monsters.Ghost;
 
 namespace MonsterHutchFramework.HarmonyPatches
 {
@@ -31,6 +32,14 @@ namespace MonsterHutchFramework.HarmonyPatches
             harmony.Patch(
                 original: AccessTools.Method(typeof(Shooter), nameof(Shooter.behaviorAtGameTick), new[] { typeof(GameTime) }),
                 prefix: new HarmonyMethod(typeof(RingPatches), nameof(ShadowShooterPatch_Prefix)));
+
+            harmony.Patch(
+                original: AccessTools.Method(typeof(BlueSquid), nameof(Shooter.behaviorAtGameTick), new[] { typeof(GameTime) }),
+                prefix: new HarmonyMethod(typeof(RingPatches), nameof(BlueSquidPatch_Prefix)));
+
+            harmony.Patch(
+                original: AccessTools.Method(typeof(Ghost), nameof(Shooter.behaviorAtGameTick), new[] { typeof(GameTime) }),
+                prefix: new HarmonyMethod(typeof(RingPatches), nameof(GhostPatch_Prefix)));
         }
         internal static void InvinciblePatch_Postfix(Monster __instance, ref bool __result)
         {
@@ -70,6 +79,24 @@ namespace MonsterHutchFramework.HarmonyPatches
             {
                 __instance.shooting.Value = false;
                 __instance.nextShot = 2f;
+                return;
+            }
+        }
+        internal static void BlueSquidPatch_Prefix(BlueSquid __instance, GameTime time)
+        {
+            var who = Game1.player;
+            if (MonsterIsCharmed(__instance, who, out string? matchedRingId, out int matchIndex))
+            {
+                __instance.nextFire = 3500.0f;
+                return;
+            }
+        }
+        internal static void GhostPatch_Prefix(Ghost __instance, GameTime time)
+        {
+            var who = Game1.player;
+            if (MonsterIsCharmed(__instance, who, out string? matchedRingId, out int matchIndex) && __instance.variant.Value == GhostVariant.Putrid && __instance.currentState.Value == 3)
+            {
+                __instance.stateTimer = 1f;
                 return;
             }
         }
