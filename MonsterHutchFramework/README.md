@@ -76,7 +76,7 @@ This consists of a string -> model lookup where...
 
 |    Field    | Description | Type |
 | :----------- | :----------- | :----: |
-| `MonsterType` | The name of the monster this hutch monster will be based on. <br>Most monsters found in the game's monster data will work. <br>(Known to work: Bat, Frost Bat, Lava Bat, Iridium Bat, Magma Sprite, Magma Sparker, Dust Spirit, Spider, Rock Crab, Stick Bug) | `string` |
+| `MonsterType` | The name of one of the game's monster types that this hutch monster will be based on.* | `string` |
 | `Name` | The name for this monster (should be unique). | `string` |
 | `Drops` | (_Optional_) The items to drop on monster death. This consists of a list of models defined below. | `List<Drops>` |
 | `SpeedOverride` | (_Optional_) The value to set as the monster's default speed (overriding the base monster speed). | `int` |
@@ -98,6 +98,9 @@ This consists of a string -> model lookup where...
 | `InputItemCount` | (_Optional_) The number of the input item required to start incubation. Default: 1 | `int` |
 | `IncubationTime` | (_Optional_) The number of days until incubation is complete. Default: 2 | `int` |
 | `OutputWeight` | (_Optional_) The weighted chance this monster is selected when incubation is complete (if more than 1 monster is found with the same input item Id). Default: 1 | `int` |
+
+\* Monster types that work: Angry Roger, Bat, Frost Bat, Lava Bat, Iridium Bat, Haunted Skull, Magma Sprite, Magma Sparker, Big Slime, Blue Squid, Bug, Pepper Rex, Dust Spirit, Dwarvish Sentry, Fly, Ghost, Carbon Ghost, Putrid Ghost, Grub (doesn't really move), Hot Head, Lava Lurk, Spider, Metal Head, Mummy**, Rock Crab, Lava Crab, Stick Bug, Iridium Crab, Truffle Crab (often gets stuck), False Magma Cap, Stone Golem, Wilderness Golem, Serpent, Royal Serpent, Shadow Brute, Shadow Shaman, Shadow Sniper, Skeleton, Skeleton Mage, Squid Kid 
+\*\* if Mummy is cut down and rises again, its output damage value resets ignoring modifications made by this mod
 
 #### Drops
 
