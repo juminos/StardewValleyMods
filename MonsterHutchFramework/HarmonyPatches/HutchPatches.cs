@@ -76,8 +76,15 @@ internal class HutchPatches
             }
 
             int usedWater = 0;
-            foreach (var monsterType in AssetHandler.monsterHutchData)
+            var data = AssetHandler.monsterHutchData;
+            var keys = data.Keys.ToList();
+            var checkedKeys = new List<string>();
+            while (checkedKeys.Count < keys.Count) 
             {
+                Utility.TryGetRandom(data, out string key, out MonsterHutchData value);
+                if (checkedKeys.Contains(key))
+                    continue;
+                checkedKeys.Add(key);
                 if (waters < 1)
                     break;
                 int monsterCount = 0;
@@ -85,7 +92,7 @@ internal class HutchPatches
                 {
                     // ModEntry.SMonitor.Log($"trying to water {monster.Name}", LogLevel.Trace);
 
-                    if (monster is not null && monster.modData.ContainsKey("{{ModId}}_Name") && monsterType.Value.Name == monster.modData["{{ModId}}_Name"] && waters > 0)
+                    if (monster is not null && monster.modData.ContainsKey("{{ModId}}_Name") && value.Name == monster.modData["{{ModId}}_Name"] && waters > 0)
                     {
                         monsterCount++;
                         usedWater++;
@@ -102,9 +109,9 @@ internal class HutchPatches
                     }
                 }
 
-                if (monsterCount > 0 && monsterType.Value.ProduceData.Count > 0 && (string.IsNullOrEmpty(monsterType.Value.ProduceCondition) || GameStateQuery.CheckConditions(monsterType.Value.ProduceCondition)))
+                if (monsterCount > 0 && value.ProduceData.Count > 0 && (string.IsNullOrEmpty(value.ProduceCondition) || GameStateQuery.CheckConditions(value.ProduceCondition)))
                 {
-                    for (int j = 0; j < (int)((float)monsterCount / monsterType.Value.NumberRequiredToProduce); j++)
+                    for (int j = 0; j < (int)((float)monsterCount / value.NumberRequiredToProduce); j++)
                     {
                         int tries = 50;
                         Vector2 tile = __instance.getRandomTile();
@@ -115,48 +122,48 @@ internal class HutchPatches
                         }
                         if (tries > 0)
                         {
-                            if (Game1.random.NextDouble() < ((double)monsterType.Value.ProduceChance / 100.0))
+                            if (Game1.random.NextDouble() < ((double)value.ProduceChance / 100.0))
                             {
                                 bool spawn_object = true;
                                 bool dropDeluxe = false;
                                 var produceIndex = 0;
-                                var produceId = monsterType.Value.ProduceData[produceIndex].ItemId;
-                                if (monsterType.Value.ProduceData.Count > 1)
+                                var produceId = value.ProduceData[produceIndex].ItemId;
+                                if (value.ProduceData.Count > 1)
                                 {
                                     var weightedList = new List<int>();
-                                    for (int i = 0; i < monsterType.Value.ProduceData.Count; i++)
+                                    for (int i = 0; i < value.ProduceData.Count; i++)
                                     {
-                                        if (!string.IsNullOrEmpty(monsterType.Value.ProduceData[i].ItemId))
+                                        if (!string.IsNullOrEmpty(value.ProduceData[i].ItemId))
                                         {
-                                            for (int k = 0; k < monsterType.Value.ProduceData[i].Weight; k++)
+                                            for (int k = 0; k < value.ProduceData[i].Weight; k++)
                                                 weightedList.Add(i);
                                         }
                                     }
                                     var random = new Random();
                                     int index = random.Next(weightedList.Count);
                                     produceIndex = weightedList[index];
-                                    produceId = monsterType.Value.ProduceData[produceIndex].ItemId;
+                                    produceId = value.ProduceData[produceIndex].ItemId;
                                 }
-                                if (monsterType.Value.DeluxeChance > 0 && monsterType.Value.DeluxeProduceData.Count > 0 && (string.IsNullOrEmpty(monsterType.Value.DeluxeCondition) || GameStateQuery.CheckConditions(monsterType.Value.DeluxeCondition)))
+                                if (value.DeluxeChance > 0 && value.DeluxeProduceData.Count > 0 && (string.IsNullOrEmpty(value.DeluxeCondition) || GameStateQuery.CheckConditions(value.DeluxeCondition)))
                                 {
-                                    var deluxeChance = Math.Clamp(((double)monsterType.Value.DeluxeChance / 100.0) + Game1.player.DailyLuck, 0, 1);
-                                    if (Game1.random.NextDouble() < deluxeChance && monsterType.Value.DeluxeProduceData.Count > 0)
+                                    var deluxeChance = Math.Clamp(((double)value.DeluxeChance / 100.0) + Game1.player.DailyLuck, 0, 1);
+                                    if (Game1.random.NextDouble() < deluxeChance && value.DeluxeProduceData.Count > 0)
                                     {
                                         ModEntry.SMonitor.Log($"Deluxe chance {deluxeChance} check passed", LogLevel.Trace);
 
                                         var weightedList = new List<int>();
-                                        for (int i = 0; i < monsterType.Value.DeluxeProduceData.Count; i++)
+                                        for (int i = 0; i < value.DeluxeProduceData.Count; i++)
                                         {
-                                            if (!string.IsNullOrEmpty(monsterType.Value.DeluxeProduceData[i].ItemId))
+                                            if (!string.IsNullOrEmpty(value.DeluxeProduceData[i].ItemId))
                                             {
-                                                for (int k = 0; k < monsterType.Value.DeluxeProduceData[i].Weight; k++)
+                                                for (int k = 0; k < value.DeluxeProduceData[i].Weight; k++)
                                                     weightedList.Add(i);
                                             }
                                         }
                                         var random = new Random();
                                         int index = random.Next(weightedList.Count);
                                         produceIndex = weightedList[index];
-                                        produceId = monsterType.Value.DeluxeProduceData[produceIndex].ItemId;
+                                        produceId = value.DeluxeProduceData[produceIndex].ItemId;
                                         dropDeluxe = true;
                                     }
                                 }
@@ -179,9 +186,9 @@ internal class HutchPatches
                                 {
                                     if (dropDeluxe)
                                     {
-                                        for (int i = 0; i < monsterType.Value.DeluxeProduceData[produceIndex].Count; i++)
+                                        for (int i = 0; i < value.DeluxeProduceData[produceIndex].Count; i++)
                                         {
-                                            if (monsterType.Value.DeluxeProduceData[produceIndex].IsDropped)
+                                            if (value.DeluxeProduceData[produceIndex].IsDropped)
                                             {
                                                 var drop = produce.getOne();
                                                 __instance.debris.Add(new Debris(drop, new Vector2(tile.X * 64, tile.Y * 64), new Vector2(tile.X * 64, tile.Y * 64)));
@@ -203,9 +210,9 @@ internal class HutchPatches
                                     }
                                     else
                                     {
-                                        for (int i = 0; i < monsterType.Value.ProduceData[produceIndex].Count; i++)
+                                        for (int i = 0; i < value.ProduceData[produceIndex].Count; i++)
                                         {
-                                            if (monsterType.Value.ProduceData[produceIndex].IsDropped)
+                                            if (value.ProduceData[produceIndex].IsDropped)
                                             {
                                                 var drop = produce.getOne();
                                                 __instance.debris.Add(new Debris(drop, new Vector2(tile.X * 64, tile.Y * 64), new Vector2(tile.X * 64, tile.Y * 64)));
