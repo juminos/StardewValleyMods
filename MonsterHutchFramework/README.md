@@ -76,7 +76,7 @@ This consists of a string -> model lookup where...
 
 |    Field    | Description | Type |
 | :----------- | :----------- | :----: |
-| `MonsterType` | The name of the monster this hutch monster will be based on. <br>Most monsters found in the game's monster data will work. <br>(Known to work: Bat, Frost Bat, Lava Bat, Iridium Bat, Magma Sprite, Magma Sparker, Dust Spirit, Spider, Rock Crab, Stick Bug) | `string` |
+| `MonsterType` | The name of one of the game's monster types that this hutch monster will be based on.* | `string` |
 | `Name` | The name for this monster (should be unique). | `string` |
 | `Drops` | (_Optional_) The items to drop on monster death. This consists of a list of models defined below. | `List<Drops>` |
 | `SpeedOverride` | (_Optional_) The value to set as the monster's default speed (overriding the base monster speed). | `int` |
