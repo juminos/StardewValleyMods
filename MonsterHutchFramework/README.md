@@ -99,6 +99,9 @@ This consists of a string -> model lookup where...
 | `IncubationTime` | (_Optional_) The number of days until incubation is complete. Default: 2 | `int` |
 | `OutputWeight` | (_Optional_) The weighted chance this monster is selected when incubation is complete (if more than 1 monster is found with the same input item Id). Default: 1 | `int` |
 
+\* Monster types that work: Angry Roger, Bat, Frost Bat, Lava Bat, Iridium Bat (produces strange results), Haunted Skull, Magma Sprite, Magma Sparker, Big Slime, Blue Squid, Bug, Pepper Rex, Dust Spirit, Dwarvish Sentry, Fly, Ghost, Carbon Ghost, Putrid Ghost, Grub (doesn't really move), Hot Head, Lava Lurk, Spider, Metal Head, Mummy**, Rock Crab, Lava Crab, Stick Bug, Iridium Crab, Truffle Crab (often gets stuck), False Magma Cap, Stone Golem, Wilderness Golem, Serpent, Royal Serpent, Shadow Brute, Shadow Shaman, Shadow Sniper, Skeleton, Skeleton Mage, Squid Kid 
+<br><br>\*\* if Mummy is cut down and rises again, its output damage value resets ignoring modifications made by this mod
+
 #### Drops
 
 Each entry in the drops list is a model consisting of the fields listed below:
