@@ -21,9 +21,10 @@ internal class ObjectPatches
            original: AccessTools.Method(typeof(Game1), nameof(Game1.createMultipleObjectDebris), [typeof(string), typeof(int), typeof(int), typeof(int), typeof(GameLocation)]),
            prefix: new HarmonyMethod(typeof(ObjectPatches), nameof(MultipleObjectDebris_Pre2)));
 
-        harmony.Patch(
-           original: AccessTools.Method(typeof(Game1), nameof(Game1.createMultipleObjectDebris), [typeof(string), typeof(int), typeof(int), typeof(int), typeof(float)]),
-           prefix: new HarmonyMethod(typeof(ObjectPatches), nameof(MultipleObjectDebris_Pre3)));
+        // This overload only used by slime balls
+        //harmony.Patch(
+        //   original: AccessTools.Method(typeof(Game1), nameof(Game1.createMultipleObjectDebris), [typeof(string), typeof(int), typeof(int), typeof(int), typeof(float)]),
+        //   prefix: new HarmonyMethod(typeof(ObjectPatches), nameof(MultipleObjectDebris_Pre3)));
 
         harmony.Patch(
            original: AccessTools.Method(typeof(Game1), nameof(Game1.createMultipleObjectDebris), [typeof(string), typeof(int), typeof(int), typeof(int), typeof(long)]),
