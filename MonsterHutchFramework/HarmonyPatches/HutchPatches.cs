@@ -78,13 +78,12 @@ internal class HutchPatches
             int usedWater = 0;
             var data = AssetHandler.monsterHutchData;
             var keys = data.Keys.ToList();
-            var checkedKeys = new List<string>();
+            var checkedKeys = new HashSet<string>();
             while (checkedKeys.Count < keys.Count) 
             {
                 Utility.TryGetRandom(data, out string key, out MonsterHutchData value);
-                if (checkedKeys.Contains(key))
+                if (!checkedKeys.Add(key))
                     continue;
-                checkedKeys.Add(key);
                 if (waters < 1)
                     break;
                 int monsterCount = 0;
