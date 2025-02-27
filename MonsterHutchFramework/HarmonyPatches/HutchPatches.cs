@@ -148,8 +148,6 @@ internal class HutchPatches
                                     var deluxeChance = Math.Clamp(((double)value.DeluxeChance / 100.0) + Game1.player.DailyLuck, 0, 1);
                                     if (Game1.random.NextDouble() < deluxeChance && value.DeluxeProduceData.Count > 0)
                                     {
-                                        ModEntry.SMonitor.Log($"Deluxe chance {deluxeChance} check passed", LogLevel.Trace);
-
                                         var weightedList = new List<int>();
                                         for (int i = 0; i < value.DeluxeProduceData.Count; i++)
                                         {
@@ -168,7 +166,7 @@ internal class HutchPatches
                                 }
                                 var produce = ItemRegistry.Create<StardewValley.Object>(produceId);
                                 produce.CanBeSetDown = false;
-                                ModEntry.SMonitor.Log($"{produce.Name} is type {produce.Type}, category {produce.Category}", LogLevel.Trace);
+                                //ModEntry.SMonitor.Log($"{produce.Name} is type {produce.Type}, category {produce.Category}", LogLevel.Trace);
                                 if (produce.Type != "Litter")
                                 {
                                     foreach (StardewValley.Object location_object in __instance.objects.Values)

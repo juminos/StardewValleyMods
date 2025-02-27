@@ -8,6 +8,8 @@ using Microsoft.Xna.Framework.Graphics;
 using MonsterHutchFramework.HarmonyPatches;
 using StardewValley.BellsAndWhistles;
 using StardewModdingAPI.Utilities;
+using StardewValley.Objects;
+using System.Net.NetworkInformation;
 
 namespace MonsterHutchFramework
 {
