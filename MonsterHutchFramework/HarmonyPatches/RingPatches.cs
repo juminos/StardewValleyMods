@@ -102,40 +102,36 @@ namespace MonsterHutchFramework.HarmonyPatches
         }
         public static bool MonsterIsCharmed(Monster monster, Farmer who, out string? matchRingKey, out int matchMonsterIndex)
         {
-            bool isModded = monster.modData.ContainsKey("{{ModId}}_Name");
-            var ringData = AssetHandler.charmerRingData;
-
             if (who.leftRing.Value == null && who.rightRing.Value == null)
             {
                 matchRingKey = null;
                 matchMonsterIndex = -1;
                 return false;
             }
+            bool isModded = monster.modData.ContainsKey("{{ModId}}_Name");
+            var ringData = AssetHandler.charmerRingData;
+            var ringIds = new List<string>();
+
+            if (who.leftRing.Value != null)
+            {
+                if (who.leftRing.Value is not CombinedRing)
+                    ringIds.Add(who.leftRing.Value.ItemId);
+                else
+                    GetCombinedRingIds(who.leftRing.Value, ringIds);
+            }
+            if (who.rightRing.Value != null)
+            {
+                if (who.rightRing.Value is not CombinedRing)
+                    ringIds.Add(who.rightRing.Value.ItemId);
+                else
+                    GetCombinedRingIds(who.rightRing.Value, ringIds);
+            }
             foreach (var item in ringData)
             {
                 var charmedData = ringData[item.Key].CharmedMonsters;
-                if (who.leftRing.Value != null)
+                foreach (var ringId in ringIds)
                 {
-                    if (who.leftRing.Value is CombinedRing ring)
-                    {
-                        foreach (Ring combinedRing in ring.combinedRings)
-                        {
-                            if (item.Value.RingId == combinedRing.ItemId)
-                            {
-                                for (int i = 0; i < ringData[item.Key].CharmedMonsters.Count; i++)
-                                {
-                                    if (isModded && charmedData[i].MonsterName == monster.modData["{{ModId}}_Name"] ||
-                                        (!isModded && charmedData[i].MonsterName == monster.Name))
-                                    {
-                                        matchRingKey = item.Key;
-                                        matchMonsterIndex = i;
-                                        return true;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    else if (item.Value.RingId == who.leftRing.Value.ItemId)
+                    if (item.Value.RingId == ringId)
                     {
                         for (int i = 0; i < ringData[item.Key].CharmedMonsters.Count; i++)
                         {
@@ -148,48 +144,23 @@ namespace MonsterHutchFramework.HarmonyPatches
                             }
                         }
                     }
-
-                }
-                if (who.rightRing.Value != null)
-                {
-                    if (who.rightRing.Value is CombinedRing ring)
-                    {
-                        foreach (Ring combinedRing in ring.combinedRings)
-                        {
-                            if (item.Value.RingId == combinedRing.ItemId)
-                            {
-                                for (int i = 0; i < ringData[item.Key].CharmedMonsters.Count; i++)
-                                {
-                                    if (isModded && charmedData[i].MonsterName == monster.modData["{{ModId}}_Name"] ||
-                                        (!isModded && charmedData[i].MonsterName == monster.Name))
-                                    {
-                                        matchRingKey = item.Key;
-                                        matchMonsterIndex = i;
-                                        return true;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    else if (item.Value.RingId == who.rightRing.Value.ItemId)
-                    {
-                        for (int i = 0; i < ringData[item.Key].CharmedMonsters.Count; i++)
-                        {
-                            if (isModded && charmedData[i].MonsterName == monster.modData["{{ModId}}_Name"] ||
-                                (!isModded && charmedData[i].MonsterName == monster.Name))
-                            {
-                                matchRingKey = item.Key;
-                                matchMonsterIndex = i;
-                                return true;
-                            }
-                        }
-                    }
-
                 }
             }
             matchRingKey = null;
             matchMonsterIndex = -1;
             return false;
+        }
+        public static void GetCombinedRingIds(Ring ring, List<string> combinedRings)
+        {
+            foreach (Ring r in (ring as CombinedRing).combinedRings)
+            {
+                if (r is not CombinedRing && !combinedRings.Contains(r.ItemId))
+                {
+                    combinedRings.Add(r.ItemId);
+                }
+                if (r is CombinedRing)
+                    GetCombinedRingIds(r, combinedRings);
+            }
         }
     }
 }
