@@ -155,9 +155,7 @@ namespace MonsterHutchFramework.HarmonyPatches
             foreach (Ring r in (ring as CombinedRing).combinedRings)
             {
                 if (r is not CombinedRing && !combinedRings.Contains(r.ItemId))
-                {
                     combinedRings.Add(r.ItemId);
-                }
                 if (r is CombinedRing)
                     GetCombinedRingIds(r, combinedRings);
             }
