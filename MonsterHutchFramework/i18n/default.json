@@ -16,6 +16,8 @@
     "ConfigSkipRandomizeSlimePositionsDescription": "If Randomize Monster Positions is \nturned on, whether slimes are \nskipped and remain in their original position",
     "ConfigDoubleNodeDrops": "Double Node Drops",
     "ConfigDoubleNodeDropsDescription": "Whether breaking nodes \n(ores, gems, geodes, etc) yields \ndouble in the Monster Hutch",
+    "ConfigNoFlooringSpawn": "No Flooring Spawn",
+    "ConfigNoFlooringSpawnDescription": "Whether monster produce \nshould never spawn on flooring",
     "ConfigIncubatorSection": "Monster Incubator",
     "ConfigIncubatorIsAffectedByCoopmaster": "Is Affected By Coopmaster",
     "ConfigIncubatorIsAffectedByCoopmasterDescription": "Whether coopmaster profession \ncuts the incubation time in \nhalf (like with slime incubator)",

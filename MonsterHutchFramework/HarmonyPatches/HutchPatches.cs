@@ -6,6 +6,7 @@ using StardewModdingAPI;
 using StardewValley;
 using StardewValley.Monsters;
 using StardewValley.Objects;
+using StardewValley.TerrainFeatures;
 using StardewValley.Tools;
 
 namespace MonsterHutchFramework.HarmonyPatches;
@@ -114,7 +115,15 @@ internal class HutchPatches
                     {
                         int tries = 50;
                         Vector2 tile = __instance.getRandomTile();
-                        while ((!__instance.CanItemBePlacedHere(tile, false, CollisionMask.All, ~CollisionMask.Objects, false, false) || __instance.doesTileHaveProperty((int)tile.X, (int)tile.Y, "NPCBarrier", "Back") != null || tile.Y >= 16f) && tries > 0)
+
+                        //add flooring condition (config) 	indoors.terrainFeatures.TryGetValue(v, out var terrainFeature) && terrainFeature is Flooring
+
+                        while (
+                            (!__instance.CanItemBePlacedHere(tile, false, CollisionMask.All, ~CollisionMask.Objects, false, false) || 
+                            __instance.doesTileHaveProperty((int)tile.X, (int)tile.Y, "NPCBarrier", "Back") != null || 
+                            tile.Y >= 17f ||
+                            (ModEntry.Config.NoFlooringSpawn && __instance.terrainFeatures.TryGetValue(tile, out var terrainFeature) && terrainFeature is Flooring)) 
+                            && tries > 0)
                         {
                             tile = __instance.getRandomTile();
                             tries--;

@@ -24,6 +24,7 @@ namespace MonsterHutchFramework
         public int HutchSlimeCapacity { get; set; } = 20;
         public int HutchMonsterCapacity { get; set; } = 40;
         public bool DoubleNodeDrops { get; set; } = true;
+        public bool NoFlooringSpawn { get; set; } = true;
         public bool IncubatorIsAffectedByCoopmaster { get; set; } = true;
         public bool IncubatorWobblesWhileIncubating { get; set; } = false;
         internal const string DefaultIncubatorAdditionalRequiredItemID = "(O)769";
@@ -101,6 +102,8 @@ namespace MonsterHutchFramework
                 GetConfigName(mod, "HutchMonsterCapacity"), GetConfigDescription(mod, "HutchMonsterCapacity"), 0);
             api.AddBoolOption(manifest, () => config.DoubleNodeDrops, (val) => config.DoubleNodeDrops = val,
                 GetConfigName(mod, "DoubleNodeDrops"), GetConfigDescription(mod, "DoubleNodeDrops"));
+            api.AddBoolOption(manifest, () => config.NoFlooringSpawn, (val) => config.NoFlooringSpawn = val,
+                GetConfigName(mod, "NoFlooringSpawn"), GetConfigDescription(mod, "NoFlooringSpawn"));
 
             api.AddSectionTitle(manifest, GetConfigName(mod, "IncubatorSection"));
 

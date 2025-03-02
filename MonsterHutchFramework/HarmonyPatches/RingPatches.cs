@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using StardewValley;
 using StardewValley.Monsters;
 using StardewValley.Objects;
+using StardewValley.Objects.Trinkets;
 using static StardewValley.Monsters.Ghost;
 
 namespace MonsterHutchFramework.HarmonyPatches
@@ -34,16 +35,18 @@ namespace MonsterHutchFramework.HarmonyPatches
                 prefix: new HarmonyMethod(typeof(RingPatches), nameof(ShadowShooterPatch_Prefix)));
 
             harmony.Patch(
-                original: AccessTools.Method(typeof(BlueSquid), nameof(Shooter.behaviorAtGameTick), new[] { typeof(GameTime) }),
+                original: AccessTools.Method(typeof(BlueSquid), nameof(BlueSquid.behaviorAtGameTick), new[] { typeof(GameTime) }),
                 prefix: new HarmonyMethod(typeof(RingPatches), nameof(BlueSquidPatch_Prefix)));
 
             harmony.Patch(
-                original: AccessTools.Method(typeof(Ghost), nameof(Shooter.behaviorAtGameTick), new[] { typeof(GameTime) }),
+                original: AccessTools.Method(typeof(Ghost), nameof(Ghost.behaviorAtGameTick), new[] { typeof(GameTime) }),
                 prefix: new HarmonyMethod(typeof(RingPatches), nameof(GhostPatch_Prefix)));
         }
         internal static void InvinciblePatch_Postfix(Monster __instance, ref bool __result)
         {
             var who = Game1.player;
+            if (!who.UsingTool && !who.usingSlingshot)
+                return;
             if (__instance is not GreenSlime && __instance is not BigSlime && MonsterIsCharmed(__instance, who, out string? matchedRingId, out int matchIndex) && !ModEntry.Config.LethalRings)
             {
                 __result = true;
@@ -57,9 +60,11 @@ namespace MonsterHutchFramework.HarmonyPatches
         }
         internal static void OverlapFarmerDamage_Postfix(Monster __instance, Farmer who, ref bool __result)
         {
+            if (!__instance.GetBoundingBox().Intersects(who.GetBoundingBox()))
+                return;
             if (MonsterIsCharmed(__instance, who, out string? matchedRingId, out int matchIndex))
             {
-                __result = true;
+                __result = false;
                 return;
             }
         }
