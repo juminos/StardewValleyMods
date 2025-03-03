@@ -19,7 +19,7 @@ namespace MonsterHutchFramework
     public class ModConfig
     {
         public bool HutchExpansion { get; set; } = false;
-        public bool RandomizeMonsterPositions { get; set; } = true;
+        public bool RandomizeMonsterPositions { get; set; } = false;
         public bool SkipRandomizeSlimePositions { get; set; } = false;
         public int HutchSlimeCapacity { get; set; } = 20;
         public int HutchMonsterCapacity { get; set; } = 40;

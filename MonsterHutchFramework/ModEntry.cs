@@ -10,6 +10,7 @@ using StardewValley.BellsAndWhistles;
 using StardewModdingAPI.Utilities;
 using StardewValley.Objects;
 using System.Net.NetworkInformation;
+using System.Threading;
 
 namespace MonsterHutchFramework
 {
@@ -34,6 +35,7 @@ namespace MonsterHutchFramework
             Helper.Events.GameLoop.GameLaunched += delegate { ModConfig.SetUpModConfigMenu(Config, this); };
             Helper.Events.GameLoop.SaveLoaded += OnSaveLoaded;
             Helper.Events.GameLoop.DayStarted += OnDayStarted;
+            Helper.Events.GameLoop.DayEnding += OnDayEnding;
             Helper.Events.Player.Warped += OnPlayerWarped;
             Helper.Events.Content.AssetRequested += OnAssetRequested;
             Helper.Events.Input.ButtonPressed += OnButtonPressed;
@@ -75,6 +77,16 @@ namespace MonsterHutchFramework
                         foreach (Monster monster in monsterList)
                         {
                             var pos = monster.Position;
+                            if (monster.modData.ContainsKey($"{this.ModManifest.UniqueID}_Position"))
+                            {
+                                var posString = monster.modData[$"{this.ModManifest.UniqueID}_Position"];
+                                string[] values = posString.Split(',');
+                                var posXstr = values[0];
+                                var posYstr = values[1];
+                                int posX = Convert.ToInt32(posXstr);
+                                int posY = Convert.ToInt32(posYstr);
+                                pos = new Vector2(posX, posY);
+                            }
                             var name = monster.modData[$"{ModEntry.Mod.ModManifest.UniqueID}_Name"];
                             if (!monster.modData.ContainsKey($"{ModEntry.Mod.ModManifest.UniqueID}_Scale"))
                             {
@@ -112,9 +124,6 @@ namespace MonsterHutchFramework
         }
         private void OnDayStarted(object? sender, DayStartedEventArgs e)
         {
-            if (!Config.RandomizeMonsterPositions)
-                return;
-
             Utility.ForEachBuilding(delegate (Building building)
             {
                 if (building?.indoors?.Value is SlimeHutch hutch &&
@@ -126,6 +135,8 @@ namespace MonsterHutchFramework
                             continue;
                         if (monster is Monster && monster.modData.ContainsKey($"{this.ModManifest.UniqueID}_monsterPetted"))
                             monster.modData.Remove($"{this.ModManifest.UniqueID}_monsterPetted");
+                        if (!Config.RandomizeMonsterPositions)
+                            break;
                         if (Config.SkipRandomizeSlimePositions && monster is GreenSlime)
                             continue;
                         int tries = 50;
@@ -140,6 +151,31 @@ namespace MonsterHutchFramework
 
                         if (tries > 0)
                             monster.Position = tile;
+                    }
+                }
+                return true;
+            });
+        }
+        private void OnDayEnding(object? sender, DayEndingEventArgs e)
+        {
+            if (Config.RandomizeMonsterPositions)
+                return;
+            Utility.ForEachBuilding(delegate (Building building)
+            {
+                if (building?.indoors?.Value is SlimeHutch hutch &&
+                hutch.characters.Count > 0)
+                {
+                    foreach (var monster in hutch.characters)
+                    {
+                        if (monster is null)
+                            continue;
+                        var posX = (int)monster.Position.X;
+                        var posY = (int)monster.Position.Y;
+                        string posString = posX.ToString() + "," + posY.ToString();
+                        if (monster is Monster && !monster.modData.ContainsKey($"{this.ModManifest.UniqueID}_Position"))
+                            monster.modData.Add($"{this.ModManifest.UniqueID}_Position", posString);
+                        else if (monster is Monster && monster.modData.ContainsKey($"{this.ModManifest.UniqueID}_Position"))
+                            monster.modData[$"{this.ModManifest.UniqueID}_Position"] = posString;
                     }
                 }
                 return true;
