@@ -53,6 +53,7 @@ Monster Hutch Framework is a framework that allows monsters to be raised and pro
 - HutchSlimeCapacity: The maximum slime capacity for the Monster Hutch. Default: 20
 - HutchMonsterCapacity: The total monster capacity (including slimes) for the Monster Hutch. Default: 40
 - DoubleNodeDrops: Whether breaking nodes (ores, gems, geodes, etc) yields double in the Monster Hutch. Default: true
+- NoFlooringSpawn: Whether monster produce should never spawn on flooring. Default: true
 - IncubatorIsAffectedByCoopmaster: Whether incubation time is affected by coopmaster profession. Default: true
 - IncubatorWobblesWhileIncubating: Whether monster incubator should wobble while it's working. Default: true
 - DefaultIncubatorAdditionalRequiredItemID: The item ID for the additional required item to start incubation in the monster incubator. Default: "(O)769"
@@ -84,7 +85,7 @@ This consists of a string -> model lookup where...
 | `MoveTowardPlayerThresholdOverride` | (_Optional_) The distance (in tiles) before the monster sees the player. Default: 2 | `int` |
 | `DamageToFarmerOverride` | (_Optional_) The amount of damage the monster deals when it attacks (overriding the base monster damage). | `int` |
 | `MaxHealthOverride` | (_Optional_) The amount of health the monster has (overriding the base monster health) | `int` |
-| `ScaleMin` | (_Optional_) The minimum size scale percentage (random value chosen between ScaleMin and ScaleMax when monster is created/reloaded). <br>Example: The game uses this to randomize Dust Sprite size with ScaleMin = 75 and ScaleMax = 101 | `int` |
+| `ScaleMin` | (_Optional_) The minimum size scale percentage (random value chosen between ScaleMin and ScaleMax when monster is created). <br>Example: The game uses this to randomize Dust Sprite size with ScaleMin = 75 and ScaleMax = 101 | `int` |
 | `ScaleMax` | (_Optional_) The maximum size scale percentage (ScaleMin and ScaleMax can be set to the same value for fixed scaling). | `int` |
 | `TexturePath` | (_Optional_) The texture to use for this monster (if not defined will use base monster texture) | `string` |
 | `NumberRequiredToProduce` | (_Optional_) How many watered monsters of this type are required for each overnight produce chance. Default: 1 <br>e.g. In the vanilla game it takes 5 watered slimes to produce a slime ball. | `int` |
