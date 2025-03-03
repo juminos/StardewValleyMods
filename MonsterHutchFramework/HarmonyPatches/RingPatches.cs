@@ -45,8 +45,6 @@ namespace MonsterHutchFramework.HarmonyPatches
         internal static void InvinciblePatch_Postfix(Monster __instance, ref bool __result)
         {
             var who = Game1.player;
-            if (!who.UsingTool && !who.usingSlingshot)
-                return;
             if (__instance is not GreenSlime && __instance is not BigSlime && MonsterIsCharmed(__instance, who, out string? matchedRingId, out int matchIndex) && !ModEntry.Config.LethalRings)
             {
                 __result = true;
@@ -113,7 +111,7 @@ namespace MonsterHutchFramework.HarmonyPatches
                 matchMonsterIndex = -1;
                 return false;
             }
-            bool isModded = monster.modData.ContainsKey("{{ModId}}_Name");
+            bool isModded = monster.modData.ContainsKey($"{ModEntry.Mod.ModManifest.UniqueID}_Name");
             var ringData = AssetHandler.charmerRingData;
             var ringIds = new List<string>();
 
@@ -140,7 +138,7 @@ namespace MonsterHutchFramework.HarmonyPatches
                     {
                         for (int i = 0; i < ringData[item.Key].CharmedMonsters.Count; i++)
                         {
-                            if (isModded && charmedData[i].MonsterName == monster.modData["{{ModId}}_Name"] ||
+                            if (isModded && charmedData[i].MonsterName == monster.modData[$"{ModEntry.Mod.ModManifest.UniqueID}_Name"] ||
                                 (!isModded && charmedData[i].MonsterName == monster.Name))
                             {
                                 matchRingKey = item.Key;
