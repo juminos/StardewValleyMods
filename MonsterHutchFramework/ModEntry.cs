@@ -124,6 +124,8 @@ namespace MonsterHutchFramework
                     {
                         if (monster is null)
                             continue;
+                        if (monster is Monster && monster.modData.ContainsKey($"{this.ModManifest.UniqueID}_monsterPetted"))
+                            monster.modData.Remove($"{this.ModManifest.UniqueID}_monsterPetted");
                         if (Config.SkipRandomizeSlimePositions && monster is GreenSlime)
                             continue;
                         int tries = 50;
