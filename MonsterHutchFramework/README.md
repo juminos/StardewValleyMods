@@ -48,7 +48,7 @@ Monster Hutch Framework is a framework that allows monsters to be raised and pro
 ## Configuration Options
 
 - HutchExpansion: Whether to add a basement expansion upgrade for the Monster Hutch to Robin's build menu (the basement cannot be used by monsters, but casks will work there). Default: false
-- RandomizeMonsterPositions: Whether to randomize monster positions in the hutch every day (to prevent them from clumping up on one tile). Default: true
+- RandomizeMonsterPositions: Whether to randomize monster positions in the hutch every day (to prevent them from clumping up). Default: false
 - SkipRandomizeSlimePositions: Whether the above setting should leave slime positions alone. Default: false
 - HutchSlimeCapacity: The maximum slime capacity for the Monster Hutch. Default: 20
 - HutchMonsterCapacity: The total monster capacity (including slimes) for the Monster Hutch. Default: 40
