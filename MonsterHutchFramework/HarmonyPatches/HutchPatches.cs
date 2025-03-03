@@ -92,7 +92,7 @@ internal class HutchPatches
                 {
                     // ModEntry.SMonitor.Log($"trying to water {monster.Name}", LogLevel.Trace);
 
-                    if (monster is not null && monster.modData.ContainsKey("{{ModId}}_Name") && value.Name == monster.modData["{{ModId}}_Name"] && waters > 0)
+                    if (monster is not null && monster.modData.ContainsKey($"{ModEntry.Mod.ModManifest.UniqueID}_Name") && value.Name == monster.modData[$"{ModEntry.Mod.ModManifest.UniqueID}_Name"] && waters > 0)
                     {
                         monsterCount++;
                         usedWater++;

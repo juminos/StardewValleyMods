@@ -67,7 +67,7 @@ namespace MonsterHutchFramework
                     var monsterList = new List<Monster>();
                     for (int i = 0; i < hutch.characters.Count; i++)
                     {
-                        if (hutch.characters[i] is Monster monster && monster is not null && monster.modData.ContainsKey("{{ModId}}_Name"))
+                        if (hutch.characters[i] is Monster monster && monster is not null && monster.modData.ContainsKey($"{ModEntry.Mod.ModManifest.UniqueID}_Name"))
                             monsterList.Add(monster);
                     }
                     if (monsterList.Count > 0)
@@ -75,13 +75,19 @@ namespace MonsterHutchFramework
                         foreach (Monster monster in monsterList)
                         {
                             var pos = monster.Position;
-                            var name = monster.modData["{{ModId}}_Name"];
+                            var name = monster.modData[$"{ModEntry.Mod.ModManifest.UniqueID}_Name"];
+                            if (!monster.modData.ContainsKey($"{ModEntry.Mod.ModManifest.UniqueID}_Scale"))
+                            {
+                                var getScale = monster.Scale;
+                                monster.modData.Add($"{ModEntry.Mod.ModManifest.UniqueID}_Scale", getScale.ToString());
+                            }
+                            float scale = float.Parse(monster.modData[$"{ModEntry.Mod.ModManifest.UniqueID}_Scale"]);
                             bool foundMonster = false;
                             foreach (var monsterData in AssetHandler.monsterHutchData)
                             {
                                 if (monsterData.Value.Name == name)
                                 {
-                                    Monster newMonster = MonsterBuilder.CreateMonster(pos, monsterData.Value);
+                                    Monster newMonster = MonsterBuilder.CreateMonster(pos, monsterData.Value, scale);
                                     if (newMonster != null)
                                     {
                                         hutch.characters.Remove(monster);
