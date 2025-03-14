@@ -24,6 +24,7 @@ namespace Agrivoltaics
         public int WinterBatteryCounter { get; set; } = 3;
         public bool GrowGrass { get; set; } = true;
         public float GrowRate { get; set; } = 0.15f;
+        public float BlueGrassChance { get; set; } = 0.5f;
         public bool SpreadGrass { get; set; } = true;
         public float SpreadRate { get; set; } = 0.65f;
         public float RetentionIncrease { get; set; } = 1f;

@@ -1,7 +1,7 @@
 {
     "Name": "Agrivoltaics",
     "Author": "juminos",
-    "Version": "1.0.4",
+    "Version": "1.1.0",
     "Description": "Practice agrivoltaic farming.",
     "UniqueID": "juminos.Agrivoltaics",
     "EntryDll": "Agrivoltaics.dll",

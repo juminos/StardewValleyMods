@@ -163,7 +163,7 @@ namespace Agrivoltaics
                             Game1.random.NextDouble() < Config.GrowRate &&
                             !newGrass.ContainsKey(tile))
                         {
-                            newGrass.Add(tile, new Grass((Game1.random.NextDouble() < 0.5) ? 1 : 7, Game1.random.Next(1, 3)));
+                            newGrass.Add(tile, new Grass((Game1.random.NextDouble() < Config.BlueGrassChance) ? 7 : 1, Game1.random.Next(1, 3)));
                         }
                     }
                 }
@@ -414,6 +414,17 @@ namespace Agrivoltaics
                 interval: 0.01f
                 );
 
+            configMenu.AddNumberOption(
+                mod: this.ModManifest,
+                name: I18n.BlueGrassChance_Title,
+                tooltip: I18n.BlueGrassChance_Description,
+                getValue: () => Config.BlueGrassChance,
+                setValue: value => Config.BlueGrassChance = value,
+                min: 0.0f,
+                max: 1.0f,
+                interval: 0.01f
+                );
+
             configMenu.AddBoolOption(
                 mod: this.ModManifest,
                 name: I18n.SpreadGrass_Title,
@@ -432,7 +443,7 @@ namespace Agrivoltaics
                 max: 1.0f,
                 interval: 0.01f
                 );
-
+            
             configMenu.AddNumberOption(
                 mod: this.ModManifest,
                 name: I18n.RetentionIncrease_Title,

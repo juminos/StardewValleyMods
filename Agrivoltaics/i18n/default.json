@@ -33,6 +33,8 @@
     "GrowGrass.description": "Whether tiles under the Solar Panel have an increased chance of growing new grass",
     "GrassRate.title": "New Grass Growth Rate",
     "GrassRate.description": "The chance a tile under the Solar Panel will grow new grass each day (in addition to the usual grass growth chance)",
+    "BlueGrassChance.title": "Blue Grass Chance",
+    "BlueGrassChance.description": "When new grass is added by this mod, the chance it is blue grass",
     "SpreadGrass.title": "Grass Spreading",
     "SpreadGrass.description": "Whether grass under the Solar Panel has an increased spreading rate",
     "SpreadRate.title": "Grass Spread Rate",
