@@ -35,7 +35,7 @@ internal class IncubatorPatches
 
         if (location is SlimeHutch hutch &&
             (hutch.Name.Contains("MonsterHutchFramework") || hutch.Name.Contains("juminos.SeasonalBuildings_Winery")) &&
-            location.canSlimeHatchHere() &&
+            //location.canSlimeHatchHere() &&
             location.characters.Count < ModEntry.Config.HutchMonsterCapacity)
         {
             Monster? monster = null;
