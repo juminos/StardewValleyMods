@@ -9,7 +9,7 @@
             "Target": "Data/Objects",
             "When": { "HasMod: |contains=juminos.MonsterHutchStarter": false },
             "Entries": {
-                "{{ModId}}_Shadow": {
+                "juminos.FrenshipRings.CP_Shadow": {
                     "Name": "Shadow Ring",
                     "DisplayName": "{{i18n:shadow-ring.name}}",
                     "Description": "{{i18n:shadow-ring.description}}",
@@ -25,7 +25,7 @@
                         "ring_item"
                     ]
                 },
-                "{{ModId}}_Spider": {
+                "juminos.FrenshipRings.CP_Spider": {
                     "Name": "Spider Ring",
                     "DisplayName": "{{i18n:spider-ring.name}}",
                     "Description": "{{i18n:spider-ring.description}}",
@@ -41,7 +41,7 @@
                         "ring_item"
                     ]
                 },
-                "{{ModId}}_Dust": {
+                "juminos.FrenshipRings.CP_Dust": {
                     "Name": "Dust Sprite Ring",
                     "DisplayName": "{{i18n:dustsprite-ring.name}}",
                     "Description": "{{i18n:dustsprite-ring.description}}",
@@ -57,7 +57,7 @@
                         "ring_item"
                     ]
                 },
-                "{{ModId}}_Bat": {
+                "juminos.FrenshipRings.CP_Bat": {
                     "Name": "Bat Ring",
                     "DisplayName": "{{i18n:bat-ring.name}}",
                     "Description": "{{i18n:bat-ring.description}}",
@@ -73,7 +73,7 @@
                         "ring_item"
                     ]
                 },
-                "{{ModId}}_MagmaSprite": {
+                "juminos.FrenshipRings.CP_MagmaSprite": {
                     "Name": "Magma Ring",
                     "DisplayName": "{{i18n:magmasprite-ring.name}}",
                     "Description": "{{i18n:magmasprite-ring.description}}",
