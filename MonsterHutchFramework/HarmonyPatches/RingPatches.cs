@@ -81,7 +81,7 @@ namespace MonsterHutchFramework.HarmonyPatches
             if (MonsterIsCharmed(__instance, who, out string? matchedRingId, out int matchIndex))
             {
                 __instance.shooting.Value = false;
-                __instance.nextShot = 2f;
+                __instance.nextShot = 2000f;
                 return;
             }
         }
